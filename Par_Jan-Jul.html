@@ -3,1144 +3,1222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JAN - JUN High-Yielding Revision Digest | PSSSB & NITTTR Exam Specialist</title>
+<title>PSSSB / NITTTR Master Current Affairs Revision Compendium (September → January 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
   :root {
-    --primary: #0f2b48;
-    --primary-light: #1e3a5f;
-    --accent-gold: #b45309;
-    --accent-red: #b91c1c;
-    --punjab-green: #065f46;
-    --punjab-bg: #ecfdf5;
-    --bg-page: #f8fafc;
-    --card-bg: #ffffff;
-    --text-main: #1e293b;
-    --text-muted: #475569;
-    --border-color: #cbd5e1;
-    --highlight-yellow: #fef08a;
-    --highlight-blue: #e0f2fe;
-    --tag-bg: #f1f5f9;
+    --primary: #1e3a8a;
+    --primary-light: #eff6ff;
+    --secondary: #0f766e;
+    --secondary-light: #f0fdfa;
+    --accent: #b45309;
+    --accent-light: #fffbeb;
+    --punjab: #991b1b;
+    --punjab-bg: #fef2f2;
+    --dark: #0f172a;
+    --text: #334155;
+    --border: #cbd5e1;
   }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
   body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.45;
-    color: var(--text-main);
-    background-color: var(--bg-page);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background-color: #f1f5f9;
+    line-height: 1.55;
+  }
+  .highlight {
+    background-color: #fef08a;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .star-badge {
+    color: #eab308;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
     font-size: 13px;
-    padding: 20px;
+    margin-right: 2px;
   }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  /* Header */
-  .doc-header {
-    background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
-    color: white;
-    padding: 24px 30px;
-    border-bottom: 4px solid var(--accent-gold);
-  }
-  .doc-header .badge-exam {
-    background: var(--accent-gold);
-    color: white;
-    padding: 4px 10px;
-    font-weight: 700;
-    font-size: 11px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: inline-block;
-    margin-bottom: 8px;
-  }
-  .doc-header h1 {
-    font-size: 24px;
+  .fire-badge {
+    background: #fee2e2;
+    color: #b91c1c;
+    font-size: 10.5px;
     font-weight: 800;
-    letter-spacing: -0.5px;
-    margin-bottom: 6px;
-  }
-  .doc-header p {
-    font-size: 13px;
-    color: #cbd5e1;
-    max-width: 900px;
-  }
-  .meta-strip {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 14px;
-    font-size: 11px;
-    color: #94a3b8;
-  }
-  .meta-strip span strong {
-    color: #f8fafc;
-  }
-
-  /* Quick Navigation Bar */
-  .nav-bar {
-    background: #f1f5f9;
-    padding: 10px 24px;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .nav-btn {
-    font-size: 11.5px;
-    font-weight: 600;
-    color: var(--primary);
-    text-decoration: none;
-    padding: 3px 8px;
-    background: white;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    transition: 0.2s;
-  }
-  .nav-btn:hover {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
-  }
-  .nav-btn.punjab-pill {
-    background: #d1fae5;
-    color: #065f46;
-    border-color: #6ee7b7;
-  }
-
-  /* Layout Sections */
-  .content {
-    padding: 24px 30px;
-  }
-
-  .section-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--primary);
-    border-left: 5px solid var(--primary);
-    padding-left: 10px;
-    margin: 24px 0 14px 0;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-  }
-  .section-title.punjab-header {
-    border-left-color: var(--punjab-green);
-    color: var(--punjab-green);
-    background: var(--punjab-bg);
-    padding: 8px 12px;
-    border-radius: 0 4px 4px 0;
-  }
-
-  /* Cards & Grids */
-  .grid-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-
-  .card {
-    background: white;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    padding: 12px 14px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-  }
-  .card-punjab {
-    background: #fbfdfc;
-    border: 1px solid #a7f3d0;
-    border-top: 3px solid var(--punjab-green);
-  }
-  .card-imp {
-    border-top: 3px solid var(--accent-gold);
-  }
-  .card-defence {
-    border-top: 3px solid var(--accent-red);
-  }
-
-  .card h3 {
-    font-size: 13.5px;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 6px;
-  }
-  .card-punjab h3 {
-    color: var(--punjab-green);
-  }
-
-  ul.clean-list {
-    list-style: none;
-    padding-left: 0;
-  }
-  ul.clean-list li {
-    position: relative;
-    padding-left: 14px;
-    margin-bottom: 6px;
-    font-size: 12px;
-    line-height: 1.4;
-  }
-  ul.clean-list li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--accent-gold);
-    font-weight: bold;
-  }
-  ul.clean-list.punjab-bullets li::before {
-    color: var(--punjab-green);
-    content: "▶";
-    font-size: 9px;
-    top: 2px;
-  }
-
-  /* Highlighting elements */
-  .hl {
-    background-color: var(--highlight-yellow);
-    padding: 1px 4px;
-    border-radius: 3px;
-    font-weight: 600;
-  }
-  .hl-blue {
-    background-color: var(--highlight-blue);
-    padding: 1px 4px;
-    border-radius: 3px;
-    font-weight: 600;
-    color: #0369a1;
-  }
-  .badge {
-    display: inline-block;
     padding: 1px 6px;
-    font-size: 10px;
-    font-weight: 700;
-    border-radius: 3px;
+    border-radius: 4px;
+    border: 1px solid #fca5a5;
     text-transform: uppercase;
-    margin-right: 4px;
-    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
   }
-  .bg-punjab { background: #d1fae5; color: #065f46; }
-  .bg-gold { background: #fef3c7; color: #92400e; }
-  .bg-blue { background: #e0f2fe; color: #075985; }
-  .bg-red { background: #fee2e2; color: #991b1b; }
-
-  /* Compact Tables */
-  table.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 8px;
-    margin-bottom: 12px;
-    font-size: 11.8px;
-  }
-  table.data-table th, table.data-table td {
-    border: 1px solid var(--border-color);
-    padding: 6px 9px;
-    text-align: left;
-    vertical-align: top;
-  }
-  table.data-table th {
-    background-color: #f1f5f9;
-    color: var(--primary);
+  .chrono-badge {
+    font-size: 11px;
     font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
   }
-  table.data-table tr:nth-child(even) {
-    background-color: #f8fafc;
-  }
-  table.data-table tr:hover {
-    background-color: #f1f5f9;
-  }
-
-  .callout-box {
-    background-color: #fffbeb;
-    border-left: 4px solid var(--accent-gold);
-    padding: 10px 14px;
-    border-radius: 0 4px 4px 0;
-    margin: 10px 0;
-    font-size: 12px;
-  }
-  .callout-box.punjab {
-    background-color: var(--punjab-bg);
-    border-left-color: var(--punjab-green);
-  }
-
-  /* Print Optimization (Strict Sub-10 Page PDF Generation) */
+  .chrono-sep { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+  .chrono-aug-jul { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+  .chrono-jun-apr { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+  .chrono-mar-jan { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
   @media print {
-    body {
-      background: white;
-      padding: 0;
-      font-size: 10.5px;
-      line-height: 1.25;
-      color: black;
-    }
-    .container {
-      border: none;
-      box-shadow: none;
-      max-width: 100%;
-    }
-    .doc-header {
-      padding: 12px 16px;
-      background: #0f2b48 !important;
-      -webkit-print-color-adjust: exact;
-    }
-    .doc-header h1 { font-size: 18px; }
-    .nav-bar { display: none; }
-    .content { padding: 10px 14px; }
-    .section-title {
-      font-size: 12.5px;
-      margin: 14px 0 6px 0;
-      padding-left: 6px;
-      page-break-after: avoid;
-    }
-    .grid-2, .grid-3 {
-      gap: 8px;
-    }
-    .card {
-      padding: 8px 10px;
-      page-break-inside: avoid;
-      border: 1px solid #cbd5e1;
-    }
-    table.data-table {
-      font-size: 10px;
-      page-break-inside: auto;
-    }
-    table.data-table tr {
-      page-break-inside: avoid;
-      page-break-after: auto;
-    }
-    table.data-table th, table.data-table td {
-      padding: 4px 6px;
-    }
-    .hl, .hl-blue {
-      background-color: #fef08a !important;
-      -webkit-print-color-adjust: exact;
-    }
-    .card-punjab, .callout-box.punjab {
-      background-color: #f0fdf4 !important;
-      -webkit-print-color-adjust: exact;
-    }
+    body { background: white; padding: 0; font-size: 11px; }
+    .no-print { display: none !important; }
+    .container { max-width: 100% !important; padding: 0 !important; box-shadow: none !important; border: none !important; }
+    .page-break { page-break-before: always; }
+    .card { page-break-inside: avoid; }
+    tr { page-break-inside: avoid; }
   }
 </style>
 </head>
-<body>
+<body class="p-3 sm:p-6 text-[13.5px]">
 
-<div class="container">
+<div class="container max-w-[1240px] mx-auto bg-white p-5 sm:p-10 rounded-xl shadow-md border border-slate-200">
+
   <!-- Document Header -->
-  <header class="doc-header">
-    <span class="badge-exam">Special Revision Capsule • Target PSSSB / NITTTR Exams</span>
-    <h1>JANUARY – JUNE HIGH-YIELD CURRENT AFFAIRS DIGEST</h1>
-    <p>Comprehensive one-day competitive exam booster synthesized strictly from CA Raftaar Monthly Headliners (Jan–Jun). Optimized for quick memorization, direct factual questions, state-specific static linkages, and print-ready PDF conversion.</p>
-    <div class="meta-strip">
-      <span>Focus: <strong>Punjab GK & Core Affairs</strong></span>
-      <span>Cadre: <strong>PSSSB (Clerk, Senior Asst, Excise, VDO, Patwari)</strong></span>
-      <span>Pattern: <strong>NITTTR Direct MCQs</strong></span>
-      <span>Coverage: <strong>Chronological & Sectional Jan–Jun</strong></span>
+  <header class="border-b-4 border-double border-blue-900 pb-5 mb-5">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-blue-950 uppercase tracking-tight">
+          Master Current Affairs Compendium (2026)
+        </h1>
+        <p class="text-slate-600 font-medium text-sm mt-1">
+          Complete Reverse Chronological Dossier: <span class="font-bold text-red-700">September(3rd Week) → January 2026</span> | Tailored for PSSSB & NITTTR Examination Patterns
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2 no-print">
+        <button onclick="window.print()" class="px-4 py-2 bg-blue-900 text-white rounded-lg text-xs font-bold hover:bg-blue-800 transition flex items-center gap-1.5 shadow">
+          <span>🖨️</span> Print / Save PDF
+        </button>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap gap-2 mt-4 items-center">
+      <span class="fire-badge">🔥 HIGH-YIELD TOP PRIORITY</span>
+      <span class="text-xs bg-slate-100 text-slate-800 font-semibold px-2.5 py-1 rounded border border-slate-300">⭐ Must-Revise Hotspots</span>
+      <span class="text-xs bg-amber-50 text-amber-900 font-semibold px-2.5 py-1 rounded border border-amber-200">Reverse Chronology: Most Recent First</span>
+          </div>
+
+    <!-- Quick Search Filter Box -->
+    <div class="mt-4 no-print">
+      <input type="text" id="quickFilter" onkeyup="filterContent()" placeholder="🔍 Type to filter terms across this compendium (e.g. 'Pehchaan', 'Ramsar', '371K', 'Agni')..." 
+        class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-600" />
     </div>
   </header>
 
-  <!-- Sticky Quick Nav Bar -->
-  <nav class="nav-bar">
-    <a href="#punjab" class="nav-btn punjab-pill">★ Punjab & Regional Focus</a>
-    <a href="#appointments" class="nav-btn">Appointments</a>
-    <a href="#awards" class="nav-btn">Awards & Honors</a>
-    <a href="#defence" class="nav-btn">Defence & Operations</a>
-    <a href="#sports" class="nav-btn">Sports Roundup</a>
-    <a href="#national" class="nav-btn">National & Schemes</a>
-    <a href="#international" class="nav-btn">International & Summits</a>
-    <a href="#scitech" class="nav-btn">Science & Space</a>
-    <a href="#environment" class="nav-btn">Environment & Ramsar</a>
-    <a href="#indices" class="nav-btn">Reports & Indices</a>
-    <a href="#books-days" class="nav-btn">Books & Imp Days</a>
+  <!-- Sticky Nav Bar -->
+  <nav class="sticky top-2 z-50 bg-slate-900/95 backdrop-blur text-white p-2.5 rounded-lg mb-6 flex flex-wrap gap-1.5 text-[11px] font-semibold shadow-lg no-print">
+    <a href="#punjab" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">1. Punjab Affairs</a>
+    <a href="#polity" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">2. Polity & Bills</a>
+    <a href="#defense" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">3. Defence & Exercises</a>
+    <a href="#schemes" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">4. Schemes & Economy</a>
+    <a href="#international" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">5. Summits & Global</a>
+    <a href="#science" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">6. Science & Tech</a>
+    <a href="#environment" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">7. Environment & Ecology</a>
+    <a href="#indices" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">8. Global Indices</a>
+    <a href="#sports" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">9. Sports Digest</a>
+    <a href="#awards" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">10. Awards & Honors</a>
+    <a href="#appointments" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">11. Appointments</a>
+    <a href="#days" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">12. Books & Days</a>
   </nav>
 
-  <main class="content">
-
-    <!-- ==================== SECTION 1: PUNJAB SPECIAL ==================== -->
-    <section id="punjab">
-      <div class="section-title punjab-header">
-        <span>1. High-Yield Punjab State Current Affairs & Regional Linkages</span>
-        <span class="badge bg-punjab">Top Priority for PSSSB</span>
-      </div>
-
-      <div class="callout-box punjab">
-        <strong>Direct Question Alert (NITTTR Examiner Trend):</strong> Focus heavily on scheme outlay caps (e.g., ₹10 Lakh in MMSY), airport renamings, wildlife sanctuary redesignations (Jhajjar-Bachauli), sacrilege penal provisions, and border river infrastructure (Shahpur Kandi, Harike Pattan).
-      </div>
-
-      <div class="grid-2">
-        <!-- Punjab Schemes & Governance -->
-        <div class="card card-punjab">
-          <h3>State Schemes, Budget & Governance</h3>
-          <ul class="clean-list punjab-bullets">
-            <li><strong>Mukh Mantri Sehat Yojana (MMSY):</strong> Punjab Govt rolled out a universal cashless health scheme providing <span class="hl">cashless treatment up to ₹10 Lakh per family/year</span>.</li>
-            <li><strong>Meri Rasoi Yojna:</strong> Announced by CM Bhagwant Mann; delivers <span class="hl">free quarterly food kits to 40 lakh families</span> in addition to NFSA wheat (effective April).</li>
-            <li><strong>Punjab Budget 2026-27:</strong> Presented by Finance Minister <span class="hl">Harpal Singh Cheema</span>. Fiscal deficit pegged at <span class="hl">4.08% of GSDP</span>; effective revenue deficit at <strong>2.06%</strong>.</li>
-            <li><strong>Punjab Sikhya Kranti 2.0:</strong> Next-phase school education reform rolled out in direct partnership with the <span class="hl">World Bank</span>.</li>
-            <li><strong>Mission Samarth 4.0:</strong> State foundational learning flagship program upgraded with a state-wide real-time attendance tracking platform.</li>
-            <li><strong>First-Ever Drugs & Caste Census:</strong> Multi-department head-count initiated in Punjab to map drug abuse extent and socio-demographic profiles.</li>
-          </ul>
-        </div>
-
-        <!-- Infrastructure, Renamings & Assembly Bills -->
-        <div class="card card-punjab">
-          <h3>Infrastructure, Renaming & Legal Acts</h3>
-          <ul class="clean-list punjab-bullets">
-            <li><strong>Sri Guru Ravidas Ji Airport:</strong> <span class="hl">Adampur Airport (Jalandhar)</span> officially renamed as 'Sri Guru Ravidas Ji' Airport by PM Modi; civil terminal at <strong>Halwara Airport (Ludhiana)</strong> inaugurated.</li>
-            <li><strong>Sacrilege Law Amendments:</strong> Assent given to <span class="hl">Jaagat Jot Sri Guru Granth Sahib Satkar (Amendment) Bill 2026</span>; mandates enhanced punishments up to <strong>life imprisonment</strong> and fines of <span class="hl">₹5 Lakh to ₹25 Lakh</span> for 'beadbi'.</li>
-            <li><strong>Sri Guru Tegh Bahadur World Class University:</strong> Punjab Vidhan Sabha unanimously passed Bill 2026 to set up this university at <span class="hl">Sri Anandpur Sahib</span> (9th Guru's sacred seat).</li>
-            <li><strong>North India's First Glass Bridge:</strong> To be constructed over <span class="hl">Sutlej Lake at Nangal</span> in Ropar (Roopnagar) district.</li>
-            <li><strong>Sri Guru Tegh Bahadur Wildlife Sanctuary:</strong> Punjab State Board for Wildlife renamed <span class="hl">Jhajjar-Bachauli Wildlife Sanctuary (Rupnagar)</span> along the Sutlej river; ₹5.36 crore eco-plan approved.</li>
-            <li><strong>Shahpur Kandi Dam:</strong> Located on the <span class="hl">Ravi River in Pathankot district</span> (downstream of Ranjit Sagar Dam); operationalized to halt surplus water outflow into Pakistan.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="grid-3" style="margin-top: 10px;">
-        <!-- Policing & Operations -->
-        <div class="card card-punjab">
-          <h3>Security & Operations</h3>
-          <ul class="clean-list punjab-bullets">
-            <li><strong>Operation Parhar:</strong> Massive crackdown launched by Punjab Police to dismantle state gangster networks (12,000 cops, 2,000 search teams).</li>
-            <li><strong>Operation Shield:</strong> Inter-agency security & border mock drill conducted across vulnerable districts.</li>
-            <li><strong>New Vigilance Bureau Chief:</strong> Senior IPS officer <span class="hl">Sharad Satya Chauhan</span> appointed chief, replacing P.K. Sinha.</li>
-          </ul>
-        </div>
-
-        <!-- Culture, Anniversaries & Historical GK -->
-        <div class="card card-punjab">
-          <h3>Heritage, Sikh History & Culture</h3>
-          <ul class="clean-list punjab-bullets">
-            <li><strong>Guru Angad Dev Ji:</strong> Jyoti-Jyot Diwas observed; 2nd Sikh Guru born as <em>Bhai Lehna</em> at Matte-di-Sarai (Sarai Naga, Muktsar).</li>
-            <li><strong>Operation Blue Star:</strong> 42nd anniversary commemorated on June 6, 2026 (conducted June 1984 at Sri Harmandir Sahib, Amritsar).</li>
-            <li><strong>Jallianwala Bagh:</strong> 107th anniversary observed on April 13, 2026 (13 April 1919 massacre under Reginald Dyer).</li>
-            <li><strong>Dhiyan Di Lohri:</strong> Special mass celebration held in Jalandhar honoring 5,100 newborn girls.</li>
-            <li><strong>Lala Lajpat Rai Jayanti:</strong> 28 January (Born 1865 at Dhudike village, Moga district, Punjab).</li>
-          </ul>
-        </div>
-
-        <!-- Regional Neighbors: Chd, HP, J&K -->
-        <div class="card card-punjab">
-          <h3>Chandigarh & Tri-City Flashpoints</h3>
-          <ul class="clean-list punjab-bullets">
-            <li><strong>Chandigarh Fully Literate:</strong> Achieved <span class="hl">99.93% literacy rate</span>; became 2nd UT and 6th overall State/UT in India to achieve full literacy.</li>
-            <li><strong>Chandigarh State Butterfly:</strong> State Board for Wildlife declared the <span class="hl">Striped Tiger Butterfly</span> as Chandigarh's official State Butterfly.</li>
-            <li><strong>IndiaAI Data Lab:</strong> Chandigarh University became India's 1st private varsity to partner with Intel for this facility.</li>
-            <li><strong>PAU Ludhiana Milestone:</strong> Formally inducted into the <span class="hl">BRICS Network University</span> (Sustainable Agriculture & Food Security).</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 2: APPOINTMENTS ==================== -->
-    <section id="appointments">
-      <div class="section-title">
-        <span>2. High-Yield National & International Appointments</span>
-        <span class="badge bg-gold">High MCQ Probability</span>
-      </div>
-
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th style="width: 25%;">Domain / Organization</th>
-            <th style="width: 35%;">Appointee / Dignitary</th>
-            <th style="width: 40%;">Key Exam Fact / Context</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Chief Justice of India (CJI)</strong></td>
-            <td><span class="hl">Justice B.R. Gavai</span></td>
-            <td>Sworn in as the <strong>52nd Chief Justice of India</strong>; first Buddhist CJI in history.</td>
-          </tr>
-          <tr>
-            <td><strong>Chief of the Army Staff (COAS)</strong></td>
-            <td><span class="hl">Lt. Gen. Dhiraj Seth</span></td>
-            <td>Assumed charge as COAS; succeeded Gen. Upendra Dwivedi. (Vice Chief: Air Marshal Ashutosh Dixit).</td>
-          </tr>
-          <tr>
-            <td><strong>NITI Aayog Leadership</strong></td>
-            <td><span class="hl">Ashok Kumar Lahiri</span> (Vice-Chairman)<br>Nidhi Chhibber (Interim CEO)</td>
-            <td>NITI Aayog reconstituted under Dr. Lahiri; Nidhi Chhibber took additional charge upon BVR Subrahmanyam's exit.</td>
-          </tr>
-          <tr>
-            <td><strong>Union Public Service Commission (UPSC)</strong></td>
-            <td><span class="hl">Ajay Kumar</span> (Ex-Defence Secretary)</td>
-            <td>Appointed Chairman of UPSC, succeeding Preeti Sudan.</td>
-          </tr>
-          <tr>
-            <td><strong>National Investigation Agency (NIA)</strong></td>
-            <td><span class="hl">Rakesh Aggarwal</span> (Senior IPS)</td>
-            <td>Appointed Director General (DG) of NIA with tenure up to August 31, 2028.</td>
-          </tr>
-          <tr>
-            <td><strong>Border Roads Organisation (BRO)</strong></td>
-            <td><span class="hl">Lt. Gen. Harpal Singh</span></td>
-            <td>Assumed charge as the <strong>29th Director General Border Roads (DGBR)</strong>.</td>
-          </tr>
-          <tr>
-            <td><strong>National Statistical Commission</strong></td>
-            <td><span class="hl">Dr. Saibal Chattopadhyay</span></td>
-            <td>Appointed Chairperson, National Statistical Commission (NSC).</td>
-          </tr>
-          <tr>
-            <td><strong>National Legal Services Authority (NALSA)</strong></td>
-            <td><span class="hl">Justice Surya Kant</span></td>
-            <td>Appointed Executive Chairman of NALSA by President Droupadi Murmu.</td>
-          </tr>
-          <tr>
-            <td><strong>High Court Chief Justices</strong></td>
-            <td>• Lisa Gill (1st Woman CJ, Andhra Pradesh HC)<br>• Revati Mohite Dere (1st Woman CJ, Meghalaya HC)<br>• Meenakshi Madan Rai (Patna HC)</td>
-            <td>Significant firsts: Justice Lisa Gill to AP; Justice Dere becomes 1st female CJ of Meghalaya HC.</td>
-          </tr>
-          <tr>
-            <td><strong>Vatican / Papacy</strong></td>
-            <td><span class="hl">Pope Leo XIV</span> (Robert Francis Prevost)</td>
-            <td>First-ever <strong>American-born Pontiff</strong> elected in the history of the Catholic Church.</td>
-          </tr>
-          <tr>
-            <td><strong>World Heads of State / Govt</strong></td>
-            <td>• <span class="hl">Sanae Takaichi</span> (Japan – 1st Female PM)<br>• <span class="hl">Tarique Rahman</span> (Bangladesh PM)<br>• <span class="hl">Rob Jetten</span> (Netherlands – Youngest PM at 38)</td>
-            <td>Historic political transitions: BNP victory in Bangladesh; LDP elected Japan's first female Premier.</td>
-          </tr>
-          <tr>
-            <td><strong>International Financial Bodies</strong></td>
-            <td>• Neelkanth Mishra (World Bank ED)<br>• Parameswaran Iyer (Interim ED, IMF)</td>
-            <td>Executive Director representation for India at Bretton Woods institutions.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- ==================== SECTION 3: AWARDS & HONORS ==================== -->
-    <section id="awards">
-      <div class="section-title">
-        <span>3. Awards, Honours & International Recognitions</span>
-        <span class="badge bg-gold">Exam Frequent</span>
-      </div>
-
-      <div class="grid-3">
-        <div class="card card-imp">
-          <h3>Literary & Academic Honors</h3>
-          <ul class="clean-list">
-            <li><strong>60th Jnanpith Award (2025):</strong> Conferred on noted poet & lyricist <span class="hl">R. Vairamuthu</span> (3rd Tamil author). 58th was Jagadguru Rambhadracharya; 59th: Vinod Kumar Shukla.</li>
-            <li><strong>International Booker Prize:</strong> Won by Kannada author <span class="hl">Banu Mushtaq</span> for her short story collection <em>'Heart Lamp'</em> (£50,000 prize; translated by Deepa Bhasthi).</li>
-            <li><strong>Kalinga Literary Award 2026:</strong> Odia author Achyutananda Pati (National); Daisy Rockwell (International).</li>
-          </ul>
-        </div>
-
-        <div class="card card-imp">
-          <h3>Padma & Gallantry Honors</h3>
-          <ul class="clean-list">
-            <li><strong>Padma Awards 2026:</strong> Approved for <span class="hl">131 personalities</span> (5 Padma Vibhushan, 13 Padma Bhushan, 113 Padma Shri). Top state: <strong>Maharashtra (15)</strong>, TN (13), UP (11).</li>
-            <li><strong>Defence Investiture (Phase-1):</strong> 51 Gallantry Medals: <span class="hl">7 Kirti Chakras, 15 Vir Chakras, 29 Shaurya Chakras</span>.</li>
-            <li><strong>Subhash Chandra Bose Aapda Puraskar:</strong> Conferred jointly on <strong>Sikkim SDMA</strong> & <strong>Lt. Col. Seeta Ashok Shelke</strong> (Wayanad rescue leader).</li>
-            <li><strong>Indira Gandhi Peace Prize:</strong> Conferred on <span class="hl">Graça Machel</span> (Mozambican rights activist).</li>
-          </ul>
-        </div>
-
-        <div class="card card-imp">
-          <h3>Global & Environmental Prizes</h3>
-          <ul class="clean-list">
-            <li><strong>Crafoord Prize (Geosciences):</strong> Often called "Nobel of Geosciences", awarded to Indian-origin climate scientist <span class="hl">Veerabhadran Ramanathan</span>.</li>
-            <li><strong>Tyler Prize (Environment):</strong> Awarded to evolutionary biologist <strong>Toby Kiers</strong> ($250,000).</li>
-            <li><strong>Food Planet Prize ($1.5M):</strong> Awarded to <span class="hl">Andhra Pradesh Community Managed Natural Farming (CNF)</span> in Sweden.</li>
-            <li><strong>Earth Prize 2026:</strong> Indian teens (Vivaan, Ariana, Avyana) won for <em>Plas-Stick</em> (tamarind seed biopolymer microplastic filter).</li>
-            <li><strong>Stockholm Water Prize:</strong> Awarded to <strong>Kaveh Madani</strong> (youngest recipient).</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Oscars, Cinema & Sports Awards Strip -->
-      <table class="data-table" style="margin-top: 10px;">
-        <thead>
-          <tr>
-            <th>Event / Accolade</th>
-            <th>Category / Winner</th>
-            <th>Notes / Key Highlights</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>98th Academy Awards (Oscars 2026)</strong></td>
-            <td><strong>Best Picture:</strong> <em>One Battle After Another</em><br><strong>Best Director:</strong> Paul Thomas Anderson<br><strong>Best Actor:</strong> Michael B. Jordan | <strong>Best Actress:</strong> Jessie Buckley</td>
-            <td>Autumn Durald Arkapaw became the 1st woman to win the <strong>Best Cinematography Oscar</strong> (for <em>Sinners</em>).</td>
-          </tr>
-          <tr>
-            <td><strong>68th Grammy Awards</strong></td>
-            <td><strong>Best Audio Book / Narration:</strong> <span class="hl">The Dalai Lama</span></td>
-            <td>Won for spoken-word album: <em>Meditations: The Reflections of His Holiness</em>.</td>
-          </tr>
-          <tr>
-            <td><strong>Laureus World Sports Awards 2026</strong></td>
-            <td><strong>Sportsman:</strong> Carlos Alcaraz (Tennis)<br><strong>Sportswoman:</strong> Aryna Sabalenka (Tennis)</td>
-            <td>Widely regarded as the "Oscars of Sport"; both won maiden Laureus crowns.</td>
-          </tr>
-          <tr>
-            <td><strong>BCCI Naman Awards 2026</strong></td>
-            <td><strong>Polly Umrigar Award:</strong> Shubman Gill<br><strong>Best Women's Cricketer:</strong> Smriti Mandhana</td>
-            <td>Col. C.K. Nayudu Lifetime: Roger Binny, Rahul Dravid, Mithali Raj.</td>
-          </tr>
-          <tr>
-            <td><strong>World Food Prize 2025/26</strong></td>
-            <td><span class="hl">Mariangela Hungria</span> (Brazilian Scientist)</td>
-            <td>Recognized for sustainable soil microbiological nitrogen-fixation innovations.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- ==================== SECTION 4: DEFENCE & SECURITY ==================== -->
-    <section id="defence">
-      <div class="section-title">
-        <span>4. Defence Breakthroughs, Military Operations & Exercises</span>
-        <span class="badge bg-red">Crucial for One-Day Tests</span>
-      </div>
-
-      <div class="grid-2">
-        <div class="card card-defence">
-          <h3>Key Military Operations & Doctrines</h3>
-          <ul class="clean-list">
-            <li><strong>Operation Sindoor:</strong> High-precision midnight cross-border strikes conducted by Indian Armed Forces targeting terror infrastructure across LoC & PoJK. Successfully validated <span class="hl">S-400 Sudarshan Chakra</span> and <strong>Akash</strong> air defense networks.</li>
-            <li><strong>Doctrine 'Akashteer':</strong> India's indigenous AI-automated air defense command-and-control system developed by Bharat Electronics Limited (BEL).</li>
-            <li><strong>Operation Absolute Resolve:</strong> U.S. military operation in early January resulting in the capture of Venezuelan President Nicolás Maduro (Trump invoked Monroe Doctrine).</li>
-            <li><strong>Operation Epic Fury:</strong> Joint US-Israel air offensive against Iranian military leadership installations.</li>
-            <li><strong>Operation Urja Suraksha:</strong> Launched by Indian Navy to safeguard vital crude tankers & energy supply corridors through the Strait of Hormuz.</li>
-            <li><strong>Prahaar Policy:</strong> Union Home Ministry released 'Prahaar', India's first unified zero-tolerance counter-terrorism policy doctrine.</li>
-          </ul>
-        </div>
-
-        <div class="card card-defence">
-          <h3>Inductions, Missiles & Indigenous Hardware</h3>
-          <ul class="clean-list">
-            <li><strong>INS Taragiri (F41):</strong> Advanced Project 17A Nilgiri-class stealth frigate built by Mazagon Dock Shipbuilders (MDL) commissioned.</li>
-            <li><strong>INS Aridhaman (S4):</strong> India's 3rd nuclear-powered ballistic missile submarine (SSBN) commissioned (7,000-tonne, armed with K-15 & 3,500-km K-4 SLBMs).</li>
-            <li><strong>ASW-SWC Shallow Water Crafts:</strong> Delivered: <em>INS Arnala</em> (GRSE Kolkata) and <em>INS Malwan</em> (Cochin Shipyard).</li>
-            <li><strong>First Made-in-India C-295:</strong> Successfully completed maiden test flight from Tata-Airbus facility; 71-troop carrier capacity.</li>
-            <li><strong>Zorawar Light Tank:</strong> Indigenous high-altitude tank developed by DRDO & L&T successfully trialed in desert and mountain terrains.</li>
-            <li><strong>Indian Army Theme 2026:</strong> Declared as the <span class="hl">"Year of Networking & Data Centricity"</span>. Inducted specialized <em>Bhairav</em> drone light commando units.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Bilateral & Multilateral Exercises Table -->
-      <table class="data-table" style="margin-top: 10px;">
-        <thead>
-          <tr>
-            <th>Exercise Name</th>
-            <th>Participating Forces / Nations</th>
-            <th>Location / Core Feature</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Ex Cyclone-IV</strong></td>
-            <td>India – Egypt (Special Forces)</td>
-            <td>Anshas, Egypt (Desert & urban counter-terror).</td>
-          </tr>
-          <tr>
-            <td><strong>Ex Dustlik-VII</strong></td>
-            <td>Indian Army – Uzbekistan Army</td>
-            <td>Gurumsaray Training Area, Namangan, Uzbekistan.</td>
-          </tr>
-          <tr>
-            <td><strong>Ex Khanjar-XIII</strong></td>
-            <td>India – Kyrgyzstan (Special Forces)</td>
-            <td>Misamari, Sonitpur district, Assam.</td>
-          </tr>
-          <tr>
-            <td><strong>Ex Dharma Guardian-VII</strong></td>
-            <td>Indian Army – Japan Ground Self-Defense Force</td>
-            <td>Foreign Training Node, Chaubattia, Uttarakhand.</td>
-          </tr>
-          <tr>
-            <td><strong>Ex LAMITIYE-2026</strong></td>
-            <td>Indian Armed Forces – Seychelles Defence Forces</td>
-            <td>11th edition conducted in Seychelles.</td>
-          </tr>
-          <tr>
-            <td><strong>Ex DOSTI-XVI</strong></td>
-            <td>India, Maldives, Sri Lanka (Coast Guards)</td>
-            <td>Male, Maldives (Maritime search, rescue & containment).</td>
-          </tr>
-          <tr>
-            <td><strong>Ex RIMPAC 2026</strong></td>
-            <td>Multinational (30 Nations including India & US)</td>
-            <td>World's largest naval exercise; Hawaiian waters. Theme: <em>"Partners: Integrated and Prepared"</em>.</td>
-          </tr>
-          <tr>
-            <td><strong>Ex Vayushakti-2026</strong></td>
-            <td>Indian Air Force (IAF)</td>
-            <td>Pokhran Field Firing Range, Jaisalmer, Rajasthan.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- ==================== SECTION 5: SPORTS ==================== -->
-    <section id="sports">
-      <div class="section-title">
-        <span>5. Sports Tournaments, Records & National Games</span>
-        <span class="badge bg-gold">High Frequency</span>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Cricket Highlights</h3>
-          <ul class="clean-list">
-            <li><strong>ICC Men's T20 World Cup 2026:</strong> <span class="hl">India emerged Champions</span>, defeating New Zealand by 96 runs in the final at Narendra Modi Stadium, Ahmedabad. (First nation to defend title and win at home).</li>
-            <li><strong>ICC U-19 Cricket World Cup:</strong> India clinched a record <span class="hl">6th Under-19 World Cup title</span>, defeating England by 100 runs in the final.</li>
-            <li><strong>IPL 2026:</strong> <span class="hl">Royal Challengers Bengaluru (RCB)</span> defeated Gujarat Titans by 5 wickets to retain title.</li>
-            <li><strong>WPL 2026:</strong> RCB Women clinched title defeating Delhi Capitals in Vadodara.</li>
-            <li><strong>Ranji Trophy 2025-26:</strong> <span class="hl">Jammu & Kashmir</span> created history by winning their <strong>first-ever Ranji Trophy</strong> crown (defeated Karnataka).</li>
-            <li><strong>Test Leadership Shift:</strong> Rohit Sharma & Virat Kohli announced retirement from Test cricket; <span class="hl">Shubman Gill</span> appointed new India Test Captain.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Grand Slams & Multi-Discipline</h3>
-          <ul class="clean-list">
-            <li><strong>Australian Open 2026:</strong> Men's Singles: <span class="hl">Carlos Alcaraz</span> (Spain); Women's Singles: <span class="hl">Elena Rybakina</span> (Kazakhstan).</li>
-            <li><strong>French Open 2026 (Roland Garros):</strong> Men's: <span class="hl">Alexander Zverev</span> (maiden Slam); Women's: <span class="hl">Mirra Andreeva</span> (19-yr-old).</li>
-            <li><strong>Norway Classical Chess 2026:</strong> Grandmaster <span class="hl">R. Praggnanandhaa</span> became the 1st Indian to win the Norway Chess title.</li>
-            <li><strong>New Indian Chess GMs:</strong> Mayank Chakraborty (94th GM - 1st from North East); Aronyak Ghosh (95th GM); Ethan Vaz (96th GM - 14-yr-old from Goa).</li>
-            <li><strong>Squash Milestone:</strong> Anahat Singh became the youngest Asian ever to break into the World Top 20 PSA rankings.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>National & International Games</h3>
-          <ul class="clean-list">
-            <li><strong>1st Khelo India Tribal Games (KITG 2026):</strong> Hosted in Chhattisgarh; <span class="hl">Karnataka topped medal tally</span> with 23 Gold (38 total).</li>
-            <li><strong>Khelo India Beach Games 2026:</strong> Held in Diu; Karnataka finished champions (11 medals), Tamil Nadu 2nd.</li>
-            <li><strong>6th Khelo India Winter Games:</strong> <span class="hl">Indian Army</span> won team championship with 23 medals (9 Gold).</li>
-            <li><strong>79th Santosh Trophy:</strong> Services clinched title beating Kerala 1-0 in Assam.</li>
-            <li><strong>FIFA World Cup 2026:</strong> Kicked off June 11 in USA, Canada, Mexico; expanded to <span class="hl">48 teams, 104 matches</span>. Cristiano Ronaldo became 1st player to score in 6 World Cups.</li>
-            <li><strong>Asian U-20 Athletics (Hong Kong):</strong> India finished 2nd with 19 medals (10 Gold).</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 6: NATIONAL & SCHEMES ==================== -->
-    <section id="national">
-      <div class="section-title">
-        <span>6. National Initiatives, Constitutional Bills & Portals</span>
-        <span class="badge bg-blue">Schemes & Digital India</span>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>Key Portals & Digital Governance</h3>
-          <ul class="clean-list">
-            <li><strong>BHAVYA Portal:</strong> Launched by Ministry of Commerce & Industry to operationalize the <span class="hl">₹33,660 crore Bharat Audyogik Vikas Yojna</span> to develop 100 world-class industrial parks.</li>
-            <li><strong>VINIMAY:</strong> India's Land Port Management System (LPMS) launched by LPAI / MHA as a single-window trade ecosystem.</li>
-            <li><strong>SabhaSaar Platform:</strong> AI-powered platform adopted across 1.11 lakh Gram Panchayats for automated minutes & proceedings generation.</li>
-            <li><strong>Digital Census 2027:</strong> Amit Shah unveiled tools with official mascots <span class="hl">'Pragati' and 'Vikas'</span>; includes caste enumeration and records stable live-in couples as households.</li>
-            <li><strong>UHI (Unified Health Interface):</strong> Launched by NHA under Ayushman Bharat Digital Mission as an open interoperable health service network.</li>
-            <li><strong>PRASHAST 2.0:</strong> Upgraded digital portal launched by Ministry of Education to screen 21 recognized disabilities in school children.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Major Union Policies & Landmarks</h3>
-          <ul class="clean-list">
-            <li><strong>Longest Serving Elected PM:</strong> PM Narendra Modi surpassed Pt. Jawaharlal Nehru's elected tenure record (13 May 1952 – 27 May 1964) as head of an elected government.</li>
-            <li><strong>Seva Teerth Complex:</strong> New PMO, Cabinet Secretariat & NSCS complex inaugurated in New Delhi; architecture inspired by 12th-century <span class="hl">Chennakeshava Temple (Belur, Karnataka)</span>.</li>
-            <li><strong>Updated Indian Coastline:</strong> Survey of India updated official coastline length to <span class="hl">11,098.81 km</span> (up nearly 50% from the 1970s figure of 7,561.6 km).</li>
-            <li><strong>Vande Mataram Guidelines:</strong> Union Govt mandated that all 6 stanzas composed by Bankim Chandra Chatterjee be sung at designated events (<span class="hl">duration: 3 min 10 sec</span>).</li>
-            <li><strong>Trachoma Free India:</strong> WHO officially awarded India the Certificate of Elimination of Trachoma as a public health problem.</li>
-            <li><strong>National Ayurveda Day:</strong> Shifted from Dhanteras to a fixed annual date: <span class="hl">September 23</span>.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 7: INTERNATIONAL ==================== -->
-    <section id="international">
-      <div class="section-title">
-        <span>7. International Affairs, Treaties & Global Summits</span>
-        <span class="badge bg-gold">Global Order</span>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>Summits, Treaties & Foreign Accords</h3>
-          <ul class="clean-list">
-            <li><strong>India-AI Impact Summit 2026:</strong> Held in New Delhi; 1st global AI summit hosted in the Global South. PM unveiled <span class="hl">'MANAV' Vision for AI</span>; 88 nations adopted the <strong>New Delhi Declaration on AI</strong>.</li>
-            <li><strong>Pax Silica Framework:</strong> US-led strategic supply chain partnership for silicon, critical minerals, and AI chips; joined by India and the Philippines.</li>
-            <li><strong>Bulgaria Joins Eurozone:</strong> Officially adopted Euro on January 1, 2026, becoming the <span class="hl">21st Eurozone member</span> (retired the lev).</li>
-            <li><strong>High Seas Treaty (BBNJ):</strong> Enforced internationally after crossing mandatory 60 ratifications to protect marine life in international waters.</li>
-            <li><strong>52nd G7 Summit (Evian, France):</strong> Attended by PM Modi on invitation of Emmanuel Macron; presented gifts including Nagauri Ashwagandha, Ramban Honey, and Lakadong Turmeric.</li>
-            <li><strong>UPI Global Footprint:</strong> UPI expanded acceptance to <span class="hl">Cambodia (9th country)</span> and <span class="hl">Greece (10th country via Eurobank)</span>.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Geopolitics & Bilateral Outreaches</h3>
-          <ul class="clean-list">
-            <li><strong>Prime Minister's State Visits:</strong><br>
-              • <em>Israel:</em> PM Modi addressed the Knesset and was awarded the prestigious <span class="hl">Speaker of the Knesset Medal</span>.<br>
-              • <em>Seychelles:</em> Guest of Honor at 50th Independence Day; received nation's highest honor, <span class="hl">Guardian of the Blue Horizon</span>.<br>
-              • <em>Slovakia:</em> Conferred with <em>The Order of the White Double Cross, First Class</em> (Modi's 33rd int'l civilian decoration).
-            </li>
-            <li><strong>Chagos Archipelago Deal:</strong> UK signed deal to cede sovereignty of Chagos to Mauritius while preserving the joint US-UK military base at <strong>Diego Garcia</strong>.</li>
-            <li><strong>New Development Bank (NDB):</strong> <span class="hl">Uzbekistan</span> joined as the 11th member (first Central Asian entrant to the BRICS bank); Algeria joined earlier.</li>
-            <li><strong>UNSC Non-Permanent Members (2027-28):</strong> Austria, Kyrgyzstan, Portugal, Trinidad & Tobago, and Zimbabwe elected by UNGA.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 8: SCIENCE, TECH & SPACE ==================== -->
-    <section id="scitech">
-      <div class="section-title">
-        <span>8. Science, Technology, Space & Health Innovations</span>
-        <span class="badge bg-blue">S&T Core</span>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Space Missions & ISRO</h3>
-          <ul class="clean-list">
-            <li><strong>Artemis II Mission:</strong> NASA launched 4 astronauts (Reid Wiseman, Victor Glover, Christina Koch, Jeremy Hansen) on historic lunar flyby reaching 252,752 miles from Earth.</li>
-            <li><strong>Chandrayaan-4 Landing Site:</strong> ISRO Space Applications Centre selected rugged south-pole site <span class="hl">Mons Mouton</span> for lunar sample retrieval.</li>
-            <li><strong>Prototype Fast Breeder Reactor (PFBR):</strong> 500 MWe indigenous breeder reactor at <span class="hl">Kalpakkam (Tamil Nadu)</span> achieved criticality.</li>
-            <li><strong>PSLV-C62:</strong> Lifted off from Sriharikota carrying primary payload and 18 secondary satellites.</li>
-            <li><strong>Haven-1:</strong> World's first private space station developed by Vast slated for orbit on Falcon 9.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Artificial Intelligence & Supercomputing</h3>
-          <ul class="clean-list">
-            <li><strong>Nvidia Rubin:</strong> Unveiled next-generation GPU compute platform succeeding Blackwell.</li>
-            <li><strong>VoicERA:</strong> Open-source, end-to-end multi-language Voice AI stack unveiled by MeitY at AI Impact Summit.</li>
-            <li><strong>Varya AI:</strong> India's indigenous video-story generating model launched under IndiaAI mission.</li>
-            <li><strong>Bharat-VISTAAR:</strong> Multilingual AI tool launched by Ministry of Agriculture integrating ICAR packages and AgriStack.</li>
-            <li><strong>LineShine Supercomputer:</strong> Topped 67th TOP500 list at 2.198 exaflops (Shenzhen, China).</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Health & Biotech Advances</h3>
-          <ul class="clean-list">
-            <li><strong>High-Protein Designer Rice:</strong> CSIR-NIIST Thiruvananthapuram developed rice featuring 3x protein and low GI (< 55).</li>
-            <li><strong>Thrombectomy Device:</strong> India's first indigenous mechanical clot-retrieval device unveiled by S3V Vascular Technologies / NIMHANS.</li>
-            <li><strong>CRISPR Rice:</strong> ICAR released India's 1st genome-edited rice varieties: <em>DRR Dhan 100 (Kamala)</em> and <em>Pusa DST Rice 1</em>.</li>
-            <li><strong>New Drug Bans:</strong> CDSCO banned high-dose formulations of oral painkiller <span class="hl">Nimesulide (>100 mg)</span> under Section 26A of Drugs Act.</li>
-            <li><strong>Teplizumab (Tzield):</strong> First immunotherapy approved to delay onset of Stage 3 Type-1 Diabetes.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 9: ENVIRONMENT & RAMSAR ==================== -->
-    <section id="environment">
-      <div class="section-title">
-        <span>9. Environment, Ecology & Ramsar Wetlands Network</span>
-        <span class="badge bg-punjab">Environment Milestones</span>
-      </div>
-
-      <div class="callout-box">
-        <strong>Historic Ramsar Milestone:</strong> India officially crossed the 100 Ramsar Site mark! India ranks <strong>1st in Asia</strong> and <strong>3rd Globally</strong> behind only the United Kingdom (176) and Mexico (144).
-      </div>
-
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Milestone Rank</th>
-            <th>Ramsar Site Name</th>
-            <th>State</th>
-            <th>Significance / Ecology</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>97th & 98th Sites</strong></td>
-            <td>• Patna Bird Sanctuary<br>• Chhari-Dhand Wetland</td>
-            <td>Uttar Pradesh<br>Gujarat</td>
-            <td>Chhari-Dhand is a seasonal shallow wetland in Kutch; Patna Sanctuary in Etah (UP) hosts dense migratory waterfowl.</td>
-          </tr>
-          <tr>
-            <td><strong>99th Site</strong></td>
-            <td><span class="hl">Shekha Jheel Bird Sanctuary</span></td>
-            <td>Uttar Pradesh (Aligarh)</td>
-            <td>Famous perennial freshwater lake on Upper Ganga Canal supporting dense painted storks and pochards.</td>
-          </tr>
-          <tr>
-            <td><strong>100th Ramsar Site</strong></td>
-            <td><span class="hl">Jai Prakash Narayan Bird Sanctuary (Surha Tal)</span></td>
-            <td>Uttar Pradesh (Ballia)</td>
-            <td>Historic oxbow lake formed by the meandering of the Ganga river; critical winter habitat for migratory birds.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>Wildlife Surveys & Sanctuaries</h3>
-          <ul class="clean-list">
-            <li><strong>16th Asiatic Lion Census (Gujarat):</strong> Population surged from 674 (2020) to <span class="hl">891 (2025/26)</span> across Saurashtra (a net gain of 217 lions).</li>
-            <li><strong>Kuno Cheetah Project:</strong> Total cheetah count reached <strong>38 (surpassing 50+ with summer births)</strong> with successful litters in MP.</li>
-            <li><strong>Tsarap Chu Conservation Reserve:</strong> Notified in Himachal Pradesh; became <span class="hl">India's largest conservation reserve (1,585 sq km)</span> for snow leopards.</li>
-            <li><strong>SHAN Conservation Society:</strong> Ladakh constituted the Snow Leopard and High-Altitude Nature Conservation Society.</li>
-            <li><strong>First State Microbe:</strong> Kerala officially designated <em>Bacillus subtilis</em> (probiotic bacteria) as its official State Microbe.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Species Discoveries & Conservation</h3>
-          <ul class="clean-list">
-            <li><strong>Mesalina bishnoi:</strong> New sand-lizard species discovered in Bikaner (Rajasthan), named after the eco-crusader Bishnoi community.</li>
-            <li><strong>Crotalaria phulei:</strong> New yellow flowering plant discovered near Nagpur, named after social reformer Krantijyoti Savitribai Phule.</li>
-            <li><strong>Mimeusemia kali:</strong> Rare forester moth discovered in Karnataka's Kali Tiger Reserve.</li>
-            <li><strong>Hargila Army:</strong> Assam's celebrated grassroots women conservation network recognized globally for saving the Greater Adjutant Stork.</li>
-            <li><strong>Operation Olivia:</strong> Annual Indian Coast Guard operation to protect nesting Olive Ridley turtles along Odisha coasts (Gahirmatha / Rushikulya).</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 10: REPORTS & INDICES ==================== -->
-    <section id="indices">
-      <div class="section-title">
-        <span>10. Global Indices, National Rankings & Economy Stats</span>
-        <span class="badge bg-gold">Direct Numbers</span>
-      </div>
-
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Index / Report</th>
-            <th>Releasing Organization</th>
-            <th>India's Position</th>
-            <th>Topper / 1st Rank</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Global Rice Production 2026</strong></td>
-            <td>Ministry of Agriculture / FAO</td>
-            <td><span class="hl">Rank 1 (150.18 MT)</span></td>
-            <td>India overtook China (145.28 MT) to become #1 globally.</td>
-          </tr>
-          <tr>
-            <td><strong>Global Military Spending 2025/26</strong></td>
-            <td>SIPRI (Stockholm)</td>
-            <td><strong>Rank 5 ($92.1 Billion)</strong></td>
-            <td>US #1, China #2, Russia #3, Germany #4.</td>
-          </tr>
-          <tr>
-            <td><strong>Renewable Energy Installed Capacity</strong></td>
-            <td>MNRE / IRENA</td>
-            <td><span class="hl">Rank 3 Globally</span></td>
-            <td>China #1, US #2 (India overtook Brazil).</td>
-          </tr>
-          <tr>
-            <td><strong>World Happiness Report 2026</strong></td>
-            <td>UN SDSN</td>
-            <td><strong>Rank 116th</strong></td>
-            <td>Finland (ranked #1 for 9th consecutive year).</td>
-          </tr>
-          <tr>
-            <td><strong>Global Terrorism Index 2026</strong></td>
-            <td>Institute for Economics & Peace</td>
-            <td><strong>Rank 13th</strong></td>
-            <td>Pakistan ranked #1 as the country most impacted by terror.</td>
-          </tr>
-          <tr>
-            <td><strong>Henley Passport Index 2026</strong></td>
-            <td>Henley & Partners</td>
-            <td><strong>Rank 80th (Jan) / 75th (Feb)</strong></td>
-            <td>Singapore (visa-free access to 192 nations).</td>
-          </tr>
-          <tr>
-            <td><strong>World Press Freedom Index 2025/26</strong></td>
-            <td>Reporters Without Borders (RSF)</td>
-            <td><strong>Rank 151st</strong></td>
-            <td>Norway (#1).</td>
-          </tr>
-          <tr>
-            <td><strong>Human Development Index (HDI)</strong></td>
-            <td>UNDP</td>
-            <td><strong>Rank 130th (Score: 0.644)</strong></td>
-            <td>Iceland (#1, Score 0.972), Norway (#2), Switzerland (#3).</td>
-          </tr>
-          <tr>
-            <td><strong>Fiscal Health Index 2026</strong></td>
-            <td>NITI Aayog</td>
-            <td>State category</td>
-            <td><strong>Odisha (Rank 1 Large State)</strong>, Goa 2nd, Jharkhand 3rd.</td>
-          </tr>
-          <tr>
-            <td><strong>Safest City in India (Numbeo 2026)</strong></td>
-            <td>Numbeo Database</td>
-            <td>City index</td>
-            <td><strong>Mangaluru (Karnataka)</strong> ranked safest in India.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <!-- Economy Snapshot Box -->
-      <div class="callout-box">
-        <strong>Macro Economy Quick Numbers:</strong>
-        • <strong>GDP Revision:</strong> MoSPI overhauled national accounts shifting base year from <strong>2011-12 to 2022-23</strong>.<br>
-        • <strong>Global Rank:</strong> India surpassed Japan in nominal terms to secure the <strong>4th largest economy spot</strong> (IMF outlook).<br>
-        • <strong>RBI Policy Rates (June 2026):</strong> Repo Rate unchanged at <strong>5.25%</strong>; Stance: 'Neutral'; CRR: <strong>3.00%</strong>; SDF: <strong>5.00%</strong>; MSF & Bank Rate: <strong>5.50%</strong>.
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 11: BOOKS & IMP DAYS ==================== -->
-    <section id="books-days">
-      <div class="section-title">
-        <span>11. Books, Memoirs & Important Days with Exam Themes</span>
-        <span class="badge bg-blue">Quick Recall</span>
-      </div>
-
-      <div class="grid-2">
-        <!-- Books Table -->
-        <div class="card">
-          <h3>Notable Books & Authors (Jan – Jun)</h3>
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Book Title</th>
-                <th>Author / Personality</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><em>The Golden Road: How Ancient India Transformed the World</em></td>
-                <td><span class="hl">William Dalrymple</span> (Mark Lynton Prize winner)</td>
-              </tr>
-              <tr>
-                <td><em>Mother Mary Comes to Me</em> (Memoir)</td>
-                <td><span class="hl">Arundhati Roy</span> (US Book Critics Circle Award)</td>
-              </tr>
-              <tr>
-                <td><em>The Sage who Reimagined Hinduism: Sree Narayana Guru</em></td>
-                <td><span class="hl">Dr. Shashi Tharoor</span> (MP)</td>
-              </tr>
-              <tr>
-                <td><em>Four Stars of Destiny</em> (Memoir)</td>
-                <td><span class="hl">Gen. Manoj Mukund Naravane</span> (Ex-COAS)</td>
-              </tr>
-              <tr>
-                <td><em>Karuna: The Power of Compassion</em></td>
-                <td><span class="hl">Kailash Satyarthi</span> (Nobel Peace Laureate)</td>
-              </tr>
-              <tr>
-                <td><em>Tides of Time: Bharat's History through Murals</em></td>
-                <td><span class="hl">Sudha Murty</span> (Rajya Sabha MP)</td>
-              </tr>
-              <tr>
-                <td><em>Guru Gobind Singh Sahib: Life, Vision & Wisdom</em></td>
-                <td>Special compilation on 10th Sikh Guru</td>
-              </tr>
-              <tr>
-                <td><em>Early North India and Its Coinage</em></td>
-                <td>Devendra Handa (Released by Hinduja Foundation)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Days & Themes Table -->
-        <div class="card">
-          <h3>High-Yield Observances & Exact Themes</h3>
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Day Name</th>
-                <th>Theme / Exam Relevance</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>25 Jan</strong></td>
-                <td>National Voters' Day</td>
-                <td><em>"My India, My Vote"</em> (Tagline: Citizen at the Heart of Indian Democracy).</td>
-              </tr>
-              <tr>
-                <td><strong>2 Feb</strong></td>
-                <td>World Wetlands Day</td>
-                <td><em>"Wetlands and traditional knowledge: Celebrating cultural heritage"</em>.</td>
-              </tr>
-              <tr>
-                <td><strong>28 Feb</strong></td>
-                <td>National Science Day</td>
-                <td><em>"Women In Science Catalysing Viksit Bharat"</em> (Raman Effect discovery).</td>
-              </tr>
-              <tr>
-                <td><strong>24 Mar</strong></td>
-                <td>World TB Day</td>
-                <td><em>"Yes! We can end TB!"</em></td>
-              </tr>
-              <tr>
-                <td><strong>22 Apr</strong></td>
-                <td>World Earth Day</td>
-                <td><em>"Our Power, Our Planet"</em></td>
-              </tr>
-              <tr>
-                <td><strong>11 May</strong></td>
-                <td>National Technology Day</td>
-                <td><em>"YANTRA - Yugantar for Advancing New Technology..."</em></td>
-              </tr>
-              <tr>
-                <td><strong>5 June</strong></td>
-                <td>World Environment Day</td>
-                <td><em>"Inspired by Nature. For Climate. For Our Future"</em></td>
-              </tr>
-              <tr>
-                <td><strong>21 June</strong></td>
-                <td>International Yoga Day</td>
-                <td><em>"Yoga for Healthy Ageing"</em> (12th edition).</td>
-              </tr>
-              <tr>
-                <td><strong>29 June</strong></td>
-                <td>National Statistics Day</td>
-                <td><em>"Unlocking the Potential of Administrative Data"</em> (PC Mahalanobis Jayanti).</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- Final High-Speed PSSSB Quick Revision Formula Box -->
-    <div class="callout-box punjab" style="margin-top: 15px;">
-      <strong>PSSSB Exam Last-Minute Revision Checklist:</strong>
-      <ol style="margin-left: 18px; margin-top: 4px; line-height: 1.5;">
-        <li><strong>Cashless Health Scheme in Punjab:</strong> Mukh Mantri Sehat Yojana (MMSY) – ₹10 Lakh/family.</li>
-        <li><strong>Food Scheme in Punjab:</strong> Meri Rasoi Yojna – Free quarterly kit to 40 lakh families.</li>
-        <li><strong>Adampur Airport Renamed to:</strong> Sri Guru Ravidas Ji Airport.</li>
-        <li><strong>Jhajjar-Bachauli Sanctuary Renamed to:</strong> Sri Guru Tegh Bahadur Wildlife Sanctuary (Rupnagar).</li>
-        <li><strong>100th Ramsar Site of India:</strong> Jai Prakash Narayan Bird Sanctuary / Surha Tal (Ballia, UP).</li>
-        <li><strong>52nd Chief Justice of India:</strong> Justice B.R. Gavai (1st Buddhist CJI).</li>
-        <li><strong>60th Jnanpith Award:</strong> R. Vairamuthu (Tamil).</li>
-        <li><strong>New India Test Captain:</strong> Shubman Gill (following Test retirement of Rohit & Kohli).</li>
-        <li><strong>Operation Sindoor:</strong> Indian Armed Forces air and missile strikes on cross-border terror camps in PoJK.</li>
-      </ol>
+  <!-- ========================================================================= -->
+  <!-- 1. PUNJAB STATE CURRENT AFFAIRS -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="punjab">
+    <div class="bg-red-50 border-l-4 border-red-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-red-900 flex items-center gap-1.5">
+        <span>⭐</span> 1. High Priority Punjab Affairs & State News Adjective
+      </h2>
+      <span class="fire-badge">Direct PSSSB Hit</span>
     </div>
 
-  </main>
+    <!-- September 2026 -->
+    <div class="chrono-badge chrono-sep inline-block mb-2">September 2026</div>
+    <div class="card bg-red-50/40 border border-red-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Pehchaan Portal:</span> Punjab became the <strong>first state in India</strong> to launch a statewide digital public identification portal for identifying unclaimed bodies lying in government mortuaries. Mandatory upload of facial photos, birthmarks, tattoos, and physical attributes within <span class="font-bold text-red-800">48 hours</span> of postmortem.</li>
+        <li>⭐ <span class="highlight">Green Forge Complex:</span> Inaugurated at <strong>BRIC-NABI (Biotechnology Research and Innovation Council-National Agri-Food Biotechnology Institute) in Mohali, Punjab</strong> under the <strong>BioE3 policy</strong> for testing genetically modified (GM) crops under simulated climatic environments.</li>
+        <li>⭐ <span class="highlight">PM-SETU Scheme:</span> <strong>Ludhiana (Punjab)</strong> selected among 5 National Skill Training Institutes (NSTIs) nationwide to be upgraded into a Centre of Excellence with international partnerships (others: Bhubaneswar, Chennai, Hyderabad, Kanpur).</li>
+        <li><span class="highlight">Saragarhi Day:12 Sep</span> Commemorated with religious ceremonies including <em>Bhog of Akhand Path Sahib</em> at <strong>Saragarhi Gurdwara, Amritsar</strong>, honoring 21 soldiers of 36th Sikhs (Battle of Saragarhi, 1897).</li>
+        <li><span class="highlight">Obituary:</span> Former Punjab Minister and senior BJP leader <strong>Bhagat Chunni Lal</strong> passed away in Jalandhar at age 94.</li>
+        <li><span class="highlight">Hub-and-Spoke Flights:</span> <strong>Amritsar</strong> operationalized as an international hub-and-spoke flight connection alongside Varanasi and Ahmedabad (SVPI Airport).</li>
+      </ul>
+    </div>
+
+    <!-- August - July 2026 -->
+    <div class="chrono-badge chrono-aug-jul inline-block mb-2">July – August 2026</div>
+    <div class="card bg-amber-50/40 border border-amber-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Yashoda AI Initiative in Jalandhar:</span> The National Commission for Women (NCW) launched the <strong>"Yashoda AI"</strong> initiative from <strong>Jalandhar, Punjab</strong> to foster female digital literacy, safe cyberspace practices, and artificial intelligence-driven skills among women.</li>
+        <li><span class="highlight">Khelo India Samvad in Punjab & Chandigarh:</span> Ministry of Youth Affairs and Sports organized <em>'Khelo India Samvad - Khel Ki Baat PM Ke Saath'</em> across <strong>two colleges in every district of Punjab</strong>, Haryana, and Chandigarh on August 27.</li>
+        <li><span class="highlight">Legal Luminary Obituary:</span> Former Punjab & Haryana HC Judge <strong>Justice M.S. Liberhan</strong> passed away at 87 in Chandigarh; headed the monumental Liberhan Commission that probed the 1992 Babri Masjid demolition (submitted after 17 years).</li>
+        <li>⭐ <span class="highlight">Ravidassia Religion Demand:</span> Members of the Ravidassia community in Punjab renewed their constitutional demand for a distinct category in the upcoming Census. Nationwide <strong>'Samrasta Sankalp Abhiyan'</strong> was launched marking the <span class="font-bold text-amber-900">650th Birth Anniversary</span> of Sant Guru Ravidas Maharaj.</li>
+        <li><span class="highlight">Simla Agreement Commemoration:</span> Marked the signing of the historic Simla Agreement on <strong>2 July 1972</strong> between PM Indira Gandhi and Pakistani President Zulfikar Ali Bhutto following the 1971 Bangladesh Liberation War.</li>
+      </ul>
+    </div>
+
+    <!-- June - April 2026 -->
+    <div class="chrono-badge chrono-jun-apr inline-block mb-2">April – June 2026</div>
+    <div class="card bg-blue-50/30 border border-blue-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Jaagat Jot Sri Guru Granth Sahib Satkar (Amendment) Bill, 2026:</span> Punjab Governor <strong>Gulab Chand Kataria</strong> gave assent. Prescribes a <span class="font-bold text-red-800">minimum 7 years imprisonment (extendable up to 20 years)</span> and fine of ₹2L–10L for sacrilege involving Sri Guru Granth Sahib. If done under a criminal conspiracy to disturb communal harmony: <span class="font-bold text-red-800">10 years to Life Imprisonment</span> with ₹5L–25L fine. Offence is cognizable, non-bailable, triable by Court of Session, probed by officer not below DSP/ACP rank. Introduced statutory term <em>"Custodian"</em>.</li>
+        <li>⭐ <span class="highlight">Punjab Vigilance Transition:</span> Senior IPS officer <strong>Sharad Satya Chauhan</strong> appointed Chief Director, Vigilance Bureau (Special DGP-cum-Chief Director), succeeding P.K. Sinha.</li>
+        <li>⭐ <span class="highlight">First-Ever Drug & Caste Census:</span> Punjab commenced its first-ever integrated drug and socio-economic caste survey deploying 28,000 personnel surveying 65 lakh families over 3 months.</li>
+        <li><span class="highlight">Nangal Glass Skywalk:</span> Approved North India's first glass skywalk bridge over <strong>Sutlej Lake at Nangal</strong> (Rupnagar/Ropar) under ₹75 Crore package.</li>
+        <li><span class="highlight">Mission Samarth 4.0:</span> Statewide real-time automated school attendance tracking with daily SMS alerts to parents launched by Education Minister Harjot Singh Bains.</li>
+        <li><span class="highlight">Sri Guru Tegh Bahadur Wildlife Sanctuary (Jhajjar-Bachauli):</span> ₹5.36-crore modernization plan formulated for Jhajjar-Bachauli Sanctuary in Rupnagar (Shivalik foothills, near Sutlej), notified for renaming after Guru Tegh Bahadur Ji.</li>
+        <li><span class="highlight">Ghaggar River Pollution:</span> Originated at Dagshai (HP) passing through Punjab/Haryana to Rajasthan/Thar (known as Hakra in Pakistan); chronic illness clusters flagged along riparian tract.</li>
+        <li><span class="highlight">Punjab Historical Anniversaries:</span>
+          <br>• <em>Prakash Purab of Sri Guru Tegh Bahadur Ji:</em> 9th Sikh Guru (1621–1675), born Tyaga Mal, founded <strong>Anandpur Sahib (Chakk Nanaki)</strong>, martyred in Delhi (<em>Hind Di Chadar</em>).
+          <br>• <em>Sirhind Fateh Divas:</em> Commemorates Khalsa victory under <strong>Baba Banda Singh Bahadur</strong> over Wazir Khan at Sirhind in May 1710 (Battle of Chappar Chiri); abolished Zamindari, minted Nanakshahi coins.
+          <br>• <em>Baisakhi:</em> Founding of Khalsa Panth in 1699 at Anandpur Sahib by Guru Gobind Singh Ji.
+          <br>• <em>Jallianwala Bagh (107th Anniv):</em> 13 April 1919; firing by Brig. Gen. Dyer on peaceful protestors against Rowlatt Act and arrest of Dr. Saifuddin Kitchlew & Dr. Satyapal.
+          <br>• <em>Operation Blue Star:</em> 42nd anniversary of 6 June 1984 operation.
+        </li>
+        <li><span class="highlight">Balwinder Singh Dhaliwal (Obituary):</span> Asian Games shot-put medalist and 1987 Arjuna Awardee passed away in Chandigarh at 67.</li>
+        <li><span class="highlight">CPA Northern Zone-II:</span> Hosted by Haryana Assembly in Chandigarh (June 2026), covering Punjab, Haryana, HP, Delhi, J&K.</li>
+        <li><span class="highlight">"Khalsa Tax":</span> Nihangs (Tarna Dal) setup symbolic toll booths on Kiratpur Sahib-Manali highway against HP tax.</li>
+      </ul>
+    </div>
+
+    <!-- March - January 2026 -->
+    <div class="chrono-badge chrono-mar-jan inline-block mb-2">January – March 2026</div>
+    <div class="card bg-emerald-50/30 border border-emerald-200 rounded-lg p-3.5 mb-2">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Punjab State Budget 2026–27 (Presented by FM Harpal Singh Cheema):</span>
+          <br>• <strong>GSDP Target:</strong> Projected to touch <span class="font-bold text-red-800">₹9,80,635 Crore</span> (10% growth).
+          <br>• <strong>Fiscal Deficit:</strong> Pegged at <span class="font-bold text-red-800">4.08%</span> of GSDP; Effective Revenue Deficit: 2.06%.
+          <br>• <strong>Committed Liabilities:</strong> Consume 72% of revenue receipts (₹90,335 Cr out of ₹1,26,190 Cr).
+          <br>• <strong>Mukh Mantri Mawan Dhiyan Satkar Yojna:</strong> ₹9,300 Cr outlay; ₹1,000/month cash transfer to adult women (₹1,500/month for SC women; govt staff/taxpayers excluded).
+          <br>• <strong>Mukh Mantri Sehat Yojna:</strong> ₹2,000 Cr outlay; provides universal cashless treatment of <span class="font-bold text-red-800">₹10 Lakh/year</span> per family.
+        </li>
+        <li>⭐ <span class="highlight">Airport Renaming & Civil Terminal:</span> PM Modi renamed <strong>Adampur Airport (Jalandhar)</strong> as <strong>‘Sri Guru Ravidas Ji’ Airport</strong> and inaugurated the civil terminal at <strong>Halwara Airport (Ludhiana)</strong>.</li>
+        <li><span class="highlight">Sri Guru Tegh Bahadur University Bill 2026:</span> Passed to establish world-class university at Sri Anandpur Sahib (₹300 Cr outlay).</li>
+        <li><span class="highlight">‘Meri Rasoi’ Scheme:</span> CM Bhagwant Mann announced quarterly free food kits to 40 lakh families via Markfed (dal, sugar, salt, turmeric, mustard oil).</li>
+        <li><span class="highlight">Punjab Sikhya Kranti 2.0:</span> Launched in partnership with the <strong>World Bank</strong> (₹3,500 Crore outlay over 6 years).</li>
+        <li><span class="highlight">Operation Parhar:</span> Statewide crackdown against gangster networks deploying 12,000 cops. Anti-gangster helpline: <span class="font-bold text-red-800">93946-93946</span>.</li>
+        <li>⭐ <span class="highlight">Shahpur Kandi Dam:</span> 55.5m concrete gravity dam on <strong>Ravi River (Pathankot)</strong> downstream of Ranjit Sagar Dam completed to stop unutilized waters flowing into Pakistan (Cost: ₹3,394.49 Cr; 206 MW).</li>
+        <li><span class="highlight">PAU Ludhiana:</span> Only Indian state farm university inducted into <strong>BRICS Network University</strong> (Agro & Food Security cluster).</li>
+        <li><span class="highlight">Dhiyan Di Lohri:</span> Celebrated in Jalandhar felicitating 5,100 newborn girls under BBBP.</li>
+        <li><span class="highlight">Saka Nakodar (40th Anniv):</span> Stockton, California declared Feb 4 Saka Nakodar Day honoring 4 Sikh youths killed in 1986 police firing (Justice Gurnam Singh Commission).</li>
+        <li><span class="highlight">Guru Angad Dev Ji Jyoti-Jyot Diwas:</span> Standardized Gurmukhi script, set up school at Khadur Sahib, composed 62 hymns.</li>
+        <li><span class="highlight">Lala Lajpat Rai (Punjab Kesari):</span> 161st Birth Anniv (28 Jan 1865, Dhudike, Moga); co-founded PNB (1894), wrote <em>Unhappy India</em>.</li>
+        <li><span class="highlight">Harsharan Kaur Trehan:</span> 1st woman technocrat appointed Director (Commercial) of PSPCL.</li>
+        <li><span class="highlight">Vajra Corps:</span> 76th Raising Day (raised 1950; first post-independence corps; "Defenders of Punjab").</li>
+        <li><span class="highlight">Beas Beda Yatra:</span> 4th edition held at Harike Pattan Wetland (Beas-Sutlej confluence) on World Wetlands Day.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 2. CONSTITUTIONAL PROVISIONS, BILLS & DIGITAL PORTALS -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="polity">
+    <div class="bg-blue-50 border-l-4 border-blue-900 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-blue-950 flex items-center gap-1.5">
+        <span>⭐</span> 2. Constitutional Articles, Bills, Legal Acts & Portals Adjective
+      </h2>
+      <span class="chrono-badge chrono-sep">Polity & Governance</span>
+    </div>
+
+    <!-- September 2026 -->
+    <div class="chrono-badge chrono-sep inline-block mb-2">September 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Proposed Article 371(K) (Part XXI):</span> Tabled by Ministry of Home Affairs to grant the UT of Ladakh a directly elected legislature with authority over land rights, property transfer, environment, forests, and cultural heritage—mirroring Articles 371A (Nagaland) and 371G (Mizoram).</li>
+        <li>⭐ <span class="highlight">Article 217 (High Court CJ Appointments):</span> 8 Chief Justices appointed under Article 217:
+          <br>• Justice Sanjay Kumar Agrawal → Rajasthan HC
+          <br>• Justice Valluri Kameswar Rao → Patna HC
+          <br>• Justice Ravindra V. Ghuge → Calcutta HC
+          <br>• Justice Pushpendra Singh Bhati → J&K and Ladakh HC
+          <br>• Justice Ashwani Kumar Mishra → Punjab and Haryana HC
+          <br>• Justice Mahesh Chandra Tripathi → Bombay HC
+        </li>
+        <li>⭐ <span class="highlight">Legal Metrology (Indian Standard Time) Rules, 2026:</span> Notified by Consumer Affairs Ministry; mandates IST (UTC+5:30) as sole legal time for all commercial, administrative, telecom, and judicial systems. 180-day transition window; synced via CSIR-NPL White Rabbit tech and NavIC.</li>
+        <li><span class="highlight">Central Board of Film Certification (CBFC):</span> Reconstituted for 3-year term under Cinematograph Act 1952 (new board members: Preity Zinta, Pankaj Tripathi, Suniel Shetty). Certificates: <strong>U</strong>, <strong>U/A</strong>, <strong>A</strong>, <strong>S</strong> (Special professional classes).</li>
+      </ul>
+    </div>
+
+    <!-- August - July 2026 -->
+    <div class="chrono-badge chrono-aug-jul inline-block mb-2">July – August 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">The Bankers' Books Evidence Bill, 2026:</span> Passed to repeal archaic 1891 Act; introduces comprehensive admissibility standards for encrypted electronic financial ledgers, cloud accounting, and digital logs as primary legal evidence.</li>
+        <li><span class="highlight">MMDR Amendment Bill, 2026:</span> Passed to clearly curtail state governments' unilateral power to levy parallel taxes on mineral rights and mineral-bearing lands.</li>
+        <li>⭐ <span class="highlight">Tribunals Reforms Bill, 2026:</span> Replaces 2021 Act; legislates setup of an independent overarching statutory body—the <strong>National Tribunals Commission (NTC)</strong>.</li>
+        <li><span class="highlight">Payment & Settlement Systems (Amendment) Bill, 2026:</span> Empowers Central Govt and RBI to regulate/notify service/interchange charge frameworks on UPI and electronic payment systems.</li>
+        <li><span class="highlight">MSMED (Amendment) Bill, 2026:</span> Decriminalizes minor compliances and tightens dispute redressal timelines for buyer-to-MSME payments.</li>
+        <li><span class="highlight">e-Pratyaropan Digital Platform:</span> Unveiled by Health Ministry on 16th Indian Organ Donation Day; acts as unified NOTTO ecosystem for organ donation and live matching.</li>
+        <li>⭐ <span class="highlight">Article 85(1) (Parliament Sessions):</span> Monsoon Session convened; by constitutional mandate, maximum interval between two sessions cannot exceed <strong>six months</strong>.</li>
+        <li>⭐ <span class="highlight">Supreme Court (Number of Judges) Amendment Bill, 2026:</span> Introduced under Article 124(1) to increase SC judge strength from <strong>33 to 37</strong> (excluding CJI; 38 total).</li>
+        <li>⭐ <span class="highlight">Public Examinations (Prevention of Unfair Means) Amendment Bill, 2026:</span> Formulated in response to paper leaks; increases jail term from 5 to <span class="font-bold text-red-800">10 years</span>, creates mandatory Special Fast Track Courts; tech task force led by <strong>Nandan Nilekani</strong>.</li>
+        <li><span class="highlight">Rajya Sabha Rule 267:</span> Invoked to demand total suspension of listed business to discuss paper leaks.</li>
+        <li>⭐ <span class="highlight">BNSS Section 356:</span> Invoked by NIA Court to conduct trials of absconding terrorists (e.g. Hafiz Saeed) <strong>in absentia</strong>.</li>
+        <li><span class="highlight">Doctrine of Per Incuriam:</span> SC reiterated judgments rendered in ignorance of statutory law or binding superior precedents have zero precedential authority.</li>
+        <li><span class="highlight">FCRA 2.0 & e-OCI Portal:</span> MHA upgraded portal; tabled FCRA Amendment Bill, 2026 to manage/dispose assets of deregistered NGOs.</li>
+        <li><span class="highlight">Interoperable Criminal Justice System (ICJS):</span> Pan-India integration linking CCTNS, e-Courts, e-Prisons for 100% digital trials under BNS/BNSS/BSA from <span class="font-bold text-red-800">Jan 1, 2027</span>.</li>
+        <li><span class="highlight">DAANVEER Initiative & SAMARTH:</span> Panchayati Raj Ministry crowdsourcing voluntary IT hardware donations for Gram Panchayats.</li>
+        <li><span class="highlight">PaleoIndia Portal:</span> Launched by MoEFCC & ZSI to document Pan-India fossil fauna.</li>
+      </ul>
+    </div>
+
+    <!-- June - April 2026 -->
+    <div class="chrono-badge chrono-jun-apr inline-block mb-2">April – June 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Constitution (131st Amendment) Bill Defeat:</span> Failed to achieve required 2/3rd special majority in Lok Sabha (298 in favor, 200 against; lacked 2/3rd present & voting). First defeat of a constitutional amendment in 12 years. Sought to amend <strong>Articles 82 & 334A</strong> to fast-track 33% Women's Reservation (enacted under 106th CAA) by decoupling delimitation from post-2026 census using 2011 figures.</li>
+        <li>⭐ <span class="highlight">Delimitation Bill, 2026:</span> Proposed expanding Lok Sabha to <span class="font-bold text-red-800">850 members</span> (815 States + 35 UTs) and repealing 2002 Act. Delimitation Commission orders hold force of law and enjoy complete judicial immunity once gazetted.</li>
+        <li>⭐ <span class="highlight">Article 21 Rulings:</span>
+          <br>1. <em>Safe Highway Travel:</em> State owes positive obligation; dhabas/vendors prohibited in right-of-way; District Safety Task Forces mandated.
+          <br>2. <em>Right to Walk on Footpaths:</em> Enforceable fundamental right prioritized over vehicular transit.
+          <br>3. <em>Reproductive Autonomy:</em> Permitted minor's 31-week pregnancy termination on mental health grounds over statutory 24-week MTP cap.
+        </li>
+        <li>⭐ <span class="highlight">Article 44 (Uniform Civil Code):</span> Assam Assembly passed UCC Bill (3rd state after Uttarakhand & Gujarat). High-level UCC drafting panels setup in MP, Chhattisgarh, Rajasthan headed by retired SC Judge <strong>Justice Ranjana Prakash Desai</strong>.</li>
+        <li><span class="highlight">10th Schedule (Anti-Defection):</span> 2/3rd merger rule examined (52nd CAA 1985 & 91st CAA 2003; 1/3rd split rule abolished). Council of Ministers capped at 15% of House strength. Chairman/Speaker is final authority.</li>
+        <li><span class="highlight">Articles 105 & 194 (Privileges):</span> Immunity from civil arrest 40 days before/after sessions; collective power to exclude strangers and punish contempt.</li>
+        <li><span class="highlight">Article 124(1) & 1956 Act:</span> SC sanctioned judge strength raised from 34 to 38 (working strength reached 37).</li>
+        <li><span class="highlight">Article 164 & 177:</span> Sarkaria & Punchhi sequence in hung assemblies: Pre-poll alliance → Single largest party → Post-poll alliance. Floor test within 30 days.</li>
+        <li><span class="highlight">Legal Doctrines:</span> <em>Promissory Estoppel</em> cannot be claimed against policies not meant for that class of industry; <em>Constructive Res Judicata</em> (Sec 11 Exp IV, CPC).</li>
+        <li>⭐ <span class="highlight">VB-G RAM G Act, 2025 (Rollout 1 July 2026):</span> Replaces MGNREGA 2005; guarantees <span class="font-bold text-red-800">125 days</span> (up from 100) of unskilled wage employment; central-state sharing changed to <strong>60:40</strong> (90:10 in NE/Himalayan states).</li>
+        <li><span class="highlight">National Honour Amendment:</span> Insults/obstruction to National Song <strong>"Vande Mataram"</strong> penalized under Section 3 (up to 3 years) alongside Flag & Anthem.</li>
+        <li><span class="highlight">Jan Vishwas Bill 2026:</span> Decriminalizes 717 provisions across 79 Central Acts.</li>
+        <li><span class="highlight">IBC Amendment Bill 2026:</span> Introduces Creditor-Initiated Insolvency (CIIRP), cross-border insolvency, voluntary group insolvency, 14-day NCLT admission timeline.</li>
+        <li><span class="highlight">Viksit Bharat Shiksha Adhishthan (VBSA) Bill:</span> Single apex higher education regulator replacing UGC, AICTE, NCTE.</li>
+        <li><span class="highlight">Key Portals (Q2):</span> <em>ECINet</em> (subsumes 40+ election apps), <em>Nyaya Setu & 'Dishika'</em> (AI legal bot), <em>SAMADHAAN 2.0</em>, <em>Abhilekh Patal</em> (7M records), <em>JANANI</em>, <em>VINIMAY</em> (border land ports), <em>E-PRAAPTI</em>, <em>CPO Portal</em>.</li>
+      </ul>
+    </div>
+
+    <!-- March - January 2026 -->
+    <div class="chrono-badge chrono-mar-jan inline-block mb-2">January – March 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-2">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Article 3 (Kerala to ‘Keralam’):</span> Union Cabinet cleared referring the <em>Kerala (Alteration of Name) Bill, 2026</em> to Kerala Assembly under Art 3 proviso (requires simple majority in Parliament).</li>
+        <li>⭐ <span class="highlight">Articles 21 & 21A (Menstrual Health):</span> In <em>Dr. Jaya Thakur vs UoI</em>, SC declared menstrual hygiene a fundamental right under dignity (Art 21) & education (Art 21A), mandating free pads in all schools for classes 6–12.</li>
+        <li>⭐ <span class="highlight">Article 21 (Passive Euthanasia):</span> SC permitted withdrawal of life-sustaining treatment (CANH) in <em>Harish Rana case</em> under AIIMS board (cites <em>Aruna Shanbaug 2011</em> & <em>Common Cause 2018</em>).</li>
+        <li><span class="highlight">Article 44 (UCC):</span> Uttarakhand issued UCC Amendment Ordinance 2026 under Art 213; Gujarat became 2nd state to pass state UCC Bill (both exempt STs).</li>
+        <li><span class="highlight">Articles 87 & 112:</span> President addressed joint sitting under Art 87; Annual Financial Statement presented under Art 112.</li>
+        <li><span class="highlight">Article 94(c):</span> Notice moved for removal of Lok Sabha Speaker Om Birla (requires 14 days notice, 50 MPs to admit, absolute majority of all "then members").</li>
+        <li><span class="highlight">Article 114:</span> Appropriation Bill 2026 passed (authorizes withdrawal from Consolidated Fund of India).</li>
+        <li><span class="highlight">Article 262:</span> SC directed Centre to constitute tribunal for <strong>Pennaiyar River</strong> water dispute between TN and Karnataka.</li>
+        <li><span class="highlight">Article 324(5):</span> CEC can only be removed like an SC Judge (proven misbehavior/incapacity via special majority under Art 124(4)).</li>
+        <li><span class="highlight">Article 338A:</span> 23rd Foundation Day of National Commission for Scheduled Tribes (89th CAA 2003).</li>
+        <li>⭐ <span class="highlight">Quota Doctrines:</span> SC ruled under 1950 Order only Hindus, Sikhs, and Buddhists get SC status (Christian converts lose SC/ST Act protection); ruled parent salary/farm income cannot be sole creamy layer basis; unreserved quota is open to all on merit.</li>
+        <li><span class="highlight">Local Body Two-Child Norm:</span> Telangana and Rajasthan repealed disqualification for candidates with >2 children.</li>
+        <li><span class="highlight">Transgender Persons Amendment Bill, 2026:</span> Replaced self-perceived gender identity with mandatory certification by CMO medical board.</li>
+        <li><span class="highlight">Key Portals (Q1):</span> <em>Bharat Taxi</em> (cooperative ride-hailing app), <em>PANCHAM</em> (UNICEF multilingual chatbot), <em>PAIMANA</em> (MoSPI project monitoring &ge;₹150 Cr), <em>Bharat-VISTAAR</em> (AI AgriStack tool), <em>Udai Mascot</em> (UIDAI Aadhaar app), <em>Pragati & Vikas</em> (Digital Census 2027 mascots), <em>PRISM-SG</em>, <em>SAMPANN-UMANG</em>, <em>PANKHUDI</em>, <em>e-Bill</em>, <em>Gruh Sugam</em>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 3. DEFENSE, INDUCTIONS, MISSILES & MILITARY EXERCISES -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="defense">
+    <div class="bg-emerald-50 border-l-4 border-emerald-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-emerald-950 flex items-center gap-1.5">
+        <span>⭐</span> 3. Defense: Missiles, Naval Inductions & Joint Exercises Adjective
+      </h2>
+      <span class="chrono-badge chrono-sep">National Security</span>
+    </div>
+
+    <!-- September 2026 -->
+    <div class="chrono-badge chrono-sep inline-block mb-2">September 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Khagantak-243:</span> Indigenous 300-kg airborne Long-Range Glide Bomb (LRGB) developed by BEL & JSR Dynamics. Range: <span class="font-bold text-red-800">144–180 km</span> at Mach 0.8 released from 12 km altitude.</li>
+        <li>⭐ <span class="highlight">INS Samarthak:</span> First indigenously built Multi-Purpose Vessel (MPV) delivered to Indian Navy by L&T Kattupalli Shipyard (Tamil Nadu); displacement 3,750 tonnes.</li>
+        <li>⭐ <span class="highlight">Aravalli Helicopter Engine:</span> High-power engine developed by SAFHAL (HAL + Safran) in Tumakuru, Karnataka to power the 13-ton Indian Multi-Role Helicopter (IMRH) and Deck-Based DBMRH.</li>
+        <li><span class="highlight">AASHVAST Lab:</span> Air-gapped, read-only cyber/hardware facility set up by Indian Army in New Delhi to audit military drones for vulnerabilities and embedded Chinese/foreign components.</li>
+        <li>⭐ <span class="highlight">Ahuti Mk II UAV:</span> India's fastest electric multirotor UAV developed by Apollyon Dynamics (BITS Pilani Hyderabad); certified record speed of <span class="font-bold text-red-800">498 km/h</span>.</li>
+        <li><span class="highlight">T-Series Tank Overhaul Depot:</span> Foundation laid at Vehicle Factory Jabalpur (VFJ/AVNL) for ₹472 crore project to overhaul 80 T-72 and T-90 tanks annually.</li>
+        <li><span class="highlight">Operation Sohan:</span> Counter-terror operation by Army (White Knight Corps), CRPF, and J&K Police neutralizing terrorists at Brattal, Udhampur.</li>
+      </ul>
+    </div>
+
+    <!-- August - July 2026 -->
+    <div class="chrono-badge chrono-aug-jul inline-block mb-2">July – August 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Agni-4 MRBM:</span> DRDO conducted successful flight-test of nuclear-capable Medium-Range Ballistic Missile from Chandipur.</li>
+        <li>⭐ <span class="highlight">MQ-9B SeaGuardian RPAS Lease:</span> MoD signed ₹1,943-crore deal with General Atomics (USA) to lease 2 high-altitude long-endurance drones for 30 months.</li>
+        <li><span class="highlight">100% Indigenized AK-203 'Sher':</span> First completely indigenized batch delivered by Indo-Russian Rifles Pvt Ltd (IRRPL), Amethi.</li>
+        <li><span class="highlight">Divyastra Mk3:</span> Maiden flight-test of indigenous kamikaze loitering munition developed by Lucknow-based Kawa UAV.</li>
+        <li><span class="highlight">Military Combat Parachute System (MCPS):</span> Tested by DRDO from 22,000 feet at Nyoma drop zone, Ladakh.</li>
+        <li><span class="highlight">Squadron Leader Bhawana Kanth:</span> First female fighter pilot to qualify the elite Fighter Combat Leader (FCL) course.</li>
+        <li><span class="highlight">Operation Trishul:</span> CBI fugitive-tracking initiative enabling extradition of 274 international fugitives via Interpol.</li>
+        <li><span class="highlight">Pinaka LRGR & Project Kusha:</span> Long Range Guided Rocket test-fired from Chandipur; maiden tests of Project Kusha long-range air defence system (LRSAM) to rival S-400.</li>
+        <li>⭐ <span class="highlight">Astra Mk 1 Export:</span> India signed major defense export deal with <span class="font-bold text-blue-900">Indonesia</span> for indigenous Beyond-Visual-Range Air-to-Air Missiles.</li>
+        <li><span class="highlight">Naval Inductions:</span> <em>INS Mahendragiri (F38)</em> commissioned at Visakhapatnam (6th Project 17A frigate); <em>INS Nipun</em> (2nd Diving Support Vessel by HSL); <em>Malvan & Machilipatnam</em> (ASW-SWC crafts).</li>
+        <li><span class="highlight">Strategic R&D:</span> Roadmap "VIJAY" launched by COAS Gen Dhiraj Seth; UFOSS (underwater fiber optic seabed surveillance); Extreme Weather Grade Diesel (XWG, -42°C).</li>
+      </ul>
+    </div>
+
+    <!-- June - April 2026 -->
+    <div class="chrono-badge chrono-jun-apr inline-block mb-2">April – June 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Top Military Leadership:</span>
+          <br>• <strong>Chief of Defence Staff (CDS):</strong> <span class="font-bold text-blue-950">Lt Gen NS Raja Subramani (Retd)</span> succeeding Gen Anil Chauhan.
+          <br>• <strong>Chief of the Naval Staff (CNS):</strong> <span class="font-bold text-blue-950">Vice Admiral Krishna Swaminathan</span> took over as 26th CNS on 31 May 2026.
+          <br>• <strong>Chief of the Army Staff (COAS):</strong> <span class="font-bold text-blue-950">Lt Gen Dhiraj Seth</span> assumed charge on 30 June 2026 succeeding Gen Upendra Dwivedi.
+          <br>• <strong>Vice Chief of Naval Staff (VCNS):</strong> Vice Admiral Ajay Kochhar (strategist in Op Sindoor).
+          <br>• <strong>Vice Chief of Air Staff (VCAS):</strong> Air Marshal Ashutosh Dixit.
+          <br>• <strong>Andaman & Nicobar Command (ANC):</strong> Vice Admiral Vineet McCarty (20th C-in-C).
+        </li>
+        <li>⭐ <span class="highlight">INS Aridhaman (S4):</span> Commissioned as India's <span class="font-bold text-red-800">3rd nuclear-powered ballistic missile submarine (SSBN)</span> (7,000 tonnes, 83 MW BARC reactor; carries K-15 and 3,500-km K-4 SLBMs). Consolidates nuclear triad.</li>
+        <li><span class="highlight">Project 17A Stealth Frigates:</span> <em>INS Taragiri</em> (April), <em>INS Dunagiri</em> (June), and <em>INS Mahendragiri</em> inducted with 75% indigenous content and BrahMos missiles.</li>
+        <li><span class="highlight">Other Inductions:</span> ASW-SWC crafts <em>Malwan</em> and <em>Agray</em>; NGOPV patrol vessels <em>Shachi</em> and <em>Sanghmitra</em>; <em>INS Sanshodhak</em> (4th Survey Vessel Large); <em>INS Dhruv</em> tracking ship deployed to Arabian Sea; indigenous hovercraft <em>H-561</em>. Decommissioned: INAS 330 "The Harpoons" (Sea King 42B).</li>
+        <li>⭐ <span class="highlight">Missile Tests:</span> <strong>RudraM-II</strong> anti-radiation missile tested from Su-30MKI; <strong>NASM-SR</strong> maiden helicopter anti-ship salvo launch; <strong>Agni-1</strong> SRBM test; <strong>Astra Mk2</strong> (240 km BVR); <strong>HELINA & Dhruvastra</strong> launcher orders to BDL; <strong>Zorawar Light Tank</strong> (25-tonne amphibious tank by DRDO-L&T demonstrated at Hazira); <strong>TEJASTRA</strong> laser weapons roadmap; Integrated Battle Groups (IBGs) formed from XVII Corps Panagarh; <strong>Operation Sindoor</strong> commemorated at National War Memorial.</li>
+      </ul>
+    </div>
+
+    <!-- March - January 2026 -->
+    <div class="chrono-badge chrono-mar-jan inline-block mb-2">January – March 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-2">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Pralay Missile:</span> DRDO conducted successful salvo launch of 2 surface-to-surface quasi-ballistic missiles (range: <span class="font-bold text-red-800">150–500 km</span>; payload: 500–1000 kg).</li>
+        <li>⭐ <span class="highlight">LR-ASHM:</span> Long-Range Anti-Ship Hypersonic Glide Missile debuted at Republic Day parade. Speed: <span class="font-bold text-red-800">Mach 10</span>; range: >1,500 km.</li>
+        <li><span class="highlight">Suryastra Rocket System:</span> Procured via Nibe Ltd & Elbit Systems (150 km & 300 km ranges).</li>
+        <li>⭐ <span class="highlight">Ramjet 155mm Artillery Shells:</span> Indian Army became world's 1st force to deploy ramjet artillery projectiles (30–50% extended range).</li>
+        <li><span class="highlight">VSHORADS & SFDR:</span> 4th-gen VSHORADS tested at Pokhran; Solid Fuel Ducted Ramjet demonstrated at Chandipur.</li>
+        <li><span class="highlight">Agni-3 IRBM:</span> Intermediate Range Ballistic Missile test-fired from Chandipur (3,000–3,500 km; 2-stage solid fuel).</li>
+        <li><span class="highlight">Naval Deliveries:</span> <em>ICGS Samudra Pratap</em> (Pollution Control Vessel by GSL); <em>INS Arnala & INS Anjadip</em> (ASW-SWC "Dolphin Hunters"); <em>Sanshodhak</em> (SVL); Cadet Training Ship <em>Krishna</em>; <em>ADC-150</em> air droppable container.</li>
+        <li><span class="highlight">Doctrines & Operations:</span> <em>Operation Urja Suraksha</em> (Naval escort for crude tankers in Strait of Hormuz); <em>Operation Sagar Bandhu</em> (Sri Lanka bridge); <em>‘Prahaar’ Doctrine</em> (Unified counter-terror policy); Army Theme: <em>‘Year of Networking & Data Centricity’</em>; <em>Bhairav Force</em> (drone units).</li>
+      </ul>
+    </div>
+
+    <!-- Consolidated Military Exercises Master Table -->
+    <div class="mt-4">
+      <h3 class="font-bold text-slate-800 text-xs sm:text-sm mb-2 flex items-center gap-1">
+        <span>⭐</span> Master Table of Military & Joint Exercises (Reverse Chronological: Sep → Jan 2026)
+      </h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border border-slate-300 text-xs">
+          <thead class="bg-slate-100 text-slate-800 font-bold">
+            <tr>
+              <th class="p-2 border">Exercise</th>
+              <th class="p-2 border">Participating Forces / Nations</th>
+              <th class="p-2 border">Location / Highlights</th>
+              <th class="p-2 border">Timeframe</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="bg-red-50/20"><td><strong>Veer Guardian 2026</strong></td><td>IAF & Japan Air Self-Defense Force</td><td>Jodhpur; Japanese <strong>Mitsubishi F-2A</strong> deployed in India for 1st time.</td><td>Sep 2026</td></tr>
+            <tr class="bg-red-50/20"><td><strong>Yudh Abhyas 2026</strong></td><td>Indian Army & US Army (22nd ed.)</td><td>Two-theatres: Bikaner (desert) & Auli, Uttarakhand (high-altitude).</td><td>Sep 2026</td></tr>
+            <tr class="bg-red-50/20"><td><strong>Super Garuda Shield</strong></td><td>USINDOPACOM & Indonesian TNI (+13)</td><td>Hosted across Indonesia; flagship annual exercise.</td><td>Sep 2026</td></tr>
+            <tr class="bg-red-50/20"><td><strong>Rudra Raptors</strong></td><td>Indian Army Konark Corps</td><td>Jaisalmer; integrates AH-64E Apaches ("Thar Raptors") & tanks.</td><td>Sep 2026</td></tr>
+            <tr class="bg-red-50/20"><td><strong>Samudra Laksamana 4/26</strong></td><td>Indian Navy & Royal Malaysian Navy</td><td>Lumut Naval Base, Malaysia; guided-missile destroyer <strong>INS Mysore</strong>.</td><td>Sep 2026</td></tr>
+            <tr class="bg-red-50/20"><td><strong>Eager Lion 2026</strong></td><td>US & Jordan (12th edition)</td><td>Fort Carson, Colorado; 1st time hosted on US soil.</td><td>Sep 2026</td></tr>
+            <tr class="bg-amber-50/20"><td><strong>ROTOR CLAP III</strong></td><td>IAF Counter-UAS Exercise</td><td>Pokhran, Jaisalmer; helicopter anti-drone field drills.</td><td>Aug 2026</td></tr>
+            <tr class="bg-amber-50/20"><td><strong>Udara Shakti 2026</strong></td><td>IAF & Royal Malaysian Air Force</td><td>Subang Air Base, Malaysia.</td><td>Aug 2026</td></tr>
+            <tr class="bg-amber-50/20"><td><strong>MAITREE-XV</strong></td><td>Indian Army & Royal Thai Army</td><td>Surat Thani, Thailand; 15th edition.</td><td>Aug 2026</td></tr>
+            <tr class="bg-amber-50/20"><td><strong>Pitch Black 2026</strong></td><td>Multinational (19 Nations, IAF Rafales)</td><td>Darwin & Tindal, Australia (RAAF hosted).</td><td>Jul 2026</td></tr>
+            <tr class="bg-amber-50/20"><td><strong>Tiger Lightning 2026</strong></td><td>Bangladesh & US Military</td><td>West Bengal; 13-day counter-terror drills.</td><td>Jul 2026</td></tr>
+            <tr class="bg-blue-50/20"><td><strong>RIMPAC 2026</strong></td><td>31 Nations (US Navy-led, Indian Navy)</td><td>Hawaii, USA; 30th edition (40 ships, 140 aircraft).</td><td>Jun 2026</td></tr>
+            <tr class="bg-blue-50/20"><td><strong>Khaan Quest 2026</strong></td><td>Multinational Peacekeeping (Jat Regt)</td><td>Ulaanbaatar, Mongolia; UN Chapter VII drills.</td><td>Jun 2026</td></tr>
+            <tr class="bg-blue-50/20"><td><strong>Cyclone-IV</strong></td><td>India & Egypt Special Forces</td><td>Anshas, Egypt; desert counter-terror operations.</td><td>May 2026</td></tr>
+            <tr class="bg-blue-50/20"><td><strong>Dustlik-VII</strong></td><td>India & Uzbekistan (Mahar Regt)</td><td>Namangan, Uzbekistan; mountain warfare.</td><td>Apr 2026</td></tr>
+            <tr class="bg-blue-50/20"><td><strong>Brahmastra</strong></td><td>Indian Army Aviation Corps</td><td>Pokhran; live-fire validation of Boeing AH-64E Apache.</td><td>Apr 2026</td></tr>
+            <tr class="bg-blue-50/20"><td><strong>PRAGATI 2026</strong></td><td>India + 12 IOR Nations</td><td>Umroi, Meghalaya; regional armies transformation.</td><td>Apr 2026</td></tr>
+            <tr class="bg-blue-50/20"><td><strong>IN-SLN DIVEX</strong></td><td>India & Sri Lanka</td><td>Colombo; INS Nireekshak gifted 2 BHISHM cubes.</td><td>Apr 2026</td></tr>
+            <tr class="bg-blue-50/20"><td><strong>Exercise Jal Rahat</strong></td><td>Army Gajraj Corps + NDRF/SDRF</td><td>Guwahati, Assam; joint flood rescue drill.</td><td>Apr 2026</td></tr>
+            <tr class="bg-emerald-50/20"><td><strong>MILAN 2026</strong></td><td>74 Navies (incl. 9 ASEAN nations)</td><td>Visakhapatnam; theme <em>"Camaraderie, Cooperation and Collaboration"</em>.</td><td>Feb 2026</td></tr>
+            <tr class="bg-emerald-50/20"><td><strong>Vayu Shakti 2026</strong></td><td>IAF (120+ aircraft)</td><td>Pokhran, Rajasthan; President Murmu sortie in LCH Prachand.</td><td>Feb 2026</td></tr>
+            <tr class="bg-emerald-50/20"><td><strong>Khanjar-XIII</strong></td><td>India & Kyrgyzstan Special Forces</td><td>Misamari, Assam; mountain counter-terror.</td><td>Jan 2026</td></tr>
+            <tr class="bg-emerald-50/20"><td><strong>Vajra Prahar 2026</strong></td><td>India & US Special Forces</td><td>Bakloh, HP; 16th edition on advanced CT TTPs.</td><td>Jan 2026</td></tr>
+            <tr class="bg-emerald-50/20"><td><strong>Dharma Guardian</strong></td><td>India & Japan</td><td>Chaubattia, Uttarakhand; 7th edition.</td><td>Feb 2026</td></tr>
+            <tr class="bg-emerald-50/20"><td><strong>Lamitiye-2026</strong></td><td>India & Seychelles (Assam Regt)</td><td>Seychelles Defence Academy; 11th edition.</td><td>Mar 2026</td></tr>
+            <tr class="bg-emerald-50/20"><td><strong>DOSTI-17</strong></td><td>India, Maldives, Sri Lanka Coast Guards</td><td>Malé; trilateral SAR and pollution control.</td><td>Feb 2026</td></tr>
+            <tr class="bg-emerald-50/20"><td><strong>Sea Dragon 2026</strong></td><td>Multinational ASW (US Navy, IN P-8I)</td><td>Andersen AFB, Guam (USA).</td><td>Jan 2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. SCHEMES, POLICIES & ECONOMY -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="schemes">
+    <div class="bg-slate-100 border-l-4 border-slate-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-1.5">
+        <span>⭐</span> 4. National Initiatives, Cabinet Decisions, Budget & Economy Adjective
+      </h2>
+      <span class="chrono-badge chrono-sep">Economy & Fiscal</span>
+    </div>
+
+    <!-- September 2026 -->
+    <div class="chrono-badge chrono-sep inline-block mb-2">September 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">PM-SETU Scheme:</span> Ludhiana selected as one of 5 National Skill Training Institutes (NSTIs) across India to be upgraded into an International Centre of Excellence.</li>
+        <li>⭐ <span class="highlight">Zero Legacy Waste City:</span> <strong>Depalpur (Madhya Pradesh)</strong> became the first city to clear 100% legacy waste under the <em>Swachh Shehar Jodi</em> mentorship initiative (paired with Indore).</li>
+        <li><span class="highlight">BRICS Grain Exchange (AGRIN):</span> Agreed as a farmer-centric, non-binding agro-inputs and genetic resources network at 18th Summit.</li>
+      </ul>
+    </div>
+
+    <!-- August - July 2026 -->
+    <div class="chrono-badge chrono-aug-jul inline-block mb-2">July – August 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Saptadhara Framework:</span> Prime Minister announced 7-pillar doctrine for Viksit Bharat: Manufacturing, Agri-Food Processing, Tech/Innovation, PM Gati Shakti, Defence, Blue/Green Economy, Cultural Soft Power.</li>
+        <li>⭐ <span class="highlight">Samudra Manthan Scheme:</span> Ministry of Petroleum & Natural Gas approved National Offshore Oil & Gas Exploration Scheme with <span class="font-bold text-red-800">₹84,084 crore</span> outlay up to 2030-31.</li>
+        <li><span class="highlight">PM Surya Sarovar Yojana:</span> Launched to install large-scale Floating Solar Photovoltaic (FSPV) panels integrated with Battery Energy Storage Systems (BESS) over water reservoirs.</li>
+        <li><span class="highlight">Container Manufacturing Assistance Scheme:</span> ₹10,000 crore rolled out to boost domestic marine cargo container production.</li>
+        <li><span class="highlight">PM-KISAN:</span> Approved continuation of ₹6,000/year DBT income support for an additional 5-year cycle.</li>
+        <li>⭐ <span class="highlight">Semicon 2.0 Programme:</span> Approved mega outlay of <span class="font-bold text-red-800">₹1,27,500 crore</span> to expand domestic chip fabs, ATMP units, and design clusters.</li>
+        <li><span class="highlight">Mobile Phone Manufacturing Scheme (MPMS):</span> Approved ₹62,500 crore (FY27 to FY31) to build Indian electronic brands and IP patents.</li>
+        <li><span class="highlight">PARIVARTAN Scheme:</span> Guidelines approved for accelerated scrappage and replacement of commercial diesel vehicles with BS-VI/EV in NCR.</li>
+        <li><span class="highlight">Aastha Van Sanrakshan:</span> ₹3,000 crore to conserve 15,000+ Sacred Groves over 5 years.</li>
+        <li><span class="highlight">BHAVYA Rasayan Scheme:</span> Setup of 3 dedicated chemical/petrochemical anchor parks across India.</li>
+        <li><span class="highlight">Scheme Milestones:</span> PMJDY completed 12 years (launched 28 Aug 2014); e-Shram completed 5 years (portable 12-digit UAN); CPSE MECON Limited granted Miniratna Category-I status.</li>
+      </ul>
+    </div>
+
+    <!-- June - April 2026 -->
+    <div class="chrono-badge chrono-jun-apr inline-block mb-2">April – June 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">RBI Monetary Policy Rates (June 2026):</span> Repo Rate kept at <span class="font-bold text-red-800">5.25%</span> (Neutral stance). Standing Deposit Facility (SDF): 5.00%; MSF/Bank Rate: 5.50%; CRR: 3.00%. Real GDP growth forecast for FY27 projected at 6.6%; CPI inflation at 5.1%. RBI Governor: <strong>Sanjay Malhotra</strong>.</li>
+        <li>⭐ <span class="highlight">Bharat Maritime Insurance Pool (BMIP):</span> Inaugurated with <span class="font-bold text-red-800">₹12,980 crore sovereign guarantee</span> to cover hull, cargo, and war-risk for Indian-flagged vessels (absorbs claims up to $100M before government backstop triggers).</li>
+        <li><span class="highlight">Zero Coupon Zero Principal (ZCZP) for CSR:</span> MCA permitted companies to meet 2% CSR obligations by investing in tradeable ZCZP instruments issued by NPOs on Social Stock Exchange.</li>
+        <li><span class="highlight">Electronic Gold Receipts (EGR):</span> Spot trading launched on NSE against physical gold in SEBI vaults.</li>
+        <li><span class="highlight">GARUDA Green-Channel (SEBI):</span> Cuts Alternative Investment Fund scheme launch clearance from 30 days to <strong>10 working days</strong>.</li>
+        <li><span class="highlight">RAINMUMBAI:</span> India's first exchange-traded weather futures contract launched by NCDEX and IIT Bombay based on IMD rainfall indices.</li>
+        <li><span class="highlight">Producer Price Index (PPI) Transition:</span> Ministry of Commerce announced replacing WPI with Producer Price Index by 2031 (Base year: 2022–23).</li>
+        <li><span class="highlight">Economic Terms:</span> <em>"Memflation"</em> (price hikes in regular tech hardware due to fab capacity diverted to AI HBM memory); <em>"Das Adam Smith Problem"</em> (reconciling self-interest with moral empathy on 250th anniversary of Wealth of Nations); <em>UDGAM Portal</em> (unclaimed bank deposits via unique UDRN numbers).</li>
+      </ul>
+    </div>
+
+    <!-- March - January 2026 -->
+    <div class="chrono-badge chrono-mar-jan inline-block mb-2">January – March 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-2">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Union Budget 2026–27 (Presented by Nirmala Sitharaman - 9th Budget):</span>
+          <br>• Fiscal Deficit targeted at <span class="font-bold text-red-800">4.3%</span> of GDP; Revenue Deficit: 1.5%; Effective Revenue Deficit: 0.3%; Primary Deficit: 0.7%.
+          <br>• Central Public Capex hiked to <span class="font-bold text-red-800">₹12.2 Lakh Crore</span> (Railways capex: ₹2,93,030 Cr).
+          <br>• Real GDP growth for FY26 estimated at 7.4%; headline inflation averaged 1.7%.
+          <br>• ⭐ <em>New GDP Base Year:</em> MoSPI shifted national accounts base year from 2011–12 to <span class="font-bold text-blue-900">2022–23 (FY23)</span>, incorporating double deflation.
+          <br>• <em>Biopharma SHAKTI:</em> ₹10,000 Cr over 5 years for biosimilar development.
+          <br>• <em>CCUS Scheme:</em> ₹20,000 Cr over 5 years for Carbon Capture Utilization and Storage.
+        </li>
+        <li>⭐ <span class="highlight">16th Finance Commission (Dr. Arvind Panagariya):</span> Retained vertical tax devolution to states at <span class="font-bold text-red-800">41%</span>; introduced 10% weightage for GSDP contribution; discontinued Article 275 revenue deficit grants.</li>
+        <li><span class="highlight">B28 Bullet Train:</span> Indigenously engineered 280 km/h trainset built at BEML Bengaluru for Surat-Vapi stretch.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. INTERNATIONAL SUMMITS, TREATIES & GEOPOLITICS -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="international">
+    <div class="bg-indigo-50 border-l-4 border-indigo-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-indigo-950 flex items-center gap-1.5">
+        <span>⭐</span> 5. Global Summits, Geopolitics, Treaties & Foreign Relations Adjective
+      </h2>
+      <span class="chrono-badge chrono-sep">Global Affairs</span>
+    </div>
+
+    <!-- September 2026 -->
+    <div class="chrono-badge chrono-sep inline-block mb-2">September 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">18th BRICS Summit (New Delhi):</span> Hosted at Bharat Mandapam under theme <em>"Building for Resilience, Innovation, Cooperation, and Sustainability"</em> (India previously held BRICS chair in 2012, 2016, 2021).
+          <br>• <strong>New Delhi Declaration:</strong> Condemned terrorism including April 2025 Pahalgam attack; cautioned against unilateral CBAMs; prioritized local currency trade settlements.
+          <br>• <strong>Cultural Welcome:</strong> World leaders welcomed against a 1,212-pillar corridor projection of Rameswaram's 12th-century Ramanathaswamy Temple.
+        </li>
+        <li>⭐ <span class="highlight">SCO Council of Heads of State (Bishkek):</span> Chairmanship transferred to Pakistan (2026–27); designated <strong>Lahore</strong> as the SCO Tourism and Cultural Capital.</li>
+        <li><span class="highlight">UNCCD COP17 (Ulaanbaatar, Mongolia):</span> Theme: <em>"Restoring Land, Restoring Hope"</em>. India reported 21.76M ha restored under Bonn Challenge (target: 26M ha by 2030).</li>
+        <li>⭐ <span class="highlight">Artemis Accords:</span> <strong>Türkiye</strong> joined as the <strong>71st signatory</strong> (signed at NASA HQ). India signed in 2023.</li>
+        <li>⭐ <span class="highlight">Renaming Lake Ontario:</span> US Executive Order directed federal agencies to designate Lake Ontario as <strong>"Lake America"</strong>. (Great Lakes West to East: Superior → Michigan → Huron → Erie → Ontario).</li>
+        <li><span class="highlight">Princess Elisabeth Island:</span> World's first artificial energy island (5 hectares) under construction 45 km offshore in North Sea by Belgium (target operational: 2031).</li>
+      </ul>
+    </div>
+
+    <!-- August - July 2026 -->
+    <div class="chrono-badge chrono-aug-jul inline-block mb-2">July – August 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Foreign Honours to PM Modi:</span> Conferred Uzbekistan’s premier civilian order, <strong>'Oliy Darajali Do’stlik'</strong> (Order of Friendship - 36th global award); conferred Indonesia's highest award, <strong>'Bintang Adipurna'</strong> (34th award); addressed Indonesian Parliament; announced IIM Bangalore overseas campus in Jakarta.</li>
+        <li><span class="highlight">Prime Ministerial Visits:</span> Australia (Melbourne 3rd Annual Summit; repatriated 3 Chola bronzes); New Zealand (1st visit in 40 years; Māori Haka welcome).</li>
+        <li><span class="highlight">President Droupadi Murmu European Tour:</span> Visited Moldova (1st ever by Indian Head of State), North Macedonia (unveiled Gandhi bust in Skopje), Romania.</li>
+        <li><span class="highlight">Diplomatic Dialogues:</span> EAM co-chaired 27th IRIGC-TEC in Moscow; NSA Doval held 25th Special Representatives talks in Beijing on border disengagement; BRICS Tourism Ministers adopted <em>Jaipur Declaration</em>; BRICS Anti-Drug Working Group adopted <em>Guwahati Declaration</em>.</li>
+        <li><span class="highlight">Mecca Joint Deterrence Agreement:</span> Trilateral collective defense pact signed between Saudi Arabia, Turkey, and Pakistan in Mecca.</li>
+        <li>⭐ <span class="highlight">Lebanon Death Penalty Abolished:</span> Abolished capital punishment, substituting it with aggravated life imprisonment with hard labor (1st Arab League nation).</li>
+        <li><span class="highlight">Republic of Naoero (Nauru):</span> Reverted officially to native name Naoero and instituted Citizenship-by-Investment for climate funds.</li>
+        <li><span class="highlight">Kenya Recognizes Indian Origin Community:</span> Officially recognized Persons of Indian Origin (PIO) as the 45th indigenous ethnic tribe.</li>
+        <li><span class="highlight">BAPS Hindu Mandir in France:</span> France's first traditional stone Hindu temple opened at Bussy-Saint-Georges near Paris.</li>
+        <li><span class="highlight">Social Media Ban:</span> France passed law banning social media for children under 15 without verified parental consent (1st in EU).</li>
+        <li><span class="highlight">PCA South China Sea (10th Anniv):</span> Marked 10 years of Permanent Court of Arbitration ruling invalidating China's "Nine-Dash Line" under UNCLOS.</li>
+      </ul>
+    </div>
+
+    <!-- June - April 2026 -->
+    <div class="chrono-badge chrono-jun-apr inline-block mb-2">April – June 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">52nd G7 Summit (Evian, France):</span> Attended by PM Narendra Modi on invite of President Macron (7th consecutive appearance as guest).</li>
+        <li><span class="highlight">BRICS Indore Declaration (Agriculture):</span> Adopted under Indian Chairmanship; created CoEs on Agro-Ecology, Digital Agriculture Network (IIT Delhi), Farmers’ Rights Seed Forum, and BRICS AgriN.</li>
+        <li><span class="highlight">Mombasa Declaration:</span> 15 nations adopted treaty at 11th Our Ocean Conference (Kenya) to eliminate IUU fishing.</li>
+        <li><span class="highlight">COP33 Withdrawal:</span> India withdrew bid to host COP33 in 2028 (South Korea sole bidder).</li>
+        <li><span class="highlight">Seychelles & Slovakia Visits:</span> PM handed over patrol boat <em>PS LESPWAR</em> to Seychelles, fed 194-year-old giant tortoise 'Jonathan', received <em>'Guardian of the Blue Horizon'</em>; conferred Slovakia's highest honor, <em>'Order of the White Double Cross'</em> (33rd award).</li>
+        <li>⭐ <span class="highlight">Global UPI Expansion:</span> Rolled out in France (Galeries Lafayette), Cambodia (ACLEDA Bank), and Greece (Eurobank). Total 10 accepting nations.</li>
+        <li>⭐ <span class="highlight">UNSC Elections (2027–28):</span> 5 new non-permanent members elected: Austria, Kyrgyzstan, Portugal, Trinidad & Tobago, Zimbabwe. (India launched <em>'SHANTI'</em> bid for 2028–29).</li>
+        <li><span class="highlight">ECOSOC Victories & FATF:</span> India elected to 4 subsidiary bodies (CESCR, CSTD, NGO, CPC); Vivek Aggarwal elected FATF Vice-President (2026–27); Uzbekistan joined New Development Bank (NDB) as 11th member.</li>
+      </ul>
+    </div>
+
+    <!-- March - January 2026 -->
+    <div class="chrono-badge chrono-mar-jan inline-block mb-2">January – March 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-2">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">India-AI Impact Summit 2026:</span> Held at Bharat Mandapam, New Delhi (1st in Global South). 88 nations signed <em>New Delhi Declaration on AI</em>; PM unveiled <span class="font-bold text-blue-900">‘MANAV’</span> vision (Moral, Accountable, National sovereignty, Accessible, Valid). 2027 edition in Geneva.</li>
+        <li><span class="highlight">BRICS 2026 Chair:</span> India assumed rotating presidency from Brazil. Theme: <em>"Building for Resilience, Innovation, Cooperation, and Sustainability"</em>.</li>
+        <li><span class="highlight">Raisina Dialogue 2026 (11th Ed):</span> Theme: <em>"Samskāra: Assertion, Accommodation, Advancement"</em>. Chief Guest: Alexander Stubb (President of Finland).</li>
+        <li>⭐ <span class="highlight">Trade Pacts:</span> India-EU FTA ("Mother of All Deals") slashing tariffs on >90% goods; India-US tariff deal reducing tariffs to 18%; High Seas Treaty (BBNJ) entered into force (30x30 target); Pax Silica Initiative joined; India chaired Kimberley Process 2026; Bulgaria adopted Euro on Jan 1, 2026 becoming 21st Eurozone member.</li>
+        <li>⭐ <span class="highlight">Middle East War & Flashpoints:</span> US-Israel strikes on Iran; Supreme Leader Ayatollah Ali Khamenei killed; son <span class="font-bold text-red-900">Mojtaba Khamenei</span> named successor; Strait of Hormuz chokepoint blocked; US Op Absolute Resolve in Venezuela captured Nicolás Maduro, Delcy Rodríguez made interim president under Monroe Doctrine; Diego Garcia military base targeted.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. SCIENCE, SPACE, HEALTH & TECHNOLOGY -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="science">
+    <div class="bg-cyan-50 border-l-4 border-cyan-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-cyan-950 flex items-center gap-1.5">
+        <span>⭐</span> 6. Science, Space Missions, Health & Deep Tech Adjective
+      </h2>
+      <span class="chrono-badge chrono-sep">STEM Innovations</span>
+    </div>
+
+    <!-- September 2026 -->
+    <div class="chrono-badge chrono-sep inline-block mb-2">September 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">GSLV-F17 / EOS-05 Launch:</span> ISRO successfully launched EOS-05 (built on I-2K bus, formerly GISAT-1A) into Geosynchronous Orbit (~35,786 km) from Sriharikota for persistent real-time monitoring of borders and disaster management.</li>
+        <li>⭐ <span class="highlight">TRISHNA Earth Observation Mission:</span> Joint ISRO-CNES (France) thermal infrared satellite scheduled on PSLV into sun-synchronous orbit (761 km, 57m resolution) for terrestrial water stress and heat tracking.</li>
+        <li><span class="highlight">Nancy Grace Roman Space Telescope:</span> NASA observatory featuring 2.4m mirror and wide-field coronagraph (100x Hubble field of view) for direct exoplanet imaging.</li>
+        <li>⭐ <span class="highlight">India’s First Genome-Edited Rice:</span> ICAR developed 2 varieties:
+          <br>• <strong>Pusa Rice DST1:</strong> Derived from MTU1010; edits Drought and Salt Tolerance (DST) gene.
+          <br>• <strong>DRR Dhan 100 (Kamala):</strong> Derived from Samba Mahsuri by ICAR-IIRR Hyderabad; edits cytokinin metabolism genes to mature ~20 days earlier.
+        </li>
+      </ul>
+    </div>
+
+    <!-- August - July 2026 -->
+    <div class="chrono-badge chrono-aug-jul inline-block mb-2">July – August 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Mission Aagaman (Vikram-1):</span> Skyroot Aerospace launched Vikram-1 from Sriharikota—India's first privately manufactured orbital-class multi-stage rocket flight.</li>
+        <li><span class="highlight">Gaganyaan Propulsion Tests:</span> Fired SOLVE solid motor at Sriharikota; conducted IMAT parachute airdrop test at Sheopur, MP.</li>
+        <li>⭐ <span class="highlight">World’s 1st Once-Weekly Basal Insulin:</span> India launched <strong>Awiqli</strong> (insulin icodec), replacing daily basal insulin injections with a single weekly dose for diabetic adults.</li>
+        <li>⭐ <span class="highlight">First Dengue Vaccine in India:</span> DCGI approved Takeda’s tetravalent vaccine <strong>QDENGA</strong> (TAK-003).</li>
+        <li><span class="highlight">Semaglutide 2.4 mg (Wegovy):</span> Approved for Metabolic Dysfunction-Associated Steatohepatitis (MASH / Fatty Liver).</li>
+        <li><span class="highlight">Param Pragya Supercomputer:</span> PM inaugurated AI-powered computing facility at IIT Delhi Sonipat campus.</li>
+        <li><span class="highlight">SraVaani Speech AI:</span> Multilingual speech AI trained on 65 Indian languages released by IISc Bengaluru, ARTPARK, Google.</li>
+        <li><span class="highlight">EVEREST Rocket Engine:</span> Astrobase unveiled India's 1st 80-tonne Full-Flow Staged Combustion rocket engine.</li>
+        <li><span class="highlight">T2T Crop Genome:</span> ICAR published India's 1st gapless Telomere-to-Telomere reference genome for pigeonpea (Arhar) 'Asha'.</li>
+        <li><span class="highlight">Health Warnings:</span> Chandipura virus outbreak in Gujarat (transmitted by sandflies); IARC classified voriconazole/tacrolimus as Group 1 carcinogens under phototoxicity; banned pediatric cold FDCs (chlorpheniramine + phenylephrine).</li>
+        <li><span class="highlight">Star S301:</span> Clocked orbiting Milky Way's black hole Sgr A* at record speed of <span class="font-bold text-red-800">25,000 km/s</span> (8% light speed).</li>
+      </ul>
+    </div>
+
+    <!-- June - April 2026 -->
+    <div class="chrono-badge chrono-jun-apr inline-block mb-2">April – June 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">NASA Artemis II Lunar Mission:</span> Launched April 1, 2026 with 4 astronauts (Reid Wiseman, Victor Glover, Christina Koch, Jeremy Hansen). Reached record <span class="font-bold text-red-800">252,752 miles from Earth</span> (broke Apollo 13 record); first ship-to-ship lunar call to ISS; splashed down April 11.</li>
+        <li><span class="highlight">Mission Mitra (Ladakh):</span> ISRO analog simulation for Gaganyaan crew in hypoxic Ladakh terrain.</li>
+        <li>⭐ <span class="highlight">Kalpakkam PFBR Criticality:</span> India's indigenous 500 MWe <strong>Prototype Fast Breeder Reactor (PFBR)</strong> attained first criticality (BHAVINI).</li>
+        <li>⭐ <span class="highlight">Nuclear-Heat Hydrogen Plant:</span> Commissioned at IGCAR Kalpakkam using copper-chlorine (Cu-Cl) thermochemical cycle (developed with BARC).</li>
+        <li><span class="highlight">AIIMS Portable Bedside MRI:</span> Deployed at AIIMS New Delhi for critically ill neuro/ICU patients on ultra-low magnetic field.</li>
+        <li><span class="highlight">Drugs Regulations:</span> Pregabalin placed under Schedule H1; OTC sale of cough syrups banned.</li>
+        <li><span class="highlight">CLEAR Imaging Technology:</span> Developed by JNCASR Bengaluru for multiplexed protein mapping in tissues.</li>
+        <li><span class="highlight">ANCHOR 3D Brainstem Atlas:</span> Released by IIT Madras mapping human brainstem architecture.</li>
+        <li><span class="highlight">PARICHAY Stroke Device:</span> NIMHANS mechanical thrombectomy device for acute ischemic stroke.</li>
+        <li><span class="highlight">R78C Malaria Vaccine:</span> Serum Institute & Oxford licensed blood-stage malaria vaccine.</li>
+        <li><span class="highlight">Loktak Protocluster:</span> Ancient cosmic cluster 12.6B light-years away named after Manipur’s Loktak Lake; JWST detected interstellar methane on comet 3I/ATLAS.</li>
+      </ul>
+    </div>
+
+    <!-- March - January 2026 -->
+    <div class="chrono-badge chrono-mar-jan inline-block mb-2">January – March 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-2">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Chandrayaan-4 Landing Site:</span> Selected at <span class="font-bold text-blue-900">Mons Mouton</span> (6,000m lunar south pole plateau, named after NASA mathematician Melba Roy Mouton).</li>
+        <li><span class="highlight">PSLV-C62 / EOS-N1:</span> Carried DRDO hyperspectral satellite <em>Anvesha</em>, Europe's <em>KID</em>, and OrbitAID’s <em>AayulSAT</em> (India’s 1st on-orbit refuelling demo).</li>
+        <li><span class="highlight">Gaganyaan Drogue Parachute:</span> Qualified at Rail Track Rocket Sled (RTRS) facility, TBRL Chandigarh.</li>
+        <li>⭐ <span class="highlight">New National Telescopes:</span> Sanctioned National Large Solar Telescope (NLST, 2m at Merak, Pangong Tso) and NL-OI Telescope (13.7m at Hanle, Ladakh).</li>
+        <li><span class="highlight">Deep Space Records:</span> Voyager 1 reached 1 light-day distance; <em>Haven-1</em> commercial space station launched; <em>MoM-z14</em> earliest galaxy found by JWST (280M yrs post Big Bang); fastest rotating asteroid 2025 MN45 (rotates in 1.88 min).</li>
+        <li><span class="highlight">Supercomputing & AI:</span> <em>Param Shakti</em> (3.1 Petaflop supercomputer at IIT Madras); Nvidia Rubin AI architecture; <em>SCORP</em> mobile robot by IIT Kanpur; <em>BODH & SAHI</em> health AI frameworks.</li>
+        <li><span class="highlight">Health & Pharma:</span> HPV vaccination drive for 14-year-old girls launched at Ajmer; Td dual vaccine at CRI Kasauli; Mitapivat oral pill for thalassemia; Nimesulide formulations >100mg banned under Sec 26A; low-GI CSIR designer rice; Shalimar Wheat 3 & 4. Doomsday Clock set to 85 seconds to midnight.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 7. ENVIRONMENT, ECOLOGY, RAMSAR SITES & WILDLIFE -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="environment">
+    <div class="bg-amber-50 border-l-4 border-amber-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-amber-950 flex items-center gap-1.5">
+        <span>⭐</span> 7. Environment, Ecology, Ramsar Sites & Wildlife Adjective
+      </h2>
+      <span class="chrono-badge chrono-sep">Conservation</span>
+    </div>
+
+    <!-- September 2026 -->
+    <div class="chrono-badge chrono-sep inline-block mb-2">September 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Pesticide Ban:</span> Central government proposed complete ban on <strong>Carbosulfan</strong> (carbamate class insecticide widely used in paddy and cotton) due to rapid breakdown into lethal carbofuran.</li>
+        <li>⭐ <span class="highlight">Neelakurinji (Strobilanthes kunthiana):</span> Protected shrub blooming once every 12 years in Shola grasslands of the Western/Eastern Ghats; listed as <strong>Vulnerable</strong> on the IUCN Red List.</li>
+        <li><span class="highlight">UNESCO Tentative List Entries:</span> 4 Indian sites added: (1) Rangpur-Sivasagar Historical Ensemble (Assam), (2) Colonial Penal Settlement of Andaman Islands, (3) Nicobarese Cultural Continuity, and (4) Painted Haveli Towns of Shekhawati (Rajasthan).</li>
+      </ul>
+    </div>
+
+    <!-- August - July 2026 -->
+    <div class="chrono-badge chrono-aug-jul inline-block mb-2">July – August 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">101st Ramsar Site:</span> MoEFCC notified <span class="font-bold text-red-800">Glaw Lake (Glow Lake)</span> in Arunachal Pradesh as India’s 101st Wetland of International Importance.</li>
+        <li>⭐ <span class="highlight">Legal Personhood to Tamirabharani River:</span> Madras High Court (Madurai Bench) accorded status of living entity / legal person to Tamil Nadu’s sacred Perennial River Tamirabharani (Porunai).</li>
+        <li><span class="highlight">Disaster Calamities Addition:</span> Union Government added <strong>Heatwaves and Lightning strikes</strong> to eligible list of notified natural disasters under SDRF/NDRF.</li>
+        <li><span class="highlight">Periyar Cow Recognition:</span> ICAR-NBAGR registered miniature dwarf cattle breed 'Periyar Kullan' from Kerala.</li>
+        <li><span class="highlight">Clouded Leopard Conservation Action Plan:</span> Formulated on International Clouded Leopard Day (Aug 4).</li>
+        <li><span class="highlight">Borjuli Wetland BHS:</span> Notified as Assam’s Biodiversity Heritage Site for wild rice gene pool (<em>Oryza rufipogon</em>).</li>
+        <li><span class="highlight">16th Asiatic Lion Census:</span> Population in Gir landscape rose from 523 (2015) to <span class="font-bold text-amber-900">891</span>.</li>
+        <li><span class="highlight">GI Tag Bounty:</span>
+          <br>• <strong>Himachal Pradesh:</strong> Spiti Seabuckthorn, Kinnauri Apple, Kinnauri Topi, Salooni White Maize, Chamba Metal Art.
+          <br>• <strong>West Bengal:</strong> Janai Manohara Sweet, Balagarh Wooden Boats, Chandannagar Jalbhara.
+          <br>• <strong>Gujarat:</strong> Unjha Cumin, Unjha Fennel, Rathwa community's Pithora Murals.
+          <br>• <strong>Jharkhand:</strong> Bhagaiya Silk, Kuchai Silk, Munda Jewelry.
+          <br>• <strong>Haryana:</strong> Sirsa Kinnow (State’s first GI-tagged fruit).
+        </li>
+      </ul>
+    </div>
+
+    <!-- June - April 2026 -->
+    <div class="chrono-badge chrono-jun-apr inline-block mb-2">April – June 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Surha Tal Designated as India’s 100th Ramsar Site:</span> <strong>Jai Prakash Narayan Bird Sanctuary (Surha Tal)</strong> in Ballia district, Uttar Pradesh, officially declared India's <span class="font-bold text-red-800">100th Ramsar Site</span> (oxbow wetland of Ganga). India ranks 1st in Asia, 3rd globally.</li>
+        <li>⭐ <span class="highlight">Nagoya Protocol:</span> India accounts for over <span class="font-bold text-red-800">60.24% of all IRCC certificates</span> issued globally under Access and Benefit Sharing. Repositories: CMLRE Kochi (marine) and ARI Pune (extremophiles).</li>
+        <li><span class="highlight">IBCA Expansion:</span> Saudi Arabia (26th) and Bangladesh (27th) joined International Big Cat Alliance (covering 7 big cats).</li>
+        <li><span class="highlight">New Species Discoveries:</span>
+          <br>• <em>Mogrus shushka & M. pune:</em> Jumping spiders (Thar desert & Pune).
+          <br>• <em>Cyrtodactylus raimonaensis:</em> Bent-toed gecko in Raimona NP, Assam.
+          <br>• <em>Eublepharis jhuma:</em> Leopard gecko in Kaimur Hills, Bihar (named after ZSI Director Dr. Dhriti Banerjee).
+          <br>• <em>Brachybacterium netajii:</em> Tough bacterium in Hooghly river degrading toxic PNP (named after Netaji).
+          <br>• <em>Emperor Penguin & Antarctic Fur Seal:</em> Uplisted to <strong>Endangered</strong> by IUCN.
+          <br>• <em>Potato Patch Coral:</em> Massive 4,250 sq. m single reef colony at Kadmat Island, Lakshadweep (700–1,800 yrs old).
+          <br>• <em>Hargila Army:</em> Rural women conservationists lauded by PM for Greater Adjutant Stork protection.
+        </li>
+      </ul>
+    </div>
+
+    <!-- March - January 2026 -->
+    <div class="chrono-badge chrono-mar-jan inline-block mb-2">January – March 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-2">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">India Ramsar Sites (95th to 98th):</span>
+          <br>• 95th & 96th: Siliserh Lake (Alwar, Rajasthan) & Kopra Jalashay (Bilaspur, Chhattisgarh).
+          <br>• 97th & 98th: <strong>Chhari-Dhand</strong> (Kutch, Gujarat; seasonal saline wetland) & <strong>Patna Bird Sanctuary</strong> (Etah, UP).
+        </li>
+        <li><span class="highlight">India's 1st Butterfly Sanctuary:</span> Aralam Wildlife Sanctuary in Kannur, Kerala officially designated Aralam Butterfly Sanctuary.</li>
+        <li><span class="highlight">Tiger Mortality 2025:</span> NTCA recorded 166 tiger deaths (Madhya Pradesh highest at 55).</li>
+        <li><span class="highlight">State Microbe & Butterfly:</span> Kerala declared <em>Bacillus subtilis</em> official State Microbe (1st in India); Striped Tiger Butterfly declared Chandigarh UT State Butterfly.</li>
+        <li><span class="highlight">Legal Rights for Insects:</span> Satipo municipality in Peru granted legal rights to stingless bees (world's 1st).</li>
+        <li><span class="highlight">New Species:</span> <em>Gegeneophis valmiki</em> (limbless caecilian amphibian in Western Ghats); <em>Indiaphonte bijoyi</em> (copepod in Lakshadweep); <em>Osbeckia zubeengargiana</em> & <em>Euthalia zubeengargi</em> (named after singer Zubeen Garg); <em>Gitchak nakana</em> (phreatobitic aquifer fish in Assam); gynandromorph dual-sex crab documented in Silent Valley.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 8. GLOBAL INDICES, RANKINGS & REPORTS -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="indices">
+    <div class="bg-violet-50 border-l-4 border-violet-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-violet-950 flex items-center gap-1.5">
+        <span>⭐</span> 8. Global Indices, National Rankings & Economic Reports Adjective
+      </h2>
+      <span class="chrono-badge chrono-sep">Rankings & Data</span>
+    </div>
+
+    <!-- September 2026 -->
+    <div class="chrono-badge chrono-sep inline-block mb-2">September 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Global Gender Gap Index 2026 (WEF):</span> India ranked <span class="font-bold text-red-800">131st out of 145 countries</span> (parity score: 64.5%). Top rank: <strong>Iceland</strong> (>90% closed), followed by Finland and Norway. Lowest: Chad.</li>
+        <li>⭐ <span class="highlight">V-Dem Democracy Report:</span> India's Electoral Democracy Index score dropped to <span class="font-bold text-red-800">0.38</span>, marking its lowest score since <strong>1975</strong>.</li>
+        <li>⭐ <span class="highlight">Swachh Vayu Sarvekshan 2026:</span>
+          <br>• <em>>10 Lakh Population:</em> 1st: <strong>Lucknow</strong> (198 pts), 2nd: Indore, 3rd: Jabalpur.
+          <br>• <em>3–10 Lakh Population:</em> 1st: <strong>Rourkela</strong>.
+          <br>• <em>&lt;3 Lakh Population:</em> 1st: <strong>Kalinga Nagar</strong>.
+        </li>
+        <li>⭐ <span class="highlight">Forbes Top 10 Performing Banks 2026:</span> <strong>HDFC Bank</strong> ranked <span class="font-bold text-red-800">#3 globally</span> ($518B assets)—the only Indian bank in the top 10. Ranked #1: OCBC (Singapore), #2: DBS (Singapore).</li>
+        <li><span class="highlight">FT Masters in Management 2026:</span> 14 Indian B-schools in top 100. Highest-ranked: <strong>IIM Bangalore (#21)</strong>, SPJIMR Mumbai (#26), IIM Ahmedabad (#27). Global #1: University of St. Gallen (Switzerland).</li>
+      </ul>
+    </div>
+
+    <!-- August - July 2026 -->
+    <div class="chrono-badge chrono-aug-jul inline-block mb-2">July – August 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">WDMMA Air Power Rankings 2026:</span> Indian Air Force (IAF) ranked <span class="font-bold text-blue-900">3rd Globally</span> (behind USAF and Russian Air Force).</li>
+        <li><span class="highlight">Investment Friendliness Index (IFI - NITI Aayog):</span> 1st: <strong>Gujarat</strong> (Score: 56.6), 2nd: Maharashtra (53.7), 3rd: Tamil Nadu (53.3).</li>
+        <li><span class="highlight">Global Liveability Index 2026 (EIU):</span> Top: Copenhagen (Denmark); New Delhi ranked <strong>120th</strong> (out of 173 cities).</li>
+        <li><span class="highlight">Environmental Performance Index (EPI):</span> 1st: Estonia (74.79); India ranked <span class="font-bold text-red-800">176th</span> out of 177 nations.</li>
+        <li><span class="highlight">Global Passport Index (Global Citizen Solutions):</span> India placed at <strong>125th</strong> (Sweden/Switzerland #1).</li>
+        <li><span class="highlight">Fastest Growing Container Port:</span> JNPA (Jawaharlal Nehru Port, Mumbai) rose to <strong>21st</strong> globally.</li>
+        <li><span class="highlight">Hurun India Family Business:</span> 1st: Ambani Family (₹25.82 Lakh Cr), 2nd: Birla Family (₹8.13 Lakh Cr).</li>
+      </ul>
+    </div>
+
+    <!-- June - April 2026 -->
+    <div class="chrono-badge chrono-jun-apr inline-block mb-2">April – June 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li><span class="highlight">National Panchayat Awards 2025:</span> Karnataka topped with 6 awards. Best District: Sepahijala (Tripura - Rank 1), Ganjam (Odisha - Rank 2), Coimbatore (TN - Rank 3).</li>
+        <li><span class="highlight">SOFI Report 2026 (FAO/WFP):</span> Africa officially surpassed Asia with the highest absolute count of undernourished people globally.</li>
+      </ul>
+    </div>
+
+    <!-- March - January 2026 -->
+    <div class="chrono-badge chrono-mar-jan inline-block mb-2">January – March 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-2">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Henley Passport Index 2026 (Q1):</span> India ranked <span class="font-bold text-blue-900">75th</span> (56 destinations visa-free). No. 1: <strong>Singapore</strong> (192 visa-free destinations). Weakest: Afghanistan (24).</li>
+        <li>⭐ <span class="highlight">Corruption Perceptions Index 2025:</span> India ranked <span class="font-bold text-red-800">91st</span> (Score: 39/100). No. 1 clean: Denmark (89). Bottom: South Sudan & Somalia (9).</li>
+        <li>⭐ <span class="highlight">World Happiness Report 2026:</span> India ranked <span class="font-bold text-red-800">116th</span> out of 147 nations. <strong>Finland</strong> ranked happiest for 9th consecutive year. Bottom: Afghanistan.</li>
+        <li><span class="highlight">Global Terrorism Index 2026:</span> India placed <strong>13th</strong>. For the first time, <strong>Pakistan</strong> topped as the most impacted nation.</li>
+        <li><span class="highlight">Global Soft Power Index 2026:</span> India placed <strong>32nd</strong> (US #1).</li>
+        <li><span class="highlight">Network Readiness Index 2025:</span> India reached <strong>45th</strong>; ranked #1 in AI research papers output.</li>
+        <li><span class="highlight">Responsible Nations Index (RNI 2026):</span> India ranked <strong>16th</strong> globally (highest ranked Asian nation; Singapore #1).</li>
+        <li>⭐ <span class="highlight">Fiscal Health Index 2026 (NITI Aayog):</span> Large States: 1st: <strong>Odisha</strong>, 2nd: Goa, 3rd: Jharkhand. (Punjab in 'Aspirational' tier). Himalayan/NE: 1st: <strong>Arunachal Pradesh</strong>.</li>
+        <li><span class="highlight">Numbeo Safety Index 2026:</span> Safest Indian city: <strong>Mangaluru</strong> (#46 globally). Delhi least safe in India (255th).</li>
+        <li><span class="highlight">World Air Quality Report (IQAir):</span> India 6th most polluted globally; New Delhi worst capital; Loni (Ghaziabad) most polluted Indian city.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 9. SPORTS ACHIEVEMENTS, TOURNAMENTS & RECORDS -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="sports">
+    <div class="bg-orange-50 border-l-4 border-orange-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-orange-950 flex items-center gap-1.5">
+        <span>⭐</span> 9. Sports Records, CWG Glasgow & Tournaments Adjective
+      </h2>
+      <span class="chrono-badge chrono-sep">Athletics & Honors</span>
+    </div>
+
+    <!-- September 2026 -->
+    <div class="chrono-badge chrono-sep inline-block mb-2">September 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Grand Chess Tour 2026:</span> <strong>R. Praggnanandhaa</strong> became the first Indian in history to win the Grand Chess Tour, defeating Fabiano Caruana in St. Louis, USA.</li>
+        <li>⭐ <span class="highlight">FIH Men's Hockey World Cup 2026:</span> <strong>Germany</strong> retained the World Cup title after beating Spain 1-0 in Wavre, Belgium; Bronze: Argentina.</li>
+        <li>⭐ <span class="highlight">Women's Cricket Asia Cup 2026:</span> <strong>India</strong> clinched a record-extending 8th title by defeating Sri Lanka by 72 runs in Dubai.</li>
+        <li>⭐ <span class="highlight">US Open Tennis 2026:</span> Men's Singles: <strong>Alexander Zverev</strong> (defeated Ben Shelton); Women's Singles: <strong>Elena Rybakina</strong> (defeated Aryna Sabalenka).</li>
+        <li><span class="highlight">Men's Junior Asia Cup Hockey:</span> <strong>India</strong> defended continental junior crown beating South Korea 4-1.</li>
+        <li>⭐ <span class="highlight">China Masters Badminton:</span> <strong>Satwiksairaj Rankireddy & Chirag Shetty</strong> became the first Indian men's doubles pair in history to clinch the China Masters title.</li>
+        <li><span class="highlight">Duleep Trophy Youngest Fifty:</span> <strong>Vaibhav Sooryavanshi</strong> became the youngest player in Duleep Trophy history to score a half-century (<span class="font-bold text-orange-900">15 yrs, 157 days</span>).</li>
+        <li><span class="highlight">Hammer Throw Record:</span> <strong>Nirbhay Choudhary</strong> set new Indian national men's hammer throw record at 71.02 metres.</li>
+      </ul>
+    </div>
+
+    <!-- August - July 2026 (Including Glasgow CWG) -->
+    <div class="chrono-badge chrono-aug-jul inline-block mb-2">July – August 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <div class="p-3 bg-amber-50 rounded-lg border border-amber-300 mb-3">
+        ⭐ <strong>Commonwealth Games 2026 (Glasgow, Scotland):</strong> India finished <span class="font-bold text-red-800">4th overall with 39 Medals (13 Gold, 17 Silver, 9 Bronze)</span>. Australia topped tally. Ceremonial Baton handed to <strong>Ahmedabad, Gujarat (India)</strong> for the historic 2030 Centenary Commonwealth Games.
+        <br>• Flagbearer: <span class="font-bold">Mirabai Chanu</span> (Gold, 48kg); Baton bearer: Lovlina Borgohain.
+        <br>• Sarvesh Kushare: 1st Indian high jump CWG Silver (2.25m).
+        <br>• Sharmila Dhankar: India's 1st CWG para-athletics Gold (Shot Put F57 - 9.81m).
+        <br>• Men's 100m T47 sprint 1-2 finish: Dilip Mahadu Gavit (Gold) & Mohammed Basil (Silver).
+        <br>• Weightlifting Silvers: Valluri Ajaya Babu (79kg), Gyaneshwari Yadav, Harjinder Kaur, Lovepreet Singh (+110kg).
+        <br>• Athletics Silvers: Murali Sreeshankar (Long Jump - 8.09m), Gulveer Singh (10,000m - 27:49.78).
+      </div>
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Wimbledon 2026:</span> Jannik Sinner won Men's Singles; Linda Nosková won Women's Singles.</li>
+        <li>⭐ <span class="highlight">World Junior Squash:</span> <strong>Anahat Singh</strong> won Girls' Singles title in Canada, becoming India's first junior world squash champion.</li>
+        <li><span class="highlight">Badminton:</span> P.V. Sindhu won Japan Open Super 750; Treesa Jolly & Gayatri Gopichand won BWF World Championships Bronze.</li>
+        <li><span class="highlight">Cricket Feats:</span> Rishabh Pant smashed 100th Test six (1st Indian keeper); Kranti Gaud took 5-for at Lord's; Ajinkya Rahane announced retirement from all formats.</li>
+        <li><span class="highlight">Chess:</span> 17-year-old Aswath S became India's <strong>98th Grandmaster</strong>; Viswanathan Anand appointed Interim President of FIDE; Bodhana Sivanandan (11) won British Women’s Championship.</li>
+        <li><span class="highlight">Football & Athletics:</span> East Bengal won 133rd Durand Cup (17th title); Neeraj Chopra threw 88.05m (2nd at Lausanne).</li>
+      </ul>
+    </div>
+
+    <!-- June - April 2026 -->
+    <div class="chrono-badge chrono-jun-apr inline-block mb-2">April – June 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Inaugural Khelo India Tribal Games:</span> Held in Chhattisgarh (Raipur/Jagdalpur); Mascot: <strong>“Morveer”</strong>. <strong>Karnataka champion</strong> (23 Gold, 38 total), Odisha Rank 2.</li>
+        <li>⭐ <span class="highlight">IPL 2026:</span> <strong>Royal Challengers Bengaluru (RCB)</strong> defended title beating GT by 5 wickets in Ahmedabad (3rd team to retain IPL). 15-year-old Vaibhav Sooryavanshi won Orange Cap (776 runs) & MVP; Purple Cap: Kagiso Rabada (29 wkts).</li>
+        <li>⭐ <span class="highlight">French Open (Roland Garros) 2026:</span> Men: Alexander Zverev; Women: Mirra Andreeva (19, youngest since Swiatek 2020).</li>
+        <li>⭐ <span class="highlight">Chess Milestones:</span> <strong>R. Praggnanandhaa</strong> became 1st Indian to win Norway Chess; <strong>R. Vaishali</strong> won Women’s Candidates in Cyprus; Ethan Vaz became 96th GM.</li>
+        <li><span class="highlight">National Athletics Records:</span> Gurindervir Singh set 100m record (10.09s); Vishal TK breached sub-45s in 400m (44.98s); Sawan Barwal broke 1978 national marathon record (2:11:58).</li>
+        <li><span class="highlight">Other Sports:</span> World Yogasana Championship in Ahmedabad clean swept by India (102 Gold); Indian Women won FIH Nations Cup in Auckland; Indian U-18 Men won Asia Cup; Kami Rita Sherpa climbed Everest for record 32nd time; 7-year-old Ishank Singh swam Palk Strait in 9h 50m; FIFA World Cup 2026 kicked off (48 teams).</li>
+      </ul>
+    </div>
+
+    <!-- March - January 2026 -->
+    <div class="chrono-badge chrono-mar-jan inline-block mb-2">January – March 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-2">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">ICC Men’s T20 World Cup 2026:</span> <strong>India</strong> defeated New Zealand by 96 runs in Ahmedabad; 1st team to defend T20 World Cup and win at home (3rd title). Player of Match: Jasprit Bumrah; Player of Tournament: Sanju Samson.</li>
+        <li>⭐ <span class="highlight">ICC U-19 World Cup:</span> India beat England by 100 runs to lift 6th title under captain Ayush Mhatre (Player of Tournament: Vaibhav Sooryavanshi).</li>
+        <li>⭐ <span class="highlight">Ranji Trophy 2025–26:</span> <strong>Jammu & Kashmir</strong> scripted history winning maiden Ranji Trophy in 67 years beating Karnataka at Hubballi.</li>
+        <li><span class="highlight">Vijay Hazare Trophy:</span> Vidarbha won maiden title beating Saurashtra.</li>
+        <li><span class="highlight">WPL 4th Edition:</span> RCB defeated Delhi Capitals by 6 wickets in Vadodara to win 2nd title (Orange Cap: Smriti Mandhana; Purple/MVP: Sophie Devine).</li>
+        <li><span class="highlight">BCCI Naman Awards:</span> Polly Umrigar: Shubman Gill; Women: Smriti Mandhana; Col CK Nayudu Lifetime: Roger Binny, Rahul Dravid, Mithali Raj.</li>
+        <li><span class="highlight">Cricket Records:</span> Virat Kohli fastest to 28,000 international runs (624 innings); Rashid Khan 1st with 700 T20 wickets.</li>
+        <li><span class="highlight">Multisport:</span> Indian Army won 6th Khelo India Winter Games (Leh/Gulmarg); Karnataka won 2nd Khelo India Beach Games (Diu); 2026 Winter Olympics in Milano-Cortina topped by Norway.</li>
+        <li><span class="highlight">Tennis & Chess:</span> Carlos Alcaraz won Australian Open (Career Grand Slam); Elena Rybakina won Women's title; Pramod Bhagat won double gold at BWF Para Worlds; Mirabai Chanu set 3 national weightlifting records; Magnus Carlsen won Freestyle Chess title; Mayank Chakraborty became 94th GM (1st from NE).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 10. MAJOR AWARDS, HONOURS & RECOGNITIONS -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="awards">
+    <div class="bg-rose-50 border-l-4 border-rose-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-rose-950 flex items-center gap-1.5">
+        <span>⭐</span> 10. Prestigious Awards, Gallantry Honors & Recognitions Adjective
+      </h2>
+      <span class="chrono-badge chrono-sep">Prestigious Honors</span>
+    </div>
+
+    <!-- September 2026 -->
+    <div class="chrono-badge chrono-sep inline-block mb-2">September 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Dadasaheb Phalke Award 2024:</span> Conferred on veteran Kannada and Hindi cinema actor <strong>Anant Nag</strong> at 72nd National Film Awards in Kevadia, Gujarat (Swarna Kamal, Shawl, ₹10 Lakh cash).</li>
+        <li>⭐ <span class="highlight">Ramon Magsaysay Award 2026:</span> Conferred on <strong>Tommy Koh</strong> (Singapore - for presiding over UNCLOS 1982 adoption), <strong>Bo Kyi</strong> (Myanmar), and <strong>Runa Khan</strong> (Bangladesh). First Indian winner: Vinoba Bhave (1958).</li>
+        <li><span class="highlight">Order of Freedom (Ukraine):</span> Conferred on <strong>Elon Musk</strong> by President Zelenskyy for communications services.</li>
+        <li><span class="highlight">Oliy Darajali Do'stlik Order:</span> Conferred on <strong>PM Narendra Modi</strong> by Uzbekistan (36th international award).</li>
+        <li><span class="highlight">Kalinga Ratna Award 2026:</span> Conferred on former CJI <strong>Justice Dipak Misra</strong> in Cuttack.</li>
+        <li><span class="highlight">Arthur M. Bueche Award 2026:</span> Conferred on <strong>Sethuraman Panchanathan</strong> (1st Indian-American recipient; US National Academy of Engineering).</li>
+      </ul>
+    </div>
+
+    <!-- August - July 2026 -->
+    <div class="chrono-badge chrono-aug-jul inline-block mb-2">July – August 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">72nd National Film Awards:</span> Best Feature Film awarded to <strong>Article 370</strong>. Best Actor shared jointly by Yami Gautam (<em>Article 370</em>), Kartik Aaryan (<em>Chandu Champion</em>), and Mammootty (<em>Bramayugam</em>).</li>
+        <li>⭐ <span class="highlight">Independence Day 2026 Gallantry Medals:</span> President approved 78 gallantry awards, including <span class="font-bold text-red-800">9 Kirti Chakras</span> (7 posthumous) and <span class="font-bold text-red-800">19 Shaurya Chakras</span>.</li>
+        <li><span class="highlight">Lokmanya Tilak National Award:</span> Conferred upon NSA <strong>Ajit Doval</strong>.</li>
+        <li><span class="highlight">Fellow of Royal Society (FRS):</span> <strong>Dr. Soumya Swaminathan</strong> became 2nd Indian woman scientist inducted into Royal Society of London.</li>
+        <li><span class="highlight">Rolex National Geographic Explorer:</span> Awarded to wildlife conservationist <strong>Dr. Krithi K. Karanth</strong>.</li>
+        <li>⭐ <span class="highlight">Fields Medal 2026 (Math Nobel):</span> Conferred on Yu Deng, John Pardon, Jacob Tsimerman, and <strong>Hong Wang</strong> (only 3rd female recipient in 90 years).</li>
+        <li><span class="highlight">ICTP Dirac Medal:</span> Theoretical physicist <strong>Prof. Deepak Dhar</strong> honored.</li>
+        <li><span class="highlight">Sarvottam Jeevan Raksha Padak:</span> Awarded to 12 heroic "rat-hole miners" for rescuing 41 trapped workers in the Silkyara tunnel disaster.</li>
+        <li><span class="highlight">UNESCO World Heritage Inscription:</span> The <strong>Ancient Buddhist Site of Sarnath</strong> inscribed as India's <span class="font-bold text-red-800">45th</span> World Heritage Site (UP's 4th).</li>
+        <li><span class="highlight">Other Honors:</span> COSPAR Vikram Sarabhai Medal to Annapurni Subramaniam; Sarala Puraskar to Ashutosh Parida; Lifetime Libertarian Award to Gurcharan Das in Kathmandu; Commonwealth Short Story Prize to Jamir Nazir (<em>The Serpent in the Grove</em>).</li>
+      </ul>
+    </div>
+
+    <!-- June - April 2026 -->
+    <div class="chrono-badge chrono-jun-apr inline-block mb-2">April – June 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3">
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">President's Police Colour:</span> Conferred on <strong>Odisha Police</strong> on its 90th Foundation Day (Utkal Divas). Highest honor for a military/police unit (>25 years service).</li>
+        <li>⭐ <span class="highlight">Pulitzer Prize 2026:</span> Indian journalists <strong>Anand RK and Suparna Sharma</strong> won in Illustrated Reporting for expose on cybercrime scam compounds.</li>
+        <li>⭐ <span class="highlight">Goldman Environmental Prize ("Green Nobel"):</span> All-women cohort of six grassroots leaders: Iroro Tanshi, Borim Kim, Sarah Finch, Theonila Roka Matbob, Alannah Hurley, Yuvelis Morales Blanco.</li>
+        <li><span class="highlight">Whitley Awards ("Green Oscars"):</span> Indian conservationists <strong>Barkha Subba</strong> (Himalayan Salamander) and <strong>Parveen Shaikh</strong> (Indian Skimmer) won £50,000 each.</li>
+        <li>⭐ <span class="highlight">Food Planet Prize ($1.5 Million):</span> Won by <strong>Andhra Pradesh Community Managed Natural Farming (APCNF)</strong> in Sweden.</li>
+        <li><span class="highlight">Earth Prize 2026:</span> Won by Indian teens for <em>Plas-Stick</em> (biodegradable microplastic filter from tamarind seed powder).</li>
+        <li><span class="highlight">Laureus World Sports Awards:</span> Sportsman of Year: Carlos Alcaraz; Sportswoman: Aryna Sabalenka; Young Athlete: Lamine Yamal.</li>
+        <li><span class="highlight">National Florence Nightingale Awards:</span> Conferred on 15 exemplary nurses across India.</li>
+        <li><span class="highlight">Chetak Screen Awards:</span> Film <em>Dhurandhar</em> swept 14 awards (Best Actor: Ranveer Singh; Director: Aditya Dhar). Best Film: <em>Homebound</em>.</li>
+      </ul>
+    </div>
+
+    <!-- March - January 2026 -->
+    <div class="chrono-badge chrono-mar-jan inline-block mb-2">January – March 2026</div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-2">
+      <div class="mb-3">
+        ⭐ <strong>Padma Awards 2026 (Total 131 Approved: 5 Vibhushan, 13 Bhushan, 113 Shri):</strong>
+        <br>• <strong>Padma Vibhushan (5):</strong> Dharmendra Singh Deol (Posthumous, Art, MH), K T Thomas (Public Affairs, KL), Ms. N Rajam (Art, UP), P Narayanan (Literature & Education, KL), V S Achuthanandhan (Posthumous, Public Affairs, KL).
+        <br>• <strong>Padma Bhushan (Select):</strong> Alka Yagnik (Art), Mammootty (Art), Uday Kotak (Trade), Shibu Soren (Posthumous), Vijay Amritraj (Sports).
+        <br>• <strong>Padma Shri (Punjab & Sports):</strong> Harmanpreet Kaur Bhullar (Punjab), Baldev Singh (Punjab), Inderjit Singh Sidhu (Chandigarh), Rohit Sharma (Sports), Praveen Kumar (Sports).
+      </div>
+      <ul class="space-y-2">
+        <li>⭐ <span class="highlight">Ashoka Chakra (Peacetime Highest):</span> Awarded to <strong>Group Captain Shubhanshu Shukla</strong> (Astronaut / Pilot).</li>
+        <li><span class="highlight">Kirti Chakra:</span> Maj Arshdeep Singh, Nb Sub Doleshwar Subba, Gp Capt Prashanth Balakrishnan Nair.</li>
+        <li>⭐ <span class="highlight">Subhash Chandra Bose Aapda Prabandhan Puraskar 2026:</span> <strong>Lt Col Seeta Ashok Shelke</strong> (Individual, ₹5 Lakh; Wayanad rescue) and <strong>Sikkim SDMA</strong> (Institution, ₹51 Lakh).</li>
+        <li>⭐ <span class="highlight">60th Jnanpith Award (2025):</span> Tamil lyricist & poet <strong>R. Vairamuthu</strong> (3rd Tamil recipient in history).</li>
+        <li><span class="highlight">Sahitya Akademi Awards 2025:</span> English: <strong>Navtej Sarna</strong> (<em>Crimson Spring</em>); Hindi: <strong>Mamta Kalia</strong> (<em>Jeete Jee Allahabad</em>); Punjabi: <strong>Jinder</strong> (<em>Safety Kit</em>).</li>
+        <li><span class="highlight">International Honors:</span> 98th Oscars: <em>One Battle After Another</em> (Best Picture); BAFTA: Manipuri film <em>‘Boong’</em> won Best Children's Film; 14th Dalai Lama won 1st Grammy for album <em>Meditations</em>; Crafoord Prize in Geosciences to Veerabhadran Ramanathan; Stockholm Water Prize to Kaveh Madani; Global Teacher Prize to Rouble Nagi ($1M); Speaker of Knesset Medal to PM Modi.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 11. KEY APPOINTMENTS & OBITUARIES -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="appointments">
+    <div class="bg-teal-50 border-l-4 border-teal-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-teal-950 flex items-center gap-1.5">
+        <span>⭐</span> 11. High-Priority Appointments, Elections & Obituaries Adjective
+      </h2>
+      <span class="chrono-badge chrono-sep">Who's Who</span>
+    </div>
+
+    <!-- Master Appointments Table Sep -> Jan 2026 -->
+    <div class="overflow-x-auto mb-4">
+      <table class="w-full text-left border border-slate-300 text-xs">
+        <thead class="bg-slate-100 text-slate-800 font-bold">
+          <tr>
+            <th class="p-2 border">Designation / Organization</th>
+            <th class="p-2 border">Appointee / Leader</th>
+            <th class="p-2 border">Key Context / Predecessor</th>
+            <th class="p-2 border">Month (2026)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200">
+          <tr class="bg-red-50/20"><td><strong>First Woman AVM (Non-Medical)</strong></td><td><strong>Air Vice Marshal Shakti Sharma</strong></td><td>IAF Education Branch; ex-Principal Sainik School Kapurthala, Punjab.</td><td>September</td></tr>
+          <tr class="bg-red-50/20"><td><strong>First Woman Head of CoBRA</strong></td><td><strong>Sanjukta Parashar (IPS)</strong></td><td>Inspector General of elite CRPF Commando Battalion for Resolute Action.</td><td>September</td></tr>
+          <tr class="bg-red-50/20"><td><strong>Chief Economist, World Bank</strong></td><td><strong>Michael Kremer</strong></td><td>2019 Economics Nobel Laureate; succeeds Indermit Gill.</td><td>September</td></tr>
+          <tr class="bg-red-50/20"><td><strong>Executive Director, RBI</strong></td><td><strong>Suman Ray</strong></td><td>Took charge September 1; formerly Regional Director for Maharashtra.</td><td>September</td></tr>
+          <tr class="bg-red-50/20"><td><strong>CEO, Apple Inc.</strong></td><td><strong>John Ternus</strong></td><td>Appointed CEO effective Sept 1, ending Tim Cook's 15-year tenure.</td><td>September</td></tr>
+          <tr class="bg-red-50/20"><td><strong>CEO, Ram Mandir Teerth Kshetra</strong></td><td><strong>Air Marshal Jeetendra Mishra (Retd.)</strong></td><td>First Chief Executive Officer of the Ayodhya Trust.</td><td>September</td></tr>
+          <tr class="bg-amber-50/20"><td><strong>CEO, NITI Aayog</strong></td><td><strong>Anurag Jain</strong></td><td>Appointed for a 2-year tenure.</td><td>August</td></tr>
+          <tr class="bg-amber-50/20"><td><strong>Chairperson, Minorities Commission (NCM)</strong></td><td><strong>Harjit Singh Grewal</strong></td><td>Succeeded Iqbal Singh Lalpura.</td><td>August</td></tr>
+          <tr class="bg-amber-50/20"><td><strong>Union Minister for Education</strong></td><td><strong>Pralhad Joshi</strong></td><td>Holds Food & Renewable Energy portfolios.</td><td>August</td></tr>
+          <tr class="bg-amber-50/20"><td><strong>DG, Geological Survey of India (GSI)</strong></td><td><strong>Varsha Ashok Aglawe</strong></td><td><strong>First woman DG</strong> in GSI's 176-year history (54th DG).</td><td>August</td></tr>
+          <tr class="bg-amber-50/20"><td><strong>Chief of Integrated Defence Staff (CISC)</strong></td><td><strong>Air Marshal Tejinder Singh</strong></td><td>Chairman Chiefs of Staff Committee Secretariat.</td><td>August</td></tr>
+          <tr class="bg-amber-50/20"><td><strong>1st Woman ADC to COAS</strong></td><td><strong>Capt. Shivani Sehrawat</strong></td><td>Serving under Army Chief Gen. Dhiraj Seth.</td><td>August</td></tr>
+          <tr class="bg-amber-50/20"><td><strong>DG Armed Forces Medical Services</strong></td><td><strong>Air Marshal Sandeep Thareja</strong></td><td>Apex tri-service military health post.</td><td>August</td></tr>
+          <tr class="bg-amber-50/20"><td><strong>Central Board of Reserve Bank of India</strong></td><td><strong>Dr. S. Somanath & Syed Akbaruddin</strong></td><td>Appointed Part-Time Non-Official Directors.</td><td>August</td></tr>
+          <tr class="bg-amber-50/20"><td><strong>International Political Leaders</strong></td><td>Andy Burnham (UK PM); Keiko Fujimori (Peru Pres); Abelardo de la Espriella (Colombia Pres); Mirza Fakhrul Islam Alamgir (Bangladesh Pres).</td><td>Elected / appointed heads of government.</td><td>Jul–Aug</td></tr>
+          <tr class="bg-blue-50/20"><td><strong>CBI Director (Extension)</strong></td><td><strong>Praveen Sood (IPS)</strong></td><td>Granted 1-year extension by ACC.</td><td>May</td></tr>
+          <tr class="bg-blue-50/20"><td><strong>Director, Intelligence Bureau (DIB)</strong></td><td><strong>Mahesh Dixit (IPS)</strong></td><td>1993-batch Andhra cadre; succeeded Tapan Deka.</td><td>June</td></tr>
+          <tr class="bg-blue-50/20"><td><strong>Solicitor General of India</strong></td><td><strong>Tushar Mehta</strong></td><td>Re-appointed for 3-year term effective 1 July 2026.</td><td>June</td></tr>
+          <tr class="bg-blue-50/20"><td><strong>UIDAI & IndiaAI Mission CEO</strong></td><td><strong>Saurabh Vijay (IAS)</strong></td><td>1998-batch Maharashtra cadre.</td><td>June</td></tr>
+          <tr class="bg-blue-50/20"><td><strong>Vice-Chairman, NITI Aayog</strong></td><td><strong>Ashok Kumar Lahiri</strong></td><td>Former CEA and 15th FC member.</td><td>May</td></tr>
+          <tr class="bg-blue-50/20"><td><strong>National Statistical Commission</strong></td><td><strong>Dr. Saibal Chattopadhyay</strong> (Chairperson)</td><td>Appointed based on Rangarajan panel recommendations.</td><td>May</td></tr>
+          <tr class="bg-blue-50/20"><td><strong>President, NCLT</strong></td><td><strong>Justice (Retd.) Anupinder Singh Grewal</strong></td><td>Former Judge, Punjab & Haryana High Court.</td><td>June</td></tr>
+          <tr class="bg-blue-50/20"><td><strong>Rajya Sabha Leadership</strong></td><td>Harivansh Narayan Singh (Dy Chairman 3rd term); Raghav Chadha (Chairman, Petitions Committee).</td><td>Parliamentary posts.</td><td>May–Jun</td></tr>
+          <tr class="bg-blue-50/20"><td><strong>State Chief Ministers (2026 Assembly)</strong></td><td>TN: C. Joseph Vijay (TVK); Kerala: V.D. Satheesan; WB: Suvendu Adhikari; Assam: Himanta Biswa Sarma; Bihar: Samrat Choudhary; Karnataka: D.K. Shivakumar; Puducherry: N. Rangasamy.</td><td>Key state political transitions.</td><td>Apr–Jun</td></tr>
+          <tr class="bg-emerald-50/20"><td><strong>DG Border Roads (BRO)</strong></td><td><strong>Lt. Gen. Harpal Singh</strong></td><td>29th Director General.</td><td>Feb</td></tr>
+          <tr class="bg-emerald-50/20"><td><strong>DG BSF & DG ITBP</strong></td><td><strong>Praveen Kumar</strong> (BSF); <strong>Shatrujeet Singh Kapoor</strong> (ITBP)</td><td>Apex paramilitary appointments.</td><td>Feb</td></tr>
+          <tr class="bg-emerald-50/20"><td><strong>DG National Investigation Agency (NIA)</strong></td><td><strong>Rakesh Aggarwal (IPS)</strong></td><td>Apex counter-terror probe agency head.</td><td>Jan</td></tr>
+          <tr class="bg-emerald-50/20"><td><strong>Foreign Envoys</strong></td><td>Periasamy Kumaran (High Commissioner to UK); Vikram Doraiswami (Ambassador to China).</td><td>Key diplomatic postings.</td><td>Feb</td></tr>
+          <tr class="bg-emerald-50/20"><td><strong>Vigilance Commissioner in CVC</strong></td><td><strong>Praveen Vashista (IPS)</strong></td><td>Appointed to Central Vigilance Commission.</td><td>Jan</td></tr>
+          <tr class="bg-emerald-50/20"><td><strong>National President of BJP</strong></td><td><strong>Nitin Nabin</strong></td><td>Youngest party president; Bihar MLA.</td><td>Jan</td></tr>
+          <tr class="bg-emerald-50/20"><td><strong>Chief Minister of Manipur</strong></td><td><strong>Yumnam Khemchand Singh</strong></td><td>Nemcha Kipgen appointed Dy CM.</td><td>Feb</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Master Obituaries Reverse Chronological -->
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5">
+      <h3 class="font-bold text-slate-800 text-xs sm:text-sm mb-2">⭐ High-Yield Obituaries (Reverse Chronological: Sep → Jan 2026)</h3>
+      <ul class="space-y-1.5 text-xs sm:text-sm">
+        <li>• <span class="font-bold">Bhagat Chunni Lal (94):</span> Former Punjab Cabinet Minister and senior BJP leader passed away in Jalandhar (Sep 2026).</li>
+        <li>• <span class="font-bold">Sir Garfield Sobers (89):</span> Legendary West Indies cricket icon, world's foremost all-rounder who hit 6 sixes in an over in first-class cricket (Aug 2026).</li>
+        <li>• <span class="font-bold">Justice M.S. Liberhan (87):</span> Former Punjab & Haryana HC Judge, author of Liberhan Commission report on Babri Masjid (Aug 2026).</li>
+        <li>• <span class="font-bold">General Vishwa Nath Sharma (97):</span> 14th Chief of Army Staff (1988–1990) (Aug 2026).</li>
+        <li>• <span class="font-bold">Teejan Bai:</span> Legendary Pandavani folk art exponent; Padma Vibhushan recipient (Aug 2026).</li>
+        <li>• <span class="font-bold">S. Janaki:</span> Celebrated playback singer crowned "Nightingale of South India" (Aug 2026).</li>
+        <li>• <span class="font-bold">Sumit Sarkar:</span> Renowned historian, author of <em>Modern India (1885–1947)</em> (Jul 2026).</li>
+        <li>• <span class="font-bold">Girish Bharadwaj:</span> "Sethu Bandhu", engineer who built over 140 hanging suspension footbridges (Jul 2026).</li>
+        <li>• <span class="font-bold">Sheikh Hamad bin Khalifa Al Thani (74):</span> Former Emir of Qatar; founder of Al Jazeera (Jul 2026).</li>
+        <li>• <span class="font-bold">Franco Baresi:</span> Legendary AC Milan captain and 1982 World Cup champion with Italy (Jul 2026).</li>
+        <li>• <span class="font-bold">King Harald V (89):</span> Monarch of Norway (Jul 2026).</li>
+        <li>• <span class="font-bold">Nirmal Purja:</span> Renowned Nepalese mountaineer killed on Broad Peak (Jul 2026).</li>
+        <li>• <span class="font-bold">Balwinder Singh Dhaliwal (67):</span> Former shot-putter, Asian Games medalist, 1987 Arjuna Awardee in Chandigarh (May 2026).</li>
+        <li>• <span class="font-bold">Dr. Madhav Gadgil:</span> Renowned ecologist, author of Western Ghats Ecology report (Jan 2026).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 12. BOOKS, MEMOIRS & IMPORTANT DAYS WITH THEMES -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-4" id="days">
+    <div class="bg-pink-50 border-l-4 border-pink-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-pink-950 flex items-center gap-1.5">
+        <span>⭐</span> 12. Books, Memoirs & Master Checklist of Important Days Adjective
+      </h2>
+      <span class="chrono-badge chrono-sep">Static GK + Current</span>
+    </div>
+
+    <!-- Master Books Matrix Reverse Chronological -->
+    <div class="mb-5">
+      <h3 class="font-bold text-slate-800 text-xs sm:text-sm mb-2">⭐ Master Books & Memoirs Table (Sep → Jan 2026)</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border border-slate-300 text-xs">
+          <thead class="bg-slate-100 text-slate-800 font-bold">
+            <tr>
+              <th class="p-2 border">Book / Memoir Title</th>
+              <th class="p-2 border">Author / Editor</th>
+              <th class="p-2 border">Key Context / Description</th>
+              <th class="p-2 border">Period</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="bg-red-50/20"><td><em>Sankalp Se Siddhi Ka Modi Yug</em></td><td><strong>Ghanshyam Tiwari</strong></td><td>Rajya Sabha MP; describes PM as "Setu Purush".</td><td>September</td></tr>
+            <tr class="bg-red-50/20"><td><em>Belonging: A Journey of Love</em></td><td><strong>Sonia Gandhi</strong></td><td>Personal memoir and reflections.</td><td>September</td></tr>
+            <tr class="bg-red-50/20"><td><em>Who Owns What?</em></td><td><strong>Xerxes Ranina</strong></td><td>Definitive legal guide for creators and copyright owners.</td><td>September</td></tr>
+            <tr class="bg-red-50/20"><td><em>The Orissan</em></td><td><strong>Alka Jena</strong></td><td>Cultural history, temple cuisine, and heritage of Odisha.</td><td>September</td></tr>
+            <tr class="bg-amber-50/20"><td><em>Triumph of the Indian Republic: My Life, My Struggles</em></td><td><strong>Ram Nath Kovind</strong></td><td>Autobiography of the 14th President of India.</td><td>Jul–Aug</td></tr>
+            <tr class="bg-amber-50/20"><td><em>China's Wars: The Politics and Diplomacy Behind Coercion</em></td><td><strong>Vijay Gokhale</strong></td><td>Former Foreign Secretary of India on PLA doctrines.</td><td>Jul–Aug</td></tr>
+            <tr class="bg-amber-50/20"><td><em>The Voice of Justice: Justice Gavai Speaks</em></td><td><strong>Prof. (Dr.) S. Sivakumar (Ed.)</strong></td><td>Foreword on Supreme Court jurisprudence.</td><td>Jul–Aug</td></tr>
+            <tr class="bg-amber-50/20"><td><em>The Delimitation Debate: The Union and its Units</em></td><td><strong>The Hindu Group (Suresh Nambath)</strong></td><td>Constitutional analysis on post-Census representation.</td><td>Jul–Aug</td></tr>
+            <tr class="bg-amber-50/20"><td><em>Janpriya Neta Venkaiah Naidu</em></td><td><strong>Y. Lakshmi Prasad</strong></td><td>Biography of former Vice President M. Venkaiah Naidu.</td><td>Jul–Aug</td></tr>
+            <tr class="bg-amber-50/20"><td><em>Game Changers: Lessons on Resilience</em></td><td><strong>Uday Shankar</strong></td><td>Jaico Publishing House.</td><td>Jul–Aug</td></tr>
+            <tr class="bg-amber-50/20"><td><em>The Trees of My Country: A Natural History</em></td><td><strong>T.R. Shankar Raman</strong></td><td>Botanical heritage of 50 Indian trees.</td><td>Jul–Aug</td></tr>
+            <tr class="bg-blue-50/20"><td><em>The Second Orbit: Belief of a Man... Dreams of 1.4B Hearts</em></td><td><strong>Gp Capt Shubhanshu Shukla</strong></td><td>Astronaut memoir on journey to ISS under Axiom-4.</td><td>Apr–Jun</td></tr>
+            <tr class="bg-blue-50/20"><td><em>We, the People of India: Decoding a Nation's Symbols</em></td><td><strong>T.M. Krishna</strong></td><td>Constitutional symbols and democratic ethos.</td><td>Apr–Jun</td></tr>
+            <tr class="bg-blue-50/20"><td><em>The Bench, the Bar, and the Bizarre</em></td><td><strong>Tushar Mehta</strong> (Solicitor General)</td><td>Courtroom anecdotes and legal realities.</td><td>Apr–Jun</td></tr>
+            <tr class="bg-blue-50/20"><td><em>Apnapan</em></td><td><strong>Shivraj Singh Chouhan</strong></td><td>35-year reflections working alongside PM Modi.</td><td>Apr–Jun</td></tr>
+            <tr class="bg-blue-50/20"><td><em>All-Time Favourite Friendship Stories</em></td><td><strong>Ruskin Bond</strong></td><td>Anthology of 25 friendship tales.</td><td>Apr–Jun</td></tr>
+            <tr class="bg-blue-50/20"><td><em>VIP Culture in India</em></td><td><strong>Nabam Rebia & Sandeep Kumar</strong></td><td>Released by Vice President C.P. Radhakrishnan.</td><td>Apr–Jun</td></tr>
+            <tr class="bg-blue-50/20"><td><em>CBN@361 Degrees: Polymath</em></td><td><strong>Shakamuri Srinivasa Prasad</strong></td><td>Biography of Andhra CM N. Chandrababu Naidu.</td><td>Apr–Jun</td></tr>
+            <tr class="bg-emerald-50/20"><td><em>The Golden Road: How Ancient India Transformed the World</em></td><td><strong>William Dalrymple</strong></td><td>Won Mark Lynton History Prize 2026.</td><td>Jan–Mar</td></tr>
+            <tr class="bg-emerald-50/20"><td><em>Mother Mary Comes to Me</em></td><td><strong>Arundhati Roy</strong></td><td>Won US National Book Critics Circle Award 2026.</td><td>Jan–Mar</td></tr>
+            <tr class="bg-emerald-50/20"><td><em>The Unprecedented Success of Akash</em></td><td><strong>G. Chandramouli</strong></td><td>Released by Rajnath Singh (Padma Shri 2026).</td><td>Jan–Mar</td></tr>
+            <tr class="bg-emerald-50/20"><td><em>An Accidental Lawyer</em></td><td><strong>K.K. Venugopal</strong> with Suhasini Sen</td><td>Memoir by former Attorney General of India.</td><td>Jan–Mar</td></tr>
+            <tr class="bg-emerald-50/20"><td><em>Jeete Jee Allahabad</em></td><td><strong>Mamta Kalia</strong></td><td>Won Sahitya Akademi Award 2025 in Hindi.</td><td>Jan–Mar</td></tr>
+            <tr class="bg-emerald-50/20"><td><em>Crimson Spring</em></td><td><strong>Navtej Sarna</strong></td><td>Won Sahitya Akademi Award 2025 in English.</td><td>Jan–Mar</td></tr>
+            <tr class="bg-emerald-50/20"><td><em>A Walk Up The Hill</em></td><td>Late <strong>Dr. Madhav Gadgil</strong></td><td>Renowned ecologist memoir.</td><td>Jan–Mar</td></tr>
+            <tr class="bg-emerald-50/20"><td><em>The Sage who Reimagined Hinduism</em></td><td><strong>Dr. Shashi Tharoor</strong></td><td>On Sree Narayana Guru.</td><td>Jan–Mar</td></tr>
+            <tr class="bg-emerald-50/20"><td><em>I Belong to Nowhere</em></td><td><strong>Kalyani Thakur Charal</strong></td><td>Dalit poetry; won A.K. Ramanujan Prize.</td><td>Jan–Mar</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Master Exam Days Reverse Chronological -->
+    <div>
+      <h3 class="font-bold text-slate-800 text-xs sm:text-sm mb-2">⭐ Master Checklist: Important Exam Days with Verified Themes (Reverse: Sep → Jan)</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border border-slate-300 text-xs">
+          <thead class="bg-slate-100 text-slate-800 font-bold">
+            <tr>
+              <th class="p-2 border">Date</th>
+              <th class="p-2 border">Observance / Landmark</th>
+              <th class="p-2 border">Approved Exam Theme / Significance</th>
+              <th class="p-2 border">Month</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="bg-red-50/30"><td><strong>27 Nov*</strong></td><td>Intl. Day for Elimination of Child Marriage</td><td>Newly declared UN Day; co-sponsored by India, led by Sierra Leone.</td><td>Notified Sep</td></tr>
+            <tr class="bg-red-50/30"><td><strong>23 Sep</strong></td><td>11th National Ayurveda Day</td><td><em>"Ayurveda for a Healthier Tomorrow"</em> (Hosted at Nagpur).</td><td>September</td></tr>
+            <tr class="bg-red-50/30"><td><strong>16 Sep</strong></td><td>⭐ World Ozone Day</td><td><em>"Global action for a cooler planet"</em> (Montreal Protocol signed 1987).</td><td>September</td></tr>
+            <tr class="bg-red-50/30"><td><strong>8 Sep</strong></td><td>International Literacy Day</td><td><em>"Literacy for people, the planet and prosperity"</em></td><td>September</td></tr>
+            <tr class="bg-red-50/30"><td><strong>7 Sep</strong></td><td>Intl. Day of Clean Air for Blue Skies</td><td><em>"Clean Air for Climate Action"</em></td><td>September</td></tr>
+            <tr class="bg-red-50/30"><td><strong>2 Sep</strong></td><td>World Coconut Day</td><td><em>"Coconuts in Times of Uncertainty: Securing Food, Energy, and Livelihoods"</em></td><td>September</td></tr>
+            <tr class="bg-amber-50/30"><td><strong>29 Aug</strong></td><td>⭐ National Sports Day (Rashtriya Khel Diwas)</td><td><em>"Khelega Bharat, Jeetega Bharat"</em> (Major Dhyan Chand Birth Anniv).</td><td>August</td></tr>
+            <tr class="bg-amber-50/30"><td><strong>23 Aug</strong></td><td>⭐ <strong>National Space Day</strong></td><td><em>"Towards Viksit Bharat: Innovating, Collaborating and Aspiring to Global Space Leadership"</em> (Chandrayaan-3 Landing).</td><td>August</td></tr>
+            <tr class="bg-amber-50/30"><td><strong>21 Aug</strong></td><td>World Senior Citizens' Day</td><td><em>"The Age of Longevity: Rethinking Systems for Longer Lives"</em></td><td>August</td></tr>
+            <tr class="bg-amber-50/30"><td><strong>12 Aug</strong></td><td>International Youth Day</td><td><em>"Different Contexts, Common Aspirations"</em></td><td>August</td></tr>
+            <tr class="bg-amber-50/30"><td><strong>9 Aug</strong></td><td>World Tribal Day (Indigenous Peoples)</td><td><em>"Honouring Indigenous Midwives: Safeguarding Life and Well-being"</em></td><td>August</td></tr>
+            <tr class="bg-amber-50/30"><td><strong>7 Aug</strong></td><td>⭐ National Javelin Day / Handloom Day</td><td>Commemorates Neeraj Chopra Tokyo Gold (2021) & 1905 Swadeshi launch.</td><td>August</td></tr>
+            <tr class="bg-amber-50/30"><td><strong>28 Jul</strong></td><td>World Hepatitis Day</td><td><em>"Hepatitis: Let's break it down"</em></td><td>July</td></tr>
+            <tr class="bg-amber-50/30"><td><strong>26 Jul</strong></td><td>⭐ Kargil Vijay Diwas</td><td>Commemorating Operation Vijay (1999) victory over intruders.</td><td>July</td></tr>
+            <tr class="bg-amber-50/30"><td><strong>15 Jul</strong></td><td>World Youth Skills Day</td><td><em>"Skills for a Shared Future"</em></td><td>July</td></tr>
+            <tr class="bg-amber-50/30"><td><strong>11 Jul</strong></td><td>World Population Day</td><td><em>"Realizing the hopes and aspirations of young people"</em></td><td>July</td></tr>
+            <tr class="bg-amber-50/30"><td><strong>1 Jul</strong></td><td>National Doctor's Day</td><td><em>"Behind the Mask: Who Heals the Healers?"</em> (Dr. B.C. Roy birth/death anniv).</td><td>July</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>30 Jun</strong></td><td>Hul Diwas</td><td>Tribute to 1855 Santhal Rebellion (Sidhu, Kanhu, Chand, Bhairav Murmu).</td><td>June</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>29 Jun</strong></td><td>⭐ National Statistics Day</td><td><em>"Unlocking the Potential of Administrative Data"</em> (Prof. P.C. Mahalanobis birth).</td><td>June</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>27 Jun</strong></td><td>MSME Day (Udyami Bharat)</td><td><em>"Empowering MSMEs through Innovation and Sustainable Industrial Development"</em></td><td>June</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>25 Jun</strong></td><td>Samvidhaan Hatya Diwas</td><td>Observed to remember imposition of internal Emergency on 25 June 1975.</td><td>June</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>21 Jun</strong></td><td>⭐ International Day of Yoga (12th)</td><td><em>"Yoga for Healthy Ageing"</em> (Lead event at Red Road, Kolkata).</td><td>June</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>19 Jun</strong></td><td>National Reading Day</td><td>Tribute to P.N. Panicker, Father of Kerala Library Movement.</td><td>June</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>17 Jun</strong></td><td>Combat Desertification Day</td><td><em>"Rangelands: Recognize. Respect. Restore."</em></td><td>June</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>12 Jun</strong></td><td>World Day Against Child Labour</td><td><em>"Red card to child labour: Fair play for children, decent work for adults"</em></td><td>June</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>8 Jun</strong></td><td>World Oceans Day</td><td><em>"REIMAGINE: Beyond the world we know, a new relationship with our ocean"</em></td><td>June</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>5 Jun</strong></td><td>⭐ World Environment Day</td><td><em>"Inspired by Nature. For Climate. For Our Future"</em> (Hosted by Azerbaijan).</td><td>June</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>31 May</strong></td><td>World No-Tobacco Day</td><td><em>"Unmasking the appeal - countering nicotine and tobacco addiction"</em></td><td>May</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>22 May</strong></td><td>⭐ International Biodiversity Day</td><td><em>"Acting locally for global impact"</em> (Text of CBD adopted 22 May 1992).</td><td>May</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>21 May</strong></td><td>National Anti-Terrorism Day</td><td>Commemorates martyrdom of former PM Rajiv Gandhi (1991).</td><td>May</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>20 May</strong></td><td>World Metrology Day</td><td><em>"Metrology: Building Trust in Policy Making"</em></td><td>May</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>12 May</strong></td><td>International Nurses Day</td><td><em>"Our Nurses. Our Future. Empowered Nurses Save Lives"</em></td><td>May</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>11 May</strong></td><td>⭐ National Technology Day</td><td>Commemorates <strong>Operation Shakti (Pokhran-II nuclear tests, 11 May 1998)</strong> & Hansa-3.</td><td>May</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>8 May</strong></td><td>World Red Cross Day</td><td><em>"United in humanity"</em> (Birth of Henry Dunant, 1st Nobel Peace laureate).</td><td>May</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>3 May</strong></td><td>World Press Freedom Day</td><td><em>"Shaping a Future at Peace"</em> (Commemorates 1991 Windhoek Declaration).</td><td>May</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>26 Apr</strong></td><td>World Intellectual Property Day</td><td><em>"IP and Sports: Ready, Set, Innovate"</em></td><td>April</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>25 Apr</strong></td><td>World Malaria Day</td><td><em>"Driven to End Malaria: Now We Can. Now We Must"</em></td><td>April</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>24 Apr</strong></td><td>⭐ National Panchayati Raj Day</td><td>Marks enactment of <strong>73rd CAA 1992</strong> (Part IX: Art 243–243O).</td><td>April</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>22 Apr</strong></td><td>⭐ World Earth Day</td><td><em>"OUR POWER, OUR PLANET"</em> (First held in 1970).</td><td>April</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>21 Apr</strong></td><td>National Civil Services Day</td><td><em>"Viksit Bharat: Citizen-Centric Governance and Development at the Last Mile"</em></td><td>April</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>18 Apr</strong></td><td>World Heritage Day (ICOMOS)</td><td><em>"Emergency Response for Living Heritage in contexts of Conflicts and Disasters"</em></td><td>April</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>14 Apr</strong></td><td>World Quantum Day</td><td>Celebrated on 4.14 in reference to Planck's constant ($4.1356677 \times 10^{-15} \text{ eV}\cdot\text{s}$).</td><td>April</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>13 Apr</strong></td><td>⭐ Siachen Day</td><td>Commemorates <strong>Operation Meghdoot (13 April 1984)</strong> securing Saltoro Ridge.</td><td>April</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>9 Apr</strong></td><td>CRPF Shaurya Diwas</td><td>Commemorates 1965 battle at Sardar Post, Rann of Kutch against Pakistan.</td><td>April</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>7 Apr</strong></td><td>World Health Day</td><td><em>"Together for health. Stand with science"</em> (WHO founded 7 April 1948).</td><td>April</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>5 Apr</strong></td><td>⭐ National Maritime Day (63rd)</td><td><em>"Maritime India - Empowering Progress"</em> (SS Loyalty 1919 maiden voyage).</td><td>April</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>5 Apr</strong></td><td>Samata Diwas</td><td>Birth Anniversary of former Deputy PM <strong>Babu Jagjivan Ram</strong> (Samata Sthal).</td><td>April</td></tr>
+            <tr class="bg-blue-50/30"><td><strong>2 Apr</strong></td><td>World Autism Awareness Day</td><td><em>"Autism and Humanity - Every Life Has Value"</em></td><td>April</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>24 Mar</strong></td><td>World Tuberculosis (TB) Day</td><td><em>"Yes! We can end TB!"</em> (Robert Koch discovered bacillus in 1882).</td><td>March</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>23 Mar</strong></td><td>⭐ Shaheed Diwas (Martyrs' Day)</td><td>Commemorates martyrdom of Bhagat Singh, Rajguru, Sukhdev (1931).</td><td>March</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>22 Mar</strong></td><td>World Water Day</td><td><em>"Water and Gender"</em></td><td>March</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>21 Mar</strong></td><td>International Day of Forests</td><td><em>"Forests and economies"</em></td><td>March</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>15 Mar</strong></td><td>World Consumer Rights Day</td><td><em>"Safe Products, Confident Consumers"</em> (National: Dec 24).</td><td>March</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>8 Mar</strong></td><td>⭐ International Women’s Day</td><td><em>"Rights. Justice. Action. For ALL Women and Girls"</em> (#SheLeadsBharat).</td><td>March</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>3 Mar</strong></td><td>World Wildlife Day</td><td><em>"Medicinal and Aromatic Plants: Conserving Health, Heritage and Livelihoods"</em></td><td>March</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>28 Feb</strong></td><td>⭐ National Science Day</td><td><em>"Women In Science Catalysing Viksit Bharat"</em> (1928 Raman Effect discovery).</td><td>February</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>21 Feb</strong></td><td>International Mother Language Day</td><td><em>"Youth voices on multilingual education"</em></td><td>February</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>13 Feb</strong></td><td>World Radio Day</td><td><em>"Radio and Artificial Intelligence: AI is a tool, not a voice"</em></td><td>February</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>13 Feb</strong></td><td>⭐ National Women’s Day</td><td>Birth anniversary of Sarojini Naidu (1st Indian woman INC President 1925).</td><td>February</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>11 Feb</strong></td><td>Women & Girls in Science</td><td><em>"From Vision to Impact: Redefining STEM by Closing Gender Gap"</em></td><td>February</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>10 Feb</strong></td><td>World Pulses Day</td><td><em>"Pulses of the world: from modesty to excellence"</em></td><td>February</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>4 Feb</strong></td><td>World Cancer Day</td><td><em>"United by Unique"</em> (Triennial UICC Campaign 2025–27).</td><td>February</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>2 Feb</strong></td><td>⭐ World Wetlands Day</td><td><em>"Wetlands and traditional knowledge: Celebrating cultural heritage"</em></td><td>February</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>1 Feb</strong></td><td>Indian Coast Guard Day</td><td>50th Raising Day. Motto: <em>Vayam Rakshamah</em> (We Protect).</td><td>February</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>26 Jan</strong></td><td>⭐ 77th Republic Day</td><td>Themes: <em>"Svatantrata Ka Mantra - Vande Mataram"</em> & <em>"Aatmanirbhar Bharat"</em>.</td><td>January</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>25 Jan</strong></td><td>⭐ National Voters' Day</td><td><em>"My India, My Vote"</em>; Tagline: <em>"Citizen at Heart of Indian Democracy"</em> (ECI 1950).</td><td>January</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>24 Jan</strong></td><td>International Day of Education</td><td><em>"The power of youth in co-creating education"</em></td><td>January</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>23 Jan</strong></td><td>⭐ Parakram Diwas</td><td>129th birth anniversary of Netaji Subhas Chandra Bose (Born 1897, Cuttack).</td><td>January</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>15 Jan</strong></td><td>Indian Army Day</td><td>Marks FM K.M. Cariappa taking over as 1st Commander-in-Chief (1949).</td><td>January</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>10 Jan</strong></td><td>World Hindi Day</td><td>Anniversary of 1st World Hindi Conference (Nagpur 1975). (National: Sep 14).</td><td>January</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>9 Jan</strong></td><td>⭐ Pravasi Bharatiya Divas</td><td>Mahatma Gandhi's 1915 return from South Africa (Biennial).</td><td>January</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>6 Jan</strong></td><td>National Siddha Day</td><td><em>"Siddha for Global Health"</em> (Birth of Sage Agathiyar).</td><td>January</td></tr>
+            <tr class="bg-emerald-50/30"><td><strong>4 Jan</strong></td><td>World Braille Day</td><td>Birth of Louis Braille; Bharati Braille adopted in 1951.</td><td>January</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Document Footer -->
+  <footer class="mt-8 pt-4 border-t border-slate-300 text-center text-xs text-slate-500">
+    <p class="font-bold text-slate-700">PSSSB / NITTTR High-Yield Master Compendium (Reverse Chronology: Sep 2026 → Jan 2026)</p>
+    <p class="mt-1">Every section strictly arranged from most recent to oldest. Marked with ⭐ Must-Revise and 🔥 High-Yield Badges.</p>
+  </footer>
+
 </div>
+
+<!-- Client-side filter script -->
+<script>
+function filterContent() {
+  const query = document.getElementById('quickFilter').value.toLowerCase().trim();
+  const listItems = document.querySelectorAll('ul li');
+  const tableRows = document.querySelectorAll('tbody tr');
+
+  if (!query) {
+    listItems.forEach(li => li.style.display = '');
+    tableRows.forEach(tr => tr.style.display = '');
+    return;
+  }
+
+  listItems.forEach(li => {
+    li.style.display = li.innerText.toLowerCase().includes(query) ? '' : 'none';
+  });
+
+  tableRows.forEach(tr => {
+    tr.style.display = tr.innerText.toLowerCase().includes(query) ? '' : 'none';
+  });
+}
+</script>
 
 </body>
 </html>

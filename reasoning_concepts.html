@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PSSSB Reasoning Master Revision Study Guide</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(100, 116, 139, 0.08);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(100, 116, 139, 0.35);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(99, 102, 241, 0.6);
+    }
+
+    /* Print Revision Mode Stylesheet */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt !important;
+      }
+      .no-print, header, #sidebar, #mobile-drawer, #interactive-tools, #toast, .action-buttons {
+        display: none !important;
+      }
+      main {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .topic-card {
+        page-break-inside: avoid;
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important;
+        margin-bottom: 24px !important;
+      }
+      .print-page-break {
+        page-break-before: always;
+      }
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Top Sticky Navigation & Live Progress -->
+  <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-3">
+        <!-- Logo & Title -->
+        <div class="flex items-center gap-3">
+          <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none" aria-label="Toggle Navigation">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+          <div class="flex items-center gap-2.5">
+            <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 text-white shadow-md shadow-brand-500/20 font-black text-lg tracking-wider">
+              PS
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h1 class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white leading-tight">
+                  PSSSB Reasoning <span class="text-brand-600 dark:text-indigo-400">Master Guide</span>
+                </h1>
+                <span class="hidden md:inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase bg-emerald-100 dark:bg-emerald-950/70 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">
+                  2026 Edition
+                </span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 font-medium hidden sm:block">
+                Target: Clerk · Patwari · Senior Assistant · Excise · VDO
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Search Input -->
+        <div class="relative flex-1 max-w-md mx-2 hidden sm:block">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+          <input 
+            type="text" 
+            id="global-search" 
+            placeholder="Search topic, formula, shortcut (e.g., 'EJOTY', 'Clock', 'Triplet')..."
+            class="w-full pl-9 pr-4 py-1.5 text-xs sm:text-sm rounded-lg bg-slate-100 dark:bg-slate-800 border border-transparent focus:border-brand-500 dark:focus:border-brand-500 focus:bg-white dark:focus:bg-slate-900 text-slate-900 dark:text-slate-100 placeholder-slate-400 outline-none transition"
+          >
+          <button id="clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+            <i data-lucide="x" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+
+        <!-- Actions: Cheat Sheet, Print, Dark Mode -->
+        <div class="flex items-center gap-2">
+          <!-- Cheat Sheet Modal Trigger -->
+          <button id="open-cheatsheet-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60 hover:bg-amber-100 text-xs font-semibold shadow-xs transition">
+            <i data-lucide="zap" class="w-4 h-4 text-amber-500"></i>
+            <span class="hidden md:inline">Quick</span> Formulas
+          </button>
+
+          <!-- Print / PDF Mode -->
+          <button onclick="window.print()" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-xs font-medium transition" title="Print Revision PDF">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+          </button>
+
+          <!-- Dark Mode Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition" aria-label="Toggle Theme">
+            <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
+            <i data-lucide="sun" class="w-4 h-4 block dark:hidden text-amber-500"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Revision Progress Strip -->
+      <div class="py-1.5 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
+        <div class="flex items-center gap-2">
+          <span class="font-medium flex items-center gap-1.5">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i>
+            Revision Progress:
+          </span>
+          <span id="progress-text" class="font-bold text-brand-600 dark:text-indigo-400 font-mono">0 / 15 (0%)</span>
+        </div>
+        <div class="w-36 sm:w-48 bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+          <div id="progress-bar" class="h-full bg-gradient-to-r from-brand-600 to-emerald-500 rounded-full transition-all duration-300" style="width: 0%;"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Layout Container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full flex gap-8">
+    
+    <!-- Desktop Sticky Sidebar Navigation -->
+    <aside id="sidebar" class="hidden lg:block w-72 shrink-0">
+      <div class="sticky top-28 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-xs max-h-[calc(100vh-8.5rem)] overflow-y-auto">
+        <div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-100 dark:border-slate-800">
+          <div class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-400">
+            <i data-lucide="list-ordered" class="w-3.5 h-3.5 text-brand-500"></i>
+            15 PSSSB Topics
+          </div>
+          <button id="reset-progress-btn" class="text-[11px] text-rose-500 hover:text-rose-600 font-medium">Reset</button>
+        </div>
+
+        <nav id="topic-nav-list" class="space-y-1 text-xs">
+          <!-- Dynamic nav links loaded via script -->
+        </nav>
+
+        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
+          <a href="#interactive-tools" class="flex items-center gap-2 p-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 font-semibold hover:bg-indigo-100 dark:hover:bg-indigo-900/60 transition">
+            <i data-lucide="calculator" class="w-4 h-4 text-indigo-600"></i>
+            <span>Interactive Calculators</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Mobile Drawer Modal -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs lg:hidden hidden">
+      <div class="fixed inset-y-0 left-0 w-80 max-w-[85vw] bg-white dark:bg-slate-900 p-5 shadow-2xl overflow-y-auto flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
+            <h2 class="font-bold text-sm text-slate-800 dark:text-white flex items-center gap-2">
+              <i data-lucide="book-open" class="w-4 h-4 text-brand-600"></i>
+              Topic Directory
+            </h2>
+            <button id="close-drawer-btn" class="p-1.5 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+          <nav id="mobile-topic-nav-list" class="mt-3 space-y-1 text-xs">
+            <!-- Nav populated via JS -->
+          </nav>
+        </div>
+        <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+          <p class="text-[11px] text-slate-400 text-center">Prepared for Punjab PSSSB 2026 Aspirants</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Revision Content Area -->
+    <main class="flex-1 min-w-0 space-y-8">
+
+      <!-- Exam Strategy Banner -->
+      <section class="bg-gradient-to-r from-indigo-900 via-brand-800 to-slate-900 rounded-2xl p-5 sm:p-6 text-white shadow-lg relative overflow-hidden">
+        <div class="absolute -right-8 -bottom-8 opacity-10 pointer-events-none">
+          <i data-lucide="award" class="w-64 h-64 text-white"></i>
+        </div>
+        <div class="relative z-10 max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold mb-3">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+            PSSSB 2026 High-Scoring Reasoning Blueprint
+          </div>
+          <h2 class="text-xl sm:text-2xl font-black tracking-tight leading-snug">
+            Target 100% Accuracy in PSSSB Mental Ability & Reasoning
+          </h2>
+          <p class="text-slate-200 text-xs sm:text-sm mt-2 leading-relaxed">
+            In PSSSB exams, Reasoning holds <strong>15 to 25 questions</strong> (1 mark each with 0.25 negative marking). This quick-revision guide consolidates all 15 core chapters with tested speed-tricks, Punjabi/English terminologies, formulas, and common traps.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="px-2.5 py-1 rounded-md bg-white/15 border border-white/10">⏱️ Avg Ideal Time: <strong>45 sec/question</strong></span>
+            <span class="px-2.5 py-1 rounded-md bg-white/15 border border-white/10">🎯 Target Score: <strong>14+/15 or 23+/25</strong></span>
+            <span class="px-2.5 py-1 rounded-md bg-white/15 border border-white/10">🚫 Zero Guesswork on Coded & Syllogism</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Widgets Hub Section -->
+      <section id="interactive-tools" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-xs">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-2">
+          <div>
+            <span class="text-xs font-bold text-brand-600 dark:text-indigo-400 uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="cpu" class="w-4 h-4"></i> Practice & Verification Lab
+            </span>
+            <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">Interactive Reasoning Speed Tools</h3>
+          </div>
+          <div class="flex gap-1.5 p-1 bg-slate-100 dark:bg-slate-800 rounded-xl text-xs font-semibold" id="tool-tabs">
+            <button onclick="switchToolTab('alpha')" id="tab-btn-alpha" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-xs">Alphabet Ranks</button>
+            <button onclick="switchToolTab('clock')" id="tab-btn-clock" class="px-3 py-1.5 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white">Clock Calculator</button>
+            <button onclick="switchToolTab('calendar')" id="tab-btn-calendar" class="px-3 py-1.5 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white">Calendar Day Finder</button>
+          </div>
+        </div>
+
+        <!-- Tool 1: Alphabet Position & Reverse Pair Lookup -->
+        <div id="tool-pane-alpha" class="pt-5 space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-500 mb-1.5">Test Word / Letters (e.g. PUNJAB, CLERK, PATWARI)</label>
+              <div class="flex gap-2">
+                <input type="text" id="alpha-input" value="PUNJAB" maxlength="20" class="uppercase font-mono font-bold tracking-widest text-sm px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-brand-500 outline-none flex-1">
+                <button onclick="calculateAlphaRanks()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold shadow-xs">Analyze</button>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-1">Computes forward positions, reverse positions (27-N), and opposite mnemonic pairs.</p>
+            </div>
+            <!-- Results Display -->
+            <div id="alpha-output" class="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 font-mono text-xs space-y-2">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Quick EJOTY and CFILORUX Strip -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div class="p-2.5 rounded-xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200/60 dark:border-amber-800/40 text-xs">
+              <span class="font-bold text-amber-800 dark:text-amber-300">⚡ 5-Step Anchor (EJOTY):</span>
+              <div class="flex justify-between mt-1 text-slate-700 dark:text-slate-300 font-mono font-semibold">
+                <span>E=5</span><span>J=10</span><span>O=15</span><span>T=20</span><span>Y=25</span>
+              </div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-200/60 dark:border-indigo-800/40 text-xs">
+              <span class="font-bold text-indigo-800 dark:text-indigo-300">⚡ 3-Step Anchor (C-F-I-L-O-R-U-X):</span>
+              <div class="flex justify-between mt-1 text-slate-700 dark:text-slate-300 font-mono font-semibold text-[11px]">
+                <span>C:3</span><span>F:6</span><span>I:9</span><span>L:12</span><span>O:15</span><span>R:18</span><span>U:21</span><span>X:24</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool 2: Clock Calculator -->
+        <div id="tool-pane-clock" class="pt-5 space-y-4 hidden">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+            <div class="space-y-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">Select Time</label>
+                <div class="flex items-center gap-2">
+                  <div class="flex-1">
+                    <span class="text-[10px] text-slate-400 font-mono">HOURS (1-12)</span>
+                    <input type="number" id="clock-hour" min="1" max="12" value="7" class="w-full font-mono text-center font-bold px-2 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
+                  </div>
+                  <span class="font-bold text-lg pt-3">:</span>
+                  <div class="flex-1">
+                    <span class="text-[10px] text-slate-400 font-mono">MINUTES (0-59)</span>
+                    <input type="number" id="clock-min" min="0" max="59" value="20" class="w-full font-mono text-center font-bold px-2 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
+                  </div>
+                </div>
+              </div>
+              <button onclick="calculateClock()" class="w-full py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold">Calculate All Angles & Images</button>
+            </div>
+
+            <!-- Visual Clock Canvas / SVG -->
+            <div class="flex justify-center">
+              <svg id="clock-svg" width="130" height="130" viewBox="0 0 100 100" class="bg-white dark:bg-slate-800 rounded-full border-2 border-brand-500 shadow-inner">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1.5" class="text-slate-200 dark:text-slate-700"/>
+                <!-- Hour marks -->
+                <line x1="50" y1="8" x2="50" y2="14" stroke="currentColor" stroke-width="2" class="text-slate-500"/>
+                <line x1="50" y1="92" x2="50" y2="86" stroke="currentColor" stroke-width="2" class="text-slate-500"/>
+                <line x1="8" y1="50" x2="14" y2="50" stroke="currentColor" stroke-width="2" class="text-slate-500"/>
+                <line x1="92" y1="50" x2="86" y2="50" stroke="currentColor" stroke-width="2" class="text-slate-500"/>
+                <!-- Clock Hands -->
+                <line id="svg-hour-hand" x1="50" y1="50" x2="50" y2="28" stroke="#4f46e5" stroke-width="3.5" stroke-linecap="round"/>
+                <line id="svg-min-hand" x1="50" y1="50" x2="50" y2="18" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="50" cy="50" r="3" fill="#312e81"/>
+              </svg>
+            </div>
+
+            <!-- Output Metric Cards -->
+            <div class="space-y-2 text-xs font-mono">
+              <div class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                <span class="text-slate-500">Angle Between Hands:</span>
+                <span id="clock-angle-res" class="font-bold text-brand-600 dark:text-indigo-400 text-sm">100°</span>
+              </div>
+              <div class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                <span class="text-slate-500">Mirror Time (11:60 - T):</span>
+                <span id="clock-mirror-res" class="font-bold text-emerald-600 dark:text-emerald-400">4:40</span>
+              </div>
+              <div class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                <span class="text-slate-500">Water Time (18:30 - T):</span>
+                <span id="clock-water-res" class="font-bold text-sky-600 dark:text-sky-400">11:10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool 3: Calendar Day Finder -->
+        <div id="tool-pane-calendar" class="pt-5 space-y-4 hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            <div class="space-y-3">
+              <label class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">Select Any Past or Future Date</label>
+              <input type="date" id="cal-date-input" value="1947-08-15" class="w-full font-mono text-sm px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-brand-500 outline-none">
+              <button onclick="calculateCalendarDay()" class="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-xs">Solve Day & Odd Days Breakdown</button>
+            </div>
+            <div id="cal-result-box" class="p-3 bg-slate-50 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-mono space-y-1.5">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 1: CODING DECODING -->
+      <section id="topic-1" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <!-- Topic Header -->
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-400 font-extrabold text-sm border border-indigo-200 dark:border-indigo-800">
+              01
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Coding & Decoding</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300">2-3 Qs in PSSSB</span>
+              </div>
+              <p class="text-xs text-slate-500">Letter shift, numerical ranks, reverse pairs, and substitution puzzles</p>
+            </div>
+          </div>
+          <!-- Revised Checkbox -->
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 focus:ring-brand-500 cursor-pointer" data-topic="1">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <!-- All Use Cases -->
+          <div>
+            <h4 class="font-bold text-slate-900 dark:text-white flex items-center gap-2 text-sm mb-2.5">
+              <i data-lucide="layers" class="w-4 h-4 text-brand-500"></i> Core Patterns & Exam Use Cases
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                <span class="font-bold text-indigo-600 dark:text-indigo-400">1. Letter-to-Letter Coding:</span>
+                <ul class="list-disc list-inside mt-1.5 space-y-1 text-slate-600 dark:text-slate-300 text-xs">
+                  <li><strong>Forward/Backward Shift:</strong> Every letter shifted by $+1, +2, -1, -3$ or prime steps.</li>
+                  <li><strong>Cross / Diagonal Shift:</strong> Split the word in two halves (e.g. 6 letters $\to$ first 3 reversed, next 3 reversed).</li>
+                  <li><strong>Opposite Letter Pair:</strong> Each letter replaced by its reverse pair ($A \leftrightarrow Z, B \leftrightarrow Y$).</li>
+                </ul>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                <span class="font-bold text-indigo-600 dark:text-indigo-400">2. Letter-to-Number Coding:</span>
+                <ul class="list-disc list-inside mt-1.5 space-y-1 text-slate-600 dark:text-slate-300 text-xs">
+                  <li><strong>Direct Sum:</strong> Sum of alphabetical ranks (e.g., $CAT = 3+1+20 = 24$).</li>
+                  <li><strong>Reverse Rank Sum:</strong> $\sum (27 - \text{Rank})$ or opposite letters sum.</li>
+                  <li><strong>Sum $\times$ Number of Letters:</strong> E.g. $CAT = 24 \times 3 = 72$.</li>
+                  <li><strong>Vowel/Consonant Special Weights:</strong> $A=1, E=2, I=3, O=4, U=5$ while consonants remain standard.</li>
+                </ul>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                <span class="font-bold text-indigo-600 dark:text-indigo-400">3. Deciphering (Chinese / Fictitious Language Coding):</span>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                  Example: <em>"pit nae som"</em> = "bring me water", <em>"nae ho le"</em> = "water is life".
+                  <br><strong>Rule:</strong> Compare two statements at a time. The common word corresponds to the common code. Never guess without 100% elimination.
+                </p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                <span class="font-bold text-indigo-600 dark:text-indigo-400">4. Conditional & Matrix Coding:</span>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                  Table of letters and symbols with conditions: <em>"If first letter is vowel and last is consonant..."</em>. Read all 3 conditions before marking answers.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shortcuts & Formulas Box -->
+          <div class="p-4 rounded-xl bg-gradient-to-r from-indigo-50 to-brand-50 dark:from-slate-800/80 dark:to-indigo-950/40 border border-indigo-200 dark:border-indigo-800/60">
+            <h5 class="font-bold text-indigo-900 dark:text-indigo-200 flex items-center gap-2 mb-2 text-xs uppercase tracking-wider">
+              <i data-lucide="zap" class="w-4 h-4 text-amber-500"></i> Speed Formulas & Opposite Pairs Mnemonics
+            </h5>
+            <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2 text-center text-xs font-mono">
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">A-Z</strong><div class="text-[10px] text-slate-500">Azad</div></div>
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">B-Y</strong><div class="text-[10px] text-slate-500">BoY</div></div>
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">C-X</strong><div class="text-[10px] text-slate-500">CruX</div></div>
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">D-W</strong><div class="text-[10px] text-slate-500">DeW</div></div>
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">E-V</strong><div class="text-[10px] text-slate-500">EVening</div></div>
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">F-U</strong><div class="text-[10px] text-slate-500">FUel / Father</div></div>
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">G-T</strong><div class="text-[10px] text-slate-500">G.T. Road</div></div>
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">H-S</strong><div class="text-[10px] text-slate-500">High School</div></div>
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">I-R</strong><div class="text-[10px] text-slate-500">Indian Railway</div></div>
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">J-Q</strong><div class="text-[10px] text-slate-500">Jungle Queen</div></div>
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">K-P</strong><div class="text-[10px] text-slate-500">Kurta Pajama</div></div>
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">L-O</strong><div class="text-[10px] text-slate-500">LOve</div></div>
+              <div class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"><strong class="text-brand-600">M-N</strong><div class="text-[10px] text-slate-500">MaN</div></div>
+              <div class="p-1.5 rounded-lg bg-indigo-100 dark:bg-indigo-900 border border-indigo-300 dark:border-indigo-700 text-indigo-900 dark:text-indigo-200">
+                <strong>Sum = 27</strong>
+                <div class="text-[10px]">Pos + Rev = 27</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PSSSB Traps & Pro-Tips -->
+          <div class="p-3.5 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/40 text-xs">
+            <span class="font-bold text-rose-800 dark:text-rose-300 flex items-center gap-1.5 mb-1">
+              <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-rose-600"></i> PSSSB Trap Alert:
+            </span>
+            <p class="text-slate-600 dark:text-slate-300">
+              When given a number code like <em>"PATWARI = 56"</em>, never jump immediately to summing normal ranks. If the sum doesn't match, check: (1) Reverse positions sum, (2) Count of vowels vs consonants, (3) Sum divided or multiplied by word length.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 2: BLOOD RELATION -->
+      <section id="topic-2" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-400 font-extrabold text-sm border border-rose-200 dark:border-rose-800">
+              02
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Blood Relations</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">1-2 Qs (High Accuracy)</span>
+              </div>
+              <p class="text-xs text-slate-500">Pointing dialogues, family tree puzzles, and coded pedigree symbols</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="2">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <!-- Standard Family Tree Symbols -->
+          <div>
+            <h4 class="font-bold text-slate-900 dark:text-white flex items-center gap-2 text-sm mb-2.5">
+              <i data-lucide="git-fork" class="w-4 h-4 text-rose-500"></i> Standardized Family Tree Symbols
+            </h4>
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs">
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <span class="font-mono font-bold text-base text-blue-600">[ + ]</span>
+                <p class="font-semibold mt-1">Male</p>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <span class="font-mono font-bold text-base text-pink-600">( - )</span>
+                <p class="font-semibold mt-1">Female</p>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <span class="font-mono font-bold text-base text-purple-600">A = B</span>
+                <p class="font-semibold mt-1">Married Couple</p>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <span class="font-mono font-bold text-base text-amber-600">A — B</span>
+                <p class="font-semibold mt-1">Siblings (Bro/Sis)</p>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 col-span-2 sm:col-span-1">
+                <span class="font-mono font-bold text-base text-emerald-600">A | B</span>
+                <p class="font-semibold mt-1">Generation Gap</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Use Cases & Pointers -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <h5 class="font-bold text-rose-600 dark:text-rose-400 mb-1">1. Pointing Type ("ਇੱਕ ਤਸਵੀਰ ਵੱਲ ਇਸ਼ਾਰਾ...")</h5>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                <strong>Golden Shortcut:</strong> Start solving directly from the word <em>"My" (ਮੇਰੇ)</em>. Trace backwards: <em>"My father's only son's wife"</em> $\to$ Father's only son = Myself; My wife. Done in 5 seconds without pen!
+              </p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <h5 class="font-bold text-rose-600 dark:text-rose-400 mb-1">2. Coded Relations</h5>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                E.g. $P \times Q$ = Father, $P - Q$ = Mother.
+                <br><strong>Elimination Trick:</strong> Check the gender requirement of the target person in the question first. If $P$ must be female, eliminate options where $P$ is immediately coded as father or brother!
+              </p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <h5 class="font-bold text-rose-600 dark:text-rose-400 mb-1">3. Maternal vs Paternal Context</h5>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                English uses generic "Uncle" and "Aunt". In PSSSB bilingual papers:
+                <br>• <strong>Maternal:</strong> Mama (ਮਾਮਾ), Mausi (ਮਾਸੀ)
+                <br>• <strong>Paternal:</strong> Chacha/Tau (ਚਾਚਾ/ਤਾਇਆ), Bua (ਭੂਆ)
+              </p>
+            </div>
+          </div>
+
+          <!-- Pro Tip Box -->
+          <div class="p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-xs">
+            <span class="font-bold text-amber-800 dark:text-amber-300">⚠️ Fatal Trap:</span> Never assume gender based on Indian names (e.g. Suman, Gurpreet, Kamal, Sonu)! Gender is strictly determined ONLY when pronouns or relations explicitly state it. If gender isn't specified, answer is <strong>"Cannot be determined (ਤੈਅ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ)"</strong>.
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 3: DIRECTION & DISTANCE -->
+      <section id="topic-3" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 font-extrabold text-sm border border-emerald-200 dark:border-emerald-800">
+              03
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Direction & Distance</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300">1-2 Qs</span>
+              </div>
+              <p class="text-xs text-slate-500">Compass navigation, Pythagorean triplets, shadow phenomena, and vector shifts</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="3">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <!-- Compass Diagram & Cardinal Points -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 font-mono text-xs">
+              <div class="text-center font-bold text-slate-400 mb-2">COMPASS ORIENTATION</div>
+              <div class="flex flex-col items-center justify-center gap-1 font-bold">
+                <span class="text-indigo-600 dark:text-indigo-400">NORTH (ਉੱਤਰ) ↑</span>
+                <div class="flex items-center justify-between w-full max-w-[200px] text-xs">
+                  <span class="text-indigo-600 dark:text-indigo-400">← WEST (ਪੱਛਮ)</span>
+                  <span class="text-xs text-slate-400">+</span>
+                  <span class="text-indigo-600 dark:text-indigo-400">EAST (ਪੂਰਬ) →</span>
+                </div>
+                <span class="text-indigo-600 dark:text-indigo-400">SOUTH (ਦੱਖਣ) ↓</span>
+              </div>
+              <div class="mt-3 pt-2 border-t border-slate-200 dark:border-slate-700 grid grid-cols-2 gap-2 text-[11px] text-slate-500 text-center">
+                <span>Right Turn = 90° Clockwise</span>
+                <span>Left Turn = 90° Anti-Clockwise</span>
+              </div>
+            </div>
+
+            <!-- Pythagorean Triplets Callout -->
+            <div class="p-4 rounded-xl bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800">
+              <span class="text-xs font-bold text-indigo-900 dark:text-indigo-200 uppercase tracking-wider block mb-1">
+                ⚡ High-Yield Pythagorean Triplets ($H = \sqrt{P^2 + B^2}$)
+              </span>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mb-2">PSSSB questions use exact integers. Memorize these direct pairs:</p>
+              <div class="flex flex-wrap gap-2 text-xs font-mono font-bold">
+                <span class="px-2.5 py-1 bg-white dark:bg-slate-800 rounded-lg border border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300">3 - 4 - 5</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-slate-800 rounded-lg border border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300">5 - 12 - 13</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-slate-800 rounded-lg border border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300">6 - 8 - 10</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-slate-800 rounded-lg border border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300">8 - 15 - 17</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-slate-800 rounded-lg border border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300">7 - 24 - 25</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-slate-800 rounded-lg border border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300">20 - 21 - 29</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shadow Concept Table -->
+          <div>
+            <h5 class="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider mb-2">
+              ☀️ Complete Shadow Rules Matrix (Guaranteed PSSSB Question)
+            </h5>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                <thead class="bg-slate-100 dark:bg-slate-800 font-bold text-slate-700 dark:text-slate-200">
+                  <tr>
+                    <th class="p-2.5">Time of Day</th>
+                    <th class="p-2.5">Sun Position</th>
+                    <th class="p-2.5">Shadow Falls Toward</th>
+                    <th class="p-2.5">Facing North</th>
+                    <th class="p-2.5">Facing South</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                    <td class="p-2.5 font-bold text-amber-600">Morning (Sunrise)</td>
+                    <td class="p-2.5">East</td>
+                    <td class="p-2.5 font-bold text-indigo-600">West</td>
+                    <td class="p-2.5">Shadow to <strong>LEFT</strong></td>
+                    <td class="p-2.5">Shadow to <strong>RIGHT</strong></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                    <td class="p-2.5 font-bold text-orange-600">Evening (Sunset)</td>
+                    <td class="p-2.5">West</td>
+                    <td class="p-2.5 font-bold text-indigo-600">East</td>
+                    <td class="p-2.5">Shadow to <strong>RIGHT</strong></td>
+                    <td class="p-2.5">Shadow to <strong>LEFT</strong></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 bg-slate-50/50 dark:bg-slate-800/20">
+                    <td class="p-2.5 font-bold text-red-500">12:00 Noon</td>
+                    <td class="p-2.5">Overhead</td>
+                    <td class="p-2.5 font-bold text-rose-500">NO SHADOW</td>
+                    <td class="p-2.5 text-slate-400">N/A</td>
+                    <td class="p-2.5 text-slate-400">N/A</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Vector Displacement Shortcut -->
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 text-xs">
+            <span class="font-bold text-brand-600 dark:text-indigo-400">⚡ Vector Net Displacement Method (No diagram needed):</span>
+            <p class="mt-1 text-slate-600 dark:text-slate-300">
+              Add all North and subtract all South: $\Delta Y = |N - S|$. Add all East and subtract all West: $\Delta X = |E - W|$.
+              <br>Shortest distance is simply $\sqrt{(\Delta X)^2 + (\Delta Y)^2}$.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 4: ANALOGY -->
+      <section id="topic-4" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 font-extrabold text-sm border border-amber-200 dark:border-amber-800">
+              04
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Analogy (ਸਮਰੂਪਤਾ)</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300">2 Qs (Verbal & Non-Verbal)</span>
+              </div>
+              <p class="text-xs text-slate-500">Semantic associations, mathematical relations, Punjab GK and science pairs</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="4">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <h5 class="font-bold text-amber-600 dark:text-amber-400 mb-1.5">1. Word / Semantic Analogy</h5>
+              <ul class="space-y-1 text-xs text-slate-600 dark:text-slate-300">
+                <li>• <strong>Country - Capital:</strong> Canada : Ottawa :: Australia : Canberra</li>
+                <li>• <strong>Currency:</strong> Japan : Yen :: Bangladesh : Taka</li>
+                <li>• <strong>State - Dance:</strong> Punjab : Bhangra/Giddha :: Assam : Bihu :: Kerala : Kathakali</li>
+                <li>• <strong>Units & Measures:</strong> Resistance : Ohm :: Pressure : Pascal :: Force : Newton</li>
+              </ul>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <h5 class="font-bold text-amber-600 dark:text-amber-400 mb-1.5">2. Number Analogy</h5>
+              <ul class="space-y-1 text-xs text-slate-600 dark:text-slate-300">
+                <li>• $n : n^2 \pm 1$ (e.g. $7 : 50 :: 9 : 82$)</li>
+                <li>• $n : n^3 + n$ (e.g. $4 : 68 :: 5 : 130$)</li>
+                <li>• $n : n(n+1)$ (e.g. $6 : 42 :: 8 : 72$)</li>
+                <li>• Sum of digits / Prime shifts ($11 : 13 :: 17 : 19$)</li>
+              </ul>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <h5 class="font-bold text-amber-600 dark:text-amber-400 mb-1.5">3. Letter Analogy</h5>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                Operates identically to letter coding ($+k$ shifts or opposite letters). Always write forward ranks immediately above the letters when stuck.
+              </p>
+            </div>
+          </div>
+
+          <!-- PSSSB Specific GK Analogy High Frequency List -->
+          <div class="p-3.5 rounded-xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60">
+            <span class="font-bold text-amber-900 dark:text-amber-200 text-xs block mb-1">
+              🌟 PSSSB High-Frequency Analogy Pair Quick Reference:
+            </span>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+              <div class="bg-white dark:bg-slate-800 p-2 rounded-lg border border-amber-200/50 dark:border-slate-700">Acoustics : Sound</div>
+              <div class="bg-white dark:bg-slate-800 p-2 rounded-lg border border-amber-200/50 dark:border-slate-700">Mycology : Fungi</div>
+              <div class="bg-white dark:bg-slate-800 p-2 rounded-lg border border-amber-200/50 dark:border-slate-700">Entomology : Insects</div>
+              <div class="bg-white dark:bg-slate-800 p-2 rounded-lg border border-amber-200/50 dark:border-slate-700">Ornithology : Birds</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 5: NUMBER SERIES -->
+      <section id="topic-5" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-400 font-extrabold text-sm border border-purple-200 dark:border-purple-800">
+              05
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Number Series</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300">2-3 Qs (Crucial)</span>
+              </div>
+              <p class="text-xs text-slate-500">Step differences, geometric multiplication, squares/cubes, and twin series</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="5">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <!-- Flowchart / Detection Framework -->
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+            <h4 class="font-bold text-slate-900 dark:text-white flex items-center gap-2 text-sm mb-3">
+              <i data-lucide="git-commit" class="w-4 h-4 text-purple-500"></i> Series Identification Decision Tree
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+              <div class="p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                <span class="font-bold text-emerald-600 dark:text-emerald-400">1. Slow & Gradual Growth</span>
+                <p class="text-slate-500 dark:text-slate-400 mt-1">Difference series or <strong>Step difference</strong> (difference of differences). 70% of PSSSB questions solve at level 2 difference.</p>
+              </div>
+              <div class="p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                <span class="font-bold text-indigo-600 dark:text-indigo-400">2. Fast Multiplicative Jump</span>
+                <p class="text-slate-500 dark:text-slate-400 mt-1">Pattern: $\times 1 + 1, \times 2 + 2, \times 3 + 3$ or $\times 0.5, \times 1, \times 1.5, \times 2$.</p>
+              </div>
+              <div class="p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                <span class="font-bold text-amber-600 dark:text-amber-400">3. Sudden Exponential Leap</span>
+                <p class="text-slate-500 dark:text-slate-400 mt-1">Cube or Square series: $n^2 \pm k$ or $n^3 \pm k$. E.g. $0, 6, 24, 60, 120$ ($n^3 - n$).</p>
+              </div>
+              <div class="p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                <span class="font-bold text-rose-600 dark:text-rose-400">4. Zig-Zag / Fluctuating</span>
+                <p class="text-slate-500 dark:text-slate-400 mt-1"><strong>Twin (Alternating) Series!</strong> Two distinct series merged into odd and even positions.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- High Value Squares & Cubes Table -->
+          <div class="p-3.5 rounded-xl bg-purple-50/60 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800">
+            <span class="text-xs font-bold text-purple-900 dark:text-purple-200 block mb-1">
+              ⚡ Must-Memorize Benchmarks for PSSSB:
+            </span>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
+              <div class="bg-white dark:bg-slate-800 p-2 rounded border border-purple-100 dark:border-slate-700"><strong>$11^2$ to $25^2$:</strong> 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625</div>
+              <div class="bg-white dark:bg-slate-800 p-2 rounded border border-purple-100 dark:border-slate-700"><strong>$1^3$ to $12^3$:</strong> 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728</div>
+              <div class="bg-white dark:bg-slate-800 p-2 rounded border border-purple-100 dark:border-slate-700"><strong>$n^3 - n$ Series:</strong> 0, 6, 24, 60, 120, 210, 336, 504, 720, 990</div>
+              <div class="bg-white dark:bg-slate-800 p-2 rounded border border-purple-100 dark:border-slate-700"><strong>Prime Numbers:</strong> 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 6: SEATING ARRANGEMENT -->
+      <section id="topic-6" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-400 font-extrabold text-sm border border-blue-200 dark:border-blue-800">
+              06
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Seating Arrangement (ਬੈਠਣ ਦੀ ਵਿਵਸਥਾ)</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">2-4 Qs (Senior Asst / Patwari)</span>
+              </div>
+              <p class="text-xs text-slate-500">Linear single/double rows, circular table orientations, and corner rules</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="6">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Circular Arrangement Rules -->
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+              <h5 class="font-bold text-blue-600 dark:text-blue-400 text-sm flex items-center gap-2">
+                <i data-lucide="circle-dot" class="w-4 h-4"></i> 1. Circular Table Rules
+              </h5>
+              <div class="space-y-2 text-xs">
+                <div class="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                  <span class="font-bold text-emerald-600 dark:text-emerald-400">All Facing CENTER (ਅੰਦਰ ਵੱਲ ਮੂੰਹ):</span>
+                  <p class="mt-0.5 text-slate-600 dark:text-slate-300">• <strong>Right Turn:</strong> Anti-Clockwise (ਘੜੀ ਦੇ ਉਲਟ)<br>• <strong>Left Turn:</strong> Clockwise (ਘੜੀ ਦੀ ਦਿਸ਼ਾ)</p>
+                </div>
+                <div class="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                  <span class="font-bold text-rose-600 dark:text-rose-400">All Facing OUTSIDE (ਬਾਹਰ ਵੱਲ ਮੂੰਹ):</span>
+                  <p class="mt-0.5 text-slate-600 dark:text-slate-300">• <strong>Right Turn:</strong> Clockwise (ਘੜੀ ਦੀ ਦਿਸ਼ਾ)<br>• <strong>Left Turn:</strong> Anti-Clockwise (ਘੜੀ ਦੇ ਉਲਟ)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Linear & Parallel Row Rules -->
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+              <h5 class="font-bold text-blue-600 dark:text-blue-400 text-sm flex items-center gap-2">
+                <i data-lucide="align-justify" class="w-4 h-4"></i> 2. Linear & Two-Row Rules
+              </h5>
+              <div class="space-y-2 text-xs">
+                <div class="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                  <span class="font-bold text-indigo-600 dark:text-indigo-400">Facing NORTH:</span>
+                  <p class="mt-0.5 text-slate-600 dark:text-slate-300">Your Left is their Left; Your Right is their Right. Left end = West, Right end = East.</p>
+                </div>
+                <div class="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                  <span class="font-bold text-amber-600 dark:text-amber-400">Facing SOUTH:</span>
+                  <p class="mt-0.5 text-slate-600 dark:text-slate-300">Reversed! Your Left is their Right; Your Right is their Left.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Strategy & PSSSB Pro Advice -->
+          <div class="p-4 rounded-xl bg-brand-50/50 dark:bg-slate-800/80 border border-brand-200 dark:border-indigo-900/60">
+            <span class="font-bold text-brand-900 dark:text-indigo-200 text-xs block mb-1">
+              🎯 Golden Attack Strategy for PSSSB Arrangement Puzzles:
+            </span>
+            <ol class="list-decimal list-inside space-y-1 text-xs text-slate-600 dark:text-slate-300">
+              <li><strong>Find the Anchor Clue:</strong> Never start from <em>"A sits next to B"</em>. Start only with 100% fixed clues like <em>"P sits at the extreme left end"</em> or <em>"M sits 3rd to right of N"</em>.</li>
+              <li><strong>Draw 2 Parallel Cases:</strong> If there are 2 possibilities, draw Case 1 and Case 2 simultaneously side-by-side. One clue will automatically invalidate the wrong case.</li>
+              <li><strong>Watch Conjunctions:</strong> <em>"A is to left of B <strong>AND</strong> is facing South"</em> $\to$ "And" refers to the FIRST person (A). <em>"A is to left of B <strong>WHO</strong> is facing South"</em> $\to$ "Who" refers to the IMMEDIATE NEIGHBOR (B).</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 7: ODD ONE OUT -->
+      <section id="topic-7" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-400 font-extrabold text-sm border border-teal-200 dark:border-teal-800">
+              07
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Odd One Out (ਵਰਗੀਕਰਨ / Classification)</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300">1-2 Qs</span>
+              </div>
+              <p class="text-xs text-slate-500">Number hierarchy, semantic categories, and alphabet pattern deviations</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="7">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <!-- Priority Hierarchy in Number Classification -->
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+            <span class="text-xs font-bold text-teal-700 dark:text-teal-300 uppercase tracking-wider block mb-2">
+              ⚖️ The Universal Priority Hierarchy in Numbers (Follow this order strictly):
+            </span>
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-2 text-center text-xs font-semibold">
+              <div class="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-teal-300 dark:border-teal-800">
+                <span class="text-teal-600 text-sm">1st</span>
+                <p class="mt-1">Prime Numbers</p>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <span class="text-slate-400 text-sm">2nd</span>
+                <p class="mt-1">Cubes & Squares</p>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <span class="text-slate-400 text-sm">3rd</span>
+                <p class="mt-1">Multiples / Divisibility (3, 7, 11, 13)</p>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <span class="text-slate-400 text-sm">4th</span>
+                <p class="mt-1">Addition / Subtraction</p>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <span class="text-rose-500 text-sm">Last</span>
+                <p class="mt-1">Sum of Digits (Last resort!)</p>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-2">
+              *Warning: Candidates often jump to digit-sum first. In official PSSSB answer keys, Prime/Square patterns OVERRIDE digit-sum logic!
+            </p>
+          </div>
+
+          <!-- Semantic & Alphabet Cases -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="p-3 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-800">
+              <span class="font-bold text-slate-900 dark:text-white">Word Classification Triggers:</span>
+              <ul class="list-disc list-inside mt-1 space-y-0.5 text-slate-600 dark:text-slate-400">
+                <li>Mammals vs Reptiles / Amphibians (e.g., Whale is a mammal).</li>
+                <li>Rabi vs Kharif crops (Wheat, Mustard: Rabi; Rice, Cotton, Maize: Kharif).</li>
+                <li>Landlocked states vs Coastal states.</li>
+              </ul>
+            </div>
+            <div class="p-3 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-800">
+              <span class="font-bold text-slate-900 dark:text-white">Letter Group Classification:</span>
+              <ul class="list-disc list-inside mt-1 space-y-0.5 text-slate-600 dark:text-slate-400">
+                <li>Equal difference between consecutive letters (e.g. $+3, +3, +3$).</li>
+                <li>Vowel count (three options have 1 vowel, one has 2 vowels).</li>
+                <li>Opposite letter pairs (e.g. AZBY vs CXDW).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 8: SYLLOGISM -->
+      <section id="topic-8" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-400 font-extrabold text-sm border border-cyan-200 dark:border-cyan-800">
+              08
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Syllogism (ਸਿਲੋਗਿਜ਼ਮ / ਨਿਆਂ ਵਾਕ)</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">2 Qs (100% Guaranteed)</span>
+              </div>
+              <p class="text-xs text-slate-500">Universal, particular, 'Only a few', possibility rules, and Either-Or pairs</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="8">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <!-- 4 Core Statements -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-indigo-600 dark:text-indigo-400">All A are B (ਸਾਰੇ A, B ਹਨ)</span>
+              <p class="mt-1 text-slate-500">Circle A inside Circle B.<br>• Definite: Some A are B, Some B are A.<br>• Definite False: No A is B.</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-emerald-600 dark:text-emerald-400">Some A are B (ਕੁਝ A, B ਹਨ)</span>
+              <p class="mt-1 text-slate-500">Overlapping circles.<br>• Definite: Some B are A.<br>• Possibility: All A being B is possible.</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-rose-600 dark:text-rose-400">No A is B (ਕੋਈ A, B ਨਹੀਂ ਹੈ)</span>
+              <p class="mt-1 text-slate-500">Disjoint cross-line barrier.<br>• Definite: No B is A, Some A are not B.<br>• Zero possibility of any overlap.</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-amber-600 dark:text-amber-400">Only a few A are B</span>
+              <p class="mt-1 text-slate-500"><strong>Dual meaning:</strong><br>1. Some A are B (True)<br>2. Some A are NOT B (True)<br>• 'All A can be B' is ALWAYS FALSE!</p>
+            </div>
+          </div>
+
+          <!-- Either / Or Checklist -->
+          <div class="p-4 rounded-xl bg-cyan-50/60 dark:bg-cyan-950/30 border border-cyan-200 dark:border-cyan-800">
+            <h5 class="font-bold text-cyan-900 dark:text-cyan-200 text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <i data-lucide="check-square" class="w-4 h-4 text-cyan-600"></i> The 3 Conditions for "EITHER - OR" Case:
+            </h5>
+            <ol class="list-decimal list-inside space-y-1 text-xs text-slate-700 dark:text-slate-300">
+              <li>Both individual conclusions must be <strong>Doubtful / False</strong> on the basic diagram.</li>
+              <li>Both conclusions must have the <strong>Exact Same Subject and Predicate</strong> (e.g. Pens and Books).</li>
+              <li>They must form a <strong>Complementary Pair</strong>:
+                <br>&nbsp;&nbsp;• <strong>Pair 1:</strong> <em>Some</em> + <em>No</em> (e.g. Some A are B + No A is B)
+                <br>&nbsp;&nbsp;• <strong>Pair 2:</strong> <em>All</em> + <em>Some Not</em> (e.g. All A are B + Some A are not B)
+                <br>&nbsp;&nbsp;• ⚠️ <em>All + No</em> is <strong>NEVER</strong> an Either-Or pair!
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 9: VENN DIAGRAM -->
+      <section id="topic-9" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-400 font-extrabold text-sm border border-orange-200 dark:border-orange-800">
+              09
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Venn Diagram (ਵੈੱਨ ਚਿੱਤਰ)</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300">1-2 Qs</span>
+              </div>
+              <p class="text-xs text-slate-500">3-set logical relations and geometric figures with regional numbers</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="9">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Geometric Region Case -->
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-orange-600 dark:text-orange-400 text-xs uppercase block mb-1.5">
+                Type 1: Geometric Numerical Regions
+              </span>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mb-2">
+                Given: Circle = Doctors, Triangle = Players, Rectangle = Artists.
+              </p>
+              <div class="space-y-1.5 text-xs">
+                <div class="p-2 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+                  <strong>"Doctors who are players but NOT artists":</strong>
+                  <br><span class="text-slate-500">Pick numbers inside Circle $\cap$ Triangle, strictly OUTSIDE Rectangle.</span>
+                </div>
+                <div class="p-2 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+                  <strong>"Doctors who are players" (No 'not' mentioned):</strong>
+                  <br><span class="text-slate-500">Take the whole Circle $\cap$ Triangle intersection (artists are NOT excluded!).</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Standard 3-Set Logical Relations -->
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-orange-600 dark:text-orange-400 text-xs uppercase block mb-1.5">
+                Type 2: Classic 3-Word Venn Models
+              </span>
+              <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+                <li>• <strong>Concentric (All inside):</strong> Punjab, India, Asia.</li>
+                <li>• <strong>Two subsets inside one:</strong> Stationery [Pen, Eraser].</li>
+                <li>• <strong>Partial Overlap across all 3:</strong> Teachers, Authors, Musicians.</li>
+                <li>• <strong>Disjoint:</strong> Dogs, Cows, Horses.</li>
+                <li>• <strong>One subset, one disjoint:</strong> Females [Mothers], Males.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Formula Callout -->
+          <div class="p-3 bg-amber-50 dark:bg-amber-950/30 rounded-xl border border-amber-200 dark:border-amber-800/60 text-xs font-mono">
+            <strong>Inclusion-Exclusion Formula:</strong> $n(A \cup B \cup C) = n(A) + n(B) + n(C) - [n(A \cap B) + n(B \cap C) + n(C \cap A)] + n(A \cap B \cap C)$
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 10: CLOCK -->
+      <section id="topic-10" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-yellow-100 dark:bg-yellow-950 text-yellow-700 dark:text-yellow-400 font-extrabold text-sm border border-yellow-200 dark:border-yellow-800">
+              10
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Clock (ਘੜੀ)</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300">1-2 Qs</span>
+              </div>
+              <p class="text-xs text-slate-500">Angle between hands, coincidences, right angles, and relative speeds</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="10">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <!-- The Master Clock Formula -->
+          <div class="p-4 rounded-xl bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border border-amber-300 dark:border-amber-800/80">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <span class="text-xs font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider block">
+                  ⚡ Master Clock Angle Formula
+                </span>
+                <div class="text-lg sm:text-xl font-mono font-extrabold text-slate-900 dark:text-white mt-1">
+                  $\theta = \left| 30H - \frac{11}{2}M \right|$
+                </div>
+              </div>
+              <div class="text-xs text-slate-600 dark:text-slate-300">
+                • $H$ = Hours (1 to 12)<br>
+                • $M$ = Minutes (0 to 59)<br>
+                • If $\theta > 180^\circ$, Reflex Angle = $360^\circ - \theta$.
+              </div>
+            </div>
+          </div>
+
+          <!-- Speeds & Key Frequency Table -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1.5">
+              <span class="font-bold text-slate-900 dark:text-white text-xs block">Hand Speeds (ਮੁੱਢਲੀ ਗਤੀ):</span>
+              <ul class="space-y-1 text-xs text-slate-600 dark:text-slate-300">
+                <li>• <strong>Minute Hand:</strong> $360^\circ / 60 = 6^\circ \text{ per minute}$</li>
+                <li>• <strong>Hour Hand:</strong> $360^\circ / 720 = 0.5^\circ \text{ per minute}$</li>
+                <li>• <strong>Relative Speed:</strong> $6^\circ - 0.5^\circ = 5.5^\circ \text{ or } \frac{11}{2}^\circ \text{ per minute}$</li>
+              </ul>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1.5">
+              <span class="font-bold text-slate-900 dark:text-white text-xs block">Coincide & Angles Frequency (Direct PSSSB Facts):</span>
+              <ul class="space-y-1 text-xs text-slate-600 dark:text-slate-300">
+                <li>• <strong>0° (Together/Coincide):</strong> 11 times in 12 hrs · <strong>22 times in 24 hrs</strong> (does not occur twice between 11-1).</li>
+                <li>• <strong>180° (Opposite):</strong> 11 times in 12 hrs · <strong>22 times in 24 hrs</strong> (does not occur twice between 5-7).</li>
+                <li>• <strong>90° (Right Angles):</strong> 22 times in 12 hrs · <strong>44 times in 24 hrs</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 11: CALENDAR -->
+      <section id="topic-11" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 font-extrabold text-sm border border-emerald-200 dark:border-emerald-800">
+              11
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Calendar (ਕੈਲੰਡਰ)</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">1-2 Qs</span>
+              </div>
+              <p class="text-xs text-slate-500">Odd days method, century ending rules, leap year conditions, and repeating calendars</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="11">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <!-- Odd Days Foundation Table -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs">
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-slate-500">Ordinary Year</span>
+              <p class="font-mono font-bold text-base text-brand-600 mt-1">365 Days</p>
+              <p class="text-[10px] text-slate-400">52 weeks + <strong>1 Odd Day</strong></p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-slate-500">Leap Year</span>
+              <p class="font-mono font-bold text-base text-emerald-600 mt-1">366 Days</p>
+              <p class="text-[10px] text-slate-400">52 weeks + <strong>2 Odd Days</strong></p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-slate-500">Century Leap Rule</span>
+              <p class="font-mono font-bold text-base text-amber-600 mt-1">$\div 400$</p>
+              <p class="text-[10px] text-slate-400">1900 is NOT leap; 2000 is leap</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-slate-500">Day Code (Mod 7)</span>
+              <p class="font-mono font-bold text-sm text-indigo-600 mt-1">0=Sun, 1=Mon</p>
+              <p class="text-[10px] text-slate-400">2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat</p>
+            </div>
+          </div>
+
+          <!-- Century Odd Days & Repetition Rules -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-emerald-700 dark:text-emerald-300 text-xs block mb-1.5 uppercase">
+                Century Odd Days & Century End Days Trap
+              </span>
+              <ul class="space-y-1 text-xs font-mono text-slate-700 dark:text-slate-300">
+                <li>• 100 Years = 5 Odd Days (Friday)</li>
+                <li>• 200 Years = 3 Odd Days (Wednesday)</li>
+                <li>• 300 Years = 1 Odd Day (Monday)</li>
+                <li>• 400 Years = 0 Odd Days (Sunday)</li>
+              </ul>
+              <div class="mt-2 p-2 rounded-lg bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/40 text-[11px] text-rose-800 dark:text-rose-300 font-sans">
+                <strong>PSSSB Trap:</strong> The last day of a century <strong>CANNOT</strong> be <strong>Tuesday, Thursday, or Saturday</strong> (T-T-S rule).
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-emerald-700 dark:text-emerald-300 text-xs block mb-1.5 uppercase">
+                ⚡ Calendar Repetition Shortcuts
+              </span>
+              <ul class="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                <li>• <strong>Leap Year:</strong> Repeat after <strong>+28 Years</strong> (e.g. 2024 $\to$ 2052).</li>
+                <li>• <strong>Leap Year + 1:</strong> Repeat after <strong>+6 Years</strong> (e.g. 2025 $\to$ 2031).</li>
+                <li>• <strong>Leap Year + 2 or + 3:</strong> Repeat after <strong>+11 Years</strong> (e.g. 2026 $\to$ 2037).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 12: MIRROR & WATER IMAGE -->
+      <section id="topic-12" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-400 font-extrabold text-sm border border-sky-200 dark:border-sky-800">
+              12
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Mirror & Water Images (ਸ਼ੀਸ਼ਾ ਅਤੇ ਪਾਣੀ ਪ੍ਰਤੀਬਿੰਬ)</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300">1-2 Qs</span>
+              </div>
+              <p class="text-xs text-slate-500">Horizontal & vertical reflections, clock subtraction rules, invariant letters</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="12">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <!-- Comparison Box -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+              <span class="font-bold text-sky-600 dark:text-sky-400 text-sm flex items-center gap-2">
+                <i data-lucide="flip-horizontal" class="w-4 h-4"></i> Mirror Image (ਸ਼ੀਸ਼ੇ ਦਾ ਅਕਸ)
+              </span>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                • <strong>Inversion:</strong> Left becomes Right, Right becomes Left. (Top & Bottom stay FIXED).
+                <br>• <strong>Clock Time Formula:</strong> Subtract given time from <strong>11:60</strong> (or 23:60 for 24-hr format).
+              </p>
+              <div class="p-2 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs">
+                <strong>11 Invariant Letters (No change in Mirror):</strong>
+                <br><span class="font-mono font-bold text-brand-600">A, H, I, M, O, T, U, V, W, X, Y</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+              <span class="font-bold text-indigo-600 dark:text-indigo-400 text-sm flex items-center gap-2">
+                <i data-lucide="flip-vertical" class="w-4 h-4"></i> Water Image (ਪਾਣੀ ਦਾ ਅਕਸ)
+              </span>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                • <strong>Inversion:</strong> Top becomes Bottom, Bottom becomes Top. (Left & Right stay FIXED).
+                <br>• <strong>Clock Time Formula:</strong> Subtract from <strong>18:30</strong> (or <strong>17:90</strong> if minutes > 30).
+              </p>
+              <div class="p-2 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs">
+                <strong>8 Invariant Letters (No change in Water):</strong>
+                <br><span class="font-mono font-bold text-indigo-600">C, D, E, H, I, K, O, X</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Invariant in Both -->
+          <div class="p-3 bg-indigo-50/70 dark:bg-indigo-950/40 rounded-xl border border-indigo-200 dark:border-indigo-800 text-xs text-center font-mono">
+            Letters identical in <strong>BOTH</strong> Mirror & Water images: <strong class="text-indigo-700 dark:text-indigo-300 text-sm">H, I, O, X</strong> (and digit <strong>0, 8</strong>).
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 13: STATEMENT & CONCLUSION -->
+      <section id="topic-13" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-violet-100 dark:bg-violet-950 text-violet-700 dark:text-violet-400 font-extrabold text-sm border border-violet-200 dark:border-violet-800">
+              13
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Statement & Conclusion (ਕਥਨ ਅਤੇ ਸਿੱਟਾ)</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-violet-100 dark:bg-violet-950 text-violet-700 dark:text-violet-300">1-2 Qs</span>
+              </div>
+              <p class="text-xs text-slate-500">Logical deductions, boundary of truth, extreme trap words, and valid inference</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="13">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Strict Rules -->
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+              <span class="font-bold text-violet-700 dark:text-violet-300 text-xs uppercase block">
+                Rule 1: Strict Boundary of Premise
+              </span>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                A conclusion is valid <strong>ONLY</strong> if it follows 100% strictly from the statement provided. Do NOT use outside general knowledge or personal moral views. If the statement says <em>"All cats are cars"</em>, accept it as the only truth.
+              </p>
+            </div>
+
+            <!-- Danger Words vs Safe Words -->
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+              <span class="font-bold text-rose-600 dark:text-rose-400 text-xs uppercase block">
+                Rule 2: The Trap Word Filter
+              </span>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="p-2 bg-rose-50 dark:bg-rose-950/40 rounded border border-rose-200 dark:border-rose-900/40 text-rose-800 dark:text-rose-300">
+                  <strong>🚨 95% Invalid:</strong><br>
+                  All, Always, Only, Never, Every, Best, Definitely.
+                </div>
+                <div class="p-2 bg-emerald-50 dark:bg-emerald-950/40 rounded border border-emerald-200 dark:border-emerald-900/40 text-emerald-800 dark:text-emerald-300">
+                  <strong>✅ Generally Valid:</strong><br>
+                  Some, Many, Often, May, Can, Probable, Possibility.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 14: DICTIONARY & ALPHABETICAL ORDER -->
+      <section id="topic-14" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-400 font-extrabold text-sm border border-pink-200 dark:border-pink-800">
+              14
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Dictionary Order & Word Formation</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">1-2 Qs (Fast Marks)</span>
+              </div>
+              <p class="text-xs text-slate-500">Lexicographical ranking, letter pairs count, middle word identification</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="14">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-pink-600 dark:text-pink-400 text-xs uppercase block mb-1">
+                PSSSB Favorite: "Which word comes in the MIDDLE (3rd position)?"
+              </span>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mb-2">
+                Given 5 words starting with identical prefixes (e.g., <em>Preach, Praise, Precinct, Predict, Prepare</em>):
+              </p>
+              <ol class="list-decimal list-inside space-y-1 text-xs text-slate-600 dark:text-slate-400">
+                <li>Cross out identical starting letters in all 5 words (`Pr-`).</li>
+                <li>Compare only the next distinct letter (`e, a, e, e, e`).</li>
+                <li>Eliminate extremes (1st and 5th) directly to locate 3rd place in 15 seconds.</li>
+              </ol>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <span class="font-bold text-pink-600 dark:text-pink-400 text-xs uppercase block mb-1">
+                Letter Pairs Technique ("ਅੱਖਰਾਂ ਦੇ ਜੋੜੇ")
+              </span>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mb-2">
+                <em>"How many pairs of letters in word 'PUNJAB' have as many letters between them as in the alphabet?"</em>
+              </p>
+              <div class="p-2 rounded bg-amber-50 dark:bg-amber-950/40 text-[11px] text-amber-900 dark:text-amber-200">
+                <strong>Crucial Rule:</strong> Always count <strong>BOTH Forward AND Backward</strong>, unless the question explicitly specifies <em>"in forward direction only"</em>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPIC 15: STATEMENT & ASSUMPTION -->
+      <section id="topic-15" class="topic-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xs scroll-mt-24 transition">
+        <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-400 font-extrabold text-sm border border-rose-200 dark:border-rose-800">
+              15
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">Statement & Assumption (ਕਥਨ ਅਤੇ ਧਾਰਨਾਵਾਂ)</h3>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300">1-2 Qs</span>
+              </div>
+              <p class="text-xs text-slate-500">Unspoken premises, speaker intent, the Negation Acid Test, and validity criteria</p>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 cursor-pointer select-none px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition">
+            <input type="checkbox" class="revision-checkbox w-4 h-4 rounded text-brand-600 cursor-pointer" data-topic="15">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mark Revised</span>
+          </label>
+        </div>
+
+        <div class="mt-5 space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <!-- The Negation Acid Test -->
+          <div class="p-4 rounded-xl bg-rose-50/50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/60">
+            <span class="font-bold text-rose-900 dark:text-rose-200 text-xs uppercase tracking-wider block mb-1">
+              🧪 The Golden "Negation Test" (The Ultimate Method for 100% Accuracy)
+            </span>
+            <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+              An assumption is what the speaker took for granted <em>BEFORE</em> making the statement.
+              <br><strong>Test Procedure:</strong> Mentally negate the assumption (make it opposite).
+              <br>• If the statement's purpose becomes <strong>useless or absurd</strong>, the assumption is <strong>IMPLICIT (Valid)</strong>.
+              <br>• If the statement still holds true regardless, the assumption is <strong>NOT IMPLICIT (Invalid)</strong>.
+            </p>
+          </div>
+
+          <!-- Rules Summary -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <strong class="text-slate-900 dark:text-white">Advertisements & Notices:</strong>
+              <p class="mt-1 text-slate-500">Assume people will read the notice and it will have some positive effect. (E.g. "Do not lean out of window" assumes passengers can read and follow instructions).</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <strong class="text-slate-900 dark:text-white">Appeals & Warnings:</strong>
+              <p class="mt-1 text-slate-500">Assume people will pay heed to warnings and disasters can be mitigated by timely actions.</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <strong class="text-rose-600">Restatements are INVALID:</strong>
+              <p class="mt-1 text-slate-500">An assumption cannot be a mere repetition of the statement. It must be the unstated underlying foundation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Quick Formula Cheat-Sheet Modal -->
+  <div id="cheatsheet-modal" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/50">
+        <div class="flex items-center gap-2">
+          <div class="p-2 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white">PSSSB Reasoning Formula Cheat-Sheet</h3>
+            <p class="text-xs text-slate-500">5-Minute Pre-Exam Booster for all 15 chapters</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="copyCheatSheet()" class="p-2 text-xs font-semibold rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition" title="Copy Formulas to Clipboard">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+          </button>
+          <button id="close-cheatsheet-btn" class="p-2 text-slate-400 hover:text-slate-700 dark:hover:text-white rounded-lg">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Content Body -->
+      <div id="cheatsheet-content" class="p-5 overflow-y-auto space-y-4 text-xs font-mono">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
+            <strong class="text-brand-600 dark:text-indigo-400">1. Alphabet Positions & Reverse:</strong>
+            <p>• EJOTY: 5, 10, 15, 20, 25</p>
+            <p>• CFLORUX: 3, 6, 9, 12, 15, 18, 21, 24</p>
+            <p>• Opposite Rank Sum: $\text{Rank} + \text{Opposite} = 27$</p>
+            <p>• Key Pairs: AZ, BY, CX, DW, EV, FU, GT, HS, IR, JQ, KP, LO, MN</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
+            <strong class="text-amber-600 dark:text-amber-400">2. Clock Master Formulas:</strong>
+            <p>• Angle $\theta = |30H - 5.5M|^\circ$</p>
+            <p>• Mirror Image: $11:60 - \text{Time}$ (or $23:60 - T$)</p>
+            <p>• Water Image: $18:30 - T$ (or $17:90 - T$ if $M>30$)</p>
+            <p>• Coincide: 22 times/24h · Right Angle: 44 times/24h</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
+            <strong class="text-emerald-600 dark:text-emerald-400">3. Calendar Odd Days:</strong>
+            <p>• Ordinary Year = 1 Odd Day | Leap Year = 2</p>
+            <p>• 100y = 5 | 200y = 3 | 300y = 1 | 400y = 0</p>
+            <p>• Day codes: 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat</p>
+            <p>• Repetition: Leap + 28y | Leap+1 + 6y | Leap+2/3 + 11y</p>
+            <p>• Century cannot end on: Tue, Thu, Sat</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
+            <strong class="text-rose-600 dark:text-rose-400">4. Distance & Shadows:</strong>
+            <p>• Distance = $\sqrt{\Delta X^2 + \Delta Y^2}$</p>
+            <p>• Triplets: (3-4-5), (5-12-13), (8-15-17), (7-24-25)</p>
+            <p>• Morning (Sunrise): Sun in East $\to$ Shadow in West</p>
+            <p>• Evening (Sunset): Sun in West $\to$ Shadow in East</p>
+            <p>• 12 Noon: Zero Shadow</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
+            <strong class="text-purple-600 dark:text-purple-400">5. Syllogism & Assumptions:</strong>
+            <p>• Either-Or: (Some + No) OR (All + Some Not) with same terms</p>
+            <p>• 'Only a few A are B' $\to$ Some are + Some are NOT</p>
+            <p>• Assumption Acid Test: Negate assumption. If statement collapses, assumption is valid.</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
+            <strong class="text-sky-600 dark:text-sky-400">6. Invariable Reflection Letters:</strong>
+            <p>• Mirror invariant (11): A, H, I, M, O, T, U, V, W, X, Y</p>
+            <p>• Water invariant (8): C, D, E, H, I, K, O, X</p>
+            <p>• Both invariant: H, I, O, X and digits 0, 8</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 flex justify-end bg-slate-50/50 dark:bg-slate-800/50">
+        <button id="modal-close-action" class="px-5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs">Close Cheat-Sheet</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Box -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div id="toast-body" class="px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-semibold shadow-xl flex items-center gap-2 border border-slate-700">
+      <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+      <span id="toast-msg">Notification</span>
+    </div>
+  </div>
+
+  <script>
+    const TOPICS = [
+      { id: 1, title: 'Coding & Decoding', count: '2-3 Qs', color: 'indigo' },
+      { id: 2, title: 'Blood Relations', count: '1-2 Qs', color: 'rose' },
+      { id: 3, title: 'Direction & Distance', count: '1-2 Qs', color: 'emerald' },
+      { id: 4, title: 'Analogy', count: '2 Qs', color: 'amber' },
+      { id: 5, title: 'Number Series', count: '2-3 Qs', color: 'purple' },
+      { id: 6, title: 'Seating Arrangement', count: '2-4 Qs', color: 'blue' },
+      { id: 7, title: 'Odd One Out', count: '1-2 Qs', color: 'teal' },
+      { id: 8, title: 'Syllogism', count: '2 Qs', color: 'cyan' },
+      { id: 9, title: 'Venn Diagram', count: '1-2 Qs', color: 'orange' },
+      { id: 10, title: 'Clock', count: '1-2 Qs', color: 'yellow' },
+      { id: 11, title: 'Calendar', count: '1-2 Qs', color: 'emerald' },
+      { id: 12, title: 'Mirror & Water Image', count: '1-2 Qs', color: 'sky' },
+      { id: 13, title: 'Statement & Conclusion', count: '1-2 Qs', color: 'violet' },
+      { id: 14, title: 'Dictionary Order', count: '1-2 Qs', color: 'pink' },
+      { id: 15, title: 'Statement & Assumption', count: '1-2 Qs', color: 'rose' }
+    ];
+
+    const REVISED_STORAGE_KEY = 'psssb_reasoning_revised_topics';
+    const THEME_STORAGE_KEY = 'psssb_theme_mode';
+
+    function getRevisedTopics() {
+      try {
+        const stored = localStorage.getItem(REVISED_STORAGE_KEY);
+        return stored ? JSON.parse(stored) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveRevisedTopics(list) {
+      try {
+        localStorage.setItem(REVISED_STORAGE_KEY, JSON.stringify(list));
+      } catch (e) {}
+      updateProgressDisplay();
+    }
+
+    function updateProgressDisplay() {
+      const list = getRevisedTopics();
+      const count = list.length;
+      const total = TOPICS.length;
+      const pct = Math.round((count / total) * 100);
+
+      const progressText = document.getElementById('progress-text');
+      const progressBar = document.getElementById('progress-bar');
+      if (progressText) progressText.innerText = `${count} / ${total} (${pct}%)`;
+      if (progressBar) progressBar.style.width = `${pct}%`;
+
+      // Update checkboxes state
+      document.querySelectorAll('.revision-checkbox').forEach(cb => {
+        const id = parseInt(cb.getAttribute('data-topic'));
+        cb.checked = list.includes(id);
+      });
+
+      // Update sidebar nav state
+      TOPICS.forEach(t => {
+        const navEl = document.getElementById(`nav-link-${t.id}`);
+        const mobileNavEl = document.getElementById(`mobile-nav-link-${t.id}`);
+        const isDone = list.includes(t.id);
+        
+        const badgeHtml = isDone ? '✓' : '';
+        if (navEl) {
+          const badge = navEl.querySelector('.status-dot');
+          if (badge) {
+            badge.className = `status-dot w-2 h-2 rounded-full ${isDone ? 'bg-emerald-500 ring-2 ring-emerald-200 dark:ring-emerald-900' : 'bg-slate-300 dark:bg-slate-700'}`;
+          }
+        }
+        if (mobileNavEl) {
+          const badge = mobileNavEl.querySelector('.status-dot');
+          if (badge) {
+            badge.className = `status-dot w-2 h-2 rounded-full ${isDone ? 'bg-emerald-500' : 'bg-slate-300'}`;
+          }
+        }
+      });
+    }
+
+    function renderNavigation() {
+      const listContainer = document.getElementById('topic-nav-list');
+      const mobileListContainer = document.getElementById('mobile-topic-nav-list');
+
+      let html = '';
+      let mobileHtml = '';
+
+      TOPICS.forEach(topic => {
+        html += `
+          <a href="#topic-1" onclick="navigateToTopic(event, ${topic.id})" id="nav-link-${topic.id}" class="flex items-center justify-between p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition group text-slate-700 dark:text-slate-300">
+            <span class="flex items-center gap-2 truncate">
+              <span class="status-dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 transition"></span>
+              <span class="font-mono text-slate-400 text-[10px] w-4">${String(topic.id).padStart(2, '0')}</span>
+              <span class="font-medium group-hover:text-brand-600 dark:group-hover:text-indigo-400 truncate">${topic.title}</span>
+            </span>
+            <span class="text-[10px] text-slate-400 shrink-0 font-mono">${topic.count}</span>
+          </a>
+        `;
+
+        mobileHtml += `
+          <a href="#topic-1" onclick="navigateToTopic(event, ${topic.id})" id="mobile-nav-link-${topic.id}" class="flex items-center justify-between p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-700 dark:text-slate-300">
+            <span class="flex items-center gap-2 truncate">
+              <span class="status-dot w-2 h-2 rounded-full bg-slate-300"></span>
+              <span class="font-mono text-slate-400 text-[10px]">${String(topic.id).padStart(2, '0')}</span>
+              <span class="font-medium truncate">${topic.title}</span>
+            </span>
+            <span class="text-[10px] text-slate-400 font-mono">${topic.count}</span>
+          </a>
+        `;
+      });
+
+      if (listContainer) listContainer.innerHTML = html;
+      if (mobileListContainer) mobileListContainer.innerHTML = mobileHtml;
+    }
+
+    function navigateToTopic(e, id) {
+      if (e) e.preventDefault();
+      const el = document.getElementById(`topic-${id}`);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      closeDrawer();
+    }
+
+    const OPPOSITES = {
+      'A': ['Z', 'Azad'], 'B': ['Y', 'Boy'], 'C': ['X', 'Crux'], 'D': ['W', 'Dew'],
+      'E': ['V', 'Evening'], 'F': ['U', 'Fuel'], 'G': ['T', 'G.T. Road'], 'H': ['S', 'High School'],
+      'I': ['R', 'Indian Railway'], 'J': ['Q', 'Jungle Queen'], 'K': ['P', 'Kurta Pajama'],
+      'L': ['O', 'Love'], 'M': ['N', 'Man'], 'N': ['M', 'Man'], 'O': ['L', 'Love'],
+      'P': ['K', 'Kurta Pajama'], 'Q': ['J', 'Jungle Queen'], 'R': ['I', 'Indian Railway'],
+      'S': ['H', 'High School'], 'T': ['G', 'G.T. Road'], 'U': ['F', 'Fuel'],
+      'V': ['E', 'Evening'], 'W': ['D', 'Dew'], 'X': ['C', 'Crux'], 'Y': ['B', 'Boy'], 'Z': ['A', 'Azad']
+    };
+
+    function calculateAlphaRanks() {
+      const input = (document.getElementById('alpha-input').value || '').trim().toUpperCase();
+      const out = document.getElementById('alpha-output');
+      if (!input) {
+        out.innerHTML = `<span class="text-slate-400">Please enter a word or letters.</span>`;
+        return;
+      }
+
+      let letters = [];
+      let fRanks = [];
+      let rRanks = [];
+      let oppLetters = [];
+      let sumF = 0;
+      let sumR = 0;
+
+      for (let ch of input) {
+        const code = ch.charCodeAt(0);
+        if (code >= 65 && code <= 90) {
+          const f = code - 64;
+          const r = 27 - f;
+          letters.push(ch);
+          fRanks.push(f);
+          rRanks.push(r);
+          oppLetters.push(OPPOSITES[ch] ? OPPOSITES[ch][0] : '?');
+          sumF += f;
+          sumR += r;
+        }
+      }
+
+      if (letters.length === 0) {
+        out.innerHTML = `<span class="text-rose-500">Only English letters A-Z are supported.</span>`;
+        return;
+      }
+
+      out.innerHTML = `
+        <div class="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-1">
+          <span class="text-slate-500">Letter:</span>
+          <span class="font-bold tracking-widest text-slate-900 dark:text-white">${letters.join(' · ')}</span>
+        </div>
+        <div class="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-1">
+          <span class="text-slate-500">Forward Rank (A=1):</span>
+          <span class="text-indigo-600 dark:text-indigo-400 font-bold">${fRanks.join(' + ')} = <span class="text-slate-900 dark:text-white">${sumF}</span></span>
+        </div>
+        <div class="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-1">
+          <span class="text-slate-500">Reverse Rank (27-N):</span>
+          <span class="text-amber-600 dark:text-amber-400 font-bold">${rRanks.join(' + ')} = <span class="text-slate-900 dark:text-white">${sumR}</span></span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">Opposite Word:</span>
+          <span class="text-emerald-600 dark:text-emerald-400 font-bold tracking-widest">${oppLetters.join('')}</span>
+        </div>
+      `;
+    }
+
+    function calculateClock() {
+      let h = parseInt(document.getElementById('clock-hour').value) || 0;
+      let m = parseInt(document.getElementById('clock-min').value) || 0;
+
+      if (h < 1) h = 1;
+      if (h > 12) h = 12;
+      if (m < 0) m = 0;
+      if (m > 59) m = 59;
+
+      // Hands Angle calculation
+      let angle = Math.abs(30 * h - 5.5 * m);
+      if (angle > 180) angle = 360 - angle;
+      angle = Math.round(angle * 10) / 10;
+
+      // Mirror Image calculation (11:60 - H:M)
+      let mirH = 11 - h;
+      let mirM = 60 - m;
+      if (mirM === 60) {
+        mirM = 0;
+        mirH = 12 - h;
+      }
+      if (mirH <= 0) mirH += 12;
+
+      // Water Image calculation (18:30 - H:M)
+      let baseWH = 18;
+      let baseWM = 30;
+      if (m > 30) {
+        baseWH = 17;
+        baseWM = 90;
+      }
+      let watH = baseWH - h;
+      let watM = baseWM - m;
+      if (watH > 12) watH -= 12;
+      if (watH <= 0) watH += 12;
+
+      // Update output metrics
+      document.getElementById('clock-angle-res').innerText = `${angle}°`;
+      document.getElementById('clock-mirror-res').innerText = `${mirH}:${String(mirM).padStart(2, '0')}`;
+      document.getElementById('clock-water-res').innerText = `${watH}:${String(watM).padStart(2, '0')}`;
+
+      // Update SVG Clock Hands
+      const hourDeg = (h % 12) * 30 + m * 0.5;
+      const minDeg = m * 6;
+
+      const hourHand = document.getElementById('svg-hour-hand');
+      const minHand = document.getElementById('svg-min-hand');
+      if (hourHand) hourHand.setAttribute('transform', `rotate(${hourDeg} 50 50)`);
+      if (minHand) minHand.setAttribute('transform', `rotate(${minDeg} 50 50)`);
+    }
+
+    function calculateCalendarDay() {
+      const dateStr = document.getElementById('cal-date-input').value;
+      const resBox = document.getElementById('cal-result-box');
+      if (!dateStr) {
+        resBox.innerHTML = `<span class="text-rose-500">Please choose a valid date.</span>`;
+        return;
+      }
+
+      const dateObj = new Date(dateStr + 'T00:00:00');
+      const d = dateObj.getDate();
+      const m = dateObj.getMonth() + 1; // 1-12
+      const y = dateObj.getFullYear();
+
+      const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const punjabiDays = ['ਐਤਵਾਰ (Sunday)', 'ਸੋਮਵਾਰ (Monday)', 'ਮੰਗਲਵਾਰ (Tuesday)', 'ਬੁੱਧਵਾਰ (Wednesday)', 'ਵੀਰਵਾਰ (Thursday)', 'ਸ਼ੁੱਕਰਵਾਰ (Friday)', 'ਸ਼ਨੀਵਾਰ (Saturday)'];
+      
+      const dayIndex = dateObj.getDay();
+
+      // Check Leap Year
+      const isLeap = (y % 400 === 0) || (y % 4 === 0 && y % 100 !== 0);
+
+      // Repetition year
+      let repYears = 11;
+      if (isLeap) repYears = 28;
+      else if ((y - 1) % 4 === 0) repYears = 6;
+
+      resBox.innerHTML = `
+        <div class="flex justify-between items-center pb-1 border-b border-slate-200 dark:border-slate-700">
+          <span class="text-slate-500">Day of Week:</span>
+          <span class="font-extrabold text-sm text-emerald-600 dark:text-emerald-400">${punjabiDays[dayIndex]}</span>
+        </div>
+        <div class="flex justify-between items-center pb-1 border-b border-slate-200 dark:border-slate-700">
+          <span class="text-slate-500">Year Category:</span>
+          <span class="font-bold">${isLeap ? '🌟 Leap Year (366 days, 2 odd days)' : 'Ordinary Year (365 days, 1 odd day)'}</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-slate-500">Next Same Calendar:</span>
+          <span class="font-bold text-brand-600 dark:text-indigo-400">Year ${y + repYears} (+${repYears} yrs)</span>
+        </div>
+      `;
+    }
+
+    function switchToolTab(tab) {
+      ['alpha', 'clock', 'calendar'].forEach(t => {
+        const pane = document.getElementById(`tool-pane-${t}`);
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (pane) pane.classList.toggle('hidden', t !== tab);
+        if (btn) {
+          if (t === tab) {
+            btn.className = 'px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-xs font-semibold';
+          } else {
+            btn.className = 'px-3 py-1.5 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white font-semibold';
+          }
+        }
+      });
+      if (tab === 'clock') calculateClock();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      if (toast && toastMsg) {
+        toastMsg.innerText = msg;
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        setTimeout(() => {
+          toast.classList.add('translate-y-20', 'opacity-0');
+        }, 2200);
+      }
+    }
+
+    function setupSearch() {
+      const searchInput = document.getElementById('global-search');
+      const clearBtn = document.getElementById('clear-search');
+
+      if (!searchInput) return;
+
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        clearBtn.classList.toggle('hidden', query.length === 0);
+
+        const cards = document.querySelectorAll('.topic-card');
+        cards.forEach(card => {
+          const text = card.innerText.toLowerCase();
+          const match = text.includes(query);
+          card.style.display = match ? 'block' : 'none';
+        });
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearBtn.classList.add('hidden');
+        document.querySelectorAll('.topic-card').forEach(c => c.style.display = 'block');
+      });
+    }
+
+    function copyCheatSheet() {
+      const content = document.getElementById('cheatsheet-content');
+      if (!content) return;
+      const text = content.innerText;
+      
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast('Cheat-Sheet copied to clipboard!');
+      } catch (err) {
+        showToast('Failed to copy');
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function setupModal() {
+      const modal = document.getElementById('cheatsheet-modal');
+      const openBtn = document.getElementById('open-cheatsheet-btn');
+      const closeBtn = document.getElementById('close-cheatsheet-btn');
+      const closeAction = document.getElementById('modal-close-action');
+
+      function open() { modal.classList.remove('hidden'); }
+      function close() { modal.classList.add('hidden'); }
+
+      if (openBtn) openBtn.addEventListener('click', open);
+      if (closeBtn) closeBtn.addEventListener('click', close);
+      if (closeAction) closeAction.addEventListener('click', close);
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) close();
+        });
+      }
+    }
+
+    function openDrawer() {
+      document.getElementById('mobile-drawer').classList.remove('hidden');
+    }
+    function closeDrawer() {
+      document.getElementById('mobile-drawer').classList.add('hidden');
+    }
+
+    function setupTheme() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const isDark = localStorage.getItem(THEME_STORAGE_KEY) === 'dark' || 
+        (!localStorage.getItem(THEME_STORAGE_KEY) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+
+      themeToggle.addEventListener('click', () => {
+        const isCurrentlyDark = document.documentElement.classList.contains('dark');
+        if (isCurrentlyDark) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem(THEME_STORAGE_KEY, 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem(THEME_STORAGE_KEY, 'dark');
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Theme initialization
+      setupTheme();
+
+      // 2. Render sidebar navigations
+      renderNavigation();
+
+      // 3. Initialize Checkboxes & Progress tracking
+      updateProgressDisplay();
+
+      // Event listener for revision checkboxes
+      document.querySelectorAll('.revision-checkbox').forEach(cb => {
+        cb.addEventListener('change', (e) => {
+          const id = parseInt(e.target.getAttribute('data-topic'));
+          let list = getRevisedTopics();
+          if (e.target.checked) {
+            if (!list.includes(id)) list.push(id);
+            showToast(`Topic ${id} marked as revised!`);
+          } else {
+            list = list.filter(item => item !== id);
+          }
+          saveRevisedTopics(list);
+        });
+      });
+
+      // Reset progress button
+      document.getElementById('reset-progress-btn').addEventListener('click', () => {
+        saveRevisedTopics([]);
+        showToast('Revision progress reset.');
+      });
+
+      // 4. Initialize Interactive Widgets
+      calculateAlphaRanks();
+      calculateClock();
+      calculateCalendarDay();
+
+      // 5. Setup Search, Modal, Mobile Drawer
+      setupSearch();
+      setupModal();
+
+      document.getElementById('mobile-menu-btn').addEventListener('click', openDrawer);
+      document.getElementById('close-drawer-btn').addEventListener('click', closeDrawer);
+
+      // 6. Initialize Lucide Icons
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
