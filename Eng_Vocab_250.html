@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PSSSB Master Vocabulary Guide (248 Words Complete)</title>
+  <title>PSSSB Master Vocabulary Guide (PYQ + Editorial Consolidation)</title>
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -13,36 +13,36 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 12px;
-      line-height: 1.4;
-      color: #1e293b;
-      background-color: #f1f5f9;
-      padding: 20px;
+      font-size: 11.5px;
+      line-height: 1.35;
+      color: #0f172a;
+      background-color: #f8fafc;
+      padding: 16px;
     }
 
     .container {
-      max-width: 1240px;
+      max-width: 1200px;
       margin: 0 auto;
       background: #ffffff;
-      padding: 28px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      padding: 24px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
-    /* TOOLBAR (SCREEN ONLY) */
+    /* SCREEN-ONLY TOOLBAR */
     .toolbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: #0f172a;
       color: #ffffff;
-      padding: 12px 20px;
+      padding: 10px 18px;
       border-radius: 6px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .toolbar-info {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 500;
     }
 
@@ -55,10 +55,10 @@
       background: #0284c7;
       color: #ffffff;
       border: none;
-      padding: 8px 18px;
+      padding: 7px 16px;
       border-radius: 4px;
       font-weight: 600;
-      font-size: 13px;
+      font-size: 12px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -70,11 +70,11 @@
       background: #0369a1;
     }
 
-    /* HEADER */
+    /* DOCUMENT HEADER */
     .header {
       border-bottom: 2px solid #0f172a;
-      padding-bottom: 14px;
-      margin-bottom: 18px;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
     }
 
     .header-top {
@@ -85,9 +85,9 @@
     }
 
     .exam-title {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.4px;
       color: #0f172a;
       text-transform: uppercase;
     }
@@ -95,9 +95,9 @@
     .target-badge {
       background: #e0f2fe;
       color: #0369a1;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 4px;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -105,26 +105,45 @@
     }
 
     .header-subtitle {
-      font-size: 12.5px;
+      font-size: 12px;
       color: #475569;
       font-weight: 500;
     }
 
-    /* SECTION HEADER */
+    .exam-notes-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      background: #f1f5f9;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+      font-size: 11px;
+      border-left: 4px solid #0284c7;
+    }
+
+    .note-item strong {
+      display: block;
+      color: #0f172a;
+      font-size: 10.5px;
+      text-transform: uppercase;
+    }
+
+    /* SECTION HEADERS */
     .section-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       background: #1e293b;
       color: #ffffff;
-      padding: 7px 12px;
+      padding: 6px 10px;
       border-radius: 4px;
-      margin: 20px 0 10px 0;
+      margin: 18px 0 10px 0;
       page-break-after: avoid;
     }
 
     .section-header h2 {
-      font-size: 13px;
+      font-size: 12.5px;
       text-transform: uppercase;
       letter-spacing: 0.4px;
       font-weight: 700;
@@ -133,19 +152,19 @@
     .section-header .tag {
       background: #f59e0b;
       color: #000000;
-      font-size: 9.5px;
+      font-size: 9px;
       font-weight: 800;
-      padding: 2px 7px;
+      padding: 2px 6px;
       border-radius: 3px;
       text-transform: uppercase;
     }
 
-    /* TIER-1 PRIORITY CARDS GRID */
+    /* TIER-1 PRIORITY CARDS */
     .tier1-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 8px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .tier1-card {
@@ -162,17 +181,17 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .word-title {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 800;
       color: #0f172a;
     }
 
     .pos-pill {
-      font-size: 9.5px;
+      font-size: 9px;
       font-weight: 700;
       padding: 1px 5px;
       border-radius: 3px;
@@ -182,7 +201,7 @@
     }
 
     .tier1-meaning {
-      font-size: 11.5px;
+      font-size: 11px;
       color: #1e293b;
       font-weight: 600;
       margin-bottom: 3px;
@@ -191,24 +210,17 @@
     .tier1-meta {
       font-size: 10.5px;
       color: #334155;
-      line-height: 1.35;
+      line-height: 1.3;
     }
 
-    .syn-tag {
-      font-weight: 700;
-      color: #0369a1;
-    }
+    .syn-tag { font-weight: 700; color: #0369a1; }
+    .ant-tag { font-weight: 700; color: #b91c1c; }
 
-    .ant-tag {
-      font-weight: 700;
-      color: #b91c1c;
-    }
-
-    /* TABLE LAYOUT */
+    /* TABLES */
     table.vocab-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 11px;
+      font-size: 10.5px;
       text-align: left;
     }
 
@@ -220,19 +232,19 @@
     }
 
     table.vocab-table th {
-      padding: 6px 7px;
+      padding: 5px 6px;
       font-weight: 700;
       color: #0f172a;
       text-transform: uppercase;
-      font-size: 10px;
+      font-size: 9.5px;
       letter-spacing: 0.3px;
     }
 
     table.vocab-table td {
-      padding: 5px 7px;
+      padding: 4px 6px;
       border-bottom: 1px solid #e2e8f0;
       vertical-align: top;
-      line-height: 1.3;
+      line-height: 1.25;
     }
 
     table.vocab-table tbody tr:nth-child(even) {
@@ -244,19 +256,74 @@
       break-inside: avoid;
     }
 
-    .col-idx  { width: 4%; text-align: center; color: #64748b; font-weight: 600; }
-    .col-word { width: 15%; font-weight: 700; color: #0f172a; }
+    .col-word { width: 16%; font-weight: 700; color: #0f172a; }
     .col-pos  { width: 6%; }
-    .col-mean { width: 27%; }
-    .col-syn  { width: 24%; color: #0369a1; }
-    .col-ant  { width: 24%; color: #b91c1c; }
+    .col-mean { width: 28%; }
+    .col-syn  { width: 25%; color: #0369a1; }
+    .col-ant  { width: 25%; color: #b91c1c; }
 
-    /* PRINT SPECIFIC STYLES */
+    /* OWS & IDIOM GRIDS */
+    .ows-grid, .idiom-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7px;
+      margin-bottom: 14px;
+    }
+
+    .ows-card, .idiom-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 6px 8px;
+      border-radius: 4px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      font-size: 10.5px;
+    }
+
+    .ows-card { border-top: 3px solid #0284c7; }
+    .idiom-card { border-top: 3px solid #059669; }
+
+    .card-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #0f172a;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .spelling-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      font-size: 10.5px;
+    }
+
+    .spelling-box {
+      border: 1px solid #e2e8f0;
+      padding: 5px 8px;
+      border-radius: 4px;
+      background: #ffffff;
+      page-break-inside: avoid;
+    }
+
+    .spelling-correct {
+      font-weight: 700;
+      color: #15803d;
+      display: block;
+    }
+
+    .spelling-trap {
+      color: #b91c1c;
+      text-decoration: line-through;
+      font-size: 9.5px;
+    }
+
+    /* PRINT RULES */
     @media print {
       body {
         background: #ffffff;
         padding: 0;
-        font-size: 9.5pt;
+        font-size: 9pt;
         color: #000000;
       }
 
@@ -281,7 +348,7 @@
         color: #ffffff !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
-        margin: 12px 0 6px 0;
+        margin: 10px 0 6px 0;
         padding: 3px 6px;
       }
 
@@ -296,8 +363,10 @@
         border-left: 4px solid #b45309 !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
-        padding: 4px 6px;
       }
+
+      .ows-card { border-top: 3px solid #0284c7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .idiom-card { border-top: 3px solid #059669 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
       table.vocab-table th {
         background: #e2e8f0 !important;
@@ -307,8 +376,8 @@
       }
 
       table.vocab-table td {
-        padding: 3.5px 5px;
-        font-size: 8.5pt;
+        padding: 3px 4px;
+        font-size: 8pt;
       }
     }
   </style>
@@ -320,155 +389,182 @@
   <!-- SCREEN TOOLBAR -->
   <div class="toolbar no-print">
     <div class="toolbar-info">
-      Total Vocabulary Pool: <span>248 Deduplicated Words</span> • Exam Target: <span>PSSSB / NITTTR Pattern</span>
+      Consolidated Revision Guide: <span>Hindu Core (248) + PSSSB 14-Yr PYQs (Stages 6–9)</span>
     </div>
     <button class="btn-print" onclick="window.print()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-      Print / Save PDF (A4 Ready)
+      Print / Save as PDF (A4)
     </button>
   </div>
 
-  <!-- HEADER -->
+  <!-- DOCUMENT HEADER -->
   <div class="header">
     <div class="header-top">
       <div>
-        <h1 class="exam-title">PSSSB Comprehensive English Vocabulary Master Guide</h1>
-        <p class="header-subtitle">All 248 Unique Words from File • Dual Synonyms & Antonyms for Objective Elimination</p>
+        <h1 class="exam-title">PSSSB Comprehensive English Vocabulary Master Compendium</h1>
+        <p class="header-subtitle">NITTTR Chandigarh Exam Pattern • Synonyms, Antonyms, One-Word Substitutions, Spelling Traps & Tested Idioms</p>
       </div>
-      <span class="target-badge">NITTTR High-Yield Compendium</span>
+      <span class="target-badge">Punjab Govt Recruitment Special</span>
+    </div>
+
+    <div class="exam-notes-bar">
+      <div class="note-item">
+        <strong>Direct Synonyms</strong>
+        Identifies closest contextual equivalents tested in recent exams.
+      </div>
+      <div class="note-item">
+        <strong>Dual Antonyms</strong>
+        Protects against negative-choice reversal traps in MCQs.
+      </div>
+      <div class="note-item">
+        <strong>One-Word Substitutions</strong>
+        High-probability person, belief, science, and administrative types.
+      </div>
+      <div class="note-item">
+        <strong>Spelling Traps</strong>
+        Commonly misspelt words extracted directly from PSSSB/PPSC answer keys.
+      </div>
     </div>
   </div>
 
   <!-- ======================================================== -->
-  <!-- SECTION 1: TOP 24 NITTTR HIGH-FREQUENCY PRIORITY WORDS -->
+  <!-- SECTION 1: TOP HIGH-FREQUENCY CORE (NITTTR PRIORITY)     -->
   <!-- ======================================================== -->
   <div class="section-header">
-    <h2>Section 1: Top 24 High-Probability Core </h2>
-    <span class="tag">Priority Memory Deck</span>
+    <h2>Section 1: High-Frequency Core Vocabulary (Repeated across PSSSB & NITTTR Exams)</h2>
+    <span class="tag">Priority Revision</span>
   </div>
 
   <div class="tier1-grid">
-
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">1. Acumen</span><span class="pos-pill">Noun</span></div>
-      <div class="tier1-meaning">Ability to make quick, accurate decisions; shrewdness.</div>
+      <div class="card-top"><span class="word-title">Acumen</span><span class="pos-pill">Noun</span></div>
+      <div class="tier1-meaning">Ability to make quick, accurate judgments; shrewdness.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Astuteness, acuity, sharpness, sagacity.<br>
-        <span class="ant-tag">Ant:</span> Naivety, obtuseness, ignorance, stupidity.
+        <span class="syn-tag">Syn:</span> Astuteness, acuity, perspicacity, sharpness.<br>
+        <span class="ant-tag">Ant:</span> Naivety, obtuseness, stupidity, ignorance.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">2. Ambivalent</span><span class="pos-pill">Adjective</span></div>
+      <div class="card-top"><span class="word-title">Adroit</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Clever, skillful, or adept in action or thought.</div>
+      <div class="tier1-meta">
+        <span class="syn-tag">Syn:</span> Masterful, dexterous, nimble, adept, skillful.<br>
+        <span class="ant-tag">Ant:</span> Clumsy, maladroit, inept, awkward, incompetent.
+      </div>
+    </div>
+
+    <div class="tier1-card">
+      <div class="card-top"><span class="word-title">Ambivalent</span><span class="pos-pill">Adjective</span></div>
       <div class="tier1-meaning">Having mixed, contradictory feelings; indecisive.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Equivocal, uncertain, doubtful, irresolute.<br>
-        <span class="ant-tag">Ant:</span> Decisive, unequivocal, resolute, clear.
+        <span class="syn-tag">Syn:</span> Equivocal, uncertain, doubtful, indecisive, irresolute.<br>
+        <span class="ant-tag">Ant:</span> Decisive, unequivocal, resolute, certain.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">3. Assiduous</span><span class="pos-pill">Adjective</span></div>
-      <div class="tier1-meaning">Showing great care, attention, and perseverance.</div>
+      <div class="card-top"><span class="word-title">Assiduous</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Showing great care, persistence, and perseverance.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Diligent, meticulous, sedulous, industrious.<br>
-        <span class="ant-tag">Ant:</span> Lazy, indolent, neglectful, careless.
+        <span class="syn-tag">Syn:</span> Diligent, meticulous, sedulous, industrious, thorough.<br>
+        <span class="ant-tag">Ant:</span> Lazy, indolent, dilatory, negligent.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">4. Assuage</span><span class="pos-pill">Verb</span></div>
+      <div class="card-top"><span class="word-title">Assuage</span><span class="pos-pill">Verb</span></div>
       <div class="tier1-meaning">Make an unpleasant feeling or pain less intense.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Relieve, ease, alleviate, mitigate, soothe.<br>
+        <span class="syn-tag">Syn:</span> Relieve, ease, alleviate, mitigate, soothe, palliate.<br>
         <span class="ant-tag">Ant:</span> Exacerbate, aggravate, inflame, worsen.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">5. Capricious</span><span class="pos-pill">Adjective</span></div>
-      <div class="tier1-meaning">Prone to sudden, unaccountable mood changes.</div>
+      <div class="card-top"><span class="word-title">Capricious</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Given to sudden, unaccountable mood changes; unpredictable.</div>
       <div class="tier1-meta">
         <span class="syn-tag">Syn:</span> Fickle, mercurial, volatile, erratic, arbitrary.<br>
-        <span class="ant-tag">Ant:</span> Constant, stable, predictable, steady.
+        <span class="ant-tag">Ant:</span> Steady, constant, predictable, steadfast.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">6. Castigate</span><span class="pos-pill">Verb</span></div>
+      <div class="card-top"><span class="word-title">Castigate</span><span class="pos-pill">Verb</span></div>
       <div class="tier1-meaning">Reprimand, criticize, or punish someone severely.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Rebuke, admonish, chastise, upbraid, reprimand.<br>
+        <span class="syn-tag">Syn:</span> Rebuke, reprimand, admonish, chastise, upbraid.<br>
         <span class="ant-tag">Ant:</span> Praise, commend, laud, extol.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">7. Cogent</span><span class="pos-pill">Adjective</span></div>
-      <div class="tier1-meaning">Clear, logical, and convincing (of argument).</div>
+      <div class="card-top"><span class="word-title">Chivalrous</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Courteous, honorable, and gallant toward others.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Compelling, forceful, potent, weighty, lucid.<br>
-        <span class="ant-tag">Ant:</span> Specious, unconvincing, weak, ineffective.
+        <span class="syn-tag">Syn:</span> Gallant, honorable, noble, courteous, brave.<br>
+        <span class="ant-tag">Ant:</span> Dastardly, cowardly, boorish, rude.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">8. Dilatory</span><span class="pos-pill">Adjective</span></div>
-      <div class="tier1-meaning">Slow to act; intended to cause postponement.</div>
+      <div class="card-top"><span class="word-title">Cogent</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Clear, logical, and convincing (of an argument).</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Tardy, unhurried, sluggish, lax, procrastinating.<br>
+        <span class="syn-tag">Syn:</span> Compelling, forceful, sound, valid, lucid, persuasive.<br>
+        <span class="ant-tag">Ant:</span> Unconvincing, specious, weak, invalid.
+      </div>
+    </div>
+
+    <div class="tier1-card">
+      <div class="card-top"><span class="word-title">Daunting</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Seeming difficult to deal with in anticipation; intimidating.</div>
+      <div class="tier1-meta">
+        <span class="syn-tag">Syn:</span> Intimidating, formidable, frightening, discouraging.<br>
+        <span class="ant-tag">Ant:</span> Encouraging, heartening, reassuring.
+      </div>
+    </div>
+
+    <div class="tier1-card">
+      <div class="card-top"><span class="word-title">Dilatory</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Slow to act; intended to cause delay or postponement.</div>
+      <div class="tier1-meta">
+        <span class="syn-tag">Syn:</span> Tardy, sluggish, unhurried, lax, procrastinating.<br>
         <span class="ant-tag">Ant:</span> Prompt, expeditious, punctual, swift.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">9. Enervate</span><span class="pos-pill">Verb</span></div>
-      <div class="tier1-meaning">Drain someone of energy, physical vitality, or spirit.</div>
+      <div class="card-top"><span class="word-title">Enervate</span><span class="pos-pill">Verb</span></div>
+      <div class="tier1-meaning">Cause someone to feel drained of energy or vitality; weaken.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Exhaust, tire, devitalize, sap, debilitate.<br>
+        <span class="syn-tag">Syn:</span> Exhaust, debilitate, sap, fatigue, devitalize.<br>
         <span class="ant-tag">Ant:</span> Invigorate, energize, animate, vitalize.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">10. Ephemeral</span><span class="pos-pill">Adjective</span></div>
-      <div class="tier1-meaning">Lasting for a very brief period of time; fleeting.</div>
+      <div class="card-top"><span class="word-title">Ephemeral</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Lasting for a very short period of time; fleeting.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Transitory, transient, fleeting, short-lived.<br>
+        <span class="syn-tag">Syn:</span> Transitory, transient, fleeting, short-lived, momentary.<br>
         <span class="ant-tag">Ant:</span> Permanent, perennial, eternal, everlasting.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">11. Equivocate</span><span class="pos-pill">Verb</span></div>
-      <div class="tier1-meaning">Use ambiguous language to conceal truth or stall.</div>
+      <div class="card-top"><span class="word-title">Exacerbate</span><span class="pos-pill">Verb</span></div>
+      <div class="tier1-meaning">Make a problem, bad situation, or negative feeling worse.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Prevaricate, temporize, hedge, vacillate.<br>
-        <span class="ant-tag">Ant:</span> Clarify, confront, speak frankly.
-      </div>
-    </div>
-
-    <div class="tier1-card">
-      <div class="card-top"><span class="word-title">12. Erudite</span><span class="pos-pill">Adjective</span></div>
-      <div class="tier1-meaning">Having or showing deep, extensive knowledge.</div>
-      <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Learned, scholarly, well-educated, cultured.<br>
-        <span class="ant-tag">Ant:</span> Ignorant, illiterate, unscholarly.
-      </div>
-    </div>
-
-    <div class="tier1-card">
-      <div class="card-top"><span class="word-title">13. Exacerbate</span><span class="pos-pill">Verb</span></div>
-      <div class="tier1-meaning">Make a problem, disease, or negative feeling worse.</div>
-      <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Aggravate, worsen, inflame, compound.<br>
+        <span class="syn-tag">Syn:</span> Aggravate, worsen, inflame, compound, intensify.<br>
         <span class="ant-tag">Ant:</span> Alleviate, mitigate, assuage, ease.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">14. Exonerate</span><span class="pos-pill">Verb</span></div>
-      <div class="tier1-meaning">Officially clear someone from blame or charge.</div>
+      <div class="card-top"><span class="word-title">Exonerate</span><span class="pos-pill">Verb</span></div>
+      <div class="tier1-meaning">Officially absolve someone from blame or a criminal charge.</div>
       <div class="tier1-meta">
         <span class="syn-tag">Syn:</span> Absolve, acquit, clear, vindicate, exculpate.<br>
         <span class="ant-tag">Ant:</span> Indict, incriminate, convict, blame.
@@ -476,35 +572,62 @@
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">15. Garrulous</span><span class="pos-pill">Adjective</span></div>
-      <div class="tier1-meaning">Excessively talkative on trivial matters.</div>
+      <div class="card-top"><span class="word-title">Fastidious</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Very attentive to accuracy; hard to please; choosy.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Talkative, voluble, loquacious, chatty.<br>
+        <span class="syn-tag">Syn:</span> Meticulous, fussy, picky, finicky, hypercritical.<br>
+        <span class="ant-tag">Ant:</span> Easygoing, uncritical, sloppy, lax.
+      </div>
+    </div>
+
+    <div class="tier1-card">
+      <div class="card-top"><span class="word-title">Garrulous / Loquacious</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Excessively talkative, especially regarding trivial matters.</div>
+      <div class="tier1-meta">
+        <span class="syn-tag">Syn:</span> Voluble, talkative, chatty, verbose, long-winded.<br>
         <span class="ant-tag">Ant:</span> Taciturn, reticent, laconic, reserved.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">16. Gullible</span><span class="pos-pill">Adjective</span></div>
-      <div class="tier1-meaning">Easily deceived, tricked, or persuaded to believe.</div>
+      <div class="card-top"><span class="word-title">Gullible</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Easily persuaded to believe something; credulous.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Credulous, naive, trustful, innocent.<br>
+        <span class="syn-tag">Syn:</span> Credulous, naive, trustful, innocent, unsuspecting.<br>
         <span class="ant-tag">Ant:</span> Cynical, skeptical, wary, suspicious.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">17. Impeccable</span><span class="pos-pill">Adjective</span></div>
-      <div class="tier1-meaning">In accordance with highest standards; flawless.</div>
+      <div class="card-top"><span class="word-title">Impeccable</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">In accordance with the highest standards; faultless.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Flawless, faultless, unblemished, spotless.<br>
+        <span class="syn-tag">Syn:</span> Flawless, faultless, unblemished, spotless, pristine.<br>
         <span class="ant-tag">Ant:</span> Defective, flawed, imperfect, shoddy.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">18. Laconic</span><span class="pos-pill">Adjective</span></div>
-      <div class="tier1-meaning">Using very few words in speaking or writing.</div>
+      <div class="card-top"><span class="word-title">Inchoate</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Just begun and so not fully formed or developed.</div>
+      <div class="tier1-meta">
+        <span class="syn-tag">Syn:</span> Rudimentary, nascent, embryonic, undeveloped.<br>
+        <span class="ant-tag">Ant:</span> Ripened, mature, developed, complete.
+      </div>
+    </div>
+
+    <div class="tier1-card">
+      <div class="card-top"><span class="word-title">Incontrovertible</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Not able to be denied or disputed; beyond doubt.</div>
+      <div class="tier1-meta">
+        <span class="syn-tag">Syn:</span> Unquestionable, indisputable, undeniable, irrefutable.<br>
+        <span class="ant-tag">Ant:</span> Debatable, disputable, questionable.
+      </div>
+    </div>
+
+    <div class="tier1-card">
+      <div class="card-top"><span class="word-title">Laconic</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Using very few words in speech or writing; concise.</div>
       <div class="tier1-meta">
         <span class="syn-tag">Syn:</span> Brief, concise, terse, succinct, pithy.<br>
         <span class="ant-tag">Ant:</span> Verbose, garrulous, loquacious, wordy.
@@ -512,43 +635,43 @@
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">19. Mitigate</span><span class="pos-pill">Verb</span></div>
-      <div class="tier1-meaning">Make something bad or painful less severe.</div>
+      <div class="card-top"><span class="word-title">Maverick</span><span class="pos-pill">Noun/Adj.</span></div>
+      <div class="tier1-meaning">An unorthodox or independent-minded person.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Diminish, lessen, lighten, quell, appease.<br>
-        <span class="ant-tag">Ant:</span> Intensify, aggravate, exacerbate.
+        <span class="syn-tag">Syn:</span> Individualist, nonconformist, free spirit, outsider.<br>
+        <span class="ant-tag">Ant:</span> Conformist, follower, traditionalist.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">20. Obstinate</span><span class="pos-pill">Adjective</span></div>
-      <div class="tier1-meaning">Stubbornly refusing to change an opinion or course.</div>
+      <div class="card-top"><span class="word-title">Mitigate</span><span class="pos-pill">Verb</span></div>
+      <div class="tier1-meaning">Make something bad or painful less severe or harmful.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Stubborn, headstrong, refractory, inflexible.<br>
-        <span class="ant-tag">Ant:</span> Tractable, pliant, compliant, flexible.
+        <span class="syn-tag">Syn:</span> Diminish, reduce, lessen, alleviate, soften, quell.<br>
+        <span class="ant-tag">Ant:</span> Aggravate, exacerbate, intensify.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">21. Pristine</span><span class="pos-pill">Adjective</span></div>
-      <div class="tier1-meaning">In clean, pure original condition; unspoilt.</div>
+      <div class="card-top"><span class="word-title">Obstinate</span><span class="pos-pill">Adjective</span></div>
+      <div class="tier1-meaning">Stubbornly refusing to change an opinion or course of action.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Immaculate, fresh, clean, virgin, pure.<br>
-        <span class="ant-tag">Ant:</span> Contaminated, spoiled, filthy, tainted.
+        <span class="syn-tag">Syn:</span> Stubborn, headstrong, refractory, inflexible, mulish.<br>
+        <span class="ant-tag">Ant:</span> Tractable, pliant, compliant, amenable.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">22. Rescind</span><span class="pos-pill">Verb</span></div>
-      <div class="tier1-meaning">Revoke, repeal, or cancel an official law or order.</div>
+      <div class="card-top"><span class="word-title">Rescind</span><span class="pos-pill">Verb</span></div>
+      <div class="tier1-meaning">Revoke, cancel, or repeal a law, order, or agreement.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Revoke, repeal, annul, overturn, nullify.<br>
-        <span class="ant-tag">Ant:</span> Enact, ratify, validate, uphold.
+        <span class="syn-tag">Syn:</span> Revoke, repeal, annul, nullify, overturn.<br>
+        <span class="ant-tag">Ant:</span> Enact, ratify, validate, enforce.
       </div>
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">23. Taciturn</span><span class="pos-pill">Adjective</span></div>
+      <div class="card-top"><span class="word-title">Taciturn</span><span class="pos-pill">Adjective</span></div>
       <div class="tier1-meaning">Reserved or uncommunicative in speech; saying little.</div>
       <div class="tier1-meta">
         <span class="syn-tag">Syn:</span> Untalkative, reticent, quiet, unforthcoming.<br>
@@ -557,2019 +680,875 @@
     </div>
 
     <div class="tier1-card">
-      <div class="card-top"><span class="word-title">24. Zenith</span><span class="pos-pill">Noun</span></div>
-      <div class="tier1-meaning">The highest crowning point of success or power.</div>
+      <div class="card-top"><span class="word-title">Truncate</span><span class="pos-pill">Verb</span></div>
+      <div class="tier1-meaning">Shorten something by cutting off the top or the end.</div>
       <div class="tier1-meta">
-        <span class="syn-tag">Syn:</span> Pinnacle, apex, climax, culmination, peak.<br>
-        <span class="ant-tag">Ant:</span> Nadir, lowest point, rock bottom.
+        <span class="syn-tag">Syn:</span> Shorten, trim, curtail, prune, abbreviate.<br>
+        <span class="ant-tag">Ant:</span> Protract, extend, lengthen, expand.
       </div>
     </div>
-
   </div>
 
   <!-- ======================================================== -->
-  <!-- SECTION 2: ALL 248 UNIQUE WORDS FROM SOURCE (A-Z)       -->
+  <!-- SECTION 2: HIGH-YIELD ONE-WORD SUBSTITUTIONS            -->
   <!-- ======================================================== -->
   <div class="section-header">
-    <h2>Section 2: Complete Alphabetical Register </h2>
-    <span class="tag">Dual Coverage: Syn + Ant</span>
+    <h2>Section 2: High-Yield One-Word Substitutions (Person, Beliefs & Science)</h2>
+    <span class="tag">OWS Focus</span>
+  </div>
+
+  <div class="ows-grid">
+    <div class="ows-card">
+      <span class="card-label">Ambidextrous</span>
+      Able to use both the right and left hand equally well.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Amphibians</span>
+      Animals that live both on land and in water (e.g., frogs).
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Apostate</span>
+      A person who renounces or abandons a religious or political belief.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Atheist</span>
+      A person who does not believe in the existence of God or gods.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Bigot</span>
+      One obstinately or intolerantly devoted to their own religious or political opinions.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Bonsai</span>
+      A dwarfed variety of tree grown in a small pot or shallow tray.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Cartographer</span>
+      A specialist who draws, compiles, or produces maps.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Charlatan</span>
+      A fraud or quack who falsely claims to have special knowledge or skills.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Dilettante</span>
+      A person who cultivates an area of interest (art/science) superficially without commitment.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Effeminate</span>
+      A man having characteristics, manners, or qualities considered typical of a woman.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Epidemic</span>
+      A widespread occurrence of an infectious disease in a community at a particular time.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Epitaph</span>
+      An inscription or commemorative piece of writing carved on a tombstone.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Gerontology</span>
+      The scientific study of old age, the process of ageing, and older adults.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Gourmet</span>
+      A connoisseur of good food and drink who appreciates fine culinary preparations.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Hypochondriac</span>
+      A person who is abnormally anxious about their health and constantly believes they are ill.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Illegible</span>
+      Handwriting or print that is impossible or nearly impossible to read.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Impartial</span>
+      Treating all rivals or disputants equally; fair and unbiased.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Incarnate</span>
+      A deity or spirit embodied in flesh or taking human form.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Martinet</span>
+      A strict disciplinarian who demands absolute adherence to rules and procedures.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Megalomaniac</span>
+      A person who suffers from delusions of greatness, supreme power, or invincibility.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Misogamist</span>
+      A person who dislikes, distrusts, or is strongly opposed to the institution of marriage.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Nepotism</span>
+      The practice among those with power of favoring relatives, especially in giving jobs.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Numismatist</span>
+      A person who collects or studies coins, paper banknotes, and medals.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Occidental</span>
+      Relating to or characteristic of the countries of the West (opposed to Oriental).
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Philanthropist</span>
+      A person who seeks to promote the welfare of others, especially by donating funds.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Polyandry</span>
+      The custom or practice of a woman having more than one husband at the same time.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Polyglot</span>
+      A person who knows, writes, or speaks several different languages fluently.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Postscript (P.S.)</span>
+      An additional note or remark written after the signature in a letter.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Reticule</span>
+      A small drawstring handbag or purse carried by women (historical usage).
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Taxonomy</span>
+      The branch of science concerned with classification, especially of organisms.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Veteran</span>
+      A person who has had long experience in a particular field or military service.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Virtuoso</span>
+      A person highly skilled in music, the arts, or another artistic pursuit.
+    </div>
+    <div class="ows-card">
+      <span class="card-label">Zoology</span>
+      The scientific study of the behavior, physiology, and classification of animals.
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 3: PSSSB PYQ IDIOMS & PHRASES                   -->
+  <!-- ======================================================== -->
+  <div class="section-header">
+    <h2>Section 3: PSSSB Previous Years' Idioms & Fixed Phrasal Equivalents</h2>
+    <span class="tag">Idioms to Learn</span>
+  </div>
+
+  <div class="idiom-grid">
+    <div class="idiom-card">
+      <span class="card-label">A black leg</span>
+      A worker who continues working or refuses to join while others are on strike.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">A cat's paw</span>
+      A person who is unwittingly used by another as a tool or puppet to accomplish purpose.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Add insult to injury</span>
+      To make a bad situation even worse or humiliate an already injured party.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">At sixes and sevens</span>
+      In a state of complete confusion, disorder, or disarray.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Barking up the wrong tree</span>
+      Pursuing a mistaken line of thought or accusing the wrong person.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Bell the cat</span>
+      To take the initiative in confronting a danger; to perform a daring risk.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Beside oneself</span>
+      Overwhelmed with strong emotion (grief, anxiety, or rage).
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Bird’s-eye view</span>
+      A general overview or brief summary from a comprehensive perspective.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Blow one's own trumpet</span>
+      To praise or boast about one's own achievements, talents, or abilities.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Burn the midnight oil</span>
+      To read, study, or work late into the night.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Cakes and ale</span>
+      The pleasures, merriment, and good material things of life.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Catch a tartar</span>
+      To deal with someone who proves unexpectedly formidable, troublesome, or strong.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Clip one's wings</span>
+      To limit or restrict someone's ambition, power, or personal freedom.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Cook one's goose</span>
+      To spoil, ruin, or completely destroy someone's plans or prospects.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Cuckoo in the nest</span>
+      An unwelcome, intrusive person who enters and causes trouble in an established group.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Cut off nose to spite face</span>
+      To harm yourself in an attempt to punish or hurt someone else.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Eat humble pie</span>
+      To admit one's errors, back down, and make a humble apology.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Fall on stony ground</span>
+      To be ignored, disregarded, or to produce little to no effect.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Fish in troubled waters</span>
+      To try to take advantage of or profit from a disturbed or chaotic situation.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Flogging a dead horse</span>
+      Wasting effort, time, or energy on something that is no longer possible or useful.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">French leave</span>
+      Absence from work or a duty without prior notice or official permission.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Get someone's goat</span>
+      To irritate, provoke, or annoy someone intensely.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Go-getter</span>
+      An energetic, determined, and ambitious person who strives to achieve goals.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Halcyon days</span>
+      A period of time in the past that was idyllically peaceful, happy, and prosperous.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Have a bee in one's bonnet</span>
+      To be continually obsessed with a particular idea or preoccupation.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Have a bone to pick</span>
+      To have a complaint or grievance that needs to be discussed and settled.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Hold your horses</span>
+      To wait, hold back, and be patient before acting hastily.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">In high spirits</span>
+      Extremely lively, happy, cheerful, and full of positive energy.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Keep body & soul together</span>
+      To manage to survive or stay alive under extreme poverty or severe hardship.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Meet one's Waterloo</span>
+      To encounter one's final, decisive, and crushing defeat.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">No bed of roses</span>
+      A situation or task that is difficult, uncomfortable, and full of hardship.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">No love lost</span>
+      Mutual dislike, intense ill-will, or animosity between two parties.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Once in a blue moon</span>
+      Happening very rarely, seldom, or almost never.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Pin money</span>
+      A small periodic allowance of money given for personal or incidental expenses.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Put a spoke in one's wheel</span>
+      To deliberately thwart, obstruct, or hinder someone in executing their work.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Put the cart before the horse</span>
+      To reverse the natural, logical, or necessary order of doing things.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Rise like a phoenix</span>
+      To emerge with renewed strength, beauty, or success after a catastrophic defeat.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Run out of steam</span>
+      To lose initial enthusiasm, energy, or drive before a task is completed.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Sitting duck</span>
+      An easy target; an unprotected person or thing that is vulnerable to attack.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Spitting image</span>
+      The exact double or identical physical counterpart of another person.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Throw cold water over</span>
+      To dampen, discourage, or dismiss someone's enthusiasm or idea.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Throw down the gauntlet</span>
+      To issue a challenge or provocation openly and boldly.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Throw dust into eyes</span>
+      To mislead, hoodwink, or deliberately deceive someone about the truth.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Turn the corner</span>
+      To pass a critical, dangerous point in a crisis and begin to improve or recover.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Under the weather</span>
+      Feeling unwell, indisposed, or slightly ill.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Wear heart on sleeve</span>
+      To express one's true emotions, feelings, and thoughts openly and unreservedly.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">Weigh your words</span>
+      To choose words with deliberate care, thought, and precision before speaking.
+    </div>
+    <div class="idiom-card">
+      <span class="card-label">When pigs fly</span>
+      An event or outcome that is completely impossible and will never occur.
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 4: HIGH-FREQUENCY SPELLING TRAPS (PYQ TESTED)    -->
+  <!-- ======================================================== -->
+  <div class="section-header">
+    <h2>Section 4: Punjab Exam Official Spelling Traps (PPSC & PSSSB Verified)</h2>
+    <span class="tag">Error Correction</span>
+  </div>
+
+  <div class="spelling-grid">
+    <div class="spelling-box"><span class="spelling-correct">Acquaint</span><span class="spelling-trap">Aquaint / Accquaint</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Appellation</span><span class="spelling-trap">Apellation / Appilation</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Bureaucracy</span><span class="spelling-trap">Beurocracy / Bureacracy</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Centenary</span><span class="spelling-trap">Centenery / Centannary</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Colloquial</span><span class="spelling-trap">Coloquial / Colloquil</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Commemorative</span><span class="spelling-trap">Comemorative / Commamerative</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Consensus</span><span class="spelling-trap">Concensus / Consencus</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Controversial</span><span class="spelling-trap">Controvarcial / Controversal</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Diarrhoea</span><span class="spelling-trap">Diarrohia / Diarrhea (UK)</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Embarrass</span><span class="spelling-trap">Embaras / Embarass</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Exhilarate</span><span class="spelling-trap">Exilarate / Exsilarate</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Liaison</span><span class="spelling-trap">Liason / Liasion</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Lieutenant</span><span class="spelling-trap">Leftenant / Lietnanat</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Maintenance</span><span class="spelling-trap">Maintainance / Maintanance</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Mandatory</span><span class="spelling-trap">Mandatry / Mandetory</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Melancholic</span><span class="spelling-trap">Melancolic / Melanchollic</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Millennium</span><span class="spelling-trap">Millenium / Milennium</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Occurrence</span><span class="spelling-trap">Occurance / Occurence</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Parallel</span><span class="spelling-trap">Paralell / Parallal</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Percussion</span><span class="spelling-trap">Parcussion / Perccusion</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Precocious</span><span class="spelling-trap">Precocius / Precousious</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Questionnaire</span><span class="spelling-trap">Questionaire / Questionare</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Repercussion</span><span class="spelling-trap">Repercusions / Repercusion</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Rheumatic</span><span class="spelling-trap">Rhumatic / Rheumetic</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Scimitars</span><span class="spelling-trap">Scemitars / Scimetars</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Silhouette</span><span class="spelling-trap">Sillhoutte / Silhouete</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Subpoena</span><span class="spelling-trap">Subpena / Suppoena</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Succumb</span><span class="spelling-trap">Sccumb / Succomb</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Voluptuous</span><span class="spelling-trap">Volluptuos / Voluptious</span></div>
+    <div class="spelling-box"><span class="spelling-correct">Weird</span><span class="spelling-trap">Wierd</span></div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 5: MASTER ALPHABETICAL VOCABULARY REGISTER      -->
+  <!-- ======================================================== -->
+  <div class="section-header">
+    <h2>Section 5: Master Alphabetical Register (Consolidated Hindu & PYQ Pool)</h2>
+    <span class="tag">Dual Synonyms + Antonyms</span>
   </div>
 
   <table class="vocab-table">
     <thead>
       <tr>
-        <th class="col-idx">#</th>
         <th class="col-word">Word</th>
         <th class="col-pos">POS</th>
-        <th class="col-mean">Meaning / Context</th>
+        <th class="col-mean">Meaning / Exam Context</th>
         <th class="col-syn">Key Synonyms</th>
         <th class="col-ant">Key Antonyms</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="col-idx">1</td>
-        <td class="col-word">Abandon</td>
+        <td class="col-word">Abash</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Cease to support or look after; desert</td>
-        <td class="col-syn">Desert, leave, quit, cast aside</td>
-        <td class="col-ant">Retain, maintain, cherish, support</td>
+        <td class="col-mean">Make someone feel embarrassed or ashamed</td>
+        <td class="col-syn">Embarrass, humiliate, disconcert, rattle</td>
+        <td class="col-ant">Reassure, embolden, encourage</td>
       </tr>
       <tr>
-        <td class="col-idx">2</td>
-        <td class="col-word">Abdicate</td>
+        <td class="col-word">Abate</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Renounce one's throne or high authority</td>
-        <td class="col-syn">Resign, retire, stand down, quit</td>
-        <td class="col-ant">Seize, assume, usurp, hold</td>
+        <td class="col-mean">Become less intense, active, or widespread</td>
+        <td class="col-syn">Subside, lessen, slacken, decrease</td>
+        <td class="col-ant">Intensify, increase, escalate</td>
       </tr>
       <tr>
-        <td class="col-idx">3</td>
-        <td class="col-word">Aberration</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Departure from what is normal or expected</td>
-        <td class="col-syn">Anomaly, deviation, abnormality, quirk</td>
-        <td class="col-ant">Normality, regularity, conformism</td>
-      </tr>
-      <tr>
-        <td class="col-idx">4</td>
-        <td class="col-word">Abeyance</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">State of temporary disuse or suspension</td>
-        <td class="col-syn">Suspension, dormancy, latency, remission</td>
-        <td class="col-ant">Operation, continuation, revival</td>
-      </tr>
-      <tr>
-        <td class="col-idx">5</td>
-        <td class="col-word">Abhorrent</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Inspiring disgust and loathing; repugnant</td>
-        <td class="col-syn">Detestable, hateful, loathsome, execrable</td>
-        <td class="col-ant">Admirable, attractive, delightful</td>
-      </tr>
-      <tr>
-        <td class="col-idx">6</td>
-        <td class="col-word">Abide</td>
+        <td class="col-word">Abet</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Accept or act in accordance with a rule</td>
-        <td class="col-syn">Obey, observe, follow, conform to</td>
-        <td class="col-ant">Flout, violate, reject, defy</td>
+        <td class="col-mean">Encourage or assist someone to commit a crime</td>
+        <td class="col-syn">Instigate, incite, support, promote</td>
+        <td class="col-ant">Hinder, baffle, discourage, prevent</td>
       </tr>
       <tr>
-        <td class="col-idx">7</td>
-        <td class="col-word">Abnegation</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Action of rejecting or renouncing something</td>
-        <td class="col-syn">Rejection, refusal, surrender, disavowal</td>
-        <td class="col-ant">Assertion, acceptance, affirmation</td>
+        <td class="col-word">Ablaze</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Burning fiercely; radiant with bright lights</td>
+        <td class="col-syn">Flaming, ignited, kindled, burning</td>
+        <td class="col-ant">Smothered, extinguished, dark</td>
       </tr>
       <tr>
-        <td class="col-idx">8</td>
-        <td class="col-word">Abstain</td>
+        <td class="col-word">Abstruse</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Difficult to understand; obscure or arcane</td>
+        <td class="col-syn">Obscure, recondite, esoteric, arcane</td>
+        <td class="col-ant">Clear, lucid, obvious, transparent</td>
+      </tr>
+      <tr>
+        <td class="col-word">Acquaint</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Formally decline to vote or indulge</td>
-        <td class="col-syn">Refrain, desist, withhold, decline</td>
-        <td class="col-ant">Participate, indulge, partake</td>
+        <td class="col-mean">Make someone aware of or familiar with</td>
+        <td class="col-syn">Familiarize, inform, apprise, notify</td>
+        <td class="col-ant">Conceal, withhold, mislead</td>
       </tr>
       <tr>
-        <td class="col-idx">9</td>
-        <td class="col-word">Abundant</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Available in large, copious quantities</td>
-        <td class="col-syn">Plentiful, copious, ample, profuse</td>
-        <td class="col-ant">Scarce, meager, sparse, scanty</td>
+        <td class="col-word">Adroit</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Clever or skillful using the hands or mind</td>
+        <td class="col-syn">Masterful, agile, dexterous, skillful</td>
+        <td class="col-ant">Clumsy, inept, maladroit, unskillful</td>
       </tr>
       <tr>
-        <td class="col-idx">10</td>
-        <td class="col-word">Abysmal</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Extremely bad; appalling</td>
-        <td class="col-syn">Dreadful, awful, terrible, frightful</td>
-        <td class="col-ant">Superb, excellent, exceptional</td>
+        <td class="col-word">Alacrity</td>
+        <td class="col-pos">Noun</td>
+        <td class="col-mean">Brisk, cheerful readiness and promptness</td>
+        <td class="col-syn">Eagerness, promptitude, readiness</td>
+        <td class="col-ant">Apathy, reluctance, tardiness, sloth</td>
       </tr>
       <tr>
-        <td class="col-idx">11</td>
-        <td class="col-word">Accentuate</td>
+        <td class="col-word">Alimony</td>
+        <td class="col-pos">Noun</td>
+        <td class="col-mean">Court-ordered support payments after divorce</td>
+        <td class="col-syn">Maintenance, allowance, support</td>
+        <td class="col-ant">Non-payment, forfeiture</td>
+      </tr>
+      <tr>
+        <td class="col-word">Amenable</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Open and responsive to suggestion; pliant</td>
+        <td class="col-syn">Cooperative, tractable, compliant</td>
+        <td class="col-ant">Truculent, obstinate, uncooperative</td>
+      </tr>
+      <tr>
+        <td class="col-word">Amnesiac</td>
+        <td class="col-pos">Noun/Adj.</td>
+        <td class="col-mean">A person suffering from chronic memory loss</td>
+        <td class="col-syn">Forgetful, memory-impaired</td>
+        <td class="col-ant">Retentive, having sharp recall</td>
+      </tr>
+      <tr>
+        <td class="col-word">Archaic</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Belonging to an early period; old-fashioned</td>
+        <td class="col-syn">Ancient, timeworn, outdated, obsolete</td>
+        <td class="col-ant">Modern, contemporary, novel, new</td>
+      </tr>
+      <tr>
+        <td class="col-word">Bleary</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Unfocused or dull from fatigue; blurred</td>
+        <td class="col-syn">Blurry, dim, hazy, foggy, clouded</td>
+        <td class="col-ant">Clear, sharp, lucid, bright</td>
+      </tr>
+      <tr>
+        <td class="col-word">Cadaverous</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Resembling a corpse; pallid, thin, and bony</td>
+        <td class="col-syn">Gaunt, emaciated, pale, ghostly</td>
+        <td class="col-ant">Flush, robust, healthy, florid</td>
+      </tr>
+      <tr>
+        <td class="col-word">Cataract</td>
+        <td class="col-pos">Noun</td>
+        <td class="col-mean">A large steep waterfall; opacity of the lens</td>
+        <td class="col-syn">Cascade, waterfall, torrent, deluge</td>
+        <td class="col-ant">Trickle, drop, streamlet</td>
+      </tr>
+      <tr>
+        <td class="col-word">Clamorous</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Making a loud, confusing, vociferous outcry</td>
+        <td class="col-syn">Vociferous, noisy, blaring, boisterous</td>
+        <td class="col-ant">Muffled, silent, quiet, serene</td>
+      </tr>
+      <tr>
+        <td class="col-word">Collate</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Make more noticeable or prominent</td>
-        <td class="col-syn">Heighten, stress, spotlight, emphasize</td>
-        <td class="col-ant">Downplay, understate, mask</td>
+        <td class="col-mean">Collect, gather, and systematically arrange</td>
+        <td class="col-syn">Assemble, gather, organize, combine</td>
+        <td class="col-ant">Disperse, scatter, jumble, disorder</td>
       </tr>
       <tr>
-        <td class="col-idx">12</td>
-        <td class="col-word">Accomplice</td>
+        <td class="col-word">Colossal</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Extremely large or massive in size</td>
+        <td class="col-syn">Mammoth, immense, gigantic, enormous</td>
+        <td class="col-ant">Trivial, microscopic, tiny, minute</td>
+      </tr>
+      <tr>
+        <td class="col-word">Commiseration</td>
         <td class="col-pos">Noun</td>
-        <td class="col-mean">A person who helps another commit a crime</td>
-        <td class="col-syn">Abettor, associate, collaborator, partner</td>
-        <td class="col-ant">Adversary, opponent, accuser</td>
+        <td class="col-mean">Expressions of sympathy and sorrow for others</td>
+        <td class="col-syn">Sympathy, compassion, condolences</td>
+        <td class="col-ant">Callousness, indifference, cruelty</td>
       </tr>
       <tr>
-        <td class="col-idx">13</td>
-        <td class="col-word">Accord</td>
-        <td class="col-pos">V./N.</td>
-        <td class="col-mean">Give/grant; harmony or official pact</td>
-        <td class="col-syn">Grant, yield, agreement, consensus</td>
-        <td class="col-ant">Withhold, refuse, dissent, discord</td>
-      </tr>
-      <tr>
-        <td class="col-idx">14</td>
-        <td class="col-word">Accretion</td>
+        <td class="col-word">Commotion</td>
         <td class="col-pos">Noun</td>
-        <td class="col-mean">Growth by gradual layer accumulation</td>
-        <td class="col-syn">Accumulation, collecting, amassing</td>
-        <td class="col-ant">Erosion, deduction, loss</td>
+        <td class="col-mean">A state of confused and noisy disturbance</td>
+        <td class="col-syn">Uproar, disturbance, tumult, pandemonium</td>
+        <td class="col-ant">Peace, silence, tranquility, calm</td>
       </tr>
       <tr>
-        <td class="col-idx">15</td>
-        <td class="col-word">Acquittal</td>
+        <td class="col-word">Dastardly</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Wicked, cruel, and treacherous; cowardly</td>
+        <td class="col-syn">Cowardly, dishonorable, shameful, evil</td>
+        <td class="col-ant">Chivalrous, noble, gallant, brave</td>
+      </tr>
+      <tr>
+        <td class="col-word">Deferred</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Put off to a later time; delayed, postponed</td>
+        <td class="col-syn">Postponed, delayed, suspended, tabled</td>
+        <td class="col-ant">Advanced, accelerated, expedited</td>
+      </tr>
+      <tr>
+        <td class="col-word">Deference</td>
         <td class="col-pos">Noun</td>
-        <td class="col-mean">Verdict that a person is not guilty</td>
-        <td class="col-syn">Absolution, clearing, exoneration</td>
-        <td class="col-ant">Conviction, indictment, condemnation</td>
+        <td class="col-mean">Polite submission and respect toward elders</td>
+        <td class="col-syn">Respect, reverence, regard, veneration</td>
+        <td class="col-ant">Insolence, disrespect, contempt, defiance</td>
       </tr>
       <tr>
-        <td class="col-idx">16</td>
-        <td class="col-word">Acrid</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Unpleasantly bitter or pungent</td>
-        <td class="col-syn">Pungent, bitter, harsh, sharp</td>
-        <td class="col-ant">Sweet, fragrant, pleasant, savory</td>
-      </tr>
-      <tr>
-        <td class="col-idx">17</td>
-        <td class="col-word">Acrimony</td>
+        <td class="col-word">Deprivation</td>
         <td class="col-pos">Noun</td>
-        <td class="col-mean">Bitterness or ill feeling in demeanor</td>
-        <td class="col-syn">Rancor, animosity, bad blood, ill will</td>
-        <td class="col-ant">Goodwill, amity, cordiality</td>
+        <td class="col-mean">Severe lack of basic material necessities</td>
+        <td class="col-syn">Hardship, destitution, privation, loss</td>
+        <td class="col-ant">Affluence, wealth, abundance, comfort</td>
       </tr>
       <tr>
-        <td class="col-idx">18</td>
-        <td class="col-word">Acumen</td>
+        <td class="col-word">Diabolical</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Characteristic of the devil; outrageously wicked</td>
+        <td class="col-syn">Fiendish, devilish, heinous, sinister</td>
+        <td class="col-ant">Angelic, virtuous, benevolent, moral</td>
+      </tr>
+      <tr>
+        <td class="col-word">Dilettante</td>
         <td class="col-pos">Noun</td>
-        <td class="col-mean">Ability to make good, shrewd judgments</td>
-        <td class="col-syn">Astuteness, awareness, acuity, sharpness</td>
-        <td class="col-ant">Obtuseness, naivety, stupidity</td>
+        <td class="col-mean">Person who engages in arts superficially</td>
+        <td class="col-syn">Amateur, dabbler, non-professional</td>
+        <td class="col-ant">Professional, maestro, virtuoso, expert</td>
       </tr>
       <tr>
-        <td class="col-idx">19</td>
-        <td class="col-word">Adage</td>
+        <td class="col-word">Dispirited</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Having lost enthusiasm, energy, or hope</td>
+        <td class="col-syn">Dejected, depressed, demoralized, crestfallen</td>
+        <td class="col-ant">Vivacious, cheerful, encouraged, upbeat</td>
+      </tr>
+      <tr>
+        <td class="col-word">Duplicity</td>
         <td class="col-pos">Noun</td>
-        <td class="col-mean">A proverb expressing a general truth</td>
-        <td class="col-syn">Maxim, proverb, axiom, aphorism</td>
-        <td class="col-ant">Fallacy, nonsense, misstatement</td>
+        <td class="col-mean">Deceitfulness in speech; two-faced behavior</td>
+        <td class="col-syn">Deceit, chicanery, fraud, guile</td>
+        <td class="col-ant">Candor, honesty, sincerity, frankness</td>
       </tr>
       <tr>
-        <td class="col-idx">20</td>
-        <td class="col-word">Adherent</td>
+        <td class="col-word">Ecstasy</td>
         <td class="col-pos">Noun</td>
-        <td class="col-mean">Supporter of a party, idea, or cause</td>
-        <td class="col-syn">Follower, disciple, advocate, votary</td>
-        <td class="col-ant">Opponent, renegade, apostate</td>
+        <td class="col-mean">An overwhelming feeling of great joy or delight</td>
+        <td class="col-syn">Euphoria, rapture, bliss, jubilation</td>
+        <td class="col-ant">Agony, misery, gloom, despair</td>
       </tr>
       <tr>
-        <td class="col-idx">21</td>
-        <td class="col-word">Adhesion</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Process of adhering or sticking</td>
-        <td class="col-syn">Sticking, adherence, bonding, fixing</td>
-        <td class="col-ant">Separation, detachment, looseness</td>
-      </tr>
-      <tr>
-        <td class="col-idx">22</td>
-        <td class="col-word">Adjudication</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Formal judgment or arbitration on an issue</td>
-        <td class="col-syn">Arbitration, refereeing, ruling</td>
-        <td class="col-ant">Indecision, deferral, dispute</td>
-      </tr>
-      <tr>
-        <td class="col-idx">23</td>
-        <td class="col-word">Adjunct</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Supplementary, non-essential addition</td>
-        <td class="col-syn">Supplement, addition, complement</td>
-        <td class="col-ant">Core, essence, integral part</td>
-      </tr>
-      <tr>
-        <td class="col-idx">24</td>
-        <td class="col-word">Adulterate</td>
+        <td class="col-word">Embezzle</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Render poorer in quality by mixing impurities</td>
-        <td class="col-syn">Degrade, debase, taint, defile, spoil</td>
-        <td class="col-ant">Purify, refine, clarify</td>
+        <td class="col-mean">Steal funds placed in one's trust</td>
+        <td class="col-syn">Misappropriate, pilfer, defraud, siphon</td>
+        <td class="col-ant">Compensate, reimburse, remunerate</td>
       </tr>
       <tr>
-        <td class="col-idx">25</td>
-        <td class="col-word">Advocacy</td>
+        <td class="col-word">Exemplary</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Serving as a desirable model; commendable</td>
+        <td class="col-syn">Admirable, praiseworthy, model, stellar</td>
+        <td class="col-ant">Deplorable, shameful, dishonorable</td>
+      </tr>
+      <tr>
+        <td class="col-word">Fatuous</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Silly, pointless, and devoid of intelligence</td>
+        <td class="col-syn">Stupid, foolish, inane, brainless, vacuous</td>
+        <td class="col-ant">Sensible, intelligent, astute, shrewd</td>
+      </tr>
+      <tr>
+        <td class="col-word">Fidelity</td>
         <td class="col-pos">Noun</td>
-        <td class="col-mean">Public support or defense for a cause</td>
-        <td class="col-syn">Backing, promotion, championship, urging</td>
-        <td class="col-ant">Opposition, denunciation, veto</td>
+        <td class="col-mean">Faithfulness to a person, cause, or duty</td>
+        <td class="col-syn">Loyalty, allegiance, constancy, fealty</td>
+        <td class="col-ant">Disloyalty, treachery, infidelity</td>
       </tr>
       <tr>
-        <td class="col-idx">26</td>
-        <td class="col-word">Aesthetic</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Concerned with beauty or good taste</td>
-        <td class="col-syn">Artistic, tasteful, elegant, appealing</td>
-        <td class="col-ant">Unaesthetic, inelegant, grotesque</td>
+        <td class="col-word">Flippant</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Not showing serious or respectful attitude</td>
+        <td class="col-syn">Impudent, glib, cheeky, irreverent</td>
+        <td class="col-ant">Earnest, serious, deferential, respectful</td>
       </tr>
       <tr>
-        <td class="col-idx">27</td>
-        <td class="col-word">Affirm</td>
+        <td class="col-word">Fortitude</td>
+        <td class="col-pos">Noun</td>
+        <td class="col-mean">Courage in pain, danger, or adversity</td>
+        <td class="col-syn">Tenacity, endurance, bravery, stamina</td>
+        <td class="col-ant">Cowardice, timidity, spinelessness</td>
+      </tr>
+      <tr>
+        <td class="col-word">Furtive</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Attempting to avoid notice; sly, stealthy</td>
+        <td class="col-syn">Secretive, surreptitious, sneaky, covert</td>
+        <td class="col-ant">Open, candid, overt, undisguised</td>
+      </tr>
+      <tr>
+        <td class="col-word">Gainsay</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">State emphatically or officially valid</td>
-        <td class="col-syn">Declare, aver, proclaim, attest</td>
-        <td class="col-ant">Deny, contradict, refute, revoke</td>
+        <td class="col-mean">Deny, contradict, or speak against</td>
+        <td class="col-syn">Contradict, deny, repudiate, dispute</td>
+        <td class="col-ant">Corroborate, verify, endorse, confirm</td>
       </tr>
       <tr>
-        <td class="col-idx">28</td>
-        <td class="col-word">Affluent</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Having plenty of wealth and resources</td>
-        <td class="col-syn">Wealthy, opulent, prosperous, rich</td>
-        <td class="col-ant">Destitute, impoverished, penurious</td>
-      </tr>
-      <tr>
-        <td class="col-idx">29</td>
-        <td class="col-word">Afloat</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Floating in water; out of financial trouble</td>
-        <td class="col-syn">Floating, drifting, buoyant</td>
-        <td class="col-ant">Submerged, sunken, drowning</td>
-      </tr>
-      <tr>
-        <td class="col-idx">30</td>
-        <td class="col-word">Aghast</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Filled with shock, dismay, or horror</td>
-        <td class="col-syn">Horrified, appalled, dismayed, stunned</td>
-        <td class="col-ant">Unmoved, calm, indifferent</td>
-      </tr>
-      <tr>
-        <td class="col-idx">31</td>
-        <td class="col-word">Agile</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Able to move quickly and easily; nimble</td>
-        <td class="col-syn">Nimble, lithe, supple, graceful</td>
-        <td class="col-ant">Clumsy, sluggish, stiff, awkward</td>
-      </tr>
-      <tr>
-        <td class="col-idx">32</td>
-        <td class="col-word">Agitation</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">State of anxiety, unrest, or turmoil</td>
-        <td class="col-syn">Perturbation, disquiet, distress, unrest</td>
-        <td class="col-ant">Tranquility, serenity, composure</td>
-      </tr>
-      <tr>
-        <td class="col-idx">33</td>
-        <td class="col-word">Ailment</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">A physical illness, typically a minor one</td>
-        <td class="col-syn">Illness, disease, malady, sickness</td>
-        <td class="col-ant">Fitness, health, wellness, vitality</td>
-      </tr>
-      <tr>
-        <td class="col-idx">34</td>
-        <td class="col-word">Alienated</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Feeling isolated, detached, or estranged</td>
-        <td class="col-syn">Estranged, isolated, separated, detached</td>
-        <td class="col-ant">Integrated, united, bonded</td>
-      </tr>
-      <tr>
-        <td class="col-idx">35</td>
-        <td class="col-word">Allegation</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Assertion of wrongdoing made without proof</td>
-        <td class="col-syn">Claim, accusation, charge, assertion</td>
-        <td class="col-ant">Exoneration, vindication, proof</td>
-      </tr>
-      <tr>
-        <td class="col-idx">36</td>
-        <td class="col-word">Allegedly</td>
-        <td class="col-pos">Adv.</td>
-        <td class="col-mean">Claimed to be true without absolute proof</td>
-        <td class="col-syn">Supposedly, reputedly, ostensibly</td>
-        <td class="col-ant">Definitely, verifiably, undeniably</td>
-      </tr>
-      <tr>
-        <td class="col-idx">37</td>
-        <td class="col-word">Alleviate</td>
+        <td class="col-word">Hamper</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Make severe pain or trouble less intense</td>
-        <td class="col-syn">Lessen, ease, relieve, mitigate, dull</td>
-        <td class="col-ant">Aggravate, exacerbate, heighten</td>
+        <td class="col-mean">Hinder or impede the movement or progress of</td>
+        <td class="col-syn">Obstruct, block, inhibit, curtail, check</td>
+        <td class="col-ant">Facilitate, assist, expedite, promote</td>
       </tr>
       <tr>
-        <td class="col-idx">38</td>
-        <td class="col-word">Allude</td>
+        <td class="col-word">Hapless</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Unfortunate and deserving of pity; unlucky</td>
+        <td class="col-syn">Unlucky, ill-fated, cursed, doomed</td>
+        <td class="col-ant">Fortunate, lucky, blessed, prosperous</td>
+      </tr>
+      <tr>
+        <td class="col-word">Hazardous</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Risky, perilous, and full of danger</td>
+        <td class="col-syn">Dangerous, perilous, precarious, dicey</td>
+        <td class="col-ant">Safe, secure, protected, harmless</td>
+      </tr>
+      <tr>
+        <td class="col-word">Impecunious</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Having little or no money; penniless</td>
+        <td class="col-syn">Penniless, poor, indigent, destitute</td>
+        <td class="col-ant">Wealthy, affluent, rich, well-off</td>
+      </tr>
+      <tr>
+        <td class="col-word">Indigenous</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Originating or occurring naturally in a place</td>
+        <td class="col-syn">Native, aboriginal, endemic, local</td>
+        <td class="col-ant">Foreign, alien, imported, exotic</td>
+      </tr>
+      <tr>
+        <td class="col-word">Intrepid</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Fearless and adventurous in danger</td>
+        <td class="col-syn">Brave, dauntless, fearless, bold</td>
+        <td class="col-ant">Timid, fainthearted, fearful, cowardly</td>
+      </tr>
+      <tr>
+        <td class="col-word">Loath</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Reluctant, unwilling, or disinclined to do</td>
+        <td class="col-syn">Reluctant, hesitant, unwilling, averse</td>
+        <td class="col-ant">Willing, eager, keen, enthusiastic</td>
+      </tr>
+      <tr>
+        <td class="col-word">Malign</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Suggest or call attention to indirectly</td>
-        <td class="col-syn">Hint at, imply, refer to, touch on</td>
-        <td class="col-ant">Specify, declare explicitly, define</td>
+        <td class="col-mean">Speak about someone in a spitefully critical manner</td>
+        <td class="col-syn">Defame, slander, libel, vilify, smear</td>
+        <td class="col-ant">Praise, acclaim, extol, laud</td>
       </tr>
       <tr>
-        <td class="col-idx">39</td>
-        <td class="col-word">Alms</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Money or food given to poor people</td>
-        <td class="col-syn">Charity, bounty, donation, largesse</td>
-        <td class="col-ant">Extortion, tax, forfeiture</td>
+        <td class="col-word">Manifold</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Many and varied in parts, forms, or varieties</td>
+        <td class="col-syn">Multiple, varied, diverse, numerous</td>
+        <td class="col-ant">Single, solitary, uniform</td>
       </tr>
       <tr>
-        <td class="col-idx">40</td>
-        <td class="col-word">Aloof</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Distant, cold, and unfriendly in manner</td>
-        <td class="col-syn">Distant, detached, remote, haughty</td>
-        <td class="col-ant">Warm, friendly, cordial, sociable</td>
+        <td class="col-word">Mundane</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Lacking interest or excitement; earthly/worldly</td>
+        <td class="col-syn">Terrestrial, humdrum, pedestrian, routine</td>
+        <td class="col-ant">Extraordinary, heavenly, exciting</td>
       </tr>
       <tr>
-        <td class="col-idx">41</td>
-        <td class="col-word">Altercation</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Noisy, heated argument in public</td>
-        <td class="col-syn">Quarrel, wrangle, squabble, dispute</td>
-        <td class="col-ant">Harmony, concurrence, agreement</td>
-      </tr>
-      <tr>
-        <td class="col-idx">42</td>
-        <td class="col-word">Altruistic</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Selflessly concerned for others' welfare</td>
-        <td class="col-syn">Unselfish, selfless, philanthropic</td>
-        <td class="col-ant">Egoistic, selfish, self-centered</td>
-      </tr>
-      <tr>
-        <td class="col-idx">43</td>
-        <td class="col-word">Amalgamate</td>
+        <td class="col-word">Ostracise</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Combine into a unified organization</td>
-        <td class="col-syn">Merge, fuse, integrate, blend</td>
-        <td class="col-ant">Separate, fracture, split, dissect</td>
+        <td class="col-mean">Exclude someone from a society or group</td>
+        <td class="col-syn">Banish, expel, exclude, boycott, shun</td>
+        <td class="col-ant">Welcome, admit, embrace, integrate</td>
       </tr>
       <tr>
-        <td class="col-idx">44</td>
-        <td class="col-word">Amateur</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Non-professional engaging in a pursuit</td>
-        <td class="col-syn">Layman, non-professional, novice</td>
-        <td class="col-ant">Professional, expert, master</td>
+        <td class="col-word">Placid</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Calm, peaceful, and not easily excited</td>
+        <td class="col-syn">Calm, tranquil, serene, unruffled</td>
+        <td class="col-ant">Furious, agitated, stormy, turbulent</td>
       </tr>
       <tr>
-        <td class="col-idx">45</td>
-        <td class="col-word">Ambivalent</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Having conflicting feelings or opinions</td>
-        <td class="col-syn">Equivocal, undecided, unsure, doubtful</td>
-        <td class="col-ant">Certain, resolute, definite</td>
-      </tr>
-      <tr>
-        <td class="col-idx">46</td>
-        <td class="col-word">Amicable</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Friendly and without discord</td>
-        <td class="col-syn">Cordial, civil, peaceable, easy-going</td>
-        <td class="col-ant">Hostile, contentious, belligerent</td>
-      </tr>
-      <tr>
-        <td class="col-idx">47</td>
-        <td class="col-word">Anarchy</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">State of disorder due to lack of governance</td>
-        <td class="col-syn">Chaos, lawlessness, disorder, misrule</td>
-        <td class="col-ant">Order, governance, peace, rule</td>
-      </tr>
-      <tr>
-        <td class="col-idx">48</td>
-        <td class="col-word">Ancestry</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">One's ethnic descent or line of forebears</td>
-        <td class="col-syn">Lineage, heritage, forebears, parentage</td>
-        <td class="col-ant">Descendants, progeny, posterity</td>
-      </tr>
-      <tr>
-        <td class="col-idx">49</td>
-        <td class="col-word">Anecdote</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Short amusing or interesting story</td>
-        <td class="col-syn">Story, tale, sketch, narrative</td>
-        <td class="col-ant">Chronicle, scientific treatise</td>
-      </tr>
-      <tr>
-        <td class="col-idx">50</td>
-        <td class="col-word">Annihilate</td>
+        <td class="col-word">Protract</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Destroy utterly; obliterate completely</td>
-        <td class="col-syn">Obliterate, eradicate, liquidate, wipe out</td>
-        <td class="col-ant">Create, preserve, build, generate</td>
+        <td class="col-mean">Prolong, lengthen, or extend in duration</td>
+        <td class="col-syn">Lengthen, extend, prolong, continue</td>
+        <td class="col-ant">Truncate, shorten, curtail, abbreviate</td>
       </tr>
       <tr>
-        <td class="col-idx">51</td>
-        <td class="col-word">Anomaly</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Something that deviates from the normal</td>
-        <td class="col-syn">Oddity, irregularity, peculiarity, defect</td>
-        <td class="col-ant">Regularity, standard, conformity</td>
+        <td class="col-word">Ravenous</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Extremely hungry, famished, or voracious</td>
+        <td class="col-syn">Famished, starved, voracious, grasping</td>
+        <td class="col-ant">Full, sated, satisfied, gorged</td>
       </tr>
       <tr>
-        <td class="col-idx">52</td>
-        <td class="col-word">Antagonist</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Person who actively opposes an adversary</td>
-        <td class="col-syn">Adversary, opponent, foe, rival, enemy</td>
-        <td class="col-ant">Ally, supporter, protagonist</td>
-      </tr>
-      <tr>
-        <td class="col-idx">53</td>
-        <td class="col-word">Antipathy</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Deep-seated feeling of aversion or hostility</td>
-        <td class="col-syn">Hostility, animosity, enmity, aversion</td>
-        <td class="col-ant">Affinity, sympathy, fondness</td>
-      </tr>
-      <tr>
-        <td class="col-idx">54</td>
-        <td class="col-word">Antsy</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Agitated, impatient, and fidgety</td>
-        <td class="col-syn">Restless, impatient, nervous, jittery</td>
-        <td class="col-ant">Calm, composed, relaxed</td>
-      </tr>
-      <tr>
-        <td class="col-idx">55</td>
-        <td class="col-word">Anxiety</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Nervousness or dread about uncertainty</td>
-        <td class="col-syn">Worry, apprehension, disquiet, unease</td>
-        <td class="col-ant">Serenity, peace, tranquility</td>
-      </tr>
-      <tr>
-        <td class="col-idx">56</td>
-        <td class="col-word">Apocryphal</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Of doubtful authenticity, though circulated as true</td>
-        <td class="col-syn">Fictitious, untrue, spurious, fabricated</td>
-        <td class="col-ant">Authentic, genuine, true</td>
-      </tr>
-      <tr>
-        <td class="col-idx">57</td>
-        <td class="col-word">Apostate</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">One who renounces a religious or political belief</td>
-        <td class="col-syn">Defector, deserter, heretic, dissenter</td>
-        <td class="col-ant">Loyalist, devotee, disciple</td>
-      </tr>
-      <tr>
-        <td class="col-idx">58</td>
-        <td class="col-word">Applaud</td>
+        <td class="col-word">Rectify</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Show approval or praise enthusiastically</td>
-        <td class="col-syn">Praise, commend, cheer, salute</td>
-        <td class="col-ant">Boo, condemn, disparage</td>
+        <td class="col-mean">Put right, correct, or amend an error</td>
+        <td class="col-syn">Amend, correct, fix, repair, remedy</td>
+        <td class="col-ant">Corrupt, worsen, spoil, damage</td>
       </tr>
       <tr>
-        <td class="col-idx">59</td>
-        <td class="col-word">Apprehension</td>
+        <td class="col-word">Resilient</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Able to withstand or recover quickly from hardships</td>
+        <td class="col-syn">Tough, hardy, strong, adaptable</td>
+        <td class="col-ant">Vulnerable, frail, fragile, brittle</td>
+      </tr>
+      <tr>
+        <td class="col-word">Respite</td>
         <td class="col-pos">Noun</td>
-        <td class="col-mean">Anxiety that something unpleasant will occur</td>
-        <td class="col-syn">Unease, dread, alarm, nervousness</td>
-        <td class="col-ant">Confidence, assurance, peace</td>
+        <td class="col-mean">A short period of rest or relief from unpleasantness</td>
+        <td class="col-syn">Interval of relief, break, pause, breather</td>
+        <td class="col-ant">Continuation, ceaseless toil, persistence</td>
       </tr>
       <tr>
-        <td class="col-idx">60</td>
-        <td class="col-word">Approbation</td>
+        <td class="col-word">Scathing</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Witheringly, severely harsh and critical</td>
+        <td class="col-syn">Scornful, biting, virulent, cutting, caustic</td>
+        <td class="col-ant">Praising, complimentary, mild, gentle</td>
+      </tr>
+      <tr>
+        <td class="col-word">Senility</td>
         <td class="col-pos">Noun</td>
-        <td class="col-mean">Praise or formal approval</td>
-        <td class="col-syn">Approval, endorsement, assent</td>
-        <td class="col-ant">Disapproval, condemnation, censure</td>
+        <td class="col-mean">Physical and mental decline due to advanced age</td>
+        <td class="col-syn">Decrepitude, dotage, infirmity, decline</td>
+        <td class="col-ant">Virility, vigor, youthfulness, strength</td>
       </tr>
       <tr>
-        <td class="col-idx">61</td>
-        <td class="col-word">Apropos</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Very appropriate to a situation</td>
-        <td class="col-syn">Apposite, pertinent, relevant, suitable</td>
-        <td class="col-ant">Inappropriate, irrelevant, unsuited</td>
-      </tr>
-      <tr>
-        <td class="col-idx">62</td>
-        <td class="col-word">Arbitrary</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Based on random whim rather than reason</td>
-        <td class="col-syn">Capricious, whimsical, random, erratic</td>
-        <td class="col-ant">Rational, reasoned, methodical</td>
-      </tr>
-      <tr>
-        <td class="col-idx">63</td>
-        <td class="col-word">Arbitration</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Settling disputes via an impartial third party</td>
-        <td class="col-syn">Adjudication, mediation, negotiation</td>
-        <td class="col-ant">Litigation, deadlock, conflict</td>
-      </tr>
-      <tr>
-        <td class="col-idx">64</td>
-        <td class="col-word">Archive</td>
-        <td class="col-pos">V./N.</td>
-        <td class="col-mean">Store valuable historical records</td>
-        <td class="col-syn">Store, file, log, catalogue</td>
-        <td class="col-ant">Discard, delete, destroy</td>
-      </tr>
-      <tr>
-        <td class="col-idx">65</td>
-        <td class="col-word">Ardour</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Great enthusiasm, passion, or warmth</td>
-        <td class="col-syn">Fervour, zeal, avidity, passion</td>
-        <td class="col-ant">Apathy, coolness, indifference</td>
-      </tr>
-      <tr>
-        <td class="col-idx">66</td>
-        <td class="col-word">Arid</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Lacking moisture or intellectual interest</td>
-        <td class="col-syn">Dry, waterless, parched, dull</td>
-        <td class="col-ant">Fertile, lush, moist, stimulating</td>
-      </tr>
-      <tr>
-        <td class="col-idx">67</td>
-        <td class="col-word">Armada</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">A massive fleet of warships</td>
-        <td class="col-syn">Flotilla, navy, fleet, squadron</td>
-        <td class="col-ant">Solitary vessel</td>
-      </tr>
-      <tr>
-        <td class="col-idx">68</td>
-        <td class="col-word">Arraign</td>
+        <td class="col-word">Slacken</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Call someone before court on a charge</td>
-        <td class="col-syn">Indict, prosecute, charge, censure</td>
-        <td class="col-ant">Acquit, pardon, discharge</td>
+        <td class="col-mean">Make or become slower, looser, or less active</td>
+        <td class="col-syn">Loosen, relax, slow down, abate</td>
+        <td class="col-ant">Tighten, increase, accelerate, quicken</td>
       </tr>
       <tr>
-        <td class="col-idx">69</td>
-        <td class="col-word">Arrant</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Complete, utter, and unmitigated</td>
-        <td class="col-syn">Downright, thorough, unadulterated</td>
-        <td class="col-ant">Doubtful, questionable, slight</td>
+        <td class="col-word">Sporadic</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Occurring at irregular intervals or scattered places</td>
+        <td class="col-syn">Intermittent, occasional, irregular, fitful</td>
+        <td class="col-ant">Regular, continuous, steady, constant</td>
       </tr>
       <tr>
-        <td class="col-idx">70</td>
-        <td class="col-word">Arson</td>
+        <td class="col-word">Stigma</td>
         <td class="col-pos">Noun</td>
-        <td class="col-mean">Deliberate criminal burning of property</td>
-        <td class="col-syn">Incendiarism, fire-raising, pyromania</td>
-        <td class="col-ant">Fire suppression, quenching</td>
+        <td class="col-mean">A mark of disgrace associated with a circumstance</td>
+        <td class="col-syn">Shame, dishonor, stain, blemish, disgrace</td>
+        <td class="col-ant">Honour, credit, esteem, distinction</td>
       </tr>
       <tr>
-        <td class="col-idx">71</td>
-        <td class="col-word">Articulate</td>
-        <td class="col-pos">Adjective/V.</td>
-        <td class="col-mean">Able to express ideas fluently and clearly</td>
-        <td class="col-syn">Eloquent, fluent, lucid, coherent</td>
-        <td class="col-ant">Inarticulate, stammering, vague</td>
+        <td class="col-word">Tacit</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Understood or implied without being stated openly</td>
+        <td class="col-syn">Unspoken, implicit, unvoiced, hinted</td>
+        <td class="col-ant">Explicit, express, stated, declared</td>
       </tr>
       <tr>
-        <td class="col-idx">72</td>
-        <td class="col-word">Ascent</td>
+        <td class="col-word">Tenacity</td>
         <td class="col-pos">Noun</td>
-        <td class="col-mean">Climb to a summit; upward progress</td>
-        <td class="col-syn">Climb, scaling, ascension, clamber</td>
-        <td class="col-ant">Descent, fall, plunge</td>
+        <td class="col-mean">The quality of being determined or holding firmly</td>
+        <td class="col-syn">Persistence, fortitude, perseverance, grit</td>
+        <td class="col-ant">Hesitation, instability, surrender</td>
       </tr>
       <tr>
-        <td class="col-idx">73</td>
-        <td class="col-word">Ascetic</td>
-        <td class="col-pos">Adjective/N.</td>
-        <td class="col-mean">Practicing extreme self-discipline and austerity</td>
-        <td class="col-syn">Austere, self-denying, abstinent</td>
-        <td class="col-ant">Hedonistic, self-indulgent, luxurious</td>
+        <td class="col-word">Truculent</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Eager or quick to fight; aggressively defiant</td>
+        <td class="col-syn">Combative, belligerent, antagonistic, defiant</td>
+        <td class="col-ant">Amenable, gentle, peaceable, cooperative</td>
       </tr>
       <tr>
-        <td class="col-idx">74</td>
-        <td class="col-word">Ascribing</td>
+        <td class="col-word">Vivacious</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Attractively lively, energetic, and animated</td>
+        <td class="col-syn">Lively, spirited, ebullient, effervescent</td>
+        <td class="col-ant">Dispirited, dull, lethargic, sluggish</td>
+      </tr>
+      <tr>
+        <td class="col-word">Voluminous</td>
+        <td class="col-pos">Adj.</td>
+        <td class="col-mean">Occupying or containing much space; abundant</td>
+        <td class="col-syn">Capacious, massive, copious, bulky</td>
+        <td class="col-ant">Meager, small, tiny, scanty</td>
+      </tr>
+      <tr>
+        <td class="col-word">Withstand</td>
         <td class="col-pos">Verb</td>
-        <td class="col-mean">Regard something as being caused by</td>
-        <td class="col-syn">Attributing, assigning, crediting</td>
-        <td class="col-ant">Dissociating, disconnecting</td>
-      </tr>
-      <tr>
-        <td class="col-idx">75</td>
-        <td class="col-word">Assassination</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Murder of a prominent figure</td>
-        <td class="col-syn">Murder, political execution, slaying</td>
-        <td class="col-ant">Protection, safeguarding</td>
-      </tr>
-      <tr>
-        <td class="col-idx">76</td>
-        <td class="col-word">Assay</td>
-        <td class="col-pos">Noun/V.</td>
-        <td class="col-mean">Testing a metal/ore to assess its purity</td>
-        <td class="col-syn">Assessment, test, evaluation, analysis</td>
-        <td class="col-ant">Guess, presumption</td>
-      </tr>
-      <tr>
-        <td class="col-idx">77</td>
-        <td class="col-word">Assertion</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Confident and forceful statement of fact</td>
-        <td class="col-syn">Declaration, contention, claim</td>
-        <td class="col-ant">Denial, retraction, query</td>
-      </tr>
-      <tr>
-        <td class="col-idx">78</td>
-        <td class="col-word">Assent</td>
-        <td class="col-pos">Verb/N.</td>
-        <td class="col-mean">Express official approval or consent</td>
-        <td class="col-syn">Agree to, approve, accept, consent</td>
-        <td class="col-ant">Dissent, refuse, reject</td>
-      </tr>
-      <tr>
-        <td class="col-idx">79</td>
-        <td class="col-word">Assiduous</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Showing great care and diligence</td>
-        <td class="col-syn">Diligent, meticulous, sedulous</td>
-        <td class="col-ant">Lazy, negligent, careless</td>
-      </tr>
-      <tr>
-        <td class="col-idx">80</td>
-        <td class="col-word">Assist</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Help someone by doing a share of work</td>
-        <td class="col-syn">Help, aid, abet, support</td>
-        <td class="col-ant">Hinder, impede, obstruct</td>
-      </tr>
-      <tr>
-        <td class="col-idx">81</td>
-        <td class="col-word">Assuage</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Make an unpleasant feeling less intense</td>
-        <td class="col-syn">Relieve, ease, alleviate, soothe</td>
-        <td class="col-ant">Exacerbate, aggravate, inflame</td>
-      </tr>
-      <tr>
-        <td class="col-idx">82</td>
-        <td class="col-word">Astonish</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Surprise or impress someone greatly</td>
-        <td class="col-syn">Stun, dumbfound, amaze, stagger</td>
-        <td class="col-ant">Bore, anticipate, expect</td>
-      </tr>
-      <tr>
-        <td class="col-idx">83</td>
-        <td class="col-word">Astounding</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Surprisingly impressive or notable</td>
-        <td class="col-syn">Astonishing, amazing, stunning</td>
-        <td class="col-ant">Unremarkable, mundane, ordinary</td>
-      </tr>
-      <tr>
-        <td class="col-idx">84</td>
-        <td class="col-word">Astute</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Having keen mental discernment; sharp</td>
-        <td class="col-syn">Shrewd, sharp, canny, insightful</td>
-        <td class="col-ant">Asinine, foolish, naive</td>
-      </tr>
-      <tr>
-        <td class="col-idx">85</td>
-        <td class="col-word">Asymmetric</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Lacking symmetry or equal proportions</td>
-        <td class="col-syn">Lopsided, unsymmetrical, crooked</td>
-        <td class="col-ant">Symmetrical, balanced, uniform</td>
-      </tr>
-      <tr>
-        <td class="col-idx">86</td>
-        <td class="col-word">Asylum</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Institution for shelter or mental care</td>
-        <td class="col-syn">Sanctuary, refuge, retreat, haven</td>
-        <td class="col-ant">Exposure, expulsion, hazard</td>
-      </tr>
-      <tr>
-        <td class="col-idx">87</td>
-        <td class="col-word">Atrocity</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">An extremely wicked, cruel act</td>
-        <td class="col-syn">Outrage, horror, violation, brutality</td>
-        <td class="col-ant">Kindness, charity, blessing</td>
-      </tr>
-      <tr>
-        <td class="col-idx">88</td>
-        <td class="col-word">Atrophy</td>
-        <td class="col-pos">Verb/N.</td>
-        <td class="col-mean">Waste away through disuse or degeneration</td>
-        <td class="col-syn">Wither, shrivel, shrink, deteriorate</td>
-        <td class="col-ant">Flourish, grow, develop</td>
-      </tr>
-      <tr>
-        <td class="col-idx">89</td>
-        <td class="col-word">Attenuate</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Reduce the force, thickness, or value of</td>
-        <td class="col-syn">Weaken, lessen, diminish, impair</td>
-        <td class="col-ant">Strengthen, amplify, intensify</td>
-      </tr>
-      <tr>
-        <td class="col-idx">90</td>
-        <td class="col-word">Audacity</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Willingness to take bold risks; insolence</td>
-        <td class="col-syn">Boldness, daring, impudence, bravado</td>
-        <td class="col-ant">Diffidence, timidity, caution</td>
-      </tr>
-      <tr>
-        <td class="col-idx">91</td>
-        <td class="col-word">Authentic</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Genuine, real, and not a copy</td>
-        <td class="col-syn">Genuine, original, bona fide, valid</td>
-        <td class="col-ant">Counterfeit, spurious, fake</td>
-      </tr>
-      <tr>
-        <td class="col-idx">92</td>
-        <td class="col-word">Avaricious</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Having extreme greed for wealth</td>
-        <td class="col-syn">Grasping, greedy, rapacious, mercenary</td>
-        <td class="col-ant">Generous, charitable, magnanimous</td>
-      </tr>
-      <tr>
-        <td class="col-idx">93</td>
-        <td class="col-word">Axiom</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Statement accepted as self-evidently true</td>
-        <td class="col-syn">Dictum, truism, accepted truth, principle</td>
-        <td class="col-ant">Absurdity, contradiction, fallacy</td>
-      </tr>
-      <tr>
-        <td class="col-idx">94</td>
-        <td class="col-word">Ballast</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Heavy material providing balance in ships</td>
-        <td class="col-syn">Stabilizer, counterbalance, weight</td>
-        <td class="col-ant">Destabilizer, instability</td>
-      </tr>
-      <tr>
-        <td class="col-idx">95</td>
-        <td class="col-word">Ballot</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Process of voting secretly in writing</td>
-        <td class="col-syn">Vote, poll, referendum, election</td>
-        <td class="col-ant">Veto, autocracy, imposition</td>
-      </tr>
-      <tr>
-        <td class="col-idx">96</td>
-        <td class="col-word">Bankrupt</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Unable to pay debts; lacking good qualities</td>
-        <td class="col-syn">Insolvent, ruined, destitute, bereft</td>
-        <td class="col-ant">Solvent, prosperous, affluent</td>
-      </tr>
-      <tr>
-        <td class="col-idx">97</td>
-        <td class="col-word">Barricade</td>
-        <td class="col-pos">Verb/N.</td>
-        <td class="col-mean">Block or fortify an entrance with barrier</td>
-        <td class="col-syn">Blockade, obstruct, fortify, defend</td>
-        <td class="col-ant">Open, unbar, clear, surrender</td>
-      </tr>
-      <tr>
-        <td class="col-idx">98</td>
-        <td class="col-word">Befuddled</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Unable to think clearly; confused</td>
-        <td class="col-syn">Confused, muddled, addled, dazed</td>
-        <td class="col-ant">Lucid, clearheaded, perceptive</td>
-      </tr>
-      <tr>
-        <td class="col-idx">99</td>
-        <td class="col-word">Beleaguer</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Surround with troops; harass persistently</td>
-        <td class="col-syn">Besiege, encircle, badger, pester</td>
-        <td class="col-ant">Aid, liberate, relieve, assist</td>
-      </tr>
-      <tr>
-        <td class="col-idx">100</td>
-        <td class="col-word">Beneath</td>
-        <td class="col-pos">Prep.</td>
-        <td class="col-mean">Directly underneath something</td>
-        <td class="col-syn">Underneath, below, lower down</td>
-        <td class="col-ant">Above, over, aloft</td>
-      </tr>
-      <tr>
-        <td class="col-idx">101</td>
-        <td class="col-word">Bequest</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Property or legacy left in a will</td>
-        <td class="col-syn">Legacy, inheritance, endowment</td>
-        <td class="col-ant">Disinheritance, foreclosure</td>
-      </tr>
-      <tr>
-        <td class="col-idx">102</td>
-        <td class="col-word">Besmirch</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Damage the reputation of; defame</td>
-        <td class="col-syn">Sully, tarnish, taint, slander, smear</td>
-        <td class="col-ant">Exalt, honor, elevate, praise</td>
-      </tr>
-      <tr>
-        <td class="col-idx">103</td>
-        <td class="col-word">Betray</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Be disloyal; reveal secrets treacherously</td>
-        <td class="col-syn">Double-cross, expose, reveal, deceive</td>
-        <td class="col-ant">Protect, uphold, stand by, support</td>
-      </tr>
-      <tr>
-        <td class="col-idx">104</td>
-        <td class="col-word">Bewilder</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Cause someone to become thoroughly puzzled</td>
-        <td class="col-syn">Baffle, confuse, nonplus, mystify</td>
-        <td class="col-ant">Enlighten, clarify, guide</td>
-      </tr>
-      <tr>
-        <td class="col-idx">105</td>
-        <td class="col-word">Bicker</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Argue petty trivialities noisily</td>
-        <td class="col-syn">Squabble, spar, quarrel, wrangle</td>
-        <td class="col-ant">Agree, concede, harmonize</td>
-      </tr>
-      <tr>
-        <td class="col-idx">106</td>
-        <td class="col-word">Bigoted</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Obstinately intolerant of other views</td>
-        <td class="col-syn">Prejudiced, biased, partial, sectarian</td>
-        <td class="col-ant">Tolerant, broad-minded, progressive</td>
-      </tr>
-      <tr>
-        <td class="col-idx">107</td>
-        <td class="col-word">Bizarre</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Very strange, weird, or unusual</td>
-        <td class="col-syn">Outlandish, peculiar, queer, grotesque</td>
-        <td class="col-ant">Normal, conventional, standard</td>
-      </tr>
-      <tr>
-        <td class="col-idx">108</td>
-        <td class="col-word">Blare</td>
-        <td class="col-pos">Verb/N.</td>
-        <td class="col-mean">Make a loud, harsh sound</td>
-        <td class="col-syn">Blast, shriek, screech, toot</td>
-        <td class="col-ant">Whisper, murmur, hush</td>
-      </tr>
-      <tr>
-        <td class="col-idx">109</td>
-        <td class="col-word">Blatant</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Openly, shamelessly bad or conspicuous</td>
-        <td class="col-syn">Flagrant, glaring, overt, undisguised</td>
-        <td class="col-ant">Subtle, hidden, inconspicuous</td>
-      </tr>
-      <tr>
-        <td class="col-idx">110</td>
-        <td class="col-word">Blunt</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Having no sharp edge; forthright in manner</td>
-        <td class="col-syn">Dull, worn, frank, direct</td>
-        <td class="col-ant">Sharp, acute, diplomatic, polite</td>
-      </tr>
-      <tr>
-        <td class="col-idx">111</td>
-        <td class="col-word">Boast</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Talk with excessive self-satisfaction</td>
-        <td class="col-syn">Brag, crow, swagger, flaunt</td>
-        <td class="col-ant">Deprecate, downplay, minimize</td>
-      </tr>
-      <tr>
-        <td class="col-idx">112</td>
-        <td class="col-word">Boisterous</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Noisy, energetic, and rowdy</td>
-        <td class="col-syn">Lively, exuberant, animated, spirited</td>
-        <td class="col-ant">Quiet, placid, restrained, subdued</td>
-      </tr>
-      <tr>
-        <td class="col-idx">113</td>
-        <td class="col-word">Bolster</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Prop up, support, or reinforce</td>
-        <td class="col-syn">Support, strengthen, reinforce, boost</td>
-        <td class="col-ant">Undermine, weaken, impair</td>
-      </tr>
-      <tr>
-        <td class="col-idx">114</td>
-        <td class="col-word">Braggart</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Person who boasts excessively</td>
-        <td class="col-syn">Boaster, show-off, egotist</td>
-        <td class="col-ant">Modest person, humble soul</td>
-      </tr>
-      <tr>
-        <td class="col-idx">115</td>
-        <td class="col-word">Brazen</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Bold and without shame; impudent</td>
-        <td class="col-syn">Shameless, forward, insolent, bold</td>
-        <td class="col-ant">Timid, shy, shamefaced, modest</td>
-      </tr>
-      <tr>
-        <td class="col-idx">116</td>
-        <td class="col-word">Brevity</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Concise and exact use of words</td>
-        <td class="col-syn">Conciseness, succinctness, pithiness</td>
-        <td class="col-ant">Verbosity, prolixity, wordiness</td>
-      </tr>
-      <tr>
-        <td class="col-idx">117</td>
-        <td class="col-word">Brink</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Extreme verge before a steep change</td>
-        <td class="col-syn">Edge, verge, margin, border</td>
-        <td class="col-ant">Interior, middle, center</td>
-      </tr>
-      <tr>
-        <td class="col-idx">118</td>
-        <td class="col-word">Brood</td>
-        <td class="col-pos">Noun/V.</td>
-        <td class="col-mean">Young produced at birth; worry obsessively</td>
-        <td class="col-syn">Offspring, progeny, ponder, fret</td>
-        <td class="col-ant">Parent, ignore, disregard</td>
-      </tr>
-      <tr>
-        <td class="col-idx">119</td>
-        <td class="col-word">Brutal</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Savagely violent and cruel</td>
-        <td class="col-syn">Cruel, savage, barbaric, ruthless</td>
-        <td class="col-ant">Humane, gentle, merciful</td>
-      </tr>
-      <tr>
-        <td class="col-idx">120</td>
-        <td class="col-word">Brutalize</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Treat someone in a savage, violent way</td>
-        <td class="col-syn">Assault, beat, mistreat, abuse</td>
-        <td class="col-ant">Nurture, protect, shelter</td>
-      </tr>
-      <tr>
-        <td class="col-idx">121</td>
-        <td class="col-word">Bumpy</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Uneven surface, rough journey</td>
-        <td class="col-syn">Uneven, rough, irregular, rutted</td>
-        <td class="col-ant">Smooth, flat, seamless</td>
-      </tr>
-      <tr>
-        <td class="col-idx">122</td>
-        <td class="col-word">Bureaucracy</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Overly complex administrative protocol</td>
-        <td class="col-syn">Red tape, officialdom, protocol</td>
-        <td class="col-ant">Simplification, directness</td>
-      </tr>
-      <tr>
-        <td class="col-idx">123</td>
-        <td class="col-word">Burgeon</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Grow or expand rapidly; flourish</td>
-        <td class="col-syn">Flourish, expand, proliferate, boom</td>
-        <td class="col-ant">Wither, dwindle, contract</td>
-      </tr>
-      <tr>
-        <td class="col-idx">124</td>
-        <td class="col-word">Bystander</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Person present who takes no active part</td>
-        <td class="col-syn">Onlooker, spectator, eyewitness</td>
-        <td class="col-ant">Participant, actor, combatant</td>
-      </tr>
-      <tr>
-        <td class="col-idx">125</td>
-        <td class="col-word">Cabal</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Secret political clique or faction</td>
-        <td class="col-syn">Clique, faction, conspiracy, junta</td>
-        <td class="col-ant">Open group, general public</td>
-      </tr>
-      <tr>
-        <td class="col-idx">126</td>
-        <td class="col-word">Cacophony</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Harsh, discordant mixture of noises</td>
-        <td class="col-syn">Din, racket, dissonance, discord</td>
-        <td class="col-ant">Euphony, harmony, melody</td>
-      </tr>
-      <tr>
-        <td class="col-idx">127</td>
-        <td class="col-word">Calamitous</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Involving catastrophic loss; disastrous</td>
-        <td class="col-syn">Catastrophic, disastrous, tragic, fatal</td>
-        <td class="col-ant">Fortunate, auspicious, beneficial</td>
-      </tr>
-      <tr>
-        <td class="col-idx">128</td>
-        <td class="col-word">Callous</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Cruel and insensitive disregard for others</td>
-        <td class="col-syn">Heartless, cold, unfeeling, harsh</td>
-        <td class="col-ant">Compassionate, tender, sympathetic</td>
-      </tr>
-      <tr>
-        <td class="col-idx">129</td>
-        <td class="col-word">Callow</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Inexperienced and immature (young person)</td>
-        <td class="col-syn">Immature, green, naive, untried</td>
-        <td class="col-ant">Mature, experienced, worldly</td>
-      </tr>
-      <tr>
-        <td class="col-idx">130</td>
-        <td class="col-word">Calumny</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">False slander designed to hurt reputation</td>
-        <td class="col-syn">Slander, libel, defamation</td>
-        <td class="col-ant">Praise, tribute, vindication</td>
-      </tr>
-      <tr>
-        <td class="col-idx">131</td>
-        <td class="col-word">Camouflage</td>
-        <td class="col-pos">Verb/N.</td>
-        <td class="col-mean">Disguise true nature to avoid detection</td>
-        <td class="col-syn">Disguise, mask, conceal, screen</td>
-        <td class="col-ant">Reveal, expose, unveil</td>
-      </tr>
-      <tr>
-        <td class="col-idx">132</td>
-        <td class="col-word">Canon</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Established criterion, principle, or law</td>
-        <td class="col-syn">Principle, tenet, rule, standard</td>
-        <td class="col-ant">Irregularity, anomaly</td>
-      </tr>
-      <tr>
-        <td class="col-idx">133</td>
-        <td class="col-word">Cantankerous</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Bad-tempered, irritable, and quarrelsome</td>
-        <td class="col-syn">Irascible, fractious, testy, touchy</td>
-        <td class="col-ant">Affable, agreeable, good-natured</td>
-      </tr>
-      <tr>
-        <td class="col-idx">134</td>
-        <td class="col-word">Capricious</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Given to sudden unpredictable changes</td>
-        <td class="col-syn">Fickle, mercurial, erratic, volatile</td>
-        <td class="col-ant">Steadfast, consistent, stable</td>
-      </tr>
-      <tr>
-        <td class="col-idx">135</td>
-        <td class="col-word">Cardinal</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Of prime, essential importance; basic</td>
-        <td class="col-syn">Fundamental, primary, chief, principal</td>
-        <td class="col-ant">Secondary, peripheral, minor</td>
-      </tr>
-      <tr>
-        <td class="col-idx">136</td>
-        <td class="col-word">Castigate</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Severely reprimand or punish</td>
-        <td class="col-syn">Chastise, admonish, rebuke, censure</td>
-        <td class="col-ant">Commend, compliment, extol</td>
-      </tr>
-      <tr>
-        <td class="col-idx">137</td>
-        <td class="col-word">Casuistry</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Clever but deceptive, unsound reasoning</td>
-        <td class="col-syn">Sophistry, quibbling, chicanery</td>
-        <td class="col-ant">Integrity, frankness, truthfulness</td>
-      </tr>
-      <tr>
-        <td class="col-idx">138</td>
-        <td class="col-word">Cataclysm</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Sudden violent upheaval or disaster</td>
-        <td class="col-syn">Disaster, calamity, upheaval, crisis</td>
-        <td class="col-ant">Blessing, revival, boon</td>
-      </tr>
-      <tr>
-        <td class="col-idx">139</td>
-        <td class="col-word">Catharsis</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Purging and release of emotional tensions</td>
-        <td class="col-syn">Purgation, relief, cleansing, release</td>
-        <td class="col-ant">Repression, inhibition, holding in</td>
-      </tr>
-      <tr>
-        <td class="col-idx">140</td>
-        <td class="col-word">Certainty</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Firm conviction that a statement is true</td>
-        <td class="col-syn">Certitude, confidence, fact, truth</td>
-        <td class="col-ant">Doubt, ambiguity, suspicion</td>
-      </tr>
-      <tr>
-        <td class="col-idx">141</td>
-        <td class="col-word">Chaos</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Complete disorder and disorganization</td>
-        <td class="col-syn">Disarray, confusion, bedlam, furore</td>
-        <td class="col-ant">Order, systematic array, calm</td>
-      </tr>
-      <tr>
-        <td class="col-idx">142</td>
-        <td class="col-word">Civic</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Relating to a town or municipal affairs</td>
-        <td class="col-syn">Municipal, urban, city, metropolitan</td>
-        <td class="col-ant">Rural, rustic, private</td>
-      </tr>
-      <tr>
-        <td class="col-idx">143</td>
-        <td class="col-word">Coalition</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Temporary alliance for political action</td>
-        <td class="col-syn">Alliance, union, bloc, partnership</td>
-        <td class="col-ant">Opposition, faction, schism</td>
-      </tr>
-      <tr>
-        <td class="col-idx">144</td>
-        <td class="col-word">Cogent</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Clear, logical, and thoroughly convincing</td>
-        <td class="col-syn">Convincing, compelling, lucid, potent</td>
-        <td class="col-ant">Specious, unconvincing, flawed</td>
-      </tr>
-      <tr>
-        <td class="col-idx">145</td>
-        <td class="col-word">Cohesive</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Characterized by sticking firmly together</td>
-        <td class="col-syn">United, adhesive, interconnected</td>
-        <td class="col-ant">Fragmented, detached, disconnected</td>
-      </tr>
-      <tr>
-        <td class="col-idx">146</td>
-        <td class="col-word">Cohort</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">A distinct group or military unit</td>
-        <td class="col-syn">Unit, force, group, band, outfit</td>
-        <td class="col-ant">Individual, non-member</td>
-      </tr>
-      <tr>
-        <td class="col-idx">147</td>
-        <td class="col-word">Combat</td>
-        <td class="col-pos">V./N.</td>
-        <td class="col-mean">Armed fighting or struggle between forces</td>
-        <td class="col-syn">Battle, conflict, warfare, clash</td>
-        <td class="col-ant">Peace, armistice, truce</td>
-      </tr>
-      <tr>
-        <td class="col-idx">148</td>
-        <td class="col-word">Commemorative</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Acting as a memorial for a person or event</td>
-        <td class="col-syn">Memorial, celebratory, honoring</td>
-        <td class="col-ant">Forgetful, dismissive</td>
-      </tr>
-      <tr>
-        <td class="col-idx">149</td>
-        <td class="col-word">Compensate</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Make payment in recognition of loss/injury</td>
-        <td class="col-syn">Recompense, repay, indemnify, requite</td>
-        <td class="col-ant">Deprive, forfeit, fine</td>
-      </tr>
-      <tr>
-        <td class="col-idx">150</td>
-        <td class="col-word">Complacent</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Smugly uncritical and satisfied with oneself</td>
-        <td class="col-syn">Smug, self-satisfied, proud, unworried</td>
-        <td class="col-ant">Concerned, dissatisfied, humble</td>
-      </tr>
-      <tr>
-        <td class="col-idx">151</td>
-        <td class="col-word">Comprehend</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Grasp mentally; understand completely</td>
-        <td class="col-syn">Understand, fathom, grasp, decipher</td>
-        <td class="col-ant">Misunderstand, misconstrue</td>
-      </tr>
-      <tr>
-        <td class="col-idx">152</td>
-        <td class="col-word">Concise</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Giving much info in few words; brief</td>
-        <td class="col-syn">Succinct, brief, crisp, pithy, terse</td>
-        <td class="col-ant">Wordy, diffuse, verbose</td>
-      </tr>
-      <tr>
-        <td class="col-idx">153</td>
-        <td class="col-word">Confluence</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Junction of streams; convergence</td>
-        <td class="col-syn">Convergence, meeting, junction, union</td>
-        <td class="col-ant">Divergence, separation, fork</td>
-      </tr>
-      <tr>
-        <td class="col-idx">154</td>
-        <td class="col-word">Confront</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Face up to and deal directly with a difficulty</td>
-        <td class="col-syn">Face, tackle, challenge, encounter</td>
-        <td class="col-ant">Evade, sidestep, dodge</td>
-      </tr>
-      <tr>
-        <td class="col-idx">155</td>
-        <td class="col-word">Congenial</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Pleasing due to compatible interests</td>
-        <td class="col-syn">Like-minded, compatible, friendly</td>
-        <td class="col-ant">Disagreeable, incompatible, hostile</td>
-      </tr>
-      <tr>
-        <td class="col-idx">156</td>
-        <td class="col-word">Conscience</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Inner moral sense of right and wrong</td>
-        <td class="col-syn">Moral sense, ethics, principles</td>
-        <td class="col-ant">Immorality, amorality</td>
-      </tr>
-      <tr>
-        <td class="col-idx">157</td>
-        <td class="col-word">Conscious</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Aware of and responding to surroundings</td>
-        <td class="col-syn">Aware, alert, sentient, awake</td>
-        <td class="col-ant">Unconscious, numb, oblivious</td>
-      </tr>
-      <tr>
-        <td class="col-idx">158</td>
-        <td class="col-word">Consequence</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Outcome or result following an event</td>
-        <td class="col-syn">Result, upshot, aftermath, outcome</td>
-        <td class="col-ant">Cause, source, origin</td>
-      </tr>
-      <tr>
-        <td class="col-idx">159</td>
-        <td class="col-word">Consensus</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">General widespread agreement</td>
-        <td class="col-syn">Agreement, concord, unanimity, accord</td>
-        <td class="col-ant">Dissent, disagreement, division</td>
-      </tr>
-      <tr>
-        <td class="col-idx">160</td>
-        <td class="col-word">Consequential</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Following as a direct effect; significant</td>
-        <td class="col-syn">Resulting, ensuing, significant, weighty</td>
-        <td class="col-ant">Inconsequential, trivial, causal</td>
-      </tr>
-      <tr>
-        <td class="col-idx">161</td>
-        <td class="col-word">Conspiracy</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Secret unlawful plan formulated by a group</td>
-        <td class="col-syn">Plot, scheme, cabal, machination</td>
-        <td class="col-ant">Loyalty, transparency, openness</td>
-      </tr>
-      <tr>
-        <td class="col-idx">162</td>
-        <td class="col-word">Constrain</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Compel or force to follow a course; restrict</td>
-        <td class="col-syn">Compel, force, coerce, restrain, curb</td>
-        <td class="col-ant">Liberate, release, free</td>
-      </tr>
-      <tr>
-        <td class="col-idx">163</td>
-        <td class="col-word">Contaminated</td>
-        <td class="col-pos">Adjective/V.</td>
-        <td class="col-mean">Impure by toxic substance exposure</td>
-        <td class="col-syn">Polluted, tainted, infected, defiled</td>
-        <td class="col-ant">Purified, immaculate, clean</td>
-      </tr>
-      <tr>
-        <td class="col-idx">164</td>
-        <td class="col-word">Contemplate</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Look thoughtfully at; reflect deeply upon</td>
-        <td class="col-syn">Examine, observe, ponder, consider</td>
-        <td class="col-ant">Ignore, disregard, overlook</td>
-      </tr>
-      <tr>
-        <td class="col-idx">165</td>
-        <td class="col-word">Contemptuous</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Showing deep scorn and insolence</td>
-        <td class="col-syn">Scornful, disdainful, insolent, sneering</td>
-        <td class="col-ant">Respectful, polite, deferential</td>
-      </tr>
-      <tr>
-        <td class="col-idx">166</td>
-        <td class="col-word">Contentious</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Causing dispute or open argument</td>
-        <td class="col-syn">Controversial, disputed, debatable</td>
-        <td class="col-ant">Uncontroversial, agreed, peaceful</td>
-      </tr>
-      <tr>
-        <td class="col-idx">167</td>
-        <td class="col-word">Contingent</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Dependent on chance or unforeseen conditions</td>
-        <td class="col-syn">Fortuitous, conditional, accidental</td>
-        <td class="col-ant">Certain, absolute, unconditional</td>
-      </tr>
-      <tr>
-        <td class="col-idx">168</td>
-        <td class="col-word">Contours</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Outlines bounding the form of something</td>
-        <td class="col-syn">Outline, silhouette, profile, shape</td>
-        <td class="col-ant">Core, center, bulk</td>
-      </tr>
-      <tr>
-        <td class="col-idx">169</td>
-        <td class="col-word">Contravene</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Offend against a law or legal rule</td>
-        <td class="col-syn">Violate, breach, infringe, disobey</td>
-        <td class="col-ant">Comply, uphold, obey</td>
-      </tr>
-      <tr>
-        <td class="col-idx">170</td>
-        <td class="col-word">Convalesce</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Recuperate health after sickness</td>
-        <td class="col-syn">Recuperate, recover, heal, mend</td>
-        <td class="col-ant">Deteriorate, worsen, decline</td>
-      </tr>
-      <tr>
-        <td class="col-idx">171</td>
-        <td class="col-word">Conventional</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Based on accepted traditions or norms</td>
-        <td class="col-syn">Standard, orthodox, traditional</td>
-        <td class="col-ant">Unorthodox, radical, eccentric</td>
-      </tr>
-      <tr>
-        <td class="col-idx">172</td>
-        <td class="col-word">Conundrum</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">A confusing problem or intricate riddle</td>
-        <td class="col-syn">Puzzle, dilemma, enigma, problem</td>
-        <td class="col-ant">Resolution, solution, clarity</td>
-      </tr>
-      <tr>
-        <td class="col-idx">173</td>
-        <td class="col-word">Cooper</td>
-        <td class="col-pos">Noun/V.</td>
-        <td class="col-mean">Maker or repairer of casks and wooden barrels</td>
-        <td class="col-syn">Barrel-maker, cask-crafter</td>
-        <td class="col-ant">Non-craftsman</td>
-      </tr>
-      <tr>
-        <td class="col-idx">174</td>
-        <td class="col-word">Corporeal</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Relating to the physical body rather than spirit</td>
-        <td class="col-syn">Bodily, fleshly, carnal, mortal</td>
-        <td class="col-ant">Spiritual, intangible, ethereal</td>
-      </tr>
-      <tr>
-        <td class="col-idx">175</td>
-        <td class="col-word">Corroborate</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Confirm or verify evidence with testimony</td>
-        <td class="col-syn">Verify, confirm, validate, endorse</td>
-        <td class="col-ant">Contradict, refute, disavow</td>
-      </tr>
-      <tr>
-        <td class="col-idx">176</td>
-        <td class="col-word">Coterie</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Small exclusive circle of kindred spirits</td>
-        <td class="col-syn">Circle, set, faction, clique, band</td>
-        <td class="col-ant">Outsiders, public</td>
-      </tr>
-      <tr>
-        <td class="col-idx">177</td>
-        <td class="col-word">Countenance</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Person's face or facial expression</td>
-        <td class="col-syn">Features, physiognomy, profile, face</td>
-        <td class="col-ant">Inner state</td>
-      </tr>
-      <tr>
-        <td class="col-idx">178</td>
-        <td class="col-word">Covet</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Yearn to possess what belongs to another</td>
-        <td class="col-syn">Crave, desire, hanker for, envy</td>
-        <td class="col-ant">Spurn, despise, relinquish</td>
-      </tr>
-      <tr>
-        <td class="col-idx">179</td>
-        <td class="col-word">Credence</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Belief in or acceptance of something as true</td>
-        <td class="col-syn">Trust, faith, reliance, confidence</td>
-        <td class="col-ant">Skepticism, disbelief, doubt</td>
-      </tr>
-      <tr>
-        <td class="col-idx">180</td>
-        <td class="col-word">Creep</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Move slowly to avoid being detected</td>
-        <td class="col-syn">Crawl, sneak, inch, worm</td>
-        <td class="col-ant">Rush, sprint, barrel</td>
-      </tr>
-      <tr>
-        <td class="col-idx">181</td>
-        <td class="col-word">Critical</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Expressing adverse judgments; vital</td>
-        <td class="col-syn">Condemnatory, crucial, censorious</td>
-        <td class="col-ant">Complimentary, approving, trivial</td>
-      </tr>
-      <tr>
-        <td class="col-idx">182</td>
-        <td class="col-word">Critique</td>
-        <td class="col-pos">Noun/V.</td>
-        <td class="col-mean">Detailed analytical evaluation of work</td>
-        <td class="col-syn">Appraisal, assessment, review</td>
-        <td class="col-ant">Blanket endorsement</td>
-      </tr>
-      <tr>
-        <td class="col-idx">183</td>
-        <td class="col-word">Crucify</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Criticize someone severely and relentlessly</td>
-        <td class="col-syn">Denounce, pillory, revile, excoriate</td>
-        <td class="col-ant">Praise, lionize, celebrate</td>
-      </tr>
-      <tr>
-        <td class="col-idx">184</td>
-        <td class="col-word">Culmination</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">The highest or climactic point achieved</td>
-        <td class="col-syn">Climax, peak, apex, zenith, crest</td>
-        <td class="col-ant">Beginning, initiation, start</td>
-      </tr>
-      <tr>
-        <td class="col-idx">185</td>
-        <td class="col-word">Curb</td>
-        <td class="col-pos">Verb/N.</td>
-        <td class="col-mean">Check, limit, or restrain firmly</td>
-        <td class="col-syn">Restraint, check, control, limit</td>
-        <td class="col-ant">Encourage, unleash, spur</td>
-      </tr>
-      <tr>
-        <td class="col-idx">186</td>
-        <td class="col-word">Curse</td>
-        <td class="col-pos">Verb/N.</td>
-        <td class="col-mean">Invoke supernatural harm against</td>
-        <td class="col-syn">Execrate, imprecate, anathematize</td>
-        <td class="col-ant">Bless, praise, consecrate</td>
-      </tr>
-      <tr>
-        <td class="col-idx">187</td>
-        <td class="col-word">Curtain</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Hanging fabric screen or barrier</td>
-        <td class="col-syn">Drape, screen, partition, blind</td>
-        <td class="col-ant">Opening, exposure</td>
-      </tr>
-      <tr>
-        <td class="col-idx">188</td>
-        <td class="col-word">Cynical</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Distrustful of human sincerity or motives</td>
-        <td class="col-syn">Skeptical, misanthropic, distrustful</td>
-        <td class="col-ant">Trusting, idealistic, optimistic</td>
-      </tr>
-      <tr>
-        <td class="col-idx">189</td>
-        <td class="col-word">Dampen</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Make slightly wet; dull the enthusiasm of</td>
-        <td class="col-syn">Moisten, wet, subdue, deaden</td>
-        <td class="col-ant">Dry, stimulate, sharpen</td>
-      </tr>
-      <tr>
-        <td class="col-idx">190</td>
-        <td class="col-word">Daunt</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Make someone feel intimidated or fearful</td>
-        <td class="col-syn">Intimidate, discourage, dismay, cow</td>
-        <td class="col-ant">Encourage, embolden, hearten</td>
-      </tr>
-      <tr>
-        <td class="col-idx">191</td>
-        <td class="col-word">Dawdle</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Waste time leisurely; be sluggishly slow</td>
-        <td class="col-syn">Linger, dally, idle, loiter</td>
-        <td class="col-ant">Hasten, hurry, rush</td>
-      </tr>
-      <tr>
-        <td class="col-idx">192</td>
-        <td class="col-word">Deafen</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Overwhelm hearing with enormous noise</td>
-        <td class="col-syn">Drown out, stun with noise</td>
-        <td class="col-ant">Muffle, soothe, quiet</td>
-      </tr>
-      <tr>
-        <td class="col-idx">193</td>
-        <td class="col-word">Debacle</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">A sudden and ignominious failure</td>
-        <td class="col-syn">Fiasco, catastrophe, disaster, rout</td>
-        <td class="col-ant">Triumph, triumph, success</td>
-      </tr>
-      <tr>
-        <td class="col-idx">194</td>
-        <td class="col-word">Debilitate</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Make someone physically weak or infirm</td>
-        <td class="col-syn">Weaken, enfeeble, sap, enervate</td>
-        <td class="col-ant">Strengthen, invigorate, bolster</td>
-      </tr>
-      <tr>
-        <td class="col-idx">195</td>
-        <td class="col-word">Debtor</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">A person or party that owes money</td>
-        <td class="col-syn">Borrower, mortgagor</td>
-        <td class="col-ant">Creditor, lender</td>
-      </tr>
-      <tr>
-        <td class="col-idx">196</td>
-        <td class="col-word">Deceit</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Practice of misleading through falsehood</td>
-        <td class="col-syn">Deception, duplicity, chicanery, fraud</td>
-        <td class="col-ant">Honesty, candor, sincerity</td>
-      </tr>
-      <tr>
-        <td class="col-idx">197</td>
-        <td class="col-word">Deceptive</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Giving an impression different from the truth</td>
-        <td class="col-syn">Misleading, illusory, specious, false</td>
-        <td class="col-ant">Truthful, direct, transparent</td>
-      </tr>
-      <tr>
-        <td class="col-idx">198</td>
-        <td class="col-word">Decree</td>
-        <td class="col-pos">Noun/V.</td>
-        <td class="col-mean">Official legal command with the force of law</td>
-        <td class="col-syn">Edict, mandate, law, precept, order</td>
-        <td class="col-ant">Revocation, nullification</td>
-      </tr>
-      <tr>
-        <td class="col-idx">199</td>
-        <td class="col-word">Deem</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Regard or consider in a specified way</td>
-        <td class="col-syn">Consider, judge, reckon, esteem</td>
-        <td class="col-ant">Disregard, misjudge</td>
-      </tr>
-      <tr>
-        <td class="col-idx">200</td>
-        <td class="col-word">Defendant</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Individual sued or accused in a court of law</td>
-        <td class="col-syn">Accused, prisoner at the bar</td>
-        <td class="col-ant">Prosecutor, plaintiff, accuser</td>
-      </tr>
-      <tr>
-        <td class="col-idx">201</td>
-        <td class="col-word">Defy</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Openly resist authority or conventions</td>
-        <td class="col-syn">Flout, disregard, disobey, resist</td>
-        <td class="col-ant">Obey, surrender, comply</td>
-      </tr>
-      <tr>
-        <td class="col-idx">202</td>
-        <td class="col-word">Delineate</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Describe or portray something precisely</td>
-        <td class="col-syn">Portray, depict, outline, specify</td>
-        <td class="col-ant">Confuse, distort, blur</td>
-      </tr>
-      <tr>
-        <td class="col-idx">203</td>
-        <td class="col-word">Delusion</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">A false belief firmly maintained despite facts</td>
-        <td class="col-syn">Misconception, illusion, mirage</td>
-        <td class="col-ant">Reality, fact, certainty</td>
-      </tr>
-      <tr>
-        <td class="col-idx">204</td>
-        <td class="col-word">Demise</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">A person's death or the end of an enterprise</td>
-        <td class="col-syn">Death, passing, expiration, fall</td>
-        <td class="col-ant">Birth, genesis, commencement</td>
-      </tr>
-      <tr>
-        <td class="col-idx">205</td>
-        <td class="col-word">Demur</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Raise objections or show reluctance</td>
-        <td class="col-syn">Object, cavil, protest, take issue</td>
-        <td class="col-ant">Acquiesce, accept, agree</td>
-      </tr>
-      <tr>
-        <td class="col-idx">206</td>
-        <td class="col-word">Denial</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Declaration that an allegation is untrue</td>
-        <td class="col-syn">Rebuttal, repudiation, contradiction</td>
-        <td class="col-ant">Admission, concession, confession</td>
-      </tr>
-      <tr>
-        <td class="col-idx">207</td>
-        <td class="col-word">Denouement</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Final outcome or resolution of a plot</td>
-        <td class="col-syn">Resolution, climax, final act</td>
-        <td class="col-ant">Prologue, start, introduction</td>
-      </tr>
-      <tr>
-        <td class="col-idx">208</td>
-        <td class="col-word">Deplorable</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Deserving strong moral condemnation</td>
-        <td class="col-syn">Disgraceful, shameful, unforgivable</td>
-        <td class="col-ant">Admirable, commendable, laudable</td>
-      </tr>
-      <tr>
-        <td class="col-idx">209</td>
-        <td class="col-word">Derelict</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Ruined and abandoned due to persistent disuse</td>
-        <td class="col-syn">Dilapidated, neglected, ramshackle</td>
-        <td class="col-ant">Maintained, occupied, pristine</td>
-      </tr>
-      <tr>
-        <td class="col-idx">210</td>
-        <td class="col-word">Deride</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Express contempt for; ridicule openly</td>
-        <td class="col-syn">Mock, scoff, ridicule, pillory</td>
-        <td class="col-ant">Praise, revere, respect</td>
-      </tr>
-      <tr>
-        <td class="col-idx">211</td>
-        <td class="col-word">Derision</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Contemptuous mockery or jeering</td>
-        <td class="col-syn">Ridicule, mockery, sneering, scoffing</td>
-        <td class="col-ant">Applause, admiration, respect</td>
-      </tr>
-      <tr>
-        <td class="col-idx">212</td>
-        <td class="col-word">Deserter</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Military service member who abandons duty</td>
-        <td class="col-syn">Runaway, renegade, fugitive, defector</td>
-        <td class="col-ant">Loyalist, stalwart, defender</td>
-      </tr>
-      <tr>
-        <td class="col-idx">213</td>
-        <td class="col-word">Desiccate</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Remove moisture completely from</td>
-        <td class="col-syn">Dehydrate, dry up, parch, powder</td>
-        <td class="col-ant">Hydrate, moisten, saturate</td>
-      </tr>
-      <tr>
-        <td class="col-idx">214</td>
-        <td class="col-word">Despicable</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Deserving hatred and intense contempt</td>
-        <td class="col-syn">Contemptible, loathsome, reprehensible</td>
-        <td class="col-ant">Noble, honorable, admirable</td>
-      </tr>
-      <tr>
-        <td class="col-idx">215</td>
-        <td class="col-word">Deteriorate</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Become progressively worse over time</td>
-        <td class="col-syn">Degenerate, decline, worsen, decay</td>
-        <td class="col-ant">Improve, ameliorate, recuperate</td>
-      </tr>
-      <tr>
-        <td class="col-idx">216</td>
-        <td class="col-word">Devious</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Using underhanded, dishonest tactics</td>
-        <td class="col-syn">Deceitful, underhand, calculating</td>
-        <td class="col-ant">Frank, forthright, honest, straight</td>
-      </tr>
-      <tr>
-        <td class="col-idx">217</td>
-        <td class="col-word">Devout</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Showing deep religious commitment</td>
-        <td class="col-syn">Pious, reverent, dedicated, godly</td>
-        <td class="col-ant">Impious, sacrilegious, atheistic</td>
-      </tr>
-      <tr>
-        <td class="col-idx">218</td>
-        <td class="col-word">Diaphanous</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Light, delicate, and translucent fabric</td>
-        <td class="col-syn">Sheer, gossamer, fine, lightweight</td>
-        <td class="col-ant">Opaque, thick, heavy</td>
-      </tr>
-      <tr>
-        <td class="col-idx">219</td>
-        <td class="col-word">Diffidence</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Shyness resulting from lack of self-belief</td>
-        <td class="col-syn">Shyness, bashfulness, timidity</td>
-        <td class="col-ant">Confidence, boldness, audacity</td>
-      </tr>
-      <tr>
-        <td class="col-idx">220</td>
-        <td class="col-word">Dilatory</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Slow to act; intended to cause delays</td>
-        <td class="col-syn">Tardy, sluggish, unpunctual, lax</td>
-        <td class="col-ant">Prompt, swift, expeditious</td>
-      </tr>
-      <tr>
-        <td class="col-idx">221</td>
-        <td class="col-word">Diligence</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Careful and persistent work or effort</td>
-        <td class="col-syn">Assiduity, rigour, attentiveness</td>
-        <td class="col-ant">Negligence, indolence, sloth</td>
-      </tr>
-      <tr>
-        <td class="col-idx">222</td>
-        <td class="col-word">Diminish</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Make or become less in size or degree</td>
-        <td class="col-syn">Decrease, decline, reduce, lessen</td>
-        <td class="col-ant">Increase, augment, magnify</td>
-      </tr>
-      <tr>
-        <td class="col-idx">223</td>
-        <td class="col-word">Disaster</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Catastrophic sudden accident or loss</td>
-        <td class="col-syn">Catastrophe, calamity, tragedy</td>
-        <td class="col-ant">Boon, triumph, windfall</td>
-      </tr>
-      <tr>
-        <td class="col-idx">224</td>
-        <td class="col-word">Discomfit</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Make someone feel uneasy or embarrassed</td>
-        <td class="col-syn">Embarrass, rattle, abash, disconcert</td>
-        <td class="col-ant">Comfort, soothe, reassure</td>
-      </tr>
-      <tr>
-        <td class="col-idx">225</td>
-        <td class="col-word">Disconcert</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Disturb the composure of; unsettle</td>
-        <td class="col-syn">Unsettle, nonplus, perplex, ruffle</td>
-        <td class="col-ant">Calm, assure, steady</td>
-      </tr>
-      <tr>
-        <td class="col-idx">226</td>
-        <td class="col-word">Discreet</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Careful in speech to keep confidence</td>
-        <td class="col-syn">Circumspect, guarded, prudent, wary</td>
-        <td class="col-ant">Indiscreet, rash, brash</td>
-      </tr>
-      <tr>
-        <td class="col-idx">227</td>
-        <td class="col-word">Discrimination</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Prejudicial treatment of categories</td>
-        <td class="col-syn">Prejudice, bias, bigotry, intolerance</td>
-        <td class="col-ant">Fairness, impartiality, tolerance</td>
-      </tr>
-      <tr>
-        <td class="col-idx">228</td>
-        <td class="col-word">Disdain</td>
-        <td class="col-pos">Verb/N.</td>
-        <td class="col-mean">Consider unworthy of respect; scorn</td>
-        <td class="col-syn">Scorn, deride, slight, despise</td>
-        <td class="col-ant">Respect, revere, honor</td>
-      </tr>
-      <tr>
-        <td class="col-idx">229</td>
-        <td class="col-word">Disenchant</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Cause someone to be disillusioned</td>
-        <td class="col-syn">Disillusion, disappoint, disillusion</td>
-        <td class="col-ant">Enchant, charm, captivate</td>
-      </tr>
-      <tr>
-        <td class="col-idx">230</td>
-        <td class="col-word">Disgust</td>
-        <td class="col-pos">Noun/V.</td>
-        <td class="col-mean">Strong revulsion aroused by something vile</td>
-        <td class="col-syn">Revulsion, repugnance, loathing</td>
-        <td class="col-ant">Delight, attraction, fondness</td>
-      </tr>
-      <tr>
-        <td class="col-idx">231</td>
-        <td class="col-word">Disingenuous</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Insincere by pretending ignorance</td>
-        <td class="col-syn">Duplicitous, deceitful, dishonest</td>
-        <td class="col-ant">Sincere, candid, open</td>
-      </tr>
-      <tr>
-        <td class="col-idx">232</td>
-        <td class="col-word">Disown</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Refuse to acknowledge or maintain connection</td>
-        <td class="col-syn">Repudiate, cast off, reject, renounce</td>
-        <td class="col-ant">Adopt, embrace, endorse</td>
-      </tr>
-      <tr>
-        <td class="col-idx">233</td>
-        <td class="col-word">Disparate</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Essentially different; unable to be compared</td>
-        <td class="col-syn">Contrasting, different, dissimilar</td>
-        <td class="col-ant">Homogeneous, similar, uniform</td>
-      </tr>
-      <tr>
-        <td class="col-idx">234</td>
-        <td class="col-word">Disputable</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Open to debate, doubt, or question</td>
-        <td class="col-syn">Debatable, contentious, doubtful</td>
-        <td class="col-ant">Indisputable, certain, settled</td>
-      </tr>
-      <tr>
-        <td class="col-idx">235</td>
-        <td class="col-word">Dissemble</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Disguise one's real feelings or motives</td>
-        <td class="col-syn">Dissimulate, feign, mask, conceal</td>
-        <td class="col-ant">Disclose, reveal, expose</td>
-      </tr>
-      <tr>
-        <td class="col-idx">236</td>
-        <td class="col-word">Dissent</td>
-        <td class="col-pos">Noun/V.</td>
-        <td class="col-mean">Disagreement with officially held opinions</td>
-        <td class="col-syn">Discord, objection, opposition</td>
-        <td class="col-ant">Assent, consent, agreement</td>
-      </tr>
-      <tr>
-        <td class="col-idx">237</td>
-        <td class="col-word">Dissentient</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">In explicit opposition to a majority opinion</td>
-        <td class="col-syn">Dissenting, discordant, contrary</td>
-        <td class="col-ant">Consensual, conforming, agreeing</td>
-      </tr>
-      <tr>
-        <td class="col-idx">238</td>
-        <td class="col-word">Dissuade</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Persuade someone against an action</td>
-        <td class="col-syn">Deter, discourage, prevent</td>
-        <td class="col-ant">Persuade, induce, encourage</td>
-      </tr>
-      <tr>
-        <td class="col-idx">239</td>
-        <td class="col-word">Dogmatic</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Laying down principles as indisputably true</td>
-        <td class="col-syn">Peremptory, assertive, doctrinaire</td>
-        <td class="col-ant">Flexible, open-minded, skeptic</td>
-      </tr>
-      <tr>
-        <td class="col-idx">240</td>
-        <td class="col-word">Drastic</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Likely to have strong, extreme effects</td>
-        <td class="col-syn">Radical, extreme, dire, severe</td>
-        <td class="col-ant">Mild, moderate, gradual</td>
-      </tr>
-      <tr>
-        <td class="col-idx">241</td>
-        <td class="col-word">Dread</td>
-        <td class="col-pos">Verb/N.</td>
-        <td class="col-mean">Anticipate with great fear or apprehension</td>
-        <td class="col-syn">Fear, apprehension, trepidation</td>
-        <td class="col-ant">Confidence, eagerness, joy</td>
-      </tr>
-      <tr>
-        <td class="col-idx">242</td>
-        <td class="col-word">Dross</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Worthless rubbish discarded from metal</td>
-        <td class="col-syn">Rubbish, debris, detritus, junk</td>
-        <td class="col-ant">Treasure, prize, gold</td>
-      </tr>
-      <tr>
-        <td class="col-idx">243</td>
-        <td class="col-word">Dulcet</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Sweet, mellifluous, and soothing to hear</td>
-        <td class="col-syn">Mellifluous, euphonious, melodic</td>
-        <td class="col-ant">Harsh, cacophonous, grating</td>
-      </tr>
-      <tr>
-        <td class="col-idx">244</td>
-        <td class="col-word">Dynamism</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Quality of vigorous activity and progress</td>
-        <td class="col-syn">Vigor, vitality, liveliness, energy</td>
-        <td class="col-ant">Lethargy, inertia, torpor</td>
-      </tr>
-      <tr>
-        <td class="col-idx">245</td>
-        <td class="col-word">Echelons</td>
-        <td class="col-pos">Noun</td>
-        <td class="col-mean">Level or rank in an organization</td>
-        <td class="col-syn">Rank, tier, level, rung, grade</td>
-        <td class="col-ant">Disorganization, base</td>
-      </tr>
-      <tr>
-        <td class="col-idx">246</td>
-        <td class="col-word">Eerie</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Strange, ghostly, and frightening</td>
-        <td class="col-syn">Sinister, ghostly, unnatural, uncanny</td>
-        <td class="col-ant">Familiar, mundane, reassuring</td>
-      </tr>
-      <tr>
-        <td class="col-idx">247</td>
-        <td class="col-word">Eloquent</td>
-        <td class="col-pos">Adjective</td>
-        <td class="col-mean">Fluent and persuasive in speech or text</td>
-        <td class="col-syn">Articulate, expressive, silver-tongued</td>
-        <td class="col-ant">Inarticulate, tongue-tied, clumsy</td>
-      </tr>
-      <tr>
-        <td class="col-idx">248</td>
-        <td class="col-word">Elude</td>
-        <td class="col-pos">Verb</td>
-        <td class="col-mean">Evade or escape danger by cunning</td>
-        <td class="col-syn">Evade, escape, dodge, flee</td>
-        <td class="col-ant">Confront, encounter, tackle</td>
+        <td class="col-mean">Offer strong resistance to; endure successfully</td>
+        <td class="col-syn">Resist, endure, brave, survive, weather</td>
+        <td class="col-ant">Surrender, succumb, yield, buckle</td>
       </tr>
     </tbody>
   </table>
