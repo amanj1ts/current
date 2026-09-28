@@ -9,174 +9,271 @@
     --primary: #1e3a8a;
     --primary-dark: #0f172a;
     --secondary: #0284c7;
-    --accent: #d97706;
-    --star-gold: #f59e0b;
-    --bg-main: #f8fafc;
+    --bg-main: #f1f5f9;
     --bg-card: #ffffff;
-    --text-main: #1e293b;
+    --text-main: #0f172a;
     --text-muted: #64748b;
-    --border: #e2e8f0;
+    --border: #cbd5e1;
+    --border-light: #e2e8f0;
+    --row-alt: #f8fafc;
+    --row-hover: #e0f2fe;
     --star-bg: #fffbeb;
-    --star-border: #fef3c7;
+    --star-border: #fcd34d;
+    --star-hover: #fef3c7;
   }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: var(--bg-main);
     color: var(--text-main);
-    line-height: 1.55;
+    line-height: 1.4;
     margin: 0;
-    padding: 24px;
+    padding: 12px 10px;
+    -webkit-font-smoothing: antialiased;
   }
+
   .container {
-    max-width: 1300px;
+    max-width: 1440px;
     margin: 0 auto;
   }
+
   header {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
     color: #ffffff;
-    padding: 36px 30px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   }
   header h1 {
-    margin: 0 0 10px 0;
-    font-size: 2.1rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    margin: 0 0 4px 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
   }
   header p {
     margin: 0;
-    font-size: 1.05rem;
+    font-size: 0.85rem;
     color: #cbd5e1;
+  }
+
+  /* Static Toolbar (No sticky behavior) */
+  .toolbar-wrapper {
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    margin-bottom: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
   }
   .nav-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 25px;
+    gap: 5px;
+    align-items: center;
   }
   .nav-pills a {
-    background: #ffffff;
+    background: #f8fafc;
     color: var(--primary);
     text-decoration: none;
     font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border-light);
+    font-size: 0.78rem;
+    transition: all 0.15s ease-in-out;
   }
   .nav-pills a:hover {
     background: var(--primary);
     color: #ffffff;
+    border-color: var(--primary);
   }
+  .quick-search {
+    flex-shrink: 0;
+  }
+  .quick-search input {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    width: 200px;
+    outline: none;
+  }
+  .quick-search input:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2);
+  }
+
+  /* Dense Cards with Full Natural Height (No inner vertical scroll) */
   .section-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 35px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
   .section-title {
-    font-size: 1.45rem;
+    font-size: 1.15rem;
+    font-weight: 700;
     color: var(--primary-dark);
     margin-top: 0;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     border-bottom: 2px solid var(--secondary);
-    padding-bottom: 10px;
+    padding-bottom: 6px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   .section-subtitle {
-    font-size: 0.92rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
-    margin-bottom: 18px;
+    margin-bottom: 10px;
   }
+
   table.compendium-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.92rem;
-    margin-top: 10px;
+    font-size: 0.84rem;
+    text-align: left;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
   }
   table.compendium-table th {
-    background-color: #f1f5f9;
-    color: #334155;
+    background-color: #f8fafc;
+    color: #1e293b;
     font-weight: 700;
-    text-align: left;
-    padding: 12px 14px;
+    padding: 8px 10px;
     border-bottom: 2px solid var(--border);
+    letter-spacing: 0.2px;
   }
   table.compendium-table td {
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--border);
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border-light);
     vertical-align: top;
   }
+
+  tbody tr:nth-child(even) {
+    background-color: var(--row-alt);
+  }
+  tbody tr:hover {
+    background-color: var(--row-hover) !important;
+  }
+
   tr.star-row {
     background-color: var(--star-bg);
+  }
+  tr.star-row:hover {
+    background-color: var(--star-hover) !important;
   }
   tr.star-row td {
     border-bottom: 1px solid var(--star-border);
   }
+
   .star-badge {
-    color: var(--star-gold);
-    font-size: 1.15rem;
+    color: #d97706;
+    font-size: 0.95rem;
     font-weight: bold;
-    margin-right: 4px;
+    margin-right: 3px;
+    display: inline-block;
   }
   .repeat-badge {
     display: inline-block;
     background-color: #e0f2fe;
     color: #0369a1;
     font-weight: 700;
-    padding: 2px 7px;
-    border-radius: 4px;
-    font-size: 0.78rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.72rem;
     white-space: nowrap;
   }
   .repeat-badge.high {
     background-color: #fee2e2;
-    color: #b91c1c;
+    color: #991b1b;
   }
   .repeat-badge.medium {
     background-color: #fef3c7;
-    color: #b45309;
+    color: #92400e;
+  }
+  .term-primary {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 0.88rem;
+  }
+  
+  /* Question Reference Sub-Note Styling */
+  .term-refs-note {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    line-height: 1.25;
   }
   .ref-tag {
     display: inline-block;
     background-color: #f1f5f9;
-    color: #475569;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.78rem;
-    font-family: monospace;
-    margin: 1px 2px;
+    color: #334155;
+    padding: 0 2px;
+    border-radius: 3px;
+    font-size: 0.5rem;
+    margin: 1px 1px;
     white-space: nowrap;
+    border: 1px solid #cbd5e1;
   }
-  .term-primary {
-    font-weight: 700;
-    color: var(--primary-dark);
-  }
+
   .syn-list {
     color: #0f766e;
-    font-weight: 500;
+    font-weight: 600;
   }
   .ant-list {
-    color: #be123c;
-    font-weight: 500;
+    color: #b91c1c;
+    font-weight: 600;
   }
   .trap-wrong {
     text-decoration: line-through;
-    color: #e11d48;
-    font-family: monospace;
+    color: #dc2626;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     font-weight: 600;
+    background: #fef2f2;
+    padding: 1px 4px;
+    border-radius: 3px;
+    display: inline-block;
   }
   .trap-right {
     color: #15803d;
-    font-family: monospace;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     font-weight: 700;
+    background: #f0fdf4;
+    padding: 1px 4px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  .col-num { width: 38px; text-align: center; color: var(--text-muted); font-size: 0.78rem; }
+  .col-term { width: 220px; min-width: 170px; }
+  .col-repeat { width: 85px; min-width: 75px; text-align: center; }
+  .col-antonym { width: 200px; min-width: 150px; }
+
+  @media (max-width: 768px) {
+    body { padding: 6px; }
+    header { padding: 12px; }
+    header h1 { font-size: 1.1rem; }
+    .toolbar-wrapper { flex-direction: column; align-items: stretch; }
+    .quick-search input { width: 100%; }
+    .section-card { padding: 8px; margin-bottom: 12px; }
+    table.compendium-table { font-size: 0.8rem; }
+    table.compendium-table th, table.compendium-table td { padding: 6px 8px; }
+    .col-term { width: auto; }
   }
 </style>
 </head>
@@ -185,386 +282,490 @@
 <div class="container">
   <header>
     <h1>PSSSB Comprehensive English Vocabulary Master Compendium</h1>
-    <p>Complete Reference Guide PYQ Based covering Vocabulary, Synonyms, Antonyms, One-Word Substitutions, Spelling Traps, and Idioms/Phrases/Proverbs. Starred items represent high-frequency questions prioritized at the top.</p>
+    <p>PYQ-based complete exam reference guide. Priority frequency rows are highlighted with ★.</p>
   </header>
 
-  <div class="nav-pills">
-    <a href="#vocab-synonyms">1. Vocabulary & Synonyms</a>
-    <a href="#antonyms">2. Antonyms</a>
-    <a href="#one-word-subs">3. One-Word Substitutions</a>
-    <a href="#spelling-traps">4. Spelling Traps</a>
-    <a href="#idioms-phrases">5. Idioms, Phrases & Proverbs</a>
+  <div class="toolbar-wrapper">
+    <div class="nav-pills">
+      <a href="#vocab-synonyms">1. Vocab & Synonyms</a>
+      <a href="#antonyms">2. Antonyms</a>
+      <a href="#one-word-subs">3. One-Word Subs</a>
+      <a href="#spelling-traps">4. Spelling Traps</a>
+      <a href="#idioms-phrases">5. Idioms & Phrases</a>
+    </div>
+    <div class="quick-search">
+      <input type="text" id="filterInput" placeholder="Quick filter words..." onkeyup="filterTables()">
+    </div>
   </div>
 
   <!-- SECTION 1: VOCABULARY & SYNONYMS -->
   <div class="section-card" id="vocab-synonyms">
     <div class="section-title">
       <span>1. Vocabulary & Synonyms</span>
-      <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-muted);">High-Frequency Starred Items Lead First</span>
+      <span style="font-size: 0.78rem; font-weight: normal; color: var(--text-muted);">High-Frequency Items Lead First</span>
     </div>
-    <div class="section-subtitle">Categorized with direct Question Number references, repeat occurrences across past papers, exact meanings, and primary synonyms.</div>
+    <div class="section-subtitle">Indexed against past paper occurrences, primary definitions, and direct test synonyms.</div>
     <table class="compendium-table">
       <thead>
         <tr>
-          <th style="width: 50px;">#</th>
-          <th style="width: 160px;">Word / Term</th>
-          <th style="width: 140px;">Ref No.</th>
-          <th style="width: 90px;">Repeat</th>
+          <th class="col-num">#</th>
+          <th class="col-term">Word / Term & Notes</th>
+          <th class="col-repeat">Repeat</th>
           <th>Meaning & Primary Synonyms</th>
         </tr>
       </thead>
       <tbody>
         <!-- STARRED ITEMS FIRST -->
         <tr class="star-row">
-          <td>1</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Intrepid</span></td>
-          <td><span class="ref-tag">Q53</span> <span class="ref-tag">Q140</span> <span class="ref-tag">[1035]</span> <span class="ref-tag">#55</span> <span class="ref-tag">#87</span> <span class="ref-tag">#906</span></td>
-          <td><span class="repeat-badge high">6x Repeat</span></td>
-          <td>Fearless, brave, bold, undaunted, dauntless[cite: 1, 2]. <em>Synonyms:</em> Dauntless, unafraid, undismayed, courageous, bold[cite: 1, 2].</td>
+          <td class="col-num">1</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Intrepid</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q53</span> <span class="ref-tag">Q140</span> <span class="ref-tag">[1035]</span> <span class="ref-tag">#55</span> <span class="ref-tag">#87</span> <span class="ref-tag">#906</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">6x Repeat</span></td>
+          <td>Fearless, brave, bold, undaunted, dauntless[cite: 1]. <em>Synonyms:</em> Dauntless, unafraid, undismayed, courageous, bold[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>2</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Persuade</span></td>
-          <td><span class="ref-tag">[1274]</span> <span class="ref-tag">#104</span> <span class="ref-tag">#121</span> <span class="ref-tag">#381</span> <span class="ref-tag">#683</span> <span class="ref-tag">#797</span></td>
-          <td><span class="repeat-badge high">6x Repeat</span></td>
-          <td>To induce someone to do something through reasoning, coaxing, or argument[cite: 1, 2]. <em>Synonyms:</em> Convince, coax, prevail on, induce, talk someone into[cite: 1, 2].</td>
+          <td class="col-num">2</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Persuade</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1274]</span> <span class="ref-tag">#104</span> <span class="ref-tag">#121</span> <span class="ref-tag">#381</span> <span class="ref-tag">#683</span> <span class="ref-tag">#797</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">6x Repeat</span></td>
+          <td>To induce someone to do something through reasoning, coaxing, or argument[cite: 1]. <em>Synonyms:</em> Convince, coax, prevail on, induce, talk someone into[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>3</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Amateur</span></td>
-          <td><span class="ref-tag">[1096]</span> <span class="ref-tag">[1416]</span> <span class="ref-tag">[1500]</span> <span class="ref-tag">[1633]</span> <span class="ref-tag">#4</span> <span class="ref-tag">#246</span></td>
-          <td><span class="repeat-badge high">6x Repeat</span></td>
-          <td>A person engaging in a pursuit or sport on an unpaid, non-professional basis[cite: 1, 2]. <em>Synonyms:</em> Novice, non-professional, beginner, layman, dilettante[cite: 1, 2].</td>
+          <td class="col-num">3</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Amateur</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1096]</span> <span class="ref-tag">[1416]</span> <span class="ref-tag">[1500]</span> <span class="ref-tag">[1633]</span> <span class="ref-tag">#4</span> <span class="ref-tag">#246</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">6x Repeat</span></td>
+          <td>A person engaging in a pursuit or sport on an unpaid, non-professional basis[cite: 1]. <em>Synonyms:</em> Novice, non-professional, beginner, layman, dilettante[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>4</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Alleviate / Assuage</span></td>
-          <td><span class="ref-tag">Q231</span> <span class="ref-tag">#139</span> <span class="ref-tag">#294</span> <span class="ref-tag">#510</span> <span class="ref-tag">#915</span> <span class="ref-tag">#947</span></td>
-          <td><span class="repeat-badge high">6x Repeat</span></td>
-          <td>To make suffering, pain, fear, or a problem less severe or intense[cite: 1, 2]. <em>Synonyms:</em> Relieve, ease, soothe, mitigate, allay, dampen, lessen[cite: 1, 2].</td>
+          <td class="col-num">4</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Alleviate / Assuage</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q231</span> <span class="ref-tag">#139</span> <span class="ref-tag">#294</span> <span class="ref-tag">#510</span> <span class="ref-tag">#915</span> <span class="ref-tag">#947</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">6x Repeat</span></td>
+          <td>To make suffering, pain, fear, or a problem less severe or intense[cite: 1]. <em>Synonyms:</em> Relieve, ease, soothe, mitigate, allay, dampen, lessen[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>5</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Ephemeral</span></td>
-          <td><span class="ref-tag">Q24</span> <span class="ref-tag">[1699]</span> <span class="ref-tag">#63</span> <span class="ref-tag">#82</span> <span class="ref-tag">#686</span></td>
-          <td><span class="repeat-badge high">5x Repeat</span></td>
-          <td>Lasting for a very short duration[cite: 1, 2]. <em>Synonyms:</em> Short-lived, transitory, transient, fleeting, passing[cite: 1, 2].</td>
+          <td class="col-num">5</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Ephemeral</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q24</span> <span class="ref-tag">[1699]</span> <span class="ref-tag">#63</span> <span class="ref-tag">#82</span> <span class="ref-tag">#686</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">5x Repeat</span></td>
+          <td>Lasting for a very short duration[cite: 1]. <em>Synonyms:</em> Short-lived, transitory, transient, fleeting, passing[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>6</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Garrulous / Garrulity</span></td>
-          <td><span class="ref-tag">#64</span> <span class="ref-tag">#91</span> <span class="ref-tag">#298</span> <span class="ref-tag">#815</span> <span class="ref-tag">#870</span></td>
-          <td><span class="repeat-badge high">5x Repeat</span></td>
-          <td>Excessively talkative, loquacious, especially about trivial matters[cite: 2]. <em>Synonyms:</em> Talkative, voluble, loquacious, verbose, chatty, long-winded[cite: 2].</td>
+          <td class="col-num">6</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Garrulous / Garrulity</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">#64</span> <span class="ref-tag">#91</span> <span class="ref-tag">#298</span> <span class="ref-tag">#815</span> <span class="ref-tag">#870</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">5x Repeat</span></td>
+          <td>Excessively talkative, loquacious, especially about trivial matters. <em>Synonyms:</em> Talkative, voluble, loquacious, verbose, chatty, long-winded.</td>
         </tr>
         <tr class="star-row">
-          <td>7</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Enervate</span></td>
-          <td><span class="ref-tag">#96</span> <span class="ref-tag">#329</span> <span class="ref-tag">#444</span> <span class="ref-tag">#718</span> <span class="ref-tag">#868</span></td>
-          <td><span class="repeat-badge high">5x Repeat</span></td>
-          <td>To cause someone to feel completely drained of energy or vitality[cite: 2]. <em>Synonyms:</em> Exhaust, tire, fatigue, weary, devitalize, debilitate, enfeeble[cite: 2].</td>
+          <td class="col-num">7</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Enervate</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">#96</span> <span class="ref-tag">#329</span> <span class="ref-tag">#444</span> <span class="ref-tag">#718</span> <span class="ref-tag">#868</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">5x Repeat</span></td>
+          <td>To cause someone to feel completely drained of energy or vitality. <em>Synonyms:</em> Exhaust, tire, fatigue, weary, devitalize, debilitate, enfeeble.</td>
         </tr>
         <tr class="star-row">
-          <td>8</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Dogmatic</span></td>
-          <td><span class="ref-tag">Q865</span> <span class="ref-tag">#34</span> <span class="ref-tag">#519</span> <span class="ref-tag">#576</span> <span class="ref-tag">#858</span></td>
-          <td><span class="repeat-badge high">5x Repeat</span></td>
-          <td>Inclined to lay down principles as incontrovertibly and rigidly true[cite: 1, 2]. <em>Synonyms:</em> Rigid, opinionated, peremptory, assertive, insistent[cite: 1, 2].</td>
+          <td class="col-num">8</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Dogmatic</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q865</span> <span class="ref-tag">#34</span> <span class="ref-tag">#519</span> <span class="ref-tag">#576</span> <span class="ref-tag">#858</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">5x Repeat</span></td>
+          <td>Inclined to lay down principles as incontrovertibly and rigidly true[cite: 1]. <em>Synonyms:</em> Rigid, opinionated, peremptory, assertive, insistent[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>9</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Deference</span></td>
-          <td><span class="ref-tag">Q159</span> <span class="ref-tag">Q213</span> <span class="ref-tag">Q645</span> <span class="ref-tag">Q969</span> <span class="ref-tag">[1223]</span></td>
-          <td><span class="repeat-badge high">5x Repeat</span></td>
+          <td class="col-num">9</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Deference</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q159</span> <span class="ref-tag">Q213</span> <span class="ref-tag">Q645</span> <span class="ref-tag">Q969</span> <span class="ref-tag">[1223]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">5x Repeat</span></td>
           <td>Polite and respectful submission or regard shown toward someone[cite: 1]. <em>Synonyms:</em> Respect, regard, courteous submission, obsequiousness[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>10</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Diaphanous</span></td>
-          <td><span class="ref-tag">Q1</span> <span class="ref-tag">Q3</span> <span class="ref-tag">Q23</span> <span class="ref-tag">#45</span></td>
-          <td><span class="repeat-badge medium">4x Repeat</span></td>
-          <td>Very light, fine, delicate, almost transparent fabric or structure[cite: 1, 2]. <em>Synonyms:</em> Delicate, sheer, translucent, thin, ultra-fine[cite: 1, 2].</td>
+          <td class="col-num">10</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Diaphanous</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q1</span> <span class="ref-tag">Q3</span> <span class="ref-tag">Q23</span> <span class="ref-tag">#45</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">4x Repeat</span></td>
+            <td>Very light, fine, delicate, almost transparent fabric or structure[cite: 1]. <em>Synonyms:</em> Delicate, sheer, translucent, thin, ultra-fine[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>11</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Vacillate</span></td>
-          <td><span class="ref-tag">#302</span> <span class="ref-tag">#463</span> <span class="ref-tag">#730</span> <span class="ref-tag">#861</span></td>
-          <td><span class="repeat-badge medium">4x Repeat</span></td>
-          <td>Wavering between different opinions or courses of action; indecisive[cite: 2]. <em>Synonyms:</em> Dither, teeter, oscillate, fluctuate, hesitate, temporize[cite: 2].</td>
+          <td class="col-num">11</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Vacillate</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">#302</span> <span class="ref-tag">#463</span> <span class="ref-tag">#730</span> <span class="ref-tag">#861</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">4x Repeat</span></td>
+          <td>Wavering between different opinions or courses of action; indecisive. <em>Synonyms:</em> Dither, teeter, oscillate, fluctuate, hesitate, temporize.</td>
         </tr>
         <tr class="star-row">
-          <td>12</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Bolster</span></td>
-          <td><span class="ref-tag">[1237]</span> <span class="ref-tag">#314</span> <span class="ref-tag">#561</span> <span class="ref-tag">#919</span></td>
-          <td><span class="repeat-badge medium">4x Repeat</span></td>
-          <td>To support, reinforce, or strengthen[cite: 1, 2]. <em>Synonyms:</em> Support, reinforce, prop, buttress, boost, sustain[cite: 2].</td>
+          <td class="col-num">12</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Bolster</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1237]</span> <span class="ref-tag">#314</span> <span class="ref-tag">#561</span> <span class="ref-tag">#919</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">4x Repeat</span></td>
+          <td>To support, reinforce, or strengthen[cite: 1]. <em>Synonyms:</em> Support, reinforce, prop, buttress, boost, sustain.</td>
         </tr>
         <tr class="star-row">
-          <td>13</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Eulogy / Eulogize</span></td>
-          <td><span class="ref-tag">#347</span> <span class="ref-tag">#804</span> <span class="ref-tag">#869</span> <span class="ref-tag">#982</span></td>
-          <td><span class="repeat-badge medium">4x Repeat</span></td>
-          <td>A speech or written piece praising someone highly, especially upon death[cite: 2]. <em>Synonyms:</em> Accolade, panegyric, paean, tribute, commendation, extol[cite: 2].</td>
+          <td class="col-num">13</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Eulogy / Eulogize</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">#347</span> <span class="ref-tag">#804</span> <span class="ref-tag">#869</span> <span class="ref-tag">#982</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">4x Repeat</span></td>
+          <td>A speech or written piece praising someone highly, especially upon death. <em>Synonyms:</em> Accolade, panegyric, paean, tribute, commendation, extol.</td>
         </tr>
         <tr class="star-row">
-          <td>14</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Gullible</span></td>
-          <td><span class="ref-tag">#226</span> <span class="ref-tag">#860</span> <span class="ref-tag">#924</span> <span class="ref-tag">#954</span></td>
-          <td><span class="repeat-badge medium">4x Repeat</span></td>
-          <td>Easily persuaded to believe something; credulous[cite: 2]. <em>Synonyms:</em> Credulous, naive, innocent, trusting, unwary, simple[cite: 2].</td>
+          <td class="col-num">14</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Gullible</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">#226</span> <span class="ref-tag">#860</span> <span class="ref-tag">#924</span> <span class="ref-tag">#954</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">4x Repeat</span></td>
+          <td>Easily persuaded to believe something; credulous. <em>Synonyms:</em> Credulous, naive, innocent, trusting, unwary, simple.</td>
         </tr>
         <tr class="star-row">
-          <td>15</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Blatant</span></td>
-          <td><span class="ref-tag">#169</span> <span class="ref-tag">#541</span> <span class="ref-tag">#596</span> <span class="ref-tag">#647</span></td>
-          <td><span class="repeat-badge medium">4x Repeat</span></td>
-          <td>Done openly, loudly, and unashamedly[cite: 2]. <em>Synonyms:</em> Flagrant, glaring, obvious, undisguised, overt, manifest[cite: 2].</td>
+          <td class="col-num">15</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Blatant</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">#169</span> <span class="ref-tag">#541</span> <span class="ref-tag">#596</span> <span class="ref-tag">#647</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">4x Repeat</span></td>
+          <td>Done openly, loudly, and unashamedly. <em>Synonyms:</em> Flagrant, glaring, obvious, undisguised, overt, manifest.</td>
         </tr>
         <tr class="star-row">
-          <td>16</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Exacerbate</span></td>
-          <td><span class="ref-tag">#548</span> <span class="ref-tag">#724</span> <span class="ref-tag">#936</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
-          <td>To make a problem, bad situation, or negative feeling worse[cite: 2]. <em>Synonyms:</em> Aggravate, inflame, worsen, compound[cite: 2].</td>
+          <td class="col-num">16</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Exacerbate</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">#548</span> <span class="ref-tag">#724</span> <span class="ref-tag">#936</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
+          <td>To make a problem, bad situation, or negative feeling worse. <em>Synonyms:</em> Aggravate, inflame, worsen, compound.</td>
         </tr>
         <tr class="star-row">
-          <td>17</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Cantankerous / Irascible</span></td>
-          <td><span class="ref-tag">Q1</span> <span class="ref-tag">Q46</span> <span class="ref-tag">#962</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
-          <td>Bad-tempered, irritable, and argumentative[cite: 1, 2]. <em>Synonyms:</em> Irascible, crotchety, testy, touchy, peevish[cite: 1, 2].</td>
+          <td class="col-num">17</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Cantankerous</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q1</span> <span class="ref-tag">Q46</span> <span class="ref-tag">#962</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
+          <td>Bad-tempered, irritable, and argumentative[cite: 1]. <em>Synonyms:</em> Irascible, crotchety, testy, touchy, peevish[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>18</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Burgeon</span></td>
-          <td><span class="ref-tag">[1231]</span> <span class="ref-tag">#16</span> <span class="ref-tag">#822</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
-          <td>To begin to grow, expand, or increase rapidly; to flourish[cite: 1, 2]. <em>Synonyms:</em> Multiply, flourish, expand rapidly, mushroom[cite: 1, 2].</td>
+          <td class="col-num">18</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Burgeon</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1231]</span> <span class="ref-tag">#16</span> <span class="ref-tag">#822</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
+          <td>To begin to grow, expand, or increase rapidly; to flourish[cite: 1]. <em>Synonyms:</em> Multiply, flourish, expand rapidly, mushroom[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>19</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Conundrum</span></td>
-          <td><span class="ref-tag">Q22</span> <span class="ref-tag">#25</span> <span class="ref-tag">#138</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
-          <td>A confusing and difficult problem, puzzle, or question[cite: 1, 2]. <em>Synonyms:</em> Riddle, puzzle, vexed question, enigma[cite: 1, 2].</td>
+          <td class="col-num">19</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Conundrum</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q22</span> <span class="ref-tag">#25</span> <span class="ref-tag">#138</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
+          <td>A confusing and difficult problem, puzzle, or question[cite: 1]. <em>Synonyms:</em> Riddle, puzzle, vexed question, enigma[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>20</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Dilatory</span></td>
-          <td><span class="ref-tag">#29</span> <span class="ref-tag">#222</span> <span class="ref-tag">#291</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
-          <td>Slow to act; delaying intentionally[cite: 2]. <em>Synonyms:</em> Tardy, unhurried, sluggish, lax, slack, unpunctual[cite: 2].</td>
+          <td class="col-num">20</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Dilatory</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">#29</span> <span class="ref-tag">#222</span> <span class="ref-tag">#291</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
+          <td>Slow to act; delaying intentionally. <em>Synonyms:</em> Tardy, unhurried, sluggish, lax, slack, unpunctual.</td>
         </tr>
         <tr class="star-row">
-          <td>21</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Assiduous</span></td>
-          <td><span class="ref-tag">#98</span> <span class="ref-tag">#208</span> <span class="ref-tag">#697</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
-          <td>Showing great care, diligence, and perseverance[cite: 2]. <em>Synonyms:</em> Meticulous, diligent, sedulous, thorough, attentive[cite: 2].</td>
+          <td class="col-num">21</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Assiduous</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">#98</span> <span class="ref-tag">#208</span> <span class="ref-tag">#697</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
+          <td>Showing great care, diligence, and perseverance. <em>Synonyms:</em> Meticulous, diligent, sedulous, thorough, attentive.</td>
         </tr>
         <tr class="star-row">
-          <td>22</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Delineate / Delineation</span></td>
-          <td><span class="ref-tag">#12</span> <span class="ref-tag">#165</span> <span class="ref-tag">#327</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
-          <td>To describe, outline, or portray precisely[cite: 2]. <em>Synonyms:</em> Depict, set forth, present, outline, portray[cite: 2].</td>
+          <td class="col-num">22</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Delineate / Delineation</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">#12</span> <span class="ref-tag">#165</span> <span class="ref-tag">#327</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
+          <td>To describe, outline, or portray precisely. <em>Synonyms:</em> Depict, set forth, present, outline, portray.</td>
         </tr>
 
         <!-- STANDARD OCCURRENCE VOCABULARY -->
         <tr>
-          <td>23</td>
-          <td><span class="term-primary">Ecumenical</span></td>
-          <td><span class="ref-tag">Q2</span> <span class="ref-tag">Q71</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">23</td>
+          <td class="col-term">
+            <span class="term-primary">Ecumenical</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q2</span> <span class="ref-tag">Q71</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>Universal; worldwide or promoting unity among all religious bodies[cite: 1]. <em>Synonyms:</em> Universal, worldwide, non-denominational[cite: 1].</td>
         </tr>
         <tr>
-          <td>24</td>
-          <td><span class="term-primary">Charade</span></td>
-          <td><span class="ref-tag">Q21</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">24</td>
+          <td class="col-term">
+            <span class="term-primary">Charade</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q21</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>An absurd pretence or deceptive act[cite: 1]. <em>Synonyms:</em> Farce, pretence, sham[cite: 1].</td>
         </tr>
         <tr>
-          <td>25</td>
-          <td><span class="term-primary">Consternation</span></td>
-          <td><span class="ref-tag">Q36</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">25</td>
+          <td class="col-term">
+            <span class="term-primary">Consternation</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q36</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A sudden shock, anxiety, or dismay[cite: 1]. <em>Synonyms:</em> Dismay, distress, bewilderment[cite: 1].</td>
         </tr>
         <tr>
-          <td>26</td>
-          <td><span class="term-primary">Disgorge</span></td>
-          <td><span class="ref-tag">Q37</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">26</td>
+          <td class="col-term">
+            <span class="term-primary">Disgorge</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q37</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To pour out, discharge, or eject forcefully[cite: 1]. <em>Synonyms:</em> Eject, emit, vomit, discharge[cite: 1].</td>
         </tr>
         <tr>
-          <td>27</td>
-          <td><span class="term-primary">Complacent</span></td>
-          <td><span class="ref-tag">Q72</span> <span class="ref-tag">#908</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td>Self-satisfied without awareness of actual danger or deficiencies[cite: 1, 2]. <em>Synonyms:</em> Smug, self-pleased[cite: 1, 2].</td>
+          <td class="col-num">27</td>
+          <td class="col-term">
+            <span class="term-primary">Complacent</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q72</span> <span class="ref-tag">#908</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td>Self-satisfied without awareness of actual danger or deficiencies[cite: 1]. <em>Synonyms:</em> Smug, self-pleased[cite: 1].</td>
         </tr>
         <tr>
-          <td>28</td>
-          <td><span class="term-primary">Exemplar</span></td>
-          <td><span class="ref-tag">Q108</span> <span class="ref-tag">#758</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td>An ideal model or shining example[cite: 1, 2]. <em>Synonyms:</em> Paragon, model, archetype, paradigm[cite: 1, 2].</td>
+          <td class="col-num">28</td>
+          <td class="col-term">
+            <span class="term-primary">Exemplar</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q108</span> <span class="ref-tag">#758</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td>An ideal model or shining example[cite: 1]. <em>Synonyms:</em> Paragon, model, archetype, paradigm[cite: 1].</td>
         </tr>
         <tr>
-          <td>29</td>
-          <td><span class="term-primary">Facetious</span></td>
-          <td><span class="ref-tag">Q114</span> <span class="ref-tag">#639</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td>Treating serious issues with inappropriate or flippant humour[cite: 1, 2]. <em>Synonyms:</em> Flippant, glib, jocular[cite: 1, 2].</td>
+          <td class="col-num">29</td>
+          <td class="col-term">
+            <span class="term-primary">Facetious</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q114</span> <span class="ref-tag">#639</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td>Treating serious issues with inappropriate or flippant humour[cite: 1]. <em>Synonyms:</em> Flippant, glib, jocular[cite: 1].</td>
         </tr>
         <tr>
-          <td>30</td>
-          <td><span class="term-primary">Jettison</span></td>
-          <td><span class="ref-tag">Q115</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">30</td>
+          <td class="col-term">
+            <span class="term-primary">Jettison</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q115</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To discard, dump, or abandon[cite: 1]. <em>Synonyms:</em> Dump, discard, throw away[cite: 1].</td>
         </tr>
         <tr>
-          <td>31</td>
-          <td><span class="term-primary">Adroit</span></td>
-          <td><span class="ref-tag">Q441</span> <span class="ref-tag">[1411]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">31</td>
+          <td class="col-term">
+            <span class="term-primary">Adroit</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q441</span> <span class="ref-tag">[1411]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>Skillful, dexterous, or clever in hands or mind[cite: 1]. <em>Synonyms:</em> Dexterous, masterful, nimble, skillful[cite: 1].</td>
         </tr>
         <tr>
-          <td>32</td>
-          <td><span class="term-primary">Besmirch / Defile</span></td>
-          <td><span class="ref-tag">Q442</span> <span class="ref-tag">[1734]</span> <span class="ref-tag">#407</span> <span class="ref-tag">#439</span></td>
-          <td><span class="repeat-badge medium">4x Repeat</span></td>
-          <td>To damage the reputation of someone; sully[cite: 1, 2]. <em>Synonyms:</em> Sully, tarnish, blacken, smear, defile[cite: 1, 2].</td>
+          <td class="col-num">32</td>
+          <td class="col-term">
+            <span class="term-primary">Besmirch / Defile</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q442</span> <span class="ref-tag">[1734]</span> <span class="ref-tag">#407</span> <span class="ref-tag">#439</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">4x Repeat</span></td>
+          <td>To damage the reputation of someone; sully[cite: 1]. <em>Synonyms:</em> Sully, tarnish, blacken, smear, defile[cite: 1].</td>
         </tr>
         <tr>
-          <td>33</td>
-          <td><span class="term-primary">Berate</span></td>
-          <td><span class="ref-tag">Q443</span> <span class="ref-tag">#702</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td>To scold harshly or angrily[cite: 1, 2]. <em>Synonyms:</em> Rebuke, reprimand, admonish, chide, upbraid[cite: 1, 2].</td>
+          <td class="col-num">33</td>
+          <td class="col-term">
+            <span class="term-primary">Berate</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q443</span> <span class="ref-tag">#702</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td>To scold harshly or angrily[cite: 1]. <em>Synonyms:</em> Rebuke, reprimand, admonish, chide, upbraid[cite: 1].</td>
         </tr>
         <tr>
-          <td>34</td>
-          <td><span class="term-primary">Brigand</span></td>
-          <td><span class="ref-tag">Q466</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">34</td>
+          <td class="col-term">
+            <span class="term-primary">Brigand</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q466</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A member of a gang of bandits operating in forests or mountains[cite: 1]. <em>Synonyms:</em> Bandit, robber, outlaw[cite: 1].</td>
         </tr>
         <tr>
-          <td>35</td>
-          <td><span class="term-primary">Acquiesce</span></td>
-          <td><span class="ref-tag">Q471</span> <span class="ref-tag">Q637</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">35</td>
+          <td class="col-term">
+            <span class="term-primary">Acquiesce</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q471</span> <span class="ref-tag">Q637</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>To accept or agree to something tacitly without protest[cite: 1]. <em>Synonyms:</em> Consent tacitly, accept, comply[cite: 1].</td>
         </tr>
         <tr>
-          <td>36</td>
-          <td><span class="term-primary">Collusion</span></td>
-          <td><span class="ref-tag">Q472</span> <span class="ref-tag">#738</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td>Secret or illegal cooperation or conspiracy[cite: 1, 2]. <em>Synonyms:</em> Conspiracy, connivance, complicity[cite: 1, 2].</td>
+          <td class="col-num">36</td>
+          <td class="col-term">
+            <span class="term-primary">Collusion</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q472</span> <span class="ref-tag">#738</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td>Secret or illegal cooperation or conspiracy[cite: 1]. <em>Synonyms:</em> Conspiracy, connivance, complicity[cite: 1].</td>
         </tr>
         <tr>
-          <td>37</td>
-          <td><span class="term-primary">Debauched</span></td>
-          <td><span class="ref-tag">Q498</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">37</td>
+          <td class="col-term">
+            <span class="term-primary">Debauched</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q498</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Indulging excessively in sensual pleasures; depraved[cite: 1]. <em>Synonyms:</em> Depraved, corrupt, profligate, licentious[cite: 1].</td>
         </tr>
         <tr>
-          <td>38</td>
-          <td><span class="term-primary">Impecunious</span></td>
-          <td><span class="ref-tag">Q588</span> <span class="ref-tag">[1097]</span> <span class="ref-tag">#295</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
-          <td>Having little or no money; destitute[cite: 1, 2]. <em>Synonyms:</em> Poor, penniless, destitute, impoverished[cite: 1, 2].</td>
+          <td class="col-num">38</td>
+          <td class="col-term">
+            <span class="term-primary">Impecunious</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q588</span> <span class="ref-tag">[1097]</span> <span class="ref-tag">#295</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
+          <td>Having little or no money; destitute[cite: 1]. <em>Synonyms:</em> Poor, penniless, destitute, impoverished[cite: 1].</td>
         </tr>
         <tr>
-          <td>39</td>
-          <td><span class="term-primary">Rostrum</span></td>
-          <td><span class="ref-tag">Q614</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">39</td>
+          <td class="col-term">
+            <span class="term-primary">Rostrum</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q614</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A raised platform on which a person stands to make a public address[cite: 1]. <em>Synonyms:</em> Dais, podium, stage[cite: 1].</td>
         </tr>
         <tr>
-          <td>40</td>
-          <td><span class="term-primary">Rescind</span></td>
-          <td><span class="ref-tag">Q615</span> <span class="ref-tag">#237</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td>To revoke, cancel, or repeal a law, decree, or order[cite: 1, 2]. <em>Synonyms:</em> Revoke, repeal, annul, void, overturn[cite: 1, 2].</td>
+          <td class="col-num">40</td>
+          <td class="col-term">
+            <span class="term-primary">Rescind</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q615</span> <span class="ref-tag">#237</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td>To revoke, cancel, or repeal a law, decree, or order[cite: 1]. <em>Synonyms:</em> Revoke, repeal, annul, void, overturn[cite: 1].</td>
         </tr>
         <tr>
-          <td>41</td>
-          <td><span class="term-primary">Otiose</span></td>
-          <td><span class="ref-tag">Q677</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">41</td>
+          <td class="col-term">
+            <span class="term-primary">Otiose</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q677</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Serving no practical purpose or result; completely idle or futile[cite: 1]. <em>Synonyms:</em> Futile, useless, pointless, unnecessary[cite: 1].</td>
         </tr>
         <tr>
-          <td>42</td>
-          <td><span class="term-primary">Adversity</span></td>
-          <td><span class="ref-tag">Q784</span> <span class="ref-tag">Q921</span> <span class="ref-tag">Q998</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
+          <td class="col-num">42</td>
+          <td class="col-term">
+            <span class="term-primary">Adversity</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q784</span> <span class="ref-tag">Q921</span> <span class="ref-tag">Q998</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
           <td>A state of serious or continued difficulty, hardship, or misfortune[cite: 1]. <em>Synonyms:</em> Misfortune, hardship, trouble, affliction[cite: 1].</td>
         </tr>
         <tr>
-          <td>43</td>
-          <td><span class="term-primary">Sanguine</span></td>
-          <td><span class="ref-tag">Q932</span> <span class="ref-tag">#140</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td>Optimistic or positive, especially in bad circumstances[cite: 1, 2]. <em>Synonyms:</em> Hopeful, optimistic, confident, buoyant[cite: 1, 2].</td>
+          <td class="col-num">43</td>
+          <td class="col-term">
+            <span class="term-primary">Sanguine</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q932</span> <span class="ref-tag">#140</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td>Optimistic or positive, especially in bad circumstances[cite: 1]. <em>Synonyms:</em> Hopeful, optimistic, confident, buoyant[cite: 1].</td>
         </tr>
         <tr>
-          <td>44</td>
-          <td><span class="term-primary">Vendetta</span></td>
-          <td><span class="ref-tag">Q936</span> <span class="ref-tag">#374</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td>A prolonged, bitter feud or quarrel[cite: 1, 2]. <em>Synonyms:</em> Feud, blood feud, quarrel, bitter enmity[cite: 1, 2].</td>
+          <td class="col-num">44</td>
+          <td class="col-term">
+            <span class="term-primary">Vendetta</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q936</span> <span class="ref-tag">#374</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td>A prolonged, bitter feud or quarrel[cite: 1]. <em>Synonyms:</em> Feud, blood feud, quarrel, bitter enmity[cite: 1].</td>
         </tr>
         <tr>
-          <td>45</td>
-          <td><span class="term-primary">Percolate</span></td>
-          <td><span class="ref-tag">[1033]</span> <span class="ref-tag">#598</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td>To filter gradually through a porous surface or seep slowly[cite: 1, 2]. <em>Synonyms:</em> Filter, seep, drain, ooze, drip[cite: 1, 2].</td>
+          <td class="col-num">45</td>
+          <td class="col-term">
+            <span class="term-primary">Percolate</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1033]</span> <span class="ref-tag">#598</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td>To filter gradually through a porous surface or seep slowly[cite: 1]. <em>Synonyms:</em> Filter, seep, drain, ooze, drip[cite: 1].</td>
         </tr>
         <tr>
-          <td>46</td>
-          <td><span class="term-primary">Truculent</span></td>
-          <td><span class="ref-tag">[1553]</span> <span class="ref-tag">#10</span> <span class="ref-tag">#120</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
-          <td>Eager or quick to argue or fight; aggressively defiant[cite: 1, 2]. <em>Synonyms:</em> Belligerent, pugnacious, aggressive, defiant, antagonistic[cite: 1, 2].</td>
+          <td class="col-num">46</td>
+          <td class="col-term">
+            <span class="term-primary">Truculent</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1553]</span> <span class="ref-tag">#10</span> <span class="ref-tag">#120</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
+          <td>Eager or quick to argue or fight; aggressively defiant[cite: 1]. <em>Synonyms:</em> Belligerent, pugnacious, aggressive, defiant, antagonistic[cite: 1].</td>
         </tr>
         <tr>
-          <td>47</td>
-          <td><span class="term-primary">Furtive</span></td>
-          <td><span class="ref-tag">[1496]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">47</td>
+          <td class="col-term">
+            <span class="term-primary">Furtive</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1496]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Attempting to avoid notice or attention; secretive[cite: 1]. <em>Synonyms:</em> Clandestine, secretive, surreptitious, sneaky[cite: 1].</td>
         </tr>
         <tr>
-          <td>48</td>
-          <td><span class="term-primary">Incontrovertible</span></td>
-          <td><span class="ref-tag">[1654]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">48</td>
+          <td class="col-term">
+            <span class="term-primary">Incontrovertible</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1654]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Indisputable; impossible to deny or refute[cite: 1]. <em>Synonyms:</em> Unquestionable, indisputable, irrefutable, undeniable[cite: 1].</td>
         </tr>
         <tr>
-          <td>49</td>
-          <td><span class="term-primary">Scathing</span></td>
-          <td><span class="ref-tag">[1649]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">49</td>
+          <td class="col-term">
+            <span class="term-primary">Scathing</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1649]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Fiercely critical, severe, or scornful[cite: 1]. <em>Synonyms:</em> Scornful, caustic, cutting, biting, mordant[cite: 1].</td>
         </tr>
         <tr>
-          <td>50</td>
-          <td><span class="term-primary">Fatuous</span></td>
-          <td><span class="ref-tag">[1697]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">50</td>
+          <td class="col-term">
+            <span class="term-primary">Fatuous</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1697]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Silly, pointless, or foolish[cite: 1]. <em>Synonyms:</em> Inane, stupid, foolish, senseless, vacuous[cite: 1].</td>
         </tr>
       </tbody>
@@ -575,446 +776,551 @@
   <div class="section-card" id="antonyms">
     <div class="section-title">
       <span>2. Tested Antonyms & Opposites</span>
-      <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-muted);">High-Frequency Questions & Exam Contrasts</span>
+      <span style="font-size: 0.78rem; font-weight: normal; color: var(--text-muted);">High-Frequency Exam Contrasts</span>
     </div>
-    <div class="section-subtitle">Exhaustive compilation of opposite pairs directly featured across PSSSB PYQ stages. Starred items highlight repeated and tricky antonyms.</div>
+    <div class="section-subtitle">Exhaustive opposite pairs directly tested across PSSSB PYQ sessions.</div>
     <table class="compendium-table">
       <thead>
         <tr>
-          <th style="width: 50px;">#</th>
-          <th style="width: 170px;">Target Word</th>
-          <th style="width: 140px;">Ref No.</th>
-          <th style="width: 90px;">Repeat</th>
-          <th style="width: 190px;">Tested Antonym</th>
+          <th class="col-num">#</th>
+          <th class="col-term">Target Word & Notes</th>
+          <th class="col-repeat">Repeat</th>
+          <th class="col-antonym">Tested Antonym</th>
           <th>Semantic Context & Word Meaning</th>
         </tr>
       </thead>
       <tbody>
         <!-- STARRED ITEMS FIRST -->
         <tr class="star-row">
-          <td>1</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Fortuitous</span></td>
-          <td><span class="ref-tag">Q47</span> <span class="ref-tag">Q235</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="ant-list">Predictable / Planned</span></td>
+          <td class="col-num">1</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Fortuitous</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q47</span> <span class="ref-tag">Q235</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Predictable / Planned</span></td>
           <td>Happening by chance or accident rather than design[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>2</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Gratuitous</span></td>
-          <td><span class="ref-tag">Q236</span> <span class="ref-tag">Q246</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="ant-list">Justifiable / Necessary</span></td>
+          <td class="col-num">2</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Gratuitous</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q236</span> <span class="ref-tag">Q246</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Justifiable / Necessary</span></td>
           <td>Uncalled for, unwarranted, or lacking valid cause[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>3</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Jejune</span></td>
-          <td><span class="ref-tag">Q13</span> <span class="ref-tag">Q258</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="ant-list">Sophisticated / Fascinating</span></td>
+          <td class="col-num">3</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Jejune</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q13</span> <span class="ref-tag">Q258</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Sophisticated / Fascinating</span></td>
           <td>Simplistic, naive, dull, or immature[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>4</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Salubrious</span></td>
-          <td><span class="ref-tag">Q266</span> <span class="ref-tag">Q450</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="ant-list">Unhealthy</span></td>
+          <td class="col-num">4</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Salubrious</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q266</span> <span class="ref-tag">Q450</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Unhealthy</span></td>
           <td>Health-giving, pleasant, and wholesome[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>5</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Fecund</span></td>
-          <td><span class="ref-tag">Q225</span> <span class="ref-tag">Q476</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="ant-list">Barren</span></td>
+          <td class="col-num">5</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Fecund</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q225</span> <span class="ref-tag">Q476</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Barren</span></td>
           <td>Highly fertile and capable of producing abundance[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>6</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Emollient</span></td>
-          <td><span class="ref-tag">Q224</span> <span class="ref-tag">Q562</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="ant-list">Irritating</span></td>
+          <td class="col-num">6</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Emollient</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q224</span> <span class="ref-tag">Q562</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Irritating</span></td>
           <td>Soothing, softening, or calming to skin or temper[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>7</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Implicate</span></td>
-          <td><span class="ref-tag">Q161</span> <span class="ref-tag">Q446</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="ant-list">Absolve</span></td>
+          <td class="col-num">7</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Implicate</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q161</span> <span class="ref-tag">Q446</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Absolve</span></td>
           <td>To show someone to be involved in a crime or wrongdoing[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>8</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Tacit</span></td>
-          <td><span class="ref-tag">Q160</span> <span class="ref-tag">[1130]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="ant-list">Vocal / Explicit</span></td>
+          <td class="col-num">8</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Tacit</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q160</span> <span class="ref-tag">[1130]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Vocal / Explicit</span></td>
           <td>Understood or implied without being openly stated[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>9</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Ascetic</span></td>
-          <td><span class="ref-tag">Q9</span> <span class="ref-tag">Q24</span> <span class="ref-tag">#13</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
-          <td><span class="ant-list">Hedonistic / Sybaritic</span></td>
-          <td>Characterized by severe self-discipline and austerity[cite: 1, 2].</td>
+          <td class="col-num">9</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Ascetic</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q9</span> <span class="ref-tag">Q24</span> <span class="ref-tag">#13</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Hedonistic / Sybaritic</span></td>
+          <td>Characterized by severe self-discipline and austerity[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>10</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Pontifical</span></td>
-          <td><span class="ref-tag">Q99</span> <span class="ref-tag">Q273</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="ant-list">Humble</span></td>
+          <td class="col-num">10</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Pontifical</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q99</span> <span class="ref-tag">Q273</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Humble</span></td>
           <td>Expressing personal opinions with dogmatic arrogance[cite: 1].</td>
         </tr>
 
         <!-- STANDARD TESTED ANTONYMS -->
         <tr>
-          <td>11</td>
-          <td><span class="term-primary">Droopy / Flaccid</span></td>
-          <td><span class="ref-tag">Q7</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Upright / Straight</span></td>
+          <td class="col-num">11</td>
+          <td class="col-term">
+            <span class="term-primary">Droopy / Flaccid</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q7</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Upright / Straight</span></td>
           <td>Hanging down limply; lacking firmness[cite: 1].</td>
         </tr>
         <tr>
-          <td>12</td>
-          <td><span class="term-primary">Frowsy</span></td>
-          <td><span class="ref-tag">Q8</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Tidy / Neat</span></td>
+          <td class="col-num">12</td>
+          <td class="col-term">
+            <span class="term-primary">Frowsy</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q8</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Tidy / Neat</span></td>
           <td>Scruffy, dingy, untidy, or uncared for[cite: 1].</td>
         </tr>
         <tr>
-          <td>13</td>
-          <td><span class="term-primary">Inure</span></td>
-          <td><span class="ref-tag">Q10</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Sensitize</span></td>
+          <td class="col-num">13</td>
+          <td class="col-term">
+            <span class="term-primary">Inure</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q10</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Sensitize</span></td>
           <td>To become accustomed or hardened to something unpleasant[cite: 1].</td>
         </tr>
         <tr>
-          <td>14</td>
-          <td><span class="term-primary">Adventitious</span></td>
-          <td><span class="ref-tag">Q11</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Planned</span></td>
+          <td class="col-num">14</td>
+          <td class="col-term">
+            <span class="term-primary">Adventitious</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q11</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Planned</span></td>
           <td>Happening spontaneously or unexpectedly by chance[cite: 1].</td>
         </tr>
         <tr>
-          <td>15</td>
-          <td><span class="term-primary">Benumbed</span></td>
-          <td><span class="ref-tag">Q12</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Perceptive</span></td>
+          <td class="col-num">15</td>
+          <td class="col-term">
+            <span class="term-primary">Benumbed</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q12</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Perceptive</span></td>
           <td>Deprived of physical feeling or mental alertness[cite: 1].</td>
         </tr>
         <tr>
-          <td>16</td>
-          <td><span class="term-primary">Trenchant</span></td>
-          <td><span class="ref-tag">Q14</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Vague</span></td>
+          <td class="col-num">16</td>
+          <td class="col-term">
+            <span class="term-primary">Trenchant</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q14</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Vague</span></td>
           <td>Vigorously sharp, clear, and incisive[cite: 1].</td>
         </tr>
         <tr>
-          <td>17</td>
-          <td><span class="term-primary">Frumpy</span></td>
-          <td><span class="ref-tag">Q25</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Fashionable</span></td>
+          <td class="col-num">17</td>
+          <td class="col-term">
+            <span class="term-primary">Frumpy</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q25</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Fashionable</span></td>
           <td>Old-fashioned, dull, or dowdy in appearance[cite: 1].</td>
         </tr>
         <tr>
-          <td>18</td>
-          <td><span class="term-primary">Incendiary</span></td>
-          <td><span class="ref-tag">Q26</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Conciliatory</span></td>
+          <td class="col-num">18</td>
+          <td class="col-term">
+            <span class="term-primary">Incendiary</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q26</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Conciliatory</span></td>
           <td>Tending to inflame passions, conflict, or violence[cite: 1].</td>
         </tr>
         <tr>
-          <td>19</td>
-          <td><span class="term-primary">Decamp</span></td>
-          <td><span class="ref-tag">Q39</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Return</span></td>
+          <td class="col-num">19</td>
+          <td class="col-term">
+            <span class="term-primary">Decamp</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q39</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Return</span></td>
           <td>To depart secretly or suddenly[cite: 1].</td>
         </tr>
         <tr>
-          <td>20</td>
-          <td><span class="term-primary">Insolence</span></td>
-          <td><span class="ref-tag">Q40</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Politeness</span></td>
+          <td class="col-num">20</td>
+          <td class="col-term">
+            <span class="term-primary">Insolence</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q40</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Politeness</span></td>
           <td>Rude and disrespectful behavior[cite: 1].</td>
         </tr>
         <tr>
-          <td>21</td>
-          <td><span class="term-primary">Exhortation</span></td>
-          <td><span class="ref-tag">Q48</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Discouragement</span></td>
+          <td class="col-num">21</td>
+          <td class="col-term">
+            <span class="term-primary">Exhortation</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q48</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Discouragement</span></td>
           <td>Urgent address or emphatic appeal urging action[cite: 1].</td>
         </tr>
         <tr>
-          <td>22</td>
-          <td><span class="term-primary">Seedy</span></td>
-          <td><span class="ref-tag">Q94</span> <span class="ref-tag">Q97</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="ant-list">Classy</span></td>
+          <td class="col-num">22</td>
+          <td class="col-term">
+            <span class="term-primary">Seedy</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q94</span> <span class="ref-tag">Q97</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Classy</span></td>
           <td>Sordid, run-down, and disreputable[cite: 1].</td>
         </tr>
         <tr>
-          <td>23</td>
-          <td><span class="term-primary">Protract</span></td>
-          <td><span class="ref-tag">Q96</span> <span class="ref-tag">[1194]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="ant-list">Shorten / Truncate</span></td>
+          <td class="col-num">23</td>
+          <td class="col-term">
+            <span class="term-primary">Protract</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q96</span> <span class="ref-tag">[1194]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Shorten / Truncate</span></td>
           <td>To prolong or extend duration[cite: 1].</td>
         </tr>
         <tr>
-          <td>24</td>
-          <td><span class="term-primary">Perspicuous</span></td>
-          <td><span class="ref-tag">Q98</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Unclear</span></td>
+          <td class="col-num">24</td>
+          <td class="col-term">
+            <span class="term-primary">Perspicuous</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q98</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Unclear</span></td>
           <td>Clearly expressed and effortlessly understood[cite: 1].</td>
         </tr>
         <tr>
-          <td>25</td>
-          <td><span class="term-primary">Consecrate</span></td>
-          <td><span class="ref-tag">Q103</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Profane</span></td>
+          <td class="col-num">25</td>
+          <td class="col-term">
+            <span class="term-primary">Consecrate</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q103</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Profane</span></td>
           <td>To dedicate solemnly to a divine or holy purpose[cite: 1].</td>
         </tr>
         <tr>
-          <td>26</td>
-          <td><span class="term-primary">Adulatory</span></td>
-          <td><span class="ref-tag">Q105</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Disparaging</span></td>
+          <td class="col-num">26</td>
+          <td class="col-term">
+            <span class="term-primary">Adulatory</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q105</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Disparaging</span></td>
           <td>Excessively praising or flattering[cite: 1].</td>
         </tr>
         <tr>
-          <td>27</td>
-          <td><span class="term-primary">Discrete</span></td>
-          <td><span class="ref-tag">Q106</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Connected</span></td>
+          <td class="col-num">27</td>
+          <td class="col-term">
+            <span class="term-primary">Discrete</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q106</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Connected</span></td>
           <td>Individually separate and distinct[cite: 1].</td>
         </tr>
         <tr>
-          <td>28</td>
-          <td><span class="term-primary">Licit</span></td>
-          <td><span class="ref-tag">Q116</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Forbidden</span></td>
+          <td class="col-num">28</td>
+          <td class="col-term">
+            <span class="term-primary">Licit</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q116</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Forbidden</span></td>
           <td>Not forbidden; lawful and permitted[cite: 1].</td>
         </tr>
         <tr>
-          <td>29</td>
-          <td><span class="term-primary">Lugubrious</span></td>
-          <td><span class="ref-tag">Q117</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Cheerful</span></td>
+          <td class="col-num">29</td>
+          <td class="col-term">
+            <span class="term-primary">Lugubrious</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q117</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Cheerful</span></td>
           <td>Looking or sounding exaggeratedly sad or mournful[cite: 1].</td>
         </tr>
         <tr>
-          <td>30</td>
-          <td><span class="term-primary">Peevish</span></td>
-          <td><span class="ref-tag">Q142</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Affable</span></td>
+          <td class="col-num">30</td>
+          <td class="col-term">
+            <span class="term-primary">Peevish</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q142</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Affable</span></td>
           <td>Easily irritated or bad-tempered[cite: 1].</td>
         </tr>
         <tr>
-          <td>31</td>
-          <td><span class="term-primary">Remiss</span></td>
-          <td><span class="ref-tag">Q144</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Careful</span></td>
+          <td class="col-num">31</td>
+          <td class="col-term">
+            <span class="term-primary">Remiss</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q144</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Careful</span></td>
           <td>Lacking care or attention to duty; negligent[cite: 1].</td>
         </tr>
         <tr>
-          <td>32</td>
-          <td><span class="term-primary">Impetuous</span></td>
-          <td><span class="ref-tag">Q162</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Sluggish</span></td>
+          <td class="col-num">32</td>
+          <td class="col-term">
+            <span class="term-primary">Impetuous</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q162</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Sluggish</span></td>
           <td>Acting or done quickly and rashly without thought[cite: 1].</td>
         </tr>
         <tr>
-          <td>33</td>
-          <td><span class="term-primary">Doctrinaire</span></td>
-          <td><span class="ref-tag">Q244</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Liberal</span></td>
+          <td class="col-num">33</td>
+          <td class="col-term">
+            <span class="term-primary">Doctrinaire</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q244</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Liberal</span></td>
           <td>Applying rigid dogma without regard to practicality[cite: 1].</td>
         </tr>
         <tr>
-          <td>34</td>
-          <td><span class="term-primary">Ethereal</span></td>
-          <td><span class="ref-tag">Q245</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Tangible</span></td>
+          <td class="col-num">34</td>
+          <td class="col-term">
+            <span class="term-primary">Ethereal</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q245</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Tangible</span></td>
           <td>Extremely delicate, heavenly, and insubstantial[cite: 1].</td>
         </tr>
         <tr>
-          <td>35</td>
-          <td><span class="term-primary">Perdurable</span></td>
-          <td><span class="ref-tag">Q315</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Fragile</span></td>
+          <td class="col-num">35</td>
+          <td class="col-term">
+            <span class="term-primary">Perdurable</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q315</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Fragile</span></td>
           <td>Enduring indefinitely; permanent and robust[cite: 1].</td>
         </tr>
         <tr>
-          <td>36</td>
-          <td><span class="term-primary">Chivalrous</span></td>
-          <td><span class="ref-tag">Q464</span> <span class="ref-tag">[1131]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="ant-list">Rude / Dastardly</span></td>
+          <td class="col-num">36</td>
+          <td class="col-term">
+            <span class="term-primary">Chivalrous</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q464</span> <span class="ref-tag">[1131]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="ant-list">Rude / Dastardly</span></td>
           <td>Gallant, polite, and honorable toward others[cite: 1].</td>
         </tr>
         <tr>
-          <td>37</td>
-          <td><span class="term-primary">Sapid</span></td>
-          <td><span class="ref-tag">Q465</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Vapid</span></td>
+          <td class="col-num">37</td>
+          <td class="col-term">
+            <span class="term-primary">Sapid</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q465</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Vapid</span></td>
           <td>Having a strong, pleasant, or savory taste[cite: 1].</td>
         </tr>
         <tr>
-          <td>38</td>
-          <td><span class="term-primary">Taciturn</span></td>
-          <td><span class="ref-tag">Q559</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Talkative</span></td>
+          <td class="col-num">38</td>
+          <td class="col-term">
+            <span class="term-primary">Taciturn</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q559</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Talkative</span></td>
           <td>Habitually quiet and uncommunicative in speech[cite: 1].</td>
         </tr>
         <tr>
-          <td>39</td>
-          <td><span class="term-primary">Chary</span></td>
-          <td><span class="ref-tag">Q560</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Heedless</span></td>
+          <td class="col-num">39</td>
+          <td class="col-term">
+            <span class="term-primary">Chary</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q560</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Heedless</span></td>
           <td>Cautiously reluctant to do something; watchful[cite: 1].</td>
         </tr>
         <tr>
-          <td>40</td>
-          <td><span class="term-primary">Continual</span></td>
-          <td><span class="ref-tag">Q561</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Sporadic</span></td>
+          <td class="col-num">40</td>
+          <td class="col-term">
+            <span class="term-primary">Continual</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q561</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Sporadic</span></td>
           <td>Frequently recurring at regular intervals[cite: 1].</td>
         </tr>
         <tr>
-          <td>41</td>
-          <td><span class="term-primary">Execrable</span></td>
-          <td><span class="ref-tag">Q570</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Admirable</span></td>
+          <td class="col-num">41</td>
+          <td class="col-term">
+            <span class="term-primary">Execrable</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q570</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Admirable</span></td>
           <td>Extremely bad, appalling, or detestable[cite: 1].</td>
         </tr>
         <tr>
-          <td>42</td>
-          <td><span class="term-primary">Greenhorn</span></td>
-          <td><span class="ref-tag">Q571</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Veteran</span></td>
+          <td class="col-num">42</td>
+          <td class="col-term">
+            <span class="term-primary">Greenhorn</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q571</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Veteran</span></td>
           <td>An inexperienced person or novice[cite: 1].</td>
         </tr>
         <tr>
-          <td>43</td>
-          <td><span class="term-primary">Narcissism</span></td>
-          <td><span class="ref-tag">Q572</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Modesty</span></td>
+          <td class="col-num">43</td>
+          <td class="col-term">
+            <span class="term-primary">Narcissism</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q572</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Modesty</span></td>
           <td>Excessive interest in or admiration of oneself[cite: 1].</td>
         </tr>
         <tr>
-          <td>44</td>
-          <td><span class="term-primary">Opaque</span></td>
-          <td><span class="ref-tag">Q786</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Transparent</span></td>
+          <td class="col-num">44</td>
+          <td class="col-term">
+            <span class="term-primary">Opaque</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q786</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Transparent</span></td>
           <td>Not able to be seen through; obscure[cite: 1].</td>
         </tr>
         <tr>
-          <td>45</td>
-          <td><span class="term-primary">Lissome</span></td>
-          <td><span class="ref-tag">Q815</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Stiff</span></td>
+          <td class="col-num">45</td>
+          <td class="col-term">
+            <span class="term-primary">Lissome</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q815</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Stiff</span></td>
           <td>Thin, supple, and graceful[cite: 1].</td>
         </tr>
         <tr>
-          <td>46</td>
-          <td><span class="term-primary">Onerous</span></td>
-          <td><span class="ref-tag">Q813</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Easy</span></td>
+          <td class="col-num">46</td>
+          <td class="col-term">
+            <span class="term-primary">Onerous</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q813</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Easy</span></td>
           <td>Involving a heavy burden or arduous effort[cite: 1].</td>
         </tr>
         <tr>
-          <td>47</td>
-          <td><span class="term-primary">Infallible</span></td>
-          <td><span class="ref-tag">Q994</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Erring</span></td>
+          <td class="col-num">47</td>
+          <td class="col-term">
+            <span class="term-primary">Infallible</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q994</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Erring</span></td>
           <td>Incapable of making mistakes or being wrong[cite: 1].</td>
         </tr>
         <tr>
-          <td>48</td>
-          <td><span class="term-primary">Deprecate</span></td>
-          <td><span class="ref-tag">Q995</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Approve</span></td>
+          <td class="col-num">48</td>
+          <td class="col-term">
+            <span class="term-primary">Deprecate</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q995</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Approve</span></td>
           <td>To express strong disapproval of[cite: 1].</td>
         </tr>
         <tr>
-          <td>49</td>
-          <td><span class="term-primary">Maverick</span></td>
-          <td><span class="ref-tag">[1008]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Conformist</span></td>
+          <td class="col-num">49</td>
+          <td class="col-term">
+            <span class="term-primary">Maverick</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1008]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Conformist</span></td>
           <td>An unorthodox or independent-minded individual[cite: 1].</td>
         </tr>
         <tr>
-          <td>50</td>
-          <td><span class="term-primary">Repellent</span></td>
-          <td><span class="ref-tag">[1009]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Inviting</span></td>
+          <td class="col-num">50</td>
+          <td class="col-term">
+            <span class="term-primary">Repellent</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1009]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Inviting</span></td>
           <td>Causing intense disgust or aversion[cite: 1].</td>
         </tr>
         <tr>
-          <td>51</td>
-          <td><span class="term-primary">Inchoate</span></td>
-          <td><span class="ref-tag">[1218]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Ripened</span></td>
+          <td class="col-num">51</td>
+          <td class="col-term">
+            <span class="term-primary">Inchoate</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1218]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Ripened</span></td>
           <td>Just begun and so not fully formed or developed[cite: 1].</td>
         </tr>
         <tr>
-          <td>52</td>
-          <td><span class="term-primary">Amnesiac</span></td>
-          <td><span class="ref-tag">[1377]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Retentive</span></td>
+          <td class="col-num">52</td>
+          <td class="col-term">
+            <span class="term-primary">Amnesiac</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1377]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Retentive</span></td>
           <td>Suffering from severe memory loss[cite: 1].</td>
         </tr>
         <tr>
-          <td>53</td>
-          <td><span class="term-primary">Exemplary</span></td>
-          <td><span class="ref-tag">[1552]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="ant-list">Deplorable</span></td>
+          <td class="col-num">53</td>
+          <td class="col-term">
+            <span class="term-primary">Exemplary</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1552]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="ant-list">Deplorable</span></td>
           <td>Serving as a desirable model; admirable[cite: 1].</td>
         </tr>
       </tbody>
@@ -1025,266 +1331,335 @@
   <div class="section-card" id="one-word-subs">
     <div class="section-title">
       <span>3. One-Word Substitutions (OWS)</span>
-      <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-muted);">High-Frequency Concepts Lead First</span>
+      <span style="font-size: 0.78rem; font-weight: normal; color: var(--text-muted);">High-Frequency Concepts Lead First</span>
     </div>
-    <div class="section-subtitle">Core single-word definitions tested repeatedly in exams across personages, governmental systems, sciences, and linguistic forms.</div>
+    <div class="section-subtitle">Core single-word definitions across professions, governance, and characteristics.</div>
     <table class="compendium-table">
       <thead>
         <tr>
-          <th style="width: 50px;">#</th>
-          <th style="width: 170px;">One-Word Term</th>
-          <th style="width: 140px;">Ref No.</th>
-          <th style="width: 90px;">Repeat</th>
+          <th class="col-num">#</th>
+          <th class="col-term">One-Word Term & Notes</th>
+          <th class="col-repeat">Repeat</th>
           <th>Official Definition / Meaning</th>
         </tr>
       </thead>
       <tbody>
         <!-- STARRED ITEMS FIRST -->
         <tr class="star-row">
-          <td>1</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Martinet</span></td>
-          <td><span class="ref-tag">Q25</span> <span class="ref-tag">Q141</span> <span class="ref-tag">Q425</span> <span class="ref-tag">[1518]</span> <span class="ref-tag">#223</span></td>
-          <td><span class="repeat-badge high">5x Repeat</span></td>
-          <td>A very strict disciplinarian; stickler for regulations and complete obedience[cite: 1, 2].</td>
+          <td class="col-num">1</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Martinet</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q25</span> <span class="ref-tag">Q141</span> <span class="ref-tag">Q425</span> <span class="ref-tag">[1518]</span> <span class="ref-tag">#223</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">5x Repeat</span></td>
+          <td>A very strict disciplinarian; stickler for regulations and complete obedience[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>2</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Bureaucracy / Red-tapism</span></td>
-          <td><span class="ref-tag">[1119]</span> <span class="ref-tag">[1295]</span> <span class="ref-tag">[1432]</span> <span class="ref-tag">#107</span></td>
-          <td><span class="repeat-badge medium">4x Repeat</span></td>
-          <td>Government administration characterized by excessive official formalities, rigid procedures, and non-elected state officials[cite: 1, 2].</td>
+          <td class="col-num">2</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Bureaucracy</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1119]</span> <span class="ref-tag">[1295]</span> <span class="ref-tag">[1432]</span> <span class="ref-tag">#107</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">4x Repeat</span></td>
+          <td>Government administration characterized by excessive official formalities, rigid procedures, and non-elected state officials (often paired with red-tapism)[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>3</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Fastidious</span></td>
-          <td><span class="ref-tag">Q424</span> <span class="ref-tag">Q475</span> <span class="ref-tag">[1427]</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
+          <td class="col-num">3</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Fastidious</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q424</span> <span class="ref-tag">Q475</span> <span class="ref-tag">[1427]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
           <td>A person who is excessively attentive to accuracy and detail, very particular, and difficult to please[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>4</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Theist vs. Atheist</span></td>
-          <td><span class="ref-tag">Q422</span> <span class="ref-tag">Q949</span> <span class="ref-tag">[1402]</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
+          <td class="col-num">4</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Theist vs Atheist</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q422</span> <span class="ref-tag">Q949</span> <span class="ref-tag">[1402]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
           <td>A believer in the existence of a deity (Theist) vs. one who denies or disbelieves in God (Atheist)[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>5</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Epicure / Epicurean</span></td>
-          <td><span class="ref-tag">Q24</span> <span class="ref-tag">Q951</span> <span class="ref-tag">#756</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
-          <td>A person devoted to sensual pleasure, luxury, and the appreciation of fine food and drink[cite: 1, 2].</td>
+          <td class="col-num">5</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Epicure / Epicurean</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q24</span> <span class="ref-tag">Q951</span> <span class="ref-tag">#756</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
+          <td>A person devoted to sensual pleasure, luxury, and the appreciation of fine food and drink[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>6</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Legacy vs. Patrimony vs. Alimony</span></td>
-          <td><span class="ref-tag">Q726</span> <span class="ref-tag">[1001]</span> <span class="ref-tag">[1590]</span></td>
-          <td><span class="repeat-badge medium">3x Repeat</span></td>
+          <td class="col-num">6</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Legacy / Patrimony / Alimony</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q726</span> <span class="ref-tag">[1001]</span> <span class="ref-tag">[1590]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge medium">3x Repeat</span></td>
           <td>Property bequeathed in a will (Legacy); property inherited from father (Patrimony); financial support paid to a separated spouse (Alimony)[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>7</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Panacea</span></td>
-          <td><span class="ref-tag">[1283]</span> <span class="ref-tag">#369</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td>A universal remedy or cure-all for all diseases, difficulties, or problems[cite: 1, 2].</td>
+          <td class="col-num">7</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Panacea</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1283]</span> <span class="ref-tag">#369</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td>A universal remedy or cure-all for all diseases, difficulties, or problems[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>8</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Bigot</span></td>
-          <td><span class="ref-tag">Q399</span> <span class="ref-tag">[1567]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">8</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Bigot</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q399</span> <span class="ref-tag">[1567]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>A person who is obstinately or intolerantly devoted to their own opinions and prejudices[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>9</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Connoisseur</span></td>
-          <td><span class="ref-tag">Q807</span> <span class="ref-tag">[1517]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">9</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Connoisseur</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q807</span> <span class="ref-tag">[1517]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>An expert judge in matters of fine art, taste, or culinary craft[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>10</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Hypochondriac</span></td>
-          <td><span class="ref-tag">[1106]</span> <span class="ref-tag">[1716]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">10</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Hypochondriac</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1106]</span> <span class="ref-tag">[1716]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>A person who suffers from abnormal, unfounded anxiety regarding their personal health[cite: 1].</td>
         </tr>
 
         <!-- STANDARD ONE-WORD ENTRIES -->
         <tr>
-          <td>11</td>
-          <td><span class="term-primary">Raconteur</span></td>
-          <td><span class="ref-tag">Q261</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">11</td>
+          <td class="col-term">
+            <span class="term-primary">Raconteur</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q261</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A person who tells anecdotes and stories with skill and wit[cite: 1].</td>
         </tr>
         <tr>
-          <td>12</td>
-          <td><span class="term-primary">Omnivorous</span></td>
-          <td><span class="ref-tag">Q403</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">12</td>
+          <td class="col-term">
+            <span class="term-primary">Omnivorous</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q403</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>An animal or person that eats both plant and animal matter[cite: 1].</td>
         </tr>
         <tr>
-          <td>13</td>
-          <td><span class="term-primary">Autobiography vs. Biography</span></td>
-          <td><span class="ref-tag">Q416</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">13</td>
+          <td class="col-term">
+            <span class="term-primary">Autobiography vs Biography</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q416</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Life history written by oneself (Autobiography) vs. life history recorded by another author (Biography)[cite: 1].</td>
         </tr>
         <tr>
-          <td>14</td>
-          <td><span class="term-primary">Periphrasis</span></td>
-          <td><span class="ref-tag">Q461</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">14</td>
+          <td class="col-term">
+            <span class="term-primary">Periphrasis</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q461</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Circumlocution; the use of indirect and unnecessary long words to express an idea[cite: 1].</td>
         </tr>
         <tr>
-          <td>15</td>
-          <td><span class="term-primary">Palindrome</span></td>
-          <td><span class="ref-tag">Q462</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">15</td>
+          <td class="col-term">
+            <span class="term-primary">Palindrome</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q462</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A word, line, or verse that reads the exact same backwards as forward (e.g., madam)[cite: 1].</td>
         </tr>
         <tr>
-          <td>16</td>
-          <td><span class="term-primary">Quintessence</span></td>
-          <td><span class="ref-tag">Q462</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">16</td>
+          <td class="col-term">
+            <span class="term-primary">Quintessence</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q462</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>The most perfect or typical example of a particular quality or class[cite: 1].</td>
         </tr>
         <tr>
-          <td>17</td>
-          <td><span class="term-primary">Interment</span></td>
-          <td><span class="ref-tag">Q524</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">17</td>
+          <td class="col-term">
+            <span class="term-primary">Interment</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q524</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>The ritual placement of a dead body into a grave or tomb; burial[cite: 1].</td>
         </tr>
         <tr>
-          <td>18</td>
-          <td><span class="term-primary">Sinecure</span></td>
-          <td><span class="ref-tag">Q723</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">18</td>
+          <td class="col-term">
+            <span class="term-primary">Sinecure</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q723</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A paid office or position that requires little or no active work[cite: 1].</td>
         </tr>
         <tr>
-          <td>19</td>
-          <td><span class="term-primary">Honorary</span></td>
-          <td><span class="ref-tag">Q725</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">19</td>
+          <td class="col-term">
+            <span class="term-primary">Honorary</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q725</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A position conferred as an honour without any salary or regular remuneration[cite: 1].</td>
         </tr>
         <tr>
-          <td>20</td>
-          <td><span class="term-primary">Plaintiff vs. Defendant</span></td>
-          <td><span class="ref-tag">Q727</span> <span class="ref-tag">#395</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td>A person bringing a legal suit in court (Plaintiff) vs. an entity against whom the action is brought (Defendant)[cite: 1, 2].</td>
+          <td class="col-num">20</td>
+          <td class="col-term">
+            <span class="term-primary">Plaintiff vs Defendant</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q727</span> <span class="ref-tag">#395</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td>A person bringing a legal suit in court (Plaintiff) vs. an entity against whom the action is brought (Defendant)[cite: 1].</td>
         </tr>
         <tr>
-          <td>21</td>
-          <td><span class="term-primary">Pilfer</span></td>
-          <td><span class="ref-tag">Q808</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">21</td>
+          <td class="col-term">
+            <span class="term-primary">Pilfer</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q808</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To steal small items or petty amounts of minor value repeatedly[cite: 1].</td>
         </tr>
         <tr>
-          <td>22</td>
-          <td><span class="term-primary">Parole vs. Probation</span></td>
-          <td><span class="ref-tag">Q823</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">22</td>
+          <td class="col-term">
+            <span class="term-primary">Parole vs Probation</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q823</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Conditional temporary release of a prisoner before completing a term (Parole) vs. supervised freedom without jail (Probation)[cite: 1].</td>
         </tr>
         <tr>
-          <td>23</td>
-          <td><span class="term-primary">Equinox vs. Solstice</span></td>
-          <td><span class="ref-tag">Q953</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">23</td>
+          <td class="col-term">
+            <span class="term-primary">Equinox vs Solstice</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q953</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Time when day and night are of equal duration (Equinox) vs. point where sun reaches northern/southern extremes (Solstice)[cite: 1].</td>
         </tr>
         <tr>
-          <td>24</td>
-          <td><span class="term-primary">Megalomaniac</span></td>
-          <td><span class="ref-tag">[1106]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">24</td>
+          <td class="col-term">
+            <span class="term-primary">Megalomaniac</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1106]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A person obsessed with their own power, grandeur, or supreme invincibility[cite: 1].</td>
         </tr>
         <tr>
-          <td>25</td>
-          <td><span class="term-primary">Hospice</span></td>
-          <td><span class="ref-tag">[1073]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">25</td>
+          <td class="col-term">
+            <span class="term-primary">Hospice</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1073]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A specialised home or facility caring for terminally ill patients[cite: 1].</td>
         </tr>
         <tr>
-          <td>26</td>
-          <td><span class="term-primary">Ambidextrous</span></td>
-          <td><span class="ref-tag">[1443]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">26</td>
+          <td class="col-term">
+            <span class="term-primary">Ambidextrous</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1443]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Able to use both right and left hands with equal dexterity and skill[cite: 1].</td>
         </tr>
         <tr>
-          <td>27</td>
-          <td><span class="term-primary">Gerontology</span></td>
-          <td><span class="ref-tag">[1451]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">27</td>
+          <td class="col-term">
+            <span class="term-primary">Gerontology</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1451]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>The scientific study of old age, aging processes, and associated problems[cite: 1].</td>
         </tr>
         <tr>
-          <td>28</td>
-          <td><span class="term-primary">Polyandry vs. Polygamy</span></td>
-          <td><span class="ref-tag">[1477]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">28</td>
+          <td class="col-term">
+            <span class="term-primary">Polyandry vs Polygamy</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1477]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Custom of a woman possessing multiple husbands concurrently (Polyandry) vs. having multiple spouses (Polygamy)[cite: 1].</td>
         </tr>
         <tr>
-          <td>29</td>
-          <td><span class="term-primary">Cartographer</span></td>
-          <td><span class="ref-tag">[1488]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">29</td>
+          <td class="col-term">
+            <span class="term-primary">Cartographer</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1488]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A professional technician or specialist who draws and produces maps[cite: 1].</td>
         </tr>
         <tr>
-          <td>30</td>
-          <td><span class="term-primary">Epitaph</span></td>
-          <td><span class="ref-tag">[1498]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">30</td>
+          <td class="col-term">
+            <span class="term-primary">Epitaph</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1498]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>An inscription engraved on a tombstone or monument commemorating a deceased individual[cite: 1].</td>
         </tr>
         <tr>
-          <td>31</td>
-          <td><span class="term-primary">Blackleg</span></td>
-          <td><span class="ref-tag">[1557]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">31</td>
+          <td class="col-term">
+            <span class="term-primary">Blackleg</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1557]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A strike breaker; an employee who continues working while fellow trade unionists are on strike[cite: 1].</td>
         </tr>
         <tr>
-          <td>32</td>
-          <td><span class="term-primary">Illegible</span></td>
-          <td><span class="ref-tag">[1600]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">32</td>
+          <td class="col-term">
+            <span class="term-primary">Illegible</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1600]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Handwriting or printed text impossible to decipher or read[cite: 1].</td>
         </tr>
         <tr>
-          <td>33</td>
-          <td><span class="term-primary">Charlatan</span></td>
-          <td><span class="ref-tag">[1676]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">33</td>
+          <td class="col-term">
+            <span class="term-primary">Charlatan</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1676]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A person falsely claiming to possess professional knowledge, skills, or medical remedies; a quack[cite: 1].</td>
         </tr>
         <tr>
-          <td>34</td>
-          <td><span class="term-primary">Misogamist</span></td>
-          <td><span class="ref-tag">[1743]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">34</td>
+          <td class="col-term">
+            <span class="term-primary">Misogamist</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1743]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A person who harbors hatred toward the institution of marriage[cite: 1].</td>
         </tr>
         <tr>
-          <td>35</td>
-          <td><span class="term-primary">Polyglot</span></td>
-          <td><span class="ref-tag">[1795]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">35</td>
+          <td class="col-term">
+            <span class="term-primary">Polyglot</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1795]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A person who speaks, writes, or reads several different languages[cite: 1].</td>
         </tr>
       </tbody>
@@ -1295,262 +1670,321 @@
   <div class="section-card" id="spelling-traps">
     <div class="section-title">
       <span>4. Spelling Traps & Tricky Words</span>
-      <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-muted);">High-Frequency Spelling Traps Lead First</span>
+      <span style="font-size: 0.78rem; font-weight: normal; color: var(--text-muted);">High-Frequency Spelling Traps Lead First</span>
     </div>
-    <div class="section-subtitle">Commonly misspelt words extracted from PSSSB PYQ tests. Double letters, silent consonants, and tricky vowel sequences highlighted.</div>
+    <div class="section-subtitle">Commonly misspelt words, silent consonants, and double-letter pitfalls.</div>
     <table class="compendium-table">
       <thead>
         <tr>
-          <th style="width: 50px;">#</th>
-          <th style="width: 170px;">Correct Form</th>
-          <th style="width: 130px;">Ref No.</th>
-          <th style="width: 90px;">Repeat</th>
-          <th style="width: 170px;">Distractor / Trap</th>
+          <th class="col-num">#</th>
+          <th class="col-term">Correct Form & Notes</th>
+          <th class="col-repeat">Repeat</th>
+          <th class="col-antonym">Distractor / Trap</th>
           <th>Spelling Rules & Key Memorization Traps</th>
         </tr>
       </thead>
       <tbody>
         <!-- STARRED ITEMS FIRST -->
         <tr class="star-row">
-          <td>1</td>
-          <td><span class="star-badge">★</span><span class="trap-right">Embarrass</span></td>
-          <td><span class="ref-tag">Q688</span> <span class="ref-tag">[1468]</span> <span class="ref-tag">[1519]</span></td>
-          <td><span class="repeat-badge high">3x Repeat</span></td>
-          <td><span class="trap-wrong">Embarass / Embaras</span></td>
+          <td class="col-num">1</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="trap-right">Embarrass</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q688</span> <span class="ref-tag">[1468]</span> <span class="ref-tag">[1519]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">3x Repeat</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Embarass / Embaras</span></td>
           <td>Contains double <strong>'rr'</strong> and double <strong>'ss'</strong>[cite: 1]. Common pitfall is omitting one 'r'[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>2</td>
-          <td><span class="star-badge">★</span><span class="trap-right">Millennium</span></td>
-          <td><span class="ref-tag">[1499]</span> <span class="ref-tag">[1564]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="trap-wrong">Millenium / Milennium</span></td>
+          <td class="col-num">2</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="trap-right">Millennium</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1499]</span> <span class="ref-tag">[1564]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Millenium / Milennium</span></td>
           <td>Double <strong>'ll'</strong> and double <strong>'nn'</strong> are mandatory (period of 1,000 years)[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>3</td>
-          <td><span class="star-badge">★</span><span class="trap-right">Occurrence</span></td>
-          <td><span class="ref-tag">[1468]</span> <span class="ref-tag">[1686]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="trap-wrong">Occurence / Ocurrence</span></td>
+          <td class="col-num">3</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="trap-right">Occurrence</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1468]</span> <span class="ref-tag">[1686]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Occurence / Ocurrence</span></td>
           <td>Double <strong>'cc'</strong>, double <strong>'rr'</strong>, and ends with <strong>'-ence'</strong>[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>4</td>
-          <td><span class="star-badge">★</span><span class="trap-right">Accommodate</span></td>
-          <td><span class="ref-tag">Q924</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Accomodate / Acommodate</span></td>
+          <td class="col-num">4</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="trap-right">Accommodate</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q924</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Accomodate / Acommodate</span></td>
           <td>Contains double <strong>'cc'</strong> and double <strong>'mm'</strong>[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>5</td>
-          <td><span class="star-badge">★</span><span class="trap-right">Liaison</span></td>
-          <td><span class="ref-tag">[1461]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Liason / Liasion</span></td>
+          <td class="col-num">5</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="trap-right">Liaison</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1461]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Liason / Liasion</span></td>
           <td>Contains the sequence <strong>'i-a-i'</strong> ('liai-')[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>6</td>
-          <td><span class="star-badge">★</span><span class="trap-right">Surveillance</span></td>
-          <td><span class="ref-tag">Q859</span> <span class="ref-tag">#144</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="trap-wrong">Surveilance / Surveilence</span></td>
-          <td>Sequence <strong>'e-i-l-l-a-n-c-e'</strong>[cite: 1, 2]. Ends in <strong>'-ance'</strong>, not '-ence'[cite: 1].</td>
+          <td class="col-num">6</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="trap-right">Surveillance</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q859</span> <span class="ref-tag">#144</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Surveilance / Surveilence</span></td>
+          <td>Sequence <strong>'e-i-l-l-a-n-c-e'</strong>[cite: 1]. Ends in <strong>'-ance'</strong>, not '-ence'[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>7</td>
-          <td><span class="star-badge">★</span><span class="trap-right">Sacrilegious</span></td>
-          <td><span class="ref-tag">Q775</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Sacreligious / Sacraligious</span></td>
+          <td class="col-num">7</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="trap-right">Sacrilegious</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q775</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Sacreligious / Sacraligious</span></td>
           <td>Note <strong>'i'</strong> after 'r' ('sacri-'), derived from sacrilege, not 'religious'[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>8</td>
-          <td><span class="star-badge">★</span><span class="trap-right">Diarrhoea</span></td>
-          <td><span class="ref-tag">[1703]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Diarrhea / Diarhoea</span></td>
+          <td class="col-num">8</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="trap-right">Diarrhoea</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1703]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Diarrhea / Diarhoea</span></td>
           <td>British spelling requires double <strong>'rr'</strong> followed by <strong>'hoe'</strong>[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>9</td>
-          <td><span class="star-badge">★</span><span class="trap-right">Lieutenant</span></td>
-          <td><span class="ref-tag">[1792]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Leutenant / Lutenant</span></td>
+          <td class="col-num">9</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="trap-right">Lieutenant</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1792]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Leutenant / Lutenant</span></td>
           <td>Starts with <strong>'L-i-e-u'</strong>[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>10</td>
-          <td><span class="star-badge">★</span><span class="trap-right">Consensus</span></td>
-          <td><span class="ref-tag">[1541]</span> <span class="ref-tag">#156</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
-          <td><span class="trap-wrong">Concensus / Consencus</span></td>
-          <td>All soft sounds are rendered with <strong>'s'</strong> ('con-sen-sus')[cite: 1, 2].</td>
+          <td class="col-num">10</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="trap-right">Consensus</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1541]</span> <span class="ref-tag">#156</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Concensus / Consencus</span></td>
+          <td>All soft sounds are rendered with <strong>'s'</strong> ('con-sen-sus')[cite: 1].</td>
         </tr>
 
         <!-- STANDARD SPELLING ENTRIES -->
         <tr>
-          <td>11</td>
-          <td><span class="trap-right">Succumb</span></td>
-          <td><span class="ref-tag">[1002]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Sccumb / Succum</span></td>
+          <td class="col-num">11</td>
+          <td class="col-term">
+            <span class="trap-right">Succumb</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1002]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Sccumb / Succum</span></td>
           <td>Double <strong>'cc'</strong> and silent terminal <strong>'b'</strong>[cite: 1].</td>
         </tr>
         <tr>
-          <td>12</td>
-          <td><span class="trap-right">Centenary</span></td>
-          <td><span class="ref-tag">[1004]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Centenery / Centenary</span></td>
+          <td class="col-num">12</td>
+          <td class="col-term">
+            <span class="trap-right">Centenary</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1004]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Centenery / Centenary</span></td>
           <td>Note middle vowel <strong>'e-n-a'</strong>, not '-ene-'[cite: 1].</td>
         </tr>
         <tr>
-          <td>13</td>
-          <td><span class="trap-right">Colloquial</span></td>
-          <td><span class="ref-tag">[1062]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Coloquial / Coloquial</span></td>
+          <td class="col-num">13</td>
+          <td class="col-term">
+            <span class="trap-right">Colloquial</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1062]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Coloquial / Coloquial</span></td>
           <td>Double <strong>'ll'</strong> followed by <strong>'qui-al'</strong>[cite: 1].</td>
         </tr>
         <tr>
-          <td>14</td>
-          <td><span class="trap-right">Definitely</span></td>
-          <td><span class="ref-tag">[1103]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Definately / Definitly</span></td>
+          <td class="col-num">14</td>
+          <td class="col-term">
+            <span class="trap-right">Definitely</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1103]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Definately / Definitly</span></td>
           <td>Root is 'finite'; vowel is <strong>'i'</strong> ('de-fin-i-te-ly')[cite: 1].</td>
         </tr>
         <tr>
-          <td>15</td>
-          <td><span class="trap-right">Controversial</span></td>
-          <td><span class="ref-tag">[1122]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Controvarcial / Controversial</span></td>
+          <td class="col-num">15</td>
+          <td class="col-term">
+            <span class="trap-right">Controversial</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1122]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Controvarcial / Controversial</span></td>
           <td>Middle is <strong>'-ver-'</strong> and suffix is <strong>'-sial'</strong>, not '-cial'[cite: 1].</td>
         </tr>
         <tr>
-          <td>16</td>
-          <td><span class="trap-right">Mandatory</span></td>
-          <td><span class="ref-tag">[1202]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Mandatry / Manditory</span></td>
+          <td class="col-num">16</td>
+          <td class="col-term">
+            <span class="trap-right">Mandatory</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1202]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Mandatry / Manditory</span></td>
           <td>Vowel <strong>'a'</strong> in middle syllable ('man-da-to-ry')[cite: 1].</td>
         </tr>
         <tr>
-          <td>17</td>
-          <td><span class="trap-right">Commission</span></td>
-          <td><span class="ref-tag">[1205]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Commision / Comision</span></td>
+          <td class="col-num">17</td>
+          <td class="col-term">
+            <span class="trap-right">Commission</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1205]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Commision / Comision</span></td>
           <td>Double <strong>'mm'</strong> and double <strong>'ss'</strong>[cite: 1].</td>
         </tr>
         <tr>
-          <td>18</td>
-          <td><span class="trap-right">Commemorative</span></td>
-          <td><span class="ref-tag">[1210]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Comemorative / Commemerative</span></td>
+          <td class="col-num">18</td>
+          <td class="col-term">
+            <span class="trap-right">Commemorative</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1210]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Comemorative / Commemerative</span></td>
           <td>Double <strong>'mm'</strong> followed by single <strong>'m'</strong> ('com-mem-o-rative')[cite: 1].</td>
         </tr>
         <tr>
-          <td>19</td>
-          <td><span class="trap-right">Melancholic</span></td>
-          <td><span class="ref-tag">[1214]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Melancolic</span></td>
+          <td class="col-num">19</td>
+          <td class="col-term">
+            <span class="trap-right">Melancholic</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1214]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Melancolic</span></td>
           <td>Greek origin preserves <strong>'ch'</strong>[cite: 1].</td>
         </tr>
         <tr>
-          <td>20</td>
-          <td><span class="trap-right">Rebellious</span></td>
-          <td><span class="ref-tag">[1270]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Rebelious / Rebelous</span></td>
+          <td class="col-num">20</td>
+          <td class="col-term">
+            <span class="trap-right">Rebellious</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1270]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Rebelious / Rebelous</span></td>
           <td>Double <strong>'ll'</strong> followed by <strong>'-ious'</strong>[cite: 1].</td>
         </tr>
         <tr>
-          <td>21</td>
-          <td><span class="trap-right">Maintenance</span></td>
-          <td><span class="ref-tag">[1332]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Maintainance / Maintanence</span></td>
+          <td class="col-num">21</td>
+          <td class="col-term">
+            <span class="trap-right">Maintenance</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1332]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Maintainance / Maintanence</span></td>
           <td>Note <strong>'main-ten-'</strong>, not 'maintain' in noun form[cite: 1].</td>
         </tr>
         <tr>
-          <td>22</td>
-          <td><span class="trap-right">Spurious</span></td>
-          <td><span class="ref-tag">[1382]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Sperious</span></td>
+          <td class="col-num">22</td>
+          <td class="col-term">
+            <span class="trap-right">Spurious</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1382]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Sperious</span></td>
           <td>Starts with <strong>'s-p-u-'</strong>[cite: 1].</td>
         </tr>
         <tr>
-          <td>23</td>
-          <td><span class="trap-right">Sovereignty</span></td>
-          <td><span class="ref-tag">Q773</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Sovereigntiy / Sovreignty</span></td>
+          <td class="col-num">23</td>
+          <td class="col-term">
+            <span class="trap-right">Sovereignty</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q773</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Sovereigntiy / Sovreignty</span></td>
           <td>Contains sequence <strong>'e-i-g-n'</strong>[cite: 1].</td>
         </tr>
         <tr>
-          <td>24</td>
-          <td><span class="trap-right">Renaissance</span></td>
-          <td><span class="ref-tag">Q776</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Renaisance / Renaissence</span></td>
+          <td class="col-num">24</td>
+          <td class="col-term">
+            <span class="trap-right">Renaissance</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q776</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Renaisance / Renaissence</span></td>
           <td>Single <strong>'n'</strong>, double <strong>'ss'</strong>, and ends with <strong>'-ance'</strong>[cite: 1].</td>
         </tr>
         <tr>
-          <td>25</td>
-          <td><span class="trap-right">Tranquillity</span></td>
-          <td><span class="ref-tag">Q858</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Tranquility (UK variant trap)</span></td>
+          <td class="col-num">25</td>
+          <td class="col-term">
+            <span class="trap-right">Tranquillity</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q858</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Tranquility (UK variant trap)</span></td>
           <td>British spelling standard tests double <strong>'ll'</strong>[cite: 1].</td>
         </tr>
         <tr>
-          <td>26</td>
-          <td><span class="trap-right">Astringent</span></td>
-          <td><span class="ref-tag">Q860</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Astringant</span></td>
+          <td class="col-num">26</td>
+          <td class="col-term">
+            <span class="trap-right">Astringent</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q860</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Astringant</span></td>
           <td>Ends in <strong>'-ent'</strong>, not '-ant'[cite: 1].</td>
         </tr>
         <tr>
-          <td>27</td>
-          <td><span class="trap-right">Symmetrical</span></td>
-          <td><span class="ref-tag">Q925</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Symetrical / Symmetrecal</span></td>
+          <td class="col-num">27</td>
+          <td class="col-term">
+            <span class="trap-right">Symmetrical</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q925</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Symetrical / Symmetrecal</span></td>
           <td>Double <strong>'mm'</strong> followed by single 't'[cite: 1].</td>
         </tr>
         <tr>
-          <td>28</td>
-          <td><span class="trap-right">Phenomenon</span></td>
-          <td><span class="ref-tag">[1604]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Phenomenun / Phenominon</span></td>
+          <td class="col-num">28</td>
+          <td class="col-term">
+            <span class="trap-right">Phenomenon</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1604]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Phenomenun / Phenominon</span></td>
           <td>Singular form ends with <strong>'-non'</strong>[cite: 1].</td>
         </tr>
         <tr>
-          <td>29</td>
-          <td><span class="trap-right">Silhouette</span></td>
-          <td><span class="ref-tag">[1724]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Sillhoutte / Silhouete</span></td>
+          <td class="col-num">29</td>
+          <td class="col-term">
+            <span class="trap-right">Silhouette</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1724]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Sillhoutte / Silhouete</span></td>
           <td>Single <strong>'l'</strong>, <strong>'h-o-u'</strong>, and double <strong>'tt'</strong>[cite: 1].</td>
         </tr>
         <tr>
-          <td>30</td>
-          <td><span class="trap-right">Rheumatic</span></td>
-          <td><span class="ref-tag">[1768]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
-          <td><span class="trap-wrong">Reumatic / Rhuematic</span></td>
+          <td class="col-num">30</td>
+          <td class="col-term">
+            <span class="trap-right">Rheumatic</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1768]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
+          <td class="col-antonym"><span class="trap-wrong">Reumatic / Rhuematic</span></td>
           <td>Silent <strong>'h'</strong> after 'R': <strong>'R-h-e-u-'</strong>[cite: 1].</td>
         </tr>
       </tbody>
@@ -1561,377 +1995,492 @@
   <div class="section-card" id="idioms-phrases">
     <div class="section-title">
       <span>5. Idioms, Phrasal Verbs & Proverbs</span>
-      <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-muted);">High-Frequency Starred Idioms Lead First</span>
+      <span style="font-size: 0.78rem; font-weight: normal; color: var(--text-muted);">High-Frequency Starred Idioms Lead First</span>
     </div>
-    <div class="section-subtitle">Exhaustive compilation of figurative expressions, proverbs, and phrasal prepositions tested in past PSSSB sessions.</div>
+    <div class="section-subtitle">Figurative expressions and phrasal prepositions tested in past papers.</div>
     <table class="compendium-table">
       <thead>
         <tr>
-          <th style="width: 50px;">#</th>
-          <th style="width: 220px;">Idiom / Phrase / Proverb</th>
-          <th style="width: 140px;">Ref No.</th>
-          <th style="width: 90px;">Repeat</th>
+          <th class="col-num">#</th>
+          <th class="col-term" style="width: 250px;">Idiom / Phrase / Proverb & Notes</th>
+          <th class="col-repeat">Repeat</th>
           <th>Standard Meaning & Exam Context</th>
         </tr>
       </thead>
       <tbody>
         <!-- STARRED ITEMS FIRST -->
         <tr class="star-row">
-          <td>1</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Catch a tartar</span></td>
-          <td><span class="ref-tag">Q168</span> <span class="ref-tag">Q197</span> <span class="ref-tag">[1177]</span></td>
-          <td><span class="repeat-badge high">3x Repeat</span></td>
+          <td class="col-num">1</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Catch a tartar</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q168</span> <span class="ref-tag">Q197</span> <span class="ref-tag">[1177]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">3x Repeat</span></td>
           <td>To encounter or deal with someone who proves unexpectedly formidable, troublesome, or powerful[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>2</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Flog a dead horse</span></td>
-          <td><span class="ref-tag">Q152</span> <span class="ref-tag">Q996</span> <span class="ref-tag">[1075]</span></td>
-          <td><span class="repeat-badge high">3x Repeat</span></td>
+          <td class="col-num">2</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Flog a dead horse</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q152</span> <span class="ref-tag">Q996</span> <span class="ref-tag">[1075]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">3x Repeat</span></td>
           <td>To waste effort or energy on an outcome or matter that cannot be altered or revived[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>3</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Cope with</span></td>
-          <td><span class="ref-tag">Q855</span> <span class="ref-tag">[1006]</span> <span class="ref-tag">[1573]</span></td>
-          <td><span class="repeat-badge high">3x Repeat</span></td>
+          <td class="col-num">3</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Cope with</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q855</span> <span class="ref-tag">[1006]</span> <span class="ref-tag">[1573]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge high">3x Repeat</span></td>
           <td>To deal effectively with or manage difficult circumstances (Note: "cope up with" is an incorrect usage error tested in exam)[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>4</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Bury the hatchet</span></td>
-          <td><span class="ref-tag">Q127</span> <span class="ref-tag">Q984</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">4</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Bury the hatchet</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q127</span> <span class="ref-tag">Q984</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>To end an old conflict or quarrel and make peace[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>5</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Let bygones be bygones</span></td>
-          <td><span class="ref-tag">Q128</span> <span class="ref-tag">Q985</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">5</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Let bygones be bygones</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q128</span> <span class="ref-tag">Q985</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>To disregard the past; forgive and forget old injuries and disagreements[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>6</td>
-          <td><span class="star-badge">★</span><span class="term-primary">By fits and starts</span></td>
-          <td><span class="ref-tag">Q130</span> <span class="ref-tag">Q987</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">6</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">By fits and starts</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q130</span> <span class="ref-tag">Q987</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>Irregularly; in uneven bursts with frequent stops and starts[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>7</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Stir up a hornet's nest</span></td>
-          <td><span class="ref-tag">Q166</span> <span class="ref-tag">Q566</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">7</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Stir up a hornet's nest</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q166</span> <span class="ref-tag">Q566</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>To provoke intense hostility and severe criticism from a large number of people[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>8</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Cut someone dead</span></td>
-          <td><span class="ref-tag">Q67</span> <span class="ref-tag">Q603</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">8</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Cut someone dead</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q67</span> <span class="ref-tag">Q603</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>To deliberately insult a person by pretending not to see or recognize them[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>9</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Nail one's colours to the mast</span></td>
-          <td><span class="ref-tag">Q501</span> <span class="ref-tag">Q602</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">9</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Nail one's colours to the mast</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q501</span> <span class="ref-tag">Q602</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>To refuse absolutely to surrender or compromise; maintain a resolute public stance[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>10</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Bell the cat</span></td>
-          <td><span class="ref-tag">Q648</span> <span class="ref-tag">[1793]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">10</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Bell the cat</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q648</span> <span class="ref-tag">[1793]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>To take the lead in undertaking a hazardous or perilous task for the general good[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>11</td>
-          <td><span class="star-badge">★</span><span class="term-primary">French leave</span></td>
-          <td><span class="ref-tag">Q735</span> <span class="ref-tag">[1516]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">11</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">French leave</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q735</span> <span class="ref-tag">[1516]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>Absence from work or a social gathering without prior notification or permission[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>12</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Adam's ale</span></td>
-          <td><span class="ref-tag">Q804</span> <span class="ref-tag">Q999</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">12</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Adam's ale</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q804</span> <span class="ref-tag">Q999</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>Pure, unadulterated water[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>13</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Tall order</span></td>
-          <td><span class="ref-tag">Q803</span> <span class="ref-tag">Q940</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">13</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Tall order</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q803</span> <span class="ref-tag">Q940</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>An excessively burdensome, difficult, or unreasonable task to perform[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>14</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Fish in troubled waters</span></td>
-          <td><span class="ref-tag">[1504]</span> <span class="ref-tag">[1720]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">14</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Fish in troubled waters</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1504]</span> <span class="ref-tag">[1720]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>To try to capitalize and reap personal profit or advantage out of a chaotic or difficult situation[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>15</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Throw cold water over</span></td>
-          <td><span class="ref-tag">[1542]</span> <span class="ref-tag">[1745]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">15</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Throw cold water over</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1542]</span> <span class="ref-tag">[1745]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>To dampen enthusiasm or discourage someone's plan or proposal[cite: 1].</td>
         </tr>
         <tr class="star-row">
-          <td>16</td>
-          <td><span class="star-badge">★</span><span class="term-primary">Once in a blue moon</span></td>
-          <td><span class="ref-tag">[1558]</span> <span class="ref-tag">[1625]</span></td>
-          <td><span class="repeat-badge">2x Repeat</span></td>
+          <td class="col-num">16</td>
+          <td class="col-term">
+            <span class="star-badge">★</span><span class="term-primary">Once in a blue moon</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1558]</span> <span class="ref-tag">[1625]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">2x Repeat</span></td>
           <td>Occurring extremely rarely; almost never[cite: 1].</td>
         </tr>
 
         <!-- STANDARD TESTED IDIOMS, PHRASAL VERBS & PROVERBS -->
         <tr>
-          <td>17</td>
-          <td><span class="term-primary">Allow for</span></td>
-          <td><span class="ref-tag">Q27</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">17</td>
+          <td class="col-term">
+            <span class="term-primary">Allow for</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q27</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To take into consideration possible future eventualities[cite: 1].</td>
         </tr>
         <tr>
-          <td>18</td>
-          <td><span class="term-primary">Bear up</span></td>
-          <td><span class="ref-tag">Q28</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">18</td>
+          <td class="col-term">
+            <span class="term-primary">Bear up</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q28</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To remain cheerful, resolute, and brave in the face of hardship[cite: 1].</td>
         </tr>
         <tr>
-          <td>19</td>
-          <td><span class="term-primary">Paint the lily</span></td>
-          <td><span class="ref-tag">Q78</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">19</td>
+          <td class="col-term">
+            <span class="term-primary">Paint the lily</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q78</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To spoil or ruin something already beautiful or complete by excessive, superfluous embellishment[cite: 1].</td>
         </tr>
         <tr>
-          <td>20</td>
-          <td><span class="term-primary">Hobson's choice</span></td>
-          <td><span class="ref-tag">Q153</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">20</td>
+          <td class="col-term">
+            <span class="term-primary">Hobson's choice</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q153</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>No choice at all; the choice of taking what is offered or getting nothing[cite: 1].</td>
         </tr>
         <tr>
-          <td>21</td>
-          <td><span class="term-primary">Keep the wolf from the door</span></td>
-          <td><span class="ref-tag">Q167</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">21</td>
+          <td class="col-term">
+            <span class="term-primary">Keep the wolf from the door</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q167</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To maintain enough income to ward off starvation and extreme poverty[cite: 1].</td>
         </tr>
         <tr>
-          <td>22</td>
-          <td><span class="term-primary">Take with a grain of salt</span></td>
-          <td><span class="ref-tag">Q173</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">22</td>
+          <td class="col-term">
+            <span class="term-primary">Take with a grain of salt</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q173</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To view a statement with skepticism or doubt; not believe completely[cite: 1].</td>
         </tr>
         <tr>
-          <td>23</td>
-          <td><span class="term-primary">Take up the cudgels</span></td>
-          <td><span class="ref-tag">Q178</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">23</td>
+          <td class="col-term">
+            <span class="term-primary">Take up the cudgels</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q178</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To vigorously defend, support, or champion a person or cause[cite: 1].</td>
         </tr>
         <tr>
-          <td>24</td>
-          <td><span class="term-primary">Stick to one's guns</span></td>
-          <td><span class="ref-tag">Q180</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">24</td>
+          <td class="col-term">
+            <span class="term-primary">Stick to one's guns</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q180</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To remain firm in one's convictions or intentions despite opposing pressure[cite: 1].</td>
         </tr>
         <tr>
-          <td>25</td>
-          <td><span class="term-primary">Play second fiddle</span></td>
-          <td><span class="ref-tag">Q393</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">25</td>
+          <td class="col-term">
+            <span class="term-primary">Play second fiddle</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q393</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To occupy a subordinate or secondary role behind another[cite: 1].</td>
         </tr>
         <tr>
-          <td>26</td>
-          <td><span class="term-primary">Do away with</span></td>
-          <td><span class="ref-tag">Q413</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">26</td>
+          <td class="col-term">
+            <span class="term-primary">Do away with</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q413</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To abolish, eliminate, or end something completely[cite: 1].</td>
         </tr>
         <tr>
-          <td>27</td>
-          <td><span class="term-primary">Burn the candle at both ends</span></td>
-          <td><span class="ref-tag">Q487</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">27</td>
+          <td class="col-term">
+            <span class="term-primary">Burn the candle at both ends</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q487</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To overtax one's physical energies by rising early and working late into the night without rest[cite: 1].</td>
         </tr>
         <tr>
-          <td>28</td>
-          <td><span class="term-primary">Leave someone in the lurch</span></td>
-          <td><span class="ref-tag">Q503</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">28</td>
+          <td class="col-term">
+            <span class="term-primary">Leave someone in the lurch</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q503</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To desert or abandon someone in an awkward or helpless situation[cite: 1].</td>
         </tr>
         <tr>
-          <td>29</td>
-          <td><span class="term-primary">A mare's nest</span></td>
-          <td><span class="ref-tag">Q568</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">29</td>
+          <td class="col-term">
+            <span class="term-primary">A mare's nest</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q568</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A discovery which turns out to be false, illusory, or a complete hoax[cite: 1].</td>
         </tr>
         <tr>
-          <td>30</td>
-          <td><span class="term-primary">In a brown study</span></td>
-          <td><span class="ref-tag">Q573</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">30</td>
+          <td class="col-term">
+            <span class="term-primary">In a brown study</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q573</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Deeply lost in one's thoughts; day-dreaming or in a reverie[cite: 1].</td>
         </tr>
         <tr>
-          <td>31</td>
-          <td><span class="term-primary">Have an axe to grind</span></td>
-          <td><span class="ref-tag">Q598</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">31</td>
+          <td class="col-term">
+            <span class="term-primary">Have an axe to grind</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q598</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To possess a private, selfish, or personal motive in a public affair[cite: 1].</td>
         </tr>
         <tr>
-          <td>32</td>
-          <td><span class="term-primary">Fly off the handle</span></td>
-          <td><span class="ref-tag">Q649</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">32</td>
+          <td class="col-term">
+            <span class="term-primary">Fly off the handle</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q649</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To lose one's temper suddenly and violently[cite: 1].</td>
         </tr>
         <tr>
-          <td>33</td>
-          <td><span class="term-primary">At loggerheads</span></td>
-          <td><span class="ref-tag">Q733</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">33</td>
+          <td class="col-term">
+            <span class="term-primary">At loggerheads</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q733</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>In violent disagreement, intense friction, or active conflict[cite: 1].</td>
         </tr>
         <tr>
-          <td>34</td>
-          <td><span class="term-primary">Spick and span</span></td>
-          <td><span class="ref-tag">Q736</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">34</td>
+          <td class="col-term">
+            <span class="term-primary">Spick and span</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q736</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Spotlessly clean, tidy, and neat[cite: 1].</td>
         </tr>
         <tr>
-          <td>35</td>
-          <td><span class="term-primary">A snake in the grass</span></td>
-          <td><span class="ref-tag">Q778</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">35</td>
+          <td class="col-term">
+            <span class="term-primary">A snake in the grass</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q778</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A treacherous, deceitful, or secret enemy who pretends friendship[cite: 1].</td>
         </tr>
         <tr>
-          <td>36</td>
-          <td><span class="term-primary">Cross swords</span></td>
-          <td><span class="ref-tag">Q801</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">36</td>
+          <td class="col-term">
+            <span class="term-primary">Cross swords</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q801</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To quarrel, dispute, or engage in a battle with someone[cite: 1].</td>
         </tr>
         <tr>
-          <td>37</td>
-          <td><span class="term-primary">Talk shop</span></td>
-          <td><span class="ref-tag">Q871</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">37</td>
+          <td class="col-term">
+            <span class="term-primary">Talk shop</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q871</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To talk incessantly about one's occupation outside of work hours[cite: 1].</td>
         </tr>
         <tr>
-          <td>38</td>
-          <td><span class="term-primary">Green-eyed monster / Green-eyed</span></td>
-          <td><span class="ref-tag">Q877</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">38</td>
+          <td class="col-term">
+            <span class="term-primary">Green-eyed monster / Green-eyed</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q877</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Jealous, envious[cite: 1].</td>
         </tr>
         <tr>
-          <td>39</td>
-          <td><span class="term-primary">Cry wolf</span></td>
-          <td><span class="ref-tag">Q898</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">39</td>
+          <td class="col-term">
+            <span class="term-primary">Cry wolf</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q898</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To give false alarms repeatedly, causing genuine warnings to be ignored[cite: 1].</td>
         </tr>
         <tr>
-          <td>40</td>
-          <td><span class="term-primary">Carrot and stick policy</span></td>
-          <td><span class="ref-tag">Q989</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">40</td>
+          <td class="col-term">
+            <span class="term-primary">Carrot and stick policy</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">Q989</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>A system based simultaneously on the promise of reward and threat of punishment[cite: 1].</td>
         </tr>
         <tr>
-          <td>41</td>
-          <td><span class="term-primary">Turn a deaf ear</span></td>
-          <td><span class="ref-tag">[1030]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">41</td>
+          <td class="col-term">
+            <span class="term-primary">Turn a deaf ear</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1030]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To deliberately ignore or refuse to listen to advice or requests[cite: 1].</td>
         </tr>
         <tr>
-          <td>42</td>
-          <td><span class="term-primary">No love lost</span></td>
-          <td><span class="ref-tag">[1032]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">42</td>
+          <td class="col-term">
+            <span class="term-primary">No love lost</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1032]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Mutual intense dislike or animosity between two individuals[cite: 1].</td>
         </tr>
         <tr>
-          <td>43</td>
-          <td><span class="term-primary">Only the wearer knows where the shoe pinches</span></td>
-          <td><span class="ref-tag">[1041]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">43</td>
+          <td class="col-term">
+            <span class="term-primary">Only the wearer knows where the shoe pinches</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1041]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Only the person experiencing the pain or trouble truly understands how bad it is[cite: 1].</td>
         </tr>
         <tr>
-          <td>44</td>
-          <td><span class="term-primary">A bird in the hand is worth two in the bush</span></td>
-          <td><span class="ref-tag">[1348]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">44</td>
+          <td class="col-term">
+            <span class="term-primary">A bird in the hand is worth two in the bush</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1348]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>It is preferable to hold onto a certain, immediate advantage than pursue larger, uncertain gains[cite: 1].</td>
         </tr>
         <tr>
-          <td>45</td>
-          <td><span class="term-primary">Add insult to injury</span></td>
-          <td><span class="ref-tag">[1398]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">45</td>
+          <td class="col-term">
+            <span class="term-primary">Add insult to injury</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1398]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To act in a way that worsens an already terrible or unfair situation[cite: 1].</td>
         </tr>
         <tr>
-          <td>46</td>
-          <td><span class="term-primary">Under the weather</span></td>
-          <td><span class="ref-tag">[1409]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">46</td>
+          <td class="col-term">
+            <span class="term-primary">Under the weather</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1409]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Feeling slightly unwell, indisposed, or low in spirits[cite: 1].</td>
         </tr>
         <tr>
-          <td>47</td>
-          <td><span class="term-primary">Hold your horses</span></td>
-          <td><span class="ref-tag">[1417]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">47</td>
+          <td class="col-term">
+            <span class="term-primary">Hold your horses</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1417]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>Wait a moment; exercise patience and slow down before acting[cite: 1].</td>
         </tr>
         <tr>
-          <td>48</td>
-          <td><span class="term-primary">At sixes and sevens</span></td>
-          <td><span class="ref-tag">[1480]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">48</td>
+          <td class="col-term">
+            <span class="term-primary">At sixes and sevens</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1480]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>In a state of total confusion, disorder, or disarray[cite: 1].</td>
         </tr>
         <tr>
-          <td>49</td>
-          <td><span class="term-primary">Sitting duck</span></td>
-          <td><span class="ref-tag">[1749]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">49</td>
+          <td class="col-term">
+            <span class="term-primary">Sitting duck</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1749]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>An easy, exposed, and defenseless target[cite: 1].</td>
         </tr>
         <tr>
-          <td>50</td>
-          <td><span class="term-primary">Meet one's Waterloo</span></td>
-          <td><span class="ref-tag">[1767]</span></td>
-          <td><span class="repeat-badge">1x</span></td>
+          <td class="col-num">50</td>
+          <td class="col-term">
+            <span class="term-primary">Meet one's Waterloo</span>
+            <span class="term-refs-note">Refs: <span class="ref-tag">[1767]</span></span>
+          </td>
+          <td class="col-repeat"><span class="repeat-badge">1x</span></td>
           <td>To suffer a decisive, final, and crushing defeat after a long period of triumph[cite: 1].</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
+
+<script>
+  function filterTables() {
+    const input = document.getElementById("filterInput");
+    const filter = input.value.toLowerCase();
+    const tables = document.querySelectorAll(".compendium-table");
+
+    tables.forEach(table => {
+      const rows = table.querySelectorAll("tbody tr");
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(filter) ? "" : "none";
+      });
+    });
+  }
+</script>
 
 </body>
 </html>
