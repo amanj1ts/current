@@ -17078,6 +17078,9 @@ const tablesData = {
 	  <button onclick="switchTab('reason')" id="nav-english" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i> Reasoning Concepts 
       </button>
+	  <button onclick="switchTab('pbgk')" id="nav-english" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <i class="fa-solid fa-book-bookmark w-5"></i> Punjab GK Timeline 
+      </button>
     </nav>
 
     <!-- Dark Mode Toggle -->
@@ -17321,55 +17324,61 @@ const tablesData = {
   </div>
 </section>
 
-        </section>
 		
 			  <!-- PArcham SECTION TAB -->
-<section id="tab-parcham" class="tab-content hidden space-y-4">
-  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
-    <div>
-      <h2 class="text-lg sm:text-xl font-bold flex items-center gap-2">
-        <i class="fa-solid fa-landmark text-indigo-600"></i> Parcham Raftaar Ultra Compact Data
-      </h2>
-      <p class="text-xs text-slate-500">Live document viewer loaded directly from file</p>
-    </div>
-    
-    <!-- Month Selector Buttons -->
-    <div class="flex flex-wrap gap-1.5" id="parcham-month-nav">
-      <button onclick="loadIndoMonth('Par_Jan-Jul.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Jan-Sep 26</button>
-      <button onclick="loadIndoMonth('Par_Jun26.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Jun 26</button>
-      <button onclick="loadIndoMonth('Par_July26.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Jul 26</button>
-      <button onclick="loadIndoMonth('Par_Aug26.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Aug 26</button>
-	  <button onclick="loadIndoMonth('Polity Current Affairs.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Polity till Jun</button>
-    </div>
-  </div>
+	<section id="tab-parcham" class="tab-content hidden space-y-4">
+	  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+		<div>
+		  <h2 class="text-lg sm:text-xl font-bold flex items-center gap-2">
+			<i class="fa-solid fa-landmark text-indigo-600"></i> Parcham Raftaar Ultra Compact Data
+		  </h2>
+		  <p class="text-xs text-slate-500">Live document viewer loaded directly from file</p>
+		</div>
+		
+		<!-- Month Selector Buttons -->
+		<div class="flex flex-wrap gap-1.5" id="parcham-month-nav">
+		  <button onclick="loadIndoMonth('Par_Jan-Jul.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Jan-Sep 26</button>
+		  <button onclick="loadIndoMonth('Par_Jun26.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Jun 26</button>
+		  <button onclick="loadIndoMonth('Par_July26.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Jul 26</button>
+		  <button onclick="loadIndoMonth('Par_Aug26.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Aug 26</button>
+		  <button onclick="loadIndoMonth('Polity Current Affairs.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Polity till Jun</button>
+		</div>
+	  </div>
 
-  <!-- Dynamic Content Viewer (Direct File Pull) -->
-  <div class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-[78vh]">
-    <iframe id="parcham-frame" src="Par_Aug26.html" class="w-full h-full border-0""></iframe>
-  </div>
-</section>
+	  <!-- Dynamic Content Viewer (Direct File Pull) -->
+	  <div class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-[78vh]" >
+		<iframe id="parcham-frame" src="Par_Aug26.html" class="w-full h-full border-0"></iframe>
+	  </div>
+	</section>
 
 
       			  <!-- English SECTION TAB -->
-<section id="tab-english" class="tab-content hidden space-y-4">
+	<section id="tab-english" class="tab-content hidden space-y-4">
 
-  <!-- Dynamic Content Viewer (Direct File Pull) -->
-  <div class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-[78vh]">
-    <iframe id="english-frame" src="Eng_Vocab_250.html" class="w-full h-full border-0""></iframe>
-  </div>
-</section>
+	  <!-- Dynamic Content Viewer (Direct File Pull) -->
+	  <div class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-[85vh]" >
+		<iframe id="english-frame" src="Eng_Vocab_250.html" class="w-full h-full border-0"></iframe>
+	  </div>
+	</section>
 
     
       			  <!-- Reasoning SECTION TAB -->
-<section id="tab-reason" class="tab-content hidden space-y-4">
+	<section id="tab-reason" class="tab-content hidden space-y-4">
 
-  <!-- Dynamic Content Viewer (Direct File Pull) -->
-  <div class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-[78vh]">
-    <iframe id="reason-frame" src="reasoning_concepts.html" class="w-full h-full border-0""></iframe>
-  </div>
-</section>
+	  <!-- Dynamic Content Viewer (Direct File Pull) -->
+	  <div class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-[85vh]">
+		<iframe id="reason-frame" src="reasoning_concepts.html" class="w-full h-full border-0"></iframe>
+	  </div>
+	</section>
 
-        </section>
+	 <!-- Punjab GK Interactive Timeline SECTION TAB -->
+	<section id="tab-pbgk" class="tab-content hidden space-y-4">
+
+	  <!-- Dynamic Content Viewer (Direct File Pull) -->
+	  <div class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-[87vh]">
+		<iframe id="pbgk-frame" src="punjab_gk_timeline.html" class="w-full h-full border-0"></iframe>
+	  </div>
+	</section>
 
       
     </div>

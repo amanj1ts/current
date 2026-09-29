@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punjab History Timeline & High-Yield Exam Master | Dense Edition</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Dense scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .dark ::-webkit-scrollbar-track { background: #090e1a; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    .dark ::-webkit-scrollbar-thumb { background: #26334d; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+    /* Compact Timeline Stem */
+    .dense-stem::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 1rem;
+      width: 2px;
+      background: linear-gradient(180deg, #f59e0b 0%, #38bdf8 45%, #10b981 100%);
+      transform: translateX(-50%);
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .dense-card { break-inside: avoid; border: 1px solid #ccc !important; box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-800 dark:bg-[#070b14] dark:text-slate-200 font-sans antialiased text-xs transition-colors duration-150 min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-white/95 dark:bg-[#090e1a]/95 backdrop-blur border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-150">
+    <div class="max-w-7xl mx-auto px-3 sm:px-5 py-2 flex flex-wrap items-center justify-between gap-2">
+      <!-- Title & Branding -->
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-lg bg-amber-500 flex items-center justify-center text-slate-950 font-black text-sm select-none shadow">
+          ੴ
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <h1 class="text-sm font-bold text-slate-900 dark:text-white tracking-tight">Punjab GK Master Timeline</h1>
+            <span class="text-[10px] font-bold bg-amber-500/15 dark:bg-amber-400/20 text-amber-800 dark:text-amber-300 border border-amber-500/30 px-1.5 py-0.2 rounded">Dense Mode</span>
+          </div>
+          <p class="text-[10px] text-slate-500 dark:text-slate-400">1469 (Guru Nanak Dev Ji) – 1973 (Anandpur Sahib Resolution)</p>
+        </div>
+      </div>
+
+      <!-- Action buttons & Controls -->
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <!-- View layout switcher -->
+        <button id="viewToggleBtn" class="px-2.5 py-1 text-[11px] font-semibold rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition flex items-center gap-1" title="Toggle Compact Grid vs Timeline">
+          <span id="viewToggleIcon">⊞</span>
+          <span id="viewToggleText">2-Col Grid</span>
+        </button>
+
+        <!-- Theme Switcher -->
+        <button id="themeToggleBtn" class="px-2.5 py-1 text-[11px] font-semibold rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-amber-300 transition flex items-center gap-1">
+          <span id="themeToggleIcon">🌙</span>
+          <span id="themeToggleText">Dark</span>
+        </button>
+
+        <!-- Cheat Sheets -->
+        <button id="cheatSheetBtn" class="px-2.5 py-1 text-[11px] font-semibold rounded-md bg-amber-500/15 dark:bg-amber-500/20 border border-amber-500/40 text-amber-800 dark:text-amber-300 hover:bg-amber-500/25 transition flex items-center gap-1">
+          <span>⚡ High-Yield Notes</span>
+        </button>
+
+        <!-- Quiz Trigger -->
+        <button id="quizModalBtn" class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-amber-500 hover:bg-amber-400 text-slate-950 transition flex items-center gap-1 shadow-sm">
+          <span>🎯 Rapid Quiz</span>
+        </button>
+
+        <!-- Print -->
+        <button onclick="window.print()" class="no-print p-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200" title="Print Compact Summary">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="max-w-7xl mx-auto px-3 sm:px-5 pt-3 pb-2 sticky top-[45px] z-40 bg-[#f8fafc]/95 dark:bg-[#070b14]/95 backdrop-blur border-b border-slate-200/80 dark:border-slate-800/80">
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2">
+      <!-- Search Input -->
+      <div class="relative flex-1 max-w-sm">
+        <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <input 
+          type="text" 
+          id="searchInput"
+          placeholder="Filter year, battle, guru, treaty, PEPSU..."
+          class="w-full pl-8 pr-3 py-1 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-md text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:border-amber-500"
+        >
+      </div>
+
+      <!-- Quick stats & High Yield Checkbox -->
+      <div class="flex items-center justify-between sm:justify-end gap-3 text-[11px]">
+        <label class="inline-flex items-center gap-1.5 cursor-pointer select-none">
+          <input type="checkbox" id="highYieldOnly" class="rounded text-amber-500 focus:ring-amber-500 border-slate-300 dark:border-slate-700 dark:bg-slate-800">
+          <span class="font-semibold text-amber-700 dark:text-amber-300">⭐ High-Yield PYQs Only</span>
+        </label>
+        <span class="text-slate-500 dark:text-slate-400 border-l border-slate-300 dark:border-slate-700 pl-2.5" id="visibleCounter">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Dense Era Pills -->
+    <div class="flex items-center gap-1 overflow-x-auto py-1.5 mt-1 no-scrollbar text-[11px]">
+      <button class="era-filter-btn px-2 py-0.5 rounded text-[11px] font-bold whitespace-nowrap bg-amber-500 text-slate-950" data-era="all">All</button>
+      <button class="era-filter-btn px-2 py-0.5 rounded text-[11px] font-medium whitespace-nowrap bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700" data-era="1">1. Ten Gurus (1469-1708)</button>
+      <button class="era-filter-btn px-2 py-0.5 rounded text-[11px] font-medium whitespace-nowrap bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700" data-era="2">2. Banda Singh & Misls (1708-1783)</button>
+      <button class="era-filter-btn px-2 py-0.5 rounded text-[11px] font-medium whitespace-nowrap bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700" data-era="3">3. Ranjit Singh & Nalwa (1780-1839)</button>
+      <button class="era-filter-btn px-2 py-0.5 rounded text-[11px] font-medium whitespace-nowrap bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700" data-era="4">4. Anglo-Sikh Wars (1845-1897)</button>
+      <button class="era-filter-btn px-2 py-0.5 rounded text-[11px] font-medium whitespace-nowrap bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700" data-era="5">5. Reforms & Freedom (1851-1928)</button>
+      <button class="era-filter-btn px-2 py-0.5 rounded text-[11px] font-medium whitespace-nowrap bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700" data-era="6">6. Post-1947 & Reorg (1948-1973)</button>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-3 sm:px-5 py-3">
+    <!-- Active Era description banner -->
+    <div id="eraHeaderCallout" class="mb-3 px-3 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-600 dark:text-slate-300">
+      <div class="flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+        <span id="currentEraDesc">Displaying all 6 chronological periods of Punjab's political, cultural, and colonial history.</span>
+      </div>
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-amber-600 dark:text-amber-400 hover:underline shrink-0 text-[10px] font-bold">Top ↑</button>
+    </div>
+
+    <!-- Timeline Container (supports Timeline stem view and 2-Col Grid view) -->
+    <div id="timelineContainer" class="relative dense-stem transition-all">
+      <!-- Events will be rendered via JS -->
+    </div>
+
+    <div id="noResults" class="hidden text-center py-12">
+      <p class="text-sm font-semibold text-slate-600 dark:text-slate-400">No events found matching your filter criteria.</p>
+    </div>
+  </main>
+
+  <div id="cheatSheetDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex justify-end">
+    <div class="w-full max-w-xl bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 h-full overflow-y-auto p-4 flex flex-col justify-between shadow-2xl">
+      <div>
+        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2 mb-3">
+          <div class="flex items-center gap-1.5">
+            <span class="text-base">⚡</span>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white">PSSSB Exam Mnemonics & Key Tables</h3>
+          </div>
+          <button id="closeCheatSheet" class="text-slate-400 hover:text-slate-800 dark:hover:text-white p-1 text-base font-bold">&times;</button>
+        </div>
+
+        <div class="space-y-3 text-[11px] text-slate-700 dark:text-slate-300">
+          <!-- 1st War Mnemonic -->
+          <div class="bg-amber-50/80 dark:bg-slate-800/80 border border-amber-300/80 dark:border-amber-500/30 rounded-lg p-2.5">
+            <div class="flex items-center justify-between font-bold text-amber-700 dark:text-amber-400 mb-1">
+              <span>1st Anglo-Sikh War (1845-46)</span>
+              <span class="font-mono bg-amber-500/20 px-1.5 py-0.2 rounded text-[10px]">MF BAS</span>
+            </div>
+            <p class="text-[11px] leading-tight text-slate-600 dark:text-slate-300">
+              <strong>M</strong>udki (18 Dec 1845) → <strong>F</strong>erozeshah (21 Dec 1845) → <strong>B</strong>adowal (21 Jan 1846) → <strong>A</strong>liwal (28 Jan 1846) → <strong>S</strong>abraon (10 Feb 1846 - Waterloo of Punjab; Sham Singh Atariwala).
+            </p>
+            <p class="mt-1 text-[10px] text-amber-800 dark:text-amber-300">Treaty of Lahore (9 Mar 1846) & Treaty of Bhairowal (16 Dec 1846 - 8 Sardars Regency).</p>
+          </div>
+
+          <!-- 2nd War Mnemonic -->
+          <div class="bg-sky-50/80 dark:bg-slate-800/80 border border-sky-300/80 dark:border-sky-500/30 rounded-lg p-2.5">
+            <div class="flex items-center justify-between font-bold text-sky-700 dark:text-sky-400 mb-1">
+              <span>2nd Anglo-Sikh War (1848-49)</span>
+              <span class="font-mono bg-sky-500/20 px-1.5 py-0.2 rounded text-[10px]">R-C-M-G</span>
+            </div>
+            <p class="text-[11px] leading-tight text-slate-600 dark:text-slate-300">
+              <strong>R</strong>amnagar (22 Nov 1848) → <strong>C</strong>hillianwala (13 Jan 1849) → <strong>M</strong>ultan (22 Jan 1849) → <strong>G</strong>ujarat (21 Feb 1849 - 'Battle of Guns').
+            </p>
+            <p class="mt-1 text-[10px] text-sky-800 dark:text-sky-300">Annexation: 29 March 1849 by Lord Dalhousie. Board of Admin: Sir Henry Lawrence, John Lawrence & Charles Mansel.</p>
+          </div>
+
+          <!-- 12 Misls Table -->
+          <div class="bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5">
+            <h4 class="font-bold text-emerald-700 dark:text-emerald-400 mb-1.5">12 Sikh Misls & Founders</h4>
+            <div class="grid grid-cols-2 gap-x-2 gap-y-1 text-[10px]">
+              <div><strong>1. Faizullapuria:</strong> Nawab Kapur Singh</div>
+              <div><strong>2. Ahluwalia:</strong> Jassa Singh Ahluwalia</div>
+              <div><strong>3. Sukerchakia:</strong> Charat Singh</div>
+              <div><strong>4. Bhangi:</strong> Chhajja Singh / Hari Singh</div>
+              <div><strong>5. Kanhaiya:</strong> Jai Singh Kanhaiya</div>
+              <div><strong>6. Ramgarhia:</strong> Khushal Singh / Jassa Singh</div>
+              <div><strong>7. Phulkian:</strong> Chaudhary Phul</div>
+              <div><strong>8. Dallewalia:</strong> Gulab Singh Dallewalia</div>
+              <div><strong>9. Shaheedan:</strong> Baba Deep Singh Ji</div>
+              <div><strong>10. Karorsinghia:</strong> Karora Singh / Baghel Singh</div>
+              <div><strong>11. Nakkai:</strong> Hira Singh Sandhu</div>
+              <div><strong>12. Nishanwalia:</strong> Dasaundha Singh</div>
+            </div>
+          </div>
+
+          <!-- 10 Gurus Key Facts -->
+          <div class="bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5">
+            <h4 class="font-bold text-amber-700 dark:text-amber-400 mb-1">Ten Gurus Quick Exam Points</h4>
+            <div class="space-y-1 text-[10px] text-slate-700 dark:text-slate-300">
+              <p>• <strong>Guru Nanak:</strong> Kartarpur (Ravi), Langar, 3 Pillars, 4 Udasis, Babarvani (1520).</p>
+              <p>• <strong>Guru Angad:</strong> Gurmukhi script standardization, Mall Akhara, Khadur Sahib.</p>
+              <p>• <strong>Guru Amar Das:</strong> 22 Manjis, Goindwal Baoli (84 steps), Anand Sahib, abolished Sati.</p>
+              <p>• <strong>Guru Ram Das:</strong> Founded Ramdaspura (Amritsar), 4 Lavan hymns, Masand system.</p>
+              <p>• <strong>Guru Arjan:</strong> Harimandir Sahib (Mian Mir, 1588), compiled Adi Granth (1604), 1st Martyr (1606).</p>
+              <p>• <strong>Guru Hargobind:</strong> Miri-Piri, Akal Takht (1606-09), Lohgarh Fort, 4 battles.</p>
+              <p>• <strong>Guru Har Rai:</strong> Herbal dispensary, peaceful cavalry of 2,200 horsemen.</p>
+              <p>• <strong>Guru Harkrishan:</strong> 'Bal Guru' (accession age 5), served smallpox in Delhi (Bangla Sahib).</p>
+              <p>• <strong>Guru Tegh Bahadur:</strong> 'Hind Di Chadar', founded Anandpur (1665), martyred at Chandni Chowk (1675).</p>
+              <p>• <strong>Guru Gobind Singh:</strong> Khalsa Panth (1699), 5 Ks, Panj Pyare, Chamkaur, Zafarnama, sealed Guru Granth Sahib (1708).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-2 border-t border-slate-200 dark:border-slate-800 mt-2">
+        <button onclick="document.getElementById('cheatSheetDrawer').classList.add('hidden')" class="w-full py-1.5 bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-semibold rounded transition">Close Drawer</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="quizModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-3">
+    <div class="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-xl relative">
+      <button id="closeQuizModal" class="absolute top-2.5 right-3 text-slate-400 hover:text-slate-800 dark:hover:text-white text-lg font-bold">&times;</button>
+      
+      <div id="quizIntro">
+        <span class="px-2 py-0.2 rounded text-[10px] font-bold bg-amber-500/20 text-amber-800 dark:text-amber-300 uppercase">Self Assessment</span>
+        <h3 class="text-sm font-bold text-slate-900 dark:text-white mt-1">PSSSB Punjab GK Rapid Drill</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">5 quick questions on high-frequency questions.</p>
+        <button id="startQuizBtn" class="w-full py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition shadow">
+          Start Rapid Drill
+        </button>
+      </div>
+
+      <div id="quizActive" class="hidden">
+        <div class="flex justify-between items-center text-[11px] text-slate-500 dark:text-slate-400 mb-2 border-b border-slate-200 dark:border-slate-800 pb-1.5">
+          <span id="quizProgress">Question 1 of 5</span>
+          <span id="quizScoreCount" class="text-amber-600 dark:text-amber-400 font-bold">Score: 0</span>
+        </div>
+        <h4 id="quizQuestion" class="text-xs sm:text-sm font-semibold text-slate-900 dark:text-white mb-2 leading-snug"></h4>
+        <div id="quizOptions" class="space-y-1.5 mb-2.5"></div>
+        <div id="quizFeedback" class="text-[11px] p-2 rounded-lg hidden font-medium mb-2 leading-tight"></div>
+        <button id="quizNextBtn" class="w-full py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-100 font-semibold text-xs hidden transition">
+          Next Question →
+        </button>
+      </div>
+
+      <div id="quizResult" class="hidden text-center py-2">
+        <div class="text-2xl mb-1" id="quizResultEmoji">🏆</div>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1" id="quizResultTitle">Completed!</h4>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3" id="quizResultScore"></p>
+        <button id="restartQuizBtn" class="px-4 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs">Try Another Set</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const eventsData = [
+      // ERA 1: TEN GURUS (1469 - 1708)
+      {
+        year: "1469",
+        era: "1",
+        title: "Prakash Parv of Guru Nanak Dev Ji",
+        subtitle: "Rai Bhoi Di Talwandi (Nankana Sahib, Pakistan)",
+        location: "Nankana Sahib",
+        details: "Born on Katak Puranmashi. Father: Mehta Kalu, Mother: Mata Tripta Ji. Sister: Bebe Nanaki. Initiated 'Ik Onkar' (One God) & Sacha Sauda (20 Rs).",
+        highYield: true,
+        examNotes: "Birthplace: Nankana Sahib. River associated with enlightenment: Kali Bein (Sultanpur Lodhi).",
+        badge: "Guru Nanak Dev Ji"
+      },
+      {
+        year: "1487",
+        era: "1",
+        title: "Marriage of Guru Nanak Dev Ji",
+        subtitle: "Gurdwara Kandh Sahib, Batala",
+        location: "Batala (Gurdaspur)",
+        details: "Married Mata Sulakhni Ji (daughter of Mul Chand). Gurdwara Kandh Sahib marks the site.",
+        highYield: false,
+        examNotes: "Gurdwara Kandh Sahib is situated at Batala.",
+        badge: "Guru Nanak Dev Ji"
+      },
+      {
+        year: "1494",
+        era: "1",
+        title: "Birth of Baba Sri Chand Ji",
+        subtitle: "Founder of Udasi Tradition",
+        location: "Sultanpur Lodhi",
+        details: "Eldest son of Guru Nanak Dev Ji. Founded the Udasi sect of ascetic ascetics who guarded historic Gurdwaras.",
+        highYield: true,
+        examNotes: "PSSSB Hotspot: Founder of Udasi sect was Baba Sri Chand Ji.",
+        badge: "Udasi Sect"
+      },
+      {
+        year: "1496",
+        era: "1",
+        title: "Birth of Baba Lakhmi Das Ji",
+        subtitle: "Younger Son of Guru Nanak Dev Ji",
+        location: "Sultanpur Lodhi",
+        details: "Represented Grihastha (family/householder) lifestyle. Ancestor of the Bedi lineage.",
+        highYield: false,
+        examNotes: "Ancestor of the historical Bedi clan of Punjab.",
+        badge: "Guru Nanak Dev Ji"
+      },
+      {
+        year: "1499",
+        era: "1",
+        title: "Enlightenment & 'Na Koi Hindu, Na Koi Musalman'",
+        subtitle: "Sacred Kali Bein Experience",
+        location: "Sultanpur Lodhi",
+        details: "Disappeared into Kali Bein for 3 days; returned proclaiming universal brotherhood. Gurdwara Ber Sahib stands here.",
+        highYield: true,
+        examNotes: "Kali Bein river & Sultanpur Lodhi Modi Khana (Daulat Khan Lodhi).",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1499-1509",
+        era: "1",
+        title: "First Udasi (East & North-East)",
+        subtitle: "With Bhai Mardana (Rabab)",
+        location: "Haridwar, Varanasi, Assam, Puri",
+        details: "Travelled across Haridwar (offering water to fields), Gorakhmath, and Jagannath Puri exposing empty ritualism.",
+        highYield: true,
+        examNotes: "1st Udasi covered East/North-East. Accompanied by Rababi Bhai Mardana.",
+        badge: "The Udasis"
+      },
+      {
+        year: "1504",
+        era: "1",
+        title: "Birth of Guru Angad Dev Ji (Bhai Lehna Ji)",
+        subtitle: "Second Sikh Guru",
+        location: "Matte Di Sarai (Muktsar)",
+        details: "Born to Pheru Mal and Mata Sabhira. Later renamed 'Angad' (limb of Guru Nanak) for unwavering devotion.",
+        highYield: true,
+        examNotes: "Original Name: Bhai Lehna Ji. Birthplace: Matte Di Sarai (Muktsar).",
+        badge: "Guru Angad Dev Ji"
+      },
+      {
+        year: "1510-1515",
+        era: "1",
+        title: "Second Udasi (South Direction)",
+        subtitle: "Southern India & Sri Lanka",
+        location: "Rajasthan, Tamil Nadu, Sri Lanka",
+        details: "Visited Raja Shivnabh in Ceylon (Sri Lanka) and major southern pilgrim centres preaching divine love.",
+        highYield: false,
+        examNotes: "2nd Udasi was towards the South (including Sri Lanka).",
+        badge: "The Udasis"
+      },
+      {
+        year: "1515-1517",
+        era: "1",
+        title: "Third Udasi (North Direction)",
+        subtitle: "Himalayas, Sumeru & Ladakh",
+        location: "Kashmir, Mount Sumeru, Leh",
+        details: "Held discourses with Yogis (recorded in 'Sidh Gosht'). Founded Gurdwara Pathar Sahib at Leh, Ladakh.",
+        highYield: true,
+        examNotes: "Gurdwara Pathar Sahib (Leh) & Sidh Gosht hymn correspond to 3rd Udasi.",
+        badge: "The Udasis"
+      },
+      {
+        year: "1517-1521",
+        era: "1",
+        title: "Fourth Udasi (West / Islamic Shrines)",
+        subtitle: "Mecca, Medina & Baghdad",
+        location: "Arabia, Baghdad, Kabul",
+        details: "Visited Mecca and Baghdad (stone inscription with Pir Dastgir). Illustrated that God is present in all directions.",
+        highYield: true,
+        examNotes: "Baghdad tablet records Guru Nanak's visit with Bhai Mardana.",
+        badge: "The Udasis"
+      },
+      {
+        year: "1520",
+        era: "1",
+        title: "Babur's Invasion & 'Babarvani'",
+        subtitle: "Devastation of Saidpur (Eminabad)",
+        location: "Saidpur (Pakistan)",
+        details: "Guru Nanak witnessed the sack of Saidpur and boldly termed Babur's army 'Paap ki Janj' (wedding party of sin). Imprisoned at Saidpur.",
+        highYield: true,
+        examNotes: "Babarvani hymns composed by Guru Nanak Dev Ji portray Babur's 1520 invasion.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1521",
+        era: "1",
+        title: "Foundation of Kartarpur (Ravi)",
+        subtitle: "Communal Agriculture & Sangat-Pangat",
+        location: "Kartarpur (Pakistan)",
+        details: "Guru Nanak farmed and established institutional Sangat and Pangat (free kitchen). Kartarpur corridor opened in 2019.",
+        highYield: true,
+        examNotes: "Founded on River Ravi by Guru Nanak Dev Ji in 1521.",
+        badge: "Guru Nanak Dev Ji"
+      },
+      {
+        year: "1534",
+        era: "1",
+        title: "Birth of Guru Ram Das Ji (Bhai Jetha Ji)",
+        subtitle: "Fourth Sikh Guru",
+        location: "Chuna Mandi (Lahore)",
+        details: "Born to Hari Das and Mata Daya Vati. Devoted himself to humble selfless service at Goindwal Sahib.",
+        highYield: true,
+        examNotes: "Original Name: Bhai Jetha Ji. Born at Chuna Mandi, Lahore.",
+        badge: "Guru Ram Das Ji"
+      },
+      {
+        year: "1539",
+        era: "1",
+        title: "Jyoti Jot of Guru Nanak & Guru Angad's Succession",
+        subtitle: "Transfer of Guruship at Kartarpur",
+        location: "Kartarpur Sahib (Ravi)",
+        details: "Passed the flame of Guruship to Bhai Lehna Ji (Guru Angad Dev Ji).",
+        highYield: true,
+        examNotes: "Year 1539: Jyoti Jot at Kartarpur (Ravi).",
+        badge: "Guru Succession"
+      },
+      {
+        year: "1546",
+        era: "1",
+        title: "Humayun Visits Guru Angad Dev Ji",
+        subtitle: "Fleeing Sher Shah Suri",
+        location: "Khadur Sahib",
+        details: "After defeat against Sher Shah Suri, Mughal Emperor Humayun came to Khadur Sahib seeking blessings.",
+        highYield: true,
+        examNotes: "PSSSB PYQ: Humayun met Guru Angad Dev Ji at Khadur Sahib.",
+        badge: "Mughal Interface"
+      },
+      {
+        year: "1552",
+        era: "1",
+        title: "Jyoti Jot of Guru Angad & Guru Amar Das's Succession",
+        subtitle: "Third Guru Assumes Office",
+        location: "Khadur Sahib",
+        details: "Guru Angad standardized Gurmukhi script and promoted Mall Akhara. Succeeded by 73-year-old Guru Amar Das Ji.",
+        highYield: true,
+        examNotes: "Standardized Gurmukhi script; promoted Mall Akhara (wrestling grounds).",
+        badge: "Guru Angad Dev Ji"
+      },
+      {
+        year: "1563",
+        era: "1",
+        title: "Birth of Guru Arjan Dev Ji",
+        subtitle: "Fifth Sikh Guru & First Martyr Guru",
+        location: "Goindwal Sahib",
+        details: "Born to Guru Ram Das Ji and Bibi Bhani Ji at Goindwal Sahib.",
+        highYield: false,
+        examNotes: "Born at Goindwal Sahib in 1563.",
+        badge: "Guru Arjan Dev Ji"
+      },
+      {
+        year: "1574",
+        era: "1",
+        title: "Jyoti Jot of Guru Amar Das & Guru Ram Das's Succession",
+        subtitle: "Fourth Guru Takes Seat",
+        location: "Goindwal Sahib",
+        details: "Guru Amar Das set up 22 Manjis, built Goindwal Baoli (84 steps), and composed Anand Sahib. Succeeded by Guru Ram Das Ji.",
+        highYield: true,
+        examNotes: "22 Manji system, Baoli at Goindwal Sahib (84 steps), Anand Sahib composition.",
+        badge: "Guru Amar Das Ji"
+      },
+      {
+        year: "1577",
+        era: "1",
+        title: "Foundation of Amritsar (Ramdaspura)",
+        subtitle: "Chak Guru Ram Das",
+        location: "Amritsar",
+        details: "Guru Ram Das founded the holy township and excavated the sacred Amrit Sarovar tank. Land sanctioned during Akbar's reign.",
+        highYield: true,
+        examNotes: "Historic names: Ramdaspura / Chak Guru Ram Das. Founded in 1577.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1581",
+        era: "1",
+        title: "Jyoti Jot of Guru Ram Das & Guru Arjan's Succession",
+        subtitle: "Fifth Guru Assumes Guruship",
+        location: "Goindwal / Amritsar",
+        details: "Guru Ram Das composed 4 Lavan hymns for Anand Karaj and initiated Masand system. Succeeded by Guru Arjan Dev Ji.",
+        highYield: true,
+        examNotes: "Composed 4 Lavan (marriage hymns); initiated Masand system.",
+        badge: "Guru Ram Das Ji"
+      },
+      {
+        year: "1588-1601",
+        era: "1",
+        title: "Construction of Sri Harimandir Sahib",
+        subtitle: "Foundation by Sufi Saint Hazrat Mian Mir",
+        location: "Amritsar",
+        details: "Guru Arjan Dev invited Sufi saint Hazrat Mian Mir of Lahore to lay foundation (1588). Built with 4 doors open to all castes.",
+        highYield: true,
+        examNotes: "Foundation laid by Sufi saint Hazrat Mian Mir (1588). 4 doors represent universal entry.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1604",
+        era: "1",
+        title: "Compilation & Installation of Adi Granth Sahib",
+        subtitle: "Ramsar Sarovar & First Granthi Baba Buddha Ji",
+        location: "Harimandir Sahib, Amritsar",
+        details: "Compiled by Guru Arjan Dev Ji at Ramsar; scribe was Bhai Gurdas Ji. Installed in August/Sept 1604. First Granthi: Baba Buddha Ji.",
+        highYield: true,
+        examNotes: "Direct PYQ: Scribe: Bhai Gurdas Ji. Compilation: Ramsar. 1st Granthi: Baba Buddha Ji.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1606",
+        era: "1",
+        title: "Martyrdom of Guru Arjan Dev Ji at Lahore",
+        subtitle: "'Shaheedan de Sartaj' (First Sikh Martyr)",
+        location: "Lahore (Gurdwara Dera Sahib)",
+        details: "Executed on orders of Emperor Jahangir (recorded in Tuzuk-i-Jahangiri) under instigation of Chandu Shah. Endured hot sand and iron plates.",
+        highYield: true,
+        examNotes: "Mughal Emperor: Jahangir. Known as Shaheedan de Sartaj. Site: Dera Sahib Lahore.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1606-1609",
+        era: "1",
+        title: "Establishment of Sri Akal Takht Sahib",
+        subtitle: "Guru Hargobind Sahib Wears Miri & Piri",
+        location: "Amritsar",
+        details: "Guru Hargobind Sahib founded Akal Takht (completed 9 July 1609). Donned two swords: Miri (temporal) & Piri (spiritual). Built Lohgarh Fort.",
+        highYield: true,
+        examNotes: "Founded by 6th Guru, Guru Hargobind Sahib. Miri = Temporal; Piri = Spiritual. Fort: Lohgarh.",
+        badge: "Akal Takht"
+      },
+      {
+        year: "1628",
+        era: "1",
+        title: "Excavation of Bibeksar Sarovar",
+        subtitle: "Holy Sarovar of Amritsar",
+        location: "Amritsar",
+        details: "Excavated by Guru Hargobind Sahib for spiritual assembly.",
+        highYield: false,
+        examNotes: "One of the 5 sacred sarovars of Amritsar.",
+        badge: "Guru Hargobind Ji"
+      },
+      {
+        year: "1631",
+        era: "1",
+        title: "Battle of Mehraj",
+        subtitle: "Guru Hargobind vs Mughal Faujdar Lalla Beg",
+        location: "Mehraj (Bathinda)",
+        details: "Fought over recovered imperial horses (Dilbagh and Gulbagh) fetched by Bhai Bidhi Chand. Lalla Beg defeated.",
+        highYield: true,
+        examNotes: "Mughal Commander: Lalla Beg. Horses: Dilbagh and Gulbagh retrieved by Bhai Bidhi Chand.",
+        badge: "Battles of 6th Guru"
+      },
+      {
+        year: "1634",
+        era: "1",
+        title: "Battle of Amritsar & Battle of Lehra",
+        subtitle: "Clash with Shah Jahan's Forces",
+        location: "Amritsar & Bathinda",
+        details: "Sparked by a royal hunting hawk (Baaz) of Shah Jahan. Mughal general Mukhlis Khan was slain by Guru Hargobind Sahib.",
+        highYield: true,
+        examNotes: "Root cause: Royal Hawk (Baaz). Opponent: Mukhlis Khan. Ruler: Shah Jahan.",
+        badge: "Battles of 6th Guru"
+      },
+      {
+        year: "1635",
+        era: "1",
+        title: "Battle of Kartarpur & Phagwara",
+        subtitle: "Defeat of Painde Khan",
+        location: "Kartarpur (Jalandhar) & Phagwara",
+        details: "Turncoat Painde Khan killed by Guru Hargobind. Young Tegh Bahadur displayed great swordsmanship, earning his name.",
+        highYield: true,
+        examNotes: "Young Tegh Bahadur earned the title 'Tegh Bahadur' (wielder of the sword) here.",
+        badge: "Battles of 6th Guru"
+      },
+      {
+        year: "1644",
+        era: "1",
+        title: "Jyoti Jot of Guru Hargobind & Guru Har Rai's Succession",
+        subtitle: "Seventh Sikh Guru",
+        location: "Kiratpur Sahib (Ropar)",
+        details: "Guru Hargobind passed away at Kiratpur. Guru Har Rai maintained 2,200 horsemen and an extensive ayurvedic herbal clinic.",
+        highYield: false,
+        examNotes: "Guru Har Rai provided medicinal herbs to cure Prince Dara Shikoh.",
+        badge: "Guru Har Rai Ji"
+      },
+      {
+        year: "1661",
+        era: "1",
+        title: "Succession of Guru Harkrishan Sahib Ji",
+        subtitle: "'Bal Guru' at 5 Years Old",
+        location: "Kiratpur Sahib",
+        details: "Eighth Guru at age 5, exhibiting unmatched spiritual depth.",
+        highYield: true,
+        examNotes: "Youngest Sikh Guru (became Guru at age 5). Known as 'Bal Guru'.",
+        badge: "Guru Harkrishan Ji"
+      },
+      {
+        year: "1664",
+        era: "1",
+        title: "Jyoti Jot of Guru Harkrishan ('Baba Bakale')",
+        subtitle: "Healing Epidemics at Delhi",
+        location: "Delhi (Gurdwara Bangla Sahib)",
+        details: "Treated smallpox victims at Raja Jai Singh's residence (Bangla Sahib). Uttered 'Baba Bakale' before passing at age 8.",
+        highYield: true,
+        examNotes: "Gurdwara Bangla Sahib (Delhi). Uttered 'Baba Bakale' pointing to 9th Guru.",
+        badge: "Guru Harkrishan Ji"
+      },
+      {
+        year: "1665",
+        era: "1",
+        title: "Foundation of Sri Anandpur Sahib (Chakk Nanaki)",
+        subtitle: "Guru Tegh Bahadur Buys Land from Bilaspur Raja",
+        location: "Anandpur Sahib (Ropar)",
+        details: "Purchased Makhowal village from Raja of Kahlur/Bilaspur, named it Chakk Nanaki after his mother. Later called Anandpur Sahib.",
+        highYield: true,
+        examNotes: "Founded in 1665 by Guru Tegh Bahadur Ji (originally Chakk Nanaki).",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1666",
+        era: "1",
+        title: "Prakash Parv of Guru Gobind Singh Ji",
+        subtitle: "Tenth Sikh Guru Born at Patna",
+        location: "Patna Sahib (Bihar)",
+        details: "Born on 22 December 1666 to Guru Tegh Bahadur and Mata Gujri Ji. Childhood name: Gobind Rai.",
+        highYield: true,
+        examNotes: "Only Sikh Guru born outside Punjab: Guru Gobind Singh (Patna Sahib, Bihar).",
+        badge: "Guru Gobind Singh Ji"
+      },
+      {
+        year: "1675",
+        era: "1",
+        title: "Martyrdom of Guru Tegh Bahadur Ji at Chandni Chowk",
+        subtitle: "'Hind Di Chadar' - Protecting Freedom of Faith",
+        location: "Chandni Chowk, Delhi",
+        details: "Supported Kashmiri Pandits led by Pandit Kirpa Ram. Publicly executed by Aurangzeb. Head cremated at Anandpur by Bhai Jaita; body by Lakhi Shah Vanjara (Rakab Ganj).",
+        highYield: true,
+        examNotes: "Title: Hind Di Chadar. Mughal Emperor: Aurangzeb. Execution Site: Sis Ganj; Body: Rakab Ganj.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1685",
+        era: "1",
+        title: "Paonta Fort Established",
+        subtitle: "Yamuna Banks (Sirmaur, HP)",
+        location: "Paonta Sahib",
+        details: "Invited by Raja Medni Prakash. Guru Gobind Singh patronized 52 poets here.",
+        highYield: false,
+        examNotes: "Paonta Sahib is situated on the banks of River Yamuna (HP).",
+        badge: "Guru Gobind Singh Ji"
+      },
+      {
+        year: "1688",
+        era: "1",
+        title: "Battle of Bhangani",
+        subtitle: "First Battle Victory of Guru Gobind Singh",
+        location: "Bhangani (near Paonta Sahib, HP)",
+        details: "Defeated combined Shivalik hill rajas led by Raja Fateh Shah. Pir Budhu Shah of Sadhaura aided with his four sons.",
+        highYield: true,
+        examNotes: "First battle fought by Guru Gobind Singh Ji: Battle of Bhangani (1688). Ally: Pir Budhu Shah.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1690",
+        era: "1",
+        title: "Battle of Nadaun",
+        subtitle: "Victory Against Mughal General Alif Khan",
+        location: "Nadaun (Beas River, HP)",
+        details: "Aided Raja Bhim Chand of Bilaspur against Mughal tribute collector Alif Khan. Documented in Bachittar Natak.",
+        highYield: false,
+        examNotes: "Described in Guru Gobind Singh's 'Bachittar Natak'.",
+        badge: "Guru Gobind Singh Ji"
+      },
+      {
+        year: "1699",
+        era: "1",
+        title: "Creation of the Khalsa Panth",
+        subtitle: "Baisakhi 1699 at Anandpur Sahib",
+        location: "Takht Sri Keshgarh Sahib",
+        details: "Initiated the Panj Pyare with Khande Di Pahul (Amrit) and received Amrit from them. Bestowed the 5 Ks (Kesh, Kangha, Kara, Kachhera, Kirpan).",
+        highYield: true,
+        examNotes: "Top PSSSB PYQ: 1699 Baisakhi, Keshgarh Sahib. Panj Pyare names and 5 Ks mandatory.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1701-1704",
+        era: "1",
+        title: "Sieges of Anandpur & River Sirsa",
+        subtitle: "Pariwar Vichhoda",
+        location: "Anandpur Sahib & Sirsa River",
+        details: "Under siege by Mughal & Hill armies. During evacuation under false Mughal oaths, Guru Ji's family got separated at flooded River Sirsa.",
+        highYield: true,
+        examNotes: "Separation of family (Pariwar Vichhoda) happened at River Sirsa.",
+        badge: "Guru Gobind Singh Ji"
+      },
+      {
+        year: "1704",
+        era: "1",
+        title: "Battle of Chamkaur & Saka Sirhind",
+        subtitle: "Sacrifice of Four Sahibzadas & Mata Gujri Ji",
+        location: "Chamkaur & Sirhind",
+        details: "Elder Sahibzadas (Ajit Singh 18, Jujhar Singh 14) martyred at Chamkaur. Younger Sahibzadas (Zorawar Singh 9, Fateh Singh 7) bricked alive by Wazir Khan at Sirhind. Dec 26 is Veer Bal Diwas.",
+        highYield: true,
+        examNotes: "Elder Sahibzadas: Chamkaur. Younger Sahibzadas: Sirhind (Wazir Khan). Dec 26 = Veer Bal Diwas.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1705",
+        era: "1",
+        title: "Battle of Khidrana (Muktsar) & Zafarnama",
+        subtitle: "Chali Mukte & Letter of Victory",
+        location: "Muktsar & Dina Kangar",
+        details: "Mai Bhago led the 40 forgiven Sikhs (Chali Mukte) at Khidrana (renamed Sri Muktsar Sahib). Guru Ji penned Zafarnama in Persian to Aurangzeb at Dina Kangar.",
+        highYield: true,
+        examNotes: "Old name of Muktsar: Khidrana. Led by Mai Bhago. Zafarnama written in Persian at Dina Kangar.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1707",
+        era: "1",
+        title: "Battle of Jajoo & Death of Aurangzeb",
+        subtitle: "Prince Muazzam (Bahadur Shah I)",
+        location: "Jajoo (Agra)",
+        details: "Aurangzeb died. Guru Gobind Singh assisted Bahadur Shah I in the Mughal war of succession.",
+        highYield: false,
+        examNotes: "Guru Gobind Singh helped Emperor Bahadur Shah I at Battle of Jajoo.",
+        badge: "Guru Gobind Singh Ji"
+      },
+      {
+        year: "1708",
+        era: "1",
+        title: "Jyoti Jot & Eternal Guruship to Guru Granth Sahib",
+        subtitle: "Takht Sri Hazur Sahib, Nanded",
+        location: "Nanded (Maharashtra)",
+        details: "Passed away on 7 Oct 1708 after attack by Wazir Khan's assassins. Ended personal Guruship; installed Sri Guru Granth Sahib Ji as eternal living Guru.",
+        highYield: true,
+        examNotes: "Jyoti Jot at Nanded (Godavari River). Sri Guru Granth Sahib installed as eternal Guru.",
+        badge: "PSSSB Core"
+      },
+
+      // ERA 2: BANDA SINGH BAHADUR & MISLS (1708 - 1783)
+      {
+        year: "1708",
+        era: "2",
+        title: "Guru Gobind Singh Commissions Banda Singh Bahadur",
+        subtitle: "Madho Das Bairagi Commissioned at Nanded",
+        location: "Nanded",
+        details: "Bairagi ascetic Madho Das (born Lachhman Dev, 1670 at Rajouri) was given 5 arrows, Nishan Sahib, and directed to lead Punjab's liberation.",
+        highYield: true,
+        examNotes: "Original Name: Lachhman Dev; Ascetic Name: Madho Das; Given Name: Gurbaksh Singh / Banda Bahadur.",
+        badge: "Banda Bahadur"
+      },
+      {
+        year: "1709",
+        era: "2",
+        title: "Battles of Samana & Sadhaura",
+        subtitle: "Justice for Jalal-ud-din & Usman Khan",
+        location: "Samana (Patiala) & Sadhaura",
+        details: "Samana was the base of executioners of Guru Tegh Bahadur and younger Sahibzadas. Sadhaura's tyrant Usman Khan was punished.",
+        highYield: true,
+        examNotes: "Executioners of Guru Tegh Bahadur and younger Sahibzadas belonged to Samana.",
+        badge: "Banda Bahadur"
+      },
+      {
+        year: "1710",
+        era: "2",
+        title: "Battle of Chappar Chiri & Capture of Sirhind",
+        subtitle: "Wazir Khan Slain & First Sikh Sovereign State",
+        location: "Chappar Chiri (SAS Nagar Mohali)",
+        details: "12 May 1710: Defeated Mughal army; Wazir Khan killed by Fateh Singh. Banda abolished the Zamindari system, granting land ownership to cultivators.",
+        highYield: true,
+        examNotes: "Chappar Chiri is in Mohali. Wazir Khan slain. Abolished feudal Zamindari system.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1710-1713",
+        era: "2",
+        title: "Capital Established at Lohgarh (Mukhlispur)",
+        subtitle: "First Sovereign Sikh Capital & Currency",
+        location: "Lohgarh (Yamunanagar border)",
+        details: "Mukhlispur renovated as Lohgarh fort. Minted coins in the names of Guru Nanak & Guru Gobind Singh.",
+        highYield: true,
+        examNotes: "First Sikh capital: Lohgarh (Mukhlispur). Issued Nanakshahi-style sovereign coinage.",
+        badge: "Banda Bahadur"
+      },
+      {
+        year: "1715",
+        era: "2",
+        title: "Siege of Gurdas Nangal",
+        subtitle: "8-Month Siege in Haveli of Duni Chand",
+        location: "Gurdas Nangal (Gurdaspur)",
+        details: "Mughal Governor Abdus Samad Khan besieged Banda Bahadur and Sikhs for 8 months under extreme starvation before capture.",
+        highYield: true,
+        examNotes: "Last defense of Banda Bahadur was at Gurdas Nangal. Mughal Governor: Abdus Samad Khan.",
+        badge: "Banda Bahadur"
+      },
+      {
+        year: "1716",
+        era: "2",
+        title: "Martyrdom of Baba Banda Singh Bahadur at Delhi",
+        subtitle: "Supreme Sacrifice under Farrukhsiyar",
+        location: "Delhi (Mehrauli)",
+        details: "Tortured to death on 9 June 1716 after refusing conversion. His son Ajay Singh was martyred before him.",
+        highYield: true,
+        examNotes: "Mughal Emperor: Farrukhsiyar. Martyrdom place: near Qutub Minar, Mehrauli.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1721",
+        era: "2",
+        title: "Reconciliation of Tat Khalsa & Bandai Khalsa",
+        subtitle: "Bhai Mani Singh Resolves Schism",
+        location: "Amritsar",
+        details: "Bhai Mani Singh unified Bandai Khalsa (followers of Banda) and orthodox Tat Khalsa at Harimandir Sahib.",
+        highYield: false,
+        examNotes: "Bhai Mani Singh mediated the unification sent by Mata Sundri Ji.",
+        badge: "Dal Khalsa"
+      },
+      {
+        year: "1734",
+        era: "2",
+        title: "Founding of Budha Dal & Taruna Dal",
+        subtitle: "Nawab Kapur Singh Reorganizes Army",
+        location: "Amritsar",
+        details: "Budha Dal (veterans above 40 for managing holy shrines) and Taruna Dal (youth for battlefield warfare).",
+        highYield: true,
+        examNotes: "Frequent PSSSB PYQ: Founder was Nawab Kapur Singh. Budha Dal (elders), Taruna Dal (youth).",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1739",
+        era: "2",
+        title: "Nadir Shah Invades Punjab via Khyber Pass",
+        subtitle: "Sack of Delhi & Sikh Guerilla Strikes",
+        location: "Khyber Pass & Punjab",
+        details: "Nadir Shah plundered Delhi (took Koh-i-Noor). On return, Sikh guerillas attacked his baggage train, freeing abducted women.",
+        highYield: true,
+        examNotes: "Nadir Shah entered via Khyber Pass. Sikhs rescued abducted prisoners during his retreat.",
+        badge: "Foreign Invasion"
+      },
+      {
+        year: "1746",
+        era: "2",
+        title: "Chhota Ghallughara (Minor Holocaust)",
+        subtitle: "Kahnuwan Marshes Massacre",
+        location: "Kahnuwan (Gurdaspur)",
+        details: "Over 7,000 Sikhs killed by Diwan Lakhpat Rai and Governor Yahiya Khan of Lahore in dense reed forests.",
+        highYield: true,
+        examNotes: "Location: Kahnuwan (Gurdaspur). Governor: Yahiya Khan; Diwan: Lakhpat Rai.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1748",
+        era: "2",
+        title: "Formation of Dal Khalsa & 12 Misls",
+        subtitle: "Baisakhi 29 March 1748 at Akal Takht",
+        location: "Amritsar",
+        details: "65 jathas unified into Dal Khalsa under supreme command of Sardar Jassa Singh Ahluwalia. Organized into 12 sovereign Misls.",
+        highYield: true,
+        examNotes: "Supreme Commander: Jassa Singh Ahluwalia. Founder: Nawab Kapur Singh. 12 Misls formed.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1757",
+        era: "2",
+        title: "Martyrdom of Baba Deep Singh Ji",
+        subtitle: "Battle of Amritsar against Durrani Army",
+        location: "Chabba / Amritsar",
+        details: "75-year-old Baba Deep Singh vowed to liberate Harimandir Sahib from Afghan desecration. Fought till the Parikrama despite mortal neck wounds.",
+        highYield: true,
+        examNotes: "Founder of Shaheedan Misl. Martyrdom site: Chabba, Amritsar.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1762",
+        era: "2",
+        title: "Vadda Ghallughara (The Great Holocaust)",
+        subtitle: "Kup-Rahira Massacre near Malerkotla",
+        location: "Kup-Rahira (Malerkotla)",
+        details: "5 Feb 1762: Ahmad Shah Abdali launched surprise attack on moving Sikh camp, killing 20,000–35,000 Sikhs (including women & children).",
+        highYield: true,
+        examNotes: "Vadda Ghallughara: 1762 at Kup-Rahira (Malerkotla) by Ahmad Shah Abdali.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1783",
+        era: "2",
+        title: "Capture of Red Fort Delhi by Baba Baghel Singh",
+        subtitle: "Sikh Nishan Sahib Hoisted on Red Fort (11 March)",
+        location: "Red Fort, Delhi",
+        details: "Baba Baghel Singh (Karorsinghia Misl) with Jassa Singh Ahluwalia took Delhi. Established 7 historic Gurdwaras in Delhi (Bangla Sahib, Sis Ganj, etc.).",
+        highYield: true,
+        examNotes: "Baba Baghel Singh captured Red Fort on 11 March 1783. Built Delhi's historic Gurdwaras. Tis Hazari named after his 30,000 cavalry.",
+        badge: "PSSSB Core"
+      },
+
+      // ERA 3: MAHARAJA RANJIT SINGH & NALWA (1780 - 1839)
+      {
+        year: "1780",
+        era: "3",
+        title: "Birth of Maharaja Ranjit Singh ('Sher-e-Punjab')",
+        subtitle: "Born at Gujranwala",
+        location: "Gujranwala (Pakistan)",
+        details: "Born 13 Nov 1780 to Sardar Maha Singh (Sukerchakia Misl) and Mata Raj Kaur. Childhood name: Buddh Singh.",
+        highYield: true,
+        examNotes: "Birthplace: Gujranwala. Father: Maha Singh (Sukerchakia Misl). Original Name: Buddh Singh.",
+        badge: "Ranjit Singh"
+      },
+      {
+        year: "1792",
+        era: "3",
+        title: "Demise of Maha Singh & Regency of Sada Kaur",
+        subtitle: "Young Ranjit Singh Heads Sukerchakia Misl",
+        location: "Gujranwala",
+        details: "Maha Singh died. Ranjit Singh assumed leadership guided by mother Raj Kaur and mother-in-law Rani Sada Kaur (Kanhaiya Misl).",
+        highYield: false,
+        examNotes: "Rani Sada Kaur played a pivotal role in Ranjit Singh's early political ascendance.",
+        badge: "Ranjit Singh"
+      },
+      {
+        year: "1799",
+        era: "3",
+        title: "Conquest of Lahore from Bhangi Sardars",
+        subtitle: "Sovereign Capital Established",
+        location: "Lahore",
+        details: "Annexed Lahore on 7 July 1799 from three Bhangi chiefs (Chet Singh, Sahib Singh, Mohar Singh). Became political capital.",
+        highYield: true,
+        examNotes: "Conquest of Lahore in 1799 from Bhangis; transformed into political capital.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1801",
+        era: "3",
+        title: "Coronation of Maharaja Ranjit Singh",
+        subtitle: "Baisakhi 12 April 1801 - Sarkar-i-Khalsa",
+        location: "Lahore",
+        details: "Invested by Baba Sahib Singh Bedi. Issued Nanakshahi Rupee and titled his rule 'Sarkar-i-Khalsa'.",
+        highYield: true,
+        examNotes: "Coronated by Baba Sahib Singh Bedi. Currency: Nanakshahi Rupee. Government: Sarkar-i-Khalsa.",
+        badge: "Ranjit Singh"
+      },
+      {
+        year: "1805",
+        era: "3",
+        title: "Conquest of Amritsar & Zamzama Cannon",
+        subtitle: "Annexed from Mai Sukhan",
+        location: "Amritsar",
+        details: "Captured religious capital from Mai Sukhan (Bhangi widow), acquiring the famous 'Zamzama' (Bhangianwali Tope) and Lohgarh fort.",
+        highYield: true,
+        examNotes: "Acquired Amritsar and Zamzama Cannon in 1805 from Mai Sukhan.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1807-1808",
+        era: "3",
+        title: "Conquests of Kasur, Jhang & Sialkot",
+        subtitle: "Expansion of Sarkar-i-Khalsa",
+        location: "Kasur, Jhang, Sialkot",
+        details: "Annexed Kasur from Qutub-ud-din (Hari Singh Nalwa shone), Jhang from Ahmad Khan, and Sialkot from Jiwan Singh.",
+        highYield: false,
+        examNotes: "Kasur captured in 1807 from Qutub-ud-din Khan.",
+        badge: "Sikh Empire"
+      },
+      {
+        year: "1809",
+        era: "3",
+        title: "Treaty of Amritsar (Ranjit Singh & Metcalfe)",
+        subtitle: "Sutlej Fixed as British-Sikh Boundary",
+        location: "Amritsar",
+        details: "Signed 25 April 1809 between Ranjit Singh and Charles T. Metcalfe (Gov-Gen Lord Minto I). Sutlej fixed as strict boundary.",
+        highYield: true,
+        examNotes: "Very Frequent PSSSB PYQ: Signed in 1809 with Charles Metcalfe. River Sutlej made the boundary.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1809",
+        era: "3",
+        title: "Conquest of Kangra",
+        subtitle: "Repelling Gurkha Army of Amar Singh Thapa",
+        location: "Kangra (HP)",
+        details: "Sansar Chand Katoch sought Ranjit Singh's help to evict Amar Singh Thapa's Gurkhas, ceding Kangra Fort.",
+        highYield: false,
+        examNotes: "Repulsed Amar Singh Thapa's Gurkhas from Kangra.",
+        badge: "Sikh Empire"
+      },
+      {
+        year: "1813",
+        era: "3",
+        title: "Conquest of Attock & Acquisition of Koh-i-Noor",
+        subtitle: "Battle of Hazro (Chhachh) & Shah Shuja",
+        location: "Attock & Lahore",
+        details: "Defeated Afghan Wazir Fateh Khan at Hazro (first Sikh win across Indus). Acquired Koh-i-Noor diamond from exile Shah Shuja.",
+        highYield: true,
+        examNotes: "Battle of Hazro (1813) was 1st major Sikh victory over Afghans. Obtained Koh-i-Noor from Shah Shuja.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1818",
+        era: "3",
+        title: "Conquest of Multan",
+        subtitle: "Fall of Muzaffar Khan & Misr Diwan Chand",
+        location: "Multan Fort",
+        details: "Led by Prince Kharak Singh & Misr Diwan Chand. Afghan Nawab Muzaffar Khan died defending fort. Diwan Chand awarded title 'Zafar Jang'.",
+        highYield: true,
+        examNotes: "Multan conquered in 1818. Afghan Nawab: Muzaffar Khan. Lead Commander: Misr Diwan Chand.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1819",
+        era: "3",
+        title: "Conquest of Kashmir (Battle of Shopian)",
+        subtitle: "Annexation of Kashmir Subah",
+        location: "Shopian / Srinagar",
+        details: "Misr Diwan Chand, Hari Singh Nalwa, and Kharak Singh defeated Jabbar Khan. Ended 5 centuries of Afghan rule. 1st Governor: Diwan Moti Ram.",
+        highYield: true,
+        examNotes: "Kashmir conquered in 1819 (Battle of Shopian). 1st Sikh Governor: Diwan Moti Ram.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1823",
+        era: "3",
+        title: "Battle of Nowshera & Martyrdom of Akali Phula Singh",
+        subtitle: "Decisive Defeat of Azim Khan's Pashtuns",
+        location: "Nowshera (KPK)",
+        details: "Fierce confrontation against Pashtun tribal lashkars. Jathedar Akali Phula Singh charged heroically and attained martyrdom.",
+        highYield: true,
+        examNotes: "Akali Phula Singh attained martyrdom in the Battle of Nowshera (1823). Defeated Azim Khan.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1834",
+        era: "3",
+        title: "Conquest and Annexation of Peshawar",
+        subtitle: "Hari Singh Nalwa Made Governor",
+        location: "Peshawar",
+        details: "General Hari Singh Nalwa and Prince Nau Nihal Singh annexed Peshawar from Sultan Mohammad Khan Barakzai.",
+        highYield: true,
+        examNotes: "Hari Singh Nalwa captured Peshawar in 1834 and was appointed its Governor.",
+        badge: "Hari Singh Nalwa"
+      },
+      {
+        year: "1837",
+        era: "3",
+        title: "Battle of Jamrud & Martyrdom of Hari Singh Nalwa",
+        subtitle: "Defender of Khyber Pass (30 April)",
+        location: "Jamrud Fort (Khyber Pass)",
+        details: "Nalwa built Jamrud Fort to choke Khyber Pass. Mortally wounded fighting Dost Mohammad Khan's forces; death concealed until relief arrived.",
+        highYield: true,
+        examNotes: "Hari Singh Nalwa martyred at Jamrud (30 April 1837). Famous for building Jamrud Fort.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1838",
+        era: "3",
+        title: "The Tripartite Treaty of 1838",
+        subtitle: "British (Auckland), Ranjit Singh & Shah Shuja",
+        location: "Lahore / Shimla",
+        details: "Signed on 26 June 1838 to reinstate Shah Shuja to Kabul throne (leading to First Anglo-Afghan War).",
+        highYield: true,
+        examNotes: "Tripartite Treaty signatories: British (Lord Auckland), Ranjit Singh, and Shah Shuja.",
+        badge: "Treaty"
+      },
+      {
+        year: "1839",
+        era: "3",
+        title: "Demise of Maharaja Ranjit Singh",
+        subtitle: "Passing on 27 June 1839",
+        location: "Lahore",
+        details: "Sher-e-Punjab died at Lahore. Succeeded by Kharak Singh (1839-40), followed by Nau Nihal Singh, Sher Singh, and young Duleep Singh (1843).",
+        highYield: true,
+        examNotes: "Date of death: 27 June 1839. Eldest son and successor: Kharak Singh. Last Maharaja: Duleep Singh.",
+        badge: "PSSSB Core"
+      },
+
+      // ERA 4: ANGLO-SIKH WARS & ANNEXATION (1845 - 1897)
+      {
+        year: "18 Dec 1845",
+        era: "4",
+        title: "Battle of Mudki (1st War Begins)",
+        subtitle: "Sir Hugh Gough vs Traitor Lal Singh",
+        location: "Mudki (Ferozepur)",
+        details: "First battle of 1st Anglo-Sikh War. Sikh commander Lal Singh deserted the battlefield after giving order to fire.",
+        highYield: true,
+        examNotes: "1st battle of First Anglo-Sikh War. British General: Hugh Gough. Traitor: Lal Singh.",
+        badge: "1st Anglo-Sikh War"
+      },
+      {
+        year: "21 Dec 1845",
+        era: "4",
+        title: "Battle of Ferozeshah",
+        subtitle: "Hardinge's 'Night of Terrors'",
+        location: "Ferozeshah (Ferozepur)",
+        details: "British forces on brink of total collapse. Traitor commander Tej Singh withheld fresh reinforcements, enabling British survival.",
+        highYield: true,
+        examNotes: "Governor-General Hardinge termed it 'Night of Terrors'. Saved by Tej Singh's treachery.",
+        badge: "1st Anglo-Sikh War"
+      },
+      {
+        year: "21 Jan 1846",
+        era: "4",
+        title: "Battle of Badowal",
+        subtitle: "Ranjodh Singh Majithia vs Harry Smith",
+        location: "Badowal (Ludhiana)",
+        details: "Sardar Ranjodh Singh Majithia outmaneuvered General Harry Smith and captured British supply trains.",
+        highYield: true,
+        examNotes: "Sikh Commander: Ranjodh Singh Majithia. British General: Sir Harry Smith.",
+        badge: "1st Anglo-Sikh War"
+      },
+      {
+        year: "28 Jan 1846",
+        era: "4",
+        title: "Battle of Aliwal",
+        subtitle: "Harry Smith's Retaliation on the Sutlej",
+        location: "Aliwal (Ludhiana)",
+        details: "General Harry Smith rallied forces and drove Majithia's Sikh contingents across the Sutlej.",
+        highYield: true,
+        examNotes: "Battle of Aliwal fought on 28 Jan 1846 near Ludhiana.",
+        badge: "1st Anglo-Sikh War"
+      },
+      {
+        year: "10 Feb 1846",
+        era: "4",
+        title: "Battle of Sabraon (The 'Waterloo of Punjab')",
+        subtitle: "Martyrdom of Sardar Sham Singh Atariwala",
+        location: "Sabraon (Sutlej banks)",
+        details: "Decisive battle of 1st War. Traitors Tej Singh & Lal Singh destroyed boat bridge and fled. Sham Singh Atariwala fell fighting heroically.",
+        highYield: true,
+        examNotes: "Sabraon is called 'Waterloo of Punjab'. Heroic martyr: Sardar Sham Singh Atariwala.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "9 & 11 Mar 1846",
+        era: "4",
+        title: "Treaty of Lahore I & II",
+        subtitle: "Cession of Jalandhar Doab & Sale of Kashmir",
+        location: "Lahore",
+        details: "Jalandhar Doab ceded to British. Due to inability to pay 1.5 crore indemnity, Kashmir was sold to Gulab Singh Dogra for 75 lakh rupees (16 Mar 1846).",
+        highYield: true,
+        examNotes: "Jalandhar Doab surrendered. Gulab Singh bought Kashmir for 75 lakh rupees via sale deed.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "16 Dec 1846",
+        era: "4",
+        title: "Treaty of Bhairowal",
+        subtitle: "Council of Regency (8 Sikh Sardars)",
+        location: "Bhairowal",
+        details: "British Resident Sir Henry Lawrence made de facto head; Council of Regency of 8 Sardars formed. Rani Jindan banished.",
+        highYield: true,
+        examNotes: "Created an 8-member Council of Regency headed by Henry Lawrence. Rani Jindan removed.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "22 Nov 1848",
+        era: "4",
+        title: "Battle of Ramnagar (2nd War Begins)",
+        subtitle: "Sher Singh Attariwala vs Hugh Gough",
+        location: "Ramnagar (Chenab River)",
+        details: "Sparked by Diwan Mulraj's revolt in Multan and Chattar Singh in Hazara. Fought on the Chenab; British Cavalry officer Cureton killed.",
+        highYield: true,
+        examNotes: "First battle of Second Anglo-Sikh War (1848-49). Fought on River Chenab.",
+        badge: "2nd Anglo-Sikh War"
+      },
+      {
+        year: "13 Jan 1849",
+        era: "4",
+        title: "Battle of Chillianwala",
+        subtitle: "Severe British Setback on the Jhelum",
+        location: "Chillianwala (Jhelum River)",
+        details: "Sher Singh Attariwala's artillery battered Lord Gough's forces, inflicting heavy British casualties and sparking outrage in London.",
+        highYield: true,
+        examNotes: "British suffered catastrophic tactical casualties near River Jhelum. Gough was recalled.",
+        badge: "2nd Anglo-Sikh War"
+      },
+      {
+        year: "22 Jan 1849",
+        era: "4",
+        title: "Fall of Multan",
+        subtitle: "Surrender of Diwan Mulraj",
+        location: "Multan Fort",
+        details: "Following prolonged artillery bombardment by General Whish, Diwan Mulraj surrendered the fortress.",
+        highYield: false,
+        examNotes: "Diwan Mulraj was Governor of Multan whose revolt sparked the 2nd War.",
+        badge: "2nd Anglo-Sikh War"
+      },
+      {
+        year: "21 Feb 1849",
+        era: "4",
+        title: "Battle of Gujarat ('Battle of the Guns')",
+        subtitle: "Decisive British Artillery Superiority",
+        location: "Gujarat (Chenab River)",
+        details: "Lord Gough's concentrated artillery broke Sikh resistance. Sikhs surrendered on 14 March 1849 at Rawalpindi ('Aaj Ranjit Singh mar gaya').",
+        highYield: true,
+        examNotes: "Battle of Gujarat = 'Battle of the Guns'. Concluded 2nd War. Surrender at Rawalpindi.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "29 Mar 1849",
+        era: "4",
+        title: "Annexation of Punjab by Lord Dalhousie",
+        subtitle: "Board of Administration Established",
+        location: "Lahore",
+        details: "Dalhousie annexed Punjab. Duleep Singh pensioned off. Board of Administration: Sir Henry Lawrence (President), John Lawrence & Charles Mansel.",
+        highYield: true,
+        examNotes: "Annexation Date: 29 March 1849. Gov-Gen: Lord Dalhousie. Board: Henry Lawrence, John Lawrence, Charles Mansel.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "12 Sep 1897",
+        era: "4",
+        title: "Battle of Saragarhi",
+        subtitle: "21 Soldiers of 36th Sikhs vs 10,000 Afghans",
+        location: "Saragarhi (Tirah, NWFP)",
+        details: "21 soldiers led by Havildar Ishar Singh fought to the last man. Awarded Indian Order of Merit (IOM) posthumously.",
+        highYield: true,
+        examNotes: "Date: 12 Sept 1897. Commander: Havildar Ishar Singh. Regiment: 36th Sikhs (now 4th Sikh).",
+        badge: "PSSSB Core"
+      },
+
+      // ERA 5: SOCIO-RELIGIOUS & FREEDOM STRUGGLE (1851 - 1928)
+      {
+        year: "1851",
+        era: "5",
+        title: "Nirankari Movement",
+        subtitle: "Baba Dayal Das Ji",
+        location: "Rawalpindi",
+        details: "Founded by Baba Dayal Das to purge orthodox Hindu rituals, stressing worship of the formless God (Nirankar).",
+        highYield: true,
+        examNotes: "Founder: Baba Dayal Das (Rawalpindi). Emphasized 'Nirankar'.",
+        badge: "Social Reform"
+      },
+      {
+        year: "1857",
+        era: "5",
+        title: "Namdhari (Kuka) Movement",
+        subtitle: "Baba Balak Singh & Satguru Ram Singh",
+        location: "Hazro / Bhaini Sahib (Ludhiana)",
+        details: "Originated by Baba Balak Singh, expanded by Satguru Ram Singh. Boycotted British goods/services. 1872: 66 Kukas blown from cannons at Malerkotla.",
+        highYield: true,
+        examNotes: "Founder: Baba Balak Singh; Leader: Satguru Ram Singh. HQ: Bhaini Sahib. Malerkotla canon execution: 1872.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1861",
+        era: "5",
+        title: "Radha Soami Movement",
+        subtitle: "Founded by Shiv Dayal Singh (Soamiji Maharaj)",
+        location: "Agra (Dera Beas 1891 by Baba Jaimal Singh)",
+        details: "Initiated in Agra; Dera Baba Jaimal Singh was established on River Beas in 1891.",
+        highYield: true,
+        examNotes: "Founder: Shiv Dayal Singh. Dera at Beas established in 1891 by Baba Jaimal Singh.",
+        badge: "Social Reform"
+      },
+      {
+        year: "1873",
+        era: "5",
+        title: "Singh Sabha Movement",
+        subtitle: "Preserving Sikh Identity & Modern Education",
+        location: "Manji Sahib, Amritsar",
+        details: "1st President: Thakur Singh Sandhawalia; Secretary: Giani Gian Singh. Founded Khalsa College Amritsar (1892).",
+        highYield: true,
+        examNotes: "Amritsar 1873. 1st President: Thakur Singh Sandhawalia. Secretary: Giani Gian Singh.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1907-08",
+        era: "5",
+        title: "Pagri Sambhal Jatta Movement",
+        subtitle: "Sardar Ajit Singh & Banke Dayal",
+        location: "Lyallpur / Lahore",
+        details: "Protest against Punjab Colonization Act. Ajit Singh founded Bharat Mata Society; Banke Dayal composed the anthem 'Pagri Sambhal Jatta'.",
+        highYield: true,
+        examNotes: "Anthem composed by Banke Dayal. Organizers: Sardar Ajit Singh & Lala Lajpat Rai.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1913",
+        era: "5",
+        title: "Founding of the Ghadar Party",
+        subtitle: "Yugantar Ashram, San Francisco",
+        location: "San Francisco, USA",
+        details: "President: Sohan Singh Bhakna; General Secretary: Lala Har Dayal. Published weekly 'Ghadar'. Key youth martyr: Kartar Singh Sarabha.",
+        highYield: true,
+        examNotes: "1st President: Sohan Singh Bhakna. Secretary: Lala Har Dayal. HQ: Yugantar Ashram, SF.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1914",
+        era: "5",
+        title: "Komagata Maru Incident",
+        subtitle: "Baba Gurdit Singh & 376 Passengers",
+        location: "Vancouver & Budge Budge (Kolkata)",
+        details: "Japanese ship chartered to challenge Canadian exclusion laws. Forced back to Budge Budge Ghat (29 Sept 1914), British police opened fire killing 20.",
+        highYield: true,
+        examNotes: "Leader: Baba Gurdit Singh. Port in India: Budge Budge (Kolkata). 376 passengers.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "13 Apr 1919",
+        era: "5",
+        title: "Jallianwala Bagh Massacre",
+        subtitle: "Baisakhi Day Carnage under Reginald Dyer",
+        location: "Amritsar",
+        details: "Peaceful crowd protesting Rowlatt Act & arrests of Dr. Kitchlew and Dr. Satyapal was fired upon without warning. Tagore renounced Knighthood.",
+        highYield: true,
+        examNotes: "Date: 13 April 1919. Military officer: Reginald Dyer. Lt. Gov: Michael O'Dwyer (killed by Udham Singh 1940).",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1920",
+        era: "5",
+        title: "Formation of SGPC & Akali Dal",
+        subtitle: "Gurdwara Reform Administration",
+        location: "Akal Takht, Amritsar",
+        details: "SGPC formed 15-16 Nov 1920 (1st President: Sunder Singh Majithia). Akali Dal founded 14 Dec 1920 (1st President: Sarmukh Singh Chubbal).",
+        highYield: true,
+        examNotes: "1st SGPC President: Sunder Singh Majithia. Sikh Gurdwaras Act passed in 1925.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1921",
+        era: "5",
+        title: "Saka Nankana Sahib & Chabian Da Morcha",
+        subtitle: "Lachhman Singh Dharowali & Keys Affair",
+        location: "Nankana Sahib & Amritsar",
+        details: "130+ Sikhs killed by Mahant Narain Das at Janam Asthan. Later in Nov, Chabian Morcha forced British to return Golden Temple keys (Gandhi sent congratulatory telegram).",
+        highYield: true,
+        examNotes: "Saka Nankana Sahib: 1921 (Mahant Narain Das). Chabian Da Morcha: Keys of Golden Temple won.",
+        badge: "Gurdwara Reform"
+      },
+      {
+        year: "1923-25",
+        era: "5",
+        title: "Jaito Da Morcha & Sikh Gurdwaras Act 1925",
+        subtitle: "Nehru Arrested & Control Returned to SGPC",
+        location: "Jaito & Lahore",
+        details: "Agitation over interrupted Akhand Path at Gangsar Jaito. Jawaharlal Nehru arrested. Led to landmark Sikh Gurdwaras Act, 1925.",
+        highYield: true,
+        examNotes: "Jawaharlal Nehru arrested at Jaito. Sikh Gurdwaras Act enacted 28 July 1925.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1928",
+        era: "5",
+        title: "Punjab Riyasati Praja Mandal",
+        subtitle: "S. S. Thikriwala Fights Princely Autocracy",
+        location: "Mansa / Patiala",
+        details: "Founded July 1928 at Mansa against autocratic rulers of Patiala, Jind, etc. President: Seva Singh Thikriwala; Secretary: Bhagwan Singh Longowalia.",
+        highYield: true,
+        examNotes: "Founder President: Seva Singh Thikriwala. Established in 1928 at Mansa.",
+        badge: "PSSSB Core"
+      },
+
+      // ERA 6: POST-INDEPENDENCE & REORGANISATION (1948 - 1973)
+      {
+        year: "1948",
+        era: "6",
+        title: "Formation of PEPSU (15 July 1948)",
+        subtitle: "Union of 8 Princely States",
+        location: "Patiala (Capital)",
+        details: "8 states: Patiala, Nabha, Jind, Faridkot, Kapurthala, Malerkotla, Kalsia, Nalagarh. Rajpramukh: Yadavindra Singh. Premier: Gian Singh Rarewala. Merged into Punjab 1 Nov 1956.",
+        highYield: true,
+        examNotes: "PEPSU had 8 princely states. Rajpramukh: Maharaja Yadavindra Singh. 1st Premier: Gian Singh Rarewala. Merged: 1956.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1948-66",
+        era: "6",
+        title: "Punjabi Suba Movement",
+        subtitle: "Master Tara Singh & Sant Fateh Singh",
+        location: "Punjab",
+        details: "Demanded a linguistic Punjabi state. Sachar Formula (1949) and Regional Formula (1956) attempted compromise.",
+        highYield: true,
+        examNotes: "Led by Master Tara Singh & Sant Fateh Singh. Sachar Formula implemented in 1949.",
+        badge: "Modern Punjab"
+      },
+      {
+        year: "1966",
+        era: "6",
+        title: "Punjab Reorganisation Act (1 Nov 1966)",
+        subtitle: "Shah Commission Creates Modern Punjab & Haryana",
+        location: "Chandigarh",
+        details: "Justice J.C. Shah Commission split state: Punjabi areas (Punjab), Hindi areas (Haryana), hill areas (Himachal). Chandigarh made UT. 1st CM: Gurmukh Singh Mussafir; 1st Gov: Dharm Vira.",
+        highYield: true,
+        examNotes: "Shah Commission. 1 Nov 1966: Modern Punjab created. 1st CM: Giani Gurmukh Singh Mussafir. 1st Governor: Dharm Vira.",
+        badge: "PSSSB Core"
+      },
+      {
+        year: "1973",
+        era: "6",
+        title: "Anandpur Sahib Resolution",
+        subtitle: "Demand for True State Autonomy",
+        location: "Anandpur Sahib",
+        details: "Adopted 16-17 Oct 1973 by Shiromani Akali Dal demanding greater state autonomy, Chandigarh transfer, and river water rights.",
+        highYield: true,
+        examNotes: "Adopted in October 1973 at Anandpur Sahib demanding federal autonomy.",
+        badge: "Modern Punjab"
+      }
+    ];
+
+    const quizDatabase = [
+      {
+        q: "Who was the founder of the 'Udasi' sect?",
+        options: ["Baba Lakhmi Das", "Baba Sri Chand", "Bhai Lehna Ji", "Baba Buddha Ji"],
+        correct: 1,
+        note: "Baba Sri Chand Ji (eldest son of Guru Nanak Dev Ji, born 1494) founded the Udasi sect."
+      },
+      {
+        q: "Who laid the foundation stone of Sri Harimandir Sahib (Amritsar) in 1588?",
+        options: ["Guru Arjan Dev Ji", "Bhai Gurdas Ji", "Sufi Saint Hazrat Mian Mir", "Baba Buddha Ji"],
+        correct: 2,
+        note: "Guru Arjan Dev Ji invited Sufi Saint Hazrat Mian Mir of Lahore to lay the foundation."
+      },
+      {
+        q: "Which battle of the 1st Anglo-Sikh War is called the 'Waterloo of Punjab'?",
+        options: ["Battle of Mudki", "Battle of Aliwal", "Battle of Sabraon", "Battle of Ferozeshah"],
+        correct: 2,
+        note: "Battle of Sabraon (10 Feb 1846) where Sardar Sham Singh Atariwala fell fighting is the Waterloo of Punjab."
+      },
+      {
+        q: "The song 'Pagri Sambhal Jatta' (1907) was composed by:",
+        options: ["Sardar Ajit Singh", "Lala Lajpat Rai", "Banke Dayal", "Bhagat Singh"],
+        correct: 2,
+        note: "Banke Dayal (editor of Jhang Sayyal) wrote the anthem during the agrarian unrest."
+      },
+      {
+        q: "How many princely states formed PEPSU on 15 July 1948?",
+        options: ["6 States", "8 States", "12 States", "10 States"],
+        correct: 1,
+        note: "PEPSU comprised 8 princely states with Patiala as its capital."
+      },
+      {
+        q: "Who headed the boundary commission for the 1966 Punjab Reorganisation?",
+        options: ["Fazal Ali Commission", "Justice J.C. Shah Commission", "Radcliffe Commission", "Dhar Commission"],
+        correct: 1,
+        note: "The Shah Commission (Justice J.C. Shah) recommended bifurcating Punjab and Haryana on 1 Nov 1966."
+      },
+      {
+        q: "Who was appointed supreme military commander of Dal Khalsa in 1748?",
+        options: ["Nawab Kapur Singh", "Sardar Jassa Singh Ahluwalia", "Baba Deep Singh", "Charat Singh Sukerchakia"],
+        correct: 1,
+        note: "Sultan-ul-Qaum Sardar Jassa Singh Ahluwalia was appointed Supreme Commander of Dal Khalsa."
+      },
+      {
+        q: "Which Mughal Emperor was reigning when Guru Tegh Bahadur Ji was martyred in 1675?",
+        options: ["Shah Jahan", "Jahangir", "Aurangzeb", "Farrukhsiyar"],
+        correct: 2,
+        note: "Aurangzeb ordered the execution at Chandni Chowk, Delhi."
+      }
+    ];
+  </script>
+
+  <script>
+    let activeEra = "all";
+    let isHighYieldOnly = false;
+    let searchQuery = "";
+    let isGridView = false; // Grid vs Timeline Stem
+
+    // Elements
+    const timelineContainer = document.getElementById("timelineContainer");
+    const searchInput = document.getElementById("searchInput");
+    const highYieldToggle = document.getElementById("highYieldOnly");
+    const eraButtons = document.querySelectorAll(".era-filter-btn");
+    const visibleCounter = document.getElementById("visibleCounter");
+    const noResults = document.getElementById("noResults");
+    const eraDescElem = document.getElementById("currentEraDesc");
+    const themeToggleBtn = document.getElementById("themeToggleBtn");
+    const themeToggleIcon = document.getElementById("themeToggleIcon");
+    const themeToggleText = document.getElementById("themeToggleText");
+    const viewToggleBtn = document.getElementById("viewToggleBtn");
+    const viewToggleIcon = document.getElementById("viewToggleIcon");
+    const viewToggleText = document.getElementById("viewToggleText");
+
+    const eraDescriptions = {
+      all: "Displaying all 6 chronological periods of Punjab's political, cultural, and colonial history (1469 to 1973).",
+      1: "Era 1: Ten Sikh Gurus (1469-1708) — Enlightenment to Eternal Guruship at Nanded.",
+      2: "Era 2: Banda Singh Bahadur & Misls (1708-1783) — Chappar Chiri, Dal Khalsa & Red Fort Delhi.",
+      3: "Era 3: Maharaja Ranjit Singh & Nalwa (1780-1839) — Unification, conquests, treaties & Khyber defense.",
+      4: "Era 4: Anglo-Sikh Wars & Annexation (1845-1897) — Sabraon, Dalhousie, and Saragarhi.",
+      5: "Era 5: Reforms & Freedom (1851-1928) — Kukas, Ghadar Party, Jallianwala, SGPC & Praja Mandal.",
+      6: "Era 6: Post-Independence & Reorganisation (1948-1973) — PEPSU, Shah Commission (1966) & Anandpur Resolution."
+    };
+
+    // Theme Management
+    function initTheme() {
+      const savedTheme = localStorage.getItem("punjab_timeline_theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme === "light" || (!savedTheme && !prefersDark)) {
+        setTheme("light");
+      } else {
+        setTheme("dark");
+      }
+    }
+
+    function setTheme(mode) {
+      if (mode === "light") {
+        document.documentElement.classList.remove("dark");
+        themeToggleIcon.textContent = "☀️";
+        themeToggleText.textContent = "Light";
+        localStorage.setItem("punjab_timeline_theme", "light");
+      } else {
+        document.documentElement.classList.add("dark");
+        themeToggleIcon.textContent = "🌙";
+        themeToggleText.textContent = "Dark";
+        localStorage.setItem("punjab_timeline_theme", "dark");
+      }
+      updateEraPillStyles();
+    }
+
+    themeToggleBtn.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setTheme(isDark ? "light" : "dark");
+    });
+
+    // View Switcher (Dense 2-Column Grid vs Compact Timeline Stem)
+    viewToggleBtn.addEventListener("click", () => {
+      isGridView = !isGridView;
+      if (isGridView) {
+        timelineContainer.className = "grid grid-cols-1 md:grid-cols-2 gap-2.5 transition-all";
+        viewToggleIcon.textContent = "☰";
+        viewToggleText.textContent = "Timeline";
+      } else {
+        timelineContainer.className = "relative dense-stem transition-all space-y-2";
+        viewToggleIcon.textContent = "⊞";
+        viewToggleText.textContent = "2-Col Grid";
+      }
+      renderTimeline();
+    });
+
+    function updateEraPillStyles() {
+      const isDark = document.documentElement.classList.contains("dark");
+      eraButtons.forEach(btn => {
+        if (btn.dataset.era === activeEra) {
+          btn.className = "era-filter-btn px-2 py-0.5 rounded text-[11px] font-bold whitespace-nowrap bg-amber-500 text-slate-950";
+        } else {
+          if (isDark) {
+            btn.className = "era-filter-btn px-2 py-0.5 rounded text-[11px] font-medium whitespace-nowrap bg-slate-800 text-slate-300 hover:bg-slate-700";
+          } else {
+            btn.className = "era-filter-btn px-2 py-0.5 rounded text-[11px] font-medium whitespace-nowrap bg-slate-200 text-slate-700 hover:bg-slate-300";
+          }
+        }
+      });
+    }
+
+    // Filter Logic
+    function getFilteredEvents() {
+      return eventsData.filter(event => {
+        if (activeEra !== "all" && event.era !== activeEra) return false;
+        if (isHighYieldOnly && !event.highYield) return false;
+        if (searchQuery.trim() !== "") {
+          const q = searchQuery.toLowerCase();
+          const matchYear = event.year.toLowerCase().includes(q);
+          const matchTitle = event.title.toLowerCase().includes(q);
+          const matchSub = event.subtitle.toLowerCase().includes(q);
+          const matchDetails = event.details.toLowerCase().includes(q);
+          const matchNotes = event.examNotes.toLowerCase().includes(q);
+          const matchLoc = (event.location || "").toLowerCase().includes(q);
+          if (!matchYear && !matchTitle && !matchSub && !matchDetails && !matchNotes && !matchLoc) {
+            return false;
+          }
+        }
+        return true;
+      });
+    }
+
+    // Dense Card Renderer
+    function renderTimeline() {
+      const filtered = getFilteredEvents();
+      visibleCounter.textContent = `${filtered.length} / ${eventsData.length} Events`;
+
+      if (filtered.length === 0) {
+        timelineContainer.innerHTML = "";
+        noResults.classList.remove("hidden");
+        return;
+      }
+
+      noResults.classList.add("hidden");
+      let html = "";
+
+      filtered.forEach((event) => {
+        let eraBadgeColor = "text-amber-700 bg-amber-100/80 border-amber-300 dark:text-amber-300 dark:bg-amber-950/40 dark:border-amber-700/50";
+        let dotBorder = "border-amber-500";
+        if (event.era === "2") {
+          eraBadgeColor = "text-sky-700 bg-sky-100/80 border-sky-300 dark:text-sky-300 dark:bg-sky-950/40 dark:border-sky-700/50";
+          dotBorder = "border-sky-500";
+        } else if (event.era === "3") {
+          eraBadgeColor = "text-emerald-700 bg-emerald-100/80 border-emerald-300 dark:text-emerald-300 dark:bg-emerald-950/40 dark:border-emerald-700/50";
+          dotBorder = "border-emerald-500";
+        } else if (event.era === "4") {
+          eraBadgeColor = "text-rose-700 bg-rose-100/80 border-rose-300 dark:text-rose-300 dark:bg-rose-950/40 dark:border-rose-700/50";
+          dotBorder = "border-rose-500";
+        } else if (event.era === "5") {
+          eraBadgeColor = "text-purple-700 bg-purple-100/80 border-purple-300 dark:text-purple-300 dark:bg-purple-950/40 dark:border-purple-700/50";
+          dotBorder = "border-purple-500";
+        } else if (event.era === "6") {
+          eraBadgeColor = "text-teal-700 bg-teal-100/80 border-teal-300 dark:text-teal-300 dark:bg-teal-950/40 dark:border-teal-700/50";
+          dotBorder = "border-teal-500";
+        }
+
+        if (isGridView) {
+          // Compact Grid View Card
+          html += `
+            <div class="dense-card rounded-lg bg-white dark:bg-[#0c1322] border border-slate-200 dark:border-slate-800 p-2.5 hover:border-amber-500/50 transition flex flex-col justify-between shadow-xs">
+              <div>
+                <div class="flex items-center justify-between gap-1 mb-1 border-b border-slate-100 dark:border-slate-800/80 pb-1">
+                  <div class="flex items-center gap-1.5">
+                    <span class="font-mono font-bold text-xs text-amber-600 dark:text-amber-400">${event.year}</span>
+                    ${event.highYield ? '<span class="text-[9px] font-bold text-amber-800 dark:text-amber-300 bg-amber-500/20 px-1 rounded">PYQ</span>' : ''}
+                  </div>
+                  <span class="text-[9px] px-1.5 py-0.2 rounded border ${eraBadgeColor} font-medium">${event.badge || 'Era ' + event.era}</span>
+                </div>
+                <h4 class="font-bold text-xs text-slate-900 dark:text-white leading-tight mb-0.5">${event.title}</h4>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 mb-1.5 flex items-center gap-1">
+                  <span>📍 ${event.location || event.subtitle}</span>
+                </div>
+                <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-snug mb-2">${event.details}</p>
+              </div>
+              <div class="rounded bg-amber-50/60 dark:bg-slate-900/90 border border-amber-200/60 dark:border-slate-800 p-1.5 text-[10px] leading-tight">
+                <strong class="text-amber-700 dark:text-amber-400">Exam Note:</strong> <span class="text-slate-700 dark:text-slate-300">${event.examNotes}</span>
+              </div>
+            </div>
+          `;
+        } else {
+          // Snug Timeline Stem View Card
+          html += `
+            <div class="relative pl-7 py-1">
+              <!-- Compact dot on stem -->
+              <div class="absolute left-4 top-3 -translate-x-1/2 w-3.5 h-3.5 rounded-full border-2 ${dotBorder} bg-white dark:bg-slate-950 z-10 flex items-center justify-center">
+                <div class="w-1 h-1 bg-slate-800 dark:bg-white rounded-full"></div>
+              </div>
+
+              <!-- Snug Card -->
+              <div class="dense-card rounded-lg bg-white dark:bg-[#0c1322] border border-slate-200 dark:border-slate-800 p-2.5 hover:border-amber-500/50 transition shadow-xs">
+                <div class="flex flex-wrap items-center justify-between gap-1 mb-1 border-b border-slate-100 dark:border-slate-800/80 pb-1">
+                  <div class="flex items-center gap-1.5">
+                    <span class="font-mono font-bold text-xs text-amber-600 dark:text-amber-400">${event.year}</span>
+                    ${event.highYield ? '<span class="text-[9px] font-bold text-amber-800 dark:text-amber-300 bg-amber-500/20 px-1 rounded">⭐ PSSSB PYQ</span>' : ''}
+                    <span class="text-[10px] text-slate-400 dark:text-slate-500">• ${event.location || event.subtitle}</span>
+                  </div>
+                  <span class="text-[9px] px-1.5 py-0.2 rounded border ${eraBadgeColor} font-medium">${event.badge || 'Era ' + event.era}</span>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:items-start justify-between gap-2">
+                  <div class="flex-1">
+                    <h4 class="font-bold text-xs sm:text-[13px] text-slate-900 dark:text-white leading-tight mb-1">${event.title}</h4>
+                    <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">${event.details}</p>
+                  </div>
+                  <!-- Inline Exam Note Box (saves vertical space) -->
+                  <div class="md:w-5/12 rounded bg-amber-50/60 dark:bg-slate-900/90 border border-amber-200/60 dark:border-slate-800 p-1.5 text-[10px] leading-tight shrink-0 self-stretch flex items-start gap-1">
+                    <span class="select-none text-amber-500">🎯</span>
+                    <div>
+                      <strong class="text-amber-700 dark:text-amber-400">PSSSB Focus:</strong>
+                      <span class="text-slate-700 dark:text-slate-300">${event.examNotes}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+      });
+
+      timelineContainer.innerHTML = html;
+    }
+
+    // Era Buttons
+    eraButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeEra = btn.dataset.era;
+        eraDescElem.textContent = eraDescriptions[activeEra] || eraDescriptions["all"];
+        updateEraPillStyles();
+        renderTimeline();
+      });
+    });
+
+    // Checkbox & Search
+    highYieldToggle.addEventListener("change", (e) => {
+      isHighYieldOnly = e.target.checked;
+      renderTimeline();
+    });
+
+    searchInput.addEventListener("input", (e) => {
+      searchQuery = e.target.value;
+      renderTimeline();
+    });
+
+    // Drawer handlers
+    const cheatSheetBtn = document.getElementById("cheatSheetBtn");
+    const cheatSheetDrawer = document.getElementById("cheatSheetDrawer");
+    const closeCheatSheet = document.getElementById("closeCheatSheet");
+
+    cheatSheetBtn.addEventListener("click", () => cheatSheetDrawer.classList.remove("hidden"));
+    closeCheatSheet.addEventListener("click", () => cheatSheetDrawer.classList.add("hidden"));
+    cheatSheetDrawer.addEventListener("click", (e) => {
+      if (e.target === cheatSheetDrawer) cheatSheetDrawer.classList.add("hidden");
+    });
+
+    // Quiz handlers
+    const quizModalBtn = document.getElementById("quizModalBtn");
+    const quizModal = document.getElementById("quizModal");
+    const closeQuizModal = document.getElementById("closeQuizModal");
+    const quizIntro = document.getElementById("quizIntro");
+    const quizActive = document.getElementById("quizActive");
+    const quizResult = document.getElementById("quizResult");
+    const startQuizBtn = document.getElementById("startQuizBtn");
+    const restartQuizBtn = document.getElementById("restartQuizBtn");
+    const quizNextBtn = document.getElementById("quizNextBtn");
+
+    const quizProgress = document.getElementById("quizProgress");
+    const quizScoreCount = document.getElementById("quizScoreCount");
+    const quizQuestion = document.getElementById("quizQuestion");
+    const quizOptions = document.getElementById("quizOptions");
+    const quizFeedback = document.getElementById("quizFeedback");
+
+    let currentQuizQuestions = [];
+    let currentQIdx = 0;
+    let quizScore = 0;
+
+    quizModalBtn.addEventListener("click", () => {
+      quizIntro.classList.remove("hidden");
+      quizActive.classList.add("hidden");
+      quizResult.classList.add("hidden");
+      quizModal.classList.remove("hidden");
+    });
+    closeQuizModal.addEventListener("click", () => quizModal.classList.add("hidden"));
+
+    startQuizBtn.addEventListener("click", () => {
+      const shuffled = [...quizDatabase].sort(() => 0.5 - Math.random());
+      currentQuizQuestions = shuffled.slice(0, 5);
+      currentQIdx = 0;
+      quizScore = 0;
+      quizIntro.classList.add("hidden");
+      quizResult.classList.add("hidden");
+      quizActive.classList.remove("hidden");
+      loadQuizQuestion();
+    });
+
+    restartQuizBtn.addEventListener("click", () => startQuizBtn.click());
+
+    function loadQuizQuestion() {
+      const qData = currentQuizQuestions[currentQIdx];
+      quizProgress.textContent = `Question ${currentQIdx + 1} of ${currentQuizQuestions.length}`;
+      quizScoreCount.textContent = `Score: ${quizScore}`;
+      quizQuestion.textContent = qData.q;
+      quizFeedback.classList.add("hidden");
+      quizNextBtn.classList.add("hidden");
+
+      let optsHtml = "";
+      qData.options.forEach((opt, idx) => {
+        optsHtml += `
+          <button onclick="handleQuizAnswer(${idx})" class="w-full text-left p-2 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-slate-200 transition">
+            ${String.fromCharCode(65 + idx)}. ${opt}
+          </button>
+        `;
+      });
+      quizOptions.innerHTML = optsHtml;
+    }
+
+    window.handleQuizAnswer = function(selectedIdx) {
+      const qData = currentQuizQuestions[currentQIdx];
+      const buttons = quizOptions.querySelectorAll("button");
+      buttons.forEach(b => b.disabled = true);
+
+      if (selectedIdx === qData.correct) {
+        quizScore++;
+        buttons[selectedIdx].classList.add("!bg-emerald-100", "dark:!bg-emerald-900/60", "!border-emerald-500", "!text-emerald-900", "dark:!text-emerald-200");
+        quizFeedback.className = "text-[11px] p-2 rounded-lg font-medium mb-2 bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800/60";
+        quizFeedback.innerHTML = `<strong>Correct!</strong> ${qData.note}`;
+      } else {
+        buttons[selectedIdx].classList.add("!bg-rose-100", "dark:!bg-rose-900/60", "!border-rose-500", "!text-rose-900", "dark:!text-rose-200");
+        buttons[qData.correct].classList.add("!bg-emerald-100", "dark:!bg-emerald-900/60", "!border-emerald-500", "!text-emerald-900", "dark:!text-emerald-200");
+        quizFeedback.className = "text-[11px] p-2 rounded-lg font-medium mb-2 bg-rose-50 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 border border-rose-300 dark:border-rose-800/60";
+        quizFeedback.innerHTML = `<strong>Incorrect!</strong> ${qData.note}`;
+      }
+
+      quizFeedback.classList.remove("hidden");
+      quizScoreCount.textContent = `Score: ${quizScore}`;
+      quizNextBtn.classList.remove("hidden");
+    };
+
+    quizNextBtn.addEventListener("click", () => {
+      currentQIdx++;
+      if (currentQIdx < currentQuizQuestions.length) {
+        loadQuizQuestion();
+      } else {
+        quizActive.classList.add("hidden");
+        quizResult.classList.remove("hidden");
+        document.getElementById("quizResultScore").textContent = `Score: ${quizScore} / ${currentQuizQuestions.length}`;
+        document.getElementById("quizResultTitle").textContent = quizScore >= 4 ? "Excellent Recall!" : "Review & Try Again!";
+        document.getElementById("quizResultEmoji").textContent = quizScore >= 4 ? "🌟" : "📖";
+      }
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      initTheme();
+      renderTimeline();
+    });
+  </script>
+</body>
+</html>
