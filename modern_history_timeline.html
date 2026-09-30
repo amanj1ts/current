@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Indian History Timeline - PSSSB High-Yield Revision Engine</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            punjab: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+            },
+            cadet: {
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom compact scrollbar & print styling */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+    .dark ::-webkit-scrollbar-thumb { background: #475569; }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; font-size: 11px; }
+      .timeline-card { break-inside: avoid; border: 1px solid #ddd !important; box-shadow: none !important; margin-bottom: 12px !important; }
+    }
+    .badge-glow {
+      box-shadow: 0 0 10px rgba(249, 115, 22, 0.35);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-200 antialiased text-[13px] leading-relaxed">
+
+  <header class="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800 shadow-sm no-print">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-2.5">
+        <!-- Title & Target Exam Tag -->
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-500 to-orange-600 flex items-center justify-center text-white font-bold text-base shadow">
+            ⏳
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="font-extrabold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white">
+                Modern Indian History <span class="text-orange-600 dark:text-orange-400 font-mono">Timeline</span>
+              </h1>
+            </div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">
+              Complete chronological revision: 1498 (Arrival of Europeans) → 1947 (Independence & Partition)
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick actions: Search, Expand All, Dark mode, Print -->
+        <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+          <div class="relative flex-1 sm:w-64">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-2.5 text-slate-400">🔍</span>
+            <input type="text" id="searchInput" placeholder="Search event, battle, treaty, leader..."
+              class="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-orange-500">
+          </div>
+
+          <button id="toggleAllBtn" class="px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-[11px] font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+            Expand All
+          </button>
+          <button id="themeToggle" title="Toggle Theme" class="p-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">
+            🌓
+          </button>
+          <button onclick="window.print()" title="Print / Save PDF" class="px-2.5 py-1.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-semibold text-[11px] shadow transition">
+            🖨️ PDF
+          </button>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-1.5 overflow-x-auto pt-2 pb-1 text-[11px] scrollbar-none" id="filterBar">
+        <button data-filter="all" class="filter-btn active px-3 py-1 rounded-md font-semibold bg-orange-600 text-white shadow-sm whitespace-nowrap">
+          All Events (<span id="count-all">0</span>)
+        </button>
+        <button data-filter="punjab" class="filter-btn px-3 py-1 rounded-md font-semibold bg-slate-100 dark:bg-slate-800 text-orange-600 dark:text-orange-400 hover:bg-orange-50 dark:hover:bg-slate-700 border border-orange-300 dark:border-orange-800/60 whitespace-nowrap">
+          ⭐ Punjab Special (PSSSB Hotspot) (<span id="count-punjab">0</span>)
+        </button>
+        <button data-filter="european" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap">
+          Arrival of Europeans
+        </button>
+        <button data-filter="conquest" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap">
+          Expansion & Battles (Bengal, Mysore, Maratha)
+        </button>
+        <button data-filter="associations" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap">
+          Early Associations & INC
+        </button>
+        <button data-filter="partition_swadeshi" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap">
+          Swadeshi & Partition of Bengal
+        </button>
+        <button data-filter="revolutionary" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap">
+          Revolutionary Movements & Ghadar
+        </button>
+        <button data-filter="gandhian" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap">
+          Gandhian Era & Mass Movements
+        </button>
+        <button data-filter="constitutional" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap">
+          Constitutional Acts & Viceroys
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-3 sm:px-6 py-4">
+    <!-- Revision Top Highlights Callout -->
+    <div class="mb-5 p-3 sm:p-4 rounded-xl bg-gradient-to-r from-orange-50 via-amber-50 to-slate-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 border border-orange-200 dark:border-slate-700">
+      <div class="flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🎯</span>
+          <div>
+            <span class="font-bold text-slate-900 dark:text-white">PSSSB Exam Focus Areas:</span>
+            <span class="text-slate-600 dark:text-slate-300 ml-1">
+              Treaty of Amritsar (1809), Battle of Chillianwala & Ramnagar, Ghadar Movement (Sohan Singh Bhakna, San Francisco), Jallianwala Bagh (13 April 1919), Martyrdom of Bhagat Singh (23 March 1931), Kuka Movement under Lord Northbrook.
+            </span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 font-mono text-[11px]">
+          <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300">
+            ✓ 65+ High-Yield Milestones
+          </span>
+          <span class="px-2 py-0.5 rounded bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border border-purple-300">
+            ✓ Full Mind-Map Sync
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative border-l-2 border-slate-300 dark:border-slate-700 ml-3 sm:ml-6 pl-4 sm:pl-8 space-y-4" id="timelineContainer">
+      <!-- Cards will be populated by JavaScript with rich detail and PSSSB exam notes -->
+    </div>
+  </main>
+
+  <script>
+    const timelineData = [
+      // --- EUROPEAN ARRIVAL & TRADE ---
+      {
+        year: "1498 (May)",
+        title: "Vasco da Gama Arrives at Calicut (Kozhikode)",
+        categories: ["european", "conquest"],
+        badges: ["Pivotal Milestone", "Trade Route"],
+        isPunjabSpecial: false,
+        summary: "Discovery of direct sea route via Cape of Good Hope, bypassing Arab-Ottoman trade monopoly.",
+        details: [
+          "Welcomed by Hindu ruler <strong>Zamorin (Samuthiri)</strong> of Calicut; assisted by Gujarati pilot Abdul Majid.",
+          "Portuguese established fortified factories at Calicut, Cochin (first capital until 1530), and Cannanore.",
+          "Pedro Álvares Cabral arrived in 1500; Vasco da Gama returned in 1502 & 1524 (died at Cochin).",
+          "<strong>Exam Note:</strong> Portuguese were the first Europeans to arrive in India (1498) and the last to leave (Goa, 1961 - Operation Vijay)."
+        ]
+      },
+      {
+        year: "1505 – 1509",
+        title: "Francisco de Almeida & Blue Water Policy (Cartaz System)",
+        categories: ["european"],
+        badges: ["Key Concept"],
+        isPunjabSpecial: false,
+        summary: "First Portuguese Viceroy; aimed at establishing naval supremacy over the Indian Ocean rather than building an inland empire.",
+        details: [
+          "Introduced the <strong>Cartaz System</strong> (naval trade license and pass system enforcing maritime monopoly).",
+          "Defeated combined fleet of Egypt, Gujarat, and Calicut in the decisive <strong>Battle of Diu (1509)</strong>."
+        ]
+      },
+      {
+        year: "1509 – 1515",
+        title: "Afonso de Albuquerque – Real Founder of Portuguese Empire",
+        categories: ["european"],
+        badges: ["Key Person"],
+        isPunjabSpecial: false,
+        summary: "Captured Goa (1510) from Sultan of Bijapur (Ismail Adil Shah) and abolished Sati in his territory.",
+        details: [
+          "Encouraged Portuguese men to marry Indian women to create a permanent settled loyal population.",
+          "Persecuted Muslims and captured strategic chokepoints: Malacca (1511), Ormuz (1515).",
+          "Introduced new cash crops like tobacco, cashew, and advanced ship-building techniques."
+        ]
+      },
+      {
+        year: "1529 – 1538",
+        title: "Nino da Cunha: Transfer of Portuguese HQ to Goa",
+        categories: ["european"],
+        badges: ["Key Fact"],
+        isPunjabSpecial: false,
+        summary: "In 1530 shifted Portuguese administrative headquarters from Cochin to Goa.",
+        details: [
+          "Acquired Bassein (Vasai) and Diu from Bahadur Shah of Gujarat (1534).",
+          "Established factories at San Thome (Madras) and Hughli (Bengal).",
+          "Portuguese decline causes: religious intolerance/Inquisition, slave trade, piracy in Bay of Bengal, rise of Dutch & English."
+        ]
+      },
+      {
+        year: "1600 & 1602",
+        title: "Charters of English EIC (1600) & Dutch East India Company (VOC, 1602)",
+        categories: ["european"],
+        badges: ["Corporate History"],
+        isPunjabSpecial: false,
+        summary: "Queen Elizabeth I granted 15-year monopoly to EIC; Dutch VOC formed as the world's 1st public joint-stock MNC.",
+        details: [
+          "Dutch primary focus: Spice Islands of Indonesia (Batavia), financing spices through Indian textiles.",
+          "First Dutch factory in India: <strong>Masulipatnam (1605)</strong>, followed by Pulicat, Surat, Chinsura, and Negapatam."
+        ]
+      },
+      {
+        year: "1608 – 1612",
+        title: "Captain William Hawkins & Battle of Swally (1612)",
+        categories: ["european", "conquest"],
+        badges: ["Turning Point"],
+        isPunjabSpecial: false,
+        summary: "British entry into Mughal diplomacy and naval victory over the Portuguese near Surat.",
+        details: [
+          "Hawkins arrived at Surat in ship <em>Hector</em> (1608), met Emperor Jahangir at Agra (conversed in Turkish; given mansab of 400). Left in 1611 due to Portuguese intrigue.",
+          "<strong>1612 Battle of Swally:</strong> Captain Thomas Best (ship <em>Red Dragon</em>) routed the Portuguese fleet.",
+          "Impressed Jahangir granted permission to open first permanent English factory at <strong>Surat (1613)</strong>; Sir Thomas Roe arrived in 1615 as ambassador of King James I."
+        ]
+      },
+      {
+        year: "1632 – 1639",
+        title: "Golden Farman of Golconda (1632) & Foundation of Fort St. George (1639)",
+        categories: ["european"],
+        badges: ["Factory Milestone"],
+        isPunjabSpecial: false,
+        summary: "Sultan of Golconda allowed free trade for 500 Pagodas/year; Francis Day acquired Madras from ruler of Chandragiri.",
+        details: [
+          "1639: Francis Day built <strong>Fort St. George</strong> at Madras (seat of Coromandel and southern presidency).",
+          "1662: King Charles II received Bombay as dowry on marriage to Catherine of Braganza (rented to EIC for £10/year in 1668)."
+        ]
+      },
+      {
+        year: "1664 – 1674",
+        title: "French East India Company & Foundation of Pondicherry (1674)",
+        categories: ["european"],
+        badges: ["Key Fact"],
+        isPunjabSpecial: false,
+        summary: "French were the last Europeans to arrive in India; Compagnie des Indes Orientales formed in 1664 by Colbert under Louis XIV.",
+        details: [
+          "1667: Francois Caron established first French factory at Surat; 1669 at Masulipatnam; 1673 at Chandernagore.",
+          "1674: <strong>Francois Martin</strong> obtained village from Sher Khan Lodi (Bijapur governor) and founded <strong>Pondicherry</strong>."
+        ]
+      },
+      {
+        year: "1690 – 1698",
+        title: "Job Charnock & Birth of Calcutta (Fort William)",
+        categories: ["european"],
+        badges: ["Bengal Base"],
+        isPunjabSpecial: false,
+        summary: "Settlement at Sutanuti developed into Calcutta; EIC purchased zamindari of 3 villages: Sutanuti, Gobindapur, Kalikata.",
+        details: [
+          "1700: Settlements fortified as <strong>Fort William</strong> (Eastern Presidency); Sir Charles Eyre became its first President."
+        ]
+      },
+      {
+        year: "1717",
+        title: "Farrukhsiyar's Farman – The 'Magna Carta' of EIC",
+        categories: ["european", "constitutional"],
+        badges: ["PSSSB Frequent Q"],
+        isPunjabSpecial: false,
+        summary: "Mughal Emperor Farrukhsiyar granted sweeping commercial exemptions through John Surman embassy.",
+        details: [
+          "Exempted company trade from customs duties in Bengal for a nominal annual tribute of ₹3,000.",
+          "Company permitted to issue <strong>Dastaks</strong> (free passes for movement of goods) — rampantly abused by private servants.",
+          "Company coins minted at Bombay given legal currency throughout the Mughal Empire."
+        ]
+      },
+      {
+        year: "1741 & 1759",
+        title: "Eclipsing Rivals: Battle of Colachel (1741) & Battle of Bidara (1759)",
+        categories: ["european", "conquest"],
+        badges: ["Decisive Battles"],
+        isPunjabSpecial: false,
+        summary: "Dutch defeat by Marthanda Varma of Travancore (1741) and final rout by British under Clive at Bidara/Chinsura (1759).",
+        details: [
+          "<strong>Battle of Colachel (1741):</strong> King Marthanda Varma crushed the Dutch navy, ending VOC supremacy in Malabar.",
+          "<strong>Battle of Bidara/Chinsura (1759):</strong> Robert Clive crushed Dutch forces in Bengal, ending Dutch ambitions in India."
+        ]
+      },
+      {
+        year: "1746 – 1763",
+        title: "The Three Carnatic Wars (Anglo-French Rivalry)",
+        categories: ["conquest", "european"],
+        badges: ["PSSSB Favorite"],
+        isPunjabSpecial: false,
+        summary: "Proxy wars between British and French in South India, culminating in total British mastery.",
+        details: [
+          "<strong>1st Carnatic War (1746-48):</strong> Sparked by Austrian War of Succession. Dupleix captured Madras. <em>Battle of St. Thome (1746)</em>: Small disciplined French force defeated Anwar-ud-Din's large army. Ended by <strong>Treaty of Aix-la-Chapelle (1748)</strong>.",
+          "<strong>2nd Carnatic War (1749-54):</strong> Succession disputes in Hyderabad & Carnatic. Robert Clive seized Arcot (1751). Dupleix recalled (replaced by Godeheu). Ended by Treaty of Pondicherry.",
+          "<strong>3rd Carnatic War (1758-63):</strong> Tied to 7 Years' War. <strong>Battle of Wandiwash (1760):</strong> British Gen. Eyre Coote decisively defeated French Count de Lally. Ended by <strong>Treaty of Paris (1763)</strong> (French factories demilitarized; purely trade outlets)."
+        ]
+      },
+
+      // --- EXPANSION: BENGAL & AWADH ---
+      {
+        year: "1756 – 1757",
+        title: "Siraj-ud-Daulah, Black Hole Incident & Battle of Plassey (23 June 1757)",
+        categories: ["conquest"],
+        badges: ["Watershed Date", "PSSSB High-Yield"],
+        isPunjabSpecial: false,
+        summary: "Establishment of British political foothold in India through intrigue and betrayal of Siraj-ud-Daulah.",
+        details: [
+          "<strong>Causes:</strong> British fortification of Calcutta without permission, shelter given to fugitive Krishna Das, abuse of Dastaks.",
+          "<strong>Black Hole Tragedy (1756):</strong> 146 Britishers imprisoned in small cell, many suffocated (reported by J.Z. Holwell).",
+          "<strong>Battle of Plassey (23 June 1757):</strong> Robert Clive conspired with Nawab's Mir Bakshi (<strong>Mir Jafar</strong>), Rai Durlabh, Jagat Seth (banker), and Omichand.",
+          "Siraj was defeated and executed by Mir Miran. Mir Jafar made Puppet Nawab; granted British the <strong>24 Parganas</strong>."
+        ]
+      },
+      {
+        year: "1764 (22 Oct)",
+        title: "Battle of Buxar & Treaty of Allahabad (1765)",
+        categories: ["conquest", "constitutional"],
+        badges: ["PSSSB Most Repeated"],
+        isPunjabSpecial: false,
+        summary: "Decisive British victory under Hector Munro over the combined armies of Bengal, Awadh, and the Mughal Empire.",
+        details: [
+          "<strong>Combatants:</strong> Major Hector Munro vs Joint Alliance of <em>Mir Kasim</em> (deposed Bengal Nawab), <em>Shuja-ud-Daulah</em> (Nawab of Awadh), and <em>Shah Alam II</em> (Mughal Emperor).",
+          "Mir Kasim had tried reform: shifted capital from Murshidabad to <strong>Munger (Bihar)</strong>, abolished internal duties to equalize trade.",
+          "<strong>Treaty of Allahabad (1765, by Clive):</strong>",
+          "• Mughal Emperor Shah Alam II granted permanent <strong>Diwani rights</strong> (revenue collection) of Bengal, Bihar, and Orissa to EIC for ₹26 lakhs/year.",
+          "• Awadh ceded Allahabad and Kora districts to the Mughal Emperor and paid ₹50 lakh war indemnity.",
+          "• Balwant Singh's zamindari of Banaras confirmed; Awadh entered defensive alliance (buffer state)."
+        ]
+      },
+      {
+        year: "1765 – 1772",
+        title: "Dual Government in Bengal (Robert Clive) & 1770 Famine",
+        categories: ["conquest", "constitutional"],
+        badges: ["System Failure"],
+        isPunjabSpecial: false,
+        summary: "Division of administration: Diwani (Revenue & Civil justice) with Company; Nizamat (Police & Criminal justice) with Nawab.",
+        details: [
+          "Company had power without responsibility; Nawab had responsibility without power.",
+          "Led to devastating <strong>Great Bengal Famine of 1770</strong> (wiped out roughly 1/3rd of the population).",
+          "Abolished in 1772 by <strong>Warren Hastings</strong>, who brought Bengal under direct Company administration."
+        ]
+      },
+
+      // --- MYSORE & MARATHA WARS ---
+      {
+        year: "1767 – 1799",
+        title: "The Four Anglo-Mysore Wars (Haider Ali & Tipu Sultan)",
+        categories: ["conquest"],
+        badges: ["Treaty Sequence: M-M-S"],
+        isPunjabSpecial: false,
+        summary: "Struggle for South India: Mysore under Haider Ali & Tipu Sultan stood as the most formidable modernized opponent.",
+        details: [
+          "<strong>1st War (1767-69):</strong> Haider Ali routed British forces; dictated <strong>Treaty of Madras (1769)</strong> (defensive alliance).",
+          "<strong>2nd War (1780-84):</strong> British violated treaty by attacking French port Mahe. Haider defeated Col. Baillie; defeated at <em>Porto Novo (1781)</em> by Sir Eyre Coote. Haider died of cancer (1782); Tipu signed <strong>Treaty of Mangalore (1784)</strong>.",
+          "<strong>3rd War (1790-92):</strong> Cornwallis allied with Nizam & Marathas. Tipu forced to sign humiliating <strong>Treaty of Seringapatam (1792)</strong> (surrendered half his kingdom + ₹3.3 crore indemnity; sent two sons as hostages).",
+          "<strong>4th War (1799):</strong> Lord Wellesley demanded Subsidiary Alliance; Tipu refused, seeking French aid (Jacobin Club, Tree of Liberty). <strong>Tipu Sultan died defending Seringapatam (4 May 1799)</strong>. Wodeyar child Krishna Raja III installed under Subsidiary Alliance."
+        ]
+      },
+      {
+        year: "1775 – 1818",
+        title: "The Three Anglo-Maratha Wars & Annexation of Peshwaship",
+        categories: ["conquest"],
+        badges: ["Maratha Hegemony"],
+        isPunjabSpecial: false,
+        summary: "Gradual dismantling of Maratha Confederacy (Peshwa, Sindhia, Holkar, Bhonsle, Gaekwad).",
+        details: [
+          "<strong>1st War (1775-82):</strong> Sparked by Treaty of Surat (1775) signed by Raghunath Rao with British. Battle of Wadgaon (1779). Ended by <strong>Treaty of Salbai (1782)</strong> signed by Warren Hastings & Mahadji Sindhia (20 years of peace).",
+          "<strong>2nd War (1803-05):</strong> Peshwa Baji Rao II fled to British and accepted <strong>Treaty of Bassein (1802)</strong> (Subsidiary Alliance). Defeated chiefs signed separate treaties: Deogaon (Bhonsle, 1803), Surji-Anjangaon (Sindhia, 1803), Rajghat (Holkar, 1805).",
+          "<strong>3rd War (1817-18):</strong> Lord Hastings attacked Pindaris (associated with Marathas). Peshwa, Bhonsle & Holkar rose in revolt. Defeated at Khirki, Sitabuldi & Mahidpur. <strong>Peshwaship abolished</strong>; Baji Rao II pensioned off to Bithoor (near Kanpur). Bombay Presidency created."
+        ]
+      },
+
+      // --- PUNJAB SPECIAL & ANNEXATION ---
+      {
+        year: "1799 – 1839",
+        title: "Maharaja Ranjit Singh – Unification of Punjab & Sovereign Sikh Empire",
+        categories: ["punjab", "conquest"],
+        badges: ["PSSSB CORE", "Sher-e-Punjab"],
+        isPunjabSpecial: true,
+        summary: "Chief of Sukerchakia Misl unified trans-Sutlej Punjab, established capital at Lahore, and modernized Fauj-i-Khas.",
+        details: [
+          "<strong>1799:</strong> Captured Lahore from Bhangi misl; granted title of Raja by Zaman Shah (Afghan ruler).",
+          "<strong>1805:</strong> Acquired Amritsar (Harmandir Sahib gold plating; Gobindgarh Fort).",
+          "<strong>25 April 1809 – Treaty of Amritsar:</strong> Signed between Ranjit Singh and Charles Metcalfe (Lord Minto I). <strong>Sutlej River recognized as perpetual boundary</strong> between Sikh Empire and British. Checked Ranjit's cis-Sutlej expansion (Ludhiana, Patiala, Nabha protected by British).",
+          "Modernized army: <em>Fauj-i-Ain</em> (regular) with French generals Allard (cavalry) and Ventura (infantry), Court and Gardner (artillery).",
+          "<strong>1838: Tripartite Treaty</strong> between Ranjit Singh, British (Lord Auckland), and exiled Afghan Shah Shuja to counter Russian threat.",
+          "Died in 1839; triggered factional instability at Lahore Darbar."
+        ]
+      },
+      {
+        year: "1843",
+        title: "Annexation of Sindh (Sir Charles Napier & Lord Ellenborough)",
+        categories: ["conquest"],
+        badges: ["British Expansion"],
+        isPunjabSpecial: false,
+        summary: "Ruthless annexation despite previous treaties of 'eternal friendship' (1809, 1820) and Subsidiary Alliance (1839).",
+        details: [
+          "Motivated by British humiliation in 1st Afghan War and desire to control navigation of Indus River.",
+          "Napier famously quoted: <em>'We have no right to seize Sind, yet we shall do so, and a very advantageous, useful, humane piece of rascality it will be.'</em> Reported victory with the single Latin word: <strong>'Peccavi'</strong> (I have sinned / I have Sindh)."
+        ]
+      },
+      {
+        year: "1845 – 1846",
+        title: "First Anglo-Sikh War (Battles of Mudki, Ferozeshah, Aliwal, Sobraon)",
+        categories: ["punjab", "conquest"],
+        badges: ["PSSSB Super Hotspot", "Treaty of Lahore"],
+        isPunjabSpecial: true,
+        summary: "War provoked by British troop concentration at Sutlej and treason within Lahore command (Lal Singh & Tej Singh).",
+        details: [
+          "Governor General: <strong>Lord Hardinge I</strong>; Commander-in-Chief: <strong>Sir Hugh Gough</strong>.",
+          "<strong>Key Battles:</strong><br>• Mudki (18 Dec 1845)<br>• Ferozeshah (21-22 Dec 1845)<br>• Aliwal (28 Jan 1846, Harry Smith won)<br>• <strong>Battle of Sobraon (10 Feb 1846):</strong> The decisive bloody battle; heroic sacrifice of <strong>Sham Singh Attariwala</strong>.",
+          "<strong>Treaty of Lahore (9 March 1846):</strong><br>• Jalandhar Doab (between Beas & Sutlej) ceded to British.<br>• War indemnity of ₹1.5 crore imposed. Since Darbar could pay only ₹50 lakhs, <strong>Kashmir was sold to Raja Gulab Singh of Jammu for ₹75 lakhs (Treaty of Amritsar, 16 March 1846)</strong>.<br>• British Resident Henry Lawrence posted at Lahore.",
+          "<strong>Treaty of Bhyrowal (Dec 1846):</strong> Rani Jindan stripped of regency; Council of Regency of 8 Sikh sardars created under British Resident."
+        ]
+      },
+      {
+        year: "1848 – 1849",
+        title: "Second Anglo-Sikh War & Annexation of Punjab (29 March 1849)",
+        categories: ["punjab", "conquest"],
+        badges: ["PSSSB Must Know", "Dalhousie Annexation"],
+        isPunjabSpecial: true,
+        summary: "Revolt of Dewan Mulraj (Governor of Multan) and Chatar Singh Attariwala exploded into full war; ended Punjab sovereignty.",
+        details: [
+          "Governor General: <strong>Lord Dalhousie</strong> (firm believer in direct annexation).",
+          "<strong>Trigger:</strong> Murder of two British officers (Vans Agnew and Lt. Anderson) at Multan by Mulraj's troops.",
+          "<strong>Key Battles:</strong><br>• Battle of Ramnagar (Nov 1848, inconclusive)<br>• <strong>Battle of Chillianwala (13 Jan 1849):</strong> Fiercest battle; British suffered immense casualties under Hugh Gough (British drew back).<br>• <strong>Battle of Gujrat (21 Feb 1849):</strong> Known as the <em>'Battle of the Guns'</em>; decisive artillery victory for British.",
+          "<strong>Annexation (29 March 1849):</strong> Maharaja Duleep Singh (minor) pensioned to England; famous <strong>Koh-i-Noor diamond</strong> surrendered to Queen Victoria.",
+          "Punjab administered by a <strong>Board of Administration</strong> (Henry Lawrence - President, John Lawrence, Charles Mansel; later replaced by Chief Commissioner John Lawrence in 1853)."
+        ]
+      },
+      {
+        year: "1848 – 1856",
+        title: "Lord Dalhousie & The Doctrine of Lapse",
+        categories: ["conquest", "constitutional"],
+        badges: ["PSSSB Chronology Q"],
+        isPunjabSpecial: false,
+        summary: "Customary adoption rights denied to Indian rulers; lapsed states automatically escheated to the British Crown.",
+        details: [
+          "<strong>Chronological Order of Annexations (Crucial for MCQs):</strong><br>1. <strong>Satara (1848)</strong><br>2. Jaitpur & Sambalpur (1849)<br>3. Baghat (1850)<br>4. Udaipur (1852)<br>5. <strong>Jhansi (1853)</strong><br>6. <strong>Nagpur (1854)</strong>",
+          "<strong>Awadh Annexation (1856):</strong> NOT annexed under Doctrine of Lapse! Annexed on the pretext of <em>'misgovernance'</em> based on the report of Resident <strong>James Outram</strong> (Nawab Wajid Ali Shah deposed)."
+        ]
+      },
+
+      // --- EARLY REVOLTS, ASSOCIATIONS & REFORMS ---
+      {
+        year: "1871 – 1872",
+        title: "Kuka (Namdhari) Movement in Punjab & Lord Northbrook",
+        categories: ["punjab", "revolutionary"],
+        badges: ["Punjab History Star"],
+        isPunjabSpecial: true,
+        summary: "Socio-religious and anti-British political uprising founded by Bhagat Jawahar Mal and led by Satguru Ram Singh.",
+        details: [
+          "Founded in 1840s; transformed into active anti-British force under <strong>Baba Ram Singh</strong> (HQ: Bhaini Sahib, Ludhiana).",
+          "Advocated boycott of British goods, government jobs, schools, and British postal network (pioneered non-cooperation!).",
+          "<strong>Maler Kotla clash (1872):</strong> Deputy Commissioner Cowan tied 49/50 Kukas to canons and blew them up without trial.",
+          "Baba Ram Singh was exiled to Rangoon (Burma) under Viceroy <strong>Lord Northbrook</strong>, where he passed away in 1885."
+        ]
+      },
+      {
+        year: "1836 – 1885",
+        title: "Evolution of Early Political Associations Before INC",
+        categories: ["associations"],
+        badges: ["Pre-Congress Timeline"],
+        isPunjabSpecial: false,
+        summary: "Transition from elite landlord bodies to provincial political associations representing pan-Indian interests.",
+        details: [
+          "• <strong>1836: Bangabhasha Prakasika Sabha</strong> – Formed by associates of Raja Rammohan Roy.",
+          "• <strong>1838: Zamindari Association / Landholders' Society</strong> – Radhakant Deb, Dwarkanath Tagore. <em>First political organization in India</em> to safeguard landlord interests.",
+          "• <strong>1843: Bengal British India Society</strong> – Formed by Derozians (Young Bengal).",
+          "• <strong>1851: British Indian Association</strong> – Merger of Landholders' Society + Bengal British India Society. Demanded separation of judiciary from executive, salt tax abolition.",
+          "• <strong>1866: East India Association (London)</strong> – Founded by <strong>Dadabhai Naoroji</strong> to lobby British Parliament.",
+          "• <strong>1867: Poona Sarvajanik Sabha</strong> – M.G. Ranade, G.V. Joshi; served as mediator between government and peasants.",
+          "• <strong>1875: Indian League</strong> – Sisir Kumar Ghosh (Amrita Bazar Patrika).",
+          "• <strong>1876: Indian National Association</strong> – <strong>Surendranath Banerjea & Anand Mohan Bose</strong> (superseded Indian League; held All-India National Conference in 1883 & 1885).",
+          "• <strong>1884: Madras Mahajan Sabha</strong> – M. Viraghavachari, B. Subramaniya Aiyer, P. Anandacharlu.",
+          "• <strong>1885: Bombay Presidency Association</strong> – Pherozeshah Mehta, K.T. Telang, Badruddin Tyabji (the 'Three Stars of Bombay')."
+        ]
+      },
+      {
+        year: "1885 (28 Dec)",
+        title: "Foundation of Indian National Congress (INC) at Bombay",
+        categories: ["associations"],
+        badges: ["PSSSB Repeat Q"],
+        isPunjabSpecial: false,
+        summary: "Founded at Gokuldas Tejpal Sanskrit College, Bombay, by retired British civil servant Allan Octavian Hume.",
+        details: [
+          "<strong>First President:</strong> Womesh Chandra Bonnerjee (W.C. Bonnerjee). Attended by 72 delegates.",
+          "Viceroy at the time: <strong>Lord Dufferin</strong> (who later ridiculed INC as representing a 'microscopic minority').",
+          "Kadambini Ganguly was the first woman graduate to address an INC session in 1890."
+        ]
+      },
+      {
+        year: "1885 – 1905",
+        title: "The Moderate Phase – 'Prayer, Petition & Protest'",
+        categories: ["associations"],
+        badges: ["Drain of Wealth"],
+        isPunjabSpecial: false,
+        summary: "Early constitutional agitation driven by faith in British sense of justice and economic critique of colonialism.",
+        details: [
+          "<strong>Key Leaders:</strong> Dadabhai Naoroji (Grand Old Man of India), Gopal Krishna Gokhale, Pherozeshah Mehta, Dinshaw Wacha, R.C. Dutt.",
+          "<strong>Economic Critique of British Rule:</strong>",
+          "• Dadabhai Naoroji: <em>Poverty and Un-British Rule in India</em> (1901) – formulated the <strong>Drain of Wealth</strong> theory.",
+          "• R.C. Dutt: <em>The Economic History of India</em>.",
+          "Major achievements: Expansion of Legislative Councils through <strong>Indian Councils Act 1892</strong> (indirect elections & right to discuss budget)."
+        ]
+      },
+
+      // --- BENGAL PARTITION & SWADESHI ---
+      {
+        year: "1905 (16 Oct)",
+        title: "Partition of Bengal & Launch of Swadeshi Movement",
+        categories: ["partition_swadeshi", "punjab"],
+        badges: ["High-Yield Movement"],
+        isPunjabSpecial: true,
+        summary: "Lord Curzon announced partition in July 1905 (effective 16 Oct 1905) under administrative pretext, actually aimed at weakening Bengali nationalism.",
+        details: [
+          "Division: Western Bengal + Bihar + Orissa (Bengali minority in own land) vs Eastern Bengal + Assam (Muslim majority).",
+          "<strong>Protests:</strong> 16 Oct observed as Day of National Mourning; Rabindranath Tagore composed <em>Amar Sonar Bangla</em>; Raksha Bandhan tied as symbol of fraternal unity.",
+          "Moderate journals: <em>Hitabadi</em> (Dwijendranath Tagore), <em>Sanjibani</em> (K.K. Mitra - first to call for boycott), <em>Bengalee</em> (S.N. Banerjea).",
+          "<strong>Spread to Punjab:</strong> Led actively by <strong>Lala Lajpat Rai</strong> and <strong>Sardar Ajit Singh</strong> (uncle of Bhagat Singh; Bharat Mata Society).",
+          "Spread to Bombay: Bal Gangadhar Tilak; Madras: V.O. Chidambaram Pillai (Swadeshi Steam Navigation Co.); Delhi: Syed Haider Raza."
+        ]
+      },
+      {
+        year: "1906 – 1907",
+        title: "Calcutta Congress (1906) & Surat Split (1907)",
+        categories: ["associations", "partition_swadeshi"],
+        badges: ["Congress Split"],
+        isPunjabSpecial: false,
+        summary: "Ideological rift between Moderates and Extremists (Lal-Bal-Pal + Aurobindo Ghosh).",
+        details: [
+          "<strong>1906 Calcutta Session:</strong> Dadabhai Naoroji presided; declared <strong>'Swaraj'</strong> as Congress goal for the first time. Passed 4 historic resolutions: <em>Swaraj, Swadeshi, Boycott, National Education</em>.",
+          "<strong>1907 Surat Session:</strong> Presided by <strong>Ras Behari Ghosh</strong>. Extremists wanted Tilak/Lajpat Rai as President; clash broke out, shoe hurled on dais.",
+          "<strong>Surat Split:</strong> Extremists expelled from Congress; Tilak arrested in 1908 and sent to Mandalay jail (6 years); Aurobindo Ghosh retired to Pondicherry (spiritual life)."
+        ]
+      },
+
+      // --- REVOLUTIONARY PHASE 1 & GHADAR ---
+      {
+        year: "1902 – 1908",
+        title: "Early Secret Societies & Alipore Bomb Case (1908)",
+        categories: ["revolutionary"],
+        badges: ["Cult of the Bomb"],
+        isPunjabSpecial: false,
+        summary: "Rise of militant nationalism: Anushilan Samiti, Yugantar, and Khudiram Bose's sacrifice.",
+        details: [
+          "1902: <strong>Anushilan Samiti</strong> founded by Promotha Mitter, Jnanendranath Basu, Barindra Ghosh.",
+          "1906: <em>Yugantar</em> journal started by Barindra Ghosh and Bhupendranath Dutta.",
+          "<strong>Muzaffarpur Bomb Case (1908):</strong> Khudiram Bose (aged 18) and Prafulla Chaki threw bomb targeting Judge Kingsford; killed two British ladies. Chaki shot himself; <strong>Khudiram Bose hanged</strong> (youngest martyr).",
+          "<strong>Alipore Conspiracy Case:</strong> Aurobindo Ghosh and Barindra Ghosh arrested; Aurobindo brilliantly defended by <strong>C.R. Das</strong>."
+        ]
+      },
+      {
+        year: "1907",
+        title: "Punjab Peasant Unrest & Sardar Ajit Singh's 'Pagri Sambhal Jatta'",
+        categories: ["punjab", "revolutionary"],
+        badges: ["PSSSB CORE", "Punjab Icon"],
+        isPunjabSpecial: true,
+        summary: "Mass peasant uprising in Punjab against Colonisation Bill (1906) and water rates hike in Bari Doab Canal.",
+        details: [
+          "<strong>Sardar Ajit Singh</strong> founded <em>Anjuman-i-Mohisban-i-Watan</em> and published revolutionary journal <em>Bharat Mata</em>.",
+          "Banke Dayal (editor of <em>Jhang Syal</em>) composed the legendary anthem: <strong>'Pagri Sambhal Jatta'</strong>.",
+          "Lala Lajpat Rai (editor of <em>Punjabee</em>) backed the peasants.",
+          "British government panicked; Lord Minto vetoed the Colonisation Bill, and both Ajit Singh & Lala Lajpat Rai were deported to Mandalay in May 1907."
+        ]
+      },
+      {
+        year: "1909",
+        title: "Madan Lal Dhingra Assassination of Curzon-Wyllie (London)",
+        categories: ["punjab", "revolutionary"],
+        badges: ["PSSSB Favorite", "Punjab Martyr"],
+        isPunjabSpecial: true,
+        summary: "Amritsar-born engineering student Madan Lal Dhingra assassinated Curzon-Wyllie at Imperial Institute, London.",
+        details: [
+          "Associated with <strong>India House</strong> (founded in London by Shyamji Krishna Varma; journal <em>The Indian Sociologist</em>) and V.D. Savarkar.",
+          "Dhingra boldly declared before the British court: <em>'I believe that a nation held in bondage with the help of foreign bayonets is in a state of perpetual war.'</em>",
+          "Hanged at Pentonville Prison on 17 August 1909."
+        ]
+      },
+      {
+        year: "1912 (23 Dec)",
+        title: "Delhi-Lahore Conspiracy Case (Lord Hardinge Bombing)",
+        categories: ["revolutionary", "punjab"],
+        badges: ["Ras Behari Bose"],
+        isPunjabSpecial: true,
+        summary: "Bomb thrown at Viceroy Lord Hardinge II during official procession into Delhi (new Imperial Capital).",
+        details: [
+          "Masterminded by <strong>Ras Behari Bose</strong> and <strong>Sachindra Nath Sanyal</strong>.",
+          "Viceroy survived with injuries; <strong>Bhai Balmukund (Punjab)</strong>, Master Amir Chand, Awadh Behari, and Basant Kumar Biswas were convicted and hanged."
+        ]
+      },
+      {
+        year: "1913",
+        title: "Foundation of The Ghadar Party (San Francisco, USA)",
+        categories: ["punjab", "revolutionary"],
+        badges: ["PSSSB Super Hotspot", "Worldwide Movement"],
+        isPunjabSpecial: true,
+        summary: "Pacific Coast Hindustan Ghadar Party founded to overthrow British rule in India through armed insurrection.",
+        details: [
+          "<strong>First President:</strong> <strong>Baba Sohan Singh Bhakna</strong> (born at village Khutrai Kalan, Amritsar).",
+          "<strong>General Secretary & Intellectual Leader:</strong> <strong>Lala Har Dayal</strong>.",
+          "HQ established at <strong>Yugantar Ashram, San Francisco</strong>; published weekly newspaper <em>The Ghadar</em> (first issue in Urdu, 1 Nov 1913; Gurmukhi edition followed).",
+          "Other key leaders: Bhai Parmanand, Kartar Singh Sarabha (hero & inspiration of Bhagat Singh), Taraknath Das, GD Kumar (Swadesh Sevak Home at Vancouver)."
+        ]
+      },
+      {
+        year: "1914 (May – Sept)",
+        title: "Komagata Maru Incident (Guru Nanak Jahaz)",
+        categories: ["punjab", "revolutionary"],
+        badges: ["PSSSB Repeat Q"],
+        isPunjabSpecial: true,
+        summary: "Japanese steamship chartered by Baba Gurdit Singh carrying 376 passengers (mostly Punjabi Sikhs & Muslims) denied entry at Vancouver.",
+        details: [
+          "Challenged racist Canadian 'Continuous Journey' immigration regulation.",
+          "Forced to return after 2-month standoff. Reached <strong>Budge Budge (near Calcutta)</strong> on 29 Sept 1914.",
+          "British troops opened fire on passengers refusing to board Punjab-bound special train; 20+ killed, dozens imprisoned. Sparked furious return of Ghadarites to Punjab."
+        ]
+      },
+      {
+        year: "1915 (Feb)",
+        title: "Failed Ghadar Mutiny & Execution of Kartar Singh Sarabha",
+        categories: ["punjab", "revolutionary"],
+        badges: ["PSSSB Martyr Q"],
+        isPunjabSpecial: true,
+        summary: "Planned pan-India military revolt on 21 Feb 1915 betrayed by police spy Kirpal Singh.",
+        details: [
+          "Troops in Ferozepur, Lahore, Rawalpindi disarmed before revolt could trigger.",
+          "<strong>Lahore Conspiracy Trials (1915-16):</strong> Hundreds tried by Special Tribunal under Defence of India Act 1915.",
+          "<strong>Kartar Singh Sarabha</strong> (aged only 19) was hanged at Lahore Central Jail on 16 November 1915 alongside 6 other Ghadar patriots."
+        ]
+      },
+
+      // --- GANDHIAN ARRIVAL, ROWLATT & JALLIANWALA ---
+      {
+        year: "1915 – 1918",
+        title: "Return of Gandhi (1915) & Initial Grassroot Satyagrahas",
+        categories: ["gandhian"],
+        badges: ["C-A-K Sequence"],
+        isPunjabSpecial: false,
+        summary: "Mahatma Gandhi returned from South Africa on 9 Jan 1915 (Pravasi Bharatiya Divas) and launched his experimental satyagrahas.",
+        details: [
+          "<strong>1. Champaran Satyagraha (1917, Bihar):</strong> <em>First Civil Disobedience</em>. Against European planters forcing Tinkathia system (3/20th indigo). Invited by Rajkumar Shukla; supported by Rajendra Prasad, J.B. Kripalani. Planters agreed to 25% compensation.",
+          "<strong>2. Ahmedabad Mill Strike (1918, Gujarat):</strong> <em>First Hunger Strike</em>. Dispute over Plague Bonus discontinuation. Anusuya Sarabhai aided Gandhi; 35% wage hike secured.",
+          "<strong>3. Kheda Satyagraha (1918, Gujarat):</strong> <em>First Non-Cooperation</em>. Crop failure, British refused remission of revenue under revenue code. Sardar Vallabhbhai Patel emerged as leader."
+        ]
+      },
+      {
+        year: "1919 (13 April)",
+        title: "Jallianwala Bagh Massacre (Amritsar) & Rowlatt Satyagraha",
+        categories: ["punjab", "gandhian"],
+        badges: ["PSSSB Sacred Milestone", "Darkest Day"],
+        isPunjabSpecial: true,
+        summary: "Brutal butchery of unarmed civilians gathered at Jallianwala Bagh on Baisakhi day by Brigadier-General Reginald Dyer.",
+        details: [
+          "<strong>Background:</strong> <em>Anarchical and Revolutionary Crimes Act 1919 (Rowlatt Act / Black Act)</em> allowed arrest without warrant and 2 years detention without trial (<em>'Na appeal, na daleel, na vakeel'</em>).",
+          "Nationwide Hartal called by Gandhi on 6 April 1919.",
+          "On 9 April, Punjab popular leaders <strong>Dr. Saifuddin Kitchlew</strong> and <strong>Dr. Satyapal</strong> were arrested and deported from Amritsar.",
+          "On <strong>13 April 1919 (Baisakhi)</strong>, peaceful gathering at Jallianwala Bagh fired upon by Gen. Dyer without warning; official Hunter Commission admitted 379 dead (Congress inquiry led by Madan Mohan Malaviya found 1,000+ killed).",
+          "Lt. Governor of Punjab: <strong>Sir Michael O'Dwyer</strong> (later assassinated in London in 1940 by <strong>Shaheed Udham Singh</strong>).",
+          "<strong>Aftermath:</strong> Rabindranath Tagore renounced his <strong>Knighthood</strong>; Mahatma Gandhi surrendered his <strong>Kaiser-i-Hind</strong> medal."
+        ]
+      },
+      {
+        year: "1920 – 1922",
+        title: "Non-Cooperation Movement (NCM) & Khilafat Movement",
+        categories: ["gandhian", "punjab"],
+        badges: ["Mass Movement 1.0"],
+        isPunjabSpecial: true,
+        summary: "First nationwide mass movement combining Khilafat grievance (Treaty of Sèvres dismembering Ottoman Caliph) with Punjab wrongs & Swaraj.",
+        details: [
+          "Approved at Calcutta Special Session (Sept 1920, Lala Lajpat Rai Pres.) and confirmed at <strong>Nagpur Session (Dec 1920, C. Vijayaraghavachariar Pres.)</strong>.",
+          "Reorganized INC: 15-member CWC formed; provincial committees organized on linguistic basis; membership fee lowered to 4 annas.",
+          "Boycott of foreign clothes, British law courts, government titles, and government schools; creation of National Schools (Jamia Millia, Kashi Vidyapeeth).",
+          "<strong>Punjab Connection:</strong> Coincided with the historic <strong>Akali / Gurdwara Reform Movement (1920-25)</strong> to liberate Gurdwaras from corrupt Udasi Mahants (Nankana Sahib massacre 1921; Guru Ka Bagh Morcha 1922). Formation of SGPC & Shiromani Akali Dal.",
+          "<strong>Withdrawal:</strong> Abruptly called off after <strong>Chauri Chaura incident (4 Feb 1922)</strong> in Gorakhpur, UP, where 22 policemen were burnt alive. Gandhi called it his 'Himalayan Blunder'."
+        ]
+      },
+      {
+        year: "1922 – 1925",
+        title: "The Swarajists vs No-Changers & Vithalbhai Patel",
+        categories: ["gandhian"],
+        badges: ["Council Entry"],
+        isPunjabSpecial: false,
+        summary: "Debate inside Congress on whether to enter legislative councils to wreck the 1919 Montford Constitution from within.",
+        details: [
+          "<strong>Swarajists (Pro-Changers):</strong> C.R. Das (President) & Motilal Nehru (Secretary) formed <em>Congress-Khilafat Swarajya Party (Jan 1923)</em> after Gaya session rejection.",
+          "<strong>No-Changers:</strong> Sardar Patel, Rajendra Prasad, C. Rajagopalachari, M.A. Ansari advocated Gandhian constructive work (Khadi, Hindu-Muslim unity, untouchability removal).",
+          "1924: Belgaum Session – Only INC session presided over by <strong>Mahatma Gandhi</strong> (signed pact with Swarajists).",
+          "<strong>1925:</strong> <strong>Vithalbhai Patel</strong> elected as the <em>first Indian Speaker (President)</em> of the Central Legislative Assembly."
+        ]
+      },
+      {
+        year: "1927 – 1928",
+        title: "Simon Commission & Lala Lajpat Rai's Martyrdom",
+        categories: ["punjab", "gandhian", "revolutionary"],
+        badges: ["PSSSB CORE", "Punjab Kesari"],
+        isPunjabSpecial: true,
+        summary: "Indian Statutory Commission sent by British to review 1919 reforms; all 7 members were British ('All-White Commission').",
+        details: [
+          "Boycotted by Congress, Muslim League (Jinnah wing), Hindu Mahasabha, and Liberals. (Only Unionist Party in Punjab and Justice Party in Madras did not boycott).",
+          "Arrived in Bombay Feb 1928 greeted with black flags and <em>'Simon Go Back'</em>.",
+          "<strong>30 October 1928 (Lahore):</strong> Simon Commission protested at Lahore railway station under leadership of <strong>Lala Lajpat Rai</strong>.",
+          "SP J.A. Scott ordered lathi charge; DSP <strong>James A. Saunders</strong> brutally struck Lala Lajpat Rai on the chest.",
+          "Lalaji roared: <em>'Every blow aimed at my body is a nail in the coffin of British Imperialism.'</em> Lalaji succumbed to injuries on <strong>17 November 1928</strong>."
+        ]
+      },
+      {
+        year: "1928 (Dec)",
+        title: "Saunders Assassination (Lahore) – Revenge by HSRA",
+        categories: ["punjab", "revolutionary"],
+        badges: ["PSSSB Super Hotspot", "Bhagat Singh Action"],
+        isPunjabSpecial: true,
+        summary: "Hindustan Socialist Republican Association (HSRA) avenged the death of Lala Lajpat Rai exactly one month after his passing.",
+        details: [
+          "HSRA formed at <strong>Ferozeshah Kotla ground, Delhi (Sept 1928)</strong> by Chandrashekhar Azad, Bhagat Singh, Sukhdev, Bejoy Kumar Sinha.",
+          "On <strong>17 December 1928</strong>, Bhagat Singh, Rajguru, and Sukhdev ambushed and shot dead Saunders as he exited police HQ in Lahore (Chanan Singh, head constable, also shot while giving chase).",
+          "Posters put up across Lahore: <em>'Saunders is dead, Lalaji is avenged.'</em> Bhagat Singh escaped Lahore in disguise with Durga Bhabhi."
+        ]
+      },
+      {
+        year: "1928",
+        title: "The Nehru Report vs Jinnah's 14 Points",
+        categories: ["constitutional", "gandhian"],
+        badges: ["First Draft Constitution"],
+        isPunjabSpecial: false,
+        summary: "Drafted by Motilal Nehru committee in response to Birkenhead's challenge to Indians to frame an agreed constitution.",
+        details: [
+          "Demanded: <strong>Dominion Status</strong>, Joint Electorates with reserved seats for minorities, 19 Fundamental Rights, Universal Adult Suffrage, Linguistic Provinces.",
+          "Young leaders (Subhas Chandra Bose and Jawaharlal Nehru) opposed Dominion Status and formed the <em>Independence for India League</em>.",
+          "M.A. Jinnah proposed 3 amendments (rejected) and subsequently formulated his famous <strong>14 Points (March 1929)</strong>."
+        ]
+      },
+      {
+        year: "1929 (8 April)",
+        title: "Central Assembly Bombing (Bhagat Singh & B.K. Dutt)",
+        categories: ["punjab", "revolutionary"],
+        badges: ["'Make the Deaf Hear'"],
+        isPunjabSpecial: true,
+        summary: "Bhagat Singh and Batukeshwar Dutt threw harmless smoke bombs into the Central Legislative Assembly in Delhi.",
+        details: [
+          "Protesting against two draconian anti-labour bills: <strong>Public Safety Bill</strong> and <strong>Trade Disputes Bill</strong>.",
+          "Threw leaflets stating <em>'To make the deaf hear, sound must be very loud'</em> and raised slogans: <strong>'Inquilab Zindabad!'</strong>",
+          "Courted arrest willingly to use the courtroom as a national forum for revolutionary ideas."
+        ]
+      },
+      {
+        year: "1929 (Dec)",
+        title: "Historic Lahore Congress Session – Resolution of Purna Swaraj",
+        categories: ["punjab", "gandhian"],
+        badges: ["PSSSB Repeat Q", "Complete Independence"],
+        isPunjabSpecial: true,
+        summary: "Congress under the presidency of Jawaharlal Nehru adopted 'Purna Swaraj' (Complete Independence) as its goal.",
+        details: [
+          "Held on the banks of River <strong>Ravi at Lahore</strong>.",
+          "Unfurled the Tricolour at midnight of <strong>31 December 1929</strong>.",
+          "Resolved that <strong>26 January 1930</strong> would be celebrated throughout India as <em>Poorna Swaraj Day / Independence Day</em> (which led to Republic Day being commemorated on Jan 26 in 1950!).",
+          "Authorized Mahatma Gandhi to launch the Civil Disobedience Movement."
+        ]
+      },
+      {
+        year: "1930 (12 Mar – 6 Apr)",
+        title: "Dandi Salt March & Launch of Civil Disobedience (CDM)",
+        categories: ["gandhian"],
+        badges: ["Historic March"],
+        isPunjabSpecial: false,
+        summary: "Gandhi began historic march from Sabarmati Ashram to Dandi (240 miles) with 78 chosen followers to break the Salt Law.",
+        details: [
+          "Reached Dandi on 6 April 1930, made salt from seawater, formally launching the nationwide Civil Disobedience Movement.",
+          "<strong>Key Regional Facets:</strong><br>• Tamil Nadu: C. Rajagopalachari (Vedaranyam March)<br>• Malabar: K. Kelappan (Payyanur)<br>• NWFP: <strong>Khan Abdul Ghaffar Khan (Frontier Gandhi)</strong> & his Khudai Khidmatgars ('Red Shirts'); Garhwali soldiers led by Chandra Singh Garhwali refused to fire on unarmed Pathans.<br>• Dharasana Salt Works: Sarojini Naidu, Imam Saheb, Manilal led peaceful satyagraha, met with brutal lathis."
+        ]
+      },
+      {
+        year: "1931 (5 Mar)",
+        title: "Gandhi-Irwin Pact (Delhi Pact)",
+        categories: ["gandhian", "constitutional"],
+        badges: ["Diplomatic Pact"],
+        isPunjabSpecial: false,
+        summary: "Pact signed between Viceroy Lord Irwin and Mahatma Gandhi after Irwin Declaration (1929).",
+        details: [
+          "British agreed to: immediate release of all non-violent political prisoners, return of confiscated lands, right to make salt for domestic consumption, peaceful picketing of liquor shops.",
+          "Gandhi agreed to: suspend Civil Disobedience Movement and participate in the <strong>Second Round Table Conference</strong>.",
+          "Controversy: Gandhi could not secure commutation of death sentences of Bhagat Singh, Rajguru, and Sukhdev."
+        ]
+      },
+      {
+        year: "1931 (23 March)",
+        title: "Martyrdom of Bhagat Singh, Sukhdev & Rajguru (Hussainiwala)",
+        categories: ["punjab", "revolutionary"],
+        badges: ["PSSSB Sacred Day", "Shaheedi Diwas"],
+        isPunjabSpecial: true,
+        summary: "Hanged a day ahead of schedule in Lahore Central Jail for the Lahore Conspiracy Case (Saunders murder).",
+        details: [
+          "Their bodies were secretly smuggled out of jail and hurriedly cremated on the banks of Sutlej River at <strong>Hussainiwala (Ferozepur, Punjab)</strong>.",
+          "Observed every year as <strong>Shaheedi Diwas (Martyr's Day)</strong> across Punjab & India.",
+          "<strong>Karachi Congress Session (March 1931):</strong> Presided over by <strong>Sardar Patel</strong>; Gandhi faced black-flag protests. Congress endorsed Gandhi-Irwin pact and passed landmark <em>Resolution on Fundamental Rights and National Economic Programme</em> (drafted by Nehru)."
+        ]
+      },
+      {
+        year: "1930 – 1932",
+        title: "The Three Round Table Conferences (London)",
+        categories: ["constitutional", "gandhian"],
+        badges: ["Constitutional Talks"],
+        isPunjabSpecial: false,
+        summary: "Three conferences organized in London based on Simon Report recommendations to discuss Indian constitutional reforms.",
+        details: [
+          "<strong>1st RTC (1930-31):</strong> Boycotted by Congress. Attended by B.R. Ambedkar, Tej Bahadur Sapru, Muhammad Ali Jinnah.",
+          "<strong>2nd RTC (1931):</strong> Mahatma Gandhi attended as the <em>sole representative</em> of INC; Sarojini Naidu represented Indian women. Deadlocked on separate electorates for minorities.",
+          "<strong>3rd RTC (1932):</strong> Boycotted by Congress. Recommendations published in 1933 'White Paper' formed bedrock of GOI Act 1935.",
+          "<strong>PSSSB MCQ:</strong> <strong>Dr. B.R. Ambedkar</strong> and <strong>Tej Bahadur Sapru</strong> attended all three Round Table Conferences!"
+        ]
+      },
+      {
+        year: "1932 (Aug – Sept)",
+        title: "Communal Award (Ramsay MacDonald) & Poona Pact",
+        categories: ["constitutional", "gandhian"],
+        badges: ["PSSSB High-Yield"],
+        isPunjabSpecial: false,
+        summary: "British British PM announced separate electorates for Depressed Classes; averted by Gandhi's fast unto death & agreement with Ambedkar.",
+        details: [
+          "<strong>Communal Award (16 Aug 1932):</strong> Ramsay MacDonald extended separate electorates to Muslims, Sikhs, Christians, Anglo-Indians, and 'Depressed Classes' (Dalits).",
+          "Gandhi undertook fast unto death in <strong>Yerawada Central Jail (Poona)</strong> against dividing Hindu society.",
+          "<strong>Poona Pact (24 Sept 1932):</strong> Signed by Dr. B.R. Ambedkar and Madan Mohan Malaviya (on behalf of Gandhi).",
+          "<em>Outcome:</em> <strong>Separate electorates for Depressed Classes scrapped</strong>; in exchange, reserved seats in provincial assemblies increased from 71 to <strong>147 seats</strong>, and 18% in Central Legislature."
+        ]
+      },
+      {
+        year: "1935 (Aug)",
+        title: "Government of India Act 1935",
+        categories: ["constitutional"],
+        badges: ["Bulkiest Act", "Constitution Basis"],
+        isPunjabSpecial: false,
+        summary: "Longest Act enacted by British Parliament; laid structural framework for Constitution of Independent India (1950).",
+        details: [
+          "<strong>Abolished Dyarchy in Provinces</strong> and introduced <strong>Provincial Autonomy</strong>.",
+          "Proposed an <em>All-India Federation</em> consisting of Governors' provinces and Princely States (never materialized as princes didn't join).",
+          "Introduced Dyarchy at the Centre (reserved subjects: defence, external affairs; transferred subjects).",
+          "Established <strong>Federal Court (1937)</strong> at Delhi and Reserve Bank of India (RBI, 1935).",
+          "Separated <strong>Burma (Myanmar)</strong> from India; created two new provinces: Sindh and Orissa."
+        ]
+      },
+      {
+        year: "1937 – 1939",
+        title: "1937 Provincial Elections & Resignation of Congress Ministries",
+        categories: ["constitutional", "punjab"],
+        badges: ["PSSSB Unionist Note"],
+        isPunjabSpecial: true,
+        summary: "Elections held under GOI Act 1935. Congress formed ministries in 7 out of 11 provinces; Unionist Party swept Punjab.",
+        details: [
+          "<strong>Punjab Outcome:</strong> <strong>Unionist Party</strong> led by <strong>Sir Sikandar Hayat Khan</strong> and <strong>Sir Chhotu Ram</strong> formed government with Khalsa National Party and Muslim League.",
+          "Congress formed ministries in: Madras, UP, CP, Bihar, Orissa, Bombay, and later Assam & NWFP.",
+          "<strong>22 October 1939:</strong> Congress ministries resigned after 28 months in protest against Viceroy <strong>Lord Linlithgow</strong> dragging India into World War II without Indian consent.",
+          "Muslim League celebrated <strong>'Deliverance Day' (Day of Deliverance)</strong> on 22 December 1939."
+        ]
+      },
+      {
+        year: "1938 – 1939",
+        title: "Subhas Chandra Bose – Haripura, Tripuri Crisis & Forward Bloc",
+        categories: ["associations", "revolutionary"],
+        badges: ["Netaji Saga"],
+        isPunjabSpecial: false,
+        summary: "Clash between Netaji's revolutionary timeline and Gandhi's conservative approach during impending world war.",
+        details: [
+          "<strong>1938 Haripura Session:</strong> Bose elected President unanimously. Set up <strong>National Planning Committee</strong> under chairmanship of <strong>Jawaharlal Nehru</strong>.",
+          "<strong>1939 Tripuri Session:</strong> Bose re-elected, defeating Gandhi's candidate <strong>Pattabhi Sitaramayya</strong> (Gandhi stated: <em>'Pattabhi's defeat is my defeat'</em>).",
+          "Internal impasse led Bose to resign in April 1939 (replaced by Dr. Rajendra Prasad).",
+          "Bose founded the <strong>Forward Bloc</strong> in May 1939 within Congress to rally left-wing elements; escaped British house arrest from Calcutta in 1941 (Great Escape)."
+        ]
+      },
+      {
+        year: "1940 (23 March)",
+        title: "Lahore Resolution of Muslim League (Pakistan Demand)",
+        categories: ["punjab", "constitutional"],
+        badges: ["PSSSB Milestone"],
+        isPunjabSpecial: true,
+        summary: "Annual session of All-India Muslim League held at Minto Park (Iqbal Park), Lahore, formally demanded independent sovereign states for Muslims.",
+        details: [
+          "Drafted by Sir Sikandar Hayat Khan, moved by A.K. Fazlul Huq (Sher-e-Bangal), and seconded by Choudhry Khaliquzzaman.",
+          "The term 'Pakistan' was originally coined by <strong>Choudhry Rahmat Ali</strong> (Cambridge student) in 1933 pamphlet <em>'Now or Never'</em> (Punjab, Afghania, Kashmir, Sindh, Baluchistan)."
+        ]
+      },
+      {
+        year: "1940 (August & Oct)",
+        title: "August Offer (1940) & Individual Satyagraha (Delhi Chalo)",
+        categories: ["constitutional", "gandhian"],
+        badges: ["War Diplomacy"],
+        isPunjabSpecial: false,
+        summary: "Viceroy Linlithgow offered post-war Dominion Status with minority veto; rejected by Congress, sparking Individual Satyagraha.",
+        details: [
+          "Gandhi launched non-violent <em>Individual Satyagraha</em> to affirm freedom of speech against participating in imperialist war.",
+          "<strong>1st Satyagrahi:</strong> <strong>Acharya Vinoba Bhave</strong> (Pavnar Ashram).",
+          "<strong>2nd Satyagrahi:</strong> <strong>Jawaharlal Nehru</strong>.",
+          "<strong>3rd Satyagrahi:</strong> <strong>Brahma Datt</strong>."
+        ]
+      },
+      {
+        year: "1942 (March)",
+        title: "Cripps Mission ('Post-Dated Cheque')",
+        categories: ["constitutional"],
+        badges: ["Failed Mission"],
+        isPunjabSpecial: false,
+        summary: "Sir Stafford Cripps dispatched to secure full Indian cooperation as Japanese forces knocked at Burma's borders.",
+        details: [
+          "Offered: Dominion status after war, Constituent Assembly of Indians, but allowed provinces right to secede (opt-out clause).",
+          "Rejected by Congress (sought immediate complete independence and opposed Balkanisation of India).",
+          "Gandhi famously termed it a <em>'post-dated cheque drawn on a failing bank'</em>."
+        ]
+      },
+      {
+        year: "1942 (8 August)",
+        title: "Quit India Movement & Gandhi's 'Do or Die' Call",
+        categories: ["gandhian", "revolutionary"],
+        badges: ["PSSSB High-Yield", "August Kranti"],
+        isPunjabSpecial: false,
+        summary: "Historic AICC session at Gowalia Tank (August Kranti Maidan), Bombay, adopted Quit India Resolution.",
+        details: [
+          "Gandhi gave the immortal mantra: <strong>'Do or Die' (Karo ya Maro)</strong>.",
+          "Operation Zero Hour: Early morning of 9 August, all top leaders (Gandhi, Nehru, Patel, Azad) were arrested.",
+          "Became a leaderless spontaneous mass uprising: railway stations burnt, telegraph lines severed.",
+          "Underground leaders: <strong>Jayaprakash Narayan, Ram Manohar Lohia, Aruna Asaf Ali</strong> (unfurled tricolour at Gowalia Tank), <strong>Usha Mehta</strong> (underground secret radio).",
+          "<strong>Parallel Governments (Prati Sarkar):</strong><br>• Ballia (UP) under Chittu Pandey<br>• Tamluk (Bengal) – <em>Jatiya Sarkar</em> with Matangini Hazra<br>• Satara (Maharashtra) under Nana Patil & Y.B. Chavan (longest lasting)."
+        ]
+      },
+      {
+        year: "1944 – 1945",
+        title: "C.R. Formula (1944), Desai-Liaquat Pact & Wavell Plan (1945)",
+        categories: ["constitutional"],
+        badges: ["Deadlock Negotiations"],
+        isPunjabSpecial: false,
+        summary: "Efforts to break political deadlock between Congress and Muslim League on the question of partition.",
+        details: [
+          "<strong>Rajaji Formula (1944):</strong> C. Rajagopalachari suggested Muslim League endorse independence demand; plebiscite in NW & East after war. Jinnah insisted on two-nation theory and separate voting.",
+          "<strong>Wavell Plan & Simla Conference (June 1945):</strong> Proposed entirely Indian Executive Council (except Viceroy & Commander-in-Chief). Collapsed because Jinnah demanded Muslim League have the sole monopoly to nominate all Muslim members (Congress had Maulana Azad as President)."
+        ]
+      },
+      {
+        year: "1945 – 1946",
+        title: "INA Trials (Red Fort Trials) & Royal Indian Navy (RIN) Mutiny",
+        categories: ["revolutionary", "punjab"],
+        badges: ["PSSSB Core Topic"],
+        isPunjabSpecial: true,
+        summary: "Surging nationalist wave that shattered the British armed forces' loyalty to the Crown.",
+        details: [
+          "<strong>INA Trials (Nov 1945):</strong> Joint court-martial of three officers at Red Fort: <strong>Prem Kumar Sahgal (Hindu), Gurbaksh Singh Dhillon (Punjabi Sikh), Shah Nawaz Khan (Muslim)</strong>.",
+          "Defended by eminent legal team: Bhulabhai Desai, Tej Bahadur Sapru, Jawaharlal Nehru, K.N. Katju.",
+          "<strong>RIN Mutiny (18 Feb 1946):</strong> Ratings of HMIS Talwar struck at Bombay against racial discrimination, bad food, and detention of B.C. Dutt. Spread to Karachi and Calcutta. Unfurled Congress, League, and Communist flags together. Pacified by Sardar Patel & Jinnah."
+        ]
+      },
+      {
+        year: "1946 (March – June)",
+        title: "Cabinet Mission Plan (May 1946)",
+        categories: ["constitutional"],
+        badges: ["PSSSB Super Hotspot"],
+        isPunjabSpecial: false,
+        summary: "British PM Clement Attlee sent high-powered three-member mission to negotiate transfer of power.",
+        details: [
+          "<strong>Members:</strong> <strong>Lord Pethick-Lawrence</strong> (Secretary of State), <strong>Sir Stafford Cripps</strong>, and <strong>A.V. Alexander</strong>.",
+          "<strong>Proposals:</strong><br>• Rejected separate Pakistan.<br>• Proposed loose Indian Union with 3 groups of provinces: <em>Section A (Hindu majority), Section B (Punjab, NWFP, Sindh), Section C (Bengal & Assam)</em>.<br>• Formed Constituent Assembly (elected indirectly by Provincial Assemblies) which met on 9 Dec 1946.",
+          "<strong>Direct Action Day (16 Aug 1946):</strong> Called by Jinnah after differences over grouping; led to horrific communal riots in Calcutta ('Great Calcutta Killings') and Noakhali."
+        ]
+      },
+      {
+        year: "1947 (3 June)",
+        title: "Mountbatten Plan (3rd June Plan) & Partition of Punjab",
+        categories: ["punjab", "constitutional"],
+        badges: ["PSSSB Crucial", "Independence Roadmap"],
+        isPunjabSpecial: true,
+        summary: "Lord Mountbatten (last Viceroy) advanced transfer of power date to 15 August 1947, ordering the partition of British India.",
+        details: [
+          "Principles: Partition of Bengal and Punjab into two states if provincial assemblies demanded.",
+          "<strong>Sir Cyril Radcliffe</strong> appointed Chairman of the two Boundary Commissions (Punjab Boundary Commission & Bengal Boundary Commission).",
+          "<strong>Radcliffe Line:</strong> Partitioned Punjab down the center (Lahore, Rawalpindi, Multan to Pakistan; Amritsar, Jalandhar, Gurdaspur, Ferozepur to India).",
+          "Triggered greatest mass migration and communal carnage in modern human history."
+        ]
+      },
+      {
+        year: "1947 (18 July) / (15 August)",
+        title: "Indian Independence Act 1947 & Birth of Free India",
+        categories: ["constitutional"],
+        badges: ["Final Chapter"],
+        isPunjabSpecial: false,
+        summary: "Royal assent on 18 July 1947; created independent dominions of India and Pakistan on 15 August 1947.",
+        details: [
+          "Abolished the office of Secretary of State for India and ended Crown suzerainty over 565+ Princely States.",
+          "First Governor-General of independent India: <strong>Lord Mountbatten</strong> (Jawaharlal Nehru as first Prime Minister).",
+          "First and only Indian Governor-General of India: <strong>C. Rajagopalachari</strong> (June 1948 – 26 Jan 1950)."
+        ]
+      },
+
+      // --- HIGH YIELD VICEROY & REFORMS REFERENCE ---
+      {
+        year: "1773 – 1835",
+        title: "Key Governors-General Reforms Quick Capsule (Warren Hastings to Bentinck)",
+        categories: ["constitutional"],
+        badges: ["Governor-General Chart"],
+        isPunjabSpecial: false,
+        summary: "Foundational administrative, judicial, and social policy enactments.",
+        details: [
+          "• <strong>Warren Hastings (1773-85):</strong> Regulating Act 1773 (Supreme Court at Calcutta 1774, Elijah Impey first Chief Justice); Asiatic Society of Bengal (William Jones, 1784); Gita translated into English by Charles Wilkins.",
+          "• <strong>Lord Cornwallis (1786-93):</strong> <em>Father of Civil Services in India</em>. Cornwallis Code 1793 (Separation of revenue & judiciary); <strong>Permanent Settlement (1793)</strong> in Bengal, Bihar, Orissa with John Shore (zamindars got ownership, State got 10/11th or ~89% of rent).",
+          "• <strong>Lord Wellesley (1798-1805):</strong> Subsidiary Alliance System (1st state: Hyderabad 1798, Mysore 1799, Tanjore 1799, Awadh 1801, Peshwa 1802); Censorship of Press Act 1799; Fort William College (1800).",
+          "• <strong>Lord William Bentinck (1828-35):</strong> <em>First Governor-General of India (Charter Act 1833)</em>. Abolition of <strong>Sati (Regulation XVII of 1829)</strong> with Raja Rammohan Roy; suppression of Thuggee (Captain Sleeman); Macaulay's Minute on English Education (1835).",
+          "• <strong>Charles Metcalfe (1835-36):</strong> Known as the <em>'Liberator of the Indian Press'</em> (repealed 1823 Licensing Regulations)."
+        ]
+      },
+      {
+        year: "1856 – 1905",
+        title: "Crown Viceroys Capsule (Canning, Lytton, Ripon, Curzon)",
+        categories: ["constitutional"],
+        badges: ["PSSSB Exam Standard"],
+        isPunjabSpecial: false,
+        summary: "Most frequently tested Viceroys in State PCS and PSSSB general studies papers.",
+        details: [
+          "• <strong>Lord Canning (1856-62):</strong> <em>Last Governor-General & 1st Viceroy</em>. 1857 Revolt; Government of India Act 1858; Indian Penal Code 1860; Universities of Calcutta, Bombay & Madras (1857).",
+          "• <strong>Lord Mayo (1869-72):</strong> <em>Financial Decentralization (1870)</em>; First Census of India (1872); only Viceroy assassinated in office (by Sher Ali at Port Blair, Andaman).",
+          "• <strong>Lord Lytton (1876-80):</strong> Known as 'Viceroy of Reverse Genius' (poet Owen Meredith). <em>Vernacular Press Act 1878 ('Gagging Act')</em>; Arms Act 1878; lowered ICS exam age to 19; Grand Delhi Durbar 1877 during Great Famine (Strachey Commission).",
+          "• <strong>Lord Ripon (1880-84):</strong> <em>'Father of Local Self-Government' (Resolution 1882)</em>; repealed Vernacular Press Act (1882); First regular synchronous census (1881); First Factory Act 1881; Hunter Commission on Education (1882); Ilbert Bill Controversy (1883-84).",
+          "• <strong>Lord Curzon (1899-1905):</strong> Partition of Bengal (1905); Indian Universities Act 1904 (Raleigh Commission); Ancient Monuments Preservation Act 1904; Police Commission (Andrew Frazer, 1902); Younghusband Expedition to Tibet (1904)."
+        ]
+      }
+    ];
+
+    const container = document.getElementById('timelineContainer');
+    const searchInput = document.getElementById('searchInput');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    let currentFilter = 'all';
+    let searchQuery = '';
+    let areAllExpanded = false;
+
+    // Calculate Counts
+    function updateCounts() {
+      document.getElementById('count-all').innerText = timelineData.length;
+      document.getElementById('count-punjab').innerText = timelineData.filter(d => d.isPunjabSpecial).length;
+    }
+
+    // Render cards
+    function renderTimeline() {
+      container.innerHTML = '';
+
+      const filtered = timelineData.filter(item => {
+        // Category check
+        const matchCategory = (currentFilter === 'all') 
+          ? true 
+          : (currentFilter === 'punjab' ? item.isPunjabSpecial : item.categories.includes(currentFilter));
+
+        // Search query check
+        const q = searchQuery.toLowerCase().trim();
+        if (!q) return matchCategory;
+
+        const inTitle = item.title.toLowerCase().includes(q);
+        const inYear = item.year.toLowerCase().includes(q);
+        const inSummary = item.summary.toLowerCase().includes(q);
+        const inDetails = item.details.some(d => d.toLowerCase().includes(q));
+
+        return matchCategory && (inTitle || inYear || inSummary || inDetails);
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="p-8 text-center bg-white dark:bg-slate-900 rounded-xl border border-dashed border-slate-300 dark:border-slate-700">
+            <span class="text-3xl">🔍</span>
+            <p class="mt-2 font-bold text-slate-700 dark:text-slate-300">No events matched your search / filter criteria</p>
+            <p class="text-xs text-slate-500">Try searching for "Amritsar", "Clive", "Saunders", "1919", "Buxar", or switch category tab.</p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = `timeline-card group relative bg-white dark:bg-slate-900 border ${
+          item.isPunjabSpecial 
+            ? 'border-orange-400 dark:border-orange-600/80 shadow-md ring-1 ring-orange-400/20' 
+            : 'border-slate-200 dark:border-slate-800 shadow-sm'
+        } rounded-xl p-3.5 sm:p-4 transition hover:shadow-md`;
+
+        // Node dot on left border line
+        const dot = document.createElement('div');
+        dot.className = `absolute -left-[25px] sm:-left-[41px] top-4 w-3.5 h-3.5 rounded-full border-2 ${
+          item.isPunjabSpecial 
+            ? 'bg-orange-500 border-white dark:border-slate-950 ring-2 ring-orange-400/50' 
+            : 'bg-slate-400 dark:bg-slate-600 border-white dark:border-slate-950'
+        }`;
+        card.appendChild(dot);
+
+        // Header section of card
+        const badgesHtml = item.badges.map(b => `
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase ${
+            b.includes('PSSSB') || b.includes('Punjab') 
+              ? 'bg-amber-100 text-amber-900 dark:bg-amber-950/80 dark:text-amber-300 border border-amber-300 dark:border-amber-700'
+              : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-700'
+          }">${b}</span>
+        `).join('');
+
+        const punjabRibbon = item.isPunjabSpecial ? `
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-xs">
+            ⭐ PUNJAB SPECIAL / PSSSB HOTSPOT
+          </span>
+        ` : '';
+
+        const detailsList = item.details.map(d => `
+          <li class="flex items-start gap-1.5 text-slate-700 dark:text-slate-300 text-[12px] sm:text-[12.5px]">
+            <span class="text-orange-500 select-none mt-0.5 font-bold">›</span>
+            <div>${d}</div>
+          </li>
+        `).join('');
+
+        card.innerHTML += `
+          <div class="flex flex-col gap-1.5">
+            <!-- Top Year & Badges Bar -->
+            <div class="flex flex-wrap items-center justify-between gap-1.5 border-b border-slate-100 dark:border-slate-800 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-xs sm:text-sm font-black px-2 py-0.5 rounded bg-orange-100 dark:bg-orange-950/70 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800">
+                  ${item.year}
+                </span>
+                ${punjabRibbon}
+              </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                ${badgesHtml}
+              </div>
+            </div>
+
+            <!-- Title & Brief Summary -->
+            <div class="mt-1">
+              <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center justify-between cursor-pointer card-toggle-btn">
+                <span>${item.title}</span>
+                <span class="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 ml-2 select-none toggle-icon">
+                  ${areAllExpanded ? '▲ Less' : '▼ More'}
+                </span>
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 font-medium">
+                ${item.summary}
+              </p>
+            </div>
+
+            <!-- Collapsible In-depth Explanations for Exam -->
+            <div class="detailed-section mt-2 pt-2 border-t border-dashed border-slate-200 dark:border-slate-800 ${areAllExpanded ? 'block' : 'hidden'}">
+              <div class="bg-slate-50/70 dark:bg-slate-950/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800/80">
+                <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5 flex items-center gap-1">
+                  <span>📖 Detailed Exam Notes & Memory Anchors:</span>
+                </div>
+                <ul class="space-y-1.5">
+                  ${detailsList}
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+
+      // Attach collapse toggle listeners
+      document.querySelectorAll('.card-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const detailSection = this.closest('.timeline-card').querySelector('.detailed-section');
+          const toggleIcon = this.querySelector('.toggle-icon');
+          if (detailSection.classList.contains('hidden')) {
+            detailSection.classList.remove('hidden');
+            toggleIcon.innerText = '▲ Less';
+          } else {
+            detailSection.classList.add('hidden');
+            toggleIcon.innerText = '▼ More';
+          }
+        });
+      });
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-orange-600', 'text-white', 'shadow-sm');
+          b.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+        });
+        btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+        btn.classList.add('active', 'bg-orange-600', 'text-white', 'shadow-sm');
+
+        currentFilter = btn.dataset.filter;
+        renderTimeline();
+      });
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderTimeline();
+    });
+
+    // Expand / Collapse all toggle
+    const toggleAllBtn = document.getElementById('toggleAllBtn');
+    toggleAllBtn.addEventListener('click', () => {
+      areAllExpanded = !areAllExpanded;
+      toggleAllBtn.innerText = areAllExpanded ? 'Collapse All' : 'Expand All';
+      renderTimeline();
+    });
+
+    // Theme Toggle Handler
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Initialize Theme
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    // Initial run
+    updateCounts();
+    renderTimeline();
+  </script>
+</body>
+</html>
