@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Speedy Current Affairs 2025–2026 Portal</title>
+  <title>PSSSB Revision Portal 2026</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
@@ -76,14 +76,17 @@
 	  <button onclick="switchTab('english')" id="nav-english" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i> English Vocab (<span id="sidebar-english-count">250</span>)
       </button>
-	  <button onclick="switchTab('reason')" id="nav-english" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+	  <button onclick="switchTab('reason')" id="nav-reason" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i> Reasoning Concepts 
       </button>
-	  <button onclick="switchTab('pbgk')" id="nav-english" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+	  <button onclick="switchTab('pbgk')" id="nav-pbgk" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i> Punjab GK Timeline 
       </button>
-	 <button onclick="switchTab('modhis')" id="nav-english" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+	 <button onclick="switchTab('modhis')" id="nav-modhis" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i> Modern History Timeline 
+      </button>
+	  <button onclick="switchTab('polity')" id="nav-polity" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <i class="fa-solid fa-book-bookmark w-5"></i> Polity All Articles 
       </button>
 
 	
@@ -367,6 +370,15 @@
 	  <!-- Dynamic Content Viewer (Direct File Pull) -->
 	  <div class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-[94vh]">
 		<iframe id="modhis-frame" src="modern_history_timeline.html" class="w-full h-full border-0"></iframe>
+	  </div>
+	</section>
+	
+	 <!-- Modern Hostory Interactive Timeline SECTION TAB -->
+	<section id="tab-polity" class="tab-content hidden space-y-4">
+
+	  <!-- Dynamic Content Viewer (Direct File Pull) -->
+	  <div class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-[94vh]">
+		<iframe id="polity-frame" src="Polity_All_Articles.html" class="w-full h-full border-0"></iframe>
 	  </div>
 	</section>
 
