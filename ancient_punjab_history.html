@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panchnada & Sapta Sindhu: Punjab Historical & Archaeological Study Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            parchment: '#FDFBF7',
+            papyrus: '#F6EFE5',
+            sandstone: '#E8D8C4',
+            terracotta: '#B84A28',
+            terradark: '#873217',
+            gold: '#C99726',
+            goldlight: '#F4D068',
+            deepindigo: '#181C2B',
+            indigolight: '#232A40',
+            indigoborder: '#323B59',
+            emeraldshade: '#1E4636',
+            crimsonshade: '#7A1C1C'
+          },
+          fontFamily: {
+            serifHeading: ['"Cinzel"', 'Georgia', 'serif'],
+            serifBody: ['"Lora"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F6EFE5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #B84A28;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #873217;
+    }
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+    .transform-style-3d {
+      transform-style: preserve-3d;
+    }
+    .backface-hidden {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
+    .tab-active {
+      border-bottom: 3px solid #B84A28;
+      color: #B84A28 !important;
+      font-weight: 700;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+        color: black !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-parchment text-deepindigo font-sans min-h-screen antialiased flex flex-col selection:bg-terracotta selection:text-white">
+
+  <header class="sticky top-0 z-40 bg-deepindigo text-parchment border-b border-gold/40 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center space-x-3.5">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-terradark to-terracotta flex items-center justify-center text-goldlight font-serifHeading font-bold text-2xl shadow-inner border border-gold/40">
+            ਪੰ
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-xl sm:text-2xl font-serifHeading font-extrabold tracking-wider text-parchment">
+                PANCHNADA & SAPTA SINDHU
+              </h1>
+              <span class="hidden lg:inline text-[10px] uppercase font-bold tracking-widest bg-gold/20 text-goldlight px-2 py-0.5 rounded border border-gold/40">
+                Prehistory to Lodhis (1526 CE)
+              </span>
+            </div>
+            <p class="text-xs text-gold tracking-widest uppercase font-medium">Archaeology, Major Wars, Historical Doabs & Chronology</p>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-2 sm:space-x-3">
+          <div class="relative hidden md:block w-72">
+            <input type="text" id="globalSearch" placeholder="Search sites, battles, sultans..." 
+              class="w-full pl-9 pr-8 py-1.5 text-xs rounded-full bg-indigolight border border-gold/30 text-parchment placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-gold"
+              oninput="handleGlobalSearch(this.value)">
+            <svg class="w-4 h-4 text-gold absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <button onclick="clearSearch()" id="clearSearchBtn" class="hidden absolute right-2.5 top-2 text-stone-400 hover:text-white text-xs">&times;</button>
+          </div>
+          <button onclick="toggleQuickNotesModal()" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-terracotta hover:bg-terradark text-white shadow-md transition flex items-center gap-1.5 border border-terracotta/50">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <span class="hidden sm:inline">Civil Services Digest</span>
+          </button>
+          <button onclick="window.print()" class="p-2 rounded-lg bg-indigolight hover:bg-gold/20 text-gold border border-gold/30 transition" title="Print Guide">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Bar Tabs -->
+      <nav class="flex space-x-1 sm:space-x-5 overflow-x-auto text-xs sm:text-sm border-t border-indigoborder pt-2 pb-1 scrollbar-none" id="mainTabs">
+        <button onclick="switchTab('sites')" data-tab="sites" class="tab-btn px-3 py-2 text-stone-300 hover:text-white transition whitespace-nowrap tab-active">Archaeological Sites</button>
+        <button onclick="switchTab('wars')" data-tab="wars" class="tab-btn px-3 py-2 text-stone-300 hover:text-white transition whitespace-nowrap flex items-center gap-1.5">
+          <span>Major Wars & Battles</span>
+          <span class="bg-crimsonshade text-goldlight px-1.5 py-0.5 rounded-full text-[10px] font-bold">14 Crucial</span>
+        </button>
+        <button onclick="switchTab('timeline')" data-tab="timeline" class="tab-btn px-3 py-2 text-stone-300 hover:text-white transition whitespace-nowrap">Timeline (To 1526 CE)</button>
+        <button onclick="switchTab('geography')" data-tab="geography" class="tab-btn px-3 py-2 text-stone-300 hover:text-white transition whitespace-nowrap">Rivers, Doabs & Forts</button>
+        <button onclick="switchTab('flashcards')" data-tab="flashcards" class="tab-btn px-3 py-2 text-stone-300 hover:text-white transition whitespace-nowrap">Flashcards Deck</button>
+        <button onclick="switchTab('quiz')" data-tab="quiz" class="tab-btn px-3 py-2 text-stone-300 hover:text-white transition whitespace-nowrap flex items-center gap-1.5">
+          <span>Assessment Quiz</span>
+          <span class="bg-terracotta text-white px-1.5 py-0.5 rounded-full text-[10px] font-bold">15 Qs</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="bg-gradient-to-b from-deepindigo via-indigolight to-sandstone/30 text-parchment py-10 px-4 sm:px-6 relative overflow-hidden border-b border-terracotta/30">
+    <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-8 space-y-3.5">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="inline-block py-1 px-3 rounded-full bg-gold/20 text-goldlight text-xs font-semibold tracking-wider uppercase border border-gold/40">
+            Northwestern Gateway of South Asia
+          </span>
+          <span class="inline-block py-1 px-3 rounded-full bg-terracotta/30 text-sandstone text-xs font-semibold border border-terracotta/40">
+            500,000 BCE – 1526 CE
+          </span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifHeading font-bold text-parchment leading-tight">
+          From the Soan Cobbles to the Cannons of Panipat
+        </h2>
+        <p class="text-stone-300 font-serifBody text-sm sm:text-base leading-relaxed max-w-3xl">
+          The Punjab plains—drained by the Indus, Jhelum, Chenab, Ravi, Beas, and Sutlej—constituted the crucible of Vedic hymns, Harappan urban engineering, Indo-Greek philosophy, ferocious anti-Mongol frontier defenses by the Delhi Sultans, and the rise of the Afghan Lodhi hegemony centered at Sirhind and Lahore.
+        </p>
+        <div class="flex flex-wrap gap-2 text-xs pt-1">
+          <span class="bg-white/10 px-2.5 py-1 rounded border border-white/20">🏛️ Harappa, Ropar & Sanghol</span>
+          <span class="bg-white/10 px-2.5 py-1 rounded border border-white/20">⚔️ Dasarajna, Hydaspes & Tarain</span>
+          <span class="bg-white/10 px-2.5 py-1 rounded border border-white/20">🛡️ Balban's & Tughlaq's Anti-Mongol Warden Line</span>
+          <span class="bg-white/10 px-2.5 py-1 rounded border border-white/20">👑 Sirhind Sarkar & Bahlul Lodhi</span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 flex flex-col space-y-3">
+        <div class="p-4 bg-white/95 text-deepindigo rounded-xl shadow-2xl border-2 border-gold text-xs leading-relaxed">
+          <div class="flex justify-between items-center mb-1 text-[11px] font-bold text-terracotta uppercase">
+            <span>Strategic Strategic Focus</span>
+            <span>Doabs & Passes</span>
+          </div>
+          <p class="font-medium text-stone-800">
+            Control over the <strong>Punjab Doabs</strong> (Bari, Rechna, Jech, Sindh Sagar, Bist) and key frontier garrisons (Multan, Dipalpur, Lahore, Bhatner, Sirhind) decided the sovereign master of Delhi for over two millennia.
+          </p>
+          <div class="mt-2.5 pt-2 border-t border-stone-200 flex justify-between font-mono text-[11px] text-stone-600">
+            <span>Indus to Yamuna</span>
+            <span class="font-bold text-terradark">1526 Terminal Point</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+
+    <div id="searchResultsArea" class="hidden mb-8 p-5 bg-white rounded-2xl shadow-xl border-2 border-terracotta">
+      <div class="flex justify-between items-center mb-3 border-b border-stone-100 pb-2">
+        <h3 class="font-serifHeading font-bold text-terracotta text-lg" id="searchHeader">Search Results</h3>
+        <button onclick="clearSearch()" class="text-xs text-stone-500 hover:text-stone-800 font-semibold underline">Dismiss</button>
+      </div>
+      <div id="searchResultsList" class="space-y-3 max-h-96 overflow-y-auto"></div>
+    </div>
+
+    <section id="tab-sites" class="tab-pane active space-y-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-stone-200 pb-5">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-widest text-terracotta">Excavations & Stratigraphy</span>
+          <h2 class="text-2xl sm:text-3xl font-serifHeading font-bold text-deepindigo">Punjab Archaeological Heritage</h2>
+          <p class="text-sm font-serifBody text-stone-600 mt-1 max-w-3xl">
+            Detailed material culture records: from early Siwalik paleoliths and mature Indus cities to Painted Grey Ware (PGW), Kushan Buddhist stupas, and medieval brick fortifications.
+          </p>
+        </div>
+        
+        <div class="flex flex-wrap items-center gap-1.5 text-xs">
+          <span class="text-stone-500 font-bold mr-1">Filter:</span>
+          <button onclick="filterSites('all')" class="site-filter-btn px-3 py-1.5 rounded-full bg-deepindigo text-white font-medium transition">All Sites</button>
+          <button onclick="filterSites('Harappan')" class="site-filter-btn px-3 py-1.5 rounded-full bg-stone-200 text-stone-800 hover:bg-stone-300 transition">Mature Harappan</button>
+          <button onclick="filterSites('Late Harappan/PGW')" class="site-filter-btn px-3 py-1.5 rounded-full bg-stone-200 text-stone-800 hover:bg-stone-300 transition">Late Harappan & PGW</button>
+          <button onclick="filterSites('Kushan/Buddhist')" class="site-filter-btn px-3 py-1.5 rounded-full bg-stone-200 text-stone-800 hover:bg-stone-300 transition">Kushan & Buddhist</button>
+          <button onclick="filterSites('Medieval/Sultanate')" class="site-filter-btn px-3 py-1.5 rounded-full bg-stone-200 text-stone-800 hover:bg-stone-300 transition">Medieval & Sultanate</button>
+          <button onclick="filterSites('Paleolithic')" class="site-filter-btn px-3 py-1.5 rounded-full bg-stone-200 text-stone-800 hover:bg-stone-300 transition">Paleolithic</button>
+        </div>
+      </div>
+
+      <div id="sitesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <section id="tab-wars" class="tab-pane hidden space-y-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-stone-200 pb-5">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-widest text-crimsonshade">Strategic Invasions & Conflicts</span>
+          <h2 class="text-2xl sm:text-3xl font-serifHeading font-bold text-deepindigo">Major Wars & Battles in Punjab</h2>
+          <p class="text-sm font-serifBody text-stone-600 mt-1 max-w-3xl">
+            From the Rigvedic confrontation on the Parushni to Alexander's clash with Porus, the Hindu Shahi resistance against Ghazni, the Mongol wardenship, and Babur's victory at Panipat (1526 CE).
+          </p>
+        </div>
+        
+        <div class="flex flex-wrap items-center gap-1.5 text-xs">
+          <span class="text-stone-500 font-bold mr-1">Period:</span>
+          <button onclick="filterWars('all')" class="war-filter-btn px-3 py-1.5 rounded-full bg-crimsonshade text-white font-medium transition">All (14)</button>
+          <button onclick="filterWars('Ancient/Classical')" class="war-filter-btn px-3 py-1.5 rounded-full bg-stone-200 text-stone-800 hover:bg-stone-300 transition">Ancient & Classical</button>
+          <button onclick="filterWars('Shahi/Ghaznavid')" class="war-filter-btn px-3 py-1.5 rounded-full bg-stone-200 text-stone-800 hover:bg-stone-300 transition">Shahi & Ghaznavid</button>
+          <button onclick="filterWars('Mongol Defense')" class="war-filter-btn px-3 py-1.5 rounded-full bg-stone-200 text-stone-800 hover:bg-stone-300 transition">Mongol Wars</button>
+          <button onclick="filterWars('Timurid/Lodhi')" class="war-filter-btn px-3 py-1.5 rounded-full bg-stone-200 text-stone-800 hover:bg-stone-300 transition">Timurid & Lodhi</button>
+        </div>
+      </div>
+
+      <div id="warsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Dynamically injected via JavaScript -->
+      </div>
+    </section>
+
+    <section id="tab-timeline" class="tab-pane hidden space-y-6">
+      <div class="text-center max-w-3xl mx-auto mb-6">
+        <span class="text-xs uppercase font-bold tracking-widest text-terracotta">Exhaustive Chronological Ledger</span>
+        <h2 class="text-2xl sm:text-3xl font-serifHeading font-bold text-deepindigo">Chronology of Punjab (500,000 BCE – 1526 CE)</h2>
+        <div class="w-20 h-1 bg-terracotta mx-auto my-2 rounded-full"></div>
+        <p class="text-sm font-serifBody text-stone-600">
+          Trace the continuous civilizational and dynastic flow through the Bronze Age, Vedic era, Macedonian campaign, Mauryas, Kushans, Guptas, Shahis, Ghaznavids, Mamluks, Khaljis, Tughlaqs, Sayyids, and Lodhis.
+        </p>
+      </div>
+
+      <div class="flex justify-center flex-wrap gap-2 mb-6 text-xs">
+        <button onclick="filterTimeline('all')" class="timeline-filter-btn px-3 py-1 rounded-full bg-deepindigo text-white font-medium">All Eras</button>
+        <button onclick="filterTimeline('Prehistoric & Bronze')" class="timeline-filter-btn px-3 py-1 rounded-full bg-stone-200 text-stone-700 hover:bg-stone-300">Prehistoric & Bronze</button>
+        <button onclick="filterTimeline('Vedic & Classical')" class="timeline-filter-btn px-3 py-1 rounded-full bg-stone-200 text-stone-700 hover:bg-stone-300">Vedic & Classical</button>
+        <button onclick="filterTimeline('Early Medieval')" class="timeline-filter-btn px-3 py-1 rounded-full bg-stone-200 text-stone-700 hover:bg-stone-300">Early Medieval & Ghaznavid</button>
+        <button onclick="filterTimeline('Delhi Sultanate')" class="timeline-filter-btn px-3 py-1 rounded-full bg-stone-200 text-stone-700 hover:bg-stone-300">Delhi Sultanate & Lodhi</button>
+      </div>
+
+      <div class="relative max-w-4xl mx-auto py-4">
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-stone-300 via-terracotta via-gold to-crimsonshade transform -translate-x-1/2"></div>
+        <div id="timelineContainer" class="space-y-8">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-geography" class="tab-pane hidden space-y-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="text-xs uppercase font-bold tracking-widest text-gold">Hydrology, Landform & Strategic Citadels</span>
+        <h2 class="text-2xl sm:text-3xl font-serifHeading font-bold text-deepindigo">Rivers, Doabs & Fortress Outposts</h2>
+        <div class="w-24 h-1 bg-gold mx-auto my-2 rounded-full"></div>
+        <p class="text-sm font-serifBody text-stone-600">
+          The geography of Punjab is defined by interfluvial tracts known as <em>Doabs</em> (literally "two waters") coined systematically by Emperor Akbar from the names of bordering rivers, built upon ancient riverine crossings.
+        </p>
+      </div>
+
+      <!-- Strategic Doabs Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bg-white rounded-xl shadow border-t-4 border-emerald-600 p-5">
+          <div class="flex justify-between items-center text-xs font-bold text-emerald-800 uppercase mb-2">
+            <span>Bist-Jalandhar Doab</span>
+            <span>Beas & Sutlej</span>
+          </div>
+          <h3 class="font-serifHeading font-bold text-lg text-deepindigo">Bist Doab</h3>
+          <p class="text-xs font-serifBody text-stone-600 mt-2 leading-relaxed">
+            The fertile tract situated between the <strong>Beas</strong> and the <strong>Sutlej</strong>. Historic anchor points include Jalandhar, Sultanpur Lodhi (major Lodhi commercial and spiritual hub), Kapurthala, and Hoshiarpur.
+          </p>
+          <div class="mt-3 text-[11px] font-mono text-stone-500 bg-stone-50 p-2 rounded">
+            Key Sites: Dholbaha, Ropar apex, Sultanpur Lodhi
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow border-t-4 border-terracotta p-5">
+          <div class="flex justify-between items-center text-xs font-bold text-terracotta uppercase mb-2">
+            <span>Bari Doab (Majha)</span>
+            <span>Beas & Ravi</span>
+          </div>
+          <h3 class="font-serifHeading font-bold text-lg text-deepindigo">Bari Doab</h3>
+          <p class="text-xs font-serifBody text-stone-600 mt-2 leading-relaxed">
+            Situated between the <strong>Beas</strong> and the <strong>Ravi</strong>. Constitutes the core historical region of <strong>Majha</strong>. Center of early urbanization, Harappa, Lahore, Dipalpur, and Amritsar.
+          </p>
+          <div class="mt-3 text-[11px] font-mono text-stone-500 bg-stone-50 p-2 rounded">
+            Key Sites: Harappa, Lahore, Dipalpur garrison
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow border-t-4 border-indigo-600 p-5">
+          <div class="flex justify-between items-center text-xs font-bold text-indigo-800 uppercase mb-2">
+            <span>Rechna Doab</span>
+            <span>Ravi & Chenab</span>
+          </div>
+          <h3 class="font-serifHeading font-bold text-lg text-deepindigo">Rechna Doab</h3>
+          <p class="text-xs font-serifBody text-stone-600 mt-2 leading-relaxed">
+            Tract enclosed by the <strong>Ravi</strong> and the <strong>Chenab</strong>. Encompasses the ancient capital of King Menander I (Sagala / Sialkot), Gujranwala, and Faisalabad.
+          </p>
+          <div class="mt-3 text-[11px] font-mono text-stone-500 bg-stone-50 p-2 rounded">
+            Key Sites: Sagala (Sialkot), Sheikhupura, Tulamba
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow border-t-4 border-amber-600 p-5">
+          <div class="flex justify-between items-center text-xs font-bold text-amber-800 uppercase mb-2">
+            <span>Jech (Chaj) Doab</span>
+            <span>Chenab & Jhelum</span>
+          </div>
+          <h3 class="font-serifHeading font-bold text-lg text-deepindigo">Jech Doab</h3>
+          <p class="text-xs font-serifBody text-stone-600 mt-2 leading-relaxed">
+            The zone between the <strong>Chenab</strong> and the <strong>Jhelum</strong>. Location of the epic clash between Porus and Alexander the Great, Gujrat, Bhera, and Shahpur.
+          </p>
+          <div class="mt-3 text-[11px] font-mono text-stone-500 bg-stone-50 p-2 rounded">
+            Key Sites: Hydaspes battleground, Jalalpur, Bhera
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow border-t-4 border-stone-600 p-5">
+          <div class="flex justify-between items-center text-xs font-bold text-stone-800 uppercase mb-2">
+            <span>Sindh Sagar Doab</span>
+            <span>Jhelum & Indus</span>
+          </div>
+          <h3 class="font-serifHeading font-bold text-lg text-deepindigo">Sindh Sagar Doab</h3>
+          <p class="text-xs font-serifBody text-stone-600 mt-2 leading-relaxed">
+            The vast tract between the <strong>Jhelum</strong> and the mighty <strong>Indus (Sindhu)</strong>. Encompasses the Potohar Plateau, Salt Range, Taxila, and the later Rohtas Fort.
+          </p>
+          <div class="mt-3 text-[11px] font-mono text-stone-500 bg-stone-50 p-2 rounded">
+            Key Sites: Taxila, Katas Raj, Salt Range, Mankera
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow border-t-4 border-crimsonshade p-5">
+          <div class="flex justify-between items-center text-xs font-bold text-crimsonshade uppercase mb-2">
+            <span>Cis-Sutlej / Malwa</span>
+            <span>Sutlej to Ghaggar/Yamuna</span>
+          </div>
+          <h3 class="font-serifHeading font-bold text-lg text-deepindigo">Sirhind / Malwa Plains</h3>
+          <p class="text-xs font-serifBody text-stone-600 mt-2 leading-relaxed">
+            Lies south of the Sutlej river. Governed as <strong>Sarkar Sirhind</strong> during the Sultanate and Mughal eras. Major frontier strongpoints at Sirhind, Bhatinda, and Bhatner.
+          </p>
+          <div class="mt-3 text-[11px] font-mono text-stone-500 bg-stone-50 p-2 rounded">
+            Key Sites: Sirhind, Bhatinda Fort, Sunam, Rohira
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparative River Matrix Table -->
+      <div class="bg-white rounded-2xl shadow border border-stone-200 overflow-hidden mt-6">
+        <div class="p-4 bg-papyrus border-b border-stone-200 flex justify-between items-center">
+          <h3 class="font-serifHeading font-bold text-deepindigo text-base">The Seven Rivers (Sapta Sindhu) Etymology Matrix</h3>
+          <span class="text-xs text-stone-500 font-mono">Rigvedic ↔ Hellenistic ↔ Modern</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-stone-50 text-stone-700 font-serifHeading border-b border-stone-200">
+              <tr>
+                <th class="p-3.5 font-bold">Vedic / Sanskrit</th>
+                <th class="p-3.5 font-bold">Greek (Macedonian)</th>
+                <th class="p-3.5 font-bold">Modern Name</th>
+                <th class="p-3.5 font-bold">Strategic Geography & Historic Battles</th>
+              </tr>
+            </thead>
+            <tbody id="riversTableBody" class="divide-y divide-stone-100">
+              <!-- Dynamically populated from JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Major Fortifications of Punjab Box -->
+      <div class="bg-white rounded-2xl shadow border border-stone-200 p-6">
+        <h3 class="font-serifHeading font-bold text-xl text-deepindigo mb-4 flex items-center gap-2">
+          <span>🏰 Citadel Network: Key Medieval Fortresses of Punjab</span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div class="p-3.5 bg-stone-50 rounded-xl border border-stone-200">
+            <div class="font-bold text-terracotta text-sm">Sirhind Fort & Sarkar</div>
+            <p class="text-stone-600 mt-1 font-serifBody">
+              The strategic military hinge connecting Punjab to Delhi. Bahlul Khan Lodhi established his initial power base as governor of Sirhind before ascending the throne of Delhi in 1451 CE.
+            </p>
+          </div>
+          <div class="p-3.5 bg-stone-50 rounded-xl border border-stone-200">
+            <div class="font-bold text-terracotta text-sm">Bhatinda Fort (Qila Mubarak)</div>
+            <p class="text-stone-600 mt-1 font-serifBody">
+              Constructed in Kushan/Gupta brickwork style; famous as the prison of Razia Sultana in 1240 CE during the rebel governor Altunia's revolt. A bastion against desert and riverine raiders.
+            </p>
+          </div>
+          <div class="p-3.5 bg-stone-50 rounded-xl border border-stone-200">
+            <div class="font-bold text-terracotta text-sm">Dipalpur & Multan Citadels</div>
+            <p class="text-stone-600 mt-1 font-serifBody">
+              The supreme defensive march against the Mongol Chagatai invasions. Maintained by Ghiyas-ud-din Balban, Prince Muhammad (who died fighting Mongols here in 1285), and Ghazi Malik (Ghiyasuddin Tughluq).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-flashcards" class="tab-pane hidden space-y-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-xs uppercase font-bold tracking-widest text-terracotta">Self-Paced Knowledge Drill</span>
+        <h2 class="text-2xl sm:text-3xl font-serifHeading font-bold text-deepindigo">Punjab History Flashcard Deck</h2>
+        <div class="w-20 h-1 bg-terracotta mx-auto my-2 rounded-full"></div>
+        <p class="text-sm font-serifBody text-stone-600">
+          Click any card to flip between Question and Scholarly Analysis. Covers archaeology, Mongol frontier wars, and Lodhi administration.
+        </p>
+      </div>
+
+      <div class="flex justify-center items-center gap-4 text-xs font-semibold">
+        <span id="flashcardCounter" class="text-stone-500 font-mono">Card 1 of 12</span>
+        <div class="flex gap-2">
+          <button onclick="prevFlashcard()" class="p-2 rounded-full bg-white hover:bg-stone-100 border border-stone-300 shadow text-deepindigo" title="Previous Card">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          <button onclick="nextFlashcard()" class="p-2 rounded-full bg-white hover:bg-stone-100 border border-stone-300 shadow text-deepindigo" title="Next Card">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Single Interactive Card Flip Box -->
+      <div class="max-w-xl mx-auto perspective-1000 min-h-[300px] cursor-pointer" onclick="flipCurrentCard()">
+        <div id="flashcardElement" class="relative w-full h-80 transform-style-3d transition-transform duration-500 rounded-2xl shadow-xl">
+          <!-- Front Face -->
+          <div class="absolute inset-0 backface-hidden bg-white border-2 border-stone-200 rounded-2xl p-8 flex flex-col justify-between items-center text-center">
+            <div class="flex justify-between w-full text-xs font-bold uppercase tracking-wider text-terracotta">
+              <span id="cardCategory">Era / Category</span>
+              <span class="text-stone-400">Click to Flip ↻</span>
+            </div>
+            <div class="my-auto">
+              <h3 id="cardQuestion" class="text-xl sm:text-2xl font-serifHeading font-bold text-deepindigo leading-snug"></h3>
+              <p class="text-xs text-stone-400 mt-3 font-serifBody">Tap to reveal in-depth historical context & scholarly evidence</p>
+            </div>
+            <span class="text-[11px] text-stone-400 font-mono">Exam High-Yield Concept</span>
+          </div>
+
+          <!-- Back Face -->
+          <div class="absolute inset-0 backface-hidden rotate-y-180 bg-deepindigo text-parchment rounded-2xl p-8 flex flex-col justify-between border-2 border-gold shadow-2xl">
+            <div class="flex justify-between w-full text-xs font-bold uppercase tracking-wider text-gold">
+              <span>Historical Explanation</span>
+              <span class="text-stone-400">Tap to Flip ↻</span>
+            </div>
+            <div class="my-auto text-left">
+              <p id="cardAnswer" class="text-xs sm:text-sm font-serifBody leading-relaxed text-sandstone"></p>
+            </div>
+            <div id="cardExtra" class="text-xs text-goldlight/90 italic border-t border-white/10 pt-2 font-mono"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center gap-3 pt-2">
+        <button onclick="shuffleFlashcards()" class="px-4 py-2 text-xs font-semibold rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-800 transition">
+          Shuffle Deck 🔀
+        </button>
+      </div>
+    </section>
+
+    <section id="tab-quiz" class="tab-pane hidden space-y-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-6">
+          <span class="text-xs uppercase font-bold tracking-widest text-terracotta">Evaluation & Exam Readiness</span>
+          <h2 class="text-2xl sm:text-3xl font-serifHeading font-bold text-deepindigo">Punjab History Assessment Quiz</h2>
+          <div class="w-20 h-1 bg-terracotta mx-auto my-2 rounded-full"></div>
+          <p class="text-sm font-serifBody text-stone-600">
+            15 curated university and state civil-services level questions covering Harappan archaeology, Greek campaigns, Mongol marches, and the Lodhi transition.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl border border-stone-200 p-6 sm:p-8">
+          <!-- Quiz Header Status -->
+          <div class="flex justify-between items-center border-b border-stone-100 pb-4 mb-6">
+            <div>
+              <span class="text-xs font-semibold text-terracotta uppercase">Question <span id="quizIndex">1</span> of 15</span>
+              <h3 id="quizQuestionText" class="text-base sm:text-lg font-serifHeading font-bold text-deepindigo mt-1"></h3>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-stone-400">Current Score</span>
+              <div class="text-xl font-bold text-terracotta font-mono" id="quizScoreDisplay">0 / 0</div>
+            </div>
+          </div>
+
+          <!-- Options Container -->
+          <div id="quizOptionsContainer" class="space-y-3 mb-6">
+            <!-- Dynamically injected -->
+          </div>
+
+          <!-- Explanation box -->
+          <div id="quizExplanationBox" class="hidden p-4 rounded-xl mb-6 text-xs sm:text-sm"></div>
+
+          <!-- Quiz Action Footer -->
+          <div class="flex justify-between items-center pt-4 border-t border-stone-100">
+            <button id="quizNextBtn" onclick="nextQuizQuestion()" class="hidden px-5 py-2.5 rounded-lg bg-terracotta hover:bg-terradark text-white font-semibold text-xs sm:text-sm ml-auto transition shadow">
+              Next Question &rarr;
+            </button>
+            <div id="quizResultsSummary" class="hidden w-full text-center">
+              <h4 class="text-2xl font-serifHeading font-bold text-deepindigo">Assessment Complete!</h4>
+              <p class="text-sm text-stone-600 mt-2 font-serifBody" id="quizFinalFeedback"></p>
+              <button onclick="restartQuiz()" class="mt-5 px-6 py-2.5 bg-deepindigo hover:bg-indigolight text-gold rounded-lg font-semibold text-sm transition">
+                Retake Assessment ↺
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="siteModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border-2 border-gold flex flex-col">
+      <div class="p-6 border-b border-stone-200 flex justify-between items-center bg-papyrus sticky top-0 z-10">
+        <div>
+          <span id="modalSiteEra" class="text-xs font-bold text-terracotta uppercase">Era</span>
+          <h3 id="modalSiteTitle" class="text-xl sm:text-2xl font-serifHeading font-bold text-deepindigo">Site Title</h3>
+          <p id="modalSiteLocation" class="text-xs text-stone-500 font-medium"></p>
+        </div>
+        <button onclick="closeSiteModal()" class="p-2 text-stone-400 hover:text-stone-700 text-2xl font-bold">&times;</button>
+      </div>
+      <div class="p-6 space-y-4 text-xs sm:text-sm font-serifBody text-stone-700 leading-relaxed">
+        <div id="modalSiteBody"></div>
+        <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
+          <h4 class="font-sans font-bold text-xs uppercase text-deepindigo mb-2">Key Excavated Artifacts & Material Culture</h4>
+          <ul id="modalSiteArtifacts" class="list-disc pl-5 space-y-1.5 text-stone-600 font-sans text-xs"></ul>
+        </div>
+        <div class="border-t border-stone-200 pt-3 grid grid-cols-2 gap-2 text-xs text-stone-500 font-sans">
+          <div>Excavators: <strong id="modalSiteExcavator" class="text-stone-700 block"></strong></div>
+          <div>Associated Basin: <strong id="modalSiteRiver" class="text-stone-700 block"></strong></div>
+        </div>
+      </div>
+      <div class="p-4 bg-stone-100 text-right">
+        <button onclick="closeSiteModal()" class="px-4 py-2 bg-deepindigo text-parchment rounded-lg text-xs font-semibold hover:bg-indigolight transition">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="quickNotesModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-parchment rounded-2xl max-w-3xl w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-gold flex flex-col">
+      <div class="p-5 border-b border-gold/40 bg-deepindigo text-parchment flex justify-between items-center sticky top-0">
+        <div>
+          <h3 class="font-serifHeading font-bold text-lg text-gold">Punjab History Civil Services Quick Digest</h3>
+          <p class="text-xs text-stone-300">Exam-essential high yield notes: Prehistory to Lodhis (1526 CE)</p>
+        </div>
+        <button onclick="toggleQuickNotesModal()" class="text-parchment hover:text-gold text-2xl font-bold">&times;</button>
+      </div>
+      <div class="p-6 space-y-4 text-deepindigo text-xs sm:text-sm font-sans leading-relaxed">
+        <div class="p-3 bg-white rounded-lg border-l-4 border-terracotta shadow-sm">
+          <h4 class="font-bold text-terracotta">1. Ropar Stratigraphy & Independent India</h4>
+          <p class="text-stone-600 mt-1">Excavated by Dr. Y.D. Sharma (1952–53). Key sequence: Harappan &rarr; PGW &rarr; NBPW &rarr; Kushan &rarr; Gupta &rarr; Medieval. Yielded a unique oval pit grave with a human buried along with a dog.</p>
+        </div>
+        <div class="p-3 bg-white rounded-lg border-l-4 border-gold shadow-sm">
+          <h4 class="font-bold text-deepindigo">2. Sanghol (Uchha Pind) Stupa Cache</h4>
+          <p class="text-stone-600 mt-1">In 1985, 117 carved Mathura red sandstone railing pillars (yakshis, salabhanjikas, lotus medallions) were uncovered stacked neatly near the wheel-spoke Buddhist stupa foundation (1st–2nd c. CE).</p>
+        </div>
+        <div class="p-3 bg-white rounded-lg border-l-4 border-crimsonshade shadow-sm">
+          <h4 class="font-bold text-crimsonshade">3. Mongol March Defense: The Punjab Warden Line</h4>
+          <p class="text-stone-600 mt-1">The Delhi Sultanate maintained a triple-tier defense line anchored at <strong>Multan, Dipalpur, and Lahore</strong>. Balban stationed his eldest son Prince Muhammad (martyred near Lahore in 1285). Later, Ghazi Malik (Ghiyasuddin Tughluq) earned the title of 29-time victor against Mongols from his Dipalpur headquarters.</p>
+        </div>
+        <div class="p-3 bg-white rounded-lg border-l-4 border-emeraldshade shadow-sm">
+          <h4 class="font-bold text-emeraldshade">4. Sirhind's Rise & The Lodhi Foundation</h4>
+          <p class="text-stone-600 mt-1">Bahlul Khan Lodhi was the governor of <strong>Sirhind and Lahore</strong> under the weak Sayyids. In 1451 CE, utilizing his Afghan tribal confederacy, he marched from Punjab to seize Delhi, founding the First Afghan Dynasty (Lodhis).</p>
+        </div>
+        <div class="p-3 bg-white rounded-lg border-l-4 border-indigo-700 shadow-sm">
+          <h4 class="font-bold text-indigo-900">5. 1526 Panipat Prelude in Punjab</h4>
+          <p class="text-stone-600 mt-1">Daulat Khan Lodhi, governor of Lahore, along with Alam Khan Lodhi, invited Babur to unseat Ibrahim Lodhi. Babur took Lahore and Sialkot (1524), neutralized Daulat Khan at Malot fort in Hoshiarpur (1526), and advanced directly to Panipat.</p>
+        </div>
+      </div>
+      <div class="p-4 bg-papyrus border-t border-stone-200 flex justify-between items-center">
+        <span class="text-[11px] text-stone-500">Sapta Sindhu Academic Repository</span>
+        <button onclick="window.print()" class="px-4 py-1.5 rounded-lg bg-terracotta text-white text-xs font-semibold hover:bg-terradark transition">Print Notes</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // EXPANDED SITES DATASET
+    const SITES_DATA = [
+      {
+        id: 'harappa',
+        name: 'Harappa (ਹੜੱਪਾ)',
+        modernLocation: 'Sahiwal District, Punjab, Pakistan',
+        river: 'Ravi (Ancient Parushni / Hydraotes)',
+        era: 'Harappan',
+        period: 'Mature Harappan (2600 – 1900 BCE)',
+        excavators: 'Daya Ram Sahni (1921), Sir Mortimer Wheeler (1946)',
+        description: 'The premier type-site of the Indus Valley Civilization. Positioned in the Bari Doab, Harappa showcased massive urban planning with Citadel Mound AB, working platforms, circular threshing floors, double-row granary blocks, and post-urban Cemetery H burials.',
+        artifacts: [
+          'Unicorn, humped bull, and script seals carved from steatite',
+          'Finely modeled red sandstone torso of a male youth',
+          'Copper mirrors, razors, and scale weights based on binary multiples',
+          'Cemetery R-37 and Cemetery H painted mortuary urns'
+        ]
+      },
+      {
+        id: 'ropar',
+        name: 'Ropar / Rupnagar (ਰੂਪਨਗਰ)',
+        modernLocation: 'Rupnagar District, Punjab, India',
+        river: 'Sutlej (Ancient Shutudri / Hesidros)',
+        era: 'Harappan',
+        period: 'Harappan through Medieval (c. 2100 BCE – 1200 CE)',
+        excavators: 'Dr. Y.D. Sharma (ASI, 1952–53)',
+        description: 'First Harappan site excavated in independent India. Occupies the strategic entrance where the Sutlej cuts through the Siwalik hills into the plains. Revealed six distinct chronological cultural periods with seamless stratigraphy.',
+        artifacts: [
+          'Oval cemetery pit containing a human skeleton buried with a dog',
+          'Harappan steatite seal with standard pictographic script',
+          'Painted Grey Ware (PGW) dishes and Northern Black Polished Ware (NBPW)',
+          'Sunga terracotta plaques and Kushan copper coins'
+        ]
+      },
+      {
+        id: 'sanghol',
+        name: 'Sanghol / Uchha Pind (ਸੰਘੋਲ)',
+        modernLocation: 'Fatehgarh Sahib District, Punjab, India',
+        river: 'Dried paleo-channel of Sarasvati / Sirhind basin',
+        era: 'Kushan/Buddhist',
+        period: 'Late Harappan to Kushan/Gupta (c. 1800 BCE – 500 CE)',
+        excavators: 'S.S. Talwar & Punjab Archaeology (1968–1990)',
+        description: 'Spectacular Buddhist stupa and monastery complex featuring a dharma-chakra radial brick architecture. In 1985, a cache of 117 Mathura spotted red-sandstone railing pillars and corner posts was found buried safely in a trench.',
+        artifacts: [
+          '117 Mathura-school sculpted railing pillars showing yakshis and salabhanjikas',
+          'Relic casket bearing Kharosthi inscription of Upasaka Ayabhadra',
+          'Kushan coins of Kanishka and Huvishka, and Toramana Huna coins',
+          'Terracotta seals with Brahmi scripts and standard seals'
+        ]
+      },
+      {
+        id: 'kotla-nihang',
+        name: 'Kotla Nihang Khan (ਕੋਟਲਾ ਨਿਹੰਗ ਖ਼ਾਨ)',
+        modernLocation: 'Rupnagar District, Punjab, India',
+        river: 'Sutlej river basin',
+        era: 'Harappan',
+        period: 'Mature Harappan (c. 2400 – 1900 BCE)',
+        excavators: 'M.S. Vats (1929–30)',
+        description: 'Discovered prior to Partition 3 km east of Ropar. It proved that the Mature Harappan culture did not end in Sindh and Western Punjab, but reached deep into the sub-Himalayan eastern Punjab doabs.',
+        artifacts: [
+          'Dish-on-stand, goblet with pointed base, and perforated cylindrical jars',
+          'Triangular terracotta cakes and toy cart frames',
+          'Flint and chert blades with copper chisels'
+        ]
+      },
+      {
+        id: 'rohira',
+        name: 'Rohira (ਰੋਹੀੜਾ)',
+        modernLocation: 'Sangrur District, Punjab, India',
+        river: 'Ancient Sarasvati / Ghaggar flood basin',
+        era: 'Harappan',
+        period: 'Early to Mature Harappan (c. 2500 – 1800 BCE)',
+        excavators: 'Punjab Department of Archaeology',
+        description: 'Mound measuring nearly 30 feet in height. Provided crucial palaeobotanical evidence of diverse multi-cropping in ancient Punjab, confirming early cultivation of barley, emmer wheat, lentils, and horsegram.',
+        artifacts: [
+          'Charred macro-botanical remains of barley, wheat, and mustard',
+          'Terracotta bangles, bull figurines, and steatite beads',
+          'Sun-dried mud-brick architecture in standard 1:2:4 ratio'
+        ]
+      },
+      {
+        id: 'sunam-dhadhari',
+        name: 'Sunam & Dhadhari (ਸੁਨਾਮ / ਢੱਡਰੀ)',
+        modernLocation: 'Sangrur District, Punjab, India',
+        river: 'Ghaggar paleo-network',
+        era: 'Late Harappan/PGW',
+        period: 'Late Harappan & PGW (c. 1700 – 700 BCE)',
+        excavators: 'ASI & State Archaeological Survey',
+        description: 'Key settlements in southern Punjab illustrating the de-urbanization phase where mature Indus settlements transitioned into agrarian Painted Grey Ware (PGW) settlements associated with the Vedic era.',
+        artifacts: [
+          'Late Harappan ochre-washed ceramic sherds',
+          'Painted Grey Ware with black geometric patterns (dots, concentric circles)',
+          'Glass beads, bone styluses, and iron slag deposits'
+        ]
+      },
+      {
+        id: 'mahorana',
+        name: 'Mahorana (ਮਾਹੋਰਾਣਾ)',
+        modernLocation: 'Malerkotla District, Punjab, India',
+        river: 'Sirhind / Sarasvati drainage',
+        era: 'Late Harappan/PGW',
+        period: 'Bara Culture to Early Iron Age (c. 1900 – 800 BCE)',
+        excavators: 'Punjab State Archaeology',
+        description: 'Important Bara-ware site highlighting the regional eastward variant of the Late Harappan tradition, famous for incised pottery motifs and deep rural persistence.',
+        artifacts: [
+          'Bara-style ceramics with incised wavy lines and horizontal bands',
+          'Terracotta bead necklace fragments and spindle whorls',
+          'Mud plaster floors with hearths and grain storage silos'
+        ]
+      },
+      {
+        id: 'taxila',
+        name: 'Taxila / Sirkap / Dharmarajika',
+        modernLocation: 'Rawalpindi District, Punjab, Pakistan',
+        river: 'Haro River (Indus tributary)',
+        era: 'Kushan/Buddhist',
+        period: 'Achaemenid, Mauryan, Indo-Greek, Kushan (6th c. BCE – 5th c. CE)',
+        excavators: 'Sir John Marshall (1913–1934)',
+        description: 'The academic and commercial metropolis of the Gandhara-Punjab frontier. Three successive cities: Bhir Mound (Mauryan), Sirkap (Hellenistic Hippodamian grid), and Sirsukh (Kushan fortress). Center of Panini, Chanakya, and Ashoka.',
+        artifacts: [
+          'Dharmarajika monumental stupa with silver scroll relic inscriptions',
+          'Double-Headed Eagle Stupa at Sirkap showing Greek, Hindu, and Buddhist motifs',
+          'Hellenistic intaglios, Dionysian silver repoussé bowls, and gold jewelry',
+          'Extensive corpus of Gandhara schist and stucco Buddhas'
+        ]
+      },
+      {
+        id: 'sugh',
+        name: 'Sugh / Ancient Shrughna (ਸੁੱਘ)',
+        modernLocation: 'Yamunanagar / Punjab-Haryana border zone',
+        river: 'Old bed of Yamuna / Sarasvati',
+        era: 'Kushan/Buddhist',
+        period: 'Mauryan to Early Medieval (c. 400 BCE – 700 CE)',
+        excavators: 'Suraj Bhan & ASI',
+        description: 'Described by Hiuen Tsang as a thriving Buddhist town with 100-foot Ashokan stupas. Excavations yielded spectacular Sunga-Kushan terracotta art reflecting high classical craftsmanship.',
+        artifacts: [
+          'Child learning the Brahmi alphabet plaque (celebrated Indian art treasure)',
+          'Delicate Sunga female figurines with intricate headgear and jewelry',
+          'Cast copper coins and Yaudheya seals'
+        ]
+      },
+      {
+        id: 'multan-mound',
+        name: 'Multan Citadel & Sun Temple Mound (ਮੁਲਤਾਨ)',
+        modernLocation: 'Multan, Southern Punjab, Pakistan',
+        river: 'Chenab (Ancient Acesines) / Ravi confluence',
+        era: 'Medieval/Sultanate',
+        period: 'Classical Antiquity through Lodhi & Mughal (500 CE – 1600 CE)',
+        excavators: 'Alexander Cunningham, British & Pakistani Surveys',
+        description: 'Ancient Mulasthana, home to the legendary Aditya Sun Temple visited by Hiuen Tsang and Al-Biruni. Transformed into the southwestern gateway bastion of the Delhi Sultanate under Balban and the Tughlaqs against Mongol raids.',
+        artifacts: [
+          'Remains of pre-Islamic Sun Temple fortifications',
+          'Arab Habbarid silver dammas and Sultanate glazed blue tiles',
+          'Tughlaq and Lodhi era bastion brickwork and ceramic kilns'
+        ]
+      },
+      {
+        id: 'soan-valley',
+        name: 'Soan Valley Terraces',
+        modernLocation: 'Potohar Plateau / Rawalpindi / Hoshiarpur Siwaliks',
+        river: 'Soan (Indus basin)',
+        era: 'Paleolithic',
+        period: 'Lower to Middle Paleolithic (c. 500,000 – 40,000 BCE)',
+        excavators: 'D.N. Wadia (1928), H. de Terra & T.T. Paterson (1939)',
+        description: 'The global benchmark for the Soanian pebble-chopper industry. Stratified river terrace deposits (T1 to T4) preserved unifacial and bifacial cobble tools alongside Pleistocene mammal fauna.',
+        artifacts: [
+          'Quartzite unifacial pebble choppers and bifacial chopping tools',
+          'Flake discoids and proto-handaxes',
+          'Fossilized bones of Elephas namadicus and equids'
+        ]
+      }
+    ];
+
+    // EXPANDED MAJOR WARS & BATTLES DATASET (14 Crucial Conflicts)
+    const WARS_DATA = [
+      {
+        id: 'war-dasarajna',
+        name: 'Battle of the Ten Kings (Dasarajna)',
+        date: 'c. 14th – 12th Century BCE',
+        category: 'Ancient/Classical',
+        location: 'Banks of River Parushni (Modern Ravi)',
+        belligerents: 'King Sudas (Bharata-Trtsu tribe) vs. Confederation of 10 Aryan & Non-Aryan Tribes (Purus, Yadus, Turvashas, Anus, Druhyus, etc.)',
+        outcome: 'Decisive Victory for King Sudas',
+        significance: 'Recorded in Rigveda Mandala 7 (composed by Sage Vashistha). Sudas routed the allied army when they attempted to breach the river dykes to drown the Bharatas. Established Bharata political and cultural hegemony across Punjab and Haryana, giving India its name "Bharatavarsha".'
+      },
+      {
+        id: 'war-hydaspes',
+        name: 'Battle of the Hydaspes',
+        date: 'May 326 BCE',
+        category: 'Ancient/Classical',
+        location: 'River Hydaspes (Modern Jhelum, near Jalalpur/Mong)',
+        belligerents: 'Alexander the Great (Macedonian Empire) vs. King Porus (Paurava Kingdom)',
+        outcome: 'Macedonian Tactical Victory; Porus Reinstated as Client King',
+        significance: 'Porus deployed 200 war elephants and 30,000 infantry. Alexander executed a daring upstream night crossing amidst a monsoon deluge. Alexander was so impressed by Porus\'s regal dignity ("Treat me, Alexander, like a King") that he expanded Porus\'s territory to the Beas.'
+      },
+      {
+        id: 'war-mauryan-uprising',
+        name: 'Chandragupta Maurya\'s Punjab Liberation War',
+        date: 'c. 322 – 321 BCE',
+        category: 'Ancient/Classical',
+        location: 'Across the Punjab Doabs & Gandharan outposts',
+        belligerents: 'Chandragupta Maurya & Chanakya (Taxila) vs. Macedonian Satraps (Peithon, Eudemus)',
+        outcome: 'Complete Expulsion of Macedonian Satrapies',
+        significance: 'Mobilized martial Punjab clans (Arattas, Yaudheyas, Malavas) to dismantle Hellenistic garrisons. Created the military spearhead that subsequently invaded Magadha, destroyed the Nanda Empire, and founded the Mauryan Empire.'
+      },
+      {
+        id: 'war-menander-sagala',
+        name: 'Indo-Greek Defense of Sagala',
+        date: 'c. 150 – 130 BCE',
+        category: 'Ancient/Classical',
+        location: 'Sagala (Modern Sialkot, Rechna Doab)',
+        belligerents: 'King Menander I (Milinda) vs. Shunga incursions & Saka nomadic tribes',
+        outcome: 'Indo-Greek Consolidation of Central Punjab',
+        significance: 'Made Sagala an impregnable commercial and cultural capital. Menander converted to Buddhism after dialogues with Sage Nagasena (immortalized in the Pali classic Milinda Panha).'
+      },
+      {
+        id: 'war-huna-incursions',
+        name: 'Huna Invasions of Punjab',
+        date: 'c. 495 – 530 CE',
+        category: 'Ancient/Classical',
+        location: 'Northern Punjab, Taxila, and Central Plains',
+        belligerents: 'Toramana & Mihirakula (Alchon Hunas) vs. Later Guptas & Yashodharman of Malwa',
+        outcome: 'Huna Devastation of Buddhist Monasteries; Later Defeat at Sondani',
+        significance: 'Mihirakula ruled his ruthless empire from Sagala (Sialkot). His campaigns destroyed the classical Buddhist institutions of Taxila and the Gandharan-Punjab belt, ending the classical golden era.'
+      },
+      {
+        id: 'war-chach-peshawar',
+        name: 'Battles of Peshawar & Chach (Hindu Shahi Resistance)',
+        date: '1001 & 1008 CE',
+        category: 'Shahi/Ghaznavid',
+        location: 'Chach plains (near Attock) & Peshawar gateway',
+        belligerents: 'Mahmud of Ghazni vs. King Jayapala (1001) & Anandapala (1008) of the Hindu Shahis',
+        outcome: 'Decisive Ghaznavid Victory',
+        significance: 'The Hindu Shahis of Punjab (capitals at Hund and Nandana in the Salt Range) were the final sovereign barrier protecting the subcontinent. Anandapala assembled a confederacy of Rajput rulers, but a bolting war elephant caused chaos, permanently opening Punjab to Ghaznavid annexation.'
+      },
+      {
+        id: 'war-fall-lahore-1021',
+        name: 'Ghaznavid Annexation & Fall of Lahore',
+        date: '1021 CE',
+        category: 'Shahi/Ghaznavid',
+        location: 'Lahore (Bari Doab)',
+        belligerents: 'Mahmud of Ghazni vs. Trilochanapala & Bhimapala (Final Shahis)',
+        outcome: 'Permanent Ghaznavid Conquest; Punjab Incorporated into Ghazni Empire',
+        significance: 'Lahore was rebuilt and named Mahmudpur; Malik Ayaz was appointed governor and built Lahore\'s first masonry fortress. For over 150 years, Punjab became the sole imperial bastion of the Ghaznavids after they lost Central Asia to the Seljuks.'
+      },
+      {
+        id: 'war-tarain',
+        name: 'Battles of Tarain (First & Second)',
+        date: '1191 & 1192 CE',
+        category: 'Shahi/Ghaznavid',
+        location: 'Tarain (Near Karnal / Punjab-Haryana Border)',
+        belligerents: 'Muhammad of Ghor (Ghurid Dynasty) vs. Prithviraj Chauhan (Chahamana Empire)',
+        outcome: '1191: Rajput Victory; 1192: Decisive Ghurid Victory',
+        significance: 'The conflict began over the siege of the strategic frontier fortress of Tabarhindah (modern Bhatinda in Punjab). Prithviraj routed Ghori in 1191, but Ghori returned in 1192 with 120,000 cavalry, utilizing mounted archer tactics to establish the foundation of the Delhi Sultanate.'
+      },
+      {
+        id: 'war-sack-lahore-1241',
+        name: 'Mongol Sack of Lahore & Ravi Campaign',
+        date: 'December 1241 CE',
+        category: 'Mongol Defense',
+        location: 'Lahore & Ravi River Basin',
+        belligerents: 'Tair Bahadur (Mongol Empire) vs. Malik Qaraqash (Governor under Delhi Sultanate)',
+        outcome: 'Mongols Breached and Sacked Lahore City',
+        significance: 'The first catastrophic Mongol sack of a major Punjab metropolis during the Delhi Sultanate. Forced Sultan Ghiyasuddin Balban to develop the famous "Warden of the Marches" defense line across Multan, Dipalpur, and the Beas River.'
+      },
+      {
+        id: 'war-prince-muhammad-1285',
+        name: 'Battle of the Beas / Ravi (Death of Prince Muhammad)',
+        date: 'March 1285 CE',
+        category: 'Mongol Defense',
+        location: 'Confluence of Beas and Ravi rivers, Punjab',
+        belligerents: 'Prince Muhammad Sultan (Khan-i-Shahid) & Amir Khusrau vs. Tamar (Mongol Army)',
+        outcome: 'Mongols Repelled, but Prince Muhammad was Slain in Ambush',
+        significance: 'Balban\'s eldest son and heir-apparent successfully pushed the Mongols back, but was killed while performing afternoon prayers by an ambush. Balban collapsed from grief, paving the way for the Khalji Revolution.'
+      },
+      {
+        id: 'war-dipalpur-1306',
+        name: 'Battle of the Sutlej / Dipalpur (Anti-Mongol Campaign)',
+        date: '1306 CE',
+        category: 'Mongol Defense',
+        location: 'Dipalpur & Sutlej river banks, Punjab',
+        belligerents: 'Ghazi Malik (Governor of Dipalpur, later Sultan Ghiyas-ud-din Tughluq) & Malik Kafur vs. Kubak & Iqbalmand (Chagatai Mongols)',
+        outcome: 'Annihilation of Mongol Invading Force',
+        significance: 'Over 50,000 Mongols were defeated and captives executed at Delhi. Ghazi Malik earned fame as the greatest military commander in Punjab, using Dipalpur as the launching pad to seize the Delhi throne and found the Tughlaq Dynasty in 1320.'
+      },
+      {
+        id: 'war-timur-1398',
+        name: 'Timur\'s Invasion & Subjugation of Punjab',
+        date: 'October – December 1398 CE',
+        category: 'Timurid/Lodhi',
+        location: 'Indus crossing &rarr; Tulamba &rarr; Multan &rarr; Bhatner &rarr; Sirhind',
+        belligerents: 'Timur (Tamerlane) vs. Local Punjab garrisons & Delhi Tughlaq forces',
+        outcome: 'Complete Devastation of Punjab Towns; Fall of Delhi',
+        significance: 'Timur crossed the Indus at Attock, captured and burned the Rajput fortress of Bhatner (Hanumangarh/Punjab border), slaughtered garrisons at Tulamba and Dipalpur, and left Khizr Khan as governor of Multan and Lahore, directly leading to the Sayyid Dynasty (1414).'
+      },
+      {
+        id: 'war-bahlul-delhi-1451',
+        name: 'Bahlul Lodhi\'s March from Sirhind to Delhi',
+        date: '1451 CE',
+        category: 'Timurid/Lodhi',
+        location: 'Sirhind &rarr; Lahore &rarr; Delhi',
+        belligerents: 'Bahlul Khan Lodhi (Governor of Sirhind & Lahore) vs. Hamid Khan / Alam Shah (Sayyids)',
+        outcome: 'Establishment of the First Afghan Dynasty (Lodhi Sultanate)',
+        significance: 'Bahlul had unified the Afghan clans of Punjab (Niazis, Farmulis, Lohanis) based out of his stronghold at Sirhind. Exploiting the collapse of the Sayyid Sultanate, he took Delhi, making Punjab the administrative powerhouse of north India.'
+      },
+      {
+        id: 'war-panipat-1526',
+        name: 'First Battle of Panipat (Prelude in Punjab)',
+        date: '21 April 1526 CE',
+        category: 'Timurid/Lodhi',
+        location: 'Panipat Plains (Historically the Delhi-Punjab March Gateway)',
+        belligerents: 'Zahir-ud-din Muhammad Babur (Mughal-Timurid) vs. Ibrahim Lodhi (Sultan of Delhi)',
+        outcome: 'Decisive Babur Victory; Extinction of Lodhi Dynasty; Birth of Mughal Empire',
+        significance: 'Instigated when Daulat Khan Lodhi (governor of Lahore) invited Babur to dethrone Ibrahim. Babur seized Lahore and defeated Daulat Khan at Malot in Punjab (Jan 1526) before marching to Panipat. Babur deployed Ottoman field cannons (tulughma & araba cart tactics) to crush Ibrahim Lodhi\'s 1,000 elephants and 40,000 troops.'
+      }
+    ];
+
+    // CHRONOLOGY TIMELINE DATA (Paleolithic to 1526 CE)
+    const TIMELINE_DATA = [
+      {
+        year: 'c. 500,000 BCE',
+        era: 'Prehistoric & Bronze',
+        title: 'Soan Valley Paleolithic Industry',
+        desc: 'Hominids make quartzite pebble choppers on the terraces of the Soan river in the Potohar plateau.'
+      },
+      {
+        year: 'c. 2600 – 1900 BCE',
+        era: 'Prehistoric & Bronze',
+        title: 'Harappan Mature Urban Epoch',
+        desc: 'Harappa emerges as the northern metropolis; Ropar and Kotla Nihang Khan extend urbanism along the Sutlej.'
+      },
+      {
+        year: 'c. 1700 – 1000 BCE',
+        era: 'Vedic & Classical',
+        title: 'Vedic Era & Dasarajna Battle',
+        desc: 'Rigveda compiled in the Sapta Sindhu; King Sudas wins the Battle of the Ten Kings on the Parushni (Ravi).'
+      },
+      {
+        year: 'c. 518 BCE',
+        era: 'Vedic & Classical',
+        title: 'Achaemenid Persian Annexation',
+        desc: 'Darius the Great incorporates the Indus and Gandharan valleys as the 20th satrapy (Hindush).'
+      },
+      {
+        year: '326 BCE',
+        era: 'Vedic & Classical',
+        title: 'Alexander Invades Punjab & Battle of Hydaspes',
+        desc: 'Alexander fights King Porus on the Jhelum; troops mutiny at the Beas (Hyphasis), ending eastern conquest.'
+      },
+      {
+        year: 'c. 322 – 185 BCE',
+        era: 'Vedic & Classical',
+        title: 'Mauryan Rule & Taxila University',
+        desc: 'Chandragupta Maurya and Chanakya mobilize Punjab tribes. Taxila flourishes as the premier academic capital.'
+      },
+      {
+        year: 'c. 165 – 130 BCE',
+        era: 'Vedic & Classical',
+        title: 'King Menander I (Milinda) Rules at Sagala',
+        desc: 'Indo-Greek capital established at Sialkot (Sagala); philosophical dialogues with Nagasena in Milinda Panha.'
+      },
+      {
+        year: 'c. 78 – 200 CE',
+        era: 'Vedic & Classical',
+        title: 'Kushan Empire & Sanghol Buddhist Stupa',
+        desc: 'Kanishka patronizes Mahayana Buddhism; Sanghol radial stupa and 117 carved Mathura railing pillars erected.'
+      },
+      {
+        year: 'c. 500 – 530 CE',
+        era: 'Vedic & Classical',
+        title: 'Alchon Huna Invasions',
+        desc: 'Toramana and Mihirakula ravage Punjab from Sagala, inflicting immense destruction on Buddhist monasteries.'
+      },
+      {
+        year: 'c. 870 – 1021 CE',
+        era: 'Early Medieval',
+        title: 'Hindu Shahi Kingdom in Punjab',
+        desc: 'Capitals at Hund, Nandana, and Lahore. Heroic resistance by Jayapala and Anandapala against Ghazni.'
+      },
+      {
+        year: '1021 CE',
+        era: 'Early Medieval',
+        title: 'Ghaznavid Annexation & Rebuilding of Lahore',
+        desc: 'Mahmud of Ghazni captures Lahore (Mahmudpur); Malik Ayaz builds masonry fortifications.'
+      },
+      {
+        year: '1192 CE',
+        era: 'Early Medieval',
+        title: 'Second Battle of Tarain',
+        desc: 'Muhammad of Ghor takes Tabarhindah (Bhatinda) and defeats Prithviraj Chauhan, establishing Sultanate rule.'
+      },
+      {
+        year: '1241 – 1285 CE',
+        era: 'Delhi Sultanate',
+        title: 'Mongol Sacks & Balban\'s Frontier Defense',
+        desc: 'Mongols sack Lahore (1241); Balban establishes Multan-Dipalpur warden line; Prince Muhammad killed in action (1285).'
+      },
+      {
+        year: '1306 CE',
+        era: 'Delhi Sultanate',
+        title: 'Ghazi Malik Crushes Mongols at Dipalpur',
+        desc: 'Ghazi Malik (Ghiyas-ud-din Tughluq) defeats 50,000 Mongols along the Sutlej, rising to Sultan of Delhi (1320).'
+      },
+      {
+        year: '1398 CE',
+        era: 'Delhi Sultanate',
+        title: 'Timur\'s Invasion Across Punjab',
+        desc: 'Timur crosses the Indus, ravages Bhatner, Tulamba, and Multan, appointing Khizr Khan as governor.'
+      },
+      {
+        year: '1451 CE',
+        era: 'Delhi Sultanate',
+        title: 'Bahlul Lodhi Ascends Throne from Sirhind',
+        desc: 'Governor of Sirhind and Lahore, Bahlul Khan Lodhi, unites Afghan clans and establishes the Lodhi Dynasty.'
+      },
+      {
+        year: '1524 CE',
+        era: 'Delhi Sultanate',
+        title: 'Daulat Khan Lodhi Invites Babur to Lahore',
+        desc: 'Internal friction between Sultan Ibrahim Lodhi and Punjab governor Daulat Khan Lodhi brings Babur into Punjab.'
+      },
+      {
+        year: '21 April 1526 CE',
+        era: 'Delhi Sultanate',
+        title: 'First Battle of Panipat & End of Lodhi Rule',
+        desc: 'Babur defeats and slays Ibrahim Lodhi at Panipat with gunpowder artillery, establishing the Mughal Empire.'
+      }
+    ];
+
+    // FLASHCARD DECK (12 Questions)
+    const FLASHCARDS = [
+      {
+        cat: 'Indus Valley Civilization',
+        q: 'Why is the Ropar (Rupnagar) site so significant in post-independence Indian archaeology?',
+        a: 'Excavated by Dr. Y.D. Sharma in 1952–53, it was the first Harappan site excavated in India after the Partition of 1947. Its cemetery revealed an oval pit with a human buried alongside a domestic dog.',
+        extra: 'River: Sutlej (Shutudri)'
+      },
+      {
+        cat: 'Vedic History',
+        q: 'What was the Dasarajna (Battle of the Ten Kings) and on which Punjab river was it fought?',
+        a: 'Recorded in Rigveda Mandala 7, King Sudas of the Bharatas defeated a confederacy of ten Aryan and non-Aryan tribes led by the Purus on the banks of River Parushni (modern Ravi).',
+        extra: 'Sage: Vashistha for Sudas vs. Vishvamitra'
+      },
+      {
+        cat: 'Buddhist Archaeology',
+        q: 'What major archaeological treasure was uncovered at Sanghol (Fatehgarh Sahib) in 1985?',
+        a: 'A hoard of 117 Mathura spotted red-sandstone railing pillars and corner posts carved with yakshis, mother-child motifs, and lotus medallions, originally part of a 1st–2nd c. CE Kushan Buddhist stupa.',
+        extra: 'Location: Fatehgarh Sahib, Punjab'
+      },
+      {
+        cat: 'Macedonian Invasions',
+        q: 'What halted Alexander\'s conquest in Punjab after his victory at the Hydaspes?',
+        a: 'At the River Hyphasis (Beas) in July 326 BCE, his battle-weary troops mutinied against advancing toward the massive elephant-corps and army of the Nanda Empire.',
+        extra: 'Greek Name: Hyphasis | Modern: Beas'
+      },
+      {
+        cat: 'Indo-Greek Period',
+        q: 'Which city served as King Menander I\'s capital in Punjab, and in which Buddhist text is it praised?',
+        a: 'Sagala (modern Sialkot in the Rechna Doab). It was praised as a wealthy, fortified city of learning and trade in the Pali philosophical text "Milinda Panha".',
+        extra: 'Ruler: Menander I (Milinda)'
+      },
+      {
+        cat: 'Prehistoric Archaeology',
+        q: 'What is the "Soan Culture" and who were its key excavators?',
+        a: 'A Lower to Middle Paleolithic pebble-tool tradition using river cobbles to make unifacial and bifacial choppers. Discovered by D.N. Wadia (1928) and documented by H. de Terra and T.T. Paterson (1939).',
+        extra: 'Location: Potohar Plateau & Siwaliks'
+      },
+      {
+        cat: 'Medieval Mongol Defense',
+        q: 'How did the Delhi Sultanate defend Punjab from recurring Mongol incursions in the 13th century?',
+        a: 'Sultan Balban developed a militarized frontier line anchored at Multan, Dipalpur, and Lahore. Balban\'s eldest son Prince Muhammad died fighting Mongols here in 1285 CE.',
+        extra: 'Key Commander: Prince Muhammad (Khan-i-Shahid)'
+      },
+      {
+        cat: 'Sultanate History',
+        q: 'Why was Dipalpur of supreme geopolitical importance during the Khalji and Tughlaq eras?',
+        a: 'Dipalpur was the command headquarters for the Warden of the Marches. Ghazi Malik served as governor of Dipalpur, defeating over 29 Mongol incursions before founding the Tughlaq Dynasty in 1320 CE.',
+        extra: 'River: Sutlej/Bari Doab border'
+      },
+      {
+        cat: 'Timurid Campaigns',
+        q: 'Which Punjabi fortresses fell during Timur\'s devastating invasion of 1398 CE?',
+        a: 'After crossing the Indus, Timur laid siege to and destroyed the Rajput citadel of Bhatner (Hanumangarh), ravaged Tulamba and Multan, and marched via Sirhind to plunder Delhi.',
+        extra: 'Appointee: Khizr Khan (Sayyid dynasty founder)'
+      },
+      {
+        cat: 'Lodhi Dynasty',
+        q: 'How was the Afghan Lodhi Dynasty founded out of Punjab in 1451 CE?',
+        a: 'Bahlul Khan Lodhi, governor of Sirhind and Lahore, consolidated the Afghan tribes (Niazis, Farmulis) and marched on Delhi to displace the weak Sayyid ruler Alam Shah, founding the Lodhi Sultanate.',
+        extra: 'Power Base: Sarkar Sirhind'
+      },
+      {
+        cat: 'Late Medieval Transition',
+        q: 'What role did Daulat Khan Lodhi play in Babur\'s invasion of India?',
+        a: 'As the disaffected governor of Lahore alienated by Sultan Ibrahim Lodhi, Daulat Khan invited Babur to invade Punjab. However, Babur sidelined him, capturing his stronghold at Malot in 1526.',
+        extra: 'Fortress: Malot (Hoshiarpur foothills)'
+      },
+      {
+        cat: 'Classical Warfare',
+        q: 'Why was the First Battle of Panipat (1526 CE) a watershed event in military history?',
+        a: 'Babur utilized Ottoman gunpowder artillery, matchlocks, and the "tulughma" flanking tactics with tied wagons (araba), annihilating Ibrahim Lodhi\'s massive force and ending the Delhi Sultanate.',
+        extra: 'Date: 21 April 1526'
+      }
+    ];
+
+    // COMPREHENSIVE QUIZ DATASET (15 Questions)
+    const QUIZ_DATA = [
+      {
+        q: "On the banks of which river did King Sudas fight the 'Battle of the Ten Kings' (Dasarajna)?",
+        options: ["Parushni (Ravi)", "Vitasta (Jhelum)", "Shutudri (Sutlej)", "Asikni (Chenab)"],
+        correct: 0,
+        exp: "Rigveda Mandala 7 documents King Sudas's victory over the ten-king confederacy on the river Parushni, which corresponds to the modern Ravi."
+      },
+      {
+        q: "Which Harappan site in Indian Punjab yielded an oval pit grave with a human skeleton buried alongside a dog?",
+        options: ["Sanghol", "Ropar (Rupnagar)", "Rohira", "Kotla Nihang Khan"],
+        correct: 1,
+        exp: "Ropar, excavated by Dr. Y.D. Sharma in 1952–53, revealed this unique burial feature in its Harappan cemetery stratum."
+      },
+      {
+        q: "At which river did Alexander the Great's troops mutiny in 326 BCE, refusing to advance into the Nanda Empire?",
+        options: ["Hydaspes (Jhelum)", "Acesines (Chenab)", "Hyphasis (Beas)", "Hesidros (Sutlej)"],
+        correct: 2,
+        exp: "At the river Hyphasis (modern Beas), exhausted Macedonian soldiers mutinied, compelling Alexander to erect 12 altars and retreat south down the Indus."
+      },
+      {
+        q: "A monumental hoard of 117 carved Mathura red-sandstone stupa railing pillars was excavated in 1985 at which Punjab site?",
+        options: ["Sunam", "Mahorana", "Sanghol (Uchha Pind)", "Dholbaha"],
+        correct: 2,
+        exp: "Sanghol in Fatehgarh Sahib district yielded 117 sculpted Kushan-period railing pillars stacked neatly in a trench adjacent to its wheel-plan stupa."
+      },
+      {
+        q: "Which Indo-Greek ruler made Sagala (modern Sialkot in Punjab) his flourishing imperial capital?",
+        options: ["Demetrius I", "Menander I (Milinda)", "Antialcidas", "Apollodotus I"],
+        correct: 1,
+        exp: "King Menander I established his capital at Sagala (Sialkot) and engaged in Buddhist debates detailed in the 'Milinda Panha'."
+      },
+      {
+        q: "Who was the Hindu Shahi ruler who immolated himself on a funeral pyre after being defeated by Mahmud of Ghazni in 1001 CE?",
+        options: ["Anandapala", "Jayapala", "Trilochanapala", "Bhimapala"],
+        correct: 1,
+        exp: "King Jayapala of the Hindu Shahi dynasty suffered defeat near Peshawar against Mahmud of Ghazni and, viewing his defeat as a dishonor, abdicated and entered a self-immolation fire."
+      },
+      {
+        q: "Which historic Punjab fortress was the initial point of conflict between Prithviraj Chauhan and Muhammad of Ghor in 1191 CE?",
+        options: ["Tabarhindah (Bhatinda)", "Sirhind", "Multan", "Lahore"],
+        correct: 0,
+        exp: "The siege and capture of Tabarhindah (modern Bhatinda) by Muhammad Ghori provoked the First Battle of Tarain in 1191 CE."
+      },
+      {
+        q: "Which Delhi Sultanate prince and patron of Amir Khusrau was killed in 1285 CE fighting Mongol invaders in Punjab?",
+        options: ["Prince Muhammad (Khan-i-Shahid)", "Nasiruddin Mahmud", "Buqhrah Khan", "Arkali Khan"],
+        correct: 0,
+        exp: "Balban's eldest son, Prince Muhammad, the governor of Multan and Punjab, was killed in an ambush while defeating Mongol raiders."
+      },
+      {
+        q: "Ghazi Malik, who defeated the Mongols repeatedly and founded the Tughlaq Dynasty in 1320 CE, was governor of which Punjab garrison?",
+        options: ["Jalandhar", "Dipalpur", "Sirhind", "Bhatinda"],
+        correct: 1,
+        exp: "Ghazi Malik was the governor of Dipalpur, where he earned fame as the foremost defender against Chagatai Mongol incursions."
+      },
+      {
+        q: "Before seizing the throne of Delhi in 1451 CE to found the First Afghan Dynasty, Bahlul Lodhi was governor of:",
+        options: ["Multan & Sindh", "Sirhind & Lahore", "Bhatner & Nagaur", "Kashmir & Taxila"],
+        correct: 1,
+        exp: "Bahlul Khan Lodhi consolidated his power as governor of Sirhind and Lahore before overthrowing the decaying Sayyid dynasty."
+      },
+      {
+        q: "Who was the governor of Lahore who invited Babur to invade India to overthrow Sultan Ibrahim Lodhi?",
+        options: ["Sikandar Lodhi", "Daulat Khan Lodhi", "Tatar Khan", "Khizr Khan"],
+        correct: 1,
+        exp: "Daulat Khan Lodhi, governor of Lahore, formed an alliance with Alam Khan Lodhi and sent envoys inviting Babur to Kabul."
+      },
+      {
+        q: "The Paleolithic 'Soanian Culture' is characterized primarily by tools made from:",
+        options: ["Polished jade celts", "Quartzite river pebbles (choppers/chopping tools)", "Microlithic obsidian", "Cast bronze celts"],
+        correct: 1,
+        exp: "Soanian industry is defined by Lower Paleolithic pebble choppers and chopping tools flaked from river cobbles in the Soan and Siwalik terraces."
+      },
+      {
+        q: "What is the ancient Sanskrit name for the River Chenab, where Alexander's fleet faced dangerous rapids?",
+        options: ["Asikni / Chandrabhaga", "Vitasta", "Vipasa", "Shutudri"],
+        correct: 0,
+        exp: "The Rigveda names the Chenab as 'Asikni' (dark water), later called Chandrabhaga, and recorded as 'Acesines' by Greek historians."
+      },
+      {
+        q: "In which doab is the historic city and metropolis of Lahore situated?",
+        options: ["Bist Doab", "Bari Doab (Majha)", "Rechna Doab", "Sindh Sagar Doab"],
+        correct: 1,
+        exp: "Lahore is located on the eastern bank of the Ravi river within the Bari Doab (the interfluve between the Beas and Ravi rivers)."
+      },
+      {
+        q: "At the First Battle of Panipat (1526 CE), which military innovation allowed Babur to decisively rout Ibrahim Lodhi?",
+        options: ["Elephants with steel tusk-swords", "Chariots with scythes", "Ottoman gunpowder artillery and wagon carts (tulughma & araba)", "Composite cross-bow phalanxes"],
+        correct: 2,
+        exp: "Babur's tactical use of gunpowder field artillery under Ustad Ali Quli, matchlockmen under Mustafa, and wagon barricades completely dismantled Lodhi's army."
+      }
+    ];
+
+    // RIVERS DATASET
+    const RIVERS_DATA = [
+      {
+        sanskrit: 'Sindhu (सिन्धु)',
+        greek: 'Indos (Ινδός)',
+        modern: 'Indus (سندھ / ਸਿੰਧ)',
+        history: 'Master river of the northwest. Formed the western frontier boundary of the Persian 20th satrapy and the boundary of Alexander\'s Indian satrapies.'
+      },
+      {
+        sanskrit: 'Vitasta (वितस्ता)',
+        greek: 'Hydaspes (Ὑδάσπης)',
+        modern: 'Jhelum (ਜੇਹਲਮ / جہلم)',
+        history: 'Site of the Battle of the Hydaspes (326 BCE) between Alexander and King Porus. Alexander founded Bucephala and Nikaia on its banks.'
+      },
+      {
+        sanskrit: 'Asikni / Chandrabhaga (असिक्नी)',
+        greek: 'Acesines (Ἀκεσίνης)',
+        modern: 'Chenab (ਚਨਾਬ / چناب)',
+        history: 'Formed the border of the Paurava kingdom. Alexander\'s transport fleet suffered heavy wreckages at its confluence with the Hydaspes.'
+      },
+      {
+        sanskrit: 'Parushni / Iravati (परुष्णी)',
+        greek: 'Hydraotes (Ὑδਰਾώτης)',
+        modern: 'Ravi (ਰਾਵੀ / راوی)',
+        history: 'Venue of the Vedic Battle of the Ten Kings (Dasarajna). Harappa stood on an ancient active loop of the Ravi; medieval Lahore developed on its left bank.'
+      },
+      {
+        sanskrit: 'Vipasa (विपाशा)',
+        greek: 'Hyphasis (Ὕφασις)',
+        modern: 'Beas (ਬਿਆਸ)',
+        history: 'The eastern terminus of Alexander\'s expedition where his army mutinied in 326 BCE. Formed the secondary defense frontier against the Mongols.'
+      },
+      {
+        sanskrit: 'Shutudri / Satadru (शुतुद्रि)',
+        greek: 'Hesidros / Zaradros',
+        modern: 'Sutlej (ਸਤਲੁਜ / ستلج)',
+        history: 'Southern border of the Bist Doab. Ropar and Kotla Nihang Khan are situated at its Siwalik gateway; medieval frontier post at Dipalpur.'
+      },
+      {
+        sanskrit: 'Sarasvati (सरस्वती)',
+        greek: '—',
+        modern: 'Ghaggar-Hakra (dried)',
+        history: 'Revered in the Rigveda as the supreme sacred river. Supported dense concentrations of Harappan, Bara, and PGW settlements in southern Punjab and Haryana.'
+      }
+    ];
+
+    // GLOBAL VARIABLES & STATE
+    let currentFlashcardIndex = 0;
+    let isFlipped = false;
+    let currentQuizIndex = 0;
+    let quizScore = 0;
+    let quizAnswered = false;
+
+    // INITIALIZATION
+    document.addEventListener('DOMContentLoaded', () => {
+      renderSites('all');
+      renderWars('all');
+      renderTimeline('all');
+      renderRiversTable();
+      updateFlashcardView();
+      loadQuizQuestion();
+    });
+
+    // TAB MANAGEMENT
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('tab-active');
+        if (btn.getAttribute('data-tab') === tabId) {
+          btn.classList.add('tab-active');
+        }
+      });
+      const activePane = document.getElementById(`tab-${tabId}`);
+      if (activePane) {
+        activePane.classList.remove('hidden');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderSites(filter) {
+      const container = document.getElementById('sitesGrid');
+      container.innerHTML = '';
+
+      const filtered = filter === 'all'
+        ? SITES_DATA
+        : SITES_DATA.filter(s => s.era.toLowerCase().includes(filter.toLowerCase()));
+
+      filtered.forEach(site => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-xl shadow border border-stone-200 p-5 flex flex-col justify-between hover:shadow-lg hover:border-terracotta transition";
+        card.innerHTML = `
+          <div>
+            <div class="flex justify-between items-start gap-2 mb-2">
+              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded ${getSiteBadgeColor(site.era)}">
+                ${site.era}
+              </span>
+              <span class="text-xs text-stone-400 font-mono">${site.period.split('(')[0]}</span>
+            </div>
+            <h3 class="font-serifHeading font-bold text-lg text-deepindigo">${site.name}</h3>
+            <p class="text-xs text-stone-500 font-medium mt-0.5">📍 ${site.modernLocation}</p>
+            <p class="text-xs font-serifBody text-stone-600 mt-2.5 line-clamp-3 leading-relaxed">${site.description}</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
+            <span class="text-[11px] text-terracotta font-semibold truncate max-w-[170px]">🌊 ${site.river.split('(')[0]}</span>
+            <button onclick="openSiteModal('${site.id}')" class="text-xs font-bold text-deepindigo hover:text-terracotta underline flex items-center gap-1">
+              Excavation Data &rarr;
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function getSiteBadgeColor(era) {
+      if (era.includes('Harappan')) return 'bg-terracotta/10 text-terracotta';
+      if (era.includes('Kushan') || era.includes('Buddhist')) return 'bg-purple-100 text-purple-900';
+      if (era.includes('Medieval') || era.includes('Sultanate')) return 'bg-emerald-100 text-emerald-900';
+      if (era.includes('Paleolithic')) return 'bg-stone-200 text-stone-800';
+      return 'bg-amber-100 text-amber-900';
+    }
+
+    function filterSites(era) {
+      document.querySelectorAll('.site-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-deepindigo', 'text-white');
+        btn.classList.add('bg-stone-200', 'text-stone-800');
+      });
+      event.target.classList.add('bg-deepindigo', 'text-white');
+      event.target.classList.remove('bg-stone-200', 'text-stone-800');
+      renderSites(era);
+    }
+
+    function openSiteModal(siteId) {
+      const site = SITES_DATA.find(s => s.id === siteId);
+      if (!site) return;
+
+      document.getElementById('modalSiteEra').innerText = `${site.era} | ${site.period}`;
+      document.getElementById('modalSiteTitle').innerText = site.name;
+      document.getElementById('modalSiteLocation').innerText = `Location: ${site.modernLocation}`;
+      document.getElementById('modalSiteBody').innerHTML = `<p>${site.description}</p>`;
+      document.getElementById('modalSiteExcavator').innerText = site.excavators;
+      document.getElementById('modalSiteRiver').innerText = site.river;
+
+      const artList = document.getElementById('modalSiteArtifacts');
+      artList.innerHTML = '';
+      site.artifacts.forEach(item => {
+        const li = document.createElement('li');
+        li.innerText = item;
+        artList.appendChild(li);
+      });
+
+      document.getElementById('siteModal').classList.remove('hidden');
+      document.getElementById('siteModal').classList.add('flex');
+    }
+
+    function closeSiteModal() {
+      document.getElementById('siteModal').classList.add('hidden');
+      document.getElementById('siteModal').classList.remove('flex');
+    }
+
+    function renderWars(category) {
+      const container = document.getElementById('warsGrid');
+      container.innerHTML = '';
+
+      const filtered = category === 'all'
+        ? WARS_DATA
+        : WARS_DATA.filter(w => w.category.toLowerCase().includes(category.toLowerCase()));
+
+      filtered.forEach(war => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-xl shadow border border-stone-200 p-5 flex flex-col justify-between hover:shadow-lg hover:border-crimsonshade transition";
+        card.innerHTML = `
+          <div>
+            <div class="flex justify-between items-start gap-2 mb-1.5">
+              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-crimsonshade/10 text-crimsonshade">
+                ${war.category}
+              </span>
+              <span class="font-mono text-xs font-bold text-terracotta">${war.date}</span>
+            </div>
+            <h3 class="font-serifHeading font-bold text-lg text-deepindigo">${war.name}</h3>
+            <p class="text-xs text-stone-500 font-medium">📍 ${war.location}</p>
+            
+            <div class="mt-3 text-xs space-y-1.5">
+              <div class="p-2 bg-stone-50 rounded border border-stone-100">
+                <span class="font-bold text-stone-700">Belligerents:</span>
+                <span class="text-stone-600 block mt-0.5">${war.belligerents}</span>
+              </div>
+              <div class="p-2 bg-amber-50/60 rounded border border-amber-100 text-stone-800">
+                <span class="font-bold text-terradark">Outcome:</span> ${war.outcome}
+              </div>
+              <p class="font-serifBody text-stone-600 mt-2 text-xs leading-relaxed pt-1">
+                ${war.significance}
+              </p>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterWars(category) {
+      document.querySelectorAll('.war-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-crimsonshade', 'text-white');
+        btn.classList.add('bg-stone-200', 'text-stone-800');
+      });
+      event.target.classList.add('bg-crimsonshade', 'text-white');
+      event.target.classList.remove('bg-stone-200', 'text-stone-800');
+      renderWars(category);
+    }
+
+    function renderTimeline(eraFilter) {
+      const container = document.getElementById('timelineContainer');
+      container.innerHTML = '';
+
+      const filtered = eraFilter === 'all'
+        ? TIMELINE_DATA
+        : TIMELINE_DATA.filter(t => t.era.toLowerCase().includes(eraFilter.toLowerCase()));
+
+      filtered.forEach((item, index) => {
+        const isEven = index % 2 === 0;
+        const entry = document.createElement('div');
+        entry.className = `relative flex flex-col md:flex-row items-center ${isEven ? 'md:flex-row-reverse' : ''}`;
+        entry.innerHTML = `
+          <div class="w-full md:w-1/2 p-2 ${isEven ? 'md:pl-8' : 'md:pr-8'}">
+            <div class="bg-white p-5 rounded-xl shadow border border-stone-200 hover:border-terracotta transition">
+              <div class="flex items-center justify-between text-xs mb-1">
+                <span class="font-mono font-bold text-terracotta">${item.year}</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-stone-100 text-stone-600 uppercase">${item.era}</span>
+              </div>
+              <h4 class="font-serifHeading font-bold text-deepindigo text-base">${item.title}</h4>
+              <p class="text-xs font-serifBody text-stone-600 mt-2 leading-relaxed">${item.desc}</p>
+            </div>
+          </div>
+          <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-terracotta border-4 border-white rounded-full transform -translate-x-1/2 shadow"></div>
+        `;
+        container.appendChild(entry);
+      });
+    }
+
+    function filterTimeline(era) {
+      document.querySelectorAll('.timeline-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-deepindigo', 'text-white');
+        btn.classList.add('bg-stone-200', 'text-stone-700');
+      });
+      event.target.classList.add('bg-deepindigo', 'text-white');
+      event.target.classList.remove('bg-stone-200', 'text-stone-700');
+      renderTimeline(era);
+    }
+
+    function renderRiversTable() {
+      const tbody = document.getElementById('riversTableBody');
+      tbody.innerHTML = '';
+      RIVERS_DATA.forEach(r => {
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-papyrus/40 transition";
+        tr.innerHTML = `
+          <td class="p-3.5 font-bold text-terracotta whitespace-nowrap">${r.sanskrit}</td>
+          <td class="p-3.5 font-semibold text-deepindigo whitespace-nowrap">${r.greek}</td>
+          <td class="p-3.5 font-bold text-stone-800 whitespace-nowrap">${r.modern}</td>
+          <td class="p-3.5 text-xs font-serifBody text-stone-600 leading-relaxed">${r.history}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function updateFlashcardView() {
+      const card = FLASHCARDS[currentFlashcardIndex];
+      const cardEl = document.getElementById('flashcardElement');
+
+      isFlipped = false;
+      cardEl.classList.remove('rotate-y-180');
+
+      document.getElementById('cardCategory').innerText = card.cat;
+      document.getElementById('cardQuestion').innerText = card.q;
+      document.getElementById('cardAnswer').innerText = card.a;
+      document.getElementById('cardExtra').innerText = card.extra;
+      document.getElementById('flashcardCounter').innerText = `Card ${currentFlashcardIndex + 1} of ${FLASHCARDS.length}`;
+    }
+
+    function flipCurrentCard() {
+      isFlipped = !isFlipped;
+      const cardEl = document.getElementById('flashcardElement');
+      if (isFlipped) {
+        cardEl.classList.add('rotate-y-180');
+      } else {
+        cardEl.classList.remove('rotate-y-180');
+      }
+    }
+
+    function nextFlashcard() {
+      currentFlashcardIndex = (currentFlashcardIndex + 1) % FLASHCARDS.length;
+      updateFlashcardView();
+    }
+
+    function prevFlashcard() {
+      currentFlashcardIndex = (currentFlashcardIndex - 1 + FLASHCARDS.length) % FLASHCARDS.length;
+      updateFlashcardView();
+    }
+
+    function shuffleFlashcards() {
+      for (let i = FLASHCARDS.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [FLASHCARDS[i], FLASHCARDS[j]] = [FLASHCARDS[j], FLASHCARDS[i]];
+      }
+      currentFlashcardIndex = 0;
+      updateFlashcardView();
+    }
+
+    function loadQuizQuestion() {
+      quizAnswered = false;
+      const qData = QUIZ_DATA[currentQuizIndex];
+      document.getElementById('quizIndex').innerText = currentQuizIndex + 1;
+      document.getElementById('quizQuestionText').innerText = qData.q;
+      document.getElementById('quizScoreDisplay').innerText = `${quizScore} / ${currentQuizIndex * 10}`;
+
+      const optionsDiv = document.getElementById('quizOptionsContainer');
+      optionsDiv.innerHTML = '';
+
+      const explBox = document.getElementById('quizExplanationBox');
+      explBox.classList.add('hidden');
+      explBox.innerHTML = '';
+
+      document.getElementById('quizNextBtn').classList.add('hidden');
+
+      qData.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = "w-full text-left p-3.5 rounded-xl border border-stone-200 hover:border-terracotta hover:bg-papyrus text-xs sm:text-sm font-medium transition flex items-center justify-between";
+        btn.innerHTML = `
+          <span><strong class="text-stone-400 mr-2">${String.fromCharCode(65 + idx)}.</strong> ${opt}</span>
+        `;
+        btn.onclick = () => selectQuizAnswer(idx, btn);
+        optionsDiv.appendChild(btn);
+      });
+    }
+
+    function selectQuizAnswer(selectedIndex, clickedBtn) {
+      if (quizAnswered) return;
+      quizAnswered = true;
+
+      const qData = QUIZ_DATA[currentQuizIndex];
+      const buttons = document.getElementById('quizOptionsContainer').querySelectorAll('button');
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === qData.correct) {
+          btn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+        } else if (idx === selectedIndex) {
+          btn.classList.add('bg-rose-100', 'border-rose-400', 'text-rose-900');
+        }
+      });
+
+      const explBox = document.getElementById('quizExplanationBox');
+      explBox.classList.remove('hidden');
+
+      if (selectedIndex === qData.correct) {
+        quizScore += 10;
+        explBox.className = "p-4 rounded-xl mb-6 text-xs sm:text-sm bg-emerald-50 border border-emerald-200 text-emerald-900";
+        explBox.innerHTML = `<strong>Correct!</strong> ${qData.exp}`;
+      } else {
+        explBox.className = "p-4 rounded-xl mb-6 text-xs sm:text-sm bg-rose-50 border border-rose-200 text-rose-900";
+        explBox.innerHTML = `<strong>Incorrect.</strong> ${qData.exp}`;
+      }
+
+      document.getElementById('quizScoreDisplay').innerText = `${quizScore} / ${(currentQuizIndex + 1) * 10}`;
+
+      if (currentQuizIndex < QUIZ_DATA.length - 1) {
+        document.getElementById('quizNextBtn').classList.remove('hidden');
+      } else {
+        showFinalQuizResults();
+      }
+    }
+
+    function nextQuizQuestion() {
+      if (currentQuizIndex < QUIZ_DATA.length - 1) {
+        currentQuizIndex++;
+        loadQuizQuestion();
+      }
+    }
+
+    function showFinalQuizResults() {
+      document.getElementById('quizOptionsContainer').classList.add('hidden');
+      document.getElementById('quizExplanationBox').classList.add('hidden');
+      document.getElementById('quizQuestionText').innerText = 'Assessment Completed';
+      document.getElementById('quizResultsSummary').classList.remove('hidden');
+
+      const maxScore = QUIZ_DATA.length * 10;
+      let reviewMsg = "";
+      if (quizScore >= 130) {
+        reviewMsg = `Outstanding Mastery! You scored ${quizScore} / ${maxScore}. You possess an authoritative grasp of Punjab's prehistoric, classical, Sultanate, and Lodhi history.`;
+      } else if (quizScore >= 90) {
+        reviewMsg = `Solid Command! You scored ${quizScore} / ${maxScore}. Recommended: Revisit the Mongol defense lines (Multan/Dipalpur) and Harappan stratigraphy at Ropar.`;
+      } else {
+        reviewMsg = `You scored ${quizScore} / ${maxScore}. Use the Flashcards and Major Wars tabs to review key events before your next attempt!`;
+      }
+      document.getElementById('quizFinalFeedback').innerText = reviewMsg;
+    }
+
+    function restartQuiz() {
+      currentQuizIndex = 0;
+      quizScore = 0;
+      document.getElementById('quizResultsSummary').classList.add('hidden');
+      document.getElementById('quizOptionsContainer').classList.remove('hidden');
+      loadQuizQuestion();
+    }
+
+    function handleGlobalSearch(query) {
+      const area = document.getElementById('searchResultsArea');
+      const list = document.getElementById('searchResultsList');
+      const clearBtn = document.getElementById('clearSearchBtn');
+
+      if (!query || query.trim().length < 2) {
+        area.classList.add('hidden');
+        clearBtn.classList.add('hidden');
+        return;
+      }
+
+      clearBtn.classList.remove('hidden');
+      const q = query.toLowerCase().trim();
+      area.classList.remove('hidden');
+      list.innerHTML = '';
+
+      const matchedSites = SITES_DATA.filter(s => 
+        s.name.toLowerCase().includes(q) || 
+        s.description.toLowerCase().includes(q) ||
+        s.era.toLowerCase().includes(q) ||
+        s.modernLocation.toLowerCase().includes(q)
+      );
+
+      const matchedWars = WARS_DATA.filter(w => 
+        w.name.toLowerCase().includes(q) ||
+        w.belligerents.toLowerCase().includes(q) ||
+        w.significance.toLowerCase().includes(q) ||
+        w.location.toLowerCase().includes(q)
+      );
+
+      const matchedTimeline = TIMELINE_DATA.filter(t =>
+        t.title.toLowerCase().includes(q) ||
+        t.desc.toLowerCase().includes(q) ||
+        t.year.toLowerCase().includes(q)
+      );
+
+      const totalMatches = matchedSites.length + matchedWars.length + matchedTimeline.length;
+      document.getElementById('searchHeader').innerText = `Search Matches (${totalMatches})`;
+
+      if (totalMatches === 0) {
+        list.innerHTML = `<p class="text-xs text-stone-500 py-3 font-serifBody">No matches found for "${query}". Try searching for 'Lodhi', 'Panipat', 'Sanghol', 'Ropar', 'Porus', 'Dipalpur', or 'Balban'.</p>`;
+        return;
+      }
+
+      matchedSites.forEach(s => {
+        const item = document.createElement('div');
+        item.className = "p-3 bg-stone-50 rounded-lg hover:bg-stone-100 cursor-pointer text-xs border border-stone-200";
+        item.onclick = () => {
+          openSiteModal(s.id);
+          area.classList.add('hidden');
+        };
+        item.innerHTML = `
+          <div class="font-bold text-terracotta">🏛️ Archaeological Site: ${s.name} (${s.era})</div>
+          <div class="text-stone-600 mt-1">${s.description.substring(0, 150)}...</div>
+        `;
+        list.appendChild(item);
+      });
+
+      matchedWars.forEach(w => {
+        const item = document.createElement('div');
+        item.className = "p-3 bg-rose-50/60 rounded-lg hover:bg-rose-100 cursor-pointer text-xs border border-rose-200";
+        item.onclick = () => {
+          switchTab('wars');
+          area.classList.add('hidden');
+        };
+        item.innerHTML = `
+          <div class="font-bold text-crimsonshade">⚔️ Major Battle: ${w.name} (${w.date})</div>
+          <div class="text-stone-600 mt-1">${w.significance.substring(0, 150)}...</div>
+        `;
+        list.appendChild(item);
+      });
+
+      matchedTimeline.forEach(t => {
+        const item = document.createElement('div');
+        item.className = "p-3 bg-amber-50/60 rounded-lg hover:bg-amber-100 cursor-pointer text-xs border border-amber-200";
+        item.onclick = () => {
+          switchTab('timeline');
+          area.classList.add('hidden');
+        };
+        item.innerHTML = `
+          <div class="font-bold text-gold">⏳ Chronicle: [${t.year}] ${t.title}</div>
+          <div class="text-stone-600 mt-1">${t.desc}</div>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    function clearSearch() {
+      document.getElementById('globalSearch').value = '';
+      document.getElementById('searchResultsArea').classList.add('hidden');
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+    }
+
+    function toggleQuickNotesModal() {
+      const modal = document.getElementById('quickNotesModal');
+      if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+  </script>
+</body>
+</html>
