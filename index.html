@@ -44,9 +44,9 @@
   <aside id="sidebar" class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col fixed inset-y-0 left-0 z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
     <div class="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <span class="bg-brand-600 text-white font-black text-xl px-2.5 py-1 rounded shadow">AJS</span>
+        <span class="bg-brand-600 text-white font-black text-xl px-2.5 py-1 rounded shadow">PSSSB</span>
         <div>
-          <h1 class="font-bold text-sm tracking-tight">PSSSB</h1>
+          <h1 class="font-bold text-sm tracking-tight">Revison Portal</h1>
           <p class="text-xs text-slate-500 dark:text-slate-400">Sep 2026</p>
         </div>
       </div>
@@ -58,37 +58,40 @@
 
     <!-- Navigation Links -->
     <nav class="p-3 space-y-1 text-sm font-medium flex-1 overflow-y-auto">
-      <button onclick="switchTab('dashboard')" id="nav-dashboard" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-brand-600 bg-brand-50 dark:bg-slate-800 dark:text-brand-400">
+      <button onclick="switchTab('dashboard')" id="nav-dashboard" class="nav-btn w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-brand-600 bg-brand-50 dark:bg-slate-800 dark:text-brand-400">
         <i class="fa-solid fa-chart-pie w-5"></i>Dashboard
       </button>
-      <button onclick="switchTab('mcq')" id="nav-mcq" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+      <button onclick="switchTab('mcq')" id="nav-mcq" class="nav-btn w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-list-check w-5"></i>MCQs Speedy(<span id="sidebar-mcq-count">0</span>)
       </button>
-      <button onclick="switchTab('oneliners')" id="nav-oneliners" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-bolt w-5"></i>1-Liners Speedy (<span id="sidebar-ol-count">0</span>)
+      <button onclick="switchTab('oneliners')" id="nav-oneliners" class="nav-btn w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <i class="fa-solid fa-bolt w-5"></i>1-Liners(<span id="sidebar-ol-count">0</span>)
       </button>
-	  <button onclick="switchTab('indologous')" id="nav-indologous" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+	  <button onclick="switchTab('indologous')" id="nav-indologous" class="nav-btn w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i>Indologous (<span id="sidebar-indologous-count">7</span>)
       </button>
-	  <button onclick="switchTab('parcham')" id="nav-parcham" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+	  <button onclick="switchTab('parcham')" id="nav-parcham" class="nav-btn w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i>Parcham (<span id="sidebar-parcham-count">4</span>)
       </button>
-	  <button onclick="switchTab('english')" id="nav-english" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+	  <button onclick="switchTab('english')" id="nav-english" class="nav-btn w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i>English Vocab (<span id="sidebar-english-count">350</span>)
       </button>
-	  <button onclick="switchTab('reason')" id="nav-reason" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+	  <button onclick="switchTab('enggram')" id="nav-enggram" class="nav-btn w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <i class="fa-solid fa-book-bookmark w-5"></i>English Grammer Rules
+      </button>
+	  <button onclick="switchTab('reason')" id="nav-reason" class="nav-btn w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i>Reasoning Concepts 
       </button>
-	  <button onclick="switchTab('pbgk')" id="nav-pbgk" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+	  <button onclick="switchTab('pbgk')" id="nav-pbgk" class="nav-btn w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i> Punjab GK Timeline 
       </button>
-	 <button onclick="switchTab('modhis')" id="nav-modhis" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+	 <button onclick="switchTab('modhis')" id="nav-modhis" class="nav-btn w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i>Modern History Timeline 
       </button>
-	  <button onclick="switchTab('anchis')" id="nav-anchis" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+	  <button onclick="switchTab('anchis')" id="nav-anchis" class="nav-btn w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i>PB History Timeline 
       </button>
-	  <button onclick="switchTab('polity')" id="nav-polity" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+	  <button onclick="switchTab('polity')" id="nav-polity" class="nav-btn w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i>Polity All Articles 
       </button>
 
@@ -261,7 +264,7 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h2 class="text-lg sm:text-xl font-bold">Multiple Choice Questions</h2>
-            <p class="text-xs text-slate-500">Click any option to evaluate your answer instantly</p>
+            <p class="text-xs text-slate-500">MCQs from Speedy Sep 2026</p>
           </div>
           <div class="flex gap-2 shrink-0">
             <button onclick="revealAllAnswers()" class="px-3 py-1.5 text-xs font-semibold rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300">Reveal All</button>
@@ -275,7 +278,7 @@
       <section id="tab-oneliners" class="tab-content hidden space-y-4 sm:space-y-6">
         <div>
           <h2 class="text-lg sm:text-xl font-bold mb-1">Chronological One-Liners</h2>
-          <p class="text-xs text-slate-500">Loaded from static script file <span class="font-mono">oneLiners.js</span></p>
+          <p class="text-xs text-slate-500">One liners from Speedy Sep 2026</p>
         </div>
         <div id="oneliners-container" class="space-y-3"></div>
       </section>
@@ -347,9 +350,18 @@
 		<iframe id="english-frame" src="Eng_Vocab_250.html" class="w-full h-full border-0"></iframe>
 	  </div>
 	</section>
+	
+	<!-- English Grammer SECTION TAB -->
+	<section id="tab-enggram" class="tab-content hidden space-y-4">
+
+	  <!-- Dynamic Content Viewer (Direct File Pull) -->
+	  <div class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-[94vh]" >
+		<iframe id="enggram-frame" src="eng-grammer.html" class="w-full h-full border-0"></iframe>
+	  </div>
+	</section>
 
     
-      			  <!-- Reasoning SECTION TAB -->
+	<!-- Reasoning SECTION TAB -->
 	<section id="tab-reason" class="tab-content hidden space-y-4">
 
 	  <!-- Dynamic Content Viewer (Direct File Pull) -->
