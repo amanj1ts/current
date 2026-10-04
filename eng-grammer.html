@@ -1,1577 +1,1067 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PSSSB / NITTTR English Grammar Master Compendium</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#fffbeb',
-              100: '#fef3c7',
-              500: '#f59e0b',
-              600: '#d97706',
-              700: '#b45309',
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Gurmukhi:wght@400;500;600;700&display=swap');
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-    .font-gurmukhi {
-      font-family: 'Noto Sans Gurmukhi', sans-serif;
-    }
-    .glass-nav {
-      backdrop-filter: blur(12px);
-    }
-    .custom-scroll::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    .custom-scroll::-webkit-scrollbar-thumb {
-      background: #94a3b8;
-      border-radius: 9999px;
-    }
-    .dark .custom-scroll::-webkit-scrollbar-thumb {
-      background: #475569;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSSSB English Grammar Revision Compendium - 150 Golden Rules & Fixed Prepositions</title>
+<style>
+  :root {
+    --primary: #0f2d59;
+    --primary-light: #e8f0fe;
+    --secondary: #1e3a8a;
+    --accent: #b91c1c;
+    --accent-light: #fee2e2;
+    --trap: #c2410c;
+    --trap-bg: #fff7ed;
+    --border: #cbd5e1;
+    --text: #0f172a;
+    --text-muted: #334155;
+    --bg: #f1f5f9;
+    --card-bg: #ffffff;
+    --punjabi: #4338ca;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+    line-height: 1.5;
+    font-size: 13px;
+    padding: 20px;
+  }
+  .container {
+    max-width: 1380px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  header {
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  h1 {
+    font-size: 26px;
+    color: var(--primary);
+    font-weight: 800;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+  .tag {
+    background: var(--accent);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .section {
+    margin-bottom: 35px;
+  }
+  h2 {
+    font-size: 17px;
+    color: #ffffff;
+    background: var(--primary);
+    padding: 10px 16px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 900px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  }
+  .rule-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  }
+  .rule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+  }
+  .rule-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--secondary);
+  }
+  .punjabi-note {
+    color: var(--punjabi);
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .formula {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 12.5px;
+    margin: 6px 0;
+    color: #1e293b;
+    font-weight: bold;
+  }
+  .example {
+    margin: 4px 0;
+    font-size: 12.5px;
+  }
+  .correct {
+    color: #166534;
+    font-weight: 600;
+  }
+  .incorrect {
+    color: #991b1b;
+    text-decoration: line-through;
+  }
+  .exam-trap {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap);
+    padding: 10px 14px;
+    margin: 10px 0;
+    font-size: 12.5px;
+  }
+  .exam-trap strong {
+    color: var(--trap);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 12px;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background-color: #f8fafc;
+    color: #1e293b;
+    font-weight: 700;
+  }
+  .badge-chip {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #334155;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    margin: 2px 3px 2px 0;
+  }
+  .vocab-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  @media print {
+    body { padding: 0; background: white; font-size: 11px; }
+    .container { box-shadow: none; padding: 0; max-width: 100%; }
+    .section { page-break-inside: avoid; margin-bottom: 16px; }
+    h2 { padding: 6px 10px; font-size: 13px; }
+  }
+</style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen custom-scroll transition-colors duration-200 selection:bg-amber-500 selection:text-slate-950">
+<body>
 
-  <!-- Sticky Navbar -->
-  <header class="sticky top-0 z-50 glass-nav bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 px-4 lg:px-8 py-3 transition-colors">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
-      
-      <!-- Brand & Stats -->
-      <div class="flex items-center gap-3 w-full md:w-auto justify-between">
-        <div class="flex items-center gap-2.5">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-black text-xl shadow-md shadow-amber-500/20">
-            60+
-          </div>
-          <div>
-            <h1 class="text-base font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
-              PSSSB Exam Booster (NITTTR Chandigarh Pattern) — 
-              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30">NITTTR Exam Ready</span>
-            </h1>
-            <p class="text-xs text-slate-500 dark:text-slate-400 font-gurmukhi">Top 60 Rules, Voice, Narration & Fixed Prepositions</p>
-          </div>
-        </div>
-
-        <!-- Light / Dark Toggle & Mobile Jump -->
-        <div class="flex items-center gap-2">
-          <button 
-            id="themeToggleBtn"
-            onclick="toggleTheme()" 
-            class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-amber-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all"
-            title="Toggle Light / Dark Mode"
-          >
-            <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
-            <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Live Search & Traps Filter -->
-      <div class="flex items-center gap-2.5 w-full md:w-auto">
-        <div class="relative flex-1 md:w-72">
-          <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-          <input 
-            type="text" 
-            id="ruleSearch" 
-            placeholder="Search rules, words (e.g. senior, lest, prep)..." 
-            class="w-full pl-9 pr-4 py-2 bg-slate-100 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-800 dark:text-slate-200 focus:outline-none focus:border-amber-500 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500"
-            oninput="filterRules()"
-          />
-        </div>
-        
-        <button 
-          id="trapsToggleBtn" 
-          onclick="toggleTrapsOnly()"
-          class="flex items-center gap-1.5 px-3 py-2 bg-rose-100 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 hover:bg-rose-200 dark:hover:bg-rose-900/60 border border-rose-300 dark:border-rose-800/60 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all shadow-sm"
-        >
-          <i data-lucide="flame" class="w-4 h-4 text-rose-500"></i>
-          <span>Traps Only</span>
-        </button>
-
-        <a 
-          href="#quiz-section" 
-          class="flex items-center gap-1.5 px-3 py-2 bg-amber-500 text-slate-950 hover:bg-amber-400 font-bold rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all shadow-sm shadow-amber-500/20"
-        >
-          <i data-lucide="check-circle-2" class="w-4 h-4"></i>
-          <span>Quiz</span>
-        </a>
-      </div>
-
+<div class="container">
+  <header>
+    <div>
+      <h1>PSSSB English Grammar Master Revision Compendium</h1>
+      <div class="subtitle">Complete Coverage of 150 Golden Rules, Voice, Narration, Verbals & Full 150 Fixed Preposition Repository</div>
     </div>
-
-    <!-- Category Filter Bar -->
-    <div class="max-w-7xl mx-auto mt-2.5 pt-2 border-t border-slate-200 dark:border-slate-800 flex items-center gap-2 overflow-x-auto custom-scroll pb-1">
-      <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 whitespace-nowrap flex items-center gap-1">
-        <i data-lucide="layers" class="w-3.5 h-3.5"></i> Section:
-      </span>
-      <button onclick="setCategory('all')" class="cat-pill active px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-slate-950 transition-all whitespace-nowrap">All 60 Rules</button>
-      <a href="#prep-section" class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800/50 hover:bg-emerald-200 dark:hover:bg-emerald-900 transition-all whitespace-nowrap flex items-center gap-1"><i data-lucide="anchor" class="w-3 h-3"></i> Fixed Prepositions</a>
-      <a href="#voice-section" class="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-100 dark:bg-cyan-950/70 text-cyan-800 dark:text-cyan-300 border border-cyan-300 dark:border-cyan-800/50 hover:bg-cyan-200 dark:hover:bg-cyan-900 transition-all whitespace-nowrap flex items-center gap-1"><i data-lucide="repeat" class="w-3 h-3"></i> Active / Passive Voice</a>
-      <a href="#narration-section" class="px-3 py-1 rounded-full text-xs font-semibold bg-violet-100 dark:bg-violet-950/70 text-violet-800 dark:text-violet-300 border border-violet-300 dark:border-violet-800/50 hover:bg-violet-200 dark:hover:bg-violet-900 transition-all whitespace-nowrap flex items-center gap-1"><i data-lucide="quote" class="w-3 h-3"></i> Direct / Indirect Narration</a>
-      <button onclick="setCategory('sva')" class="cat-pill px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:border-slate-400 transition-all whitespace-nowrap">Subject-Verb Agreement</button>
-      <button onclick="setCategory('adj')" class="cat-pill px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:border-slate-400 transition-all whitespace-nowrap">Adjectives & Degrees</button>
-      <button onclick="setCategory('conj')" class="cat-pill px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:border-slate-400 transition-all whitespace-nowrap">Conjunctions</button>
-      <button onclick="setCategory('gerund')" class="cat-pill px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:border-slate-400 transition-all whitespace-nowrap">Gerunds & Infinitives</button>
-    </div>
+    <span class="tag">Comprehensive PSSSB Resource</span>
   </header>
 
-  <!-- Main Container -->
-  <main class="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-12">
+  <!-- ================= MODULE 1: ACTIVE / PASSIVE VOICE ================= -->
+  <div class="section">
+    <h2>Module 1: Active & Passive Voice Transformation Matrix (Rules 127 – 131)</h2>
+    
+    <div class="exam-trap">
+      <strong>Voice Conversion Core Principles:</strong>
+      <ul>
+        <li>Tense does NOT change in Voice (do not confuse with Narration). Continuous keeps continuous via <b>being</b>, Perfect keeps perfect via <b>been</b>.</li>
+        <li>Future Continuous and all three Perfect Continuous tenses have no standard passive voice forms.</li>
+        <li><b>Interrogative Trap:</b> Auxiliary remains inverted before the imported subject. Do not change into assertive order.</li>
+      </ul>
+    </div>
 
-    <!-- Hero / Strategy Note -->
-    <section class="rounded-3xl bg-gradient-to-br from-slate-100 via-white to-slate-200 dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-800 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 relative overflow-hidden shadow-xl">
-      <div class="relative z-10 max-w-4xl space-y-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-400 text-xs font-bold tracking-wide uppercase">
-          <i data-lucide="zap" class="w-3.5 h-3.5"></i> High-Yield PSSSB English Revision Capsule
+    <table>
+      <thead>
+        <tr>
+          <th>Tense / Form</th>
+          <th>Active Voice Form</th>
+          <th>Passive Voice Form</th>
+          <th>Worked Examples</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Simple Present</b></td>
+          <td>Subject + $V_1 / V_1 + s/es$</td>
+          <td>Object + <b>is/am/are + $V_3$</b></td>
+          <td>
+            <i>Act:</i> I play a match.<br>
+            <i>Pass:</i> <span class="correct">A match is played by me.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Present Continuous</b></td>
+          <td>is / am / are + $V_1 + ing$</td>
+          <td>Object + <b>is/am/are + being + $V_3$</b></td>
+          <td>
+            <i>Act:</i> We are enjoying these classes.<br>
+            <i>Pass:</i> <span class="correct">These classes are being enjoyed by us.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Present Perfect</b></td>
+          <td>has / have + $V_3$</td>
+          <td>Object + <b>has/have + been + $V_3$</b></td>
+          <td>
+            <i>Act:</i> He has painted the doors.<br>
+            <i>Pass:</i> <span class="correct">The doors have been painted by him.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Simple Past</b></td>
+          <td>Subject + $V_2$</td>
+          <td>Object + <b>was/were + $V_3$</b></td>
+          <td>
+            <i>Act:</i> Deepika sang a song.<br>
+            <i>Pass:</i> <span class="correct">A song was sung by Deepika.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Past Continuous</b></td>
+          <td>was / were + $V_1 + ing$</td>
+          <td>Object + <b>was/were + being + $V_3$</b></td>
+          <td>
+            <i>Act:</i> She was writing a story.<br>
+            <i>Pass:</i> <span class="correct">A story was being written by her.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Past Perfect</b></td>
+          <td>had + $V_3$</td>
+          <td>Object + <b>had + been + $V_3$</b></td>
+          <td>
+            <i>Act:</i> They had finished the work.<br>
+            <i>Pass:</i> <span class="correct">The work had been been finished by them.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Simple Future / Modals</b></td>
+          <td>will / shall / can / may / must + $V_1$</td>
+          <td>Object + <b>will/can/must + be + $V_3$</b></td>
+          <td>
+            <i>Act:</i> We must respect our elders.<br>
+            <i>Pass:</i> <span class="correct">Elders must be respected.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Future Perfect / Modal Perfect</b></td>
+          <td>will have / may have + $V_3$</td>
+          <td>Object + <b>will have / may have + been + $V_3$</b></td>
+          <td>
+            <i>Act:</i> He will have bought a new car.<br>
+            <i>Pass:</i> <span class="correct">A new car will have been bought by him.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Negatives with Do / Did</b></td>
+          <td>do/does not + $V_1$<br>did not + $V_1$</td>
+          <td>is/am/are + not + $V_3$<br>was/were + not + $V_3$</td>
+          <td>
+            <i>Act:</i> My friend does not read a book.<br>
+            <i>Pass:</i> <span class="correct">A book is not read by my friend.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Infinitive Structure</b></td>
+          <td>Subject + is/am/are/was/were + <b>to + $V_1$</b></td>
+          <td>Object + is/am/are/was/were + <b>to be + $V_3$</b></td>
+          <td>
+            <i>Act:</i> He is to sing a song.<br>
+            <i>Pass:</i> <span class="correct">A song is to be sung by him.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Sensory Verbs (Rule 129)</b></td>
+          <td>Subject + smell/taste/feel + Adj</td>
+          <td><b>Subject + is/was + Adj + when + $V_3$</b></td>
+          <td>
+            <i>Act:</i> Honey tastes sweet.<br>
+            <i>Pass:</i> <span class="correct">Honey is sweet when tasted.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Imperative: Order / Request / Command (Rule 130)</b></td>
+          <td>Base $V_1 + \text{Object}$</td>
+          <td>
+            1. <b>Let + Obj + be + $V_3$</b><br>
+            2. <b>Obj + should be + $V_3$</b><br>
+            3. <b>You are ordered/requested to + $V_1$</b>
+          </td>
+          <td>
+            <i>Act:</i> Open the door.<br>
+            <i>Pass 1:</i> <span class="correct">Let the door be opened.</span><br>
+            <i>Pass 2:</i> <span class="correct">The door should be opened.</span><br>
+            <i>Pass 3:</i> <span class="correct">You are ordered to open the door.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Imperative: Negative Command</b></td>
+          <td>Don't + $V_1 + \text{Object}$</td>
+          <td><b>You are ordered not to + $V_1$</b></td>
+          <td>
+            <i>Act:</i> Don't open the door.<br>
+            <i>Pass:</i> <span class="correct">You are ordered not to open the door.</span><br>
+            <i>Trap:</i> <span class="incorrect">ordered to not to open...</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Preparatory Time Clauses (Rule 131)</b></td>
+          <td>It is time to + $V_1 + \text{Object}$</td>
+          <td><b>It is time for + Obj + to be + $V_3$</b></td>
+          <td>
+            <i>Act:</i> It is time to wear an alluring dress.<br>
+            <i>Pass:</i> <span class="correct">It is time for an alluring dress to be worn.</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Belief / Perception Clauses (Rule 131)</b></td>
+          <td>Subject + believe/expect + that-clause</td>
+          <td>
+            1. <b>It is believed that...</b><br>
+            2. <b>Subject + is believed to be...</b>
+          </td>
+          <td>
+            <i>Act:</i> I believe that India is a large country.<br>
+            <i>Pass 1:</i> <span class="correct">It is believed that India is a large country.</span><br>
+            <i>Pass 2:</i> <span class="correct">India is believed to be a large country.</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="rule-card">
+      <div class="rule-header">
+        <span class="rule-title">Voice Rule 128: Verbs with Fixed Prepositions Instead of 'By' in Passive</span>
+      </div>
+      <p style="margin-bottom: 6px;">Certain verbs never take 'by' when converted to passive voice. They take dedicated fixed prepositions:</p>
+      <div class="grid-3">
+        <div>• <b>Known to:</b> <i>Act:</i> I know you. &rarr; <i>Pass:</i> <span class="correct">You are known to me</span> (<span class="incorrect">known by me</span>).</div>
+        <div>• <b>Surprised at:</b> He was surprised at her conduct.</div>
+        <div>• <b>Annoyed at / with:</b> Annoyed at something / with someone.</div>
+        <div>• <b>Pleased with:</b> I was pleased with his manners.</div>
+        <div>• <b>Satisfied with:</b> The manager was satisfied with him.</div>
+        <div>• <b>Absorbed in:</b> He was absorbed in his studies.</div>
+        <div>• <b>Married to:</b> Rama was married to Sita.</div>
+        <div>• <b>Contained in:</b> This jug contains milk &rarr; Milk is contained in this jug.</div>
+        <div>• <b>Consisted in:</b> The solution consisted in regular practice.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODULE 2: DIRECT & INDIRECT NARRATION ================= -->
+  <div class="section">
+    <h2>Module 2: Direct & Indirect Speech Master Framework (Rules 147 – 149)</h2>
+
+    <div class="grid-2">
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Narration Tense Shift Mechanics (Rule 147)</span>
         </div>
-        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-          Comprehensive English Grammar Compendium <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">(NITTTR Chandigarh Exam Cell)</span>
-        </h2>
-        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-          NITTTR Chandigarh English test papers frequently focus on high-yield traps: Fixed Prepositions with Latin adjectives (<em>Senior to</em>, <em>Prefer to</em>)[cite: 20, 21], Preposition pairs with persons vs. things (<em>Angry with</em> a person vs <em>Angry at</em> an action)[cite: 47], Double Negatives with <em>Unless/Until</em>[cite: 27], Inverted Subject-Verb Agreement[cite: 1, 2, 6], Active/Passive without 'by'[cite: 38], and Superfluous Connectors in Narration[cite: 45, 46].
-        </p>
+        <p>Tense shifts ONLY occur when the <b>Reporting Verb is in the Past Tense</b> (e.g., <i>said</i>, <i>told</i>):</p>
+        <table>
+          <thead><tr><th>Direct Speech Tense</th><th>Indirect Speech Tense</th></tr></thead>
+          <tbody>
+            <tr><td>$V_1$ / Simple Present</td><td>$V_2$ / Simple Past</td></tr>
+            <tr><td>$V_2$ / Simple Past</td><td><b>had + $V_3$ (Past Perfect)</b></td></tr>
+            <tr><td>had + $V_3$ (Past Perfect)</td><td><b>had + $V_3$ (No Change)</b></td></tr>
+            <tr><td>is / am / are</td><td>was / were</td></tr>
+            <tr><td>was / were</td><td><b>had been</b></td></tr>
+            <tr><td>had been</td><td><b>had been (No Change)</b></td></tr>
+            <tr><td>has / have + $V_3$</td><td>had + $V_3$</td></tr>
+            <tr><td>do not / does not + $V_1$</td><td>did not + $V_1$</td></tr>
+            <tr><td>did not + $V_1$</td><td><b>had not + $V_3$</b></td></tr>
+          </tbody>
+        </table>
+      </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-          <div class="bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 p-3 rounded-2xl shadow-sm">
-            <span class="text-xs text-slate-500 dark:text-slate-400 block">Golden Rules</span>
-            <span class="text-xl sm:text-2xl font-black text-amber-600 dark:text-amber-400">Top 60</span>
+      <div>
+        <div class="rule-card">
+          <div class="rule-header">
+            <span class="rule-title">Person Shift: The S-O-N Formula</span>
           </div>
-          <div class="bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 p-3 rounded-2xl shadow-sm">
-            <span class="text-xs text-slate-500 dark:text-slate-400 block">Fixed Prepositions</span>
-            <span class="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400">50+ Tested</span>
+          <p>• <b>1st Person (I, My, Me, We, Our, Us)</b> &rarr; Changes according to the <b>Subject</b> of the Reporting Verb.</p>
+          <p>• <b>2nd Person (You, Your)</b> &rarr; Changes according to the <b>Object</b> of the Reporting Verb.</p>
+          <p>• <b>3rd Person (He, She, It, They, Their)</b> &rarr; <b>No Change (N)</b>.</p>
+          <div class="formula">Example: He said to me, "I like you." &rarr; He told me that he liked me.</div>
+          <div class="formula">Example: She said to me, "You did not sing well." &rarr; She told me that I had not sung well.</div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-header">
+            <span class="rule-title">Interrogative Sentence Rules (Rules 148 – 149)</span>
           </div>
-          <div class="bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 p-3 rounded-2xl shadow-sm">
-            <span class="text-xs text-slate-500 dark:text-slate-400 block">Voice Guide</span>
-            <span class="text-xl sm:text-2xl font-black text-cyan-600 dark:text-cyan-400">Active / Passive</span>
-          </div>
-          <div class="bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 p-3 rounded-2xl shadow-sm">
-            <span class="text-xs text-slate-500 dark:text-slate-400 block">Narration</span>
-            <span class="text-xl sm:text-2xl font-black text-violet-600 dark:text-violet-400">Direct / Indirect</span>
+          <p>• <b>Yes/No Questions:</b> Use connector <b>if</b> or <b>whether</b>.</p>
+          <p>• <b>Wh- Questions:</b> Use the Wh-word itself as the conjunction. <b>Never add that, if, or whether</b>.</p>
+          <p>• <b>Word Order Transformation:</b> In indirect speech, the question structure shifts back to <b>Subject + Verb</b>, and the question mark is removed.</p>
+          <div class="exam-trap" style="margin-top: 5px;">
+            <strong>NARRATION EXAM TRAPS:</strong>
+            <p>1. <code>Said to</code> &rarr; <b>Told</b>. Never say <span class="incorrect">told to me</span>.</p>
+            <p>2. <b>Asked + if/whether</b> is correct. Never say <span class="incorrect">asked that</span>.</p>
+            <p>3. <b>Told + that</b> is correct. Never say <span class="incorrect">told if</span>.</p>
+            <p>4. <i>Direct:</i> She said to him, "Why has she played?"<br>
+            <i>Indirect:</i> <span class="correct">She asked him why she had played.</span><br>
+            <i>Trap:</i> <span class="incorrect">She asked him if/whether why she had played.</span> (Double conjunction error)</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- SECTION: FIXED PREPOSITIONS (NEW DEDICATED SECTION) -->
-    <section id="prep-section" class="scroll-mt-28 space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-emerald-500/30 pb-4">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-            <i data-lucide="anchor" class="w-5 h-5"></i>
+  <!-- ================= MODULE 3: NON-FINITE VERBS ================= -->
+  <div class="section">
+    <h2>Module 3: Non-Finite Verbs: Infinitives, Gerunds & Participles (Rules 140 – 146)</h2>
+
+    <div class="grid-2">
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rule 140 & 141: Verbs & Adjectives followed by Infinitive with 'To'</span>
+        </div>
+        <p>The following verbs require an <b>Infinitive (to + $V_1$)</b>, never a gerund:</p>
+        <p><i>Want, Wish, Desire, Hope, Decide, Determined, Promise, Prefer, Forget, Need, Plan, Offer, Hesitate.</i></p>
+        <div class="example">• I planned <span class="correct">to go</span> there. (<span class="incorrect">I planned going there.</span>)</div>
+        <div class="example">• He wants <span class="correct">to open</span> a restaurant. (<span class="incorrect">He wants opening...</span>)</div>
+        <p style="margin-top: 8px;">Adjectives requiring <b>to + $V_1$</b>:</p>
+        <p><i>Able, Unable, Happy, Glad, Anxious, Pleased, Displeased, Lucky, Surprised.</i></p>
+        <div class="example">• I am pleased <span class="correct">to help</span> you. (<span class="incorrect">I am pleased helping you.</span>)</div>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rule 142: Bare Infinitive After Idiomatic Expressions</span>
+        </div>
+        <p>The following modal idioms take a <b>Bare Infinitive (without 'to')</b>:</p>
+        <div class="formula">Had better, Had sooner, Had rather, Would rather, Would sooner + V1 (bare)</div>
+        <div class="example">• You had better <span class="correct">go</span> now. (<span class="incorrect">You had better to go now.</span>)</div>
+        <div class="example">• I would rather <span class="correct">die</span> than beg. (<span class="incorrect">would rather to die</span>)</div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 10px;">
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 143 & 144: Verbs & Prepositions Followed by Gerund ($V_1 + ing$)</span>
+        </div>
+        <p>Verbs taking <b>Gerund ($V_1 + ing$)</b> directly:</p>
+        <p><i>Avoid, Dislike, Enjoy, Keep, Mind, Postpone, Forgive, Deny, Excuse.</i></p>
+        <div class="example">• I dislike <span class="correct">going</span> there. (<span class="incorrect">I dislike to go there.</span>)</div>
+        <div class="example">• She enjoyed <span class="correct">helping</span> him. (<span class="incorrect">She enjoyed to help him.</span>)</div>
+        <p style="margin-top: 8px;"><b>Rule 144 (Golden Rule):</b> Any standard preposition must be followed by a Gerund:</p>
+        <div class="formula">at, in, on, by, of, from, for, with, without, before, after + V1 + ing</div>
+        <div class="example">• I am fond of <span class="correct">teaching</span>. (<span class="incorrect">fond of teach / to teach</span>)</div>
+        <div class="example">• He will come after <span class="correct">finishing</span> his work. (<span class="incorrect">after finish</span>)</div>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 145 & 146: Idiomatic Phrases Ending in 'To' + Gerund</span>
+        </div>
+        <div class="exam-trap" style="margin: 0 0 8px 0;">
+          <strong>THE DEADLIEST PSSSB EXAM TRAP:</strong> Students see 'to' and pick a bare verb. The following fixed phrases contain a prepositional 'to' and MUST be followed by <b>$V_1 + ing$</b>:
+        </div>
+        <div class="grid-2">
+          <div>
+            • Accustomed to + $V_1+ing$<br>
+            • Addicted to + $V_1+ing$<br>
+            • Prone to + $V_1+ing$<br>
+            • Confess to + $V_1+ing$
           </div>
           <div>
-            <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-              High-Frequency Fixed Prepositions
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 font-bold">PDF Pages 47–49</span>
-            </h2>
-            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Direct Punjabi equivalents and high-frequency PSSSB/NITTTR pairs</p>
+            • In addition to + $V_1+ing$<br>
+            • Look forward to + $V_1+ing$<br>
+            • With a view to + $V_1+ing$<br>
+            • Habituated to / Used to + $V_1+ing$
           </div>
         </div>
+        <div class="example" style="margin-top: 6px;">• I look forward to <span class="correct">meeting</span> you. (<span class="incorrect">look forward to meet you</span>)</div>
+        <div class="example">• He is addicted to <span class="correct">gambling</span>. (<span class="incorrect">addicted to gamble</span>)</div>
+        <div class="example">• I am used to <span class="correct">working</span> at night. (<span class="incorrect">used to work</span>)</div>
+        <p style="margin-top: 6px;"><b>Rule 146 Idioms:</b> <i>It is no use, Can't help, Can't bear, Can't stand, Busy, Worth</i> take Gerunds:</p>
+        <div class="example">• It is no use <span class="correct">talking</span> to him. | I am busy <span class="correct">writing</span> this book.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODULE 4: SUBJECT-VERB AGREEMENT & PRONOUNS ================= -->
+  <div class="section">
+    <h2>Module 4: Subject-Verb Agreement, Pronouns & Articles (Rules 1 – 90)</h2>
+
+    <div class="grid-3">
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 1 – 3: Indefinite Pronouns</span>
+        </div>
+        <p>• <b>There:</b> Introductory subject. Takes verb according to following real subject:</p>
+        <div class="example"><i>There is a chair. | There are chairs.</i></div>
+        <p>• <b>Person Pronouns:</b> <i>Everyone, Someone, Anyone, No one, Everybody, Somebody, Anybody, Nobody</i> take <b>singular verbs</b> and <b>singular pronouns (he/his/him)</b>:</p>
+        <div class="example">• Everyone wants to crack the exam.</div>
+        <div class="example">• Everyone should love <span class="correct">his</span> parents (<span class="incorrect">their</span>).</div>
+        <p>• <b>Thing Pronouns:</b> <i>Everything, Something, Anything, Nothing</i> take singular verbs and singular pronoun <b>it/its/itself</b>:</p>
+        <div class="example">• Everything has <span class="correct">its</span> own beauty (<span class="incorrect">his</span>).</div>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 4 – 10: Each, Every, Either, Neither</span>
+        </div>
+        <p>• <b>Rule 4:</b> Nothing but / Everything but + (Singular/Plural Noun) + <b>Singular Verb</b>:</p>
+        <div class="example">• Nothing but dresses <span class="correct">was</span> bought. (<span class="incorrect">were</span>)</div>
+        <p>• <b>Rule 6:</b> Each of / Either of / Neither of + Plural Noun/Pronoun + <b>Singular Verb</b>:</p>
+        <div class="example">• Neither of them <span class="correct">was</span> a culprit.</div>
+        <p>• <b>Rule 8:</b> Each + Each = <b>Singular Verb</b>:</p>
+        <div class="example">• Each boy and each girl <span class="correct">is</span> present.</div>
+        <p>• <b>Rule 9 Trap:</b> Plural Noun/Pronoun + each = <b>Plural Verb</b>:</p>
+        <div class="example">• We each <span class="correct">have</span> a dress. (<span class="incorrect">We each has</span>)</div>
+        <div class="example">• The girls each <span class="correct">have</span> done this work.</div>
+        <p>• <b>Rule 10:</b> 'Every' is only an adjective, never a pronoun. <span class="incorrect">Every of men</span> is incorrect; use <i>Each of the men</i>.</p>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 11 – 15: Dual vs Plural Usage</span>
+        </div>
+        <p>• <b>Each vs Every:</b> 'Each' is for 2 or 2+; 'Every' is strictly for more than 2 (2+):</p>
+        <div class="example">• I can write with <span class="correct">each hand</span> (<span class="incorrect">every hand</span> - humans have only 2 hands).</div>
+        <p>• <b>Rule 13:</b> <i>Both, Several, Various, Both of, Several of</i> + Plural Noun + <b>Plural Verb</b>:</p>
+        <div class="example">• Both boys are arrogant. | Several of them were amicable.</div>
+        <p>• <b>Rule 14 & 15 Trap:</b> <b>'Both' and 'Not' can NEVER be used together</b>. 'Both' is positive:</p>
+        <div class="example"><span class="incorrect">Both Rahul and Sahil are not coming.</span> (Wrong)</div>
+        <div class="example"><span class="correct">Neither Rahul nor Sahil is coming.</span> (Correct)</div>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top: 10px;">
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 16 – 24: Few vs Little Nuances</span>
+        </div>
+        <p><b>Few (Countable / Plural Verb):</b></p>
+        <p>• <b>Few:</b> Almost none (Negative sense): <i>I have few books, so I will buy new ones.</i></p>
+        <p>• <b>A few:</b> Some / small positive quantity: <i>I have a few books, so I don't need to buy.</i></p>
+        <p>• <b>The few:</b> The whole small quantity available: <i>I have read the few books that I had.</i></p>
+        <p style="margin-top: 6px;"><b>Little (Uncountable / Singular Verb):</b></p>
+        <p>• <b>Little:</b> Almost none (Negative): <i>I have little money, so I cannot buy.</i></p>
+        <p>• <b>A little:</b> Some (Positive): <i>I have a little money, I can buy it.</i></p>
+        <p>• <b>The little:</b> The whole small amount: <i>I spent the little money I had.</i></p>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 25 – 32: One of, Many, and Number</span>
+        </div>
+        <p>• <b>Rule 24:</b> One of + Plural Noun + <b>Singular Verb</b>:</p>
+        <div class="example">• One of my attires <span class="correct">is</span> dear (costly).</div>
+        <p>• <b>Rule 25 (Crucial Trap):</b> The only one of + Plural Noun + who/that + <b>Singular Verb</b>:</p>
+        <div class="example">• Radha is the only one of the girls who <span class="correct">has</span> aided me.</div>
+        <p>• <i>Contrast with Relative Pronoun:</i> One of the boys who <span class="correct">are</span> playing (plural).</p>
+        <p>• <b>Rule 27:</b> Many a / Many an + Singular Noun + <b>Singular Verb</b>:</p>
+        <div class="example">• Many a man <span class="correct">has tried</span>, but few have succeeded.</div>
+        <p>• <b>Rules 29 & 30:</b></p>
+        <div class="example">• <b>A number of</b> + Plural Noun &rarr; <span class="correct">Plural Verb</span> (A number of workers are present).</div>
+        <div class="example">• <b>The number of</b> + Plural Noun &rarr; <span class="correct">Singular Verb</span> (The number of workers is present).</div>
+        <p>• <b>Rules 31 & 32:</b> <i>A variety of...</i> takes <b>plural verb</b>; <i>The variety of...</i> takes <b>singular verb</b>.</p>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 33 – 35: Subject Alignment Formulas</span>
+        </div>
+        <p>• <b>Rule 33 (1st Subject Governs):</b> Joined by <i>With, Together with, Along with, In addition to, As well as, Accompanied by, Like, Unlike, Including, Excluding, But, Besides, Except, Rather than, Headed by, Led by</i> &rarr; <b>Verb agrees with the FIRST subject</b>:</p>
+        <div class="example">• The manager along with his staff members <span class="correct">is</span> present.</div>
+        <div class="example">• She, and not her friends, <span class="correct">is</span> exquisite.</div>
+        <p style="margin-top: 6px;">• <b>Rule 34 (2nd / Nearest Subject Governs):</b> Joined by <i>Neither... nor, Either... or, Not only... but also, Or</i> &rarr; <b>Verb agrees with 2nd subject</b>:</p>
+        <div class="example">• Neither he nor I <span class="correct">am</span> accusable.</div>
+        <div class="example">• Not only you but also he <span class="correct">wants</span> to join.</div>
+        <p style="margin-top: 6px;">• <b>Rule 35:</b> Relative pronouns (<i>who, which, that</i>) take verbs agreeing with their antecedent:</p>
+        <div class="example">• It is I who <span class="correct">am</span> singing this song. (<span class="incorrect">who is</span>)</div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 10px;">
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 36: Nouns Always Singular vs Nouns Always Plural</span>
+        </div>
+        <p><b>Always Singular (Uncountable - Cannot be made plural):</b></p>
+        <p><i>Advice, stationery, crockery, information, machinery, furniture, fuel, repair, news, poetry, business, bedding, rice, economics, physics, mathematics, cutlery, innings, jewellery, gallows.</i></p>
+        <div class="example">• Her advice <span class="correct">is</span> commendable. (<span class="incorrect">advices are</span>)</div>
+        <div class="example">• Second-hand furniture <span class="correct">was</span> sold here. (<span class="incorrect">furnitures were</span>)</div>
         
-        <!-- Preposition Search -->
-        <div class="relative w-full sm:w-64">
-          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-          <input 
-            type="text" 
-            id="prepSearch" 
-            placeholder="Search preposition (e.g. accused, angry)..." 
-            class="w-full pl-8 pr-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:border-emerald-500"
-            oninput="filterPrepositions()"
-          />
-        </div>
-      </div>
-
-      <!-- Prepositions Examiner Dual Traps -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/60 rounded-2xl p-4 space-y-2 shadow-sm">
-          <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold text-xs uppercase tracking-wider">
-            <i data-lucide="user-check" class="w-4 h-4"></i> Person vs Thing (Angry / Annoyed)
-          </div>
-          <p class="text-xs text-slate-600 dark:text-slate-300">
-            • <strong>Angry with</strong> a person (He was angry <u>with</u> me)[cite: 47].<br>
-            • <strong>Angry at</strong> a thing/conduct (He was angry <u>at</u> my behavior)[cite: 47].<br>
-            • <strong>Annoyed with</strong> a person vs <strong>Annoyed at</strong> an action[cite: 47].
-          </p>
-        </div>
-        <div class="bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-900/60 rounded-2xl p-4 space-y-2 shadow-sm">
-          <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-bold text-xs uppercase tracking-wider">
-            <i data-lucide="git-commit" class="w-4 h-4"></i> Accountable / Responsible / Obliged
-          </div>
-          <p class="text-xs text-slate-600 dark:text-slate-300">
-            • <strong>Accountable to</strong> a person / authority[cite: 47].<br>
-            • <strong>Accountable for</strong> actions/duties[cite: 47].<br>
-            • <strong>Obliged to</strong> a person; <strong>Obliged for</strong> a kindness[cite: 49].
-          </p>
-        </div>
-        <div class="bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/60 rounded-2xl p-4 space-y-2 shadow-sm">
-          <div class="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-bold text-xs uppercase tracking-wider">
-            <i data-lucide="alert-octagon" class="w-4 h-4"></i> Charged with vs Accused of
-          </div>
-          <p class="text-xs text-slate-600 dark:text-slate-300">
-            • <strong>Accused of</strong> a crime (Never <em>accused with</em>)[cite: 47].<br>
-            • <strong>Charged with</strong> a crime (He was charged <u>with</u> murder)[cite: 48].<br>
-            • <strong>Acquitted of</strong> all charges (Exonerated from)[cite: 47, 49].
-          </p>
-        </div>
-      </div>
-
-      <!-- Prepositions Cards Grid -->
-      <div id="prepContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5">
-        <!-- Rendered via JS -->
-      </div>
-    </section>
-
-    <!-- SECTION: ACTIVE & PASSIVE VOICE MASTERCLASS -->
-    <section id="voice-section" class="scroll-mt-28 space-y-6">
-      <div class="flex items-center justify-between border-b border-cyan-500/30 pb-4">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400">
-            <i data-lucide="repeat" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-              Active & Passive Voice Study Guide
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-800 dark:text-cyan-300 font-semibold">Rules 127–131</span>
-            </h2>
-            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Core transformations, sensor verbs, imperative frames & fixed preposition traps</p>
-          </div>
-        </div>
-        <span class="text-xs font-mono text-cyan-600 dark:text-cyan-400 hidden sm:inline-block">Always $V_3$ in Passive</span>
-      </div>
-
-      <!-- Tense Transformation Table -->
-      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-md">
-        <div class="bg-slate-100 dark:bg-slate-800/80 px-4 py-3 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
-          <span class="text-xs sm:text-sm font-bold text-cyan-700 dark:text-cyan-300 uppercase tracking-wider flex items-center gap-2">
-            <i data-lucide="table" class="w-4 h-4"></i> Voice Tense Conversion Master Table
-          </span>
-          <span class="text-[11px] text-slate-500 dark:text-slate-400">Note: Perfect Continuous & Future Continuous have NO standard passive</span>
-        </div>
-        <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-            <thead class="bg-slate-50 dark:bg-slate-950 text-slate-500 dark:text-slate-400 uppercase text-[11px] font-semibold border-b border-slate-200 dark:border-slate-800">
-              <tr>
-                <th class="p-3 sm:p-4">Tense Structure</th>
-                <th class="p-3 sm:p-4">Active Voice Form</th>
-                <th class="p-3 sm:p-4 text-cyan-600 dark:text-cyan-400">Passive Voice Formula</th>
-                <th class="p-3 sm:p-4">Example Active</th>
-                <th class="p-3 sm:p-4 text-emerald-600 dark:text-emerald-400">Example Passive</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-200 dark:divide-slate-800/60 font-mono text-xs">
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                <td class="p-3 sm:p-4 font-sans font-semibold text-slate-900 dark:text-white">Simple Present</td>
-                <td class="p-3 sm:p-4 text-slate-500 dark:text-slate-400">V1 / V1 + s/es[cite: 37]</td>
-                <td class="p-3 sm:p-4 text-cyan-700 dark:text-cyan-300">is / am / are + V3[cite: 37]</td>
-                <td class="p-3 sm:p-4 font-sans">I play a match.[cite: 38]</td>
-                <td class="p-3 sm:p-4 font-sans text-emerald-700 dark:text-emerald-300">A match is played by me.[cite: 38]</td>
-              </tr>
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                <td class="p-3 sm:p-4 font-sans font-semibold text-slate-900 dark:text-white">Present Continuous</td>
-                <td class="p-3 sm:p-4 text-slate-500 dark:text-slate-400">is/am/are + V1 + ing[cite: 37]</td>
-                <td class="p-3 sm:p-4 text-cyan-700 dark:text-cyan-300">is/am/are + being + V3[cite: 37]</td>
-                <td class="p-3 sm:p-4 font-sans">We are enjoying classes.[cite: 38]</td>
-                <td class="p-3 sm:p-4 font-sans text-emerald-700 dark:text-emerald-300">Classes are being enjoyed by us.[cite: 38]</td>
-              </tr>
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                <td class="p-3 sm:p-4 font-sans font-semibold text-slate-900 dark:text-white">Present Perfect</td>
-                <td class="p-3 sm:p-4 text-slate-500 dark:text-slate-400">has / have + V3[cite: 37]</td>
-                <td class="p-3 sm:p-4 text-cyan-700 dark:text-cyan-300">has / have + been + V3[cite: 37]</td>
-                <td class="p-3 sm:p-4 font-sans">He has bought a car.</td>
-                <td class="p-3 sm:p-4 font-sans text-emerald-700 dark:text-emerald-300">A car has been bought by him.</td>
-              </tr>
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                <td class="p-3 sm:p-4 font-sans font-semibold text-slate-900 dark:text-white">Simple Past</td>
-                <td class="p-3 sm:p-4 text-slate-500 dark:text-slate-400">V2 (did + V1)[cite: 34, 37]</td>
-                <td class="p-3 sm:p-4 text-cyan-700 dark:text-cyan-300">was / were + V3[cite: 37]</td>
-                <td class="p-3 sm:p-4 font-sans">Did your parents make this plan?[cite: 38]</td>
-                <td class="p-3 sm:p-4 font-sans text-emerald-700 dark:text-emerald-300">Was this plan made by your parents?[cite: 38]</td>
-              </tr>
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                <td class="p-3 sm:p-4 font-sans font-semibold text-slate-900 dark:text-white">Past Continuous</td>
-                <td class="p-3 sm:p-4 text-slate-500 dark:text-slate-400">was / were + V1 + ing[cite: 34, 37]</td>
-                <td class="p-3 sm:p-4 text-cyan-700 dark:text-cyan-300">was/were + being + V3[cite: 37]</td>
-                <td class="p-3 sm:p-4 font-sans">She was writing a story.[cite: 34]</td>
-                <td class="p-3 sm:p-4 font-sans text-emerald-700 dark:text-emerald-300">A story was being written by her.</td>
-              </tr>
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                <td class="p-3 sm:p-4 font-sans font-semibold text-slate-900 dark:text-white">Past Perfect</td>
-                <td class="p-3 sm:p-4 text-slate-500 dark:text-slate-400">had + V3[cite: 34, 37]</td>
-                <td class="p-3 sm:p-4 text-cyan-700 dark:text-cyan-300">had + been + V3[cite: 37]</td>
-                <td class="p-3 sm:p-4 font-sans">They had done the work.[cite: 34]</td>
-                <td class="p-3 sm:p-4 font-sans text-emerald-700 dark:text-emerald-300">The work had been done by them.</td>
-              </tr>
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                <td class="p-3 sm:p-4 font-sans font-semibold text-slate-900 dark:text-white">Simple Future</td>
-                <td class="p-3 sm:p-4 text-slate-500 dark:text-slate-400">will / shall + V1[cite: 37]</td>
-                <td class="p-3 sm:p-4 text-cyan-700 dark:text-cyan-300">will / shall + be + V3[cite: 37]</td>
-                <td class="p-3 sm:p-4 font-sans">When will you fly a kite?[cite: 38]</td>
-                <td class="p-3 sm:p-4 font-sans text-emerald-700 dark:text-emerald-300">When will a kite be flown by you?[cite: 38]</td>
-              </tr>
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                <td class="p-3 sm:p-4 font-sans font-semibold text-slate-900 dark:text-white">Modals</td>
-                <td class="p-3 sm:p-4 text-slate-500 dark:text-slate-400">can / could / must + V1[cite: 37]</td>
-                <td class="p-3 sm:p-4 text-cyan-700 dark:text-cyan-300">modal + be + V3[cite: 37]</td>
-                <td class="p-3 sm:p-4 font-sans">We must respect elders.[cite: 39]</td>
-                <td class="p-3 sm:p-4 font-sans text-emerald-700 dark:text-emerald-300">Elders must be respected.[cite: 39]</td>
-              </tr>
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                <td class="p-3 sm:p-4 font-sans font-semibold text-slate-900 dark:text-white">Infinitive Forms</td>
-                <td class="p-3 sm:p-4 text-slate-500 dark:text-slate-400">is/am/are/was + to + V1[cite: 38]</td>
-                <td class="p-3 sm:p-4 text-cyan-700 dark:text-cyan-300">to + be + V3[cite: 38]</td>
-                <td class="p-3 sm:p-4 font-sans">He is to sing a song.[cite: 38]</td>
-                <td class="p-3 sm:p-4 font-sans text-emerald-700 dark:text-emerald-300">A song is to be sung by him.[cite: 38]</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: DIRECT & INDIRECT NARRATION MASTERCLASS -->
-    <section id="narration-section" class="scroll-mt-28 space-y-6">
-      <div class="flex items-center justify-between border-b border-violet-500/30 pb-4">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-600 dark:text-violet-400">
-            <i data-lucide="quote" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-              Direct & Indirect Narration Masterclass
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-violet-500/20 text-violet-800 dark:text-violet-300 font-semibold">Rules 147–149</span>
-            </h2>
-            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Tense backshift, SON formula, connector traps & question inversion eliminations</p>
-          </div>
-        </div>
-        <span class="text-xs font-mono text-violet-600 dark:text-violet-400 hidden sm:inline-block">Said to ➔ Told (Never Told to)[cite: 45]</span>
-      </div>
-
-      <!-- Narration Grid: Tenses + SON Rule -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <p style="margin-top: 8px;"><b>Always Plural (Take Plural Verb - Cannot be made singular):</b></p>
+        <p><i>Cattle, gentry, vermin, peasantry, artillery, people, clergy, company, police, trousers, scissors, spectacles, stockings, shorts, measles, goods, alms, premises, thanks, tidings, annals.</i></p>
+        <div class="example">• The cattle <span class="correct">are</span> grazing. (<span class="incorrect">cattle is / cattles are</span>)</div>
+        <div class="example">• The police <span class="correct">are</span> looking for the convict.</div>
+        <div class="example">• <i>Exception:</i> The police of Punjab <span class="correct">is</span> looking for the thief (specific unit).</div>
         
-        <!-- Left: Tense Shift Chart (7 Cols) -->
-        <div class="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-md">
-          <div class="bg-slate-100 dark:bg-slate-800/80 px-4 py-3 border-b border-slate-200 dark:border-slate-700">
-            <span class="text-xs sm:text-sm font-bold text-violet-700 dark:text-violet-300 uppercase tracking-wider flex items-center gap-2">
-              <i data-lucide="history" class="w-4 h-4"></i> Narration Tense Backshift (When Reporting Verb = Past)[cite: 44, 45]
-            </span>
-          </div>
-          <div class="p-4 overflow-x-auto">
-            <table class="w-full text-left text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-              <thead class="text-slate-400 border-b border-slate-200 dark:border-slate-800 text-[11px] uppercase">
-                <tr>
-                  <th class="pb-2">Direct Speech Tense</th>
-                  <th class="pb-2 text-violet-600 dark:text-violet-400">Indirect Speech Tense</th>
-                  <th class="pb-2">Key Trap Alert</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-200 dark:divide-slate-800/60 font-mono text-xs">
-                <tr>
-                  <td class="py-2.5 font-sans font-semibold text-slate-900 dark:text-white">V1 / do / does (Simple Pres.)[cite: 44]</td>
-                  <td class="py-2.5 text-violet-700 dark:text-violet-300">V2 / did (Simple Past)[cite: 44]</td>
-                  <td class="py-2.5 font-sans text-slate-500">No shift if Universal Truth!</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 font-sans font-semibold text-slate-900 dark:text-white">is / am / are (Pres. Cont.)[cite: 44]</td>
-                  <td class="py-2.5 text-violet-700 dark:text-violet-300">was / were (Past Cont.)[cite: 44]</td>
-                  <td class="py-2.5 font-sans text-slate-500">Check agreement with new subject</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 font-sans font-semibold text-slate-900 dark:text-white">has / have + V3 (Pres. Perf.)[cite: 45]</td>
-                  <td class="py-2.5 text-violet-700 dark:text-violet-300">had + V3 (Past Perf.)[cite: 45]</td>
-                  <td class="py-2.5 font-sans text-slate-500">Both has/have collapse into had[cite: 45]</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 font-sans font-semibold text-rose-600 dark:text-rose-300">V2 / did not (Simple Past)[cite: 44, 45]</td>
-                  <td class="py-2.5 text-rose-600 dark:text-rose-300 font-bold">had + V3 / had not + V3[cite: 44, 45]</td>
-                  <td class="py-2.5 font-sans text-rose-500">⚡ Did becomes Had + V3[cite: 44, 45]</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 font-sans font-semibold text-slate-900 dark:text-white">was / were (Past Cont.)[cite: 44]</td>
-                  <td class="py-2.5 text-violet-700 dark:text-violet-300">had been + V1 + ing[cite: 44]</td>
-                  <td class="py-2.5 font-sans text-slate-500">Shifts directly to Past Perf. Cont.[cite: 44]</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 font-sans font-semibold text-slate-900 dark:text-white">had + V3 (Past Perf.)[cite: 44]</td>
-                  <td class="py-2.5 text-emerald-600 dark:text-emerald-400">had + V3 (NO CHANGE)[cite: 44]</td>
-                  <td class="py-2.5 font-sans text-slate-500">Past perfect stays unchanged[cite: 44]</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Right: The S-O-N Formula & Reporting Verbs (5 Cols) -->
-        <div class="lg:col-span-5 space-y-4">
-          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3 shadow-md">
-            <h3 class="text-sm font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider flex items-center gap-2">
-              <i data-lucide="users" class="w-4 h-4"></i> The Famous S - O - N Formula[cite: 45]
-            </h3>
-            <div class="grid grid-cols-3 gap-2 text-center text-xs">
-              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
-                <span class="block text-xl font-black text-amber-600 dark:text-amber-400">1st (S)</span>
-                <span class="text-[11px] text-slate-600 dark:text-slate-300">I, We[cite: 45]</span>
-                <span class="block text-[10px] text-amber-700 dark:text-amber-300 font-semibold mt-1">By Subject[cite: 45]</span>
-              </div>
-              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
-                <span class="block text-xl font-black text-cyan-600 dark:text-cyan-400">2nd (O)</span>
-                <span class="text-[11px] text-slate-600 dark:text-slate-300">You[cite: 45]</span>
-                <span class="block text-[10px] text-cyan-700 dark:text-cyan-300 font-semibold mt-1">By Object[cite: 45]</span>
-              </div>
-              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
-                <span class="block text-xl font-black text-emerald-600 dark:text-emerald-400">3rd (N)</span>
-                <span class="text-[11px] text-slate-600 dark:text-slate-300">He, She[cite: 45]</span>
-                <span class="block text-[10px] text-emerald-700 dark:text-emerald-300 font-semibold mt-1">No Change[cite: 45]</span>
-              </div>
-            </div>
-            <p class="text-xs text-slate-500 dark:text-slate-400 font-gurmukhi pt-1">
-              ਨਿਯਮ: She said to me, "You did not sing well." ➔ She told me that <strong>I had not sung</strong> well[cite: 45].
-            </p>
-          </div>
-
-          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-2 text-xs shadow-md">
-            <h3 class="text-sm font-bold text-violet-600 dark:text-violet-400 uppercase tracking-wider flex items-center gap-2">
-              <i data-lucide="check-check" class="w-4 h-4"></i> Reporting Verbs Golden Law[cite: 45]
-            </h3>
-            <div class="space-y-1.5 pt-1">
-              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 font-mono">
-                <span class="text-emerald-700 dark:text-emerald-300 font-bold">Said ➔ Said[cite: 45]</span>
-                <span class="text-slate-500 font-sans text-[11px]">No object needed</span>
-              </div>
-              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 font-mono">
-                <span class="text-emerald-700 dark:text-emerald-300 font-bold">Said to + Object ➔ Told[cite: 45]</span>
-                <span class="text-rose-600 dark:text-rose-400 font-sans text-[11px] font-bold">Never "Told to"![cite: 45]</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION: THE TOP 60 RULES DIRECTORY -->
-    <section id="rules-section" class="scroll-mt-28 space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
-        <div>
-          <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-            Top 60 High-Frequency Grammar Rules
-            <span class="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-800 dark:text-amber-300 font-bold" id="rulesCountBadge">60 Loaded</span>
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Classified by topic with Gurmukhi notes and NITTTR Red Flag alerts</p>
+        <p style="margin-top: 8px;"><b>Irregular Foreign Plural Forms:</b></p>
+        <div class="grid-2">
+          <div>Axis &rarr; Axes | Bacterium &rarr; Bacteria<br>Phenomenon &rarr; Phenomena | Criterion &rarr; Criteria</div>
+          <div>Datum &rarr; Data | Index &rarr; Indices<br>Medium &rarr; Media | Oasis &rarr; Oases | Radius &rarr; Radii</div>
         </div>
       </div>
 
-      <!-- Rules Cards Grid -->
-      <div id="rulesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <!-- Rendered dynamically via JavaScript -->
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 37 – 44: Special Noun Structures & Collective Nouns</span>
+        </div>
+        <p>• <b>Rule 37:</b> <b>The + Adjective</b> works as a Plural Subject for the whole class, taking a <b>Plural Verb</b>:</p>
+        <div class="example">• The poor <span class="correct">are</span> diligent. (<span class="incorrect">The poor is</span> / <span class="incorrect">A poor is</span>)</div>
+        <div class="example">• The rich <span class="correct">are</span> arrogant. | He is a rich boy (correct).</div>
+        <p>• <b>Rule 38:</b> <b>Noun + Preposition + Same Noun</b> takes <b>Singular Verb</b> and singular nouns:</p>
+        <div class="example">• Book after book <span class="correct">was</span> read. (<span class="incorrect">Books after books were read</span>)</div>
+        <p>• <b>Rules 39 – 42:</b> Units (<i>Hundred, Thousand, Dozen, Score, Million</i>):</p>
+        <div class="example">• <b>Definite Numeral:</b> She bought two dozen dresses. (<span class="incorrect">two dozens dresses</span>)</div>
+        <div class="example">• <b>Indefinite / of:</b> Two dozens of these dresses are costly.</div>
+        <div class="example">• <b>Ascending Hierarchy:</b> Hundreds of thousands of students took the exam.</div>
+        <p>• <b>Rule 43: Collective Nouns:</b> <i>Jury, Committee, Council, Choir, Union</i>:</p>
+        <div class="example">• Unanimous: The Jury <span class="correct">has</span> given its decision.</div>
+        <div class="example">• Divided: The Jury <span class="correct">were</span> divided in their opinion.</div>
+        <p>• <b>Rule 44:</b> Common gender infants take neuter pronouns: <i>The baby has broken <span class="correct">its</span> toy</i> (<span class="incorrect">his/her</span>).</p>
       </div>
-    </section>
+    </div>
 
-    <!-- SECTION: INTERACTIVE SPOT-THE-ERROR MINI QUIZ -->
-    <section id="quiz-section" class="scroll-mt-28 space-y-6 pt-6">
-      <div class="flex items-center justify-between border-b border-amber-500/30 pb-4">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-600 dark:text-amber-400">
-            <i data-lucide="check-circle" class="w-5 h-5"></i>
+    <div class="grid-3" style="margin-top: 10px;">
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 45 – 50: Pronoun Order & Cases</span>
+        </div>
+        <p>• <b>Rules 45 & 46:</b> Possessive Adjective comes before noun (<i>my dress</i>). Possessive Pronoun replaces noun (<i>Hers is a new phone</i>).</p>
+        <p>• <b>Rule 47: Case Comparison:</b></p>
+        <div class="example">• She is better than <span class="correct">I</span> (<span class="incorrect">than me</span>) [Subject vs Subject].</div>
+        <div class="example">• He helped me more than <span class="correct">him</span> [Object vs Object].</div>
+        <p>• <b>Rule 48: 2-3-1 Order (Good / Normal Sense):</b> 2nd &rarr; 3rd &rarr; 1st Person:</p>
+        <div class="example">• <span class="correct">You, she and I</span> are friends.</div>
+        <p>• <b>Rule 49: 1-2-3 Order (Guilt, Sin, Error, Fault Sense):</b> 1st &rarr; 2nd &rarr; 3rd Person:</p>
+        <div class="example">• <span class="correct">I, you and she</span> are culprits.</div>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 51 – 57: Punctuation & Pronoun Traps</span>
+        </div>
+        <p>• <b>Rule 51 & 52:</b> <b>It's</b> = It is / It has. <b>Its</b> = Possessive adjective (<i>The baby broke its toy</i>).</p>
+        <p>• <b>Rule 53: Who vs Whom:</b> <i>Who</i> is subjective (Who helped you?). <i>Whom</i> is objective (Whom did you tell?).</p>
+        <p>• <b>Rules 54 & 55: Article Subject Agreement:</b></p>
+        <div class="example">• <b>Two Articles:</b> The principal and the manager <span class="correct">have done their</span> duties (2 people).</div>
+        <div class="example">• <b>One Article:</b> The principal and manager <span class="correct">has done his</span> duty (1 person).</div>
+        <p>• <b>Rules 56 & 57:</b> <b>Each other</b> is for two people. <b>One another</b> is for more than two (2+):</p>
+        <div class="example">• Pawan and Atul helped each other.</div>
+        <div class="example">• All the dealers helped one another.</div>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 58 – 74: Adjective Degrees & Comparison</span>
+        </div>
+        <p>• <b>Rule 63:</b> <i>of + the + two</i> takes <b>The + Comparative (2nd degree)</b>:</p>
+        <div class="example">• Ravi is <span class="correct">the better of the two</span> boys.</div>
+        <p>• <b>Rules 64 & 65:</b> <b>As... as</b> (positive context). <b>So... as</b> (strictly negative context).</p>
+        <p>• <b>Rule 69: Parallel Comparison:</b> Compare equals using <i>that of / those of</i>:</p>
+        <div class="example">• Roads of Punjab are wider than <span class="correct">those of Himachal</span> (<span class="incorrect">than Himachal</span>).</div>
+        <p>• <b>Rules 70 & 71: Cases of 'Enough':</b></p>
+        <div class="example">• Noun modifier: I have <span class="correct">enough money</span> (precedes noun).</div>
+        <div class="example">• Adj modifier: She is <span class="correct">rich enough</span> (follows adjective).</div>
+        <p>• <b>Rule 72:</b> <i>Senior, junior, superior, inferior, prefer, preferable</i> take <b>to</b> (never 'than').</p>
+        <p>• <b>Rule 73:</b> Comparing 2 qualities of the SAME person requires <b>more + positive degree</b>:</p>
+        <div class="example">• She is <span class="correct">more wise than beautiful</span> (<span class="incorrect">wiser than beautiful</span>).</div>
+        <p>• <b>Rule 74: Absolutes:</b> <i>Round, square, unique, perfect, ideal, complete, chief, excellent</i> <b>never take more/most</b>.</p>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top: 10px;">
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 75 – 85: Article Rules & Omissions</span>
+        </div>
+        <p>• <b>Rule 75:</b> 'A' before consonant sounds; 'An' before vowel sounds (<i>An M.L.A, An hour, An S.D.O, A university, A one-rupee note, A union</i>).</p>
+        <p>• <b>Rule 76:</b> <i>A black and white dog</i> = 1 dog. <i>A black and a white dog</i> = 2 dogs.</p>
+        <p>• <b>Rule 80 & 81:</b> Ordinals take 'The' (<i>The first chapter</i>). But <b>no article</b> before <i>Last/Next + time</i>:</p>
+        <div class="example">• <span class="correct">last night / last year</span> (<span class="incorrect">the last night</span>).</div>
+        <p>• <b>Rule 84 & 85: Article Omission:</b> No article before diseases, cities, seasons, universities, languages, festivals, sports, uncountable nouns.</p>
+        <div class="example">• <i>Exception:</i> When specified: <span class="correct">The typhoid of 2019 was severe</span>; <span class="correct">The gold of China</span>.</div>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 86 – 88: Apostrophe ('s) Rules</span>
+        </div>
+        <p>• <b>Rule 86:</b> ('s) is NOT used with non-living things:</p>
+        <div class="example">• <span class="correct">The page of a book</span> (<span class="incorrect">A book's page</span>).</div>
+        <div class="example">• <span class="correct">The ink of this pen</span> (<span class="incorrect">This pen's ink</span>).</div>
+        <p>• <i>Exceptions:</i> Time, distance, weight, country, personified entities:</p>
+        <div class="example">• Nature's law | India's history | A month's holiday | At a stone's throw.</div>
+        <p>• <b>Rule 87 Trap:</b> Pronouns already possessive never take apostrophe:</p>
+        <div class="example">• <span class="correct">Yours faithfully</span> (<span class="incorrect">Your's faithfully</span>) | <span class="correct">hers</span> (<span class="incorrect">her's</span>).</div>
+        <p>• <b>Rule 88:</b> Indefinite pronouns accept apostrophe: <i>Someone's book | Everybody's duty</i>.</p>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 89 – 90: Until vs Unless</span>
+        </div>
+        <p>• <b>Until</b> = Refers strictly to <b>Time</b>.</p>
+        <p>• <b>Unless</b> = Refers strictly to <b>Condition / Action</b>.</p>
+        <div class="exam-trap" style="margin: 4px 0;">
+          <strong>TRAP:</strong> Both are negative connectors. <b>Never use 'not' inside the until/unless clause</b>:
+        </div>
+        <div class="example">• Don't go anywhere until I get back. (<span class="incorrect">until I do not get back</span>)</div>
+        <div class="example">• You cannot pass unless you work hard. (<span class="incorrect">unless you do not work hard</span>)</div>
+        <p>• <b>Rule 90:</b> <i>Till</i> and <i>Until</i> have identical meaning: <i>Wait till noon / Wait until noon</i>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODULE 5: CONJUNCTIONS, TENSES & QUESTION TAGS ================= -->
+  <div class="section">
+    <h2>Module 5: Conjunctions, Tenses, Conditionals & Question Tags (Rules 91 – 139, 150)</h2>
+
+    <div class="grid-3">
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 91 – 100: Correlative Conjunction Pairs</span>
+        </div>
+        <p>• <b>Rule 91:</b> <b>Both + and</b> (Never use 'as well as'):<br>
+        <span class="correct">Both boys and girls are good.</span> (<span class="incorrect">Both boys as well as girls</span>)</p>
+        <p>• <b>Rule 92:</b> <b>Lest + Should</b> (or bare $V_1$). Never use 'not' or 'would':<br>
+        <span class="correct">Work hard, lest you should fail.</span></p>
+        <p>• <b>Rules 93 & 94:</b> <b>When</b> (point in time, age, sequential); <b>While</b> (two simultaneous continuous actions):<br>
+        <i>While I was playing, my mother was cooking.</i></p>
+        <p>• <b>Rules 95 & 96:</b> <b>Too much + Uncountable Noun</b> (<i>too much pain</i>); <b>Much too + Adjective</b> (<i>much too painful / much too strong</i>).</p>
+        <p>• <b>Rule 97:</b> <b>No sooner + than</b> (Never use 'then' or 'when').</p>
+        <p>• <b>Rule 98:</b> <b>Hardly / Scarcely / Barely + when / before</b> (Never 'than').</p>
+        <p>• <b>Rule 99:</b> <b>Although / Though + yet / comma (,)</b>.</p>
+        <p>• <b>Rule 100:</b> <b>Between... and</b> | <b>From... to</b>.</p>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 101 – 120: Tense Trigger Keywords</span>
+        </div>
+        <p>• <b>Simple Present (Rules 101-103):</b> <i>Daily, every day, usually, generally, sometimes, at times</i> &rarr; $V_1 / V_1+s(es)$.</p>
+        <p>• <b>Present Continuous (Rule 105):</b> <i>Now, right now, nowadays, at present, at the moment</i> &rarr; $\text{is/am/are} + V_1+ing$.</p>
+        <p>• <b>Present Perfect (Rules 107-108):</b> <i>Just, just now, already, recently, lately, yet, so far, ever</i> &rarr; $\text{has/have} + V_3$.</p>
+        <div class="example">• <b>Rule 108:</b> <i>It is the first time / second time...</i> takes <b>Present Perfect</b>: <i>It is the first time I <span class="correct">have seen</span> you upset</i>.</div>
+        <p>• <b>Since vs For (Rules 110-113):</b> <b>Since</b> = Point of time (Monday, 2020, morning); <b>For</b> = Period/amount of time (2 hours, 5 days).</p>
+        <div class="example">• <i>Rule 112:</i> Since last Monday. | <i>Rule 113:</i> <b>For the last</b> Monday.</div>
+        <p>• <b>Simple Past (Rules 114-115):</b> <i>Yesterday, ago, last week/year, It is time, It is high time, It is about time</i> takes <b>$V_2$</b>:<br>
+        <span class="correct">It is high time she started a new job</span> (<span class="incorrect">starts</span>).</p>
+        <p>• <b>Future Perfect (Rule 120):</b> <i>By + time expression</i> (by Monday, by 2025) takes <b>will have + $V_3$</b>.</p>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 121 – 126: Conditionals Architecture</span>
+        </div>
+        <p>• <b>Zero:</b> If + Simple Pres, Simple Pres (Universal truth):<br><i>If we heat butter, it melts.</i></p>
+        <p>• <b>Type 1:</b> If + Simple Present ($V_1$), Simple Future ($\text{will} + V_1$):<br><span class="correct">If you study, you will pass.</span></p>
+        <p>• <b>Type 2:</b> If + Simple Past ($V_2$), would / could / might + $V_1$:<br><span class="correct">If you studied, you would pass.</span></p>
+        <p>• <b>Type 3:</b> If + Past Perfect ($\text{had} + V_3$), would have / could have + $V_3$:<br><span class="correct">If you had studied, you would have passed.</span></p>
+        <p>• <b>Rule 123 (Past Action Precedence):</b> Past Perfect ($\text{had} + V_3$) for 1st action + Simple Past ($V_2$) for 2nd action:<br><i>Before we reached the station, the train had left.</i></p>
+        <p>• <b>Rule 126:</b> Present Perfect + <b>since</b> + Past Simple ($V_2$):<br><i>We have not seen him since he left the army.</i></p>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 10px;">
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rules 132 – 139: Question Tag Comprehensive Matrix</span>
+        </div>
+        <div class="grid-2">
+          <div>
+            • Positive Statement &rarr; <b>Negative Tag</b><br>
+            • Negative Statement &rarr; <b>Positive Tag</b><br>
+            • Tag contraction must always use <b>n't</b><br>
+            • <b>I am</b> &rarr; <span class="correct">aren't I?</span> / <span class="correct">ain't I?</span><br>
+            • <b>I am not</b> &rarr; <span class="correct">am I?</span><br>
+            • <b>Will</b> &rarr; <span class="correct">won't + subject?</span><br>
+            • <b>Shall</b> &rarr; <span class="correct">shan't + subject?</span>
           </div>
           <div>
-            <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">NITTTR Spot-the-Error Practice Deck</h2>
-            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Interactive questions testing the exact traps taught above</p>
+            • <i>Rule 134:</i> <b>Indefinite Pronouns of Person</b> (<i>Everyone, Someone, Nobody, Somebody</i>) take pronoun <b>they</b> in question tag:<br>
+            <span class="correct">Everybody is happy, aren't they?</span> (<span class="incorrect">isn't he?</span>)<br>
+            • <i>Rule 139:</i> <b>Indefinite Pronouns of Thing</b> (<i>Everything, Nothing</i>) take pronoun <b>it</b>:<br>
+            <span class="correct">Everything looks captivating, doesn't it?</span>
           </div>
         </div>
-        <span class="text-xs font-bold text-amber-700 dark:text-amber-400 px-3 py-1 bg-amber-500/10 rounded-full border border-amber-500/20">Trap Challenges</span>
+        <div class="exam-trap" style="margin-top: 8px;">
+          <strong>TAG TRAP (Rules 135 & 136):</strong> Sentences containing inherent negative words (<i>Few, Little, Hardly, Barely, Scarcely, Never, Neither, None, Nothing, Seldom</i>) require a <b>Positive Question Tag</b>:<br>
+          • A barking dog seldom bites, <span class="correct">does it?</span> | Few students have this book, <span class="correct">have they?</span><br>
+          • <i>Contrast:</i> A few / A little are positive words &rarr; take <b>Negative Tag</b>: <i>I read a few stories, <span class="correct">haven't I?</span></i>
+        </div>
+        <p style="margin-top: 4px;">• <b>Rules 137 & 138: Dare & Need:</b> When used as Main Verbs (takes do/does/did in tag). When used as Auxiliary (takes dare/need in tag):<br>
+        <i>She dares to speak, doesn't she?</i> (Main verb) | <i>She dare not speak, dare she?</i> (Auxiliary)</p>
       </div>
 
-      <div id="quizContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Quiz questions rendered via JS -->
+      <div class="rule-card">
+        <div class="rule-header">
+          <span class="rule-title">Rule 150: Adverb Order: Manner – Place – Time (M-P-T)</span>
+        </div>
+        <p>When multiple adverbs qualify the same verb in a sentence, they must strictly follow the <b>M-P-T</b> order:</p>
+        <div class="formula">Subject + Verb + [Manner (How)] + [Place (Where)] + [Time (When)]</div>
+        <div class="example">• She sang <span class="correct">beautifully (M) at the concert (P) yesterday (T)</span>.</div>
+        <div class="example">• <span class="incorrect">I went yesterday there.</span> &rarr; <span class="correct">I went there (P) yesterday (T).</span></div>
+        <p style="margin-top: 10px;"><b>Vocabulary Highlights from the 150 Rules:</b></p>
+        <div class="grid-2">
+          <div class="vocab-card">
+            • <b>Arrogant:</b> Haughty, supercilious, proud.<br>
+            • <b>Amicable:</b> Friendly, amiable, affable.<br>
+            • <b>Hurdles:</b> Obstacles, difficulties.<br>
+            • <b>Unavoidable:</b> Inevitable, inexorable.<br>
+            • <b>Alluring:</b> Captivating, enchanting, charming.
+          </div>
+          <div class="vocab-card">
+            • <b>Diligent:</b> Hardworking, industrious, assiduous.<br>
+            • <b>Exquisite:</b> Extremely beautiful, charming.<br>
+            • <b>Accusable:</b> Culpable, guilty, convict.<br>
+            • <b>Savage:</b> Terrible, awful, severe.<br>
+            • <b>Blissful:</b> Joyful, delightful, pleasing.
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-  </main>
+  <!-- ================= MODULE 6: THE COMPLETE 150 FIXED PREPOSITIONS REPOSITORY ================= -->
+  <div class="section">
+    <h2>Module 6: Complete 150 Fixed Preposition Master Repository (Alphabetized with Meanings)</h2>
 
-  <!-- Footer -->
-  <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-8 px-4 text-center text-xs text-slate-500 space-y-2">
-    <p class="font-gurmukhi text-slate-600 dark:text-slate-400">ਪੰਜਾਬ ਸਰਕਾਰ ਦੀਆਂ ਸਾਰੀਆਂ ਪ੍ਰੀਖਿਆਵਾਂ (PSSSB, Patwari, Clerk, Senior Assistant) ਲਈ ਵਿਸ਼ੇਸ਼ ਸੰਗ੍ਰਹਿ</p>
-    <p>English Grammar Revision Compendium • Sonia Arora Ma'am Golden Rules & NITTTR Examination Traps</p>
-  </footer>
+    <div class="exam-trap">
+      <strong>PREPOSITION EXAM TRAPS FOR PSSSB:</strong>
+      Pay meticulous attention to split prepositions based on whether the object is a <b>Person</b> or a <b>Thing/Action</b> (e.g., <i>Angry with someone</i> vs. <i>Angry at something</i>; <i>Accountable to someone</i> vs. <i>Accountable for something</i>; <i>Born of parents</i> vs. <i>Born in a country</i>).
+    </div>
 
-  <!-- JAVASCRIPT LOGIC -->
-  <script>
-    // Theme Switcher Logic
-    function toggleTheme() {
-      const html = document.documentElement;
-      if (html.classList.contains('dark')) {
-        html.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else {
-        html.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
-    }
+    <div class="grid-3">
+      <!-- COLUMN 1: 1 - 50 -->
+      <div>
+        <table>
+          <thead><tr><th>No.</th><th>Expression</th><th>Punjabi / English Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><b>Absorbed in</b></td><td>ਲੀਨ ਹੋਣਾ (deeply engaged)</td></tr>
+            <tr><td>2</td><td><b>Acceptable to</b></td><td>ਸਵੀਕਾਰ ਯੋਗ (agreeable)</td></tr>
+            <tr><td>3</td><td><b>Accessible to</b></td><td>ਪਹੁੰਚ ਯੋਗ (approachable)</td></tr>
+            <tr><td>4</td><td><b>Accessory to</b></td><td>ਸਹਾਇਕ (accomplice in crime)</td></tr>
+            <tr><td>5</td><td><b>Accomplished in</b></td><td>ਮਾਹਿਰ (skilled / expert)</td></tr>
+            <tr><td>6</td><td><b>Accountable to</b></td><td>ਜਵਾਬਦੇਹ (person/authority)</td></tr>
+            <tr><td>7</td><td><b>Accountable for</b></td><td>ਜਵਾਬਦੇਹ (action/thing)</td></tr>
+            <tr><td>8</td><td><b>Accruing to... from</b></td><td>ਪ੍ਰਾਪਤ ਹੋਣਾ (accruing to person from)</td></tr>
+            <tr><td>9</td><td><b>Accurate in</b></td><td>ਸਹੀ / ਸਟੀਕ (precise)</td></tr>
+            <tr><td>10</td><td><b>Accused of</b></td><td>ਦੋਸ਼ੀ ਠਹਿਰਾਇਆ (charged with)</td></tr>
+            <tr><td>11</td><td><b>Acquainted with</b></td><td>ਜਾਣੂ ਹੋਣਾ (familiar with)</td></tr>
+            <tr><td>12</td><td><b>Acquitted of</b></td><td>ਬਰੀ ਕੀਤਾ ਗਿਆ (freed from crime)</td></tr>
+            <tr><td>13</td><td><b>Addicted to</b></td><td>ਆਦੀ ਹੋਣਾ (+ V1+ing)</td></tr>
+            <tr><td>14</td><td><b>Adequate to</b></td><td>ਕਾਫੀ ਹੋਣਾ (sufficient for need)</td></tr>
+            <tr><td>15</td><td><b>Adverse to</b></td><td>ਪ੍ਰਤੀਕੂਲ (unfavourable)</td></tr>
+            <tr><td>16</td><td><b>Affectionate to</b></td><td>ਪਿਆਰ ਕਰਨ ਵਾਲਾ (showing love)</td></tr>
+            <tr><td>17</td><td><b>Affection for</b></td><td>ਪਿਆਰ / ਮੋਹ (love/liking)</td></tr>
+            <tr><td>18</td><td><b>Afflicted with</b></td><td>ਪੀੜਤ ਹੋਣਾ (suffering pain)</td></tr>
+            <tr><td>19</td><td><b>Aggravated at</b></td><td>ਗੁੱਸੇ ਹੋਣਾ (at a situation)</td></tr>
+            <tr><td>20</td><td><b>Aggravated with</b></td><td>ਨਾਰਾਜ਼ ਹੋਣਾ (with a person)</td></tr>
+            <tr><td>21</td><td><b>Akin to</b></td><td>ਇੱਕ ਸਮਾਨ (similar to)</td></tr>
+            <tr><td>22</td><td><b>Alarmed at</b></td><td>ਚਿੰਤਤ / ਘਬਰਾਇਆ (frightened by)</td></tr>
+            <tr><td>23</td><td><b>Alien to</b></td><td>ਅਣਜਾਣ / ਅਣਮੁਕੂਲ (foreign to)</td></tr>
+            <tr><td>24</td><td><b>Alienated from</b></td><td>ਵੱਖ ਹੋਇਆ (isolated from)</td></tr>
+            <tr><td>25</td><td><b>Alive to</b></td><td>ਸਚੇਤ ਹੋਣਾ (aware of dangers)</td></tr>
+            <tr><td>26</td><td><b>Amazed at</b></td><td>ਹੈਰਾਨ ਹੋਣਾ (astonished by)</td></tr>
+            <tr><td>27</td><td><b>Ambition for</b></td><td>ਅਭਿਲਾਸ਼ਾ (longing for power)</td></tr>
+            <tr><td>28</td><td><b>Ambitious of</b></td><td>ਚਾਹਵਾਨ (eager for success)</td></tr>
+            <tr><td>29</td><td><b>Amused at</b></td><td>ਮਜ਼ੇਦਾਰ ਸਮਝਣਾ (entertained by)</td></tr>
+            <tr><td>30</td><td><b>Angry at</b></td><td>ਗੁੱਸਾ (at conduct/action)</td></tr>
+            <tr><td>31</td><td><b>Angry with</b></td><td>ਗੁੱਸਾ (with a person)</td></tr>
+            <tr><td>32</td><td><b>Annoyed at</b></td><td>ਨਾਰਾਜ਼ (at an event/thing)</td></tr>
+            <tr><td>33</td><td><b>Annoyed with</b></td><td>ਨਾਰਾਜ਼ (with a person)</td></tr>
+            <tr><td>34</td><td><b>Answerable to</b></td><td>ਜਵਾਬਦੇਹ (to an authority)</td></tr>
+            <tr><td>35</td><td><b>Anxious for</b></td><td>ਚਿੰਤਾਜਨਕ (desirous for safety)</td></tr>
+            <tr><td>36</td><td><b>Anxious about</b></td><td>ਚਿੰਤਤ (worried about health)</td></tr>
+            <tr><td>37</td><td><b>Appalled at</b></td><td>ਡਰਿਆ / ਸਹਿਮਿਆ (shocked by)</td></tr>
+            <tr><td>38</td><td><b>Apparent to</b></td><td>ਸਪਸ਼ਟ ਹੋਣਾ (clear to see)</td></tr>
+            <tr><td>39</td><td><b>Applicable to</b></td><td>ਲਾਗੂ ਹੋਣਾ (relevant to)</td></tr>
+            <tr><td>40</td><td><b>Apprehensive of</b></td><td>ਚਿੰਤਤ / ਸ਼ੰਕਿਤ (fearful of)</td></tr>
+            <tr><td>41</td><td><b>Apprised of</b></td><td>ਜਾਣੂ ਕਰਵਾਇਆ (informed of)</td></tr>
+            <tr><td>42</td><td><b>Appropriate to</b></td><td>ਉਚਿਤ (suitable to)</td></tr>
+            <tr><td>43</td><td><b>Apt in</b></td><td>ਮਾਹਿਰ (expert in doing)</td></tr>
+            <tr><td>44</td><td><b>Apt for</b></td><td>ਸਹੀ / ਢੁਕਵਾਂ (suitable for)</td></tr>
+            <tr><td>45</td><td><b>Ashamed of</b></td><td>ਸ਼ਰਮਸਾਰ (feeling shame)</td></tr>
+            <tr><td>46</td><td><b>Assiduous in</b></td><td>ਮਿਹਨਤੀ (industrious in work)</td></tr>
+            <tr><td>47</td><td><b>Associated with</b></td><td>ਸਹਿਯੋਗੀ (linked with person)</td></tr>
+            <tr><td>48</td><td><b>Associated in</b></td><td>ਸਹਿਯੋਗੀ (partner in business)</td></tr>
+            <tr><td>49</td><td><b>Assured of</b></td><td>ਭਰੋਸਾ ਦਿਵਾਇਆ (certain of)</td></tr>
+            <tr><td>50</td><td><b>Astonishing to</b></td><td>ਹੈਰਾਨੀਜਨਕ (surprising to)</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-    // Initialize Theme
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-    }
+      <!-- COLUMN 2: 51 - 100 -->
+      <div>
+        <table>
+          <thead><tr><th>No.</th><th>Expression</th><th>Punjabi / English Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>51</td><td><b>Astonished at</b></td><td>ਹੈਰਾਨ ਹੋਣਾ (surprised at action)</td></tr>
+            <tr><td>52</td><td><b>Averse to</b></td><td>ਪ੍ਰਤੀਕੂਲ / ਨਾਪਸੰਦ (+ V1+ing)</td></tr>
+            <tr><td>53</td><td><b>Bereft of</b></td><td>ਵਾਂਝਾ (deprived of)</td></tr>
+            <tr><td>54</td><td><b>Born of</b></td><td>ਜਨਮ ਲੈਣਾ (born of parents)</td></tr>
+            <tr><td>55</td><td><b>Born in</b></td><td>ਜਨਮ ਹੋਇਆ (born in a place)</td></tr>
+            <tr><td>56</td><td><b>Charged to</b></td><td>ਖਾਤੇ ਪਾਉਣਾ (debited to)</td></tr>
+            <tr><td>57</td><td><b>Charged with</b></td><td>ਭਰਿਆ ਹੋਇਆ (filled with joy)</td></tr>
+            <tr><td>58</td><td><b>Charged with</b></td><td>ਦੋਸ਼ ਲਗਾਇਆ (accused of crime)</td></tr>
+            <tr><td>59</td><td><b>Close to</b></td><td>ਨੇੜੇ (near to)</td></tr>
+            <tr><td>60</td><td><b>Clothed in</b></td><td>ਕੱਪੜੇ ਪਹਿਨੇ (dressed in garments)</td></tr>
+            <tr><td>61</td><td><b>Clothed with</b></td><td>ਭਰਿਆ ਹੋਇਆ (invested with power)</td></tr>
+            <tr><td>62</td><td><b>Committed to</b></td><td>ਵਚਨਬੱਧ (+ V1+ing)</td></tr>
+            <tr><td>63</td><td><b>Common to</b></td><td>ਸਾਂਝਾ (shared by all)</td></tr>
+            <tr><td>64</td><td><b>Compatible to</b></td><td>ਤੁਲਨਾਯੋਗ (comparable)</td></tr>
+            <tr><td>65</td><td><b>Compatible with</b></td><td>ਅਨੁਕੂਲ (consistent with)</td></tr>
+            <tr><td>66</td><td><b>Competent for</b></td><td>ਕਾਬਲ (qualified for task)</td></tr>
+            <tr><td>67</td><td><b>Composed of</b></td><td>ਦਾ ਬਣਿਆ ਹੋਇਆ (made of)</td></tr>
+            <tr><td>68</td><td><b>Commune with</b></td><td>ਗੱਲਬਾਤ ਕੀਤੀ (talk intimately)</td></tr>
+            <tr><td>69</td><td><b>Concerned about</b></td><td>ਚਿੰਤਤ ਹੋਣਾ (worried about)</td></tr>
+            <tr><td>70</td><td><b>Concerned of</b></td><td>ਸੰਬੰਧਿਤ ਹੋਣਾ (involved in)</td></tr>
+            <tr><td>71</td><td><b>Concerned in</b></td><td>ਵਿਅਸਤ / ਸ਼ਾਮਿਲ (participating)</td></tr>
+            <tr><td>72</td><td><b>Concerned in</b></td><td>ਸਹਾਇਕ (involved in matter)</td></tr>
+            <tr><td>73</td><td><b>Conscious of</b></td><td>ਸਚੇਤ ਹੋਣਾ (aware of)</td></tr>
+            <tr><td>74</td><td><b>Contrary to</b></td><td>ਵਿਰੁੱਧ (opposite to rules)</td></tr>
+            <tr><td>75</td><td><b>Covetous of</b></td><td>ਲੋਭੀ / ਲਾਲਚੀ (greedy for)</td></tr>
+            <tr><td>76</td><td><b>Creditable to</b></td><td>ਸ਼ਲਾਘਾਯੋਗ (bringing honor)</td></tr>
+            <tr><td>77</td><td><b>Cured of</b></td><td>ਨਿਰੋਗ ਹੋਣਾ (healed of disease)</td></tr>
+            <tr><td>78</td><td><b>Customary for</b></td><td>ਰਿਵਾਜ ਹੋਣਾ (traditional for)</td></tr>
+            <tr><td>79</td><td><b>Deprived of</b></td><td>ਵਾਂਝਾ ਰਹਿਣਾ (stripped of)</td></tr>
+            <tr><td>80</td><td><b>Derogatory to</b></td><td>ਅਪਮਾਨਜਨਕ (damaging to status)</td></tr>
+            <tr><td>81</td><td><b>Designed for</b></td><td>ਲਈ ਤਿਆਰ ਕੀਤਾ (intended for)</td></tr>
+            <tr><td>82</td><td><b>Desirous of</b></td><td>ਇੱਛੁਕ (wishing for)</td></tr>
+            <tr><td>83</td><td><b>Destitute of / for</b></td><td>ਬੇਸਹਾਰਾ / ਵਾਂਝਾ (lacking)</td></tr>
+            <tr><td>84</td><td><b>Dexterous in / at</b></td><td>ਨਿਪੁੰਨ (skillful in doing)</td></tr>
+            <tr><td>85</td><td><b>Disappointed in</b></td><td>ਨਿਰਾਸ਼ (in a thing/decision)</td></tr>
+            <tr><td>86</td><td><b>Disappointed with</b></td><td>ਨਿਰਾਸ਼ (with a person)</td></tr>
+            <tr><td>87</td><td><b>Disgusted with</b></td><td>ਨਫ਼ਰਤ ਨਾਲ ਭਰਿਆ (with person)</td></tr>
+            <tr><td>88</td><td><b>Disgusted at / with</b></td><td>ਗਿਲਾਨੀ ਮਹਿਸੂਸ ਕਰਨਾ (at conduct)</td></tr>
+            <tr><td>89</td><td><b>Disqualified for</b></td><td>ਅਯੋਗ ਠਹਿਰਾਇਆ (for post)</td></tr>
+            <tr><td>90</td><td><b>Disqualified from</b></td><td>ਰੋਕਿਆ ਗਿਆ (from competing)</td></tr>
+            <tr><td>91</td><td><b>Doubtful / Dubious of</b></td><td>ਸ਼ੱਕੀ (uncertain of result)</td></tr>
+            <tr><td>92</td><td><b>Eager for</b></td><td>ਉਤਸੁਕ (eager for victory)</td></tr>
+            <tr><td>93</td><td><b>Eager in</b></td><td>ਲਗਨਸ਼ੀਲ (in the pursuit of)</td></tr>
+            <tr><td>94</td><td><b>Effective for</b></td><td>ਪ੍ਰਭਾਵਸ਼ਾਲੀ (effective for cure)</td></tr>
+            <tr><td>95</td><td><b>Eligible for</b></td><td>ਯੋਗ (qualified for post)</td></tr>
+            <tr><td>96</td><td><b>Eminent for</b></td><td>ਪ੍ਰਸਿੱਧ (renowned for skill)</td></tr>
+            <tr><td>97</td><td><b>Endowed with</b></td><td>ਸੰਪੰਨ (gifted with talents)</td></tr>
+            <tr><td>98</td><td><b>Engaged in</b></td><td>ਲੀਨ ਹੋਣਾ (busy in work)</td></tr>
+            <tr><td>99</td><td><b>Engaged to</b></td><td>ਮੰਗਣੀ ਹੋਣਾ (betrothed to someone)</td></tr>
+            <tr><td>100</td><td><b>Envious of</b></td><td>ਜਲਣ ਰੱਖਣਾ (jealous of)</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-    // Master Fixed Preposition Dataset (Extracted from Pages 47-49 of PDF)
-    const prepositionsData = [
-      { word: "Absorbed", prep: "in", punjabi: "ਲੀਨ ਹੋਣਾ" },
-      { word: "Acceptable", prep: "to", punjabi: "ਸਵੀਕਾਰ ਯੋਗ" },
-      { word: "Accessible", prep: "to", punjabi: "ਪਹੁੰਚ ਯੋਗ" },
-      { word: "Accused", prep: "of", punjabi: "ਦੋਸ਼ੀ ਠਹਿਰਾਇਆ" },
-      { word: "Acquitted", prep: "of", punjabi: "ਬਰੀ ਕੀਤਾ ਗਿਆ" },
-      { word: "Addicted", prep: "to", punjabi: "ਆਦੀ ਹੋਣਾ" },
-      { word: "Adverse", prep: "to", punjabi: "ਪ੍ਰਤੀਕੂਲ" },
-      { word: "Affection", prep: "for", punjabi: "ਲਗਾਓ / ਪਿਆਰ" },
-      { word: "Affectionate", prep: "to", punjabi: "ਪਿਆਰ ਕਰਨ ਵਾਲਾ" },
-      { word: "Afraid", prep: "of", punjabi: "ਡਰਿਆ ਹੋਇਆ" },
-      { word: "Agree (person)", prep: "with", punjabi: "ਵਿਅਕਤੀ ਨਾਲ ਸਹਿਮਤ" },
-      { word: "Agree (proposal)", prep: "to", punjabi: "ਤਜਵੀਜ਼ ਨਾਲ ਸਹਿਮਤ" },
-      { word: "Akin", prep: "to", punjabi: "ਇੱਕ ਸਮਾਨ" },
-      { word: "Alarmed", prep: "at", punjabi: "ਚੌਕੰਨਾ ਹੋਣਾ" },
-      { word: "Alien", prep: "to", punjabi: "ਅਣਜਾਣ / ਵਿਦੇਸ਼ੀ" },
-      { word: "Angry (person)", prep: "with", punjabi: "ਵਿਅਕਤੀ ਤੇ ਗੁੱਸਾ" },
-      { word: "Angry (action)", prep: "at", punjabi: "ਕੰਮ / ਗੱਲ ਤੇ ਗੁੱਸਾ" },
-      { word: "Annoyed (person)", prep: "with", punjabi: "ਕਿਸੇ ਨਾਲ ਨਾਰਾਜ਼" },
-      { word: "Annoyed (thing)", prep: "at", punjabi: "ਕਿਸੇ ਗੱਲ ਤੇ ਨਾਰਾਜ਼" },
-      { word: "Anxious", prep: "about", punjabi: "ਚਿੰਤਤ ਹੋਣਾ" },
-      { word: "Appeased", prep: "with", punjabi: "ਸ਼ਾਂਤ ਹੋਇਆ" },
-      { word: "Applicable", prep: "to", punjabi: "ਲਾਗੂ ਹੋਣ ਯੋਗ" },
-      { word: "Ashamed", prep: "of", punjabi: "ਸ਼ਰਮਿੰਦਾ" },
-      { word: "Astonished", prep: "at", punjabi: "ਹੈਰਾਨ ਹੋਣਾ" },
-      { word: "Averse", prep: "to", punjabi: "ਪ੍ਰਤੀਕੂਲ / ਨਾਪਸੰਦ" },
-      { word: "Bereft", prep: "of", punjabi: "ਵਾਂਝਾ ਰਹਿ ਗਿਆ" },
-      { word: "Born", prep: "of / in", punjabi: "ਜਨਮ ਹੋਇਆ" },
-      { word: "Charged", prep: "with", punjabi: "ਦੋਸ਼ ਲਗਾਇਆ ਗਿਆ" },
-      { word: "Compatible", prep: "with", punjabi: "ਅਨੁਕੂਲ ਹੋਣਾ" },
-      { word: "Composed", prep: "of", punjabi: "ਬਣਿਆ ਹੋਇਆ" },
-      { word: "Conscious", prep: "of", punjabi: "ਸੁਚੇਤ ਹੋਣਾ" },
-      { word: "Contrary", prep: "to", punjabi: "ਉਲਟ ਹੋਣਾ" },
-      { word: "Cured", prep: "of", punjabi: "ਇਲਾਜ ਹੋਣਾ" },
-      { word: "Deprived", prep: "of", punjabi: "ਵਾਂਝਾ ਰੱਖਣਾ" },
-      { word: "Destitute", prep: "of / for", punjabi: "ਬੇਸਹਾਰਾ" },
-      { word: "Eligible", prep: "for", punjabi: "ਯੋਗ ਹੋਣਾ" },
-      { word: "Endowed", prep: "with", punjabi: "ਸੰਪੰਨ ਹੋਣਾ" },
-      { word: "Engaged", prep: "to / in", punjabi: "ਮੰਗਣੀ / ਰੁੱਝਿਆ" },
-      { word: "Envious", prep: "of", punjabi: "ਈਰਖਾਲੂ" },
-      { word: "Exempted", prep: "from", punjabi: "ਛੋਟ ਦਿੱਤੀ ਗਈ" },
-      { word: "Familiar (person)", prep: "to", punjabi: "ਜਾਣਿਆ-ਪਛਾਣਿਆ" },
-      { word: "Familiar (subject)", prep: "with", punjabi: "ਵਿਸ਼ੇ ਤੋਂ ਜਾਣੂ" },
-      { word: "Fond", prep: "of", punjabi: "ਸ਼ੌਕੀਨ ਹੋਣਾ" },
-      { word: "Grateful", prep: "to/for", punjabi: "ਧੰਨਵਾਦੀ ਹੋਣਾ" },
-      { word: "Guilty", prep: "of", punjabi: "ਦੋਸ਼ੀ" },
-      { word: "Ignorant", prep: "of", punjabi: "ਅਣਜਾਣ" },
-      { word: "Interested", prep: "in", punjabi: "ਦਿਲਚਸਪੀ ਲੈਣਾ" },
-      { word: "Jealous", prep: "of", punjabi: "ਈਰਖਾ ਕਰਨਾ" },
-      { word: "Known", prep: "to", punjabi: "ਜਾਣੂ ਹੋਣਾ" },
-      { word: "Liable", prep: "for / to", punjabi: "ਜ਼ਿੰਮੇਵਾਰ ਹੋਣਾ" },
-      { word: "Obliged (person)", prep: "to", punjabi: "ਕਿਸੇ ਦਾ ਧੰਨਵਾਦੀ" },
-      { word: "Obliged (service)", prep: "for", punjabi: "ਕੰਮ ਲਈ ਧੰਨਵਾਦੀ" },
-      { word: "Pleased", prep: "with", punjabi: "ਖੁਸ਼ ਹੋਣਾ" },
-      { word: "Prefer / Preferable", prep: "to", punjabi: "ਤਰਜੀਹ ਦੇਣਾ" },
-      { word: "Prior / Senior", prep: "to", punjabi: "ਵੱਡਾ / ਪਹਿਲਾਂ" },
-      { word: "Responsible", prep: "to/for", punjabi: "ਜਵਾਬਦੇਹ" },
-      { word: "Satisfied", prep: "with", punjabi: "ਸੰਤੁਸ਼ਟ ਹੋਣਾ" },
-      { word: "Surprised", prep: "at", punjabi: "ਹੈਰਾਨ ਹੋਣਾ" },
-      { word: "Worthy", prep: "of", punjabi: "ਕਦਰਦਾਨ / ਯੋਗ" }
-    ];
+      <!-- COLUMN 3: 101 - 150 -->
+      <div>
+        <table>
+          <thead><tr><th>No.</th><th>Expression</th><th>Punjabi / English Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>101</td><td><b>Essential to</b></td><td>ਜ਼ਰੂਰੀ (crucial to life)</td></tr>
+            <tr><td>102</td><td><b>Estranged from</b></td><td>ਦੂਰ ਹੋਇਆ (alienated from family)</td></tr>
+            <tr><td>103</td><td><b>Exempted from</b></td><td>ਮੁਕਤ ਕੀਤਾ (freed from tax/duty)</td></tr>
+            <tr><td>104</td><td><b>Exhausted with</b></td><td>ਥੱਕਿਆ ਹੋਇਆ (worn out with toil)</td></tr>
+            <tr><td>105</td><td><b>Exonerated from</b></td><td>ਮੁਕਤ ਕਰਨਾ (absolved from blame)</td></tr>
+            <tr><td>106</td><td><b>Exposed to</b></td><td>ਖੁੱਲ੍ਹਾ ਰੱਖਿਆ (subject to danger)</td></tr>
+            <tr><td>107</td><td><b>Faithful to</b></td><td>ਵਫ਼ਾਦਾਰ (loyal to master)</td></tr>
+            <tr><td>108</td><td><b>Familiar with</b></td><td>ਜਾਣੂ ਹੋਣਾ (familiar with a rule)</td></tr>
+            <tr><td>109</td><td><b>Familiar to</b></td><td>ਜਾਣਿਆ-ਪਛਾਣਿਆ (known to a person)</td></tr>
+            <tr><td>110</td><td><b>Favourable to</b></td><td>ਅਨੁਕੂਲ (conducive to plan)</td></tr>
+            <tr><td>111</td><td><b>Fearful of</b></td><td>ਡਰਿਆ ਹੋਇਆ (scared of dark)</td></tr>
+            <tr><td>112</td><td><b>Fertile in</b></td><td>ਉਪਜਾਊ (fertile in resources)</td></tr>
+            <tr><td>113</td><td><b>Fit for</b></td><td>ਢੁਕਵਾਂ / ਯੋਗ (suited for position)</td></tr>
+            <tr><td>114</td><td><b>Free from</b></td><td>ਆਜ਼ਾਦ / ਮੁਕਤ (free from worry)</td></tr>
+            <tr><td>115</td><td><b>Fruitful in</b></td><td>ਲਾਭਦਾਇਕ (rich in results)</td></tr>
+            <tr><td>116</td><td><b>Fruitless of</b></td><td>ਨਿਸ਼ਫਲ (unproductive of good)</td></tr>
+            <tr><td>117</td><td><b>Gifted with</b></td><td>ਬਖ਼ਸ਼ਿਸ਼ ਹੋਣਾ (endowed with grace)</td></tr>
+            <tr><td>118</td><td><b>Glad of</b></td><td>ਖ਼ੁਸ਼ ਹੋਣਾ (happy of opportunity)</td></tr>
+            <tr><td>119</td><td><b>Grateful for</b></td><td>ਧੰਨਵਾਦੀ (thankful for help)</td></tr>
+            <tr><td>120</td><td><b>Honest in</b></td><td>ਇਮਾਨਦਾਰ (honest in dealings)</td></tr>
+            <tr><td>121</td><td><b>Horrified at</b></td><td>ਡਰਿਆ ਹੋਇਆ (appalled at sight)</td></tr>
+            <tr><td>122</td><td><b>Hostile to</b></td><td>ਦੁਸ਼ਮਣੀ ਰੱਖਣ ਵਾਲਾ (opposed to)</td></tr>
+            <tr><td>123</td><td><b>Ignorant of</b></td><td>ਅਣਜਾਣ (unaware of facts)</td></tr>
+            <tr><td>124</td><td><b>Interested in</b></td><td>ਦਿਲਚਸਪੀ ਹੋਣਾ (keen on)</td></tr>
+            <tr><td>125</td><td><b>Invested with</b></td><td>ਅਧਿਕਾਰ ਦੇਣਾ (invested with authority)</td></tr>
+            <tr><td>126</td><td><b>Invested in</b></td><td>ਨਿਵੇਸ਼ ਕੀਤਾ (money in stocks)</td></tr>
+            <tr><td>127</td><td><b>Involved in</b></td><td>ਸ਼ਾਮਿਲ ਹੋਣਾ (implicated in debt)</td></tr>
+            <tr><td>128</td><td><b>Jealous of</b></td><td>ਈਰਖਾ ਰੱਖਣਾ (envious of fame)</td></tr>
+            <tr><td>129</td><td><b>Liable for</b></td><td>ਜ਼ਿੰਮੇਵਾਰ (legally bound for debt)</td></tr>
+            <tr><td>130</td><td><b>Liable to</b></td><td>ਸੰਭਾਵਨਾ (prone to error)</td></tr>
+            <tr><td>131</td><td><b>Neglectful of</b></td><td>ਅਣਗਹਿਲੀ (careless of duties)</td></tr>
+            <tr><td>132</td><td><b>Negligent in</b></td><td>ਲਾਪਰਵਾਹ (in one's work)</td></tr>
+            <tr><td>133</td><td><b>Obliged to</b></td><td>ਧੰਨਵਾਦੀ (to a person)</td></tr>
+            <tr><td>134</td><td><b>Obliged for</b></td><td>ਅਹਿਸਾਨਮੰਦ (for a favor)</td></tr>
+            <tr><td>135</td><td><b>Overwhelmed with</b></td><td>ਭਾਵੁਕ ਹੋਣਾ (filled with grief/joy)</td></tr>
+            <tr><td>136</td><td><b>Painful to</b></td><td>ਦਰਦਨਾਕ (distressing to senses)</td></tr>
+            <tr><td>137</td><td><b>Polite in</b></td><td>ਨਿਮਰ ਹੋਣਾ (polite in manner)</td></tr>
+            <tr><td>138</td><td><b>Polite to</b></td><td>ਸਤਿਕਾਰਯੋਗ (polite to strangers)</td></tr>
+            <tr><td>139</td><td><b>Profitable to</b></td><td>ਲਾਭਦਾਇਕ (lucrative to owner)</td></tr>
+            <tr><td>140</td><td><b>Related to</b></td><td>ਸੰਬੰਧਿਤ (linked to issue)</td></tr>
+            <tr><td>141</td><td><b>Relevant to</b></td><td>ਢੁਕਵਾਂ (pertinent to subject)</td></tr>
+            <tr><td>142</td><td><b>Responsible for</b></td><td>ਜ਼ਿੰਮੇਵਾਰ (for an action/result)</td></tr>
+            <tr><td>143</td><td><b>Responsible to</b></td><td>ਜਵਾਬਦੇਹ (to an authority)</td></tr>
+            <tr><td>144</td><td><b>Sanguine of</b></td><td>ਆਸ਼ਾਵਾਦੀ (confident of success)</td></tr>
+            <tr><td>145</td><td><b>Satiated with</b></td><td>ਤ੍ਰਿਪਤ ਹੋਇਆ (surfeited with food)</td></tr>
+            <tr><td>146</td><td><b>Sensitive to</b></td><td>ਸੰਵੇਦਨਸ਼ੀਲ (responsive to cold)</td></tr>
+            <tr><td>147</td><td><b>Strange to</b></td><td>ਓਪਰਾ / ਅਣਜਾਣ (unfamiliar to)</td></tr>
+            <tr><td>148</td><td><b>Thankful for</b></td><td>ਧੰਨਵਾਦੀ (grateful for kindness)</td></tr>
+            <tr><td>149</td><td><b>Vexed at</b></td><td>ਤੰਗ ਆਉਣਾ (at a circumstance)</td></tr>
+            <tr><td>150</td><td><b>Worthy of</b></td><td>ਯੋਗ ਹੋਣਾ (deserving of praise)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
-    // Master Array of Top 60 Rules
-    const rulesData = [
-      {
-        id: 1,
-        ruleNo: "01",
-        category: "sva",
-        title: "Introductory Subject 'There'",
-        desc: "'There' is an introductory subject. The verb following it is determined by the REAL subject that comes after the verb.",
-        punjabi: "'There' ਨਾਲ singular ਜਾਂ plural verb ਬਾਅਦ ਵਿੱਚ ਆਉਣ ਵਾਲੇ noun ਦੇ ਮੁਤਾਬਿਕ ਲੱਗਦਾ ਹੈ।",
-        correct: "There is a chair. / There are chairs.",
-        incorrect: "There is chairs.",
-        trap: "Inverted order confuses candidates in long sentences (e.g. 'There is several candidates').",
-        isTrap: true
-      },
-      {
-        id: 2,
-        ruleNo: "02",
-        category: "pronoun",
-        title: "Indefinite Pronouns (Person)",
-        desc: "Everyone, Someone, Anyone, No one, Everybody, Somebody, Anybody, Nobody take a SINGULAR verb and singular pronoun (he/his/him).",
-        punjabi: "ਇਹਨਾਂ ਨਾਲ ਹਮੇਸ਼ਾ Singular verb ਅਤੇ pronoun (his/him) ਲੱਗਦਾ ਹੈ।",
-        correct: "Everyone wants to crack the exam. / Everyone should love his parents.",
-        incorrect: "Everyone should love their parents.",
-        trap: "In Question Tags, they take PLURAL pronoun 'they' (e.g., 'Somebody is coming, aren't they?').",
-        isTrap: true
-      },
-      {
-        id: 3,
-        ruleNo: "03",
-        category: "pronoun",
-        title: "Indefinite Pronouns (Things)",
-        desc: "Everything, Something, Anything, Nothing take a singular verb and singular neuter pronoun 'it / its / itself'.",
-        punjabi: "ਇਹਨਾਂ ਨਾਲ singular verb ਅਤੇ 'it/its' pronoun ਲੱਗਦਾ ਹੈ। Question tag ਵਿੱਚ ਵੀ 'it' ਆਉਂਦਾ ਹੈ।",
-        correct: "Everything has its own beauty.",
-        incorrect: "Everything has his own beauty.",
-        trap: "Question tag takes 'it' (Nothing is going to happen, is it?).",
-        isTrap: false
-      },
-      {
-        id: 4,
-        ruleNo: "04",
-        category: "sva",
-        title: "Nothing but / Everything but",
-        desc: "Nothing but / Everything but + (Singular or Plural Noun) ALWAYS takes a SINGULAR verb.",
-        punjabi: "ਨਾਂਵ ਭਾਵੇਂ singular ਹੋਵੇ ਭਾਵੇਂ plural, verb ਹਮੇਸ਼ਾ Singular ਹੀ ਲੱਗੇਗਾ।",
-        correct: "Nothing but dresses was bought. / Everything but boys is absent.",
-        incorrect: "Nothing but dresses were bought. / Everything but boys are absent.",
-        trap: "Candidates see plural 'dresses/boys' and wrongly mark plural verb 'were/are'.",
-        isTrap: true
-      },
-      {
-        id: 5,
-        ruleNo: "05",
-        category: "sva",
-        title: "Each, Every, Either, Neither",
-        desc: "Each, Every, Either, Neither directly followed by a noun take a Singular Noun and Singular Verb.",
-        punjabi: "ਸਿੰਗੁਲਰ ਨਾਂਵ ਅਤੇ ਸਿੰਗੁਲਰ ਕਿਰਿਆ ਲੱਗਦੀ ਹੈ।",
-        correct: "Each aspirant is looking for govt job. / Either girl has an adorable dress.",
-        incorrect: "Each aspirants are looking for govt job.",
-        trap: "Never write 'Each girls'. Always 'Each girl'.",
-        isTrap: false
-      },
-      {
-        id: 6,
-        ruleNo: "06",
-        category: "sva",
-        title: "Each of / Either of / Neither of",
-        desc: "Each of / Either of / Neither of + Plural Noun / Pronoun + SINGULAR Verb.",
-        punjabi: "ਨਾਮ ਜਾਂ ਪੜਨਾਂਵ Plural ਹੋਵੇਗਾ ਪਰ ਕਿਰਿਆ (Verb) ਹਮੇਸ਼ਾ Singular ਹੀ ਆਵੇਗੀ।",
-        correct: "Either of these girls has an adorable dress. / Neither of them was a culprit.",
-        incorrect: "Neither of them were a culprit. / Each of the boys are present.",
-        trap: "Top NITTTR Trap: Giving plural verb 'were/have' after 'Neither of them'.",
-        isTrap: true
-      },
-      {
-        id: 7,
-        ruleNo: "07",
-        category: "pronoun",
-        title: "Each as Adjective vs Pronoun",
-        desc: "Each can act as an Adjective (Each man has limitations) or Pronoun (Each of the men has limitations). Both take singular verb.",
-        punjabi: "'Each' ਵਿਸ਼ੇਸ਼ਣ ਅਤੇ ਪੜਨਾਂਵ ਦੋਵਾਂ ਦਾ ਕੰਮ ਕਰਦਾ ਹੈ।",
-        correct: "Each of the men has limitations.",
-        incorrect: "Each of the men have limitations.",
-        trap: "Every cannot be used as a pronoun! 'Every of men' is completely invalid.",
-        isTrap: true
-      },
-      {
-        id: 8,
-        ruleNo: "08",
-        category: "sva",
-        title: "Each + And + Each Structure",
-        desc: "Each boy and each girl ALWAYS takes a Singular verb.",
-        punjabi: "ਜੇਕਰ ਦੋ nouns ਅੱਗੇ 'Each' ਲੱਗਾ ਹੋਵੇ, ਤਦ ਵੀ verb singular ਹੀ ਰਹਿੰਦਾ ਹੈ।",
-        correct: "Each boy and each girl is present.",
-        incorrect: "Each boy and each girl are present.",
-        trap: "And being present tricks candidates into picking plural 'are'.",
-        isTrap: true
-      },
-      {
-        id: 9,
-        ruleNo: "09",
-        category: "sva",
-        title: "Plural Noun/Pronoun + Each",
-        desc: "When 'each' comes AFTER a plural noun or pronoun (We each / The girls each), it takes a PLURAL verb!",
-        punjabi: "ਜੇਕਰ Plural Subject ਤੋਂ ਬਾਅਵ 'each' ਆਵੇ ਤਾਂ ਹਮੇਸ਼ਾ Plural verb ਲੱਗਦੀ ਹੈ।",
-        correct: "We each have a dress. / The girls each have done this work.",
-        incorrect: "We each has a dress. / The girls each has done this work.",
-        trap: "Most students forget this reverse exception and erroneously write 'We each has'.",
-        isTrap: true
-      },
-      {
-        id: 10,
-        ruleNo: "10",
-        category: "adj",
-        title: "'Every' is ONLY an Adjective",
-        desc: "'Every' only functions as an Adjective. It can NEVER act as a standalone Pronoun.",
-        punjabi: "'Every' ਸਿਰਫ Adjective ਦਾ ਕੰਮ ਕਰਦਾ ਹੈ, ਕਦੇ Pronoun ਨਹੀਂ ਬਣਦਾ।",
-        correct: "Every man has limitations.",
-        incorrect: "Every of men has limitations.",
-        trap: "Error spotting frequently features 'Every of the students' ❌ instead of 'Each of the students' ✅.",
-        isTrap: true
-      },
-      {
-        id: 11,
-        ruleNo: "11",
-        category: "adj",
-        title: "Each (2 or 2+) vs Every (2+ only)",
-        desc: "Each is used for two or more than two entities. Every is strictly for MORE than two.",
-        punjabi: "Each ਦੋ ਅਤੇ ਦੋ ਤੋਂ ਵੱਧ ਲਈ; Every ਸਿਰਫ ਦੋ ਤੋਂ ਜ਼ਿਆਦਾ ਲਈ।",
-        correct: "I can write with each hand.",
-        incorrect: "I can write with every hand. (Humans have only 2 hands!)",
-        trap: "Using 'every' for pairs (hands, eyes, parents) is a guaranteed error.",
-        isTrap: true
-      },
-      {
-        id: 12,
-        ruleNo: "13",
-        category: "sva",
-        title: "Both, Several, Various",
-        desc: "Both, Several, Various / Both of, Several of, Various of + Plural Noun/Pronoun + Plural Verb.",
-        punjabi: "ਇਹਨਾਂ ਤੋਂ ਬਾਅਦ ਹਮੇਸ਼ਾ Plural ਨਾਂਵ ਅਤੇ Plural ਕਿਰਿਆ ਲੱਗਦੀ ਹੈ।",
-        correct: "Both boys are arrogant. / Several of them were amicable.",
-        incorrect: "Several of them was amicable.",
-        trap: "Vocabulary check: Arrogant = haughty/supercilious; Amicable = friendly/amiable.",
-        isTrap: false
-      },
-      {
-        id: 13,
-        ruleNo: "14",
-        category: "conj",
-        title: "'Both' and 'Not' Incompatibility",
-        desc: "'Both' and 'Not' can NEVER be used together. Both is strictly positive.",
-        punjabi: "'Both' ਅਤੇ 'Not' ਕਦੇ ਵੀ ਇਕੱਠੇ ਨਹੀਂ ਆ ਸਕਦੇ।",
-        correct: "Neither Rahul nor Sahil is coming.",
-        incorrect: "Both Rahul and Sahil are not coming.",
-        trap: "NITTTR Favourite: Giving 'Both ... are not coming' in sentence improvement.",
-        isTrap: true
-      },
-      {
-        id: 14,
-        ruleNo: "16",
-        category: "sva",
-        title: "Few, A Few, The Few",
-        desc: "Few, A few, The few + Plural Noun/Pronoun + PLURAL verb.",
-        punjabi: "ਗਿਣਤੀ (Countable) ਲਈ ਵਰਤੋਂ ਹੁੰਦੀ ਹੈ। ਇਹਨਾਂ ਨਾਲ Plural Verb ਲੱਗਦਾ ਹੈ।",
-        correct: "Few hurdles are unavoidable. / Very few persons have affection for the poor.",
-        incorrect: "Very few persons has affection for the poor.",
-        trap: "Few = Almost none (negative); A few = some (positive); The few = all that remains.",
-        isTrap: false
-      },
-      {
-        id: 15,
-        ruleNo: "20",
-        category: "sva",
-        title: "Little, A Little, The Little",
-        desc: "Little, A little, The little + Singular Uncountable Noun + SINGULAR verb.",
-        punjabi: "ਮਿਣਤੀ/ਮਾਤਰਾ (Uncountable) ਲਈ। ਇਹਨਾਂ ਨਾਲ ਹਮੇਸ਼ਾ Singular Verb ਆਉਂਦਾ ਹੈ।",
-        correct: "A little work has been done by me. / I have spent the little money that I had.",
-        incorrect: "A little work have been done by me.",
-        trap: "Interchanging 'Few' and 'Little' (e.g. 'Little books' ❌ or 'Few water' ❌).",
-        isTrap: true
-      },
-      {
-        id: 16,
-        ruleNo: "24",
-        category: "sva",
-        title: "One of + Plural Noun + Singular Verb",
-        desc: "Sentence starting with 'One of' takes a Plural Noun/Pronoun but a SINGULAR verb.",
-        punjabi: "One of ਤੋਂ ਬਾਅਦ Plural ਨਾਂਵ ਆਉਂਦਾ ਹੈ ਪਰ ਕਿਰਿਆ Singular ਰਹਿੰਦੀ ਹੈ।",
-        correct: "One of my attires is dear (costly).",
-        incorrect: "One of my attire is dear. / One of my attires are dear.",
-        trap: "Singular noun error: Examiner writes 'One of my friend' instead of 'friends'.",
-        isTrap: true
-      },
-      {
-        id: 17,
-        ruleNo: "25",
-        category: "sva",
-        title: "The Only One Of + Relative Pronoun",
-        desc: "The only one of + Plural noun + who/which/that + SINGULAR verb.",
-        punjabi: "ਜਦੋਂ 'only one of' ਹੋਵੇ ਤਾਂ relative pronoun ਤੋਂ ਬਾਅਦ Singular verb ਲੱਗਦੀ ਹੈ।",
-        correct: "Radha is the only one of the girls who has aided me.",
-        incorrect: "Radha is the only one of the girls who have aided me.",
-        trap: "Ordinary 'one of the... who' takes plural verb, but 'the only one of' takes SINGULAR.",
-        isTrap: true
-      },
-      {
-        id: 18,
-        ruleNo: "27",
-        category: "sva",
-        title: "Many a / Many an Trap",
-        desc: "Many a / Many an + Singular Noun + SINGULAR Verb.",
-        punjabi: "Many a / Many an ਤੋਂ ਬਾਅਦ ਹਮੇਸ਼ਾ Singular ਨਾਂਵ ਅਤੇ Singular verb ਲੱਗਦਾ ਹੈ।",
-        correct: "Many a man has tried but few men have succeeded.",
-        incorrect: "Many a man have tried.",
-        trap: "Many alone takes plural (Many men have), but 'Many a' strictly takes singular.",
-        isTrap: true
-      },
-      {
-        id: 19,
-        ruleNo: "28",
-        category: "sva",
-        title: "Uncountable Nouns as Subjects",
-        desc: "Non-count nouns (Education, Advice, Luggage, Furniture, News) always take a singular verb.",
-        punjabi: "Uncountable nouns ਨਾਲ ਹਮੇਸ਼ਾ Singular Verb ਆਉਂਦੀ ਹੈ।",
-        correct: "All my luggage has been stolen.",
-        incorrect: "All my luggages have been stolen.",
-        trap: "Uncountable nouns can never be made plural by adding 's/es' (furnitures ❌, advices ❌).",
-        isTrap: true
-      },
-      {
-        id: 20,
-        ruleNo: "29",
-        category: "sva",
-        title: "A Number of vs The Number of",
-        desc: "A number of + Plural Noun + PLURAL verb. The number of + Plural Noun + SINGULAR verb.",
-        punjabi: "'A number of' ਨਾਲ Plural verb; 'The number of' ਨਾਲ Singular verb.",
-        correct: "A number of workers are present. / The number of workers is present.",
-        incorrect: "The number of workers are present.",
-        trap: "Extreme exam frequency: Confusing 'A number' (plural) with 'The number' (singular).",
-        isTrap: true
-      },
-      {
-        id: 21,
-        ruleNo: "31",
-        category: "sva",
-        title: "A Variety of vs The Variety of",
-        desc: "A variety of + Plural Noun + PLURAL Verb. The variety of + Plural Noun + SINGULAR Verb.",
-        punjabi: "'A variety' ਨਾਲ plural verb; 'The variety' ਨਾਲ singular verb.",
-        correct: "A variety of things are alluring. / The variety of things is alluring.",
-        incorrect: "A variety of things is alluring.",
-        trap: "Mirror of 'A number of / The number of' rule.",
-        isTrap: false
-      },
-      {
-        id: 22,
-        ruleNo: "33",
-        category: "sva",
-        title: "Conjunctive Prepositional Connectors",
-        desc: "When subjects join with 'as well as, along with, together with, with, accompanied by, besides, except, rather than, led by', verb agrees with the FIRST subject.",
-        punjabi: "ਕਿਰਿਆ ਪਹਿਲੇ Subject ਦੇ ਮੁਤਾਬਿਕ ਲੱਗਦੀ ਹੈ।",
-        correct: "The manager along with his staff members is present. / She, and not her friends, is exquisite.",
-        incorrect: "The manager along with his staff members are present.",
-        trap: "Candidates look at nearby plural noun ('staff members') and choose plural verb.",
-        isTrap: true
-      },
-      {
-        id: 23,
-        ruleNo: "34",
-        category: "sva",
-        title: "Either-or, Neither-nor, Not only-but also",
-        desc: "When subjects join with Either..or, Neither..nor, Not only..but also, verb agrees with the NEAREST (Second) subject.",
-        punjabi: "ਕਿਰਿਆ ਦੂਜੇ (ਨੇੜਲੇ) Subject ਦੇ ਮੁਤਾਬਿਕ ਲੱਗਦੀ ਹੈ।",
-        correct: "Neither he nor I am accusable. / Not only you but also he wants to join.",
-        incorrect: "Neither he nor I are accusable. / Not only you but also he want to join.",
-        trap: "Inverting subjects or placing verb according to first subject.",
-        isTrap: true
-      },
-      {
-        id: 24,
-        ruleNo: "35",
-        category: "pronoun",
-        title: "Relative Pronouns Agreement (Who/Which/That)",
-        desc: "Verb after Who, Which, That must agree with its Antecedent (the noun/pronoun directly preceding it).",
-        punjabi: "Relative Pronoun ਤੋਂ ਪਹਿਲਾਂ ਵਾਲੇ Noun/Pronoun ਮੁਤਾਬਿਕ ਕਿਰਿਆ ਲੱਗਦੀ ਹੈ।",
-        correct: "It is I who am singing this song. / He is one of the students who are intelligent.",
-        incorrect: "It is I who is singing this song. / He is one of the students who is intelligent.",
-        trap: "Writing 'It is I who is' instead of 'who am'.",
-        isTrap: true
-      },
-      {
-        id: 25,
-        ruleNo: "36",
-        category: "sva",
-        title: "Always Singular Uncountable Nouns",
-        desc: "Advice, stationery, crockery, information, machinery, furniture, fuel, news, poetry, cutlery, jewellery never take 's/es' or plural verbs.",
-        punjabi: "ਇਹਨਾਂ ਨਾਲ ਹਮੇਸ਼ਾ Singular verb ਲੱਗਦੀ ਹੈ, ਇਹ ਕਦੇ Plural ਨਹੀਂ ਬਣਦੇ।",
-        correct: "Her advice is commendable. / Second-hand furniture was sold here.",
-        incorrect: "Her advices are commendable. / Furnitures were sold here.",
-        trap: "Questions often include 'informations', 'sceneries', 'furnitures'.",
-        isTrap: true
-      },
-      {
-        id: 26,
-        ruleNo: "36B",
-        category: "sva",
-        title: "Nouns Singular in Appearance, Plural in Verb",
-        desc: "Cattle, gentry, vermin, peasantry, artillery, people, clergy, police always take a PLURAL verb.",
-        punjabi: "ਇਹ ਦੇਖਣ ਵਿੱਚ singular ਲੱਗਦੇ ਹਨ ਪਰ ਹਮੇਸ਼ਾ Plural verb ਲੈਂਦੇ ਹਨ।",
-        correct: "The cattle are grazing. / The police are looking for the convict.",
-        incorrect: "The cattle is grazing. / The police is looking for the convict.",
-        trap: "Exception: A specific localized force (e.g. 'The police of Punjab is') can take singular when acting as a unit.",
-        isTrap: true
-      },
-      {
-        id: 27,
-        ruleNo: "37",
-        category: "adj",
-        title: "The + Adjective = Plural Subject",
-        desc: "The + Adjective represents an entire community (The poor, The rich, The diligent) and ALWAYS takes a PLURAL verb.",
-        punjabi: "'The + Adjective' ਪੂਰੇ ਵਰਗ ਨੂੰ ਦਰਸਾਉਂਦਾ ਹੈ ਅਤੇ Plural Verb ਲੈਂਦਾ ਹੈ।",
-        correct: "The poor are diligent. / The rich are arrogant.",
-        incorrect: "The poor is diligent. / A poor is hardworking.",
-        trap: "Structures like 'A poor is...' or 'The poors' are grammatically disastrous.",
-        isTrap: true
-      },
-      {
-        id: 28,
-        ruleNo: "38",
-        category: "sva",
-        title: "Noun + Preposition + Same Noun",
-        desc: "When a noun is repeated after a preposition, both nouns must be SINGULAR, and the verb is SINGULAR.",
-        punjabi: "ਦੋਵੇਂ ਨਾਂਵ ਅਤੇ ਕਿਰਿਆ ਹਮੇਸ਼ਾ Singular ਹੁੰਦੇ ਹਨ।",
-        correct: "Book after book was read by the students. / Match after match was won.",
-        incorrect: "Books after books were read by the students.",
-        trap: "Examiners write 'Days after days were passed' ❌.",
-        isTrap: true
-      },
-      {
-        id: 29,
-        ruleNo: "40",
-        category: "adj",
-        title: "Definite Numerical Units",
-        desc: "Number + Unit (Dozen, Hundred, Thousand, Million, Score) + Noun. The unit stays SINGULAR.",
-        punjabi: "ਜੇਕਰ ਅੱਗੇ ਨੰਬਰ ਦਿੱਤਾ ਹੋਵੇ ਤਾਂ unit ਨਾਲ 's' ਨਹੀਂ ਲੱਗਦਾ।",
-        correct: "She has bought two dozen dresses. / A five-inch rope. / Ten thousand rupees were spent.",
-        incorrect: "She has bought two dozens dresses. / A five-inches rope.",
-        trap: "Writing 'two dozens apples' or 'five thousands rupees'.",
-        isTrap: true
-      },
-      {
-        id: 30,
-        ruleNo: "41",
-        category: "adj",
-        title: "Indefinite Plural Units of Count",
-        desc: "Plural Unit + of + Plural Noun (Hundreds of books, Thousands of people, Two dozens of these dresses).",
-        punjabi: "ਜਦੋਂ 'of' ਆਵੇ ਤਾਂ unit plural ਹੁੰਦੀ ਹੈ।",
-        correct: "Two dozens of these dresses are costly. / Hundreds of students took the exam.",
-        incorrect: "Two dozen of these dresses are costly.",
-        trap: "Ascending order rule: 'Hundreds of thousands' ✅, not 'Thousands of hundreds' ❌.",
-        isTrap: false
-      },
-      {
-        id: 31,
-        ruleNo: "43",
-        category: "sva",
-        title: "Collective Nouns: Unanimous vs Divided",
-        desc: "Jury, Committee, Council take Singular verb when unanimous, and Plural verb when divided in opinion.",
-        punjabi: "ਜਦੋਂ ਇੱਕਮਤ ਹੋਣ ਤਾਂ Singular verb (its); ਵੰਡੇ ਹੋਣ ਤਾਂ Plural verb (their).",
-        correct: "The Jury has given its decision. / The jury were divided in their opinion.",
-        incorrect: "The jury was divided in their opinion.",
-        trap: "Mismatching pronoun with verb (e.g. 'were divided in its' ❌).",
-        isTrap: true
-      },
-      {
-        id: 32,
-        ruleNo: "44",
-        category: "pronoun",
-        title: "Common Gender: Baby, Child, Infant",
-        desc: "Baby, Child, Infant take neuter pronouns (it, its, itself) when gender is unspecified.",
-        punjabi: "ਜਦੋਂ ਲਿੰਗ ਸਪੱਸ਼ਟ ਨਾ ਹੋਵੇ ਤਾਂ 'it / its' ਦੀ ਵਰਤੋਂ ਕੀਤੀ ਜਾਂਦੀ ਹੈ।",
-        correct: "The baby has broken its toy.",
-        incorrect: "The baby has broken his toy. / The baby has broken her toy.",
-        trap: "Defaulting to 'his/her' when child's gender is unknown.",
-        isTrap: false
-      },
-      {
-        id: 33,
-        ruleNo: "45",
-        category: "pronoun",
-        title: "Possessive Adjective vs Pronoun",
-        desc: "Possessive Adjectives (my, your, our, her, their) precede a Noun. Possessive Pronouns (mine, yours, ours, hers, theirs) stand alone without a noun.",
-        punjabi: "My + Noun (ਸਹੀ), Mine + Noun (ਗਲਤ)। Hers ਇਕੱਲਾ ਆਉਂਦਾ ਹੈ।",
-        correct: "She likes my dresses. / Hers is a new phone.",
-        incorrect: "She likes mine dresses. / Her is a new phone.",
-        trap: "Writing 'Mine car' or 'Yours book'.",
-        isTrap: false
-      },
-      {
-        id: 34,
-        ruleNo: "47",
-        category: "pronoun",
-        title: "Subjective vs Objective Case Comparison",
-        desc: "Subjective case is compared with Subjective case (after 'than'). Objective with Objective.",
-        punjabi: "ਤੁਲਨਾ ਬਰਾਬਰ ਕੇਸ ਵਿੱਚ ਹੁੰਦੀ ਹੈ।",
-        correct: "She is better than I (am). / He helped me more than (he helped) him.",
-        incorrect: "She is better than me.",
-        trap: "Spoken colloquial English 'She is taller than me' is grammatically INCORRECT in PSSSB.",
-        isTrap: true
-      },
-      {
-        id: 35,
-        ruleNo: "48",
-        category: "pronoun",
-        title: "Positive Personal Pronoun Order (2 : 3 : 1)",
-        desc: "In normal or positive situations, pronoun arrangement order is 2nd Person ➔ 3rd Person ➔ 1st Person (You, he and I).",
-        punjabi: "ਆਮ/ਚੰਗੀ ਗੱਲ ਲਈ ਤਰਤੀਬ 2:3:1 ਹੁੰਦੀ ਹੈ।",
-        correct: "You, she and I are friends. / You and she are bosom friends.",
-        incorrect: "I, you and she are friends. / She, you and I are friends.",
-        trap: "Two persons combinations: (2,3), (3,1), (2,1). Never place 'I' first in positive contexts.",
-        isTrap: true
-      },
-      {
-        id: 36,
-        ruleNo: "49",
-        category: "pronoun",
-        title: "Negative / Blame Pronoun Order (1 : 2 : 3)",
-        desc: "When confessing a mistake, guilt, crime, or fault, the order is 1st Person ➔ 2nd Person ➔ 3rd Person (I, you and he).",
-        punjabi: "ਗਲਤੀ, ਦੋਸ਼, ਪਾਪ ਮੰਨਣ ਸਮੇਂ ਤਰਤੀਬ 1:2:3 ਹੁੰਦੀ ਹੈ।",
-        correct: "I, you and she are culprits. / I and you are at fault.",
-        incorrect: "You, she, and I are culprits.",
-        trap: "Forgetting that verb remains PLURAL in both 2:3:1 and 1:2:3.",
-        isTrap: true
-      },
-      {
-        id: 37,
-        ruleNo: "51",
-        category: "pronoun",
-        title: "It's vs Its",
-        desc: "It's = Contraction for 'It is' or 'It has'. Its = Possessive adjective (belonging to it).",
-        punjabi: "It's ਦਾ ਅਰਥ It is ਹੈ। Its ਮਲਕੀਅਤ (Possessive) ਦਰਸਾਉਂਦਾ ਹੈ।",
-        correct: "It's raining. / The baby has broken its toy.",
-        incorrect: "The baby has broken it's toy.",
-        trap: "Punctuation error trap in editing and sentence correction.",
-        isTrap: false
-      },
-      {
-        id: 38,
-        ruleNo: "53",
-        category: "pronoun",
-        title: "Who vs Whom",
-        desc: "'Who' is a Subjective pronoun (performs the action). 'Whom' is an Objective pronoun (receives action).",
-        punjabi: "Who ਕਰਤਾ (Subject) ਹੈ; Whom ਕਰਮ (Object) ਹੈ।",
-        correct: "Who helped you? / I do not know whom to tell.",
-        incorrect: "Whom helped you?",
-        trap: "Test with He/Him: If answer is 'He' use Who; if 'Him' use Whom.",
-        isTrap: false
-      },
-      {
-        id: 39,
-        ruleNo: "54",
-        category: "sva",
-        title: "Articles with Two Titles/Designations",
-        desc: "If Article is used before BOTH nouns, they are TWO distinct persons ➔ PLURAL verb. If Article is only before 1st noun ➔ ONE person ➔ SINGULAR verb.",
-        punjabi: "ਦੋਵਾਂ ਅੱਗੇ Article = 2 ਵਿਅਕਤੀ (Plural). ਸਿਰਫ ਪਹਿਲੇ ਅੱਗੇ = 1 ਵਿਅਕਤੀ (Singular).",
-        correct: "The principal and the manager have done their duties. / The principal and manager has done his duty.",
-        incorrect: "The principal and manager have done their duty.",
-        trap: "Watch out for both verb and corresponding pronoun (his vs their).",
-        isTrap: true
-      },
-      {
-        id: 40,
-        ruleNo: "56",
-        category: "pronoun",
-        title: "Each Other vs One Another",
-        desc: "Each other is used for TWO persons/things. One another is used for MORE THAN TWO.",
-        punjabi: "Each other ਦੋ ਲਈ; One another ਦੋ ਤੋਂ ਜ਼ਿਆਦਾ ਲਈ।",
-        correct: "Pawan and Atul helped each other. / All the dealers helped one another.",
-        incorrect: "Pawan and Atul helped one another.",
-        trap: "Examiners swap 'each other' for teams or whole groups.",
-        isTrap: true
-      },
-      {
-        id: 41,
-        ruleNo: "63",
-        category: "adj",
-        title: "The + Comparative of the Two",
-        desc: "When selecting between exactly two items, use: 'The + Comparative Degree + of the two'.",
-        punjabi: "ਦੋ ਵਿੱਚੋਂ ਇੱਕ ਚੁਣਨ ਵੇਲੇ Comparative degree ਤੋਂ ਪਹਿਲਾਂ 'The' ਲੱਗਦਾ ਹੈ।",
-        correct: "Ravi is the better of the two boys. / Of the two, Jhanvi is the more beautiful girl.",
-        incorrect: "Ravi is the best of the two boys. / Ravi is better of the two boys.",
-        trap: "Candidates expect 'the' only before superlative degree, getting trapped by 'the better of the two'.",
-        isTrap: true
-      },
-      {
-        id: 42,
-        ruleNo: "64",
-        category: "adj",
-        title: "As...As vs So...As Comparison",
-        desc: "'As ... As' is used in positive or negative statements. 'So ... As' is strictly used in NEGATIVE comparisons.",
-        punjabi: "As...as ਦੋਵਾਂ ਵਿੱਚ; So...as ਸਿਰਫ ਨਾਂਹ-ਪੱਖੀ (Negative) ਵਿੱਚ।",
-        correct: "She is as beautiful as her mother. / She is not so beautiful as her mother.",
-        incorrect: "She is so beautiful as her mother.",
-        trap: "Using 'So ... as' in an affirmative sentence.",
-        isTrap: false
-      },
-      {
-        id: 43,
-        ruleNo: "69",
-        category: "adj",
-        title: "Faulty Parallel Comparison (That of / Those of)",
-        desc: "Comparison must be between equal entities. Compare roads with roads, not roads with an entire state.",
-        punjabi: "ਤੁਲਨਾ ਬਰਾਬਰ ਵਸਤੂਆਂ ਦੀ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ। ਇਸ ਲਈ That of / Those of ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ।",
-        correct: "The roads of Punjab are wider than those of Himachal Pradesh.",
-        incorrect: "The roads of Punjab are wider than Himachal Pradesh.",
-        trap: "Very common PSSSB error: leaving out 'that of' or 'those of'.",
-        isTrap: true
-      },
-      {
-        id: 44,
-        ruleNo: "70",
-        category: "adj",
-        title: "Dual Position of 'Enough'",
-        desc: "As an Adjective, Enough sits BEFORE a noun (Enough money). As an Adverb, Enough sits AFTER an adjective (Rich enough, Beautiful enough).",
-        punjabi: "Noun ਤੋਂ ਪਹਿਲਾਂ (Enough water); Adjective ਤੋਂ ਬਾਅਦ (Wise enough).",
-        correct: "I have enough money. / She is rich enough to buy a car.",
-        incorrect: "She is enough rich to buy a car.",
-        trap: "NITTTR loves 'enough rich' or 'enough tall' ❌.",
-        isTrap: true
-      },
-      {
-        id: 45,
-        ruleNo: "72",
-        category: "adj",
-        title: "Latin Comparatives (Junior, Senior, Superior) + TO",
-        desc: "Junior, Senior, Superior, Inferior, Prior, Anterior, Posterior, Prefer, Preferable ALWAYS take 'TO', never 'THAN'.",
-        punjabi: "ਇਹਨਾਂ ਨਾਲ ਕਦੇ ਵੀ 'Than' ਨਹੀਂ ਲੱਗਦਾ, ਹਮੇਸ਼ਾ 'To' ਲੱਗਦਾ ਹੈ।",
-        correct: "He is five years senior to me. / I prefer coffee to tea.",
-        incorrect: "He is five years senior than me. / I prefer coffee than tea.",
-        trap: "High Probability Trap: NITTTR questions consistently slip 'than' after senior/superior.",
-        isTrap: true
-      },
-      {
-        id: 46,
-        ruleNo: "73",
-        category: "adj",
-        title: "Comparing Two Qualities of the Same Person",
-        desc: "When comparing two qualities of the SAME person, use 'More + Positive Degree', NEVER the '-er' form.",
-        punjabi: "ਇੱਕੋ ਵਿਅਕਤੀ ਦੇ ਦੋ ਗੁਣਾਂ ਦੀ ਤੁਲਨਾ ਸਮੇਂ 'More + 1st degree' ਲੱਗਦੀ ਹੈ।",
-        correct: "She is more wise than beautiful.",
-        incorrect: "She is wiser than beautiful.",
-        trap: "Candidates think 'wiser' is correct, but 'more wise' is mandatory here.",
-        isTrap: true
-      },
-      {
-        id: 47,
-        ruleNo: "74",
-        category: "adj",
-        title: "Absolute Adjectives (No More / Most)",
-        desc: "Round, Perfect, Unique, Ideal, Chief, Complete, Excellent, Extreme are absolute and CANNOT take more/most.",
-        punjabi: "ਇਹਨਾਂ ਨਾਲ ਕਦੇ ਵੀ More ਜਾਂ Most ਨਹੀਂ ਲੱਗ ਸਕਦਾ।",
-        correct: "Ajay is an excellent student. / This is a unique sight.",
-        incorrect: "Ajay is the most excellent student. / A most unique monument.",
-        trap: "Writing 'the most unique' or 'more perfect'.",
-        isTrap: true
-      },
-      {
-        id: 48,
-        ruleNo: "80",
-        category: "adj",
-        title: "Ordinal Adjectives + 'The'",
-        desc: "Ordinal numbers (first, second, third, next, last) MUST always be preceded by article 'The'.",
-        punjabi: "First, second, third ਆਦਿ ਨਾਲ ਹਮੇਸ਼ਾ 'The' ਲੱਗਦਾ ਹੈ।",
-        correct: "The first chapter of this book is intriguing.",
-        incorrect: "First chapter of this book is intriguing.",
-        trap: "Exception: No 'The' if used with time expression: 'last night', 'next year' (NOT 'the last night').",
-        isTrap: true
-      },
-      {
-        id: 49,
-        ruleNo: "86",
-        category: "pronoun",
-        title: "Apostrophe ('s) Restricted on Non-Living Things",
-        desc: "Do not use 's with non-living objects; use 'of'. (Exceptions: time, distance, weight, personification).",
-        punjabi: "ਨਿਰਜੀਵ ਚੀਜ਼ਾਂ ਨਾਲ 's ਨਹੀਂ, 'of' ਲੱਗਦਾ ਹੈ।",
-        correct: "The page of a book / The ink of this pen.",
-        incorrect: "A book's page / This pen's ink.",
-        trap: "Valid exceptions: 'A month's holiday', 'At a stone's throw', 'Nature's law'.",
-        isTrap: false
-      },
-      {
-        id: 50,
-        ruleNo: "87",
-        category: "pronoun",
-        title: "No Apostrophe with Possessive Pronouns",
-        desc: "Yours, Ours, Theirs, Hers, Its are already possessive. NEVER add an apostrophe to them.",
-        punjabi: "Yours faithfully ਵਿੱਚ ਕਦੇ apostrophe (') ਨਹੀਂ ਲੱਗਦਾ।",
-        correct: "Yours faithfully / Your dress is more beautiful than hers.",
-        incorrect: "Your's faithfully / than her's.",
-        trap: "Very common in official letter writing MCQs.",
-        isTrap: true
-      },
-      {
-        id: 51,
-        ruleNo: "89",
-        category: "conj",
-        title: "Until (Time) vs Unless (Condition) + NO 'NOT'",
-        desc: "Until indicates Time. Unless indicates Action/Condition. Both are intrinsically negative; NEVER use 'not' with them.",
-        punjabi: "Until ਸਮੇਂ ਲਈ, Unless ਸ਼ਰਤ ਲਈ। ਇਹਨਾਂ ਨਾਲ ਕਦੇ 'not' ਨਹੀਂ ਲੱਗਦਾ।",
-        correct: "Wait until I get back. / You can't pass unless you work hard.",
-        incorrect: "Wait until I do not get back. / Unless you do not work hard.",
-        trap: "Double Negative Trap: Question gives 'Unless you do not give the exam' ❌.",
-        isTrap: true
-      },
-      {
-        id: 52,
-        ruleNo: "91",
-        category: "conj",
-        title: "Both is Paired ONLY with 'And'",
-        desc: "'Both' must always be paired with 'and', NEVER with 'as well as' or 'along with'.",
-        punjabi: "Both ਨਾਲ ਹਮੇਸ਼ਾ 'and' ਲੱਗਦਾ ਹੈ, 'as well as' ਨਹੀਂ।",
-        correct: "Both boys and girls are good at English.",
-        incorrect: "Both boys as well as girls are good at English.",
-        trap: "Examiners combine 'Both Rahul as well as Sahil' ❌.",
-        isTrap: true
-      },
-      {
-        id: 53,
-        ruleNo: "92",
-        category: "conj",
-        title: "Lest is Paired with 'Should' (or Bare Subjunctive)",
-        desc: "'Lest' means 'otherwise / so that not'. It ALWAYS pairs with modal auxiliary 'SHOULD' (or V1 alone). Never 'would/could'.",
-        punjabi: "'Lest' ਨਾਲ ਹਮੇਸ਼ਾ 'should' ਆਉਂਦਾ ਹੈ (ਜਾਂ ਇਕੱਲੀ V1 ਕਿਰਿਆ)। 'Would' ਕਦੇ ਨਹੀਂ ਲੱਗਦਾ।",
-        correct: "Work hard, lest you should fail. / Work hard, lest you fail.",
-        incorrect: "Work hard, lest you would fail. / lest you will fail.",
-        trap: "Lest is already negative; never add 'not' after lest!",
-        isTrap: true
-      },
-      {
-        id: 54,
-        ruleNo: "95",
-        category: "adj",
-        title: "Too Much (Noun) vs Much Too (Adjective)",
-        desc: "Too much + Uncountable Noun. Much too + Adjective.",
-        punjabi: "Too much ਤੋਂ ਬਾਅਦ Noun (pain, money); Much too ਤੋਂ ਬਾਅਦ Adjective (strong, painful).",
-        correct: "I have too much pain. / This phone is much too expensive.",
-        incorrect: "This phone is too much expensive.",
-        trap: "Frequent PSSSB filler: 'He is ... arrogant' ➔ Answer: 'much too' (since arrogant is adjective).",
-        isTrap: true
-      },
-      {
-        id: 55,
-        ruleNo: "97",
-        category: "conj",
-        title: "No Sooner is Paired with 'THAN'",
-        desc: "'No sooner' takes inverted verb order and ALWAYS correlates with 'THAN' (not then, when, that).",
-        punjabi: "No sooner ਨਾਲ ਹਮੇਸ਼ਾ 'than' ਲੱਗਦਾ ਹੈ। (Then ਜਾਂ When ਨਹੀਂ)।",
-        correct: "No sooner had I reached the station than the train started.",
-        incorrect: "No sooner had I reached the station then / when the train started.",
-        trap: "Spelling trap: Examiner writes 'then' instead of 'than'.",
-        isTrap: true
-      },
-      {
-        id: 56,
-        ruleNo: "98",
-        category: "conj",
-        title: "Hardly / Scarcely / Barely + WHEN",
-        desc: "Hardly, Scarcely, Barely take inverted auxiliary and MUST correlate with 'WHEN' or 'BEFORE' (Never 'than').",
-        punjabi: "ਇਹਨਾਂ ਨਾਲ ਹਮੇਸ਼ਾ 'when' ਲੱਗਦਾ ਹੈ, ਕਦੇ 'than' ਨਹੀਂ ਲੱਗਦਾ।",
-        correct: "Hardly had I reached the station when the train started.",
-        incorrect: "Hardly had I reached the station than the train started.",
-        trap: "Swapping 'than' with Hardly or 'when' with No sooner.",
-        isTrap: true
-      },
-      {
-        id: 57,
-        ruleNo: "100",
-        category: "conj",
-        title: "Between...And vs From...To",
-        desc: "'Between' is paired with 'AND'. 'From' is paired with 'TO'. Never cross-pair them.",
-        punjabi: "Between ਨਾਲ 'and'; From ਨਾਲ 'to'.",
-        correct: "You can talk to me between 9 and 10 o'clock. / From 9 to 10 o'clock.",
-        incorrect: "You can talk to me between morning to evening.",
-        trap: "Writing 'Between 9 AM to 5 PM' ❌.",
-        isTrap: true
-      },
-      {
-        id: 58,
-        ruleNo: "115",
-        category: "tense",
-        title: "It is High Time + Past Simple (V2)",
-        desc: "Phrases like 'It is time', 'It is high time', 'It is about time' MUST be followed by Simple Past (V2).",
-        punjabi: "'It is time / high time' ਤੋਂ ਬਾਅਦ ਹਮੇਸ਼ਾ Past Indefinite (V2) ਕਿਰਿਆ ਆਉਂਦੀ ਹੈ।",
-        correct: "It is time she started a new job. / It is high time we acted.",
-        incorrect: "It is time she starts a new job. / It is high time we should act.",
-        trap: "Using 'starts' or 'should start' instead of simple past 'started'.",
-        isTrap: true
-      },
-      {
-        id: 59,
-        ruleNo: "125",
-        category: "tense",
-        title: "Third Conditional (Past Unreal Condition)",
-        desc: "If + Past Perfect (had + V3) ➔ Principal Clause: would have + V3 (or could/might have + V3).",
-        punjabi: "ਜੇਕਰ ਇੱਕ ਪਾਸੇ 'had + V3' ਹੋਵੇ ਤਾਂ ਦੂਜੇ ਪਾਸੇ 'would have + V3' ਲੱਗੇਗਾ।",
-        correct: "If you had studied, you would have passed the examination.",
-        incorrect: "If you had studied, you would pass / will pass.",
-        trap: "Never write 'If you would have studied' in the If-clause!",
-        isTrap: true
-      },
-      {
-        id: 60,
-        ruleNo: "145",
-        category: "gerund",
-        title: "Prepositional 'TO' + Gerund (V1 + ing)",
-        desc: "Look forward to, Accustomed to, Addicted to, Prone to, Confess to, With a view to, Used to + V1 + ING.",
-        punjabi: "ਇਹਨਾਂ ਖਾਸ ਫਰੇਜ਼ਾਂ ਤੋਂ ਬਾਅਦ 'to' ਹੋਣ ਦੇ ਬਾਵਜੂਦ Gerund (V1 + ing) ਲੱਗਦਾ ਹੈ।",
-        correct: "I look forward to meeting you. / He is addicted to gambling. / Accustomed to working at night.",
-        incorrect: "I look forward to meet you. / He is addicted to gamble.",
-        trap: "Top candidate trap: Seeing 'to' and incorrectly putting bare infinitive V1 ('meet').",
-        isTrap: true
-      }
-    ];
+</div>
 
-    // Quiz Questions testing tricky NITTTR exam rules
-    const quizDeck = [
-      {
-        q: "Spot the error: 'He is senior than all his colleagues in the department.'",
-        options: ["He is", "senior than", "all his colleagues", "No error"],
-        ans: 1,
-        exp: "Rule 45 / 72: Senior, Junior, Superior, Inferior take 'TO', never 'THAN'. Should be 'senior to'."
-      },
-      {
-        q: "Select the correct sentence regarding prepositions:",
-        options: [
-          "The convict was accused with murder.",
-          "He was acquitted from all the charges.",
-          "The accused was charged with theft.",
-          "She is superior than me in skills."
-        ],
-        ans: 2,
-        exp: "Preposition Trap: 'Charged' takes 'with', while 'Accused' takes 'of' and 'Acquitted' takes 'of'."
-      },
-      {
-        q: "Spot the error: 'She asked him that why had he not submitted the project.'",
-        options: ["She asked him", "that why had he", "not submitted", "No error"],
-        ans: 1,
-        exp: "Narration Traps: (1) Never use 'that' with Wh- question words. (2) Question word order must invert to affirmative: 'why he had not'."
-      },
-      {
-        q: "Fill in the blank: 'Work hard, lest you _______ fail in the upcoming test.'",
-        options: ["would", "should", "will", "might"],
-        ans: 1,
-        exp: "Rule 53 / 92: 'Lest' is followed by 'should' (or bare subjunctive V1). 'Would' is strictly incorrect."
-      },
-      {
-        q: "Identify the correct preposition: 'The manager was deeply annoyed _______ his subordinate's carelessness.'",
-        options: ["with", "at", "to", "for"],
-        ans: 1,
-        exp: "Preposition Trap: Annoyed/Angry WITH a person, but Annoyed/Angry AT an action or careless behavior."
-      },
-      {
-        q: "Spot the error: 'We are looking forward to meet the honorable delegates tomorrow.'",
-        options: ["We are", "looking forward", "to meet the", "No error"],
-        ans: 2,
-        exp: "Rule 60 / 145: 'Look forward to' takes a GERUND (V1 + ing). It must be 'to meeting'."
-      }
-    ];
-
-    let currentCategory = 'all';
-    let trapsOnly = false;
-
-    // Render Prepositions
-    function renderPrepositions(data) {
-      const container = document.getElementById('prepContainer');
-      container.innerHTML = data.map(item => `
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-2.5 space-y-1 hover:border-emerald-500/50 transition-all shadow-sm">
-          <div class="flex items-center justify-between">
-            <span class="font-bold text-xs text-slate-800 dark:text-slate-100">${item.word}</span>
-            <span class="font-mono text-[11px] font-black px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-800">+ ${item.prep}</span>
-          </div>
-          <p class="text-[11px] text-slate-500 dark:text-slate-400 font-gurmukhi truncate">${item.punjabi}</p>
-        </div>
-      `).join('');
-    }
-
-    function filterPrepositions() {
-      const q = document.getElementById('prepSearch').value.toLowerCase().trim();
-      const filtered = prepositionsData.filter(item => 
-        item.word.toLowerCase().includes(q) || 
-        item.prep.toLowerCase().includes(q) || 
-        item.punjabi.toLowerCase().includes(q)
-      );
-      renderPrepositions(filtered);
-    }
-
-    // Render Rules Function
-    function renderRules() {
-      const container = document.getElementById('rulesContainer');
-      const searchQuery = document.getElementById('ruleSearch').value.toLowerCase().trim();
-      
-      const filtered = rulesData.filter(item => {
-        const matchesCategory = (currentCategory === 'all' || item.category === currentCategory);
-        const matchesTraps = (!trapsOnly || item.isTrap);
-        const matchesSearch = (
-          item.title.toLowerCase().includes(searchQuery) ||
-          item.desc.toLowerCase().includes(searchQuery) ||
-          item.correct.toLowerCase().includes(searchQuery) ||
-          item.incorrect.toLowerCase().includes(searchQuery) ||
-          item.ruleNo.includes(searchQuery) ||
-          item.punjabi.toLowerCase().includes(searchQuery)
-        );
-        return matchesCategory && matchesTraps && matchesSearch;
-      });
-
-      document.getElementById('rulesCountBadge').textContent = `${filtered.length} Displayed`;
-
-      if (filtered.length === 0) {
-        container.innerHTML = `
-          <div class="col-span-full py-12 text-center text-slate-400">
-            <i data-lucide="search-x" class="w-12 h-12 mx-auto mb-2 text-slate-400"></i>
-            <p class="text-sm font-semibold">No rules matched your search or trap filter.</p>
-          </div>
-        `;
-        lucide.createIcons();
-        return;
-      }
-
-      container.innerHTML = filtered.map(rule => `
-        <div class="bg-white dark:bg-slate-900 border ${rule.isTrap ? 'border-rose-300 dark:border-rose-900/50 hover:border-rose-500 dark:hover:border-rose-700/80' : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'} rounded-2xl p-5 space-y-3.5 transition-all shadow-sm hover:shadow-md flex flex-col justify-between group">
-          <div class="space-y-2.5">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded-lg bg-amber-500/10 text-amber-700 dark:text-amber-400 font-mono text-xs font-bold border border-amber-500/20">
-                  #${rule.ruleNo}
-                </span>
-                <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ${
-                  rule.category === 'sva' ? 'bg-cyan-100 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300' :
-                  rule.category === 'pronoun' ? 'bg-violet-100 dark:bg-violet-500/10 text-violet-800 dark:text-violet-300' :
-                  rule.category === 'adj' ? 'bg-emerald-100 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300' :
-                  rule.category === 'conj' ? 'bg-pink-100 dark:bg-pink-500/10 text-pink-800 dark:text-pink-300' :
-                  rule.category === 'tense' ? 'bg-amber-100 dark:bg-amber-500/10 text-amber-800 dark:text-amber-300' :
-                  'bg-blue-100 dark:bg-blue-500/10 text-blue-800 dark:text-blue-300'
-                }">
-                  ${rule.category.toUpperCase()}
-                </span>
-              </div>
-              ${rule.isTrap ? `
-                <span class="flex items-center gap-1 text-[11px] font-bold text-rose-700 dark:text-rose-400 bg-rose-100 dark:bg-rose-950/60 px-2 py-0.5 rounded-full border border-rose-200 dark:border-rose-800/40">
-                  <i data-lucide="alert-triangle" class="w-3 h-3"></i> NITTTR Trap
-                </span>
-              ` : ''}
-            </div>
-
-            <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-colors leading-snug">
-              ${rule.title}
-            </h3>
-
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              ${rule.desc}
-            </p>
-
-            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800/80 font-gurmukhi text-xs text-amber-800 dark:text-amber-200 leading-relaxed">
-              ${rule.punjabi}
-            </div>
-          </div>
-
-          <div class="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800/60 text-xs">
-            <div class="flex items-start gap-2 text-emerald-800 dark:text-emerald-300 font-mono bg-emerald-50 dark:bg-emerald-950/30 p-2 rounded-lg border border-emerald-200 dark:border-emerald-900/40">
-              <span class="font-sans font-bold text-emerald-600">✓</span>
-              <span>${rule.correct}</span>
-            </div>
-            ${rule.incorrect ? `
-              <div class="flex items-start gap-2 text-rose-800 dark:text-rose-300 font-mono bg-rose-50 dark:bg-rose-950/30 p-2 rounded-lg border border-rose-200 dark:border-rose-900/40">
-                <span class="font-sans font-bold text-rose-600">✗</span>
-                <span>${rule.incorrect}</span>
-              </div>
-            ` : ''}
-            ${rule.trap ? `
-              <div class="text-[11px] text-amber-800 dark:text-amber-300/90 font-sans italic pt-1">
-                <strong>⚡ Trap Note:</strong> ${rule.trap}
-              </div>
-            ` : ''}
-          </div>
-        </div>
-      `).join('');
-
-      lucide.createIcons();
-    }
-
-    // Filter by category pills
-    function setCategory(cat) {
-      currentCategory = cat;
-      document.querySelectorAll('.cat-pill').forEach(btn => {
-        btn.classList.remove('bg-amber-500', 'text-slate-950');
-        btn.classList.add('bg-slate-200', 'dark:bg-slate-900', 'text-slate-700', 'dark:text-slate-300');
-      });
-      event.target.classList.remove('bg-slate-200', 'dark:bg-slate-900', 'text-slate-700', 'dark:text-slate-300');
-      event.target.classList.add('bg-amber-500', 'text-slate-950');
-      renderRules();
-    }
-
-    function filterRules() {
-      renderRules();
-    }
-
-    function toggleTrapsOnly() {
-      trapsOnly = !trapsOnly;
-      const btn = document.getElementById('trapsToggleBtn');
-      if (trapsOnly) {
-        btn.classList.remove('bg-rose-100', 'dark:bg-rose-950/40', 'text-rose-700', 'dark:text-rose-300');
-        btn.classList.add('bg-rose-600', 'text-white');
-      } else {
-        btn.classList.add('bg-rose-100', 'dark:bg-rose-950/40', 'text-rose-700', 'dark:text-rose-300');
-        btn.classList.remove('bg-rose-600', 'text-white');
-      }
-      renderRules();
-    }
-
-    // Render Quiz Deck
-    function renderQuiz() {
-      const container = document.getElementById('quizContainer');
-      container.innerHTML = quizDeck.map((item, idx) => `
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3.5 flex flex-col justify-between shadow-sm">
-          <div class="space-y-2">
-            <span class="text-xs font-mono font-bold text-amber-600 dark:text-amber-400">QUESTION 0${idx + 1}</span>
-            <p class="text-sm font-semibold text-slate-900 dark:text-white leading-relaxed">${item.q}</p>
-          </div>
-
-          <div class="space-y-1.5 pt-2">
-            ${item.options.map((opt, optIdx) => `
-              <button 
-                onclick="checkAnswer(${idx},${optIdx}, this)" 
-                class="w-full text-left px-3.5 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 transition-all font-sans flex items-center justify-between group"
-              >
-                <span>${opt}</span>
-                <span class="w-4 h-4 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center text-[10px] group-hover:border-amber-500"></span>
-              </button>
-            `).join('')}
-          </div>
-
-          <div id="explanation-${idx}" class="hidden p-3 rounded-xl text-xs leading-relaxed mt-2"></div>
-        </div>
-      `).join('');
-    }
-
-    function checkAnswer(qIdx, selectedOptIdx, buttonElement) {
-      const q = quizDeck[qIdx];
-      const parent = buttonElement.parentElement;
-      const allButtons = parent.querySelectorAll('button');
-      const expBox = document.getElementById(`explanation-${qIdx}`);
-
-      allButtons.forEach(btn => btn.disabled = true);
-
-      if (selectedOptIdx === q.ans) {
-        buttonElement.classList.add('bg-emerald-100', 'dark:bg-emerald-950', 'border-emerald-600', 'text-emerald-800', 'dark:text-emerald-200');
-        expBox.className = "p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200 text-xs leading-relaxed mt-2";
-        expBox.innerHTML = `<strong>✓ Correct!</strong> ${q.exp}`;
-      } else {
-        buttonElement.classList.add('bg-rose-100', 'dark:bg-rose-950', 'border-rose-600', 'text-rose-800', 'dark:text-rose-200');
-        allButtons[q.ans].classList.add('bg-emerald-100', 'dark:bg-emerald-950', 'border-emerald-600', 'text-emerald-800', 'dark:text-emerald-300');
-        expBox.className = "p-3 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800 text-rose-800 dark:text-rose-200 text-xs leading-relaxed mt-2";
-        expBox.innerHTML = `<strong>✗ Incorrect.</strong> ${q.exp}`;
-      }
-      expBox.classList.remove('hidden');
-    }
-
-    // Initialization
-    window.addEventListener('DOMContentLoaded', () => {
-      renderPrepositions(prepositionsData);
-      renderRules();
-      renderQuiz();
-      lucide.createIcons();
-    });
-  </script>
 </body>
 </html>
