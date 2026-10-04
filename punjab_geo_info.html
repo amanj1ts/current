@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punjab Map Quiz, Rivers & Wetlands - PSSSB Exam Portal</title>
+  
+  <!-- Tailwind CSS with class-based dark mode -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+
+	<!-- Turf.js for Advanced Geospatial Calculations -->
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Mukta+Mahee:wght@500;700&display=swap');
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-gurmukhi {
+      font-family: 'Mukta Mahee', sans-serif;
+    }
+
+    #map {
+      height: 100%;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    .dark #map {
+      background-color: #0b1120;
+    }
+    html:not(.dark) #map {
+      background-color: #f1f5f9;
+    }
+
+    /* Leaflet Control Theming */
+    .dark .leaflet-container {
+      background: #090d16 !important;
+      font-family: inherit;
+    }
+    html:not(.dark) .leaflet-container {
+      background: #f8fafc !important;
+      font-family: inherit;
+    }
+
+    .dark .leaflet-control-zoom {
+      border: 1px solid #334155 !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    }
+    .dark .leaflet-control-zoom a {
+      background: #1e293b !important;
+      color: #94a3b8 !important;
+      border-bottom: 1px solid #334155 !important;
+    }
+    .dark .leaflet-control-zoom a:hover {
+      background: #334155 !important;
+      color: #f8fafc !important;
+    }
+
+    html:not(.dark) .leaflet-control-zoom {
+      border: 1px solid #cbd5e1 !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    }
+    html:not(.dark) .leaflet-control-zoom a {
+      background: #ffffff !important;
+      color: #475569 !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+    }
+    html:not(.dark) .leaflet-control-zoom a:hover {
+      background: #f1f5f9 !important;
+      color: #0f172a !important;
+    }
+
+    /* District Tooltip */
+    .district-tooltip {
+      font-weight: 600;
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    }
+    .dark .district-tooltip {
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid #38bdf8;
+      color: #f8fafc;
+    }
+    html:not(.dark) .district-tooltip {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #0284c7;
+      color: #0f172a;
+    }
+
+    .river-tooltip {
+      background: rgba(8, 47, 73, 0.95);
+      border: 1px solid #0ea5e9;
+      color: #bae6fd;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+
+    .wetland-tooltip {
+      background: rgba(6, 78, 59, 0.95);
+      border: 1px solid #10b981;
+      color: #a7f3d0;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+
+    /* Animated River Flow effect */
+    .river-path {
+      stroke-dasharray: 8, 8;
+      animation: riverFlow 30s linear infinite;
+    }
+    @keyframes riverFlow {
+      from { stroke-dashoffset: 400; }
+      to { stroke-dashoffset: 0; }
+    }
+
+    /* Pulsing Wetland Markers */
+    .pulsing-wetland-icon {
+      position: relative;
+    }
+    .pulsing-wetland-icon::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.45);
+      animation: wetlandPulse 2s infinite ease-out;
+      z-index: -1;
+    }
+    @keyframes wetlandPulse {
+      0% { transform: scale(0.9); opacity: 0.9; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 3px;
+    }
+    html:not(.dark) ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    html:not(.dark) ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 h-screen flex flex-col overflow-hidden select-none transition-colors duration-200">
+
+  <!-- Top Navigation Bar -->
+  <header class="h-14 border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 backdrop-blur px-4 flex items-center justify-between z-30 shrink-0">
+    <div class="flex items-center space-x-3">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-amber-500 via-orange-600 to-indigo-600 flex items-center justify-center font-black text-white shadow-lg shadow-indigo-950/20">
+        PB
+      </div>
+      <div>
+        <h1 class="text-sm font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+          Punjab Geographical Information
+          <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">23 Districts</span>
+        </h1>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400">Districts • Rivers (Vedic Names) • 6 Ramsar Wetlands • State Profile</p>
+      </div>
+    </div>
+
+    <!-- Center Mode Switcher -->
+    <div class="flex items-center bg-slate-100 dark:bg-slate-800/80 p-1 rounded-lg border border-slate-200 dark:border-slate-700/60">
+      <button id="btn-mode-quiz" class="flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-md transition-all bg-indigo-600 text-white shadow-sm">
+        <i data-lucide="crosshair" class="w-3.5 h-3.5"></i>
+        <span>PSSSB Quiz Mode</span>
+      </button>
+      <button id="btn-mode-explore" class="flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-md transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+        <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+        <span>Explore & Learn</span>
+      </button>
+    </div>
+
+    <!-- Top Right Controls -->
+    <div class="flex items-center space-x-2">
+      <!-- Punjab Basic Profile Button -->
+      <button id="btn-toggle-profile" title="Punjab Basic Profile & Demographics" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-700 dark:text-amber-400 border border-amber-500/30 text-xs font-semibold transition">
+        <i data-lucide="info" class="w-4 h-4"></i>
+        <span class="hidden sm:inline">Punjab Profile</span>
+      </button>
+
+      <!-- Light / Dark Mode Toggle -->
+      <button id="btn-toggle-theme" title="Toggle Light/Dark Theme" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition">
+        <i id="theme-icon" data-lucide="sun" class="w-4 h-4"></i>
+      </button>
+
+      <!-- Reset Map View -->
+      <button id="btn-reset-view" title="Reset View" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition">
+        <i data-lucide="maximize-2" class="w-4 h-4"></i>
+      </button>
+
+      <!-- Sound Toggle -->
+      <button id="btn-toggle-sound" title="Toggle Audio" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-emerald-600 dark:text-emerald-400 border border-slate-200 dark:border-slate-700 transition">
+        <i data-lucide="volume-2" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Application Body -->
+  <div class="flex-1 flex overflow-hidden relative">
+
+    <!-- Leaflet Map View Container -->
+    <div class="flex-1 relative h-full">
+      <div id="map"></div>
+
+      <!-- Ultra-Compact Quiz HUD Overlay (Docked Top-Right to avoid obscuring map) -->
+      <div id="quiz-hud" class="absolute top-4 right-4 z-[1000] pointer-events-none flex flex-col items-end w-64 gap-1.5">
+        
+        <!-- Floating Feedback Pill -->
+        <div id="quiz-feedback" class="pointer-events-auto px-3 py-1 rounded-full text-[10px] font-bold shadow-md transition-all duration-300 opacity-0 translate-y-2"></div>
+
+        <!-- Main Compact Question Card -->
+        <div class="pointer-events-auto bg-white/95 dark:bg-slate-900/95 border border-indigo-200 dark:border-indigo-500/40 shadow-xl backdrop-blur-md rounded-xl w-full overflow-hidden flex flex-col">
+          
+          <!-- Top Stats Strip -->
+          <div class="bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1.5 flex items-center justify-between text-[9px] font-bold border-b border-slate-200 dark:border-slate-700/50 text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1 text-indigo-600 dark:text-indigo-400">
+              <i data-lucide="crosshair" class="w-3 h-3"></i> Q: <span id="q-current" class="text-slate-800 dark:text-white">1</span>/23
+            </span>
+            <div class="flex items-center gap-2.5">
+              <span class="text-amber-500 flex items-center gap-0.5" title="Streak"><i data-lucide="flame" class="w-2.5 h-2.5"></i><span id="q-streak">0</span></span>
+              <span class="text-emerald-500 flex items-center gap-0.5" title="Accuracy"><i data-lucide="award" class="w-2.5 h-2.5"></i><span id="q-score">0%</span></span>
+              <span class="flex items-center gap-0.5" title="Time"><i data-lucide="clock" class="w-2.5 h-2.5"></i><span id="q-timer">00:00</span></span>
+            </div>
+          </div>
+
+          <!-- Question Area -->
+          <div class="p-2.5 relative">
+            <p class="text-[8px] font-bold tracking-wider uppercase text-slate-400 mb-0.5">Locate on Map</p>
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h2 id="q-district-name" class="text-sm font-extrabold text-slate-900 dark:text-white leading-tight">
+                Hoshiarpur <br><span id="q-district-punjabi" class="font-gurmukhi text-[11px] font-normal text-amber-600 dark:text-amber-400">ਹੁਸ਼ਿਆਰਪੁਰ</span>
+              </h2>
+              <button id="btn-skip" title="Skip" class="p-1.5 rounded bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 transition shrink-0">
+                <i data-lucide="skip-forward" class="w-3 h-3"></i>
+              </button>
+            </div>
+            
+            <!-- Compact Hint -->
+            <div class="bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1.5 rounded border border-indigo-100 dark:border-indigo-800/50 flex gap-1.5 items-start">
+              <i data-lucide="sparkles" class="w-3 h-3 text-amber-500 shrink-0 mt-0.5"></i>
+              <p id="q-hint-text" class="text-[9px] text-indigo-800 dark:text-indigo-200 leading-tight">
+                Exam Clue: Highest literacy rate in Punjab.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Explorer Mode Toggles (Top Left beneath header) -->
+      <div id="explorer-controls" class="absolute top-4 left-4 z-[1000] bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 backdrop-blur rounded-xl p-3 text-xs text-slate-700 dark:text-slate-300 flex flex-col gap-2 shadow-xl pointer-events-auto hidden">
+        <span class="font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-[10px]">Map Overlays</span>
+        
+        <label class="flex items-center gap-2 cursor-pointer hover:text-indigo-600 dark:hover:text-white transition">
+          <input type="checkbox" id="layer-toggle-rivers" checked class="rounded border-slate-300 dark:border-slate-700 text-sky-500 focus:ring-sky-500">
+          <span class="flex items-center gap-1.5">
+            <span class="w-2.5 h-0.5 bg-sky-500 rounded-full inline-block"></span>
+            <span>Punjab Rivers (4 Major)</span>
+          </span>
+        </label>
+
+        <label class="flex items-center gap-2 cursor-pointer hover:text-indigo-600 dark:hover:text-white transition">
+          <input type="checkbox" id="layer-toggle-wetlands" checked class="rounded border-slate-300 dark:border-slate-700 text-emerald-500 focus:ring-emerald-500">
+          <span class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+            <span>Ramsar Wetlands (6 Sites)</span>
+          </span>
+        </label>
+      </div>
+
+      <!-- Map Legend (Bottom-Left) -->
+      <div class="absolute bottom-4 left-4 z-[1000] bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 backdrop-blur rounded-xl p-3 text-[11px] text-slate-700 dark:text-slate-300 flex flex-col gap-1.5 shadow-xl pointer-events-auto">
+        <span class="font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-[10px]">Punjab Regions</span>
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded bg-emerald-500/80 inline-block border border-emerald-400"></span>
+          <span>Majha (4 Districts)</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded bg-sky-500/80 inline-block border border-sky-400"></span>
+          <span>Doaba (4 Districts)</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded bg-amber-500/80 inline-block border border-amber-400"></span>
+          <span>Malwa (15 Districts)</span>
+        </div>
+        <div class="pt-1 border-t border-slate-200 dark:border-slate-800 flex items-center gap-2 text-sky-600 dark:text-sky-300">
+          <span class="w-3 h-0.5 bg-sky-500 inline-block"></span>
+          <span>Rivers (Sutlej, Beas, Ravi, Ghaggar)</span>
+        </div>
+        <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-ping"></span>
+          <span>Ramsar Wetlands</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PSSSB High-Yield Details Panel (Right Sidebar) -->
+    <aside class="w-96 border-l border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 flex flex-col z-20 shrink-0 transition-colors duration-200">
+      
+      <!-- Panel Header -->
+      <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="p-2 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white">PSSSB Exam Insights</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Districts, Rivers & Wetlands</p>
+          </div>
+        </div>
+        <span id="badge-category" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
+          Select Feature
+        </span>
+      </div>
+
+      <!-- Detail Information Body -->
+      <div id="side-panel-body" class="flex-1 overflow-y-auto p-4 space-y-4">
+        
+        <!-- Default Empty State -->
+        <div id="info-empty" class="h-full flex flex-col items-center justify-center text-center p-6 text-slate-400 dark:text-slate-500">
+          <div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-center justify-center mb-3">
+            <i data-lucide="map-pin" class="w-6 h-6 text-slate-500 dark:text-slate-400"></i>
+          </div>
+          <h4 class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">Click a District, River, or Wetland</h4>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed max-w-xs">
+            Inspect all 23 districts, Vedic names of rivers, Indus Water Treaty, and 6 Ramsar wetland sites critical for PSSSB Patwari, Clerk & Police exams.
+          </p>
+        </div>
+
+        <!-- Loaded Content State -->
+        <div id="info-content" class="hidden space-y-4">
+          
+          <!-- Title Banner -->
+          <div class="bg-gradient-to-r from-slate-100 dark:from-slate-800/80 to-slate-200/50 dark:to-slate-800/20 p-3 rounded-xl border border-slate-200 dark:border-slate-700/60">
+            <div class="flex items-center justify-between">
+              <h2 id="feature-title" class="text-lg font-extrabold text-slate-900 dark:text-white">Hoshiarpur</h2>
+              <span id="feature-subtitle" class="font-gurmukhi text-base font-bold text-amber-600 dark:text-amber-400">ਹੁਸ਼ਿਆਰਪੁਰ</span>
+            </div>
+            <p id="feature-tagline" class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Known as the City of Mangoes & Land of Saints</p>
+          </div>
+
+          <!-- Stat Grid -->
+          <div id="feature-stats" class="grid grid-cols-2 gap-2 text-xs">
+            <div class="bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-lg p-2.5">
+              <span id="stat-label-1" class="text-[10px] font-medium text-slate-500 dark:text-slate-400 block uppercase">Division</span>
+              <span id="stat-val-1" class="font-bold text-slate-800 dark:text-slate-200">Jalandhar</span>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-lg p-2.5">
+              <span id="stat-label-2" class="text-[10px] font-medium text-slate-500 dark:text-slate-400 block uppercase">Headquarters</span>
+              <span id="stat-val-2" class="font-bold text-slate-800 dark:text-slate-200">Hoshiarpur</span>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-lg p-2.5">
+              <span id="stat-label-3" class="text-[10px] font-medium text-slate-500 dark:text-slate-400 block uppercase">Border Status</span>
+              <span id="stat-val-3" class="font-bold text-slate-800 dark:text-slate-200">Himachal Border</span>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-lg p-2.5">
+              <span id="stat-label-4" class="text-[10px] font-medium text-slate-500 dark:text-slate-400 block uppercase">Exam Highlight</span>
+              <span id="stat-val-4" class="font-bold text-emerald-600 dark:text-emerald-400">Highest Literacy</span>
+            </div>
+          </div>
+
+          <!-- High Yield Revision Points -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+              High-Yield Exam Points
+            </h4>
+            <ul id="feature-bullets" class="space-y-2 text-xs text-slate-700 dark:text-slate-300">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+
+          <!-- Section 1 (History / Ecology) -->
+          <div id="section-1-box" class="bg-slate-100 dark:bg-slate-800/40 rounded-xl p-3 border border-slate-200 dark:border-slate-800 space-y-1.5">
+            <h4 id="section-1-title" class="text-xs font-bold text-slate-900 dark:text-slate-200 flex items-center gap-1.5">
+              <i data-lucide="history" class="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400"></i>
+              Historic Significance
+            </h4>
+            <p id="section-1-desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed"></p>
+          </div>
+
+          <!-- Section 2 (Economy / Flora & Fauna) -->
+          <div id="section-2-box" class="bg-slate-100 dark:bg-slate-800/40 rounded-xl p-3 border border-slate-200 dark:border-slate-800 space-y-1.5">
+            <h4 id="section-2-title" class="text-xs font-bold text-slate-900 dark:text-slate-200 flex items-center gap-1.5">
+              <i data-lucide="factory" class="w-3.5 h-3.5 text-sky-500 dark:text-sky-400"></i>
+              Geography & Economy
+            </h4>
+            <p id="section-2-desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed"></p>
+          </div>
+
+          <!-- Copy Button -->
+          <button id="btn-copy-notes" class="w-full py-2 px-3 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 flex items-center justify-center gap-2 transition">
+            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            <span>Copy Revision Notes to Clipboard</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Panel Footer Status -->
+      <div class="p-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 text-[11px] text-slate-500 flex justify-between items-center">
+        <span>PSSSB Patwari / Clerk / Excise Exam</span>
+        <span class="text-slate-600 dark:text-slate-400 font-mono">Punjab GK</span>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Punjab Basic Profile Modal Backdrop -->
+  <div id="modal-punjab-profile" class="fixed inset-0 z-[2000] bg-slate-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden text-slate-800 dark:text-slate-200">
+      
+      <!-- Modal Header -->
+      <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-900/80">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-sm border border-amber-500/30">
+            PB
+          </div>
+          <div>
+            <h2 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              Punjab State Basic Profile
+              <span class="text-[11px] font-normal px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">PSSSB High Yield</span>
+            </h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Official Geography, Demography & Administrative Stats (Census 2011)</p>
+          </div>
+        </div>
+        <button id="btn-close-profile" class="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 hover:text-slate-800 dark:hover:text-white transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-5 overflow-y-auto space-y-4 text-xs">
+        
+        <!-- Key Quick Metric Tiles -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="bg-slate-50 dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700/60">
+            <span class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 block">Total Area</span>
+            <span class="text-sm font-extrabold text-indigo-600 dark:text-indigo-400">50,362 sq km</span>
+            <span class="text-[10px] text-slate-500 block mt-0.5">1.53% of India (19th rank)</span>
+          </div>
+
+          <div class="bg-slate-50 dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700/60">
+            <span class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 block">Total Population</span>
+            <span class="text-sm font-extrabold text-emerald-600 dark:text-emerald-400">2,77,43,338</span>
+            <span class="text-[10px] text-slate-500 block mt-0.5">2.29% of India (~2.77 Cr)</span>
+          </div>
+
+          <div class="bg-slate-50 dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700/60">
+            <span class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 block">Sex Ratio</span>
+            <span class="text-sm font-extrabold text-amber-600 dark:text-amber-400">895 / 1000</span>
+            <span class="text-[10px] text-slate-500 block mt-0.5">Child (0-6): 846 / 1000</span>
+          </div>
+
+          <div class="bg-slate-50 dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700/60">
+            <span class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 block">Overall Literacy</span>
+            <span class="text-sm font-extrabold text-sky-600 dark:text-sky-400">75.84%</span>
+            <span class="text-[10px] text-slate-500 block mt-0.5">M: 80.44% | F: 70.73%</span>
+          </div>
+        </div>
+
+        <!-- Detailed Demographic and Geography Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          
+          <!-- Geography & Bounds -->
+          <div class="bg-slate-50 dark:bg-slate-800/40 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700/50 space-y-2">
+            <h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
+              <i data-lucide="compass" class="w-3.5 h-3.5 text-indigo-500"></i>
+              Geographical Coordinates & Extent
+            </h3>
+            <ul class="space-y-1.5 text-slate-600 dark:text-slate-300">
+              <li class="flex justify-between border-b border-slate-200 dark:border-slate-700/40 pb-1">
+                <span class="text-slate-500 dark:text-slate-400">Latitudinal Extent:</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-100">29°30' N to 32°32' N</span>
+              </li>
+              <li class="flex justify-between border-b border-slate-200 dark:border-slate-700/40 pb-1">
+                <span class="text-slate-500 dark:text-slate-400">Longitudinal Extent:</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-100">73°55' E to 76°50' E</span>
+              </li>
+              <li class="flex justify-between border-b border-slate-200 dark:border-slate-700/40 pb-1">
+                <span class="text-slate-500 dark:text-slate-400">Shape of Punjab:</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-100">Triangular</span>
+              </li>
+              <li class="flex justify-between border-b border-slate-200 dark:border-slate-700/40 pb-1">
+                <span class="text-slate-500 dark:text-slate-400">Population Density:</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-100">551 per sq km (India: 382)</span>
+              </li>
+              <li class="flex justify-between pb-0.5">
+                <span class="text-slate-500 dark:text-slate-400">Forest Area (ISFR):</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-100">~3.67% of geographic area</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Administrative Setup -->
+          <div class="bg-slate-50 dark:bg-slate-800/40 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700/50 space-y-2">
+            <h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
+              <i data-lucide="building-2" class="w-3.5 h-3.5 text-emerald-500"></i>
+              Administrative Divisions & Polity
+            </h3>
+            <ul class="space-y-1.5 text-slate-600 dark:text-slate-300">
+              <li class="flex justify-between border-b border-slate-200 dark:border-slate-700/40 pb-1">
+                <span class="text-slate-500 dark:text-slate-400">Districts & Divisions:</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-100">23 Districts | 5 Divisions</span>
+              </li>
+              <li class="flex justify-between border-b border-slate-200 dark:border-slate-700/40 pb-1">
+                <span class="text-slate-500 dark:text-slate-400">Divisions List:</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-100">Jalandhar, Patiala, Firozpur, Faridkot, Ropar</span>
+              </li>
+              <li class="flex justify-between border-b border-slate-200 dark:border-slate-700/40 pb-1">
+                <span class="text-slate-500 dark:text-slate-400">Vidhan Sabha (Assembly):</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-100">117 Seats (Unicameral)</span>
+              </li>
+              <li class="flex justify-between border-b border-slate-200 dark:border-slate-700/40 pb-1">
+                <span class="text-slate-500 dark:text-slate-400">Parliamentary Representation:</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-100">Lok Sabha: 13 | Rajya Sabha: 7</span>
+              </li>
+              <li class="flex justify-between pb-0.5">
+                <span class="text-slate-500 dark:text-slate-400">State Bordering States:</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-100">HP, Haryana, Rajasthan, J&K (UT)</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Official State Emblems & Symbols -->
+        <div class="bg-indigo-50/70 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-900/50 p-3.5 rounded-xl space-y-2">
+          <h3 class="font-bold text-indigo-900 dark:text-indigo-300 flex items-center gap-1.5 text-xs">
+            <i data-lucide="shield" class="w-3.5 h-3.5 text-amber-500"></i>
+            Official State Symbols (PSSSB Mandatory Questions)
+          </h3>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-slate-700 dark:text-slate-300">
+            <div class="bg-white/80 dark:bg-slate-900/80 p-2 rounded-lg border border-indigo-100 dark:border-indigo-950">
+              <span class="text-[10px] text-slate-400 block uppercase">State Animal</span>
+              <span class="font-bold text-slate-900 dark:text-white">Blackbuck (Kala Hiran)</span>
+            </div>
+            <div class="bg-white/80 dark:bg-slate-900/80 p-2 rounded-lg border border-indigo-100 dark:border-indigo-950">
+              <span class="text-[10px] text-slate-400 block uppercase">State Bird</span>
+              <span class="font-bold text-slate-900 dark:text-white">Northern Goshawk (Baaj)</span>
+            </div>
+            <div class="bg-white/80 dark:bg-slate-900/80 p-2 rounded-lg border border-indigo-100 dark:border-indigo-950">
+              <span class="text-[10px] text-slate-400 block uppercase">State Tree</span>
+              <span class="font-bold text-slate-900 dark:text-white">Tahli / Shisham</span>
+            </div>
+            <div class="bg-white/80 dark:bg-slate-900/80 p-2 rounded-lg border border-indigo-100 dark:border-indigo-950">
+              <span class="text-[10px] text-slate-400 block uppercase">State Aquatic Animal</span>
+              <span class="font-bold text-slate-900 dark:text-white">Indus River Dolphin</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 flex justify-between items-center text-xs">
+        <span class="text-slate-500 dark:text-slate-400">PSSSB Patwari / VDO / Excise / Clerk Exam GK Revision</span>
+        <button id="btn-close-profile-2" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition">
+          Close Profile
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    class SoundEngine {
+      constructor() {
+        this.ctx = null;
+        this.enabled = true;
+      }
+      init() {
+        if (!this.ctx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          this.ctx = new AudioContext();
+        }
+      }
+      playCorrect() {
+        if (!this.enabled) return;
+        this.init();
+        const now = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(523.25, now);
+        osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.12);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+        osc.start(now);
+        osc.stop(now + 0.35);
+      }
+      playWrong() {
+        if (!this.enabled) return;
+        this.init();
+        const now = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(220, now);
+        osc.frequency.linearRampToValueAtTime(146.83, now + 0.2);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+        osc.start(now);
+        osc.stop(now + 0.25);
+      }
+    }
+    const sound = new SoundEngine();
+
+    // 23 Districts High Yield PSSSB Database
+    const DISTRICT_DATA = {
+      "Amritsar": {
+        name: "Amritsar",
+        punjabi: "ਅੰਮ੍ਰਿਤਸਰ",
+        region: "Majha",
+        division: "Jalandhar",
+        hq: "Amritsar",
+        border: "International (Pakistan)",
+        feature: "Spiritual Capital & Heritage",
+        tagline: "Holy City founded by Guru Ram Das Ji in 1577",
+        examPoints: [
+          "Founded in 1577 by 4th Sikh Guru, Sri Guru Ram Das Ji; initially named Chak Guru Ram Das / Ramdaspur.",
+          "Golden Temple (Harmandir Sahib) foundation stone laid by Sufi Saint Hazrat Mian Mir (1588).",
+          "Site of Jallianwala Bagh massacre (13 April 1919) under Brigadier General Reginald Dyer.",
+          "Attari-Wagah border joint check post is situated here with daily retreat ceremony."
+        ],
+        history: "Historic capital of the Sikh Empire under Maharaja Ranjit Singh who gilded Harmandir Sahib and built Gobindgarh Fort.",
+        economy: "Major tourism center, textiles, paper industry, carpets, and dry fruit market (Majith Mandi)."
+      },
+      "Tarn Taran": {
+        name: "Tarn Taran",
+        punjabi: "ਤਰਨ ਤਾਰਨ",
+        region: "Majha",
+        division: "Jalandhar",
+        hq: "Tarn Taran Sahib",
+        border: "International (Pakistan)",
+        feature: "Largest Sarovar in Punjab",
+        tagline: "Founded by Sri Guru Arjan Dev Ji (1590)",
+        examPoints: [
+          "Created on 16 June 2006 by bifurcating Amritsar district.",
+          "Gurdwara Sri Tarn Taran Sahib has the largest sacred water tank (sarovar) among all Sikh shrines.",
+          "Harike Pattan Ramsar Wetland sits at the confluence of Sutlej and Beas on its border.",
+          "Khadoor Sahib: Visited by 8 Sikh Gurus; Guru Angad Dev Ji formalized the Gurmukhi script here."
+        ],
+        history: "Associated with Mai Bhago and origin of the 40 Liberated Martyrs (Chali Mukte).",
+        economy: "Paddy-wheat belt, dairy, fisheries, and Harike bird sanctuary ecotourism."
+      },
+      "Gurdaspur": {
+        name: "Gurdaspur",
+        punjabi: "ਗੁਰਦਾਸਪੁਰ",
+        region: "Majha",
+        division: "Jalandhar",
+        hq: "Gurdaspur",
+        border: "International (Pakistan) & J&K",
+        feature: "Kalanaur (Akbar Coronation)",
+        tagline: "Northern Gateway between Beas and Ravi",
+        examPoints: [
+          "Akbar the Great was crowned Emperor of India at Kalanaur (Takht-i-Akbari) in 1556 at age 13.",
+          "Dera Baba Nanak: International Corridor connects to Gurdwara Darbar Sahib Kartarpur (Pakistan).",
+          "Keshopur Chhamb Community Reserve: India's 1st community reserve and designated Ramsar site.",
+          "Batala is located here: 'Iron Foundry Capital of Punjab' & marriage site of Guru Nanak Dev Ji."
+        ],
+        history: "Crucial Radcliffe line district award in 1947 connecting Indian mainland to Jammu & Kashmir.",
+        economy: "Foundries, agricultural implements manufacturing, sugar mills, and basmati rice."
+      },
+      "Pathankot": {
+        name: "Pathankot",
+        punjabi: "ਪਠਾਨਕੋਟ",
+        region: "Majha",
+        division: "Jalandhar",
+        hq: "Pathankot",
+        border: "Tristate (J&K, HP, Pakistan)",
+        feature: "Ranjit Sagar (Thein) Dam",
+        tagline: "Carved from Gurdaspur in July 2011",
+        examPoints: [
+          "Carved out of Gurdaspur in July 2011 as a northern gateway district.",
+          "Shares borders with two states (J&K, Himachal Pradesh) and Pakistan.",
+          "Ranjit Sagar Dam (Thein Dam) constructed across the Ravi River.",
+          "Houses the historic Shahpurkandi Fort & hydel project on the Ravi."
+        ],
+        history: "Historically ruled by the Pathania Rajput clan; critical strategic cantonment for Indian armed forces.",
+        economy: "Stone crushing along Ravi riverbed, defense logistics, transit gateway to Kangra and Kashmir."
+      },
+      "Jalandhar": {
+        name: "Jalandhar",
+        punjabi: "ਜਲੰਧਰ",
+        region: "Doaba",
+        division: "Jalandhar",
+        hq: "Jalandhar",
+        border: "Central Doaba",
+        feature: "Sports Goods Capital of India",
+        tagline: "Media & Sports Equipment Hub",
+        examPoints: [
+          "Supplies over 60% of India's sporting equipment (World Cup cricket bats, footballs).",
+          "Media capital of Punjab: Publication center of major Punjabi dailies.",
+          "Devi Talab Mandir (Shakti Peetha) & Harballabh Sangeet Sammelan (oldest Indian classical music festival, since 1875).",
+          "Sansarpur village is globally celebrated as the 'Nursery of Hockey Olympians'."
+        ],
+        history: "Capital of Punjab following independence before Chandigarh was built (1947-1953).",
+        economy: "Leather tanneries, sports goods, pipe fittings, surgical tools, and educational institutions."
+      },
+      "Hoshiarpur": {
+        name: "Hoshiarpur",
+        punjabi: "ਹੁਸ਼ਿਆਰਪੁਰ",
+        region: "Doaba",
+        division: "Jalandhar",
+        hq: "Hoshiarpur",
+        border: "Himachal Pradesh",
+        feature: "Highest Literacy Rate (84.6%)",
+        tagline: "Land of Chos & City of Mangoes",
+        examPoints: [
+          "Ranks 1st in Punjab in literacy rate (84.6% as per Census 2011).",
+          "Highest forest cover percentage in Punjab along the Shivalik foothills.",
+          "Characterized by seasonal sandy hill torrents called 'Chos'.",
+          "Famous for wooden inlay handicraft and kinnow citrus orchards.",
+          "Dholbaha is a noted prehistoric Harappan and medieval archaeological site."
+        ],
+        history: "Ancient seat of Bhrigu Samhita astrologers and sanctuary for Indian freedom fighters.",
+        economy: "Sonalika International Tractors global headquarters, paper mills, citrus processing."
+      },
+      "Kapurthala": {
+        name: "Kapurthala",
+        punjabi: "ਕਪੂਰਥਲਾ",
+        region: "Doaba",
+        division: "Jalandhar",
+        hq: "Kapurthala",
+        border: "Inter-district (Two enclaves)",
+        feature: "City of Gardens & Palaces",
+        tagline: "Paris of Punjab & Rail Coach Factory",
+        examPoints: [
+          "Rail Coach Factory (RCF) at Hussainpur is a premier coach manufacturing unit of Indian Railways.",
+          "Jagatjit Palace inspired by the Palace of Versailles (now Sainik School).",
+          "Moorish Mosque: Modeled on the Grand Mosque of Marrakesh, Morocco.",
+          "Sultanpur Lodhi: Holy town where Guru Nanak Dev Ji attained enlightenment at Kali Bein.",
+          "Kanjli Wetland (Ramsar site) situated on the Kali Bein stream."
+        ],
+        history: "Princely state founded by Nawab Jassa Singh Ahluwalia, commander of the Dal Khalsa.",
+        economy: "Rail coaches, auto parts at Phagwara, JCT textile mills, rice mills."
+      },
+      "Shahid Bhagat Singh Nagar": {
+        name: "Shahid Bhagat Singh Nagar",
+        punjabi: "ਸ਼ਹੀਦ ਭਗਤ ਸਿੰਘ ਨਗਰ",
+        region: "Doaba",
+        division: "Rupnagar",
+        hq: "Nawanshahr",
+        border: "Himachal border / Sutlej",
+        feature: "Khatkar Kalan (Bhagat Singh's Village)",
+        tagline: "Formerly known as Nawanshahr",
+        examPoints: [
+          "Renamed in honor of Shaheed-e-Azam Bhagat Singh; ancestral village Khatkar Kalan is located here.",
+          "Khatkar Kalan houses the Shaheed Bhagat Singh Memorial Museum.",
+          "Carved out of Jalandhar and Hoshiarpur in November 1995.",
+          "Noted for high NRI remittances and balanced gender ratio."
+        ],
+        history: "Nawanshahr was built during the Lodhi dynasty by Nausher Khan.",
+        economy: "Cooperative sugar mills, agro-processing, remittances."
+      },
+      "Ludhiana": {
+        name: "Ludhiana",
+        punjabi: "ਲੁਧਿਆਣਾ",
+        region: "Malwa",
+        division: "Patiala",
+        hq: "Ludhiana",
+        border: "Central Malwa on Sutlej",
+        feature: "Manchester of India & Most Populous",
+        tagline: "Industrial & Agricultural Capital",
+        examPoints: [
+          "Most populous district in Punjab (~3.5 million, Census 2011).",
+          "Punjab Agricultural University (PAU) founded in 1962: Epicenter of the Green Revolution.",
+          "Manchester of India: Hosiery, woolen garments, cycle manufacturing (Hero, Avon).",
+          "Khanna grain market in Ludhiana is Asia's largest grain market.",
+          "Birthplace of martyr Kartar Singh Sarabha (Sarabha village)."
+        ],
+        history: "Founded in 1480 by the Lodhi dynasty rulers. Battle of Aliwal (1846) fought here.",
+        economy: "Textiles, auto parts, bicycles, sewing machines, dry port at Dhandari Kalan."
+      },
+      "Patiala": {
+        name: "Patiala",
+        punjabi: "ਪਟਿਆਲਾ",
+        region: "Malwa",
+        division: "Patiala",
+        hq: "Patiala",
+        border: "Haryana Border",
+        feature: "Qila Mubarak & Royal Heritage",
+        tagline: "Cultural Capital & PEPSU Seat",
+        examPoints: [
+          "Founded by Baba Ala Singh in 1763; constructed the historic Qila Mubarak fort.",
+          "Netaji Subhas National Institute of Sports (NIS): Asia's largest sports institute in Moti Bagh Palace.",
+          "Former capital of PEPSU (Patiala and East Punjab States Union, 1948-1956).",
+          "Punjabi University established in 1962 (second university in the world named after a language).",
+          "Renowned for Patiala Shahi turban, salwar, paranda, and traditional jutti."
+        ],
+        history: "Foremost Phulkian princely state in Malwa with rich patronage of Indian classical music (Patiala Gharana).",
+        economy: "Diesel Locomotive Modernization Works (DMW), state administration, agricultural implements."
+      },
+      "Bathinda": {
+        name: "Bathinda",
+        punjabi: "ਬਠਿੰਡਾ",
+        region: "Malwa",
+        division: "Faridkot",
+        hq: "Bathinda",
+        border: "Haryana Border",
+        feature: "Qila Mubarak (Razia Sultan Prison)",
+        tagline: "Lake City & Oldest Surviving Fort",
+        examPoints: [
+          "Bathinda Fort (Qila Mubarak) is the oldest surviving brick monument in India (c. 6th century).",
+          "Razia Sultana, first female ruler of Delhi Sultanate, was imprisoned here in 1240 by Altunia.",
+          "Takht Sri Damdama Sahib (Talwandi Sabo): 5th Takht of Sikhism; Guru Gobind Singh Ji finalized Guru Granth Sahib Bir here.",
+          "Guru Gobind Singh Oil Refinery (HMEL) located at Phulokhari.",
+          "Lowest sex ratio district in Punjab (868 per 1000 males, Census 2011)."
+        ],
+        history: "Ancient strategic outpost on the Delhi-Multan caravan highway.",
+        economy: "Oil refinery, thermal power plants, major railway junction, cotton mandis."
+      },
+      "Firozpur": {
+        name: "Firozpur",
+        punjabi: "ਫਿਰੋਜ਼ਪੁਰ",
+        region: "Malwa",
+        division: "Firozpur",
+        hq: "Firozpur",
+        border: "International (Pakistan)",
+        feature: "National Martyrs Memorial (Hussainiwala)",
+        tagline: "Founded by Sultan Firoz Shah Tughlaq",
+        examPoints: [
+          "Hussainiwala: National Martyrs Memorial where Bhagat Singh, Rajguru, and Sukhdev were cremated (23 March 1931).",
+          "Batukeshwar Dutt and Punjab Mata Vidyawati were also cremated at Hussainiwala.",
+          "Historic battlefields of the First Anglo-Sikh War: Mudki, Ferozeshah, and Sobraon.",
+          "Harike Wetland boundary extends to its northern border at Sutlej-Beas confluence."
+        ],
+        history: "British military border cantonment and crucial theater during the 1965 and 1971 wars.",
+        economy: "Agricultural hub, Northern Railway division headquarters, border trade."
+      },
+      "Fazilka": {
+        name: "Fazilka",
+        punjabi: "ਫਾਜ਼ਿਲਕਾ",
+        region: "Malwa",
+        division: "Firozpur",
+        hq: "Fazilka",
+        border: "Pakistan & Rajasthan Border",
+        feature: "Abohar Wildlife Sanctuary & Cotton Belt",
+        tagline: "Carved from Firozpur in July 2011",
+        examPoints: [
+          "Created on 27 July 2011 by carving out the southern portion of Firozpur.",
+          "Abohar Wildlife Sanctuary: Open sanctuary protecting the Blackbuck (State animal of Punjab), guarded by the Bishnoi community.",
+          "Sadqi Border Post: Daily retreat ceremony along the Indo-Pak border.",
+          "Asafwala War Memorial honoring martyrs of the 1971 war.",
+          "Known as the 'California of Punjab' for vast kinnow citrus orchards."
+        ],
+        history: "Named after Fazil Khan from whom East India Company officer Oliver purchased the land.",
+        economy: "Premier cotton producing mandi (Abohar), kinnow orchards, and Fazilka Tosha sweet."
+      },
+      "Sri Muktsar Sahib": {
+        name: "Sri Muktsar Sahib",
+        punjabi: "ਸ੍ਰੀ ਮੁਕਤਸਰ ਸਾਹਿਬ",
+        region: "Malwa",
+        division: "Firozpur",
+        hq: "Sri Muktsar Sahib",
+        border: "Rajasthan & Haryana Border",
+        feature: "Mela Maghi & 40 Mukte",
+        tagline: "Historical Khidrana da Dhab",
+        examPoints: [
+          "Site of the Battle of Khidrana (1705) fought between Guru Gobind Singh Ji and Mughal forces.",
+          "Honors the supreme sacrifice of the 40 Liberated Martyrs (Chali Mukte) led by warrior saint Mai Bhago.",
+          "Mela Maghi: Massive religious festival celebrated every year in January (Makar Sankranti).",
+          "Core component of the southern Malwa 'White Gold' cotton belt."
+        ],
+        history: "Originally known as Khidrana; renamed Sri Muktsar Sahib after the 40 Liberated Martyrs.",
+        economy: "Cotton ginning, wheat, kinnow orchards, and handmade Punjabi juttis."
+      },
+      "Faridkot": {
+        name: "Faridkot",
+        punjabi: "ਫਰੀਦਕੋਟ",
+        region: "Malwa",
+        division: "Faridkot",
+        hq: "Faridkot",
+        border: "Central Southwest Malwa",
+        feature: "Baba Sheikh Farid Ji & Medical Hub",
+        tagline: "Named after Sufi Saint Baba Farid",
+        examPoints: [
+          "Named after revered 12th-century Sufi poet Hazrat Baba Fariduddin Ganjshakar.",
+          "Baba Farid Aagman Purab is celebrated annually in September with cultural and religious festivities.",
+          "Headquarters of Baba Farid University of Health Sciences (BFUHS) established in 1998.",
+          "Qila Mubarak (Rajmahal) exhibits 18th-century European and Sikh architectural blend."
+        ],
+        history: "Princely state ruled by the Barar Jat rulers until merging into PEPSU in 1948.",
+        economy: "Medical education center, healthcare hub, agricultural equipment."
+      },
+      "Moga": {
+        name: "Moga",
+        punjabi: "ਮੋਗਾ",
+        region: "Malwa",
+        division: "Firozpur",
+        hq: "Moga",
+        border: "Central Malwa",
+        feature: "Birthplace of Lala Lajpat Rai (Dhudike)",
+        tagline: "Created in November 1995 from Faridkot",
+        examPoints: [
+          "Dhudike village is the birthplace of legendary freedom fighter 'Punjab Kesari' Lala Lajpat Rai.",
+          "Nestlé India established its first factory in Moga in 1961 (sparking the White Revolution in Punjab).",
+          "Carved out as a distinct district on 24 November 1995.",
+          "Major hub for harvest combines and agricultural thresher machinery."
+        ],
+        history: "Center for freedom struggle activism during the Ghadar Movement and Kuka campaign.",
+        economy: "Dairy processing (Nestlé), combine harvesters manufacturing, seed logistics."
+      },
+      "Mansa": {
+        name: "Mansa",
+        punjabi: "ਮਾਨਸਾ",
+        region: "Malwa",
+        division: "Faridkot",
+        hq: "Mansa",
+        border: "Haryana Border",
+        feature: "White Gold Belt & Lowest Literacy",
+        tagline: "Land of Baba Bhai Gurdas Ji",
+        examPoints: [
+          "Known as the 'Area of White Gold' due to intensive cotton agriculture.",
+          "Lowest literacy rate district in Punjab (61.8% as per Census 2011).",
+          "Carved out of Bathinda district on 13 April 1992.",
+          "Talwandi Sabo Power Limited (TSPL) 1980 MW thermal plant located at Banawala village."
+        ],
+        history: "Associated with Bhai Gurdas Ji (who gave his name to the city) and the PEPSU Muzara peasant movement.",
+        economy: "Cotton ginning and pressing factories, thermal power generation, mustard."
+      },
+      "Sangrur": {
+        name: "Sangrur",
+        punjabi: "ਸੰਗਰੂਰ",
+        region: "Malwa",
+        division: "Patiala",
+        hq: "Sangrur",
+        border: "Haryana Border",
+        feature: "Jind State Capital & Shaheed Udham Singh",
+        tagline: "Heart of Malwa Agrarian Basin",
+        examPoints: [
+          "Former capital of the princely state of Jind; features Banasar Bagh and marble baradari.",
+          "Sunam: Birthplace of revolutionary martyr Shaheed Udham Singh (avenged Jallianwala Bagh in 1940).",
+          "Gurdwara Mastuana Sahib: Renowned center of Sikh religious scholarship.",
+          "Subdivided multiple times: Barnala carved out in 2006, Malerkotla in 2021."
+        ],
+        history: "Epicenter of the Praja Mandal movement led by Sewa Singh Thikriwala against autocracy.",
+        economy: "Largest wheat and paddy crop granary in Punjab, tractor machinery."
+      },
+      "Barnala": {
+        name: "Barnala",
+        punjabi: "ਬਰਨਾਲਾ",
+        region: "Malwa",
+        division: "Patiala",
+        hq: "Barnala",
+        border: "Central Malwa",
+        feature: "Trident Group & Textile Center",
+        tagline: "Carved from Sangrur in 2006",
+        examPoints: [
+          "Formed as a separate district in 2006 by separating from Sangrur.",
+          "Baba Ala Singh established Barnala as his first capital before founding Patiala.",
+          "Global manufacturing headquarters of Trident Group (one of world's largest terry towel exporters).",
+          "Major manufacturing center for Standard Combines and Preet agricultural machinery."
+        ],
+        history: "Historic headquarters where Baba Ala Singh was awarded the title of Raja by Ahmad Shah Durrani in 1762.",
+        economy: "Terry towels, paper mills, combine harvesters, textile spinning."
+      },
+      "Malerkotla": {
+        name: "Malerkotla",
+        punjabi: "ਮਲੇਰਕੋਟਲਾ",
+        region: "Malwa",
+        division: "Patiala",
+        hq: "Malerkotla",
+        border: "Central Malwa (surrounded by Sangrur/Ludhiana)",
+        feature: "23rd District & 'Haah Da Naara'",
+        tagline: "Punjab's Newest District (Declared Eid 2021)",
+        examPoints: [
+          "Declared the 23rd district of Punjab on 14 May 2021 (Eid-ul-Fitr) by carving out of Sangrur.",
+          "Famous for 'Haah Da Naara' raised by Nawab Sher Mohammad Khan in 1704 against Wazir Khan's execution of young Sahibzadas.",
+          "Kuka Movement Memorial: 66 Namdhari Sikhs were blown from cannons by British in 1872.",
+          "State's premier center for embroidery, badges, and intensive vegetable nursery farming."
+        ],
+        history: "Only Muslim-majority princely state in East Punjab; remained entirely peaceful during the 1947 partition.",
+        economy: "Vegetable seed nurseries, military badges, brassware, traditional sweets."
+      },
+      "Fatehgarh Sahib": {
+        name: "Fatehgarh Sahib",
+        punjabi: "ਫਤਿਹਗੜ੍ਹ ਸਾਹਿਬ",
+        region: "Malwa",
+        division: "Patiala",
+        hq: "Fatehgarh Sahib",
+        border: "Central Eastern Malwa",
+        feature: "Steel Town (Mandi Gobindgarh) & Sahibzade",
+        tagline: "Land of Supreme Martyrdom",
+        examPoints: [
+          "Site where younger Sahibzadas (Baba Zorawar Singh & Baba Fateh Singh) were bricked alive in 1704.",
+          "Diwan Todar Mal purchased land by spreading gold coins for their cremation.",
+          "Mandi Gobindgarh is designated the 'Steel Town of India' or 'Loha Mandi'.",
+          "Rauza Sharif: Tomb of Sufi saint Sheikh Ahmad Sirhindi (Mujaddid Alf-i-Sani), revered as second Mecca by Naqshbandi Muslims."
+        ],
+        history: "Conquered and liberated by Baba Banda Singh Bahadur following the Battle of Chappar Chiri in 1710.",
+        economy: "Secondary steel re-rolling mills, induction furnaces, foundries."
+      },
+      "Rupnagar": {
+        name: "Rupnagar",
+        punjabi: "ਰੂਪਨਗਰ",
+        region: "Malwa",
+        division: "Rupnagar",
+        hq: "Rupnagar",
+        border: "Himachal Pradesh",
+        feature: "Harappan Excavation & Anandpur Sahib",
+        tagline: "Ancient Ropar on the Sutlej",
+        examPoints: [
+          "First Indus Valley Civilization site excavated in independent India (Y.D. Sharma, 1952-53).",
+          "Sri Anandpur Sahib: Founded by Sri Guru Tegh Bahadur Ji (1665); Birthplace of the Khalsa Panth (Baisakhi 1699).",
+          "Takht Sri Kesgarh Sahib (one of 5 Sikh Takhts) is situated here.",
+          "Ropar Wetland: Ramsar site situated along the Sutlej River Barrage.",
+          "Historic 1831 meeting of Maharaja Ranjit Singh and British Governor-General William Bentinck."
+        ],
+        history: "Ancient Harappan riverine post; epicenter of annual Hola Mohalla festival.",
+        economy: "IIT Ropar, chemical plant complexes at Naya Nangal, hydro power, tourism."
+      },
+      "Sahibzada Ajit Singh Nagar": {
+        name: "SAS Nagar (Mohali)",
+        punjabi: "ਐਸ.ਏ.ਐਸ. ਨਗਰ",
+        region: "Malwa",
+        division: "Rupnagar",
+        hq: "Mohali (SAS Nagar)",
+        border: "UT Chandigarh & Haryana",
+        feature: "IT Hub & IS Bindra PCA Stadium",
+        tagline: "Commercial & Technology Capital of Punjab",
+        examPoints: [
+          "Named in memory of Baba Ajit Singh, the eldest son of Guru Gobind Singh Ji.",
+          "Fateh Burj at Chappar Chiri: India's tallest victory tower (100 meters / 328 feet), marking Banda Singh Bahadur's 1710 victory.",
+          "IS Bindra PCA Stadium: Iconic international cricket venue.",
+          "Premier IT & Biotech hub: Quark, Infosys, IISER, NIPER, and Indian School of Business (ISB).",
+          "Carved out as a separate district in April 2006."
+        ],
+        history: "Built as a planned modern extension of Chandigarh; historic battlefield of Chappar Chiri.",
+        economy: "Information technology, biotechnology, practical pharmaceuticals, electronics, and higher education."
+      }
+    };
+
+    // Rivers of Punjab High-Yield Exam Data & Coordinates
+    const RIVERS_DATA = [
+      {
+        id: "sutlej",
+        name: "Sutlej River (Satluj)",
+        vedicName: "Shatadru (Rigveda) / Zaradros (Greek)",
+        origin: "Rakshastal Lake near Mount Kailash & Lake Mansarovar (Tibet)",
+        entersPunjab: "Rupnagar (Nangal / Bhakra Dam gorge)",
+        lengthPunjab: "~440 km in Punjab (Longest river of modern Punjab)",
+        confluence: "Meets Beas River at Harike Pattan (Tarn Taran / Firozpur border)",
+        treaty: "Allocated entirely to India under Indus Waters Treaty 1960 (along with Ravi & Beas).",
+        dams: "Bhakra Dam (HP), Nangal Barrage, Ropar Barrage, Harike Barrage",
+        color: "#0284c7",
+        coordinates: [
+          [31.40, 76.38],
+          [31.28, 76.49],
+          [30.97, 76.53],
+          [31.02, 76.30],
+          [30.98, 75.85],
+          [31.03, 75.38],
+          [31.17, 74.98],
+          [31.10, 74.60],
+          [30.92, 74.45],
+          [30.65, 74.05],
+        ]
+      },
+      {
+        id: "beas",
+        name: "Beas River",
+        vedicName: "Vipasha (Rigveda) / Hyphasis (Greek)",
+        origin: "Beas Kund near Rohtang Pass, Himachal Pradesh",
+        entersPunjab: "Near Talwara (Hoshiarpur / Pathankot border)",
+        lengthPunjab: "~160 km entirely inside Punjab (Only river flowing entirely within India)",
+        confluence: "Terminates into Sutlej River at Harike Pattan",
+        treaty: "Eastern River allocated to India under Indus Waters Treaty 1960.",
+        dams: "Pong Dam (Himachal), Shahnehar Barrage",
+        color: "#06b6d4",
+        coordinates: [
+          [32.05, 75.88],
+          [31.95, 75.60],
+          [31.75, 75.52],
+          [31.55, 75.40],
+          [31.38, 75.18],
+          [31.25, 75.05],
+          [31.17, 74.98]
+        ]
+      },
+      {
+        id: "ravi",
+        name: "Ravi River",
+        vedicName: "Parushni / Iravati (Rigveda) / Hydraotes (Greek)",
+        origin: "Bara Bhangal, Kangra District, Himachal Pradesh",
+        entersPunjab: "Chamba border into Pathankot",
+        lengthPunjab: "Forms natural Indo-Pak boundary along Pathankot, Gurdaspur & Amritsar",
+        confluence: "Merges with Chenab in Pakistan",
+        treaty: "Eastern River allocated to India under Indus Waters Treaty 1960.",
+        dams: "Ranjit Sagar Dam (Thein Dam) in Pathankot, Shahpurkandi Dam project",
+        color: "#2563eb",
+        coordinates: [
+          [32.44, 75.80],
+          [32.35, 75.70],
+          [32.18, 75.45],
+          [31.95, 75.10],
+          [31.80, 74.85],
+          [31.60, 74.60]
+        ]
+      },
+      {
+        id: "ghaggar",
+        name: "Ghaggar River (Seasonal River)",
+        vedicName: "Identified by scholars with the lost Saraswati River",
+        origin: "Dagshai in the Shivalik Hills of Himachal Pradesh",
+        entersPunjab: "Mubarakpur / Dera Bassi (SAS Nagar)",
+        lengthPunjab: "Non-perennial river traversing Patiala, Sangrur, and Mansa into Haryana & Rajasthan",
+        confluence: "Inland drainage, evaporates in the Thar Desert near Hanumangarh (Rajasthan)",
+        treaty: "Not part of the Indus Waters Treaty as it does not drain into the Indus basin.",
+        dams: "Ottu Barrage (Haryana)",
+        color: "#4f46e5",
+        coordinates: [
+          [30.60, 76.88],
+          [30.40, 76.60],
+          [30.15, 76.35],
+          [29.98, 75.95],
+          [29.85, 75.40],
+          [29.70, 75.05]
+        ]
+      }
+    ];
+
+    // All 6 Official Ramsar Wetland Sites of Punjab + Ranjit Sagar
+    const WETLANDS_DATA = [
+      {
+        id: "harike",
+        name: "Harike Wetland (Hari-ke-Pattan)",
+        status: "Ramsar Site (Declared 1990) & Wildlife Sanctuary",
+        location: "Confluence of Sutlej and Beas (Tarn Taran / Firozpur / Kapurthala border)",
+        lat: 31.17,
+        lng: 74.98,
+        area: "4,100 Hectares",
+        facts: [
+          "Largest freshwater man-made wetland in Northern India.",
+          "Formed by the construction of Harike Barrage in 1952 at the confluence of Sutlej & Beas.",
+          "Headworks of two vital canals: Indira Gandhi Canal (Rajasthan Feeder) and Sirhind Feeder.",
+          "Crucial wintering haven for migratory waterfowl from Siberia and Central Asia."
+        ],
+        ecology: "Habitat for endangered Indus River Dolphin, smooth-coated otter, and rare testudine turtles."
+      },
+      {
+        id: "ropar",
+        name: "Ropar Wetland",
+        status: "Ramsar Site (Declared 2002)",
+        location: "Rupnagar District, along the Sutlej River Barrage",
+        lat: 30.97,
+        lng: 76.53,
+        area: "1,365 Hectares",
+        facts: [
+          "Human-made freshwater wetland created by building the Ropar headworks on the Sutlej in 1887.",
+          "Diverts water into the historic Sirhind Canal and Bist-Doab Canal.",
+          "Historic site: Maharaja Ranjit Singh and Governor General Lord William Bentinck signed the Treaty of Perpetual Friendship here in 1831."
+        ],
+        ecology: "Shivalik foothills ecological haven; home to sambar, pangolin, hog deer, and migratory waterbirds."
+      },
+      {
+        id: "kanjli",
+        name: "Kanjli Wetland",
+        status: "Ramsar Site (Declared 2002)",
+        location: "Kapurthala District, on the Kali Bein rivulet",
+        lat: 31.42,
+        lng: 75.36,
+        area: "183 Hectares",
+        facts: [
+          "Created in 1870 across the Kali Bein river to provide irrigation facilities by the Raja of Kapurthala.",
+          "Kali Bein holds deep religious sanctity: Guru Nanak Dev Ji bathed here and received supreme enlightenment in Sultanpur Lodhi.",
+          "Popular picnic spot and key site for environmental conservation led by Sant Balbir Singh Seechewal."
+        ],
+        ecology: "Dense reed beds; houses diverse freshwater fishes and winter migratory diving ducks."
+      },
+      {
+        id: "keshopur",
+        name: "Keshopur-Miani Community Reserve",
+        status: "Ramsar Site (Declared 2019)",
+        location: "Gurdaspur District",
+        lat: 32.08,
+        lng: 75.39,
+        area: "340 Hectares",
+        facts: [
+          "India's FIRST notified Community Reserve (declared under Wildlife Protection Act 1972).",
+          "Managed jointly by local panchayats and the Punjab Department of Forests and Wildlife.",
+          "Natural marshland fed by rainfall, village runoff, and local seepages in the Ravi-Beas doab."
+        ],
+        ecology: "Vital flyway spot for thousands of migratory birds, Sarus cranes, and marsh vegetation."
+      },
+      {
+        id: "nangal",
+        name: "Nangal Wildlife Sanctuary",
+        status: "Ramsar Site (Declared 2019)",
+        location: "Rupnagar District, on Sutlej River",
+        lat: 31.39,
+        lng: 76.37,
+        area: "116 Hectares",
+        facts: [
+          "Surrounds the pristine waters of the Nangal Dam reservoir on the Sutlej.",
+          "Associated with the landmark Bhakra-Nangal multipurpose project dedicated to India by Jawaharlal Nehru in 1954.",
+          "Historically famous for the 1954 Five Principles of Peaceful Coexistence (Panchsheel) meeting site."
+        ],
+        ecology: "Crucial winter refuge for threatened species like the Indian Pangolin and Egyptian Vulture."
+      },
+      {
+        id: "beas_reserve",
+        name: "Beas Conservation Reserve",
+        status: "Ramsar Site (Declared 2019)",
+        location: "185-km continuous stretch of the Beas River",
+        lat: 31.45,
+        lng: 75.25,
+        area: "6,428 Hectares",
+        facts: [
+          "185-km pristine riverine island belt stretching from Talwara down to Harike Barrage.",
+          "ONLY habitat in India housing the critically endangered Indus River Dolphin (Bhulan - State Aquatic Animal of Punjab).",
+          "Gharials (Gavialis gangeticus) were successfully reintroduced here by the Punjab Wildlife Department."
+        ],
+        ecology: "Indus River Dolphin, Gharial, Smooth-coated Otter, and over 500 bird species."
+      },
+      {
+        id: "ranjit_sagar",
+        name: "Ranjit Sagar Wetland",
+        status: "Wetland of National Importance",
+        location: "Pathankot District, Ravi River",
+        lat: 32.44,
+        lng: 75.80,
+        area: "Storage lake on Ravi River",
+        facts: [
+          "Created by the Thein Dam (Ranjit Sagar Dam) on the Ravi River.",
+          "Joint boundary shared by Punjab, Jammu & Kashmir, and Himachal Pradesh.",
+          "Key hydel power generation asset of Punjab State Power Corporation Limited (PSPCL)."
+        ],
+        ecology: "Deep lake ecosystem with clear mountain water supporting hill-stream fishes."
+      }
+    ];
+
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Map Theme Tile Layers (Dark & Light)
+   const TILE_DARK = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}';
+    const TILE_LIGHT = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}';
+	
+    // Leaflet Map Initialization
+    const map = L.map('map', {
+      zoomControl: true,
+      minZoom: 6, // Lowered to allow zooming out further in small iframes
+      maxZoom: 12,
+      attributionControl: false
+    }).setView([31.1471, 75.3412], 7);
+
+    let currentBaseTileLayer = L.tileLayer(TILE_DARK, {
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    // State Variables
+    let isDarkMode = true;
+    let punjabGeoLayer = null;
+    let riversLayerGroup = L.layerGroup().addTo(map);
+    let wetlandsLayerGroup = L.layerGroup().addTo(map);
+
+    let mode = 'quiz'; // 'quiz' or 'explore'
+    let currentTargetDistrict = null;
+    let quizDistricts = [];
+    let currentQuizIndex = 0;
+    let scoreCorrect = 0;
+    let streak = 0;
+    let timerInterval = null;
+    let secondsElapsed = 0;
+    let districtLayersMap = {};
+
+    // Region Color Scheme
+    function getRegionColor(region) {
+      switch(region) {
+        case 'Majha': return '#10b981'; // emerald
+        case 'Doaba': return '#0ea5e9'; // sky
+        case 'Malwa': return '#f59e0b'; // amber
+        default: return '#6366f1';
+      }
+    }
+
+    // Default Style for Districts
+    function defaultDistrictStyle(feature) {
+      const name = normalizeDistrictName(feature.properties.district || feature.properties.Dist_Name || feature.properties.name || "");
+      const info = DISTRICT_DATA[name];
+      const baseColor = info ? getRegionColor(info.region) : '#6366f1';
+
+      return {
+        fillColor: baseColor,
+        weight: isDarkMode ? 1.5 : 1.8,
+        opacity: isDarkMode ? 0.8 : 0.9,
+        color: isDarkMode ? '#1e293b' : '#ffffff',
+        fillOpacity: isDarkMode ? 0.4 : 0.55
+      };
+    }
+
+    // District Name Normalizer
+    function normalizeDistrictName(rawName) {
+      if (!rawName) return "";
+      // Strip periods to catch "S.A.S. Nagar" or "S.B.S. Nagar"
+      const n = rawName.trim().toLowerCase().replace(/\./g, '');
+      
+      if (n.includes("amritsar")) return "Amritsar";
+      if (n.includes("tarn") || n.includes("taran")) return "Tarn Taran";
+      if (n.includes("gurdaspur")) return "Gurdaspur";
+      if (n.includes("pathankot")) return "Pathankot";
+      if (n.includes("jalandhar")) return "Jalandhar";
+      if (n.includes("hoshiarpur")) return "Hoshiarpur";
+      if (n.includes("kapurthala")) return "Kapurthala";
+      if (n.includes("bhagat") || n.includes("nawanshahr") || n.includes("sbs")) return "Shahid Bhagat Singh Nagar";
+      if (n.includes("ludhiana")) return "Ludhiana";
+      if (n.includes("patiala")) return "Patiala";
+      if (n.includes("bathinda") || n.includes("bhatinda")) return "Bathinda";
+      if (n.includes("firozpur") || n.includes("ferozepur")) return "Firozpur";
+      if (n.includes("fazilka")) return "Fazilka";
+      if (n.includes("muktsar")) return "Sri Muktsar Sahib";
+      if (n.includes("faridkot")) return "Faridkot";
+      if (n.includes("moga")) return "Moga";
+      if (n.includes("mansa")) return "Mansa";
+      if (n.includes("malerkotla") || n.includes("maler kotla")) return "Malerkotla";
+      if (n.includes("sangrur")) return "Sangrur";
+      if (n.includes("barnala")) return "Barnala";
+      if (n.includes("fatehgarh")) return "Fatehgarh Sahib";
+      if (n.includes("rupnagar") || n.includes("ropar")) return "Rupnagar";
+      if (n.includes("ajit") || n.includes("mohali") || n.includes("sas")) return "Sahibzada Ajit Singh Nagar";
+      
+      return rawName;
+    }
+
+    // Load High-Precision Punjab GeoJSON via jsDelivr CDN
+   
+	
+	// Load Punjab GeoJSON and inject Malerkotla (23rd District carved out of northern Sangrur)
+	async function loadPunjabGeoJSON() {
+      try {
+        const url = "https://cdn.jsdelivr.net/gh/udit-001/india-maps-data@main/geojson/states/punjab.geojson";
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Could not fetch remote GeoJSON");
+        const geojsonData = await response.json();
+
+        // Find original Sangrur polygon
+        const sangrurIndex = geojsonData.features.findIndex(f => {
+          const n = (f.properties.district || f.properties.Dist_Name || f.properties.name || "").toLowerCase();
+          return n.includes("sangrur");
+        });
+
+        if (sangrurIndex !== -1 && typeof turf !== 'undefined') {
+          const originalSangrur = geojsonData.features[sangrurIndex];
+
+          // Define a cutting mask based on the actual map boundary (dips south near Dhuri, curves at Amargarh)
+          const malerkotlaMask = turf.polygon([[
+            [75.50, 30.44], // Overshoot West
+            [75.76, 30.45], // Enters Sangrur from Barnala border
+            [75.87, 30.39], // Dips south, just north of Dhuri
+            [75.95, 30.38], // Southernmost curve of Amargarh
+            [76.05, 30.46], // Rises east towards Nabha
+            [76.20, 30.46], // Overshoot East
+            [76.20, 31.00], // Overshoot North
+            [75.50, 31.00], // Overshoot North-West
+            [75.50, 30.44]  // Close ring
+          ]]);
+
+          // 1. Calculate Malerkotla: The Intersection of Sangrur and the Mask
+          const malerkotlaFeature = turf.intersect(originalSangrur, malerkotlaMask);
+          if (malerkotlaFeature) {
+            malerkotlaFeature.properties = {
+              district: "Malerkotla",
+              Dist_Name: "Malerkotla",
+              st_nm: "Punjab"
+            };
+            geojsonData.features.push(malerkotlaFeature);
+          }
+
+          // 2. Calculate New Sangrur: The Difference between Original Sangrur and the Mask
+          const newSangrurFeature = turf.difference(originalSangrur, malerkotlaMask);
+          if (newSangrurFeature) {
+            newSangrurFeature.properties = originalSangrur.properties;
+            geojsonData.features[sangrurIndex] = newSangrurFeature;
+          }
+        }
+
+        renderMap(geojsonData);
+      } catch (err) {
+        console.error("Map initialization error:", err);
+      }
+    }
+	
+    // Render Map Features
+    function renderMap(geojsonData) {
+      if (punjabGeoLayer) {
+        map.removeLayer(punjabGeoLayer);
+      }
+
+      punjabGeoLayer = L.geoJSON(geojsonData, {
+        style: defaultDistrictStyle,
+        onEachFeature: function(feature, layer) {
+          const rawName = feature.properties.district || feature.properties.Dist_Name || feature.properties.NAME_2 || feature.properties.name || "";
+          const stdName = normalizeDistrictName(rawName);
+
+          districtLayersMap[stdName] = layer;
+
+          layer.bindTooltip(`<strong>${stdName}</strong> (${DISTRICT_DATA[stdName]?.region || 'Punjab'})`, {
+            className: 'district-tooltip',
+            direction: 'center',
+            sticky: true
+          });
+
+          layer.unbindTooltip();
+
+          // Interactivity
+          layer.on({
+            mouseover: (e) => onDistrictMouseOver(e, stdName),
+            mouseout: (e) => onDistrictMouseOut(e, stdName),
+            click: (e) => onDistrictClick(e, stdName)
+          });
+        }
+      }).addTo(map);
+
+      map.fitBounds(punjabGeoLayer.getBounds(), { 
+        padding: [40, 40], 
+        maxZoom: 7 // Strictly prevents the map from over-zooming on initial load
+      });
+
+      buildRiversLayer();
+      buildWetlandsLayer();
+      initQuiz();
+    }
+
+    // Build Punjab Rivers Layer (Sutlej, Beas, Ravi, Ghaggar)
+    function buildRiversLayer() {
+      riversLayerGroup.clearLayers();
+
+      RIVERS_DATA.forEach(river => {
+        const glowLine = L.polyline(river.coordinates, {
+          color: river.color,
+          weight: 7,
+          opacity: isDarkMode ? 0.35 : 0.25,
+          lineCap: 'round',
+          lineJoin: 'round'
+        });
+
+        const riverLine = L.polyline(river.coordinates, {
+          color: river.color,
+          weight: 3.5,
+          opacity: 0.95,
+          className: 'river-path',
+          lineCap: 'round',
+          lineJoin: 'round'
+        });
+
+        riverLine.bindTooltip(`<strong>🌊 ${river.name}</strong><br><span class="text-[10px] text-sky-200">Vedic: ${river.vedicName.split('/')[0]}</span>`, {
+          className: 'river-tooltip',
+          sticky: true
+        });
+
+        riverLine.on('click', () => showRiverDetails(river));
+        glowLine.on('click', () => showRiverDetails(river));
+
+        riversLayerGroup.addLayer(glowLine);
+        riversLayerGroup.addLayer(riverLine);
+      });
+    }
+
+    // Build Wetlands Layer (6 Ramsar Sites + Ranjit Sagar)
+    function buildWetlandsLayer() {
+      wetlandsLayerGroup.clearLayers();
+
+      WETLANDS_DATA.forEach(wetland => {
+        const icon = L.divIcon({
+          className: 'pulsing-wetland-icon',
+          html: `<div class="w-4 h-4 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900 shadow-lg shadow-emerald-500/50 flex items-center justify-center cursor-pointer">
+                  <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                 </div>`,
+          iconSize: [16, 16],
+          iconAnchor: [8, 8]
+        });
+
+        const marker = L.marker([wetland.lat, wetland.lng], { icon: icon });
+
+        marker.bindTooltip(`<strong>🪷 ${wetland.name}</strong><br><span class="text-[10px] text-emerald-300">${wetland.status}</span>`, {
+          className: 'wetland-tooltip',
+          direction: 'top',
+          offset: [0, -6]
+        });
+
+        marker.on('click', () => showWetlandDetails(wetland));
+        wetlandsLayerGroup.addLayer(marker);
+      });
+    }
+
+    // District Hover In
+    function onDistrictMouseOver(e, name) {
+      const layer = e.target;
+      if (layer.isSolved) return;
+
+      layer.setStyle({
+        weight: 3,
+        color: isDarkMode ? '#f8fafc' : '#0f172a',
+        fillOpacity: 0.8
+      });
+      layer.bringToFront();
+
+      if (mode === 'explore') {
+        if (!layer.getTooltip()) {
+          layer.bindTooltip(`<strong>${name}</strong> (${DISTRICT_DATA[name]?.region || 'Punjab'})`, {
+            className: 'district-tooltip',
+            direction: 'center',
+            sticky: true
+          });
+        }
+        layer.openTooltip();
+      } else {
+        layer.unbindTooltip();
+      }
+    }
+
+    // District Hover Out
+    function onDistrictMouseOut(e, name) {
+      const layer = e.target;
+      if (layer.isSolved) return;
+      punjabGeoLayer.resetStyle(layer);
+    }
+
+    // District Click Handler
+    function onDistrictClick(e, clickedDistrictName) {
+      const info = DISTRICT_DATA[clickedDistrictName];
+      if (info) {
+        showDistrictDetails(info);
+      }
+
+      if (mode === 'quiz') {
+        handleQuizAnswer(clickedDistrictName, e.target);
+      }
+    }
+
+    // Populate Sidebar: District Details
+    function showDistrictDetails(data) {
+      document.getElementById('info-empty').classList.add('hidden');
+      document.getElementById('info-content').classList.remove('hidden');
+
+      document.getElementById('feature-title').textContent = data.name;
+      document.getElementById('feature-subtitle').textContent = data.punjabi;
+      document.getElementById('feature-tagline').textContent = data.tagline;
+
+      const badge = document.getElementById('badge-category');
+      badge.textContent = `${data.region} Region`;
+      badge.className = `px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+        data.region === 'Majha' ? 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30' :
+        data.region === 'Doaba' ? 'bg-sky-500/20 text-sky-700 dark:text-sky-400 border border-sky-500/30' :
+        'bg-amber-500/20 text-amber-700 dark:text-amber-400 border border-amber-500/30'
+      }`;
+
+      document.getElementById('feature-stats').classList.remove('hidden');
+      document.getElementById('stat-label-1').textContent = "Division";
+      document.getElementById('stat-val-1').textContent = data.division;
+      document.getElementById('stat-label-2').textContent = "Headquarters";
+      document.getElementById('stat-val-2').textContent = data.hq;
+      document.getElementById('stat-label-3').textContent = "Borders";
+      document.getElementById('stat-val-3').textContent = data.border;
+      document.getElementById('stat-label-4').textContent = "Key Feature";
+      document.getElementById('stat-val-4').textContent = data.feature;
+
+      const list = document.getElementById('feature-bullets');
+      list.innerHTML = '';
+      data.examPoints.forEach(pt => {
+        const li = document.createElement('li');
+        li.className = 'flex items-start gap-2 bg-slate-50 dark:bg-slate-900/80 p-2 rounded-lg border border-slate-200 dark:border-slate-800';
+        li.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0"></span><span>${pt}</span>`;
+        list.appendChild(li);
+      });
+
+      document.getElementById('section-1-box').classList.remove('hidden');
+      document.getElementById('section-1-title').innerHTML = `<i data-lucide="history" class="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400"></i> Historic Significance`;
+      document.getElementById('section-1-desc').textContent = data.history;
+
+      document.getElementById('section-2-box').classList.remove('hidden');
+      document.getElementById('section-2-title').innerHTML = `<i data-lucide="factory" class="w-3.5 h-3.5 text-sky-500 dark:text-sky-400"></i> Geography & Economy`;
+      document.getElementById('section-2-desc').textContent = data.economy;
+
+      lucide.createIcons();
+    }
+
+    // Populate Sidebar: River Details
+    function showRiverDetails(river) {
+      document.getElementById('info-empty').classList.add('hidden');
+      document.getElementById('info-content').classList.remove('hidden');
+
+      document.getElementById('feature-title').textContent = river.name;
+      document.getElementById('feature-subtitle').textContent = river.vedicName.split('/')[0];
+      document.getElementById('feature-tagline').textContent = `Punjab River System • Length: ${river.lengthPunjab}`;
+
+      const badge = document.getElementById('badge-category');
+      badge.textContent = "River of Punjab";
+      badge.className = "px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-sky-500/20 text-sky-700 dark:text-sky-400 border border-sky-500/30";
+
+      document.getElementById('feature-stats').classList.remove('hidden');
+      document.getElementById('stat-label-1').textContent = "Vedic Name";
+      document.getElementById('stat-val-1').textContent = river.vedicName.split('/')[0];
+      document.getElementById('stat-label-2').textContent = "Greek Name";
+      document.getElementById('stat-val-2').textContent = river.vedicName.split('/')[1] || "N/A";
+      document.getElementById('stat-label-3').textContent = "Origin";
+      document.getElementById('stat-val-3').textContent = river.origin;
+      document.getElementById('stat-label-4').textContent = "Entry into PB";
+      document.getElementById('stat-val-4').textContent = river.entersPunjab;
+
+      const list = document.getElementById('feature-bullets');
+      list.innerHTML = `
+        <li class="flex items-start gap-2 bg-slate-50 dark:bg-slate-900/80 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-500 mt-1.5 shrink-0"></span>
+          <span><strong>Indus Waters Treaty 1960:</strong> ${river.treaty}</span>
+        </li>
+        <li class="flex items-start gap-2 bg-slate-50 dark:bg-slate-900/80 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-500 mt-1.5 shrink-0"></span>
+          <span><strong>Confluence / Outflow:</strong> ${river.confluence}</span>
+        </li>
+        <li class="flex items-start gap-2 bg-slate-50 dark:bg-slate-900/80 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-500 mt-1.5 shrink-0"></span>
+          <span><strong>Dams & Barrages:</strong> ${river.dams}</span>
+        </li>
+      `;
+
+      document.getElementById('section-1-box').classList.remove('hidden');
+      document.getElementById('section-1-title').innerHTML = `<i data-lucide="waves" class="w-3.5 h-3.5 text-sky-500 dark:text-sky-400"></i> Hydrology & Route`;
+      document.getElementById('section-1-desc').textContent = `Passes through key cities and forms natural boundaries between Majha, Doaba, and Malwa doabs (Bari Doab & Bist Doab).`;
+
+      document.getElementById('section-2-box').classList.add('hidden');
+      lucide.createIcons();
+    }
+
+    // Populate Sidebar: Wetland Details
+    function showWetlandDetails(wetland) {
+      document.getElementById('info-empty').classList.add('hidden');
+      document.getElementById('info-content').classList.remove('hidden');
+
+      document.getElementById('feature-title').textContent = wetland.name;
+      document.getElementById('feature-subtitle').textContent = "Ramsar Site";
+      document.getElementById('feature-tagline').textContent = wetland.status;
+
+      const badge = document.getElementById('badge-category');
+      badge.textContent = "Punjab Wetland";
+      badge.className = "px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30";
+
+      document.getElementById('feature-stats').classList.remove('hidden');
+      document.getElementById('stat-label-1').textContent = "Designation";
+      document.getElementById('stat-val-1').textContent = "Ramsar Site";
+      document.getElementById('stat-label-2').textContent = "Location";
+      document.getElementById('stat-val-2').textContent = wetland.location;
+      document.getElementById('stat-label-3').textContent = "Surface Area";
+      document.getElementById('stat-val-3').textContent = wetland.area;
+      document.getElementById('stat-label-4').textContent = "Priority";
+      document.getElementById('stat-val-4').textContent = "Biodiversity Hotspot";
+
+      const list = document.getElementById('feature-bullets');
+      list.innerHTML = wetland.facts.map(f => `
+        <li class="flex items-start gap-2 bg-slate-50 dark:bg-slate-900/80 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0"></span>
+          <span>${f}</span>
+        </li>
+      `).join('');
+
+      document.getElementById('section-1-box').classList.remove('hidden');
+      document.getElementById('section-1-title').innerHTML = `<i data-lucide="leaf" class="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400"></i> Ecological Importance`;
+      document.getElementById('section-1-desc').textContent = wetland.ecology;
+
+      document.getElementById('section-2-box').classList.add('hidden');
+      lucide.createIcons();
+    }
+
+    // Quiz Initialization
+    function initQuiz() {
+      quizDistricts = Object.keys(DISTRICT_DATA).sort(() => Math.random() - 0.5);
+      currentQuizIndex = 0;
+      scoreCorrect = 0;
+      streak = 0;
+      secondsElapsed = 0;
+      clearInterval(timerInterval);
+
+      timerInterval = setInterval(() => {
+        secondsElapsed++;
+        const mins = String(Math.floor(secondsElapsed / 60)).padStart(2, '0');
+        const secs = String(secondsElapsed % 60).padStart(2, '0');
+        document.getElementById('q-timer').textContent = `${mins}:${secs}`;
+      }, 1000);
+
+      for (const name in districtLayersMap) {
+        const l = districtLayersMap[name];
+        l.isSolved = false;
+        l.unbindTooltip();
+        punjabGeoLayer.resetStyle(l);
+      }
+
+      loadQuestion();
+    }
+
+    // Load Single Question
+// Load Single Question
+    function loadQuestion() {
+      if (currentQuizIndex >= quizDistricts.length) {
+        finishQuiz();
+        return;
+      }
+
+      currentTargetDistrict = quizDistricts[currentQuizIndex];
+      const data = DISTRICT_DATA[currentTargetDistrict];
+
+      document.getElementById('q-current').textContent = currentQuizIndex + 1;
+      document.getElementById('q-district-name').innerHTML = `${data.name} <span class="font-gurmukhi text-sm font-normal text-amber-600 dark:text-amber-400 ml-1.5">${data.punjabi}</span>`;
+      document.getElementById('q-hint-text').textContent = data.examPoints[0];
+
+      // Hide feedback pill smoothly
+      const feedback = document.getElementById('quiz-feedback');
+      feedback.classList.remove('opacity-100', 'translate-y-0');
+      feedback.classList.add('opacity-0', 'translate-y-2');
+    }
+
+    // Handle Quiz Click
+    function handleQuizAnswer(clickedName, layer) {
+      const feedback = document.getElementById('quiz-feedback');
+      
+      if (clickedName.toLowerCase() === currentTargetDistrict.toLowerCase()) {
+        sound.playCorrect();
+        scoreCorrect++;
+        streak++;
+        layer.isSolved = true;
+
+        try { confetti({ particleCount: 40, spread: 60, origin: { y: 0.6 } }); } catch(e){}
+
+        layer.setStyle({ fillColor: '#22c55e', fillOpacity: 0.85, color: '#ffffff', weight: 2 });
+
+        // Show Success Pill
+        feedback.className = 'pointer-events-auto px-4 py-1.5 rounded-full text-[11px] font-bold shadow-lg transition-all duration-300 opacity-100 translate-y-0 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/90 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700';
+        feedback.innerHTML = `<i data-lucide="check-circle-2" class="w-3.5 h-3.5 inline mb-0.5 mr-1"></i>Correct! That is ${currentTargetDistrict}.`;
+
+        currentQuizIndex++;
+        updateStats();
+        setTimeout(loadQuestion, 800);
+      } else {
+        sound.playWrong();
+        streak = 0;
+
+        layer.setStyle({ fillColor: '#ef4444', fillOpacity: 0.85 });
+        setTimeout(() => { if (!layer.isSolved) punjabGeoLayer.resetStyle(layer); }, 600);
+
+        // Show Error Pill
+        feedback.className = 'pointer-events-auto px-4 py-1.5 rounded-full text-[11px] font-bold shadow-lg transition-all duration-300 opacity-100 translate-y-0 bg-rose-100 text-rose-700 dark:bg-rose-900/90 dark:text-rose-300 border border-rose-300 dark:border-rose-700';
+        feedback.innerHTML = `<i data-lucide="x-circle" class="w-3.5 h-3.5 inline mb-0.5 mr-1"></i>Not quite! You clicked ${clickedName}.`;
+        
+        updateStats();
+      }
+      lucide.createIcons();
+    }
+    
+    function updateStats() {
+      document.getElementById('q-streak').textContent = streak;
+      const pct = Math.round((scoreCorrect / (currentQuizIndex || 1)) * 100);
+      document.getElementById('q-score').textContent = `${pct}%`;
+    }
+
+    function finishQuiz() {
+      clearInterval(timerInterval);
+      const mins = Math.floor(secondsElapsed / 60);
+      const secs = secondsElapsed % 60;
+      alert(`🎉 Outstanding! You mastered all 23 districts in ${mins}m ${secs}s!\nYour geographical foundation for PSSSB exams is rock solid.`);
+    }
+
+    // Mode Switcher Listeners
+    const btnQuiz = document.getElementById('btn-mode-quiz');
+    const btnExplore = document.getElementById('btn-mode-explore');
+    const quizHud = document.getElementById('quiz-hud');
+    const explorerControls = document.getElementById('explorer-controls');
+
+    btnQuiz.addEventListener('click', () => {
+      mode = 'quiz';
+      btnQuiz.className = "flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-md transition-all bg-indigo-600 text-white shadow-sm";
+      btnExplore.className = "flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-md transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white";
+      quizHud.classList.remove('hidden');
+      explorerControls.classList.add('hidden');
+
+      for (const name in districtLayersMap) {
+        districtLayersMap[name].unbindTooltip();
+      }
+
+      initQuiz();
+    });
+
+    btnExplore.addEventListener('click', () => {
+      mode = 'explore';
+      btnExplore.className = "flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-md transition-all bg-indigo-600 text-white shadow-sm";
+      btnQuiz.className = "flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-md transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white";
+      quizHud.classList.add('hidden');
+      explorerControls.classList.remove('hidden');
+      clearInterval(timerInterval);
+
+      for (const name in districtLayersMap) {
+        const l = districtLayersMap[name];
+        l.isSolved = false;
+        punjabGeoLayer.resetStyle(l);
+        l.bindTooltip(`<strong>${name}</strong> (${DISTRICT_DATA[name]?.region || 'Punjab'})`, {
+          className: 'district-tooltip',
+          direction: 'center',
+          sticky: true
+        });
+      }
+    });
+
+    // Skip question button
+    document.getElementById('btn-skip').addEventListener('click', () => {
+      streak = 0;
+      updateStats();
+      currentQuizIndex++;
+      loadQuestion();
+    });
+
+    // Layer checkboxes (Explorer Mode)
+    document.getElementById('layer-toggle-rivers').addEventListener('change', (e) => {
+      if (e.target.checked) {
+        map.addLayer(riversLayerGroup);
+      } else {
+        map.removeLayer(riversLayerGroup);
+      }
+    });
+
+    document.getElementById('layer-toggle-wetlands').addEventListener('change', (e) => {
+      if (e.target.checked) {
+        map.addLayer(wetlandsLayerGroup);
+      } else {
+        map.removeLayer(wetlandsLayerGroup);
+      }
+    });
+
+    // Reset View Button
+    document.getElementById('btn-reset-view').addEventListener('click', () => {
+      if (punjabGeoLayer) {
+        map.fitBounds(punjabGeoLayer.getBounds(), { padding: [20, 20] });
+      }
+    });
+
+    // Sound Toggle Button
+    const btnSound = document.getElementById('btn-toggle-sound');
+    btnSound.addEventListener('click', () => {
+      sound.enabled = !sound.enabled;
+      btnSound.innerHTML = sound.enabled ? `<i data-lucide="volume-2" class="w-4 h-4"></i>` : `<i data-lucide="volume-x" class="w-4 h-4"></i>`;
+      btnSound.className = sound.enabled 
+        ? "p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-emerald-600 dark:text-emerald-400 border border-slate-200 dark:border-slate-700 transition" 
+        : "p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-400 border border-slate-200 dark:border-slate-700 transition";
+      lucide.createIcons();
+    });
+
+    // Theme Switcher Logic (Light & Dark)
+    const btnTheme = document.getElementById('btn-toggle-theme');
+    function applyTheme(isDark) {
+      isDarkMode = isDark;
+      const html = document.documentElement;
+      const themeIcon = document.getElementById('theme-icon');
+
+      if (isDark) {
+        html.classList.add('dark');
+        themeIcon.setAttribute('data-lucide', 'sun');
+      } else {
+        html.classList.remove('dark');
+        themeIcon.setAttribute('data-lucide', 'moon');
+      }
+
+      // Swap Leaflet Tiles
+      map.removeLayer(currentBaseTileLayer);
+      currentBaseTileLayer = L.tileLayer(isDark ? TILE_DARK : TILE_LIGHT, {
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+
+      // Reapply district polygon stroke/fill for optimal contrast
+      if (punjabGeoLayer) {
+        punjabGeoLayer.setStyle(defaultDistrictStyle);
+      }
+
+      buildRiversLayer();
+      buildWetlandsLayer();
+      lucide.createIcons();
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    btnTheme.addEventListener('click', () => {
+      applyTheme(!isDarkMode);
+    });
+
+    // Punjab Profile Modal Handlers
+    const modalProfile = document.getElementById('modal-punjab-profile');
+    const btnOpenProfile = document.getElementById('btn-toggle-profile');
+    const btnCloseProfile1 = document.getElementById('btn-close-profile');
+    const btnCloseProfile2 = document.getElementById('btn-close-profile-2');
+
+    function openModal() {
+      modalProfile.classList.remove('hidden');
+    }
+    function closeModal() {
+      modalProfile.classList.add('hidden');
+    }
+
+    btnOpenProfile.addEventListener('click', openModal);
+    btnCloseProfile1.addEventListener('click', closeModal);
+    btnCloseProfile2.addEventListener('click', closeModal);
+    modalProfile.addEventListener('click', (e) => {
+      if (e.target === modalProfile) closeModal();
+    });
+
+    // Copy Revision Notes
+    document.getElementById('btn-copy-notes').addEventListener('click', () => {
+      const title = document.getElementById('feature-title').textContent;
+      const subtitle = document.getElementById('feature-subtitle').textContent;
+      const tagline = document.getElementById('feature-tagline').textContent;
+      
+      const bullets = Array.from(document.querySelectorAll('#feature-bullets li'))
+        .map(li => `• ${li.textContent.trim()}`)
+        .join('\n');
+
+      const text = `=== PSSSB REVISION: ${title} (${subtitle}) ===\n${tagline}\n\nHigh-Yield Points:\n${bullets}`;
+
+      const tempTextArea = document.createElement("textarea");
+      tempTextArea.value = text;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      try {
+        document.execCommand('copy');
+        const btn = document.getElementById('btn-copy-notes');
+        const original = btn.innerHTML;
+        btn.innerHTML = `<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i><span class="text-emerald-500">Copied to Clipboard!</span>`;
+        lucide.createIcons();
+        setTimeout(() => {
+          btn.innerHTML = original;
+          lucide.createIcons();
+        }, 1800);
+      } catch (e) {
+        console.error("Clipboard copy failed");
+      }
+      document.body.removeChild(tempTextArea);
+    });
+
+    // Kickoff map load & saved theme check
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        applyTheme(false);
+      } else {
+        applyTheme(true);
+      }
+      loadPunjabGeoJSON();
+    });
+  </script>
+</body>
+</html>
