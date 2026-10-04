@@ -1,0 +1,2525 @@
+<!-- Save this file as: master_comprehensive_study_guide.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Master Comprehensive Study Guide (PSSSB & SSC)</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --header-bg: #0b1329;
+      --header-border: #38bdf8;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+      --highlight: #fef08a;
+      --highlight-text: #854d0e;
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --table-header: #f1f5f9;
+      --table-alt: #f8fafc;
+      --code-bg: #f0fdf4;
+      --code-border: #bbf7d0;
+      --code-text: #166534;
+      --alert-bg: #fffbeb;
+      --alert-border: #f59e0b;
+      --alert-text: #92400e;
+      --psssb-bg: #fef3c7;
+      --psssb-text: #92400e;
+      --psssb-border: #f59e0b;
+    }
+
+    [data-theme="dark"] {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --header-bg: #030712;
+      --header-border: #38bdf8;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #1f2937;
+      --card-shadow: rgba(0, 0, 0, 0.4);
+      --highlight: #854d0e;
+      --highlight-text: #fef08a;
+      --primary: #38bdf8;
+      --primary-hover: #0284c7;
+      --table-header: #1f2937;
+      --table-alt: #161f30;
+      --code-bg: #062b1a;
+      --code-border: #065f46;
+      --code-text: #6ee7b7;
+      --alert-bg: #2d2006;
+      --alert-border: #d97706;
+      --alert-text: #fde68a;
+      --psssb-bg: #3d2703;
+      --psssb-text: #fde68a;
+      --psssb-border: #d97706;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    /* COMPACT HEADER */
+    header.compact-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--header-bg);
+      color: #fff;
+      border-bottom: 3px solid var(--header-border);
+      padding: 0.45rem 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 0.35rem;
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .header-brand h1 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      white-space: nowrap;
+    }
+    .header-brand span {
+      background: #38bdf8;
+      color: #030712;
+      font-size: 0.65rem;
+      padding: 1px 6px;
+      border-radius: 9999px;
+      font-weight: 800;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      max-width: 500px;
+      justify-content: flex-end;
+    }
+    .search-input {
+      width: 100%;
+      max-width: 320px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .search-input::placeholder { color: rgba(255,255,255,0.6); }
+    .search-input:focus {
+      background: rgba(255,255,255,0.2);
+      border-color: #38bdf8;
+    }
+    .btn-toggle {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+    .btn-toggle:hover { background: rgba(255,255,255,0.25); }
+
+    /* SECTIONAL NAVIGATION BUTTONS */
+    .nav-buttons {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: none;
+    }
+    .nav-buttons::-webkit-scrollbar { display: none; }
+    .nav-btn {
+      background: rgba(255,255,255,0.08);
+      color: #cbd5e1;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 4px 11px;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+    }
+    .nav-btn:hover {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .nav-btn.active {
+      background: var(--header-border);
+      color: #030712;
+      border-color: var(--header-border);
+    }
+
+    /* CONTAINER & TABS */
+    .container {
+      max-width: 1180px;
+      margin: 18px auto;
+      padding: 0 14px;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.2s ease-in-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SECTION CARDS & TYPOGRAPHY */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 22px;
+      margin-bottom: 22px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 5px var(--card-shadow);
+    }
+    .section-card h2 {
+      font-size: 1.25rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text);
+    }
+    .section-card h3 {
+      font-size: 1.05rem;
+      margin: 14px 0 8px 0;
+      color: var(--primary);
+    }
+    .section-card h4 {
+      font-size: 0.95rem;
+      margin: 10px 0 5px 0;
+    }
+    .badge {
+      background: var(--border);
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* PSSSB EXAM HIGHLIGHT MARKER */
+    .psssb-imp {
+      display: inline-flex;
+      align-items: center;
+      background: var(--psssb-bg);
+      color: var(--psssb-text);
+      border: 1px solid var(--psssb-border);
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-right: 6px;
+      letter-spacing: 0.3px;
+      vertical-align: middle;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .highlight {
+      background-color: var(--highlight);
+      color: var(--highlight-text);
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    /* TABLES */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 12px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.75rem;
+    }
+    table th, table td {
+      border: 1px solid var(--border);
+      padding: 9px 12px;
+      text-align: left;
+    }
+    table th {
+      background-color: var(--table-header);
+      color: var(--text);
+      font-weight: 700;
+    }
+    table tr:nth-child(even) { background-color: var(--table-alt); }
+
+    /* UTILITY BOXES */
+    .alert-box {
+      background-color: var(--alert-bg);
+      border-left: 4px solid var(--alert-border);
+      color: var(--alert-text);
+      padding: 12px 16px;
+      margin: 12px 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.75rem;
+    }
+    .code-box, .mnemonics {
+      background-color: var(--code-bg);
+      border: 1px solid var(--code-border);
+      color: var(--code-text);
+      padding: 12px 15px;
+      border-radius: 6px;
+      margin: 10px 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.75rem;
+    }
+    ul, ol { padding-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 6px; font-size: 0.75rem; }
+  </style>
+</head>
+<body>
+
+  <!-- COMPACT MASTER HEADER -->
+  <header class="compact-header">
+    <div class="header-top">
+      <div class="header-brand">
+        <h1>Miscellaneous Important Topic</h1>
+        <span>Based On SSC Steno 26</span>
+      </div>
+      <div class="header-actions">
+        <input type="text" id="globalSearch" class="search-input" placeholder="Search topics, rivers, schemes, acts..." onkeyup="filterMasterContent()">
+        <button class="btn-toggle" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode">🌓 Mode</button>
+        <button class="btn-toggle" onclick="window.print()" title="Print page">🖨 Print</button>
+      </div>
+    </div>
+    <!-- SECTIONAL BUTTONS -->
+    <div class="nav-buttons">
+      <button class="nav-btn active" onclick="switchSection('geo', this)">1. Geography</button>
+      <button class="nav-btn" onclick="switchSection('space', this)">2. Space & Biotech</button>
+      <button class="nav-btn" onclick="switchSection('gk', this)">3. Static GK & Culture</button>
+      <button class="nav-btn" onclick="switchSection('hist', this)">4. History</button>
+      <button class="nav-btn" onclick="switchSection('org', this)">5. Orgs & Corridors</button>
+      <button class="nav-btn" onclick="switchSection('econ', this)">6. Economics</button>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- ==================== TAB 1: GEOGRAPHY ==================== -->
+    <div id="tab-geo" class="tab-content active">
+      <div class="section-card">
+        <h2>1. India's Borders, Coastlines & Ports <span class="badge">Static & Physical</span></h2>
+        <p><strong>Total International Land Boundary:</strong> <span class="highlight">15,106 km</span> across 7 neighboring nations.</p>
+        
+        <div class="mnemonics">
+          Mnemonic: "बचपन में MBA" (Land Borders from Longest to Shortest)
+          <br>ब (Bangladesh - 4,096 km) &gt; च (China - 3,488 km) &gt; प (Pakistan - 3,323 km) &gt; न (Nepal - 1,751 km) &gt; M (Myanmar - 1,643 km) &gt; B (Bhutan - 699 km) &gt; A (Afghanistan - 106 km)
+        </div>
+
+        <div class="alert-box">
+          <span class="psssb-imp">★ PSSSB IMP</span><strong>Punjab & West Coastline Traps:</strong>
+          <ul>
+            <li>Total updated coastline length: <span class="highlight">11,198 km</span> (revised from 7,516 km).</li>
+            <li><strong>Longest Coastline (UT / Overall):</strong> Andaman & Nicobar Archipelago (<span class="highlight">3,833 km</span>).</li>
+            <li><strong>Longest Coastline (States - Mnemonic 'GTA'):</strong> <span class="highlight">G</span>ujarat (1st) &gt; <span class="highlight">T</span>amil Nadu (2nd) &gt; <span class="highlight">A</span>ndhra Pradesh (3rd).</li>
+            <li><strong>Shortest Coastline:</strong> State: Goa (<span class="highlight">193 km</span>) | UT: Puducherry (<span class="highlight">42 km</span>).</li>
+            <li><strong>Punjab International Border:</strong> Shares an international land border exclusively with Pakistan (~553 km across 6 districts: Pathankot, Gurdaspur, Amritsar, Tarn Taran, Firozpur, Fazilka).</li>
+          </ul>
+        </div>
+
+        <h3>Coasts & Harbors</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Coast / Region</th>
+                <th>Segment Names</th>
+                <th>Key Characteristics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>West Coast</strong></td>
+                <td>Kathiawar, Konkan (MH/Goa), Kannada (KA), Malabar (KL)</td>
+                <td><strong>Submergent / retreating coast</strong>; narrow width; steep wave energy; dominant erosional landforms; ideal for natural ports; famous for <strong>Kayals (backwaters/lagoons)</strong> like Punnamada Kayal (Nehru Trophy boat race).</td>
+              </tr>
+              <tr>
+                <td><strong>East Coast</strong></td>
+                <td>Coromandel (TN/AP), Northern Circars (AP), Utkal (OD), Vanga (WB)</td>
+                <td><strong>Emergent coast</strong>; wide deltas formed by depositional landforms; shallow gradients require artificial ports.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Major Ports Highlights</h3>
+        <ul>
+          <li><strong>Deendayal Port (Kandla):</strong> Tidal port in Gujarat.</li>
+          <li><strong>JNPT (Nhava Sheva):</strong> Largest container port of India, built as a satellite port to de-congest Mumbai.</li>
+          <li><strong>Mormugao:</strong> Located at Zuari estuary (Goa); leading iron ore exporter.</li>
+          <li><strong>Kochi:</strong> "Queen of Arabian Sea".</li>
+          <li><strong>Kamarajar (Ennore):</strong> India's first corporate/private major port (out of 13 major ports).</li>
+          <li><strong>Visakhapatnam:</strong> Deepest land-locked protected harbor.</li>
+          <li><strong>Syama Prasad Mookerjee (Kolkata):</strong> Riverine port known as the <em>Gateway of Eastern India</em> / Diamond Harbour.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>2. Demography, Census & UNFPA State of World Population Report <span class="badge">High Frequency</span></h2>
+        
+        <h3>Current Projections vs. 2011 Baseline</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>2011 Census Baseline</th>
+                <th>UNFPA / Recent Projection (2025 Data)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Total Population</strong></td>
+                <td>1.21 Billion</td>
+                <td><span class="highlight">1.46 Billion</span> (Rank 1 worldwide, surpassing China)</td>
+              </tr>
+              <tr>
+                <td><strong>Population Density</strong></td>
+                <td>382 persons/sq. km</td>
+                <td><span class="highlight">492 persons/sq. km</span></td>
+              </tr>
+              <tr>
+                <td><strong>Urban Share</strong></td>
+                <td>31.16%</td>
+                <td><span class="highlight">37.1%</span> (Rapid urban growth; mega-cities expand)</td>
+              </tr>
+              <tr>
+                <td><strong>Total Fertility Rate (TFR)</strong></td>
+                <td>2.4</td>
+                <td><span class="highlight">1.9</span> (Below the replacement fertility level of <strong>2.1</strong>)</td>
+              </tr>
+              <tr>
+                <td><strong>Life Expectancy</strong></td>
+                <td>~67 years</td>
+                <td>Male: <span class="highlight">71 years</span> | Female: <span class="highlight">74 years</span></td>
+              </tr>
+              <tr>
+                <td><strong>Maternal Mortality Ratio (MMR)</strong></td>
+                <td>~178/lakh</td>
+                <td><span class="highlight">80 deaths per 1,00,000 live births</span></td>
+              </tr>
+              <tr>
+                <td><strong>Growth Rate</strong></td>
+                <td>1.64% annually</td>
+                <td><span class="highlight">0.89%</span> incremental growth</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Demographic Structure & Concepts</h3>
+        <ul>
+          <li><strong>Age Distribution Breakdown:</strong>
+            <ul>
+              <li><strong>0–14 years (Dependent Youth):</strong> ~24%</li>
+              <li><strong>15–64 years (Working Age / Demographic Dividend):</strong> <span class="highlight">68%</span></li>
+              <li><strong>65+ years (Elderly Dependent):</strong> <span class="highlight">7%</span></li>
+            </ul>
+          </li>
+          <li><strong>2047 Population Pyramid:</strong> As TFR drops (1.9), the base contracts and the elderly apex begins to bulge (stationary/bell-shaped transition).</li>
+          <li><strong>Year of the Great Demographic Divide:</strong> <span class="highlight">1921</span> (mortality fell significantly; population growth shifted from stagnant to steady).</li>
+          <li><strong>Crude Birth Rate (CBR):</strong> Number of live births per 1,000 estimated mid-year population in a given year.</li>
+          <li><strong>Density Extremes (2011):</strong>
+            <ul>
+              <li>Highest State: Bihar (1,106) | Highest UT: Delhi (11,320)</li>
+              <li>Lowest State: Arunachal Pradesh (17) | Lowest UT: Andaman & Nicobar (46)</li>
+            </ul>
+          </li>
+          <li><strong>Regional Shifts:</strong> Southern states face declining demographic population shares due to higher female literacy and lower fertility; northern states (UP, Bihar) drive incremental growth and exhibit low population doubling times.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>3. Physiography & Mountain Systems <span class="badge">Geomorphology</span></h2>
+        
+        <h3>Himalayan System (South to North)</h3>
+        <ol>
+          <li><strong>Outer Himalayas (Shiwalik):</strong> Average elevation 900–1,100 m; discontinuous; composed of unconsolidated sediments; transitions into <span class="highlight">Duars</span> in WB/Assam.</li>
+          <li><strong>Middle/Lesser Himalayas (Himachal):</strong> Average elevation ~4,000 m.
+            <ul>
+              <li>J&K: Pir Panjal range</li>
+              <li>Himachal Pradesh: Dhauladhar range</li>
+              <li>Uttarakhand: Nag Tibba / Mussoorie ranges</li>
+              <li>Nepal: Mahabharat Lekh</li>
+            </ul>
+          </li>
+          <li><strong>Greater Himalayas (Himadri):</strong> Average elevation ~6,000 m; continuous crystalline core; home to Mt. Everest (8,848 m) and Kanchenjunga (8,586 m, Sikkim).</li>
+          <li><strong>Trans-Himalayas:</strong> Karakoram, Ladakh, and Zanskar ranges. Holds <strong>K2 (Godwin Austen)</strong> in the Karakoram range.</li>
+        </ol>
+
+        <h3>Piedmont Transition Zones of Northern Plains</h3>
+        <ul>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Bhabar:</strong> Narrow belt (8–16 km) along Shiwalik foothills composed of coarse pebbles/boulders where streams <strong>submerge/disappear</strong>.</li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Tarai:</strong> Marshy, wet, swampy zone (10–20 km) south of Bhabar where underground streams <strong>re-emerge</strong>.</li>
+          <li><strong>Bhangar:</strong> Older alluvium on terraces above flood level; rich in calcareous deposits (<em>Kankars</em>).</li>
+          <li><strong>Khadar:</strong> New, fertile flood-plain alluvium renewed annually by seasonal floods (known as <em>Bet</em> lands in Punjab).</li>
+        </ul>
+
+        <h3>Peninsular Plateau & Coastal Highlands</h3>
+        <ul>
+          <li><strong>Aravalli Range:</strong> Relict/residual fold mountain; acts as a water divide; blocks monsoons on its windward side leaving western Rajasthan in an arid rain-shadow zone.</li>
+          <li><strong>Western Ghats (Sahyadri):</strong> Continuous, high elevation (~1,200 m); elevation increases from north to south; peak: <strong>Anaimudi (2,695 m)</strong> in Annamalai Hills; second peak: <strong>Doda Betta (2,637 m)</strong> in Nilgiris.</li>
+          <li><strong>Eastern Ghats:</strong> Discontinuous, breached by east-flowing rivers (average height ~600 m); peak: <strong>Jindhagada / Arma Konda (~1,680 m)</strong> & Mahendragiri (1,501 m).</li>
+          <li><strong>Passes:</strong> Palghat Gap (Palakkad) connects Kerala to Tamil Nadu between Nilgiri and Annamalai hills.</li>
+          <li><strong>Eastern Hills (North-to-South):</strong> Nallamala &gt; Venukonda &gt; Palkonda &gt; Nagari &gt; Javadi &gt; Shevaroy &gt; Panchaimalai &gt; Sirumalai &gt; Palani Hills.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>4. Climatology, Monsoons & Atmospheric Dynamics <span class="badge">Atmosphere</span></h2>
+
+        <h3>Monsoon Mechanism & Wind Reversal</h3>
+        <ul>
+          <li><strong>Driving Cause:</strong> Differential heating and cooling of the landmass (low pressure in NW India/Tibetan plateau) versus the surrounding Indian Ocean (high pressure).</li>
+          <li><strong>Coriolis Effect:</strong> Deflects winds to the right in the Northern Hemisphere (Ferrel’s Law). Southeast trade winds crossing the equator become the <strong>Southwest Monsoon</strong>.</li>
+          <li><strong>Arabian Sea Branch:</strong> Hits the Western Ghats (causing intense orographic precipitation on the windward side while the Deccan remains in rain-shadow), sends a branch parallel to the Aravallis without lifting.</li>
+          <li><strong>Bay of Bengal Branch:</strong> Deflected by the Arakan Yoma/Himalayas towards the Indo-Gangetic plain; funneled into Khasi Hills (Mawsynram: world's highest rainfall). Merges with Arabian Sea branch over the Punjab plains.</li>
+          <li><strong>Retreating / Northeast Monsoon (Oct–Nov):</strong> Withdraws from NW India towards the south; picks up moisture over the Bay of Bengal, precipitating heavily on the <strong>Coromandel Coast (Tamil Nadu)</strong>.</li>
+        </ul>
+
+        <h3>High-Altitude Winds & Tropical Phenomena</h3>
+        <ul>
+          <li><strong>Subtropical Westerly Jet Stream (STWJ):</strong> Blows in the upper troposphere (9–13 km); its northward shift across the Tibetan Plateau in summer marks the sudden onset/burst of the Indian monsoon.</li>
+          <li><strong>Tropical Easterly Jet Stream (TEJ):</strong> Steers monsoon depressions and maintains the monsoon trough.</li>
+          <li><strong>Doldrums / ITCZ:</strong> Intertropical Convergence Zone; equatorial low-pressure trough where trade winds converge, characterized by calm air, variable breezes, and convective storms.</li>
+          <li><strong>Horse Latitudes:</strong> Subtropical high-pressure belts (~30° N & S) characterized by sinking dry air.</li>
+          <li><strong>El Niño:</strong> Periodic warming of sea surface temperatures in the Central and Eastern Equatorial Pacific; suppresses the Walker Circulation and weakens the Indian monsoon.</li>
+          <li><strong>La Niña:</strong> Strong cooling of Eastern Pacific waters; enhances Indian monsoon precipitation.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>5. Drainage Systems, River Valleys & Lakes <span class="badge">Hydrology</span></h2>
+        
+        <div class="alert-box">
+          <span class="psssb-imp">★ PSSSB IMP</span><strong>Punjab & Indus River Network:</strong>
+          <ul>
+            <li><strong>Satluj (Langqen Zangbo):</strong> Originates from Rakas Tal (Tibet); enters India through <strong>Shipki La</strong> pass. Feeds the <strong>Bhakra Dam</strong> and Govind Sagar reservoir in Bilaspur, HP.</li>
+            <li><strong>Harike Wetland:</strong> Confluence of River <strong>Beas</strong> and River <strong>Satluj</strong> in Tarn Taran/Firozpur; largest wetland in northern India; headworks for the Indira Gandhi Canal.</li>
+            <li><strong>Doabs of Punjab:</strong> Bist Doab (between Beas & Satluj), Bari Doab (between Beas & Ravi), Rechna Doab (between Ravi & Chenab), Jech Doab (between Jhelum & Chenab), Sind Sagar Doab (between Indus & Jhelum).</li>
+          </ul>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>River</th>
+                <th>Origin Glacier / Source</th>
+                <th>Key Tributaries / Distinctions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Indus</strong></td>
+                <td>Bokhar Chu (Kailash-Mansarovar)</td>
+                <td>Tibet name: <em>Singi Khamban</em> ("Lion's Mouth"). Left tributaries: Jhelum, Chenab (largest), Ravi, Beas, Satluj. Right: Shyok, Gilgit, Nubra.</td>
+              </tr>
+              <tr>
+                <td><strong>Satluj</strong></td>
+                <td>Rakas Tal (Tibet)</td>
+                <td>Tibet name: <em>Langqen Zangbo</em> ("Elephant's Mouth"). Enters India via Shipki La. Feeds Bhakra Dam / Indira Gandhi Canal.</td>
+              </tr>
+              <tr>
+                <td><strong>Brahmaputra</strong></td>
+                <td>Chemayungdung / Angsi Glacier</td>
+                <td>Tibet name: <em>Yarlung Tsangpo</em>. Enters Arunachal as Siang/Dihang; joins Dibang & Lohit in Assam; enters Bangladesh as <strong>Jamuna</strong>.</td>
+              </tr>
+              <tr>
+                <td><strong>Ganga</strong></td>
+                <td>Gangotri (Bhagirathi) + Alaknanda at Devprayag</td>
+                <td>Enters Bangladesh as <strong>Padma</strong>; merges with Jamuna and Meghna to form the world's largest delta (Sundarbans).</td>
+              </tr>
+              <tr>
+                <td><strong>Godavari</strong></td>
+                <td>Trimbakeshwar (Nasik, MH)</td>
+                <td>"Dakshin Ganga" / Vriddha Ganga. Tributaries: Penganga, Wainganga, Wardha, Indravati, Pranhita, Manjira.</td>
+              </tr>
+              <tr>
+                <td><strong>Krishna</strong></td>
+                <td>Mahabaleshwar (MH)</td>
+                <td>Tributaries: Bhima, Tungabhadra, Ghataprabha, Malaprabha, Musi, Koyna.</td>
+              </tr>
+              <tr>
+                <td><strong>Mahanadi</strong></td>
+                <td>Sihawa (Dhamtari, Chhattisgarh)</td>
+                <td>Tributaries: Seonath, Hasdeo, Mand, Ib, Ong, Tel. Hirakud Dam built on it.</td>
+              </tr>
+              <tr>
+                <td><strong>Narmada & Tapi</strong></td>
+                <td>Amarkantak (Narmada) / Multai, Betul (Tapi)</td>
+                <td>Flow west through tectonic <strong>rift valleys</strong> between Vindhya & Satpura ranges. Form estuaries, not deltas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Major Lakes of India</h3>
+        <ul>
+          <li><strong>Wular Lake (J&K):</strong> Largest freshwater lake in India (tectonic origin, fed by Jhelum).</li>
+          <li><strong>Sambhar Lake (Rajasthan):</strong> India's largest <em>inland saline lake</em>.</li>
+          <li><strong>Chilika Lake (Odisha):</strong> Largest coastal brackish water lagoon.</li>
+          <li><strong>Govind Ballabh Pant Sagar:</strong> India's largest artificial lake/reservoir, built on the Rihand River (tributary of Son) in Sonbhadra, UP.</li>
+          <li><strong>Gobind Sagar:</strong> Major reservoir on the Satluj River formed by Bhakra Dam in Bilaspur, HP.</li>
+          <li><strong>DVC (Damodar Valley Corporation, 1948):</strong> India's first multipurpose river valley project. Dams: Maithon & Tilaiya (Barakar River), Panchet (Damodar River), Konar (Konar River).</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>6. Soil Orders & Indian Agriculture <span class="badge">Soils & Crops</span></h2>
+
+        <h3>Soil Profiles</h3>
+        <ul>
+          <li><strong>Alluvial Soils (40%+):</strong> Deposited by rivers. Rich in Potash and Lime; deficient in Nitrogen and Phosphorus.</li>
+          <li><strong>Black Soil (Regur):</strong> Derived from Deccan basaltic lava flows (volcanic origin). Highly argillaceous (clayey), deep moisture-retentive, exhibits "self-ploughing" cracks upon drying; optimal for cotton (needs 210 frost-free days).</li>
+          <li><strong>Red & Yellow Soils:</strong> Develop on crystalline igneous rocks in low rainfall areas; reddish tint due to wide diffusion of <strong>iron oxides</strong>.</li>
+          <li><strong>Laterite Soil:</strong> Formed through intense <strong>leaching</strong> in tropical regions with high rainfall and alternating wet/dry seasons. Silica and lime wash away; leaves iron oxide and aluminum behind; suitable for cashew, tea, coffee.</li>
+          <li><strong>Karewas:</strong> Lacustrine deposits in Kashmir Valley consisting of clay, silt, and moraines; uniquely suited for <strong>Zafran (saffron)</strong> cultivation.</li>
+        </ul>
+
+        <h3>Cropping Seasons</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Season</th>
+                <th>Sowing / Harvesting</th>
+                <th>Major Crops</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Kharif</strong></td>
+                <td>Sown: June–July (Monsoon onset)<br>Harvested: Sept–Oct</td>
+                <td>Paddy (Rice), Maize, Jowar, Bajra, Cotton, Jute, Groundnut, Soybean.</td>
+              </tr>
+              <tr>
+                <td><strong>Rabi</strong></td>
+                <td>Sown: Oct–Dec (Winter onset)<br>Harvested: April–May</td>
+                <td>Wheat, Barley, Gram, Mustard, Rapeseed, Linseed, Peas.</td>
+              </tr>
+              <tr>
+                <td><strong>Zaid</strong></td>
+                <td>March–June (Short summer window)</td>
+                <td>Watermelon, Muskmelon, Cucumber, Vegetables, Fodder crops.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>7. Mineral Resources & Industrial Geography <span class="badge">Economic Geography</span></h2>
+        <ul>
+          <li><strong>Crustal Element Abundance (Order):</strong> Oxygen (~46.6%) &gt; Silicon (~27.7%) &gt; Aluminium (~8.1%) &gt; Iron (~5.0%) &gt; Calcium.</li>
+          <li><strong>Most Abundant Mineral Group in Earth's Crust:</strong> <span class="highlight">Feldspar (~41%)</span>, followed by Quartz (~12%) and Pyroxene (~11%).</li>
+          <li><strong>Iron Ore Reserves:</strong>
+            <ul>
+              <li><strong>Hematite (High-Grade):</strong> Odisha-Jharkhand Belt (Mayurbhanj, Kendujhar/Keonjhar, Badampahar, Noamundi, Gua); Durg-Bastar-Chandrapur Belt (Bailadila mines, Dalli Rajhara). Leading producer: <strong>Odisha</strong>.</li>
+              <li><strong>Magnetite:</strong> Kudremukh deposits in Ballari-Chitradurga-Chikkamagaluru belt (Karnataka).</li>
+            </ul>
+          </li>
+          <li><strong>Bauxite (Aluminium Ore):</strong> Leading State: <strong>Odisha</strong> (Panchpatmali mines in Koraput operated by NALCO). Global leader: Australia.</li>
+          <li><strong>Manganese:</strong> Leading Producer State: <strong>Madhya Pradesh</strong> (Balaghat belt).</li>
+          <li><strong>Mica:</strong> Leading Producer State: <strong>Andhra Pradesh</strong> (Nellore belt) &gt; Rajasthan.</li>
+          <li><strong>Copper:</strong> Khetri Mines (Jhunjhunu, Rajasthan) & Malanjkhand (MP).</li>
+          <li><strong>Limestone:</strong> Leading state: <strong>Rajasthan</strong> (associated with Makrana marbles).</li>
+          <li><strong>Bhadla Solar Park:</strong> Located in Jodhpur, Rajasthan; one of India's largest mega-solar parks.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>8. Astronomy, Earth's Interior & Planetary Science <span class="badge">Astro & Geology</span></h2>
+
+        <h3>Earth's Interior & Discontinuities</h3>
+        <div class="mnemonics">
+          Mnemonic: "कोई मुझे रेड गुलाब ला दो" (CRGML)
+          <br>1. <strong>Conrad:</strong> Upper Crust vs Lower Crust
+          <br>2. <strong>Mohorovičić (Moho):</strong> Crust vs Mantle
+          <br>3. <strong>Repetti:</strong> Upper Mantle vs Lower Mantle
+          <br>4. <strong>Gutenberg:</strong> Mantle vs Outer Core
+          <br>5. <strong>Lehmann:</strong> Liquid Outer Core vs Solid Inner Core
+        </div>
+        <p><em>Why is Inner Core solid?</em> Tremendous confining overburden pressure raises the iron-nickel melting point above ambient core temperatures.</p>
+
+        <h3>Planetary Data</h3>
+        <ul>
+          <li><strong>Terrestrial vs. Jovian Planets:</strong> Inner 4 (Mercury, Venus, Earth, Mars) are rocky and dense; Outer 4 (Jupiter, Saturn, Uranus, Neptune) are gas/ice giants separated by the Asteroid Belt.</li>
+          <li><strong>Venus:</strong> Hottest planet due to thick runaway CO<sub>2</sub> and H<sub>2</sub>SO<sub>4</sub> clouds; longest rotation (~243 earth days); retrograde rotation.</li>
+          <li><strong>Planetary Moons:</strong> Ganymede (Jupiter's moon) is the largest natural satellite in the solar system.</li>
+          <li><strong>Apparent Retrograde Motion:</strong> Optical illusion caused by differences in relative orbital speeds when Earth overtakes an outer planet.</li>
+          <li><strong>Giant Impact Hypothesis (Theia):</strong> A Mars-sized protoplanet collided with early Earth ~4.5 billion years ago, ejecting debris that accreted to form the Moon.</li>
+        </ul>
+
+        <h3>Space Physics & Celestial Terms</h3>
+        <ul>
+          <li><strong>Blue Moon:</strong> The occurrence of a second full moon within a single calendar month.</li>
+          <li><strong>Van Allen Radiation Belts:</strong> Concentric donut-shaped zones of charged particles trapped by Earth's magnetosphere. Inner belt = energetic protons; Outer belt = relativistic electrons.</li>
+          <li><strong>Quasars:</strong> Quasi-stellar radio sources powered by supermassive black holes at the centers of distant active galaxies.</li>
+          <li><strong>Pulsars:</strong> Highly magnetized, rapidly rotating neutron stars (stellar remnants) that emit regular electromagnetic pulses.</li>
+          <li><strong>CMBR (Cosmic Microwave Background Radiation):</strong> Discovered in the 1960s; relic afterglow of the Big Bang (~13.8 billion years ago).</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>9. Linguistic Families of India <span class="badge">Social Geography</span></h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Language Family</th>
+                <th>Sub-branch / Speakers</th>
+                <th>Geographic Distribution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Indo-Aryan (Indo-European)</strong></td>
+                <td>~73% of population</td>
+                <td>Northern, Central, and Western India (Punjabi, Hindi, Bengali, Marathi, Gujarati, Odia, etc.).</td>
+              </tr>
+              <tr>
+                <td><strong>Dravidian</strong></td>
+                <td>~20% of population</td>
+                <td>Southern states (Tamil, Telugu, Kannada, Malayalam); also spoken by Gondi/Kurukh pockets in central India.</td>
+              </tr>
+              <tr>
+                <td><strong>Austro-Asiatic (Austric)</strong></td>
+                <td>~1.3% of population</td>
+                <td>Tribal belts of Jharkhand, Odisha, Central India (Munda, Santhali, Ho) and Meghalaya (Khasi, Jaintia).</td>
+              </tr>
+              <tr>
+                <td><strong>Sino-Tibetan (Tibeto-Burman)</strong></td>
+                <td>~0.85% of population</td>
+                <td>Himalayan borderlands and North-Eastern States (Bodo, Mizo, Manipuri, Ladakhi).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 2: SPACE TECH & BIOTECH ==================== -->
+    <div id="tab-space" class="tab-content">
+      <div class="section-card">
+        <h2>1. Evolution of ISRO & Launch Vehicle Generations <span class="badge">Space History</span></h2>
+        <ul>
+          <li><strong>1963 (Genesis):</strong> Launch of the first sounding rocket (Nike-Apache) from <strong>TERLS</strong> (Thumba Equatorial Rocket Launching Station, Thiruvananthapuram, Kerala).</li>
+          <li><strong>1975 (Aryabhata):</strong> India's first satellite. Fabricated indigenously but launched using a Soviet launch vehicle (Cosmos-3M) from Kapustin Yar (USSR).</li>
+          <li><strong>1980 (Rohini RS-1 & SLV-3):</strong> First satellite launched using India's own indigenous launch vehicle—<strong>SLV-3</strong> (4 stages, all-solid propellant). Led by Project Director Dr. A.P.J. Abdul Kalam.</li>
+          <li><strong>Historic Record (PSLV-C37, 2017):</strong> Deployed a world-record <strong>104 satellites</strong> in a single launch, including Cartosat-2D.</li>
+        </ul>
+
+        <h3>Launch Vehicle Architectures</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Vehicle</th>
+                <th>Stages & Propellants</th>
+                <th>Payload Capacity / Key Distinctions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>SLV-3 / ASLV</strong></td>
+                <td>SLV-3: 4 Stages (All-Solid)<br>ASLV: 5 Stages (All-Solid)</td>
+                <td>Early experimental rocket programs (~40–150 kg to Low Earth Orbit).</td>
+              </tr>
+              <tr>
+                <td><strong>PSLV</strong><br>(Polar Satellite Launch Vehicle)</td>
+                <td><strong>4 Stages (Alternating):</strong><br>S1: Solid (HTPB) + strap-ons<br>S2: Liquid (Vikas Engine / UDMH + N<sub>2</sub>O<sub>4</sub>)<br>S3: Solid<br>S4: Liquid (MMH + MON)</td>
+                <td>Known as the <em>Workhorse of ISRO</em> (~1,750 kg to Sun-Synchronous Orbit / 1.4 tonnes to GTO). No cryogenic stage.</td>
+              </tr>
+              <tr>
+                <td><strong>GSLV Mk II & Mk III (LVM3)</strong></td>
+                <td><strong>3 Stages:</strong><br>S1: Solid strap-ons / core<br>S2: Liquid (Vikas engines)<br>S3: <strong>Cryogenic Upper Stage (CUS / CE-20)</strong></td>
+                <td>Uses Liquid Hydrogen (LH<sub>2</sub> at -253°C) as fuel and Liquid Oxygen (LOX at -183°C) as oxidizer. LVM3 lifts ~4,000 kg to GTO and ~8,000 kg to LEO.</td>
+              </tr>
+              <tr>
+                <td><strong>SSLV</strong><br>(Small Satellite Launch Vehicle)</td>
+                <td><strong>3 Solid Stages + VTM</strong> (Velocity Trimming Module - liquid stage for orbit circularization)</td>
+                <td><strong>Height:</strong> 34 m | <strong>Diameter:</strong> 2 m | <strong>Lift-off Mass:</strong> ~120 tonnes.<br>Designed for <strong>on-demand, low-cost launches</strong> of up to <span class="highlight">500 kg to LEO</span> and <span class="highlight">300 kg to Sun-Synchronous Orbit (SSO)</span>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code-box">
+          Propellant Transitions: Cryogenic (LOX + LH2) &rarr; Semi-Cryogenic (LOX + Isrosene/Refined Kerosene) &rarr; Methalox (LOX + Liquid Methane in future NGLV / Soot-free, reusable).
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>2. Key Indian Space Observatories & Deep Space Explorations <span class="badge">Payloads & Physics</span></h2>
+
+        <h3>Aditya-L1 (India's Maiden Solar Mission)</h3>
+        <ul>
+          <li><strong>Launch:</strong> September 2, 2023, via <strong>PSLV-C57 (XL configuration)</strong>.</li>
+          <li><strong>Orbit:</strong> Halo orbit around the <strong>Sun-Earth Lagrangian Point 1 (L1)</strong> (~1.5 million km from Earth), allowing an uninterrupted view of the Sun without eclipses.</li>
+          <li><strong>Primary Objective:</strong> Study the dynamics of the Solar Corona, Chromosphere, Photosphere, Coronal Mass Ejections (CMEs), and Solar Wind.</li>
+          <li><strong>Key Payload Focus (MAG):</strong> The <strong>Magnetometer (MAG)</strong> measures the <span class="highlight">magnitude and direction of the Interplanetary Magnetic Field (IMF)</span> in situ.</li>
+        </ul>
+
+        <h3>AstroSat (Multi-Wavelength Space Observatory)</h3>
+        <ul>
+          <li><strong>Launch:</strong> 2015 via PSLV-C30 into a ~650 km Low Earth Orbit (LEO).</li>
+          <li><strong>Distinction:</strong> India’s first dedicated multi-wavelength space telescope.</li>
+          <li><strong>Observation Bands:</strong> Simultaneously observes celestial sources across <span class="highlight">Optical, Ultraviolet (UV), and X-ray spectral bands</span> (0.3 to 100 keV).</li>
+          <li><strong>Target Phenomena:</strong> Accretion disks of black holes, neutron stars, X-ray binaries, Active Galactic Nuclei (AGN), and Gamma-Ray Bursts (GRBs).</li>
+        </ul>
+
+        <h3>XPoSat (X-ray Polarimeter Satellite)</h3>
+        <ul>
+          <li><strong>Launch:</strong> January 1, 2024, on <strong>PSLV-C58</strong> into an equatorial LEO (~650 km). World's second dedicated polarimetry mission (after NASA's IXPE).</li>
+          <li><strong>Payload 1 - POLIX (Polarimeter Instrument in X-rays):</strong> Developed by Raman Research Institute (RRI) with URSC. Measures degree and angle of polarization in medium X-ray band (8–30 keV).</li>
+          <li><strong>Payload 2 - XSPECT (X-ray Spectroscopy and Timing):</strong> Developed by U R Rao Satellite Centre (URSC). Provides fast timing and high-spectral resolution in soft X-rays (0.8–15 keV).</li>
+        </ul>
+
+        <h3>LUPEX & Chandrayaan Roadmaps</h3>
+        <ul>
+          <li><strong>LUPEX (Lunar Polar Exploration / Chandrayaan-5):</strong> Joint collaboration between <strong>ISRO and JAXA (Japan)</strong>. Target: Lunar South Pole (permanently shadowed craters) to prospect for water-ice reserves. Division of Labor: JAXA provides the <strong>H3 rocket</strong> and lunar rover; ISRO provides the <strong>lunar lander</strong>.</li>
+          <li><strong>Chandrayaan-4:</strong> Designed as an unmanned lunar sample-return mission to collect and bring lunar regolith/soil back to Earth.</li>
+        </ul>
+
+        <h3>Bharatiya Antariksh Station (BAS) & Gaganyaan</h3>
+        <ul>
+          <li><strong>Gaganyaan:</strong> Demonstrates indigenous human spaceflight capability by sending a 3-member crew to a 400 km LEO for 3 days using the human-rated <strong>HLVM3</strong>.</li>
+          <li><strong>Bharatiya Antariksh Station (BAS):</strong> Indigenous, modular space station operating in LEO (~400–600 km).
+            <ul>
+              <li><strong>BAS-1 (First Module):</strong> Target launch by <span class="highlight">2028</span>.</li>
+              <li><strong>Full Operational Assembly:</strong> Targeted by <span class="highlight">2035</span>.</li>
+              <li>Purpose: Sustained microgravity experiments, deep-space life support research, and crewed staging platform.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>3. Ground Observatories, Debris Management & Telescopes <span class="badge">Astro & Tech</span></h2>
+
+        <h3>MACE (Major Atmospheric Cherenkov Experiment) Telescope</h3>
+        <ul>
+          <li><strong>Location:</strong> Hanle, Ladakh (~4,270 m altitude) — collocated with the Indian Astronomical Observatory.</li>
+          <li><strong>Operating Principle:</strong> An earth-based high-energy gamma-ray telescope. Does <strong>not</strong> observe visible light directly.</li>
+          <li><strong>Mechanism:</strong> Detects very high energy (VHE) gamma rays indirectly by collecting flashes of <span class="highlight">Cherenkov radiation</span> emitted when gamma rays collide with atomic nuclei in the upper atmosphere, generating relativistic electron-positron cascades.</li>
+        </ul>
+
+        <h3>James Webb Space Telescope (JWST) vs. Hubble Space Telescope (HST)</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Hubble Space Telescope (HST)</th>
+                <th>James Webb Space Telescope (JWST)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Launch & Orbit</strong></td>
+                <td>1990; Low Earth Orbit (~550 km). Serviceable by astronauts.</td>
+                <td>Dec 2021; <strong>Sun-Earth L2 Lagrange Point</strong> (~1.5 million km). Unserviceable.</td>
+              </tr>
+              <tr>
+                <td><strong>Wavelength Bands</strong></td>
+                <td>Primarily <strong>Ultraviolet (UV) and Visible</strong> spectra; narrow near-infrared.</td>
+                <td>Primarily <strong>Infrared (Near & Mid-IR)</strong>; can peer through cosmic dust to view early red-shifted galaxies.</td>
+              </tr>
+              <tr>
+                <td><strong>Primary Mirror</strong></td>
+                <td>2.4 m single glass mirror.</td>
+                <td>6.5 m segmented beryllium mirror coated with gold.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Space Debris & POEM Mechanics</h3>
+        <ul>
+          <li><strong>Kessler Syndrome:</strong> Theoretical scenario where orbital debris density reaches a point where collisions cascade exponentially, rendering orbits unusable.</li>
+          <li><strong>POEM (PSLV Orbital Experimental Module):</strong> Converts the spent, dead <strong>4th stage (PS4)</strong> of the PSLV rocket into an in-orbit, stabilized research platform. Powered by solar panels wrapped around the PS4 fuel tank, Li-ion batteries, and dedicated micro-thrusters with navigation software. Prevents space debris accumulation by conducting experiments and initiating a controlled re-entry burn into Earth's atmosphere.</li>
+          <li><strong>Skylab (1973):</strong> America’s first crewed orbital space station, built utilizing a modified Saturn V upper stage; proved long-duration human habitability in microgravity despite early solar shield damage.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>4. Global Deep-Space Probes & Indian Private Space Flight <span class="badge">Global Missions</span></h2>
+
+        <h3>International Flagship Probes</h3>
+        <ul>
+          <li><strong>NASA Parker Solar Probe:</strong> Flies through the Sun's outer corona (closest distance ~6.5 million km). Uses an advanced <strong>carbon-composite heat shield</strong> and autonomous cooling systems to endure extreme radiation and thermal flux.</li>
+          <li><strong>NASA Dragonfly Mission:</strong> An 8-rotor autonomous <strong>rotorcraft lander</strong> destined for Saturn's moon <strong>Titan</strong> to study prebiotic organic chemistry and surface habitability across multiple landing sites.</li>
+          <li><strong>NASA MAVEN:</strong> Confirmed that the loss of Mars' global dipole magnetic field allowed intense <strong>solar wind stripping</strong> to erode Mars' ancient dense atmosphere into space.</li>
+          <li><strong>NASA Juno:</strong> Orbiting Jupiter since 2016; its <strong>Gravity Science Instrument</strong> maps minute Doppler shifts to determine Jupiter's gravitational field, mass distribution, and core structure.</li>
+        </ul>
+
+        <h3>India's Private NewSpace Ecosystem</h3>
+        <ul>
+          <li><strong>Skyroot Aerospace:</strong> Launched India's first privately designed and fabricated sub-orbital rocket, <span class="highlight">Vikram-S</span> (November 2022, Mission Prarambh).</li>
+          <li><strong>Agnikul Cosmos:</strong> Developed <strong>Agnibaan</strong>, propelled by <strong>Agnilet</strong> — the world’s first single-piece, 3D-printed semi-cryogenic engine. Established India's first private rocket launchpad (<em>Dhanush</em>) at Sriharikota.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>5. Biotechnology, Genetics & Medical Sciences <span class="badge">Biotechnology</span></h2>
+
+        <h3>CRISPR-Cas9 Gene Editing</h3>
+        <ul>
+          <li><strong>Definition:</strong> <em>Clustered Regularly Interspaced Short Palindromic Repeats</em> + <strong>Cas9</strong> (CRISPR-associated endonuclease protein).</li>
+          <li><strong>Working Mechanism:</strong>
+            <ul>
+              <li><strong>Guide RNA (gRNA):</strong> Synthetic RNA sequence matched to the target DNA region requiring correction.</li>
+              <li><strong>Cas9 Endonuclease:</strong> Functions as <strong>molecular scissors</strong> that make double-strand cuts at the specific DNA site directed by the gRNA.</li>
+            </ul>
+          </li>
+          <li><strong>Clinical Application:</strong> Targeted therapy for monogenic disorders like <strong>Sickle Cell Anaemia</strong> (correcting the mutation in the beta-globin gene) and Beta-Thalassemia.</li>
+        </ul>
+
+        <h3>DNA Structure & Chargaff’s Equivalence Rules</h3>
+        <div class="code-box">
+          Base Pairing: Adenine (A) = Thymine (T) [2 Hydrogen Bonds]
+          <br>Guanine (G) &equiv; Cytosine (C) [3 Hydrogen Bonds]
+          <br>Rule: In double-stranded DNA, %A = %T and %G = %C.
+          <br>Example: If a sample is 20% Adenine &rarr; Thymine = 20% &rarr; Total (A+T) = 40% &rarr; Remaining (G+C) = 60% &rarr; Guanine = 30%, Cytosine = 30%.
+        </div>
+
+        <h3>Genome Sequencing vs. DNA Barcoding</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Whole Genome Sequencing</th>
+                <th>DNA Barcoding</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Scope</strong></td>
+                <td>Determines the complete sequence of all nucleotide base pairs across an organism's entire DNA genome.</td>
+                <td>Analyzes a short, standardized, conserved genetic sequence (a "barcode") to rapidly identify a species.</td>
+              </tr>
+              <tr>
+                <td><strong>Key Marker Genes</strong></td>
+                <td>Whole genome coverage (Sanger Sequencing or Next-Generation Sequencing / NGS).</td>
+                <td><strong>Animals:</strong> <span class="highlight">COI gene</span> (Cytochrome c Oxidase subunit 1 in mitochondrial DNA).<br><strong>Plants:</strong> <span class="highlight">rbcL</span> and <span class="highlight">matK</span> genes in chloroplast DNA.</td>
+              </tr>
+              <tr>
+                <td><strong>Major Initiative</strong></td>
+                <td><strong>IndiGen Project (CSIR):</strong> Sequenced the whole genomes of 1,000+ Indian individuals to map population-specific health variants and predispositions.</td>
+                <td>Global species classification, ecological assessments, and anti-poaching wildlife forensic identification.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Recombinant Vector Vaccines</h3>
+        <ul>
+          <li><strong>Design:</strong> Utilizes a harmless, modified viral vector (e.g., non-replicating adenovirus) engineered to carry the genetic instructions for a target pathogen’s antigen (such as the viral Spike protein).</li>
+          <li><strong>Immune Response:</strong> Triggers both <strong>humoral (neutralizing antibodies)</strong> and <strong>cellular (cytotoxic T-cell)</strong> immune responses without causing infection.</li>
+          <li><strong>Key Challenge:</strong> Pre-existing immunity to the viral vector itself can neutralize the vehicle before it prompts an immune response against the target pathogen.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>6. Emerging Digital Technologies & Advanced Materials <span class="badge">Tech & Materials</span></h2>
+
+        <h3>Augmented Reality (AR) vs. Virtual Reality (VR)</h3>
+        <ul>
+          <li><strong>Augmented Reality (AR):</strong> Overlays computer-generated digital information, 3D graphics, or sound onto the user's actual physical environment in real-time (e.g., heads-up displays, interactive apps).</li>
+          <li><strong>Virtual Reality (VR):</strong> Completely isolates and immerses the user within an artificial, fully computer-simulated digital environment, blocking out physical surroundings.</li>
+          <li><strong>Mixed Reality (MR):</strong> Allows real and virtual elements to interact dynamically.</li>
+        </ul>
+
+        <h3>VoLTE (Voice over Long-Term Evolution)</h3>
+        <ul>
+          <li><strong>Mechanism:</strong> Transmits voice calls as digitized IP data packets over high-speed 4G LTE networks via the <strong>IP Multimedia Subsystem (IMS)</strong>.</li>
+          <li><strong>Advantages:</strong> Enables high-definition (HD) voice quality, faster call setup times, and simultaneous high-speed data browsing while on an active voice call without falling back to older 2G/3G circuit-switched networks.</li>
+        </ul>
+
+        <h3>Carbon Nanotubes (CNTs)</h3>
+        <ul>
+          <li><strong>Structure:</strong> Cylindrical nanostructures consisting of rolled-up sheets of single-layer carbon atoms (graphene).</li>
+          <li><strong>Single-Walled Carbon Nanotubes (SWCNTs):</strong> Exhibit tunable electrical properties; can be either <strong>metallic</strong> or <strong>semiconducting</strong> depending on their <span class="highlight">chirality (twist angle)</span> and diameter.</li>
+          <li><strong>Key Characteristics:</strong> High tensile strength (tens of times stronger than structural steel) and high thermal/electrical conductivity along the tube axis, making them ideal for nanoelectronics, biosensors, and structural composites.</li>
+        </ul>
+
+        <h3>NavIC (Navigation with Indian Constellation)</h3>
+        <ul>
+          <li>Regional satellite navigation system developed by ISRO covering India and a region extending up to 1,500 km around its borders.</li>
+          <li><strong>NVS Series (e.g., NVS-01, NVS-02):</strong> Second-generation navigation satellites launched to incorporate indigenous Rubidium atomic clocks and the civil <strong>L1 frequency band</strong> to enhance interoperability with commercial smartphones.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 3: STATIC GK & CULTURE ==================== -->
+    <div id="tab-gk" class="tab-content">
+      <div class="section-card">
+        <h2>1. Regional & International Organizations <span class="badge">Headquarters & Charters</span></h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Organization</th>
+                <th>Established / Treaty</th>
+                <th>Headquarters / Secretariat</th>
+                <th>Key Member Nations & Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>SAARC</strong><br>(South Asian Association for Regional Cooperation)</td>
+                <td>Founded in Dec <strong>1985</strong> at Dhaka (Bangladesh)</td>
+                <td><strong>Kathmandu, Nepal</strong></td>
+                <td><strong>8 Members:</strong> Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, Sri Lanka, and <strong>Afghanistan</strong> (Joined in 2007 as 8th member).</td>
+              </tr>
+              <tr>
+                <td><strong>BIMSTEC</strong><br>(Bay of Bengal Initiative for Multi-Sectoral Tech & Econ Cooperation)</td>
+                <td>Founded in <strong>1997</strong> via Bangkok Declaration</td>
+                <td><strong>Dhaka, Bangladesh</strong></td>
+                <td><strong>7 Members:</strong> Bangladesh, Bhutan, India, Myanmar, Nepal, Sri Lanka, Thailand.</td>
+              </tr>
+              <tr>
+                <td><strong>IORA</strong><br>(Indian Ocean Rim Association)</td>
+                <td>Founded in <strong>1997</strong> at Port Louis</td>
+                <td><strong>Cyber City, Ebène, Mauritius</strong></td>
+                <td><strong>23 Member States</strong> bordering the Indian Ocean (India is a founding member).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ul>
+          <li><strong>Commonwealth Withdrawal:</strong> Maldives withdrew from the Commonwealth of Nations in 2016 over human rights disputes (later rejoined).</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>2. Indian Classical & Folk Dances <span class="badge">Dance & Traditions</span></h2>
+        
+        <h3>Classical Dances & Attributes</h3>
+        <ul>
+          <li><strong>Sattriya (Assam):</strong> Recognized as a classical dance in <strong>2000</strong>. Founded by the 15th-century Vaishnavite saint <strong>Mahapurusha Srimanta Sankaradeva</strong>. Accompanied by <em>Borgeet</em>, <em>Khol</em> (drum), and incorporates dramatic plays known as <em>Ankiya Naat</em> / <em>Bhaona</em>.</li>
+          <li><strong>Bharatanatyam (Tamil Nadu):</strong> Ancient temple dance formerly known as <strong>Sadir Attam</strong> or <strong>Dasi Attam</strong> (performed by Devadasis). Revived in the 20th century by <strong>Rukmini Devi Arundale</strong> and E. Krishna Iyer. Heavily based on Bharata Muni's <em>Natya Shastra</em> and Nandikeshvara's <em>Abhinaya Darpana</em> ("Mirror of Gestures"). Characterized by geometric postures, expressive <em>Abhinaya</em>, and <em>Sanchari Bhavas</em>.</li>
+          <li><strong>Mohiniyattam (Kerala):</strong> "Dance of the Enchantress". Performed in traditional white and gold off-white attire (<em>Kasavu</em>). Reflects the gentle, swaying, lyrical <strong>Lasya</strong> style (associated with Goddess Parvati).</li>
+          <li><strong>Kathakali (Kerala):</strong> Energetic, dramatic classical dance-drama representing the vigorous <strong>Tandava</strong> aspect (associated with Lord Shiva).</li>
+          <li><strong>Manipuri Classical Dance (Raasleela):</strong> Centered around the spiritual devotion (<em>Bhakti Rasa</em>) of Radha and Krishna. Emphasizes delicate, soft movements without sharp ankle jerks, fluid circular swaying patterns, and modest facial expressions.</li>
+        </ul>
+
+        <h3>Regional Folk Dances & Attributes</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>Folk Dance / Form</th>
+                <th>Key Characteristics & Associated Instruments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Manipur</strong></td>
+                <td>Kartal Cholom, Pung Cholom, Nupa Pala, Lai Haraoba</td>
+                <td>• <em>Kartal Cholom:</em> Performed with dynamic cymbal clapping.<br>• <em>Pung Cholom:</em> Acrobatics while playing the Pung drum.<br>• <em>Nupa Dance:</em> Performed exclusively by men.<br>• <em>Lai Haraoba:</em> "Merry-making of the gods" by the Meitei community led by priests/priestesses (<em>Maibas</em> and <em>Maibis</em>).</td>
+              </tr>
+              <tr>
+                <td><strong>Karnataka</strong></td>
+                <td>Yakshagana, Kamsale, Bhootha Aradhane, Dollu Kunitha, Veeragase</td>
+                <td>• <em>Yakshagana:</em> Folk theatre with <strong>Himmela</strong> (background musicians/singers) and <strong>Mummela</strong> (stage actors/dancers).<br>• <em>Kamsale:</em> Martial devotional dance by male performers using bronze cymbals honoring Lord Male Mahadeshwara.<br>• <em>Bhootha Aradhane:</em> Ritual spirit/ancestor worship dance along coastal Tulu Nadu where oracles resolve local disputes.<br>• <em>Veeragase:</em> Performed by Lingayat devotees (founded by 12th-century saint Basavanna).</td>
+              </tr>
+              <tr>
+                <td><strong>Maharashtra</strong></td>
+                <td>Lavani, Tamasha, Lezim, Koli, Dhangari Gaja, Pavri Nach, Dahihandi</td>
+                <td>• <em>Lavani:</em> Known for its fast tempo, expressive romantic/social themes, and Dholki accompaniment.<br>• <em>Tamasha:</em> Traditional folk theatre.<br>• <em>Dahihandi:</em> Human pyramids formed during Krishna Janmashtami.</td>
+              </tr>
+              <tr>
+                <td><strong>Rajasthan</strong></td>
+                <td>Kalbelia, Ghoomar, Kacchi Ghodi, Chari, Bhavai</td>
+                <td>• <em>Kalbelia:</em> "Snake dance" performed by the Kalbelia tribe in black swirling skirts with mirror embroidery; inscribed on UNESCO Intangible Cultural Heritage list in <strong>2010</strong>; renowned exponent: <strong>Gulabo Sapera</strong>.<br>• <em>Ghoomar:</em> Originated among the Bhil tribe; later adopted by Rajput women; characterized by pirouetting twirls.<br>• <em>Kacchi Ghodi:</em> Mock horse dance from the Shekhawati region performed by men in dummy horse costumes.</td>
+              </tr>
+              <tr>
+                <td><strong>Haryana</strong></td>
+                <td>Chaupaiya, Loor, Gugga, Swang, Phag</td>
+                <td>• <em>Chaupaiya:</em> Devotional folk dance performed with Manjiras by both men and women.<br>• <em>Loor:</em> Performed by women wearing Ghagra, Kurti, Chundri, and Chunda.</td>
+              </tr>
+              <tr>
+                <td><strong>Chhattisgarh</strong></td>
+                <td>Raut Nacha, Panthi, Karma, Saila</td>
+                <td>• <em>Raut Nacha:</em> Celebrated during Diwali by the Yadav (cowherd) community depicting tales of Lord Krishna.<br>• <em>Panthi:</em> Sacred devotional dance of the Satnami sect performed around a Jaitkhamb.<br>• <em>Saila:</em> Post-harvest stick-dance.</td>
+              </tr>
+              <tr>
+                <td><strong>Jammu & Kashmir</strong></td>
+                <td>Rouff, Bhand Pather, Kud, Dumhal, Hikat</td>
+                <td>• <em>Rouff:</em> Performed by women during Eid and spring; uses Rabab and Tumbaknari.<br>• <em>Dumhal:</em> Performed by Wattal tribe men wearing tall conical caps and vibrant robes.</td>
+              </tr>
+              <tr>
+                <td><strong>Meghalaya</strong></td>
+                <td>Nongkrem, Shad Suk Mynsiem, Wangala</td>
+                <td>• <em>Nongkrem:</em> Khasi harvest dance accompanied by the <strong>Tangmuri</strong> (traditional wind pipe).<br>• <em>Wangala:</em> 100-drum festival and dance of the Garos dedicated to Sun God <em>Misi Saljong</em>.</td>
+              </tr>
+              <tr>
+                <td><strong>Odisha & E. India</strong></td>
+                <td>Chhau, Ranappa, Paika, Chaiti Ghoda</td>
+                <td>• <em>Chhau:</em> Semi-classical martial dance with three styles: Mayurbhanj (Odisha, no masks), Seraikela (Jharkhand), and Purulia (West Bengal).<br>• <em>Ranappa:</em> Danced on bamboo stilts in Ganjam district.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>3. Indian Classical Music & Instrument Classification <span class="badge">Musicology</span></h2>
+        
+        <h3>Core Traditions: Hindustani vs. Carnatic</h3>
+        <ul>
+          <li><strong>Hindustani Classical (North India):</strong> Influenced by Persian, Central Asian, and Arab musical traditions. Core vocal forms:
+            <ul>
+              <li><strong>Dhrupad:</strong> The oldest and most austere form of Hindustani music, accompanied by the <strong>Pakhawaj</strong> (barrel drum). Starts with an elaborate, unhurried, slow <em>Alaap</em>.</li>
+              <li><strong>Khayal:</strong> Derived from the Persian word for "imagination" or "thought". Rose to prominence in the 18th century; flexible, ornate, with rapid taans, bol-taans, and bandishes.</li>
+              <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Tappa:</strong> Originated from the quick, erratic folk songs of camel drivers in Punjab. Known for fast, complex, bouncy melodic phrases.</li>
+              <li><strong>Tarana:</strong> Fast vocal composition using rhythmic syllables (e.g., <em>odani, tanom, yalali</em>) rather than meaningful lyrics.</li>
+            </ul>
+          </li>
+          <li><strong>Carnatic Music (South India):</strong> Retained its indigenous structure without major foreign influences.
+            <ul>
+              <li><strong>Pitamaha of Carnatic Music:</strong> <strong>Purandara Dasa</strong> (standardized the beginner pedagogy, Mayamalavagowla scale).</li>
+              <li><strong>Carnatic Trinity:</strong> Tyagaraja, Muthuswami Dikshitar, and Syama Sastri.</li>
+              <li><strong>Melakarta System:</strong> 72 parent scales (Janaka ragas) formulated by <strong>Venkatamakhin</strong> in his 17th-century treatise <em>Chaturdandi Prakasika</em>.</li>
+              <li><strong>Andhra vs. Tamil Carnatic:</strong> Andhra compositions predominantly use <strong>Telugu</strong>, prized for its vocal vowel endings and fluid gamakas.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>Musical Instruments (Natya Shastra 4-Fold Classification)</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Classification Description</th>
+                <th>Key Examples</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Avanaddha Vadya</strong><br>(Membranophones)</td>
+                <td>Stretched animal skin/membrane drums that produce sound when struck.</td>
+                <td><strong>Pakhawaj</strong> (Dhrupad drum), Tabla, Mridangam, Dholak, Khol, Pung.</td>
+              </tr>
+              <tr>
+                <td><strong>Ghana Vadya</strong><br>(Idiophones)</td>
+                <td>Solid, non-membrane instruments that resonate when struck (percussion).</td>
+                <td><strong>Manjira</strong>, Kartal, Jal Tarang, Ghatam, Kamsale cymbals.</td>
+              </tr>
+              <tr>
+                <td><strong>Sushira Vadya</strong><br>(Aerophones)</td>
+                <td>Wind instruments where sound is produced by vibrating columns of air.</td>
+                <td>Bansuri (Flute), <strong>Shehnai</strong>, Nadaswaram, Tangmuri, Pungi.</td>
+              </tr>
+              <tr>
+                <td><strong>Tata Vadya</strong><br>(Chordophones)</td>
+                <td>Stringed instruments where sound is produced by plucking or bowing chords.</td>
+                <td>Veena, Sitar, Sarod, Sarangi, Santoor, Rabab, Ektara.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Regional Musical Storytelling</h3>
+        <ul>
+          <li><strong>Biraha (Uttar Pradesh/Bihar):</strong> Narrative folk tradition of migration, pain of separation (<em>Viraha</em>), and labor struggles, accompanied by metal dholaks and chimta.</li>
+          <li><strong>Burra Katha (Andhra Pradesh & Telangana):</strong> Three-performer musical storytelling ballad that combines humor, social satire, and political reform messages.</li>
+          <li><strong>Villu Pattu (Tamil Nadu):</strong> "Bow-Song"; narrative musical storytelling performed using a large musical bow struck with sticks to narrate religious and moral tales.</li>
+          <li><strong>Zikir and Zari (Assam):</strong> Devotional folk songs composed by the 17th-century Sufi saint Azan Fakir, blending Islamic teachings with local Assamese folk melodies.</li>
+          <li><strong>Barahmasa (Himachal Pradesh & North India):</strong> 12-month cyclical song cycles describing the changing seasons and women's internal emotional states of longing and separation.</li>
+          <li><strong>Bhopa-Bhopi Phad Painting Performance (Rajasthan):</strong> Traveling priest-singers of Rajasthan who recite epic tales of folk deities (like Pabuji and Devnarayanji) pointing to illustrations on a painted cloth scroll (<em>Phad</em>).</li>
+          <li><strong>Manganiyar & Langa (Rajasthan):</strong> Hereditary Muslim musician communities patronized by Rajput and Muslim elites; custodians of instruments like the Kamaicha and Sindhi Sarangi.</li>
+          <li><strong>Maand (Rajasthan):</strong> Traditional semi-classical melodic style of Rajasthan that bridges regional folk storytelling with classical ragas.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>4. Major Fairs, Festivals & Sacred Rituals <span class="badge">Festivals</span></h2>
+        
+        <h3>Harvest & New Year Festivals</h3>
+        <ul>
+          <li><strong>Pongal (Tamil Nadu):</strong> 4-day harvest festival celebrated in the month of Thai (January):
+            <ol>
+              <li><em>Day 1 - Bhogi Pongal:</em> Discarding and burning old household clutter; cleaning homes; honoring Lord Indra.</li>
+              <li><em>Day 2 - Surya Pongal (Thai Pongal):</em> Boiling fresh milk and rice in an earthen pot until it overflows ("Pongalo Pongal") as an offering to Sun God.</li>
+              <li><em>Day 3 - Mattu Pongal:</em> Decorating and worshiping cattle/bulls (associated with Jallikattu).</li>
+              <li><em>Day 4 - Kaanum Pongal:</em> Family reunions, visiting relatives, and seeking elders' blessings.</li>
+            </ol>
+            <em>Tamil New Year:</em> <strong>Puthandu</strong> (April).
+          </li>
+          <li><strong>Makar Sankranti & Regional Variants (January):</strong>
+            <ul>
+              <li><span class="psssb-imp">★ PSSSB IMP</span>Punjab: <strong>Lohri</strong> (bonfires, sugarcane, winter rabi harvest).</li>
+              <li>Assam: <strong>Magh Bihu (Bhogali Bihu)</strong> with community feasting and <em>Meji</em> bonfires.</li>
+              <li>Andhra Pradesh/Karnataka: <strong>Kanuma</strong> (celebrated the day after Sankranti to honor cattle and livestock).</li>
+              <li>Kerala New Year: <strong>Vishu</strong> (celebrated in April with <em>Vishukkani</em>).</li>
+              <li>Andhra Pradesh & Telangana New Year: <strong>Ugadi</strong> (Chaitra month).</li>
+            </ul>
+          </li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Baisakhi (Punjab):</strong> Harvest festival commemorating the creation of the <strong>Khalsa Panth</strong> on March 30, 1699, by <strong>Guru Gobind Singh</strong>.</li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Hola Mohalla (Anandpur Sahib, Punjab):</strong> Founded by Guru Gobind Singh one day after Holi; features military exercises, mock battles, horse riding, and <strong>Gatka</strong> martial arts by <strong>Nihang Sikhs</strong>.</li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Akhand Path:</strong> Unbroken, continuous 48-hour recitation of the <strong>Guru Granth Sahib</strong> conducted during Gurpurab festivals.</li>
+        </ul>
+
+        <h3>Tribal & Cultural Festivals</h3>
+        <ul>
+          <li><strong>Hornbill Festival (Nagaland):</strong> Celebrated from <strong>December 1 to 10</strong> at Kisama Heritage Village, Kohima ("Festival of Festivals").</li>
+          <li><strong>Dree Festival (Arunachal Pradesh):</strong> Agricultural harvest festival of the <strong>Apatani</strong> tribe in Ziro Valley.</li>
+          <li><strong>Erok Sim (Jharkhand/Bihar/WB):</strong> Sowing festival of the <strong>Santhal</strong> tribe in the month of Ashadha, where the village priest (<em>Naike</em>) sacrifices a fowl at the sacred grove (<em>Jaher Than</em>).</li>
+          <li><strong>Koovagam Festival (Villupuram, Tamil Nadu):</strong> 18-day festival where transgender women (Thirunangai/Hijras) wed Lord Aravan (Koothandavar) for one night; on the final day, they break their bangles and mourn his sacrifice as widows.</li>
+          <li><strong>Kumbh Mela:</strong> Rotates among 4 holy river locations: <strong>Haridwar</strong> (Ganga), <strong>Prayagraj</strong> (Triveni Sangam), <strong>Nashik</strong> (Godavari), and <strong>Ujjain</strong> (Shipra).</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>5. Literary Awards, Masterpieces & Authors <span class="badge">Literature</span></h2>
+        
+        <h3>The Booker Prize & Indian Laureates</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Author</th>
+                <th>Winning / Nominated Book</th>
+                <th>Distinction</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1971</td>
+                <td>V.S. Naipaul</td>
+                <td><em>In a Free State</em></td>
+                <td>British-Trinidadian author of Indian origin.</td>
+              </tr>
+              <tr>
+                <td>1981</td>
+                <td>Salman Rushdie</td>
+                <td><em>Midnight's Children</em></td>
+                <td>Pioneered post-colonial magic realism depicting India's independence; won Booker of Bookers. Other works: <em>The Satanic Verses</em>, <em>The Moor's Last Sigh</em>.</td>
+              </tr>
+              <tr>
+                <td>1997</td>
+                <td><strong>Arundhati Roy</strong></td>
+                <td><em>The God of Small Things</em></td>
+                <td><strong>First Indian citizen</strong> to win the Booker Prize.</td>
+              </tr>
+              <tr>
+                <td>2006</td>
+                <td>Kiran Desai</td>
+                <td><em>The Inheritance of Loss</em></td>
+                <td>Daughter of acclaimed novelist Anita Desai (<em>Clear Light of Day</em>, <em>In Custody</em>, <em>Fasting, Feasting</em>).</td>
+              </tr>
+              <tr>
+                <td>2008</td>
+                <td>Arvind Adiga</td>
+                <td><em>The White Tiger</em></td>
+                <td>Debut novel exploring caste, wealth, and corruption. Other works: <em>Last Man in Tower</em>, <em>Selection Day</em>.</td>
+              </tr>
+              <tr>
+                <td>2022</td>
+                <td><strong>Geetanjali Shree</strong><br>(Trans. Daisy Rockwell)</td>
+                <td><em>Tomb of Sand</em> (Original: <em>Ret Samadhi</em>)</td>
+                <td>Won the <strong>International Booker Prize</strong> (First novel translated from an Indian language—Hindi).</td>
+              </tr>
+              <tr>
+                <td>2025</td>
+                <td><strong>Banu Mushtaq</strong><br>(Trans. Deepa Bhasthi)</td>
+                <td><em>Heart Lamp</em></td>
+                <td>Translated from original <strong>Kannada</strong>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Major Literary Figures & Key Works</h3>
+        <ul>
+          <li><strong>Amitav Ghosh:</strong> <em>Ibis Trilogy</em> (<em>Sea of Poppies</em> [shortlisted for 2008 Booker], <em>River of Smoke</em>, <em>Flood of Fire</em>); <em>The Shadow Lines</em>.</li>
+          <li><strong>Vikram Seth:</strong> <em>A Suitable Boy</em> (panoramic family saga combined with 19th-century realism), <em>The Golden Gate</em>, <em>An Equal Music</em>.</li>
+          <li><strong>R.K. Narayan:</strong> Nominated multiple times for Nobel Prize in Literature; creator of fictional town <em>Malgudi</em>; wrote <em>Swami and Friends</em>, <em>The Guide</em>, <em>The Bachelor of Arts</em>.</li>
+          <li><strong>Amartya Sen:</strong> Nobel Prize in Economics (1998, Welfare Economics); authored <em>The Argumentative Indian</em>, <em>Development as Freedom</em>, <em>Poverty and Famines</em>.</li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Partition Literature:</strong> <em>Tamas</em> (Bhisham Sahni), <em>Train to Pakistan</em> (Khushwant Singh), and <em>Basti</em> (Intizar Husain) share ground-level human narratives of moral ambiguity, trauma, and displacement.</li>
+          <li><strong>Jhumpa Lahiri:</strong> Pulitzer Prize for Fiction winner for <em>Interpreter of Maladies</em>; author of <em>The Namesake</em> and <em>Unaccustomed Earth</em>.</li>
+          <li><strong>Jerry Pinto:</strong> Authored the semi-autobiographical novel <em>Em and the Big Hoom</em>.</li>
+          <li><strong>Qurratulain Hyer:</strong> Magnum opus <em>Aag Ka Darya</em> (<em>River of Fire</em>), spanning over two millennia of Indian civilization and history.</li>
+          <li><strong>Anees Salim:</strong> Author of <em>The Blind Lady's Descendants</em> (written in English).</li>
+          <li><strong>Avni Doshi:</strong> <em>Burnt Sugar</em> (shortlisted for Booker Prize 2020).</li>
+          <li><strong>Saraswati Samman:</strong> Established in 1991 by K.K. Birla Foundation for prose/poetry in 22 Eighth Schedule languages (Cash prize ₹15 Lakh).</li>
+          <li><strong>Jnanpith Award:</strong> Highest literary award in India; 60th award conferred upon Tamil lyricist/poet <strong>R. Vairamuthu</strong> (only the 3rd Tamil writer to receive it).</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>6. Sports Rules, Court Dimensions & Championships <span class="badge">Sports GK</span></h2>
+
+        <h3>Field Dimensions & Equipment Specifications</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Sport</th>
+                <th>Specification / Dimension</th>
+                <th>Official Rules & Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Shot Put</strong></td>
+                <td>Weight of Metal Sphere</td>
+                <td><strong>Men:</strong> <span class="highlight">7.260 kg (16 lbs)</span><br><strong>Women:</strong> <span class="highlight">4.000 kg (8.8 lbs)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Long Jump</strong></td>
+                <td>Take-off Board Dimensions</td>
+                <td><strong>Length:</strong> 1.22 m | <strong>Width:</strong> <span class="highlight">20 cm</span> | <strong>Depth:</strong> 10 cm. Athlete must take off from a single foot.</td>
+              </tr>
+              <tr>
+                <td><strong>High Jump</strong></td>
+                <td>Take-off Rule</td>
+                <td>Athletes must take off from <strong>one foot only</strong>.</td>
+              </tr>
+              <tr>
+                <td><strong>Kabaddi</strong></td>
+                <td>Court & Line Rules</td>
+                <td>• Played on a <strong>rectangular court</strong> (Men: 13m × 10m; Women: 12m × 8m).<br>• Mid-line to Baulk Line = <strong>3.75 m</strong>.<br>• Distance between Baulk Line & Bonus Line = <strong>1.00 m</strong>.<br>• Continuous chanting of the word "Kabaddi" in one breath is called <strong>Cant</strong>.<br>• <strong>Lona:</strong> 2 bonus points awarded when the entire opposing team is all-out.<br>• <strong>Super Tackle:</strong> 2 points awarded when a raider is pinned down by 3 or fewer defenders.<br>• <strong>Lobby:</strong> Active only after a touch/struggle has taken place.</td>
+              </tr>
+              <tr>
+                <td><strong>Cricket</strong></td>
+                <td>Popping Crease</td>
+                <td>Drawn 4 feet in front of the bowling crease; marks the safe territory for the batter to avoid run out and stumping.</td>
+              </tr>
+              <tr>
+                <td><strong>Chess</strong></td>
+                <td>Tactics & Terms</td>
+                <td>• <em>En Passant:</em> Special pawn-capturing rule.<br>• <em>Réti Opening:</em> Hypermodern flanking opening (1. Nf3 d5 2. c4) named after Richard Réti.<br>• Other terms: Gambit, Stalemate, Checkmate.</td>
+              </tr>
+              <tr>
+                <td><strong>Golf</strong></td>
+                <td>Scoring Terminology</td>
+                <td>• <em>All Square:</em> A tied score in match play.<br>• <em>Albatross (Double Eagle):</em> 3 strokes under par.<br>• <em>Eagle:</em> 2 strokes under par.<br>• <em>Birdie:</em> 1 stroke under par.<br>• <em>Bogey:</em> 1 stroke over par.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Field Hockey Milestones</h3>
+        <ul>
+          <li><strong>Olympic Record:</strong> India has won <strong>8 Gold, 1 Silver, and 4 Bronze medals</strong>. Won 6 consecutive golds from 1928 to 1956. After 41 years (post-Moscow 1980 gold), India won back-to-back Bronze medals at Tokyo 2020 and Paris 2024.</li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>1975 Men's Hockey World Cup (Kuala Lumpur):</strong> India won its <strong>only World Cup</strong> title, defeating arch-rivals Pakistan 2–1 in the final under captain <strong>Ajit Pal Singh</strong> (from Sansarpur village, Jalandhar, Punjab).</li>
+          <li><strong>Sultan Azlan Shah Cup:</strong> Annual international invitational men's field hockey tournament held in Ipoh, Malaysia (founded 1983).</li>
+          <li><strong>Legal Status of National Game:</strong> RTI clarifications from the Ministry of Youth Affairs and Sports confirmed that <strong>no sport has been officially declared India's National Sport</strong> (hockey is held informally/culturally).</li>
+        </ul>
+
+        <h3>Olympic & Commonwealth Highlights</h3>
+        <ul>
+          <li><strong>Karnam Malleswari:</strong> First Indian woman to win an Olympic medal (Bronze in Weightlifting, 69 kg category at Sydney 2000).</li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Abhinav Bindra:</strong> First Indian individual Olympic Gold medalist (Men's 10m Air Rifle at Beijing 2008, hailing from Zirakpur/Punjab).</li>
+          <li><strong>Yogeshwar Dutt:</strong> London 2012 60 kg freestyle wrestling bronze later upgraded to <strong>Silver</strong> following the disqualification of Russia's Besik Kudukhov for doping.</li>
+          <li><strong>Neeraj Chopra:</strong> First Indian track-and-field Olympic Gold medalist (87.58 m at Tokyo 2020) and Silver medalist at Paris 2024 (89.45 m).</li>
+          <li><strong>Jaspal Rana:</strong> Renowned shooter who won <strong>15 medals</strong> (9 Gold, 4 Silver, 2 Bronze) across multiple Commonwealth Games editions.</li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>National Games of India:</strong> First held in <strong>1924</strong> at Lahore (undivided Punjab) as the "All India Olympic Games"; renamed "National Games" at the 1940 Bombay edition; first post-independence edition held in <strong>1948</strong> at Lucknow.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>7. Pioneers, Government Schemes & Miscellaneous GK <span class="badge">Static Trivia</span></h2>
+        
+        <h3>Pioneers & Personalities</h3>
+        <ul>
+          <li><strong>Dr. Homi Jehangir Bhabha:</strong> Father of the Indian Nuclear Program; founding director of BARC (Trombay, Mumbai) and TIFR.</li>
+          <li><strong>Dr. Vikram Sarabhai:</strong> Father of the Indian Space Program; initiated ISRO and TERLS.</li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Dr. M.S. Swaminathan:</strong> Father of India's Green Revolution; introduced high-yielding semidwarf wheat (Borlaug lines) and rice varieties in Punjab, Haryana, and Western UP.</li>
+          <li><strong>Dr. Verghese Kurien:</strong> Father of the White Revolution (Operation Flood / Amul cooperative dairy movement).</li>
+          <li><strong>Dr. Vijay P. Bhatkar:</strong> Father of the Indian Supercomputer; architect of the <strong>PARAM 8000</strong> supercomputer developed by C-DAC Pune in 1991.</li>
+          <li><strong>Tessie Thomas:</strong> "Missile Woman of India"; Project Director for the Agni-IV and Agni-V ballistic missile systems at DRDO.</li>
+          <li><strong>Sucheta Kripalani:</strong> India’s (and Uttar Pradesh’s) first female Chief Minister (1963–1967).</li>
+          <li><strong>Sarojini Naidu:</strong> First female Governor of an Indian state (United Provinces/UP, 1947–1949); first Indian woman to preside over the Indian National Congress (Kanpur Session, 1925).</li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Amrita Sher-Gil:</strong> Pioneering modern Indian painter (lived in Majitha, Amritsar); celebrated works include <em>Young Girls</em> (1932), <em>Three Girls</em> (1935), and <em>Bride's Toilet</em> (1937).</li>
+          <li><strong>Bharti Kher:</strong> Contemporary Indian artist known for her signature use of <strong>bindis</strong> in large-scale animal sculptures and identity art installations.</li>
+          <li><strong>S.H. Raza:</strong> Acclaimed modern master renowned for his mystical geometric <strong>Bindu</strong> series.</li>
+        </ul>
+
+        <h3>Flagship Central Schemes</h3>
+        <ul>
+          <li><strong>Pradhan Mantri Ujjwala Yojana (PMUY):</strong> Launched on <strong>May 1, 2016</strong>, from Ballia, UP, to provide deposit-free LPG connections to women from below-poverty-line (BPL) households.</li>
+          <li><strong>Saubhagya Yojana:</strong> Universal household electrification program.</li>
+          <li><strong>Ayushman Bharat - PMJAY:</strong> Health cover of up to ₹5 lakh per family per year for secondary and tertiary hospitalization.</li>
+        </ul>
+
+        <h3>Global Indices</h3>
+        <ul>
+          <li><strong>World Happiness Report (UN-SDSN & Gallup):</strong> Evaluates 6 variables: GDP per capita, social support, healthy life expectancy, freedom, generosity, and corruption perceptions. Top: Finland.</li>
+          <li><strong>Global Peace Index (IEP, Sydney):</strong> Uses 23 qualitative/quantitative peace indicators. Top: Iceland.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 4: HISTORY ==================== -->
+    <div id="tab-hist" class="tab-content">
+      <div class="section-card">
+        <h2>1. Prehistoric India & Chalcolithic Cultures <span class="badge">Stone & Metal Ages</span></h2>
+        
+        <h3>Stone Age Classification</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Period</th>
+                <th>Sub-divisions</th>
+                <th>Tool Characteristics & Dominant Traits</th>
+                <th>Major Sites & Discoveries</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="3"><strong>Palaeolithic</strong><br>(Old Stone Age)<br><em>Hunters & Gatherers</em></td>
+                <td><strong>Lower Palaeolithic</strong></td>
+                <td>Hand axes, cleavers, choppers; Acheulian bifaces (pear-shaped stone hand-tools).</td>
+                <td><span class="psssb-imp">★ PSSSB IMP</span>Potwar Plateau / Soan Valley (Punjab), Belan Valley (UP), Bhimbetka (MP), Hunsgi (Karnataka).</td>
+              </tr>
+              <tr>
+                <td><strong>Middle Palaeolithic</strong></td>
+                <td>Characterized by <strong>Flake technology / Flake tools</strong> (scrapers, borers, points made by striking flakes from cores).</td>
+                <td>Nevasa (Maharashtra), Luni Valley, Narmada and Son valleys.</td>
+              </tr>
+              <tr>
+                <td><strong>Upper Palaeolithic</strong></td>
+                <td><strong>Burins, scrapers, and bone tools</strong>; emerging art (rock paintings).</td>
+                <td>Kurnool Caves (Andhra Pradesh — evidence of ash), Muchchatla Chintamanu Gavi.</td>
+              </tr>
+              <tr>
+                <td><strong>Mesolithic</strong><br>(Middle Stone Age)</td>
+                <td>—</td>
+                <td><strong>Microliths</strong> (tiny geometric stone blades mounted on bone/wood handles); transition to hunting & animal herding. Earliest evidence of <strong>Animal Domestication</strong>.</td>
+                <td><strong>Bagor</strong> (Rajasthan) and <strong>Adamgarh</strong> (MP) — earliest proof of animal herding.</td>
+              </tr>
+              <tr>
+                <td><strong>Neolithic</strong><br>(New Stone Age)</td>
+                <td>—</td>
+                <td>Polished stone celts, pottery, onset of settled agriculture, pit dwellings, bone tools.</td>
+                <td>• <strong>Gufkral</strong> ("Cave of Potters") & <strong>Burzahom</strong> (J&K) — pit dwellings, bone tools.<br>• <strong>Chirand</strong> (Bihar) — bone implements.<br>• <strong>Mehrgarh</strong> (Balochistan) — earliest farming village in Indian subcontinent (~7000 BCE; wheat, barley, mud bricks).<br>• <strong>Koldihwa & Mahagara</strong> (Belan Valley, UP) — earliest evidence of rice cultivation.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Hominin Fossils & Prehistoric Rock Art</h3>
+        <ul>
+          <li><strong>Hathnora (Narmada Valley, MP):</strong> Discovery of the earliest human fossil skullcap in India (<span class="highlight">Homo erectus</span>, discovered by Dr. Arun Sonakia in 1982).</li>
+          <li><strong>Bhimbetka Caves (Raisen, MP):</strong> Discovered by <span class="highlight">V.S. Wakankar</span> in 1957. Upper Palaeolithic to Mesolithic rock shelter paintings featuring scenes of hunting and dancing, using mineral pigments predominantly in <span class="highlight">Red ochre (Geru), White, and Black</span>.</li>
+        </ul>
+
+        <h3>Chalcolithic Cultures (Copper-Stone Age)</h3>
+        <div class="mnemonics">
+          Mnemonic: BOP-N (Chronological Pottery Evolution)
+          <br>1. <strong>B</strong>lack and Red Ware (BRW) &rarr; Harappan / Chalcolithic
+          <br>2. <strong>O</strong>chre Coloured Pottery (OCP) &rarr; Early Vedic
+          <br>3. <strong>P</strong>ainted Grey Ware (PGW) &rarr; Later Vedic
+          <br>4. <strong>N</strong>orthern Black Polished Ware (NBPW) &rarr; Mahajanapada / Mauryan era
+        </div>
+        <ul>
+          <li><strong>Navdatoli (MP):</strong> Important Chalcolithic site located on the Narmada River, excavated by H.D. Sankalia; famous for distinct painted pottery and cereal remains.</li>
+          <li><strong>Regional Complexes:</strong> Ahar-Banas & Gilund (Rajasthan), Malwa & Kayatha (MP), Jorwe & Nevasa (Maharashtra).</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>2. Indus Valley Civilization & The Vedic Age <span class="badge">Early Civilizations</span></h2>
+        
+        <h3>Indus Valley Civilization (Bronze Age - c. 2500–1750 BCE)</h3>
+        <ul>
+          <li><strong>First Urbanization of India:</strong> Characterized by fortified citadels, lower residential quarters, burnt bricks (standard ratio 4:2:1), and underground gridiron drainage systems.</li>
+          <li><strong>Absence of Monumental Religious Edifices:</strong> Unlike Egypt and Mesopotamia, IVC sites <span class="highlight">lack grand temples, palaces, or royal tomb pyramids</span>.</li>
+          <li><strong>Mesopotamian Trade:</strong> Cuneiform inscriptions refer to the Harappan region as <span class="highlight">Meluhha</span>.
+            <ul>
+              <li><em>Lapis Lazuli:</em> Deep-blue stone procured from <strong>Shortugai</strong> (Badakhshan, Afghanistan).</li>
+              <li><em>Carnelian:</em> Reddish-orange beads procured from Gujarat (Ratanpur).</li>
+              <li><em>Copper:</em> Procured from the <strong>Khetri Mines</strong> (Rajasthan).</li>
+            </ul>
+          </li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Key Harappan Sites (Punjab & Subcontinent):</strong>
+            <ul>
+              <li><strong>Ropar (Rupnagar, Punjab):</strong> Excavated by Y.D. Sharma on the banks of River Satluj; first site excavated in independent India; famous for evidence of a dog buried with a human.</li>
+              <li><strong>Harappa (Montgomery/Sahiwal, Punjab - Pakistan):</strong> Excavated by Daya Ram Sahni (1921) on River Ravi; six granaries in a row, coffin burial (R-37).</li>
+              <li><strong>Mohenjo-daro (R.D. Banerjee, 1922):</strong> Great Bath, Great Granary (largest structure), bronze Dancing Girl (lost-wax cast), Steatite Bearded Priest-King, and Proto-Shiva / Pashupati seal (surrounded by elephant, tiger, rhino, buffalo, and 2 deer at the feet).</li>
+              <li><strong>Chanhudaro:</strong> The only Harappan city <span class="highlight">without a fortified citadel</span>; center for bead-making.</li>
+              <li><strong>Lothal (S.R. Rao):</strong> Port town on the Bhogava River with a tidal dockyard and double burials.</li>
+              <li><strong>Dholavira (Kutch, Gujarat):</strong> City divided into <span class="highlight">three distinct fortified parts</span> (Citadel, Middle Town, Lower Town); renowned for sophisticated stone water reservoirs and rainwater harvesting.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>The Vedic Period (c. 1500–500 BCE)</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Early Vedic / Rigvedic Period (c. 1500–1000 BCE)</th>
+                <th>Later Vedic Period (c. 1000–500 BCE)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Geographical Core</strong></td>
+                <td><span class="psssb-imp">★ PSSSB IMP</span> <em>Saptasindhu</em> (Punjab, NW India)</td>
+                <td>Kuru-Panchala realm (Upper Gangetic plains)</td>
+              </tr>
+              <tr>
+                <td><strong>Economy</strong></td>
+                <td>Pastoralist, semi-nomadic; cattle wealth (<em>Gomat</em> = wealthy man; <em>Gavishti</em> = search for/wars over cows)</td>
+                <td>Settled agriculture; emergence of territorial states (<em>Janapadas</em>)</td>
+              </tr>
+              <tr>
+                <td><strong>Metallurgy</strong></td>
+                <td>Copper/Bronze (<em>Ayas</em>); <strong>No Iron tools</strong></td>
+                <td><strong>Iron technology emerges</strong> (<em>Shyama/Krishna Ayas</em>) c. 1000 BCE</td>
+              </tr>
+              <tr>
+                <td><strong>Social Stratification</strong></td>
+                <td>Flexible Varna system based on occupation/action, not birth</td>
+                <td>Rigid birth-based caste hierarchy; <em>Purusha Sukta</em> (10th Mandala)</td>
+              </tr>
+              <tr>
+                <td><strong>Status of Women</strong></td>
+                <td>High autonomy; participated in <strong>Sabha and Samiti</strong>; educated (Gargi, Maitreyi)</td>
+                <td>Deteriorated status; excluded from political assemblies (Sabha)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Vedic Texts & Philosophical Insights</h3>
+        <ul>
+          <li><strong>Rigveda:</strong> 10 Mandalas (Books).
+            <ul>
+              <li><em>3rd Mandala:</em> Contains the <strong>Gayatri Mantra</strong> composed by Sage Vishwamitra dedicated to Savitr.</li>
+              <li><span class="psssb-imp">★ PSSSB IMP</span><em>7th Mandala:</em> Describes the <strong>Battle of the Ten Kings (Dasrajan War)</strong> on the banks of River Parushni (Ravi in Punjab), won by King Sudas of the Bharata tribe.</li>
+              <li><em>9th Mandala:</em> Dedicated entirely to <strong>Soma</strong> (sacred plant and deity).</li>
+              <li><em>10th Mandala:</em> Contains the <em>Purusha Sukta</em> describing the cosmic origin of the four varnas.</li>
+            </ul>
+          </li>
+          <li><strong>Upaniṣads:</strong>
+            <ul>
+              <li><em>Katha Upanishad:</em> Philosophical dialogue between young <strong>Nachiketa and Yama</strong> (Lord of Death) regarding the soul (Atman).</li>
+              <li><em>Mundaka Upanishad:</em> Origin of the national motto <strong>"Satyameva Jayate"</strong>.</li>
+              <li><em>Jabala Upanishad:</em> First explicit mention of the four stages of life (<strong>Ashramas</strong>: Brahmacharya, Grihastha, Vanaprastha, Sannyasa).</li>
+              <li><em>Maha Upanishad:</em> Contains <strong>"Vasudhaiva Kutumbakam"</strong> ("The world is one family").</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>3. Buddhism, Classical Art & Epigraphy <span class="badge">Art & Architecture</span></h2>
+
+        <h3>Aniconism to Anthropomorphism in Buddhist Art</h3>
+        <ul>
+          <li><strong>Early Aniconic Phase:</strong> Early Buddhist art deliberately avoided depicting the Buddha in human form. Buddha was represented symbolically:
+            <ul>
+              <li><em>Bodhicitta / Enlightenment:</em> Bodhi Tree</li>
+              <li><em>Dharmachakrapravartana (First Sermon):</em> Wheel / Chakra</li>
+              <li><em>Presence / Royal Path:</em> Empty Throne or Buddhapada (Footprints)</li>
+              <li><em>Mahaparinirvana:</em> Stupa</li>
+            </ul>
+          </li>
+          <li><strong>Anthropomorphic Phase:</strong> Human depictions emerged around the 1st century CE under the Kushanas via the <strong>Gandhara</strong> and <strong>Mathura</strong> schools.</li>
+        </ul>
+
+        <h3>Schools of Sculpture Comparison</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Gandhara School</th>
+                <th>Mathura School</th>
+                <th>Amaravati School</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Patrons</strong></td>
+                <td>Kushanas (North-West India, Pakistan, Afghanistan)</td>
+                <td>Kushanas & Guptas (Mathura, Central India)</td>
+                <td>Satavahanas & Ikshvakus (Krishna-Godavari basin, AP)</td>
+              </tr>
+              <tr>
+                <td><strong>Material</strong></td>
+                <td><strong>Grey / Blue-grey Sandstone & Schist</strong>, Stucco</td>
+                <td><strong>Spotted Red Sandstone</strong></td>
+                <td><strong>White Marble / Limestone</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Influence</strong></td>
+                <td>Hellenistic / Greco-Roman influence (realistic drapery, wavy hair, muscular torso)</td>
+                <td>Indigenously developed; spiritual, serene, smiling expression, shaven head or tight curls</td>
+                <td>Indigenous; narrative relief panels (Jataka stories) depicting animated human groups</td>
+              </tr>
+              <tr>
+                <td><strong>Religious Themes</strong></td>
+                <td>Exclusively Buddhist (Mahayana)</td>
+                <td>Buddhist, Brahmanical (Hindu), and Jaina deities</td>
+                <td>Predominantly Buddhist</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Ajanta & Ellora Caves</h3>
+        <ul>
+          <li><strong>Ajanta Caves (Aurangabad, Maharashtra):</strong> 29 + 1 rock-cut caves; <span class="highlight">exclusively Buddhist</span> (Chaityas and Viharas). Excavated across two phases: early Satavahana phase (2nd BCE–1st CE) and later Vakataka phase (5th–6th CE). Famous mural: <strong>Bodhisattva Padmapani</strong> (holding a blue lotus) and Avalokiteshvara in Cave 1.</li>
+          <li><strong>Ellora Caves (Verul, Maharashtra):</strong> 34 caves representing <span class="highlight">Hindu (1–12), Buddhist (13–29), and Jaina (30–34)</span> faiths. Cave 16 houses the <strong>Kailash Temple</strong>, a monolithic rock-cut marvel carved top-to-bottom under Rashtrakuta King <strong>Krishna I</strong>.</li>
+          <li><strong>Elephanta Caves (Gharapuri Island, Mumbai):</strong> Rock-cut Shaivite cave shrine containing the celebrated <em>Maheshmurti</em> (Trimurti) relief.</li>
+        </ul>
+
+        <h3>Ashokan Epigraphy</h3>
+        <p>Ashoka is explicitly named as <em>Devanampiya Piyadassi Asoka</em> in only four minor rock edicts:</p>
+        <div class="code-box">
+          Maski (Karnataka), Brahmagiri/Nittur (Karnataka), Udegolam (Karnataka), and Gurjarra (Madhya Pradesh).
+          <br>• Kanaganahalli (Karnataka): Holds a sculptured stone portrait labeled "Ranyo Asoka".
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>4. Classical Temple Architecture <span class="badge">Nagara, Dravida & Vesara</span></h2>
+        
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Nagara Style (North India)</th>
+                <th>Dravida Style (South India)</th>
+                <th>Vesara Style (Deccan Hybrid)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Superstructure</strong></td>
+                <td>Curvilinear spire termed <strong>Shikhara</strong> crowned by an <em>Amalaka</em> (stone disc) and <em>Kalasha</em>.</td>
+                <td>Step-pyramidal tower termed <strong>Vimana</strong> crowned by an octagonal/polygonal <em>Shikhara</em> dome.</td>
+                <td>Combination of Nagara spire curvature with Dravida tiering (barrel-vaulted roofs).</td>
+              </tr>
+              <tr>
+                <td><strong>Entrance Gateways</strong></td>
+                <td>Simple entry; no massive monumental gateways.</td>
+                <td>Towering, ornate, multi-tiered gateway towers termed <span class="highlight">Gopurams</span>.</td>
+                <td>Modest entryways influenced by regional dynastic styles.</td>
+              </tr>
+              <tr>
+                <td><strong>Base Platform</strong></td>
+                <td>Constructed over an elevated plinth called the <span class="highlight">Jagati</span>.</td>
+                <td>Enclosed within high boundary walls with a covered ambulatory cloister.</td>
+                <td>Constructed on raised platforms; Hoysala temples feature star-shaped (<strong>Stellate</strong>) plans.</td>
+              </tr>
+              <tr>
+                <td><strong>Prominent Sub-Styles / Dynasties</strong></td>
+                <td>• <em>Rekha-Prasad / Latina:</em> Simple curvilinear shikhara.<br>• <em>Phamsana:</em> Broad, low, stepped-pyramidal roofs.<br>• <em>Valabhi:</em> Wagon-vaulted / barrel-vaulted rectangular structures.<br>• <em>Kalinga Style:</em> Deula (Sanctum) + Jagamohana (Assembly Hall).</td>
+                <td>Pallavas (Mahabalipuram shore temple), Cholas (Brihadisvara at Thanjavur), Pandyas, Vijayanagara (Kalyana Mandapam, Raya Gopurams).</td>
+                <td><strong>Chalukyas of Badami</strong> at <strong>Aihole</strong> ("Cradle of Temple Architecture"), <strong>Pattadakal</strong> (Virupaksha Temple), and <strong>Badami</strong>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>5. Medieval Sultanates, Mughals & The Maratha State <span class="badge">Medieval Era</span></h2>
+
+        <h3>Tripartite Struggle for Kannauj (8th–10th Century CE)</h3>
+        <ul>
+          <li>Century-long struggle between three regional powers to control the imperial city of <strong>Kannauj</strong> (symbol of sovereignty formerly held by Harsha) in the fertile Gangetic plain:
+            <ul>
+              <li><strong>Gurjara-Pratiharas</strong> (Western India / Malwa - Nagabhata I, Mihir Bhoja)</li>
+              <li><strong>Palas</strong> (Eastern India / Bengal - Gopala, Dharmapala who founded Vikramashila)</li>
+              <li><strong>Rashtrakutas</strong> (Deccan - Dantidurga, Dhruva, Govinda III)</li>
+            </ul>
+          </li>
+          <li><em>Outcome:</em> None maintained permanent singular hegemony; ended in exhaustion of all three dynasties.</li>
+        </ul>
+
+        <h3>Early Invasions & Delhi Sultanate</h3>
+        <ul>
+          <li><strong>Mahmud of Ghazni (998–1030 CE):</strong> Conducted 17 plundering expeditions into North India to accumulate economic wealth to finance his Central Asian empire in Ghazni. Sacked the <strong>Somnath Temple</strong> in 1026 CE (16th expedition). Defeated Raja Jayapala of the Hindu Shahi dynasty at Waihind (1001 CE).</li>
+          <li><strong>Muhammad Ghori:</strong> Defeated in 1178 CE at the Battle of Kayadara (near Mt. Abu, Gujarat) by Queen Regent <strong>Naiki Devi</strong>. Fought the <strong>Battles of Tarain</strong> against Prithviraj Chauhan (1st Battle 1191: Ghori defeated; 2nd Battle 1192: Ghori victorious). Defeated Jaichandra of Kannauj at the Battle of Chandawar (1194).</li>
+          <li><strong>Qutb-ud-din Aibak (1206–1210 CE):</strong> Established the Mamluk (Slave) Dynasty. Nicknamed <em>Lakh Baksh</em>. Initiated construction of the Qutb Minar; constructed <strong>Quwwat-ul-Islam</strong> mosque (Delhi) and <strong>Adhai Din Ka Jhonpra</strong> (Ajmer). Died playing Chaugan (Polo).</li>
+          <li><strong>Alauddin Khilji:</strong> Market regulations under <em>Shahna-i-Mandi</em>, price control system, espionage network (<em>Munhiyans</em> / <em>Barids</em>), branding of horses (<em>Dagh</em>), and descriptive troop rolls (<em>Chehra</em>). Imposed <strong>Ghari</strong> (house tax), <strong>Charai</strong> (grazing tax), and <strong>Kharaj</strong> (land tax up to 50%).</li>
+        </ul>
+
+        <h3>Bahmani Kingdom & Deccan Sultanates</h3>
+        <ul>
+          <li><strong>Bahmani Sultanate:</strong> Founded in <strong>1347 CE</strong> by Alauddin Hasan Bahman Shah (Zafar Khan) with its capital at Gulbarga (Ahsanabad), later shifted to Bidar.</li>
+          <li><strong>Muhammad Shah II:</strong> Scholarly sultan known as the <span class="highlight">"Second Aristotle"</span> due to his intellectual and administrative pursuits.</li>
+          <li><strong>The 5 Successor Deccan Sultanates:</strong>
+            <ol>
+              <li><em>Adil Shahi</em> of Bijapur (founded by Yusuf Adil Shah)</li>
+              <li><em>Nizam Shahi</em> of Ahmadnagar (founded by Malik Ahmad Nizam Shah)</li>
+              <li><em>Qutb Shahi</em> of Golconda (founded by Quli Qutb-ul-Mulk)</li>
+              <li><em>Barid Shahi</em> of Bidar (founded by Qasim Barid)</li>
+              <li><em>Imad Shahi</em> of Berar (founded by Fathullah Imad-ul-Mulk)</li>
+            </ol>
+          </li>
+          <li><strong>Battle of Talikota (1565 CE / Rakshasi-Tangadi):</strong> The united alliance of Bijapur, Ahmadnagar, Golconda, and Bidar crushed the Vijayanagara army led by Aliya Rama Raya under nominal king Sadashiva Raya, ending the glory of Hampi.</li>
+        </ul>
+
+        <h3>Mughal Administration & Art</h3>
+        <ul>
+          <li><strong>Akbar's Policies:</strong>
+            <ul>
+              <li><em>Ibadat Khana (1575):</em> House of Worship at Fatehpur Sikri for theological dialogues among various faiths (Hindus, Muslims, Parsis, Christians, Jains).</li>
+              <li><em>Sulh-i-Kul:</em> Doctrine of universal peace and religious tolerance.</li>
+              <li><em>Mansabdari System (1571):</em> Bureaucratic-military framework based on twin ranks: <strong>Zat</strong> (personal salary tier) and <strong>Sawar</strong> (cavalry troops to maintain).</li>
+              <li><em>Zabti / Dahsala System (1580):</em> Formulated by Raja Todar Mal; land assessed over a 10-year rolling average and categorized into <strong>Polaj</strong> (annually cultivated), <strong>Parauti</strong> (fallow 1–2 yrs), <strong>Chachar</strong> (fallow 3–4 yrs), and <strong>Banjar</strong> (uncultivated 5+ yrs).</li>
+            </ul>
+          </li>
+          <li><strong>Pietra Dura (Parchin Kari):</strong> Florentine-inspired inlay technique of colored semi-precious stones embedded in marble. First utilized in the <strong>Tomb of I'timad-ud-Daulah</strong> (Agra) commissioned by Nur Jahan.</li>
+        </ul>
+
+        <h3>Chhatrapati Shivaji Maharaj & The Marathas</h3>
+        <ul>
+          <li><strong>Ashta Pradhan:</strong> Eight-minister advisory council: Peshwa (Prime Minister), Amatya (Finance), Sachiv (Secretary), Mantri (Interior), Senapati (Commander), Sumant (Foreign), Nyayadhish (Chief Justice), and Panditrao (High Priest).</li>
+          <li><strong>Influence of Malik Ambar:</strong> Prime Minister of Ahmadnagar who pioneered Deccan land revenue surveys and <em>Bargir-giri</em> (guerrilla tactics) that inspired Shivaji's military administration.</li>
+          <li><strong>Battle of Pratapgad (1659):</strong> Shivaji eliminated the Bijapuri general <strong>Afzal Khan</strong> using concealed tiger claws (<span class="highlight">Wagh Nakh</span>).</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>6. British Colonial Policies & Freedom Movements <span class="badge">Modern History</span></h2>
+
+        <h3>Colonial Land Revenue Frameworks</h3>
+        <div class="alert-box">
+          <span class="psssb-imp">★ PSSSB IMP</span><strong>Mahalwari Land Revenue System in Punjab:</strong>
+          Introduced by Holt Mackenzie (1822) and certified under William Bentinck (1833) covering <strong>Punjab, Gangetic Valley, and NWFP</strong> (~30% of British India). Revenue was collected village-wise (from the <em>Mahal</em> / village community) through the traditional village headman (<strong>Lambardar</strong>). Entire village held collective liability, and demands were periodically revised upward, burdening rural peasantry.
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>System</th>
+                <th>Introduced By & Year</th>
+                <th>Regions Covered</th>
+                <th>Operational Mechanism & Inherent Flaws</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Permanent Settlement (Zamindari)</strong></td>
+                <td>Lord Cornwallis (1793)</td>
+                <td>Bengal, Bihar, Odisha, Northern Carnatic (~19% of British India)</td>
+                <td>Zamindars recognized as permanent owners; revenue demand fixed in perpetuity (10/11th to Company, 1/11th to Zamindar); enforced via strict <strong>Sunset Law</strong>.</td>
+              </tr>
+              <tr>
+                <td><strong>Ryotwari System</strong></td>
+                <td>Thomas Munro & Alexander Read (1820)</td>
+                <td>Madras, Bombay, Assam (~51% of British India)</td>
+                <td>Direct settlement with individual cultivators (<em>Ryots</em>) without feudal intermediaries; high assessments based on Ricardian rent theory resulted in moneylender dependency.</td>
+              </tr>
+              <tr>
+                <td><strong>Mahalwari System</strong></td>
+                <td>Holt Mackenzie (1822) & William Bentinck (1833)</td>
+                <td>Gangetic Valley, NWFP, Central Provinces, Punjab (~30% of British India)</td>
+                <td>Revenue collected village-wise (from the <em>Mahal</em> / village community) through headmen (<em>Lambardar</em>); <span class="highlight">revenue demands were periodically revised upward, burdening the entire village collectively</span>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Constitutional & Legal Acts of the British Raj</h3>
+        <ul>
+          <li><strong>Regulating Act of 1773 & Act of Settlement 1781:</strong> Established Supreme Court at Fort William, Calcutta. The 1781 Act clarified the Supreme Court's jurisdiction, shielding Company revenue actions and public servants from judicial interference.</li>
+          <li><strong>Pitt's India Act of 1784:</strong> Established a <strong>System of Dual Control</strong>. Retained Court of Directors for commercial affairs and introduced the <strong>Board of Control</strong> (6 Crown commissioners) to direct civil, military, and revenue affairs.</li>
+          <li><strong>Charter Act of 1813:</strong> Terminated EIC's trade monopoly in India, opening commerce to all British merchants except for <span class="highlight">Tea trade and Trade with China</span>. Allocated ₹1 lakh annually for promoting education and allowed Christian missionaries legal entry.</li>
+          <li><strong>Charter Act of 1833:</strong> Completely stripped the EIC of commercial privileges (making it purely an administrative body). Converted Governor-General of Bengal into the <strong>Governor-General of India</strong> (Lord William Bentinck). Appointed the First Law Commission under <strong>T.B. Macaulay</strong>.</li>
+          <li><strong>Government of India Act 1858:</strong> Terminated Company rule; Crown assumed direct control; introduced the office of <strong>Secretary of State for India</strong> assisted by a 15-member Council, and renamed Governor-General to <strong>Viceroy</strong> (Lord Canning).</li>
+          <li><strong>Indian Councils Act 1861:</strong> Restored legislative decentralization to Bombay and Madras councils, introduced portfolio system, and granted ordinance powers to the Viceroy.</li>
+          <li><strong>Government of India Act 1935:</strong> Proposed an All-India Federation; granted <strong>Provincial Autonomy</strong> (abolished provincial dyarchy and introduced dyarchy at the Federal level); separated <span class="highlight">Burma from India (effective 1 April 1937)</span>.</li>
+        </ul>
+
+        <h3>Social Legislation & Annexation Doctrines</h3>
+        <ul>
+          <li><strong>Abolition of Sati (1829):</strong> Regulation XVII enacted by Lord William Bentinck declared Sati illegal and punishable as culpable homicide; promoted through relentless advocacy by <strong>Raja Ram Mohan Roy</strong>.</li>
+          <li><strong>Hindu Widows' Remarriage Act (1856):</strong> Drafted under Dalhousie and passed under Canning, legalizing widow remarriage due to the tireless social reform efforts of <strong>Ishwar Chandra Vidyasagar</strong>.</li>
+          <li><strong>First Indian Factories Act (1881):</strong> Passed under Lord Ripon; prohibited employment of children under 7 years and limited work hours for ages 7–12 to 9 hours/day. <span class="highlight">Criticized because it addressed only child labor while leaving adult worker conditions unaddressed</span>.</li>
+          <li><strong>Subsidiary Alliance (1798):</strong> Perfected by Lord Wellesley. Indian rulers disbanded native armies, stationed British contingents at their own expense, and accepted a British Resident while surrendering foreign policy. First state to accept: <strong>Nizam of Hyderabad (1798)</strong>, followed by Mysore and Tanjore (1799).</li>
+          <li><strong>Doctrine of Lapse (1848):</strong> Enacted by Lord Dalhousie; denied adopted heirs the right to inherit sovereign princely states. Annexed <strong>Satara (1848)</strong>, Sambalpur & Jaitpur (1849), Baghat (1850), Udaipur (1852), Jhansi (1854), and Nagpur (1854). <strong>Awadh was annexed in 1856 on charges of "misgovernance"</strong> (Nawab Wajid Ali Shah deposed).</li>
+        </ul>
+
+        <h3>Tribal & Peasant Resistance</h3>
+        <ul>
+          <li><strong>Santhal Rebellion (Hul - 1855):</strong> Led by brothers <strong>Sidhu, Kanhu, Chand, and Bhairav</strong> against British administrators, moneylenders, and landlords in the <em>Damin-i-Koh</em> region (Rajmahal Hills).</li>
+          <li><strong>Munda Ulgulan (The Great Tumult - 1899–1900):</strong> Led by <strong>Birsa Munda</strong> in the Chotanagpur plateau against <em>Dikus</em> (exploitative outsiders) and landlords to restore the traditional <em>Khuntkatti</em> system of joint landholding. Birsa's birth anniversary (November 15) is celebrated as <strong>Janjatiya Gaurav Divas</strong>.</li>
+          <li><strong>Kol Uprising (1831–1832):</strong> Led by Buddho Bhagat in Chotanagpur against British tax collectors and land alienation.</li>
+          <li><strong>1857 Uprising:</strong> Sparked by religious grievances over greased cartridges, alongside systematic pay discrimination, lack of promotion, racial abuse, and overseas deployment mandates. Leaders: Nana Saheb & Tantia Tope (Kanpur), Begum Hazrat Mahal (Lucknow), Rani Lakshmibai (Jhansi), Khan Bahadur (Bareilly), Kunwar Singh (Arrah/Bihar), and Maulvi Ahmadullah (Faizabad, defeated Henry Lawrence at the Battle of Chinhat).</li>
+          <li><strong>Mizo National Famine Front (MNFF):</strong> Founded by <span class="highlight">Laldenga</span> during the catastrophic 1959 <em>Mautam</em> (bamboo flowering) famine, evolving into the Mizo National Front (MNF).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 5: INTERNATIONAL ORGS & CORRIDORS ==================== -->
+    <div id="tab-org" class="tab-content">
+      <div class="section-card">
+        <h2>1. Global Trade System & Multilateral Development Banks <span class="badge">Trade & Finance</span></h2>
+        
+        <h3>WTO & Agricultural Subsidies Architecture</h3>
+        <ul>
+          <li><strong>Genesis:</strong> General Agreement on Tariffs and Trade (GATT) was signed in 1947 and took effect on <span class="highlight">1 January 1948</span>.</li>
+          <li><strong>WTO Establishment:</strong> Replaced GATT on <span class="highlight">1 January 1995</span> under the <strong>Marrakesh Agreement</strong> (signed in Morocco).</li>
+          <li><strong>Headquarters:</strong> Geneva, Switzerland.</li>
+          <li><strong>Subsidies Traffic Light Box System:</strong>
+            <ul>
+              <li><strong>Green Box:</strong> Non-trade-distorting subsidies; allowed without WTO reduction commitments (e.g., environmental protection, agricultural R&D, decoupled direct payments).</li>
+              <li><strong>Blue Box:</strong> Subsidies tied to production-limiting programs (direct payments requiring farmers to limit production volume).</li>
+              <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Amber Box:</strong> Trade-distorting subsidies that affect market prices and production levels directly (e.g., input subsidies, Minimum Support Price / market price support). Governed by strict reduction limits and <em>de minimis</em> thresholds.</li>
+            </ul>
+          </li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Price Determination in India:</strong> Minimum Support Price (MSP) is recommended by the <strong>CACP</strong> (Commission for Agricultural Costs and Prices); Sugarcane is governed by <strong>FRP</strong> (Fair and Remunerative Price) rather than MSP.</li>
+        </ul>
+
+        <h3>Multilateral Development Banks (MDBs)</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Bank</th>
+                <th>Established / Operational</th>
+                <th>Headquarters</th>
+                <th>Key Features & Founding Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ADB</strong><br>(Asian Development Bank)</td>
+                <td>1966</td>
+                <td><strong>Manila, Philippines</strong></td>
+                <td>India is a <strong>founding member</strong>. Promotes social and economic development across Asia-Pacific.</td>
+              </tr>
+              <tr>
+                <td><strong>AIIB</strong><br>(Asian Infrastructure Investment Bank)</td>
+                <td>Est. 2015; operational in <strong>2016</strong></td>
+                <td><strong>Beijing, China</strong></td>
+                <td>Multilateral development bank focusing on infrastructure connectivity in Asia and beyond.</td>
+              </tr>
+              <tr>
+                <td><strong>NDB</strong><br>(New Development Bank / BRICS Bank)</td>
+                <td>Agreed 2014 via <strong>Fortaleza Agreement</strong> (6th BRICS Summit)</td>
+                <td><strong>Shanghai, China</strong></td>
+                <td>Established by BRICS nations with an initial subscribed capital of <strong>$100 Billion</strong>. Parallel Contingent Reserve Arrangement (CRA) established.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="alert-box">
+          <strong>Headquarters Distinction Trap:</strong> The <em>Shanghai Cooperation Organisation (SCO)</em> is headquartered in <strong>Beijing</strong> (not Shanghai), whereas the <em>New Development Bank (NDB)</em> is headquartered in <strong>Shanghai</strong>. BRICS as a political forum has <strong>no permanent headquarters</strong>.
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>2. South Asian & Indian Ocean Regional Groupings <span class="badge">Regional Blocks</span></h2>
+
+        <h3>SAARC vs. BIMSTEC</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>SAARC</th>
+                <th>BIMSTEC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Full Name</strong></td>
+                <td>South Asian Association for Regional Cooperation</td>
+                <td>Bay of Bengal Initiative for Multi-Sectoral Technical and Economic Cooperation</td>
+              </tr>
+              <tr>
+                <td><strong>Founded / Charter</strong></td>
+                <td><strong>1985</strong> at Dhaka, Bangladesh</td>
+                <td><strong>1997</strong> via the Bangkok Declaration</td>
+              </tr>
+              <tr>
+                <td><strong>Permanent Secretariat</strong></td>
+                <td><strong>Kathmandu, Nepal</strong></td>
+                <td><strong>Dhaka, Bangladesh</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Membership</strong></td>
+                <td><strong>8 Nations:</strong> Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, Sri Lanka, and <strong>Afghanistan</strong> (admitted 2007).</td>
+                <td><strong>7 Nations:</strong> 5 South Asian (Bangladesh, Bhutan, India, Nepal, Sri Lanka) + 2 Southeast Asian (Myanmar, Thailand). (Pakistan is <em>not</em> a member).</td>
+              </tr>
+              <tr>
+                <td><strong>Expansion Milestones</strong></td>
+                <td>Afghanistan joined in 2007 as the 8th and latest member.</td>
+                <td>Begun as BIST-EC; Myanmar joined in late 1997; <strong>Nepal and Bhutan joined in February 2004</strong>.</td>
+              </tr>
+              <tr>
+                <td><strong>Summit History</strong></td>
+                <td>Periodic summits (largely stalled due to bilateral tensions).</td>
+                <td>1st Summit: Bangkok (2004); 2nd Summit: New Delhi; 6th Summit: Bangkok (2025).</td>
+              </tr>
+              <tr>
+                <td><strong>Institutional Framework</strong></td>
+                <td>General regional cooperation framework.</td>
+                <td>At 5th Summit (Colombo), earlier 14 sectors were rationalized into <strong>7 Lead Pillars</strong>. <strong>India leads the "Security Pillar"</strong> (Counter-Terrorism, Transnational Crime, Disaster Management, Energy). BIMSTEC Energy Centre is in <strong>Bengaluru, India</strong>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>IORA (Indian Ocean Rim Association)</h3>
+        <ul>
+          <li><strong>Established:</strong> 1997; charter signed at Port Louis.</li>
+          <li><strong>Secretariat:</strong> <span class="highlight">Ebène, Cyber City, Mauritius</span>.</li>
+          <li><strong>Membership:</strong> 23 Member States bordering the Indian Ocean, plus dialogue partners.</li>
+          <li><strong>Extra-Regional Member:</strong> <span class="highlight">France is a member state</span> by virtue of its overseas department of <strong>Réunion Island</strong>.</li>
+          <li><strong>Indian Leadership & Doctrine:</strong> India is a founding member; chaired IORA from 2011 to 2013. Aligns with India's maritime doctrine of <strong>SAGAR</strong> (<em>Security and Growth for All in the Region</em>), unveiled by PM Modi in Mauritius in 2015.</li>
+        </ul>
+
+        <h3>ASEAN (Association of Southeast Asian Nations)</h3>
+        <ul>
+          <li><strong>Established:</strong> 8 August 1967 via the <strong>Bangkok Declaration</strong> (ASEAN Declaration).</li>
+          <li><strong>Secretariat:</strong> Jakarta, Indonesia.</li>
+          <li><strong>Membership:</strong> 11 Member States. <span class="highlight">Timor-Leste is the latest member</span> (admitted in principle/formally).</li>
+          <li><strong>Motto:</strong> <em>"One Vision, One Identity, One Community"</em>.</li>
+          <li><strong>India's Status:</strong> <span class="highlight">India is NOT a member of ASEAN</span> (as India belongs to South Asia), but India is an active member of the <strong>ASEAN Regional Forum (ARF)</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>3. Major Geopolitical & Strategic Coalitions <span class="badge">Coalitions</span></h2>
+
+        <h3>BRICS: Evolution, Expansion & Architecture</h3>
+        <ul>
+          <li><strong>Origin:</strong> Acronym "BRIC" coined by Goldman Sachs economist <strong>Jim O'Neill</strong> in 2001. Foreign ministers formalized the dialogue in 2006.</li>
+          <li><strong>First Summit:</strong> <span class="highlight">2009 in Yekaterinburg, Russia</span>.</li>
+          <li><strong>Initial Expansion:</strong> South Africa invited in 2010; attended its first summit in <strong>2011 at Sanya, China</strong>.</li>
+          <li><strong>Historic Expansion:</strong> 5 original members (Brazil, Russia, India, China, South Africa). Six new members joined: Saudi Arabia, Egypt, UAE, Ethiopia, Iran, and <span class="highlight">Indonesia (admitted 2025)</span> &rarr; <span class="highlight">11 Full Member States</span>.</li>
+          <li><strong>Partner Country Framework:</strong> Formulated at the 2024 Kazan Summit (Russia). Partner countries lack voting rights. Admitted partner countries include Nigeria and <strong>Vietnam (admitted June 2025)</strong>.</li>
+          <li><strong>Summits Hosted by India:</strong> 4th Summit (2012, New Delhi), 8th Summit (2016, Goa), 13th Summit (2021, New Delhi), and 18th Summit (New Delhi).</li>
+        </ul>
+
+        <h3>SCO (Shanghai Cooperation Organisation)</h3>
+        <ul>
+          <li><strong>Evolution:</strong> Began as the <strong>Shanghai Five</strong> (1996: China, Kazakhstan, Kyrgyzstan, Russia, Tajikistan). Became SCO in <strong>2001</strong> with the admission of Uzbekistan.</li>
+          <li><strong>India & Pakistan Entry:</strong> Both nations joined simultaneously as full members at the <span class="highlight">Astana Summit in 2017</span>.</li>
+          <li><strong>Recent Expansions:</strong> <strong>Iran</strong> joined as the 9th member in 2023; <span class="highlight">Belarus joined as the 10th full member in 2024</span>.</li>
+          <li><strong>Dual Permanent Organs:</strong>
+            <ol>
+              <li><strong>SCO Secretariat:</strong> Headquartered in <strong>Beijing, China</strong>.</li>
+              <li><strong>RATS (Regional Anti-Terrorist Structure):</strong> Executive Committee headquartered in <strong>Tashkent, Uzbekistan</strong>.</li>
+            </ol>
+          </li>
+          <li><strong>Summit Venues:</strong> 2025 Summit: Tianjin, China (Adopted the <em>Tianjin Declaration</em>; Theme: Upholding Shanghai Spirit / 25 Years of SCO); 2026 Summit: Bishkek, Kyrgyzstan.</li>
+        </ul>
+
+        <h3>G20 (Group of Twenty) & African Union Entry</h3>
+        <ul>
+          <li><strong>Formation:</strong> Created in <strong>1999</strong> as a meeting of Finance Ministers and Central Bank Governors following the 1997 Asian Financial Crisis. Upgraded to a Leaders' Summit level in <strong>2008</strong> post-global financial crash.</li>
+          <li><strong>Composition:</strong> 19 Countries + European Union (EU) + <span class="highlight">African Union (AU)</span> &rarr; Total 21 entities.</li>
+          <li><strong>AU Admission:</strong> Formally admitted under <strong>India's G20 Presidency</strong> at the New Delhi Summit (September 2023).</li>
+          <li><strong>Presidency Continuity (Troika System):</strong> Unbroken rotational guidance between the <em>Immediate Past Presidency</em>, <em>Current Presidency</em>, and <em>Incoming Next Presidency</em>.</li>
+          <li><strong>India's 2023 Legacy:</strong> Theme was <em>"Vasudhaiva Kutumbakam"</em> (One Earth, One Family, One Future) drawn from the ancient <strong>Maha Upanishad</strong>. Launched the <strong>Global Biofuels Alliance (GBA)</strong> and the <strong>IMEC corridor</strong>.</li>
+        </ul>
+
+        <h3>Quad & I2U2 Groupings</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Grouping</th>
+                <th>Member States</th>
+                <th>Origins & Core Strategic Mandate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>The Quad</strong><br>(Quadrilateral Security Dialogue)</td>
+                <td><strong>Australia, India, Japan, USA</strong></td>
+                <td>Informal diplomatic partnership (no permanent secretariat). First met in <strong>2007</strong> on margins of ARF in Manila. First in-person Leaders' Summit held in 2021 at the White House, Washington D.C.; 2024 Summit at Wilmington, Delaware. Largest economy in the Quad is the <strong>USA</strong>. Champion for a Free, Open, and Inclusive Indo-Pacific.</td>
+              </tr>
+              <tr>
+                <td><strong>I2U2 Group</strong><br>("West Asian / Middle East Quad")</td>
+                <td><strong>India, Israel, UAE, USA</strong></td>
+                <td>Conceptualized in <strong>October 2021</strong> following the historic Abraham Accords. First official virtual summit held in <strong>July 2022</strong>. Focuses on joint economic investments in water, energy, transportation, space, health, and food security.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>4. Strategic Transport Corridors & Maritime Geopolitics <span class="badge">Connectivity</span></h2>
+
+        <h3>IMEC (India-Middle East-Europe Economic Corridor)</h3>
+        <ul>
+          <li><strong>Launch:</strong> Announced through an MoU at the G20 New Delhi Summit in <span class="highlight">September 2023</span>.</li>
+          <li><strong>Participants:</strong> India, USA, UAE, Saudi Arabia, European Union, France, Germany, and Italy.</li>
+          <li><strong>Twin Corridor Structure:</strong>
+            <ol>
+              <li><strong>Eastern Corridor:</strong> Connects Arabian Sea ports of India to the Arabian Gulf (UAE, Saudi Arabia).</li>
+              <li><strong>Northern Corridor:</strong> Connects the Arabian Gulf across Jordan/Israel to European ports via railway and Mediterranean shipping routes.</li>
+            </ol>
+          </li>
+          <li><strong>Multimodal Pillars:</strong> Integrates railway networks, ship-to-rail transit, high-speed subsea digital cables, clean hydrogen export pipelines, and power grids.</li>
+          <li><strong>Strategic Benefits:</strong> Expected to <span class="highlight">reduce logistics transit time by 40%</span> and <span class="highlight">lower transportation costs by 30%</span>. Functions as a transparent, high-standard alternative to China's Belt and Road Initiative (BRI). Central Middle Eastern nodes: <strong>Saudi Arabia and UAE</strong>.</li>
+        </ul>
+
+        <h3>Chabahar Port: Gateway to Afghanistan & Central Asia</h3>
+        <ul>
+          <li><strong>Location:</strong> Situated in Sistan-Baluchistan Province, southeastern Iran, on the <strong>Gulf of Oman</strong>.</li>
+          <li><strong>Strategic Imperative:</strong> Directly <span class="highlight">bypasses Pakistan</span>, granting India overland access to landlocked Afghanistan and the resource-rich Central Asian republics (Turkmenistan, Uzbekistan, Kazakhstan, Tajikistan).</li>
+          <li><strong>First Historic Shipment:</strong> India dispatched its maiden humanitarian wheat shipment to Afghanistan via Chabahar in <span class="highlight">October 2017</span>.</li>
+          <li><strong>Terminals:</strong> Comprises two primary terminals: <em>Shahid Kalantari</em> and <em>Shahid Beheshti</em>.</li>
+          <li><strong>Long-Term Agreement (May 2024):</strong> India signed a landmark <strong>10-year bilateral contract</strong> with Iran to equip and operate the <strong>Shahid Beheshti terminal</strong>. Managed on behalf of India by <span class="highlight">India Ports Global Limited (IPGL)</span>.</li>
+          <li><strong>Countering China's "String of Pearls":</strong> Directly balances China's operational presence at Pakistan's <strong>Gwadar Port</strong> (located ~72 km east of Chabahar) and Sri Lanka's <strong>Hambantota Port</strong> (acquired by China on a 99-year lease).</li>
+        </ul>
+
+        <h3>INSTC (International North-South Transport Corridor)</h3>
+        <ul>
+          <li><strong>Established:</strong> Inter-governmental agreement signed in September <strong>2000</strong> at St. Petersburg by <strong>India, Iran, and Russia</strong>; entered into force in 2002. Currently includes 13 member states.</li>
+          <li><strong>Profile:</strong> A <strong>7,200 km multimodal network</strong> linking ship, rail, and road routes from Mumbai (India) through Bandar Abbas / Chabahar (Iran), Baku (Azerbaijan), and Astrakhan to Moscow (Russia) and Northern Europe.</li>
+          <li><strong>Three Alignments:</strong> Operates via Western, Central (Caspian Sea), and Eastern overland routes.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>5. India-Led Global Initiatives & Security Treaties <span class="badge">Initiatives & Defense</span></h2>
+
+        <h3>India-Led International Platforms</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Established / Forum</th>
+                <th>Headquarters</th>
+                <th>Core Objective & Target Metrics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ISA</strong><br>(International Solar Alliance)</td>
+                <td>Launched at <strong>COP21 (2015, Paris)</strong> by India & France</td>
+                <td><strong>Gurugram, Haryana, India</strong></td>
+                <td><strong>"Towards 1000" Strategy:</strong> Mobilize $1,000 Billion in solar investments, deliver energy access to 1,000 Million people, and install 1,000 GW solar capacity by 2030. India ranks 4th globally in renewable energy capacity.</td>
+              </tr>
+              <tr>
+                <td><strong>CDRI</strong><br>(Coalition for Disaster Resilient Infrastructure)</td>
+                <td>Launched at <strong>2019 UN Climate Action Summit</strong></td>
+                <td><strong>New Delhi, India</strong></td>
+                <td>Global partnership to promote resilience of new and existing infrastructure systems to climate and disaster risks.</td>
+              </tr>
+              <tr>
+                <td><strong>IBCA</strong><br>(International Big Cat Alliance)</td>
+                <td>Conceived April <strong>2023</strong> (50th Anniversary of Project Tiger); Cabinet approved 2024</td>
+                <td><strong>New Delhi, India</strong></td>
+                <td>Conserves <strong>7 Big Cats:</strong> Tiger, Lion, Leopard, Snow Leopard, Cheetah, Jaguar, and Puma. Implementation overseen by the <strong>NTCA</strong> under MoEFCC with ₹150 Crore 5-year outlay.</td>
+              </tr>
+              <tr>
+                <td><strong>OSOWOG</strong><br>(One Sun One World One Grid)</td>
+                <td>Proposed by India in <strong>2018</strong></td>
+                <td>Global grid initiative</td>
+                <td>Harnesses interconnected regional grids across time zones to transmit solar power globally (<em>"The Sun Never Sets"</em>).</td>
+              </tr>
+              <tr>
+                <td><strong>Mission LiFE</strong><br>(Lifestyle for Environment)</td>
+                <td>Announced at COP26 (2021); launched Oct 2022 at Kevadia, Gujarat</td>
+                <td>India-led movement</td>
+                <td>Promotes <strong>P3 (Pro-Planet People)</strong> model replacing mindless consumerism with circular, sustainable resource utilization.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Global Defense, Police & Arms Regimes</h3>
+        <ul>
+          <li><strong>NATO (North Atlantic Treaty Organization):</strong> Created via the Washington Treaty on <span class="highlight">4 April 1949</span>. Collective defense alliance (Article 5). Headquarters: <strong>Brussels, Belgium</strong>. 32 members (30 European + 2 North American); latest entries: <strong>Finland (2023)</strong> and <strong>Sweden (2024)</strong>.</li>
+          <li><strong>Interpol (International Criminal Police Organization):</strong> Founded in 1923; headquarters in <strong>Lyon, France</strong>. India's CBI launched <strong>"Bharatpol"</strong> portal to link central and state enforcement bodies to Interpol databases.</li>
+          <li><strong>FATF (Financial Action Task Force):</strong> Established in 1989; headquarters in <strong>Paris, France</strong> (at OECD). Monitors global Anti-Money Laundering (AML) and Counter-Terrorist Financing (CFT).</li>
+          <li><strong>Wassenaar Arrangement:</strong> Established in 1996; headquarters in <strong>Vienna, Austria</strong>. Controls export of conventional arms and dual-use goods and technologies.</li>
+          <li><strong>ICC (International Criminal Court):</strong> Established by the Rome Statute (1998); headquarters in <strong>The Hague, Netherlands</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 6: ECONOMICS ==================== -->
+    <div id="tab-econ" class="tab-content">
+      <div class="section-card">
+        <h2>1. Economic Systems & Classic Thinkers <span class="badge">Foundational Core</span></h2>
+        
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Thinker & Treatise</th>
+                <th>Core Concept / Philosophy</th>
+                <th>Economic Significance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Adam Smith</strong><br><em>The Wealth of Nations</em> (1776)</td>
+                <td>"Father of Modern Economics". Proposed <strong>Laissez-faire</strong> (minimum government intervention) and the <strong>Invisible Hand</strong> mechanism.</td>
+                <td>Markets self-regulate through individual self-interest leading to optimal resource allocation.</td>
+              </tr>
+              <tr>
+                <td><strong>John Maynard Keynes</strong><br><em>General Theory of Employment, Interest and Money</em> (1936)</td>
+                <td>"Father of Macroeconomics". Advocated for government intervention during depressions. Coined <strong>"Animal Spirits"</strong>.</td>
+                <td>Aggregate Demand determines economic activity; market failures necessitate state fiscal counter-cyclical action.</td>
+              </tr>
+              <tr>
+                <td><strong>Lionel Robbins</strong> (1932)</td>
+                <td>Scarcity Definition: Economics is the science of human behavior studying relationships between ends and <strong>scarce means with alternative uses</strong>.</td>
+                <td>Shifted economic inquiry from material welfare to choice under conditions of resource scarcity.</td>
+              </tr>
+              <tr>
+                <td><strong>Alfred Marshall</strong></td>
+                <td>"Father of Microeconomics". Authored <em>Principles of Economics</em> (1890).</td>
+                <td>Formulated price elasticity of demand, consumer surplus, and partial equilibrium analysis.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Economic Systems Comparison</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Economic Model</th>
+                <th>Governing Force</th>
+                <th>Role of State</th>
+                <th>Indian Position</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Pure Capitalism</strong></td>
+                <td>Market price mechanism (Demand & Supply)</td>
+                <td>Minimal / Regulatory night-watchman state</td>
+                <td>Rejected at Independence</td>
+              </tr>
+              <tr>
+                <td><strong>Pure Socialism</strong></td>
+                <td>Central state command and planning</td>
+                <td>Total ownership of factors of production</td>
+                <td>Heavy tilt post-1950s (Socialist pattern of society)</td>
+              </tr>
+              <tr>
+                <td><strong>Mixed Economy</strong></td>
+                <td>Coexistence of Public & Private Sectors</td>
+                <td>Owner of key commanding heights + Facilitator</td>
+                <td><strong>Adopted post-1947 by Nehru-Mahalanobis</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>2. Five Year Plans (FYPs) & Planning Machinery <span class="badge">Planning Core</span></h2>
+
+        <h3>Origins & Institutional Apparatus</h3>
+        <ul>
+          <li><strong>Soviet Origin:</strong> India borrowed the Five Year Plan methodology from the <strong>Former Soviet Union (USSR)</strong>.</li>
+          <li><strong>Planning Commission:</strong> Established in <strong>March 1950</strong> for central planning. Ex-officio Chairman was always the <strong>Prime Minister</strong>. <em>1st Deputy Chairman:</em> Gulzari Lal Nanda.</li>
+          <li><strong>NDC (National Development Council):</strong> Established in <strong>August 1952</strong> to sanction and execute plans across Union & States (headed by the PM).</li>
+          <li><strong>Successor:</strong> <strong>NITI Aayog</strong> replaced the Planning Commission on <strong>1st January 2015</strong>.</li>
+        </ul>
+
+        <h3>Prime Ministers Across FYPs</h3>
+        <ul>
+          <li><strong>1st, 2nd, 3rd FYP:</strong> Jawaharlal Nehru</li>
+          <li><strong>4th, 5th, 6th FYP:</strong> Indira Gandhi</li>
+          <li><strong>7th FYP:</strong> Rajiv Gandhi</li>
+          <li><strong>8th FYP:</strong> P.V. Narasimha Rao (Post-1991 BOP crisis)</li>
+          <li><strong>9th, 10th FYP:</strong> Atal Bihari Vajpayee (10th transitioned to Dr. Manmohan Singh)</li>
+          <li><strong>11th, 12th FYP:</strong> Dr. Manmohan Singh (12th ended abruptly in 2014)</li>
+        </ul>
+
+        <h3>FYP Comprehensive Timeline</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Plan</th>
+                <th>Period</th>
+                <th>Model / Architecture</th>
+                <th>Core Objectives & Landmarks</th>
+                <th>Target vs Outcome</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1st FYP</strong></td>
+                <td>1951-56</td>
+                <td>Harrod-Domar Model</td>
+                <td><span class="psssb-imp">★ PSSSB IMP</span> <strong>Agriculture & Irrigation Priority.</strong> Bhakra Nangal Dam (Satluj in Punjab/HP), Hirakud (Mahanadi), Nagarjuna Sagar (Krishna). Damodar Valley Corp (1948).</td>
+                <td>Target: 2.1% | Achieved: 3.6% (Success)</td>
+              </tr>
+              <tr>
+                <td><strong>2nd FYP</strong></td>
+                <td>1956-61</td>
+                <td>P.C. Mahalanobis Model</td>
+                <td><strong>Rapid Heavy Industrialization & Capital Goods.</strong> 3 Major Steel Plants: Rourkela (Germany), Bhilai (USSR), Durgapur (UK). Heavy trade-off with consumption.</td>
+                <td>Target: 4.5% | Achieved: 4.27%</td>
+              </tr>
+              <tr>
+                <td><strong>3rd FYP</strong></td>
+                <td>1961-66</td>
+                <td>Gadgil Yojana / Sukhamoy & Sandy</td>
+                <td>Self-reliant economy; First implementation of <strong>Green Revolution</strong> foundations; FCI established (1965). Crippled by 1962 China War, 1965 Pak War, and drought.</td>
+                <td>Target: 5.6% | Achieved: 2.8% (Failed)</td>
+              </tr>
+              <tr>
+                <td><strong>Plan Holiday</strong></td>
+                <td>1966-69</td>
+                <td>Annual Plans (3 Years)</td>
+                <td>Pause in 5-year planning due to war-induced economic shock, severe food inflation, and Rupee Devaluation (1966).</td>
+                <td>Annual plans implemented</td>
+              </tr>
+              <tr>
+                <td><strong>4th FYP</strong></td>
+                <td>1969-74</td>
+                <td>Ashok Rudra & A.S. Manne</td>
+                <td><strong>Growth with Stability</strong> and Progressive Self-reliance. Bank Nationalization (14 major banks in 1969).</td>
+                <td>Target: 5.7% | Achieved: 3.3%</td>
+              </tr>
+              <tr>
+                <td><strong>5th FYP</strong></td>
+                <td>1974-78</td>
+                <td>D.P. Dhar Model</td>
+                <td><strong>"Garibi Hatao" (Poverty Eradication)</strong> & Self-Reliance. Terminated 1 yr early (1978) by Janata Govt. Only plan that ran for 4 years! Followed by Rolling Plan.</td>
+                <td>Target: 4.4% | Achieved: 4.8%</td>
+              </tr>
+              <tr>
+                <td><strong>6th FYP</strong></td>
+                <td>1980-85</td>
+                <td>Direct Attack on Poverty</td>
+                <td><strong>Modernization of Technology & Poverty Alleviation.</strong> NABARD setup (1982), EXIM Bank (1982). 6 more commercial banks nationalized (1980).</td>
+                <td>Target: 5.2% | Achieved: 5.7%</td>
+              </tr>
+              <tr>
+                <td><strong>7th FYP</strong></td>
+                <td>1985-90</td>
+                <td>FWP Model (Food, Work, Productivity)</td>
+                <td>Rajiv Gandhi PM. <strong>Food, Work (Employment) and Productivity</strong>. Social justice. Followed by 1990-92 Annual Plans due to BOP crisis.</td>
+                <td>Target: 5.0% | Achieved: 6.01%</td>
+              </tr>
+              <tr>
+                <td><strong>8th FYP</strong></td>
+                <td>1992-97</td>
+                <td>Indicative Planning (John W. Miller)</td>
+                <td><strong>Human Development & Employment Generation.</strong> Post-LPG reforms execution. Shift from Imperative Planning to Indicative Planning.</td>
+                <td>Target: 5.6% | Achieved: 6.8%</td>
+              </tr>
+              <tr>
+                <td><strong>11th FYP</strong></td>
+                <td>2007-12</td>
+                <td>C. Rangarajan / Montek Ahluwalia</td>
+                <td><strong>"Rapid and More Inclusive Growth"</strong></td>
+                <td>Target: 9.0% | Achieved: 8.0%</td>
+              </tr>
+              <tr>
+                <td><strong>12th FYP</strong></td>
+                <td>2012-17</td>
+                <td>Last Five Year Plan</td>
+                <td><strong>"Faster, More Inclusive and Sustainable Growth"</strong> (Keyword added: Sustainable). Dissolved midway in 2014.</td>
+                <td>Truncated</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>3. 1991 LPG Reforms & Industrial Policies <span class="badge">Most Tested</span></h2>
+
+        <h3>Pre-1991 vs Post-1991 Architecture</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Dimension</th>
+                <th>Pre-1991: Inward-Looking Regime</th>
+                <th>Post-1991: LPG Reformed Regime</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Trade Strategy</strong></td>
+                <td>Import Substitution to protect "infant industries" via prohibitive tariffs and import quotas.</td>
+                <td>Export-led integration with global trade; progressive reduction of tariffs and removal of quantitative restrictions.</td>
+              </tr>
+              <tr>
+                <td><strong>Industrial Licensing</strong></td>
+                <td><strong>Licensing Raj:</strong> Required government permits to establish, expand, or diversify capacity, causing severe supply bottlenecks.</td>
+                <td>Abolished licensing for all except hazardous chemicals, alcohol, cigarettes, and industrial explosives.</td>
+              </tr>
+              <tr>
+                <td><strong>State Monopolies</strong></td>
+                <td>IPR 1956 reserved commanding heights: Schedule A (17 industries exclusively State).</td>
+                <td>Public sector role narrowed; disinvestment initiated via DIPAM (Ministry of Finance); State became a 'Facilitator'.</td>
+              </tr>
+              <tr>
+                <td><strong>Competition & Monopolies</strong></td>
+                <td><strong>MRTP Act 1969</strong> prevented large firm expansions to curb economic concentration.</td>
+                <td><strong>Competition Act 2002</strong> replaced MRTP to foster market contestability and combat anti-competitive behavior.</td>
+              </tr>
+              <tr>
+                <td><strong>Forex Control</strong></td>
+                <td><strong>FERA 1973</strong> treated foreign exchange as scarce and criminalized procedural violations.</td>
+                <td><strong>FEMA 1999</strong> replaced FERA, converting forex violations into civil offenses.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Chronology & Anatomy of the 1991 Crisis</h3>
+        <ul>
+          <li><strong>Gulf War Shock:</strong> Iraq's invasion of Kuwait spiked global crude oil prices, ballooned India's import bill, and triggered a plunge in remittance inflows. By 1990/91, foreign exchange reserves dropped to ~$1.2 Billion (barely 2 weeks / fortnight of import cover).</li>
+          <li><strong>IMF & World Bank Bailout:</strong> Emergency financial assistance came attached to conditional <em>Structural Adjustment Programs (SAP)</em> and macroeconomic stabilization requirements.</li>
+          <li><strong>Two-Step Currency Devaluation:</strong> On <strong>July 1 and July 3, 1991</strong>, the Reserve Bank of India devalued the Rupee in two successive tranches (~9% then ~11%, cumulative ~18–20%) to restore export competitiveness.</li>
+        </ul>
+
+        <h3>Exchange Rate Architecture Evolution</h3>
+        <ul>
+          <li><strong>1. Pre-1990 (Fixed Peg):</strong> Rupee exchange rate was administratively determined and pegged strictly against a currency basket.</li>
+          <li><strong>2. 1992 - LERMS (Dual Rate):</strong> Liberalised Exchange Rate Management System: 40% of forex earnings surrendered at official government rate; 60% traded freely at market-determined rates.</li>
+          <li><strong>3. 1993-94 - Market Float & Convertibility:</strong> Unified market floating exchange rate adopted in 1993. <strong>Full Current Account Convertibility (CAC)</strong> adopted in August 1994 (Article VIII of IMF). Capital Account Convertibility remains partial and regulated (Tarapore Committee roadmaps).</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>4. National Income Aggregates & Macro Indicators <span class="badge">Conceptual Math</span></h2>
+
+        <h3>GDP vs GNP Demystified</h3>
+        <ul>
+          <li><strong>GDP (Gross Domestic Product):</strong> Monetary value of all final goods and services produced <em>within the geographic borders/territory of India</em> during a given accounting year, regardless of whether produced by domestic citizens or foreign multinational corporations.</li>
+          <li><strong>GNP (Gross National Product):</strong> Total market value of all final goods and services produced by <em>Nationals / Citizens of India</em> across the world.</li>
+        </ul>
+        <div class="code-box">
+          GNP = GDP + NFIA
+          <br>NFIA (Net Factor Income from Abroad) = Factor income earned by citizens abroad – Factor income paid to foreigners within domestic territory.
+          <br>Controversy Trap: If outward corporate profit repatriations by foreign MNCs exceed NRI remittances, NFIA is negative, making GDP &gt; GNP.
+        </div>
+
+        <h3>Inflation & Production Indices (CPI vs WPI vs IIP)</h3>
+        <ul>
+          <li><strong>CPI (Consumer Price Index):</strong> Released by NSO (MoSPI). Includes both Goods & Services. Highest weighting: <em>Food & Beverages (~45.8%)</em>.</li>
+          <li><strong>WPI (Wholesale Price Index):</strong> Released by Office of Economic Adviser (DPIIT, Min of Commerce). Excludes services completely. Highest weighting: <em>Manufactured Products (~64.2%)</em>.</li>
+          <li><strong>IIP (Index of Industrial Production):</strong> Measures real physical volume of industrial production. <strong>8 Core Industries</strong> constitute <strong>~40.27%</strong> weight in IIP (Refinery products, Electricity, Steel, Coal, Crude Oil, Natural Gas, Cement, Fertilizers).</li>
+        </ul>
+
+        <h3>Unemployment Types & Demographics Matrix</h3>
+        <ul>
+          <li><strong>Disguised Unemployment:</strong> Marginal Physical Productivity of labor is <em>zero</em>. Excess laborers engaged in agriculture; withdrawing them causes no reduction in total agricultural output.</li>
+          <li><strong>Structural Unemployment:</strong> Long-term mismatch between the technical skills demanded by employers and those possessed by the available labor supply.</li>
+          <li><strong>Frictional (Search/Voluntary):</strong> Temporary transitional duration spent by workers while switching between jobs or seeking employment.</li>
+          <li><strong>Jobless Growth:</strong> GDP expands primarily through capital-intensive automation and technology services, while employment generation remains stagnant.</li>
+          <li><strong>Hindu Rate of Growth:</strong> Critical term coined by <strong>Prof. Raj Krishna</strong> referring to the stagnant ~3.5% annual GDP growth recorded by India between 1950 and 1980 under inward-looking socialist policies.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>5. Fiscal Policy, Monetary Transmission & Taxation <span class="badge">High Return</span></h2>
+
+        <h3>Monetary Policy (Reserve Bank of India)</h3>
+        <ul>
+          <li><strong>CRR (Cash Reserve Ratio):</strong> Percentage of Net Demand and Time Liabilities (NDTL) banks must park as cash exclusively with RBI. Earns <em>0% interest</em>.</li>
+          <li><strong>SLR (Statutory Liquidity Ratio):</strong> Percentage of NDTL banks must maintain in liquid assets (Gold, approved Government Securities, or unencumbered Cash). Earns interest yield.</li>
+          <li><strong>Repo Rate:</strong> Overnight borrowing rate at which commercial banks borrow funds from the RBI against government securities collateral.</li>
+          <li><strong>Bank Rate:</strong> Long-term lending rate by RBI to commercial banks <em>without any collateral</em>.</li>
+          <li><strong>Reverse Repo Rate:</strong> Rate at which banks park surplus liquidity with the RBI, absorbing excess money from the financial system.</li>
+          <li><strong>Money Multiplier:</strong> Inverse relationship with statutory reserve ratios: $\text{Money Multiplier} = \frac{1}{\text{Reserve Ratio}}$. When RBI increases CRR or SLR, the credit-creation capacity of banks contracts and the money multiplier drops.</li>
+        </ul>
+
+        <h3>Fiscal Policy & Deficits (Ministry of Finance)</h3>
+        <ul>
+          <li><strong>Counter-Cyclical Fiscal Policy:</strong> In recessions, government boosts capex spending and cuts taxes to elevate Aggregate Demand. To curb demand-pull inflation, government curtails spending and hikes taxes.</li>
+          <li><strong>Fiscal Deficit:</strong> $\text{Total Expenditure} - \text{Total Receipts excluding Borrowings}$. Measures the net annual borrowing requirement of the government.</li>
+          <li><strong>FRBM Act 2003:</strong> Mandated reduction of Fiscal Deficit to 3% of GDP and elimination of Revenue Deficit. Review panel ceiling: 60% total Debt-to-GDP (40% Centre, 20% States).</li>
+          <li><strong>Twin Deficit:</strong> Simultaneous existence of a large <em>Fiscal Deficit</em> and a high <em>Current Account Deficit (CAD)</em>.</li>
+          <li><strong>Windfall Tax:</strong> Special retrospective tax levied on unexpectedly high, supernormal corporate profits caused by external macroeconomic events (e.g. geopolitical energy price surges).</li>
+          <li><strong>Laffer Curve:</strong> Theoretical curve illustrating that beyond an optimal tax rate, further increases in tax rates lead to declining total tax revenue due to evasion and disincentives.</li>
+          <li><strong>Liquidity Trap:</strong> Keynesian phenomenon where nominal interest rates approach zero and money demand becomes perfectly elastic; additional monetary injections fail to lower interest rates or stimulate borrowing.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h2>6. Schemes, Committees & Global Indices <span class="badge">Committees & Indices</span></h2>
+
+        <h3>Core Economics Committees</h3>
+        <ul>
+          <li><strong>Narasimham Committee I (1991) & II (1998):</strong> Banking sector reforms; recommended lowering CRR and SLR, phasing out directed credit programs, ending dual control of RBI and MoF, bank consolidations, and introducing <em>Narrow Banking</em> for bad assets.</li>
+          <li><strong>Chelliah Committee (1991) & Kelkar Committee (2002):</strong> Formulated comprehensive blueprints for rationalizing personal income tax brackets, reducing corporate tax rates, eliminating loopholes, and designing the Value Added Tax (VAT) / Goods and Services Tax (GST) regime.</li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>B. Sivaraman Committee (1979):</strong> Recommended the establishment of <strong>NABARD</strong> (National Bank for Agriculture and Rural Development), formed on <strong>12 July 1982</strong>. Anchored rural credit and SHG-Bank linkage programs.</li>
+          <li><strong>S.S. Tarapore Committee (1997 & 2006):</strong> Laid out strict preconditions and roadmaps for Full Capital Account Convertibility (CAC), including fiscal consolidation, low inflation, and low NPAs.</li>
+        </ul>
+
+        <h3>Key Welfare Schemes & Mechanisms</h3>
+        <ul>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>PM-KISAN (Pradhan Mantri Kisan Samman Nidhi):</strong> Central sector scheme providing ₹6,000 per year direct income support to landholding farmer families, paid in 3 equal four-monthly installments of ₹2,000.</li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>PM Kisan Maandhan Yojana:</strong> Old age pension scheme for small and marginal farmers (&lt;2 hectares, 18–40 years entry age) providing an assured monthly pension of ₹3,000 after attaining 60 years of age with a 50:50 matching contribution by the Central Government.</li>
+          <li><span class="psssb-imp">★ PSSSB IMP</span><strong>Revamped PMFBY (Pradhan Mantri Fasal Bima Yojana - Kharif 2020):</strong> Scheme enrollment was made <strong>100% voluntary</strong> for all farmers (including institutional loanee farmers); utilizes satellite remote sensing and crop-cutting experiments for rapid insurance claim settlements.</li>
+          <li><strong>PLI (Production Linked Incentive) Scheme:</strong> Performance-based incentive scheme launched in 2020 across 14 manufacturing sectors with an outlay of ~₹1.97 Lakh Crore to encourage domestic production and offset inverted duty structures.</li>
+          <li><strong>InVITs (Infrastructure Investment Trusts):</strong> Pooled investment vehicles regulated by SEBI that enable infrastructure developers to monetize revenue-generating long-gestation assets.</li>
+          <li><strong>Project Nexus:</strong> Multilateral initiative pioneered by BIS and central banks (including RBI) to connect instant real-time retail cross-border payment platforms.</li>
+        </ul>
+
+        <h3>Global Indices Breakdown</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Index</th>
+                <th>Publishing Body</th>
+                <th>Core Pillars / Methodology</th>
+                <th>India Rank / Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>HDI (Human Development Index)</strong></td>
+                <td>UNDP</td>
+                <td>3 Dimensions: 1) Long & Healthy Life (Life expectancy at birth), 2) Knowledge (Mean & Expected years of schooling), 3) Decent Standard of Living (GNI per capita in PPP$). <em>Note: Environmental pollution is NOT a direct indicator.</em></td>
+                <td>Calculated on 0 to 1 scale</td>
+              </tr>
+              <tr>
+                <td><strong>CPI (Corruption Perceptions Index)</strong></td>
+                <td>Transparency International</td>
+                <td>Scores range from 0 (Highly Corrupt) to 100 (Very Clean). Evaluates public sector corruption, red-tapism, and regulatory risk.</td>
+                <td>Rank: 91 / 182 | Score: 39</td>
+              </tr>
+              <tr>
+                <td><strong>Financial Inclusion Index (FI-Index)</strong></td>
+                <td>RBI (Reserve Bank of India)</td>
+                <td>3 Weighted Dimensions: Access (35%), Usage (45%), and Quality (20%). Published annually without a base year.</td>
+                <td>Score ranges 0 to 100</td>
+              </tr>
+              <tr>
+                <td><strong>Global Competitiveness Index</strong></td>
+                <td>IMD / WEF</td>
+                <td>Evaluates institutional efficiency, business sophistication, macroeconomic environment, and infrastructure.</td>
+                <td>Rank: 44</td>
+              </tr>
+              <tr>
+                <td><strong>Ease of Doing Business (EoDB)</strong></td>
+                <td>World Bank</td>
+                <td>Evaluated 10 parameters of business lifecycle. <strong>Formally discontinued</strong> by the World Bank due to historical data manipulation and methodological irregularities.</td>
+                <td>Discontinued</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="alert-box">
+          <span class="psssb-imp">★ PSSSB IMP</span><strong>Controversial Answer Key Traps & Revisions:</strong>
+          <ul>
+            <li><strong>Sectoral GDP Shift 1950 to 1990:</strong> While Services expanded by +12.6% (from ~28% to ~40.6%) and Industry expanded by +11.6% (from ~13% to ~24.6%), official exam keys have periodically misallocated the highest growth to Industry. In economic fact, Services experienced the largest structural gain.</li>
+            <li><strong>PDS National Expansion:</strong> The national universalization push began around the 4th/5th Five Year Plans; questions targeting the revamped universal food subsidy framework commonly evaluate <strong>5th FYP (1974-78)</strong>.</li>
+            <li><strong>Dependency Ratio Brackets:</strong> Indian Census classically considers &lt;15 and 60+ as dependents. However, questions derived from recent <strong>UNFPA World Population Reports</strong> evaluate the working bracket as <strong>15–64 years</strong>, categorizing <strong>0–14 and 65+</strong> as dependents.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Sectional Tab Switching Logic
+    function switchSection(sectionId, btn) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+
+      const activeTab = document.getElementById('tab-' + sectionId);
+      if (activeTab) {
+        activeTab.classList.add('active');
+        btn.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Real-Time Search across all tabs and cards
+    function filterMasterContent() {
+      const query = document.getElementById('globalSearch').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.section-card');
+
+      if (!query) {
+        cards.forEach(card => card.style.display = '');
+        return;
+      }
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = '';
+          // Ensure parent section is opened if match found
+          const parentTab = card.closest('.tab-content');
+          if (parentTab && !parentTab.classList.contains('active')) {
+            const tabId = parentTab.id.replace('tab-', '');
+            const targetBtn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+            if (targetBtn) switchSection(tabId, targetBtn);
+          }
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Native Dark / Light Mode Switch
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      if (html.getAttribute('data-theme') === 'dark') {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Apply saved theme preference on load
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+</body>
+</html>
