@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSSSB Indian Polity Comprehensive Revision Masterfile</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent-hot: #dc2626;
+            --accent-news: #0284c7;
+            --accent-punjab: #d97706;
+            --bg-main: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a, #1e293b);
+            color: #ffffff;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #cbd5e1;
+            max-width: 850px;
+            margin: 0 auto 1rem;
+        }
+
+        .legend-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            vertical-align: middle;
+        }
+
+        .badge-hot {
+            background-color: #fee2e2;
+            color: var(--accent-hot);
+            border: 1px solid #f87171;
+        }
+
+        .badge-news {
+            background-color: #e0f2fe;
+            color: var(--accent-news);
+            border: 1px solid #38bdf8;
+        }
+
+        .badge-punjab {
+            background-color: #fef3c7;
+            color: var(--accent-punjab);
+            border: 1px solid #fcd34d;
+        }
+
+        nav.toc-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #ffffff;
+            border-bottom: 2px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            gap: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        nav.toc-nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: #f1f5f9;
+            transition: all 0.2s ease;
+        }
+
+        nav.toc-nav a:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-size: 1.45rem;
+            color: var(--primary);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sub-heading {
+            font-size: 1.15rem;
+            color: #334155;
+            margin: 1.2rem 0 0.6rem 0;
+            border-left: 4px solid var(--primary-light);
+            padding-left: 8px;
+        }
+
+        ul, ol {
+            padding-left: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.45rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            font-size: 0.92rem;
+        }
+
+        table th, table td {
+            border: 1px solid var(--border-color);
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            font-weight: 700;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .highlight-box {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 0.9rem 1.2rem;
+            margin: 1rem 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.95rem;
+        }
+
+        .news-context-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--accent-news);
+            padding: 0.9rem 1.2rem;
+            margin: 1rem 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.92rem;
+        }
+
+        .article-block {
+            margin-bottom: 0.85rem;
+            padding: 0.4rem 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .article-block:last-child {
+            border-bottom: none;
+        }
+
+        .art-num {
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .badge-container {
+            display: inline-flex;
+            gap: 6px;
+            margin-left: 8px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 1rem 0;
+        }
+
+        .mini-card {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        @media print {
+            nav.toc-nav { display: none; }
+            .section-card { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Indian Polity Comprehensive Revision Dossier</h1>
+    <p>Target Oriented for PSSSB (Senior Assistant, Clerk, Excise, VDO, Patwari, Sub-Inspector) Examinations</p>
+    <div class="legend-bar">
+        <span class="badge badge-hot">🔥 PSSSB High Frequency</span>
+        <span class="badge badge-news">📰 Recent News / SC Ruling (Last 6 Months Focus)</span>
+        <span class="badge badge-punjab">🦁 Punjab Specific / PEPSU Anchor</span>
+    </div>
+</header>
+
+<nav class="toc-nav">
+    <a href="#parts">Parts</a>
+    <a href="#schedules">Schedules</a>
+    <a href="#part1">Part I: States & Reorg</a>
+    <a href="#part2">Part II: Citizenship</a>
+    <a href="#part3">Part III: Fundamental Rights</a>
+    <a href="#part4">Part IV & IV-A: DPSP & Duties</a>
+    <a href="#part5">Part V: The Union</a>
+    <a href="#part6">Part VI: The States</a>
+    <a href="#part8-9">Parts VIII & IX: Local Govt</a>
+    <a href="#part11">Part XI: Centre-State</a>
+    <a href="#part12-14">Finance & Services</a>
+    <a href="#part15-17">Elections & Languages</a>
+    <a href="#part18-22">Emergency & Amendment</a>
+    <a href="#amendments">Amendments (1st–106th)</a>
+    <a href="#judgments">Landmark Judgments</a>
+</nav>
+
+<div class="container">
+
+    <!-- PARTS OF THE CONSTITUTION -->
+    <section class="section-card" id="parts">
+        <div class="section-title">
+            <span>Parts of the Indian Constitution</span>
+            <span class="badge badge-hot">Direct Exam Recall</span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Part</th>
+                    <th>Subject Matter</th>
+                    <th>Articles Covered</th>
+                    <th>Key Revision Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Part I</td><td>The Union and its Territory</td><td>Articles 1–4</td><td>Union of States, reorganization</td></tr>
+                <tr><td>Part II</td><td>Citizenship</td><td>Articles 5–11</td><td>Regulated by Parliament law (Art 11)</td></tr>
+                <tr><td>Part III</td><td>Fundamental Rights</td><td>Articles 12–35</td><td>Magna Carta of India <span class="badge badge-hot">🔥 Core</span></td></tr>
+                <tr><td>Part IV</td><td>Directive Principles of State Policy</td><td>Articles 36–51</td><td>Non-justiciable socio-economic goals</td></tr>
+                <tr><td>Part IV-A</td><td>Fundamental Duties</td><td>Article 51A</td><td>Added by 42nd Amendment 1976 (Swaran Singh)</td></tr>
+                <tr><td>Part V</td><td>The Union</td><td>Articles 52–151</td><td>Executive, Parliament, Supreme Court, CAG</td></tr>
+                <tr><td>Part VI</td><td>The States</td><td>Articles 152–237</td><td>Governor, State Legislature, High Courts</td></tr>
+                <tr><td>Part VII</td><td>Part B States [Repealed]</td><td>Article 238</td><td>Abolished by 7th Amendment 1956</td></tr>
+                <tr><td>Part VIII</td><td>The Union Territories</td><td>Articles 239–242</td><td>Administered by President via LG/Admins</td></tr>
+                <tr><td>Part IX</td><td>Panchayats</td><td>Articles 243–243O</td><td>Added by 73rd Amendment 1992</td></tr>
+                <tr><td>Part IX-A</td><td>Municipalities</td><td>Articles 243P–243ZG</td><td>Added by 74th Amendment 1992</td></tr>
+                <tr><td>Part IX-B</td><td>Co-operative Societies</td><td>Articles 243ZH–243ZT</td><td>Added by 97th Amendment 2011</td></tr>
+                <tr><td>Part X</td><td>Scheduled and Tribal Areas</td><td>Articles 244–244A</td><td>5th and 6th Schedules operation</td></tr>
+                <tr><td>Part XI</td><td>Relations Between Union & States</td><td>Articles 245–263</td><td>Legislative & Administrative relations</td></tr>
+                <tr><td>Part XII</td><td>Finance, Property, Contracts & Suits</td><td>Articles 264–300A</td><td>Art 300A: Right to Property</td></tr>
+                <tr><td>Part XIII</td><td>Trade and Commerce within India</td><td>Articles 301–307</td><td>Inter-state trade & intercourse</td></tr>
+                <tr><td>Part XIV</td><td>Services Under Union & States</td><td>Articles 308–323</td><td>UPSC, SPSC, All India Services</td></tr>
+                <tr><td>Part XIV-A</td><td>Tribunals</td><td>Articles 323A–323B</td><td>Added by 42nd Amendment 1976</td></tr>
+                <tr><td>Part XV</td><td>Elections</td><td>Articles 324–329A</td><td>Election Commission, Adult Suffrage</td></tr>
+                <tr><td>Part XVI</td><td>Special Provisions for Certain Classes</td><td>Articles 330–342A</td><td>Reservations for SC/ST, NCBC, NCSC, NCST</td></tr>
+                <tr><td>Part XVII</td><td>Official Language</td><td>Articles 343–351</td><td>Union language, 8th Schedule languages</td></tr>
+                <tr><td>Part XVIII</td><td>Emergency Provisions</td><td>Articles 352–360</td><td>National, State, Financial Emergency</td></tr>
+                <tr><td>Part XIX</td><td>Miscellaneous</td><td>Articles 361–367</td><td>Immunity to President/Governors</td></tr>
+                <tr><td>Part XX</td><td>Amendment of the Constitution</td><td>Article 368</td><td>Power & procedure of Parliament to amend</td></tr>
+                <tr><td>Part XXI</td><td>Temporary, Transitional & Special</td><td>Articles 369–392</td><td>Article 370 (abrogated), 371 to 371J</td></tr>
+                <tr><td>Part XXII</td><td>Short Title, Commencement & Repeals</td><td>Articles 393–395</td><td>Short title, Hindi authoritative text</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- SCHEDULES -->
+    <section class="section-card" id="schedules">
+        <div class="section-title">
+            <span>Schedules of the Constitution of India</span>
+            <span class="badge badge-hot">High Yield</span>
+        </div>
+        <ol>
+            <li><strong>First Schedule:</strong> Lists the States and Union Territories with territorial extent.</li>
+            <li><strong>Second Schedule:</strong> Salaries, allowances, and emoluments of President, Governors, Chief Justice & Judges of SC/HCs, CAG, etc.</li>
+            <li><strong>Third Schedule:</strong> Forms of Oaths or Affirmations for Union/State Ministers, MPs, MLAs, Judges of SC/HCs, CAG.</li>
+            <li><strong>Fourth Schedule:</strong> Allocation of seats in Rajya Sabha to States and Union Territories.</li>
+            <li><strong>Fifth Schedule:</strong> Administration and control of Scheduled Areas and Scheduled Tribes.</li>
+            <li><strong>Sixth Schedule:</strong> Administration of Tribal Areas in 4 Northeastern states: <strong>Assam, Meghalaya, Tripura, and Mizoram (AMTM)</strong>.</li>
+            <li><strong>Seventh Schedule:</strong> Division of legislative powers via three lists:
+                <ul>
+                    <li><strong>Union List:</strong> 97 original &rarr; <strong>100</strong> subjects.</li>
+                    <li><strong>State List:</strong> 66 original &rarr; <strong>61</strong> subjects.</li>
+                    <li><strong>Concurrent List:</strong> 47 original &rarr; <strong>52</strong> subjects.</li>
+                </ul>
+            </li>
+            <li><strong>Eighth Schedule:</strong> Official recognized languages. Originally 14, currently <strong>22 languages</strong> (Sindhi by 21st Amdt; Konkani, Manipuri, Nepali by 71st Amdt; Bodo, Dogri, Maithili, Santhali by 92nd Amdt).</li>
+            <li><strong>Ninth Schedule:</strong> Laws immune from judicial review (primarily land/agrarian reforms). Added by <strong>1st Amendment, 1951</strong>. (Subject to review post-1973 per <em>I.R. Coelho</em>).</li>
+            <li><strong>Tenth Schedule:</strong> Anti-Defection Law. Added by <strong>52nd Amendment, 1985</strong>. Disqualification on defection grounds.</li>
+            <li><strong>Eleventh Schedule:</strong> Powers, authority, and responsibilities of Panchayats. Contains <strong>29 subjects</strong>. Added by <strong>73rd Amendment, 1992</strong>.</li>
+            <li><strong>Twelfth Schedule:</strong> Powers, authority, and responsibilities of Municipalities. Contains <strong>18 subjects</strong>. Added by <strong>74th Amendment, 1992</strong>.</li>
+        </ol>
+    </section>
+
+    <!-- PART I: UNION AND ITS TERRITORY -->
+    <section class="section-card" id="part1">
+        <div class="section-title">
+            <span>Part I: The Union and its Territory (Articles 1–4)</span>
+            <span class="badge badge-punjab">🦁 Punjab & PEPSU History</span>
+        </div>
+        <div class="article-block">
+            <span class="art-num">Article 1:</span> India, that is Bharat, shall be a Union of States; specifies names and territories.
+        </div>
+        <div class="article-block">
+            <span class="art-num">Article 2:</span> Admission or establishment of new states (territory not part of India).
+        </div>
+        <div class="article-block">
+            <span class="art-num">Article 3:</span> Formation of new states, alteration of areas, boundaries, or names of existing states.
+        </div>
+        <div class="article-block">
+            <span class="art-num">Article 4:</span> Laws made under Articles 2 & 3 are not considered constitutional amendments under Article 368. <em>("368 di lod nhi, Schedule 1 and 4 ch change krna sirf")</em>.
+        </div>
+
+        <div class="highlight-box">
+            <strong>Key Integration & Historic Facts:</strong>
+            <ul>
+                <li><strong>Total Princely States:</strong> 552 located within geographical boundary of India; 549 joined voluntarily.</li>
+                <li><strong>3 States initially reluctant:</strong>
+                    <ol>
+                        <li><strong>Jammu & Kashmir:</strong> Maharaja Hari Singh signed Instrument of Accession (IOA) on <strong>26 Oct 1947</strong>.</li>
+                        <li><strong>Junagadh:</strong> Merged via <strong>Plebiscite</strong> (referendum).</li>
+                        <li><strong>Hyderabad:</strong> Mir Osman Ali Khan; merged through military action <strong>Operation Polo in September 1948</strong>.</li>
+                    </ol>
+                </li>
+                <li><strong>First to sign IOA:</strong> Travancore.</li>
+                <li><strong>Last moment accession:</strong> Jodhpur.</li>
+                <li><strong>1950 4-Fold Classification of States:</strong>
+                    <ul>
+                        <li><strong>Part A:</strong> Governed by elected British Governor (e.g., Punjab).</li>
+                        <li><strong>Part B:</strong> Governed by Rajpramukh (e.g., <strong>PEPSU – Patiala and East Punjab States Union</strong>).</li>
+                        <li><strong>Part C:</strong> Governed by Chief Commissioner.</li>
+                        <li><strong>Part D:</strong> Appointed Lieutenant Governor (Andaman & Nicobar Islands).</li>
+                        <li><em>Part ABCD system was completely abolished in 1956 by the 7th Constitutional Amendment.</em></li>
+                    </ul>
+                </li>
+                <li><strong>Vishal Andhra Movement:</strong> Potti Sreeramulu went on a hunger strike demanding a Telugu-speaking state; died on 56th day (1953).</li>
+                <li><strong>First Linguistic State:</strong> Andhra State formed in <strong>1953</strong> (Capital: Kurnool, first CM: Neelam Sanjiva Reddy). Later transformed into Andhra Pradesh in 1956 with capital at Hyderabad.</li>
+                <li><strong>Foreign Enclaves:</strong> French enclaves (Pondicherry, Yanam, Karaikal, Mahe); Portuguese enclaves (Dadra & Nagar Haveli, Daman & Diu, Goa). Dadra & Nagar Haveli and Daman & Diu united as one UT on <strong>26 January 2020</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="sub-heading">State Reorganization Commissions</div>
+        <ul>
+            <li><strong>S.K. Dhar Commission (1948):</strong> Recommended reorganization based on administrative convenience, strictly rejected linguistic basis.</li>
+            <li><strong>JVP Committee (1949):</strong> Jawaharlal Nehru, Vallabhbhai Patel, Pattabhi Sitaramayya. Formally rejected language-based reorganization.</li>
+            <li><strong>Fazal Ali Commission / States Reorganisation Commission (1953):</strong> Members: Fazal Ali (Chairman), K.M. Panikkar, Hriday Nath Kunzru. Submitted report in 1955. Rejected "one language, one state" but accepted language as a major criterion. Recommended 16 states & 3 UTs. Resulted in <strong>States Reorganisation Act 1956</strong> creating <strong>14 States and 6 UTs</strong>.</li>
+        </ul>
+
+        <div class="sub-heading">Chronological Creation of New States</div>
+        <div class="grid-2">
+            <div class="mini-card">
+                <strong>15. Gujarat & Maharashtra (1960):</strong> Carved out of bilingual Bombay State.<br>
+                <strong>16. Nagaland (1963):</strong> Created from Assam tribal hills.<br>
+                <strong>17. Haryana & 18. Himachal (1966):</strong> <strong>Punjab Reorganisation Act 1966</strong> (Shah Commission) created Haryana (17th state) and UT Chandigarh; Himachal Pradesh made state in 1971.<br>
+                <strong>19. Manipur, 20. Tripura, 21. Meghalaya (1972):</strong> North-Eastern Areas Reorganisation Act.
+            </div>
+            <div class="mini-card">
+                <strong>22. Sikkim:</strong> 35th Amendment 1974 (Associate State) & <strong>36th Amendment 1975 (Full-fledged state)</strong>.<br>
+                <strong>23. Mizoram, 24. Arunachal Pradesh, 25. Goa (1987)</strong>.<br>
+                <strong>26. Chhattisgarh:</strong> 1 Nov 2000 (from MP).<br>
+                <strong>27. Uttarakhand:</strong> 9 Nov 2000 (from UP).<br>
+                <strong>28. Jharkhand:</strong> 15 Nov 2000 (from Bihar - Birsa Munda’s birth anniversary).<br>
+                <strong>29. Telangana:</strong> 2 June 2014 (from Andhra Pradesh).
+            </div>
+        </div>
+
+        <div class="sub-heading">Union Territories Administration Setup</div>
+        <ul>
+            <li><strong>UTs with Administrator:</strong> Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Lakshadweep.</li>
+            <li><strong>UTs with Lieutenant Governor (LG):</strong> Andaman & Nicobar, Delhi (NCT), Jammu & Kashmir, Ladakh, Puducherry.</li>
+        </ul>
+    </section>
+
+    <!-- PART II: CITIZENSHIP -->
+    <section class="section-card" id="part2">
+        <div class="section-title">
+            <span>Part II: Citizenship (Articles 5–11)</span>
+            <span class="badge badge-hot">PSSSB Core</span>
+        </div>
+        <div class="article-block"><span class="art-num">Article 5:</span> Citizenship at the commencement of the Constitution.</div>
+        <div class="article-block"><span class="art-num">Article 6:</span> Rights of citizenship for persons who migrated to India from Pakistan.</div>
+        <div class="article-block"><span class="art-num">Article 7:</span> Rights of citizenship of certain migrants to Pakistan who later returned.</div>
+        <div class="article-block"><span class="art-num">Article 8:</span> Rights of citizenship of certain persons of Indian origin residing outside India.</div>
+        <div class="article-block"><span class="art-num">Article 9:</span> <strong>Single Citizenship Principle:</strong> Persons voluntarily acquiring citizenship of a foreign State automatically lose Indian citizenship.</div>
+        <div class="article-block"><span class="art-num">Article 10:</span> Continuance of the rights of citizenship.</div>
+        <div class="article-block"><span class="art-num">Article 11:</span> <strong>Parliament's Exclusive Power:</strong> Parliament has supreme authority to regulate the right of citizenship by law (Citizenship Act 1955).</div>
+    </section>
+
+    <!-- PART III: FUNDAMENTAL RIGHTS -->
+    <section class="section-card" id="part3">
+        <div class="section-title">
+            <span>Part III: Fundamental Rights (Articles 12–35)</span>
+            <div>
+                <span class="badge badge-hot">🔥 Top Priority</span>
+                <span class="badge badge-news">📰 Active SC Debates</span>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <strong>Historical Anchors & Essential Doctrines:</strong>
+            <ul>
+                <li>Borrowed from <strong>USA (Bill of Rights 1791)</strong>. Termed Magna Carta of India (Original Magna Carta: 1215 by King John of England).</li>
+                <li><strong>1931 Karachi Session:</strong> Presided by Sardar Vallabhbhai Patel; Jawaharlal Nehru drafted the resolution on Fundamental Rights.</li>
+                <li><strong>Dr. Sarvepalli Radhakrishnan:</strong> Termed FRs as <em>"A pledge to our people and a pact with the civilized world."</em></li>
+                <li><strong>Rule of Law:</strong> Propounded by British jurist A.V. Dicey (Absence of arbitrary power, equality before law, predominance of legal spirit).</li>
+            </ul>
+        </div>
+
+        <div class="article-block"><span class="art-num">Article 12:</span> Definition of 'State' (Government, Parliament, State legislatures, local authorities, statutory bodies).</div>
+        <div class="article-block"><span class="art-num">Article 13:</span> Laws inconsistent with or in derogation of the Fundamental Rights shall be void.
+            <ul>
+                <li><strong>Article 13(1) - Doctrine of Severability:</strong> If an offending clause can be separated from the valid law, only that clause is void. (Applies to pre-constitutional/past laws).</li>
+                <li><strong>Article 13(2) - Doctrine of Eclipse:</strong> Post-constitutional laws violating FRs are not dead ab initio; they remain dormant/shadowed and become active if constitutional limitations are removed.</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 14:</span> Equality before Law (negative concept borrowed from <strong>UK</strong>) and Equal Protection of the Laws (positive concept borrowed from <strong>USA</strong>).</div>
+        <div class="article-block"><span class="art-num">Article 15:</span> Prohibition of discrimination on grounds only of religion, race, caste, sex, or place of birth.
+            <ul>
+                <li><strong>15(4) & 15(5):</strong> Special provisions / reservation for SC/ST/OBC in educational institutions.</li>
+                <li><strong>15(6):</strong> 10% Reservation for Economically Weaker Sections (EWS) in educational institutions (103rd Amdt 2019).</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 16:</span> Equality of opportunity in matters of public employment. <em>(16(6) added for 10% EWS reservation in jobs)</em>.</div>
+        <div class="article-block"><span class="art-num">Article 17:</span> <strong>Abolition of Untouchability</strong> and prohibition of its practice in any form. Absolute right.</div>
+        <div class="article-block"><span class="art-num">Article 18:</span> Abolition of titles (except military and academic distinctions). Bharat Ratna/Padma awards are not titles.</div>
+        <div class="article-block"><span class="art-num">Article 19:</span> Protection of 6 Fundamental Freedoms:
+            <ol>
+                <li><strong>19(1)(a):</strong> Freedom of speech and expression (includes freedom of press, commercial speech, right to know). <span class="badge badge-news">Electoral Bonds Verdict</span></li>
+                <li><strong>19(1)(b):</strong> Freedom to assemble peaceably and without arms.</li>
+                <li><strong>19(1)(c):</strong> Freedom to form associations, unions, or co-operative societies.</li>
+                <li><strong>19(1)(d):</strong> Freedom to move freely throughout the territory of India.</li>
+                <li><strong>19(1)(e):</strong> Freedom to reside and settle in any part of India.</li>
+                <li><em>[19(1)(f) Right to acquire/hold/dispose of property — Deleted by 44th Amendment 1978]</em>.</li>
+                <li><strong>19(1)(g):</strong> Freedom to practise any profession, or to carry on any occupation, trade, or business.</li>
+            </ol>
+        </div>
+        <div class="article-block"><span class="art-num">Article 20:</span> Protection in respect of conviction for offences:
+            <ul>
+                <li><strong>20(1) No ex-post-facto law:</strong> Cannot be punished under a retrospective criminal law.</li>
+                <li><strong>20(2) No Double Jeopardy:</strong> No person shall be prosecuted and punished for the same offence more than once.</li>
+                <li><strong>20(3) Prohibition against Self-Incrimination:</strong> No accused shall be compelled to be a witness against himself.</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 21:</span> Protection of life and personal liberty. <em>Expanded by Maneka Gandhi case (1978) to require "just, fair, and reasonable" procedure; encompasses Right to Privacy (Puttaswamy 2017), Clean Environment, Dignity, Livelihood.</em></div>
+        <div class="article-block"><span class="art-num">Article 21A:</span> <strong>Right to Education:</strong> Free and compulsory education to all children aged 6 to 14 years. (Added by <strong>86th Amendment 2002</strong>).</div>
+        <div class="article-block"><span class="art-num">Article 22:</span> Protection against arrest and detention in certain cases:
+            <ul>
+                <li><strong>22(1):</strong> Right to be informed of the grounds of arrest & consult a legal practitioner.</li>
+                <li><strong>22(2):</strong> Must be produced before the nearest magistrate within <strong>24 hours</strong> of arrest (excluding travel time).</li>
+                <li><strong>22(3):</strong> Female arrest rules & safeguards (must be arrested by female police officers with prescribed procedure).</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 23:</span> Prohibition of traffic in human beings, begar, and other forced labour.</div>
+        <div class="article-block"><span class="art-num">Article 24:</span> Prohibition of employment of children below the age of <strong>14 years</strong> in factories, mines, or hazardous employment.</div>
+        <div class="article-block"><span class="art-num">Article 25:</span> Freedom of conscience and free profession, practice, and propagation of religion.</div>
+        <div class="article-block"><span class="art-num">Article 26:</span> Freedom to manage religious affairs.</div>
+        <div class="article-block"><span class="art-num">Article 27:</span> Freedom from payment of taxes for promotion of any particular religion.</div>
+        <div class="article-block"><span class="art-num">Article 28:</span> Freedom from attending religious instruction in wholly State-funded educational institutions.</div>
+        <div class="article-block"><span class="art-num">Article 29:</span> Protection of language, script, and culture of minorities.</div>
+        <div class="article-block"><span class="art-num">Article 30:</span> Right of minorities to establish and administer educational institutions. <em>Recognized national religious minorities: <strong>6 communities</strong> (Sikhs, Muslims, Christians, Buddhists, Jains, Parsis).</em></div>
+        <div class="article-block"><span class="art-num">Article 31:</span> <strong>Repealed</strong> (Right to Property repealed by <strong>44th Amendment Act 1978</strong> during Morarji Desai / Janata Party Government; shifted to Article 300A).</div>
+        <div class="article-block"><span class="art-num">Article 32:</span> <strong>Right to Constitutional Remedies:</strong> Direct approach to Supreme Court for enforcement of FRs. Termed by Dr. B.R. Ambedkar as the <em>"Heart and Soul of the Constitution"</em>.
+            <ul>
+                <li>High Court writ jurisdiction lies under <strong>Article 226</strong> (broader scope: covers FRs + ordinary legal rights).</li>
+                <li>Prior to 1950, only High Courts of Calcutta, Bombay, and Madras had inherent writ power.</li>
+                <li>Borrowed from English common law (known as <em>Prerogative Writs</em>).</li>
+            </ul>
+        </div>
+
+        <div class="sub-heading">The Five Constitutional Writs (Articles 32 & 226)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Writ</th>
+                    <th>Literal Meaning</th>
+                    <th>Scope & Application</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Habeas Corpus</strong></td><td>"To have the body of"</td><td>Protects against unlawful detention. Applicable against both <strong>public and private</strong> entities.</td></tr>
+                <tr><td><strong>Mandamus</strong></td><td>"We Command"</td><td>Issued to a public official or body commanding them to perform an obligatory public duty. Cannot be issued against President or Governors.</td></tr>
+                <tr><td><strong>Prohibition</strong></td><td>"To forbid / stop"</td><td>Issued by higher courts to prevent an inferior court/tribunal from exceeding its legal jurisdiction. (Preventive only).</td></tr>
+                <tr><td><strong>Certiorari</strong></td><td>"To be certified"</td><td>Issued to quash the order of a lower court/tribunal made without jurisdiction or in violation of natural justice. (Both preventive and curative).</td></tr>
+                <tr><td><strong>Quo-Warranto</strong></td><td>"By what authority"</td><td>Prevents illegal usurpation of a public substantive office. Can be sought by any interested person, not necessarily the aggrieved party.</td></tr>
+            </tbody>
+        </table>
+
+        <div class="article-block"><span class="art-num">Article 32A:</span> Validity of State laws not to be considered in Art 32 (Inserted by 42nd Amdt, repealed by 43rd Amdt 1977).</div>
+        <div class="article-block"><span class="art-num">Article 33:</span> Power of Parliament to modify Fundamental Rights for Armed Forces, Police, and Intelligence organizations.</div>
+        <div class="article-block"><span class="art-num">Article 34:</span> Restrictions on FRs while martial law (military rule) is in force in any area.</div>
+        <div class="article-block"><span class="art-num">Article 35:</span> Parliament has the exclusive power to make laws to give effect to certain provisions of Part III (e.g., Art 16(3), 32(3), 33, 34).</div>
+        <div class="article-block"><span class="art-num">Article 35A:</span> Special rights and privileges to permanent residents of Jammu & Kashmir (Issued via Presidential Order 1954; <strong>abrogated in August 2019</strong>).</div>
+    </section>
+
+    <!-- PART IV & IV-A: DPSP & DUTIES -->
+    <section class="section-card" id="part4">
+        <div class="section-title">
+            <span>Part IV: Directive Principles & Part IV-A: Fundamental Duties</span>
+            <div>
+                <span class="badge badge-hot">High Yield</span>
+                <span class="badge badge-news">📰 UCC Debate</span>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <strong>Key Perspectives on DPSP:</strong>
+            <ul>
+                <li>Borrowed from <strong>Ireland</strong> (which borrowed from Spain).</li>
+                <li><strong>Dr. B.R. Ambedkar:</strong> Termed DPSP as the <em>"Novel Feature of the Indian Constitution"</em>.</li>
+                <li><strong>Prof. K.T. Shah:</strong> <em>"DPSP is like a cheque on a bank, payable only when the resources of the bank permit."</em></li>
+                <li><strong>Justiciability:</strong> Non-enforceable in courts of law (Art 37), but fundamental in the governance of the country.</li>
+            </ul>
+        </div>
+
+        <div class="article-block"><span class="art-num">Article 36:</span> Definition of State (same as Article 12).</div>
+        <div class="article-block"><span class="art-num">Article 37:</span> Non-justiciable nature of DPSPs, but fundamental in governance.</div>
+        <div class="article-block"><span class="art-num">Article 38:</span> State to secure a social order for the promotion of welfare of the people.
+            <ul>
+                <li><strong>Article 38(2):</strong> Minimize inequalities in income, status, facilities, and opportunities (Added by <strong>44th Amendment 1978</strong>).</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 39:</span> Certain principles of policy to be followed by the State (adequate livelihood, distribution of material resources, prevention of concentration of wealth, equal pay for equal work for both men and women).</div>
+        <div class="article-block"><span class="art-num">Article 39A:</span> <strong>Equal justice and free legal aid</strong> (Added by <strong>42nd Amendment 1976</strong>; led to Legal Services Authorities Act / NALSA).</div>
+        <div class="article-block"><span class="art-num">Article 40:</span> <strong>Organisation of Village Panchayats</strong> (Gandhian Principle). <span class="badge badge-hot">🔥</span></div>
+        <div class="article-block"><span class="art-num">Article 41:</span> Right to work, to education, and to public assistance in cases of unemployment, old age, sickness, and disablement.</div>
+        <div class="article-block"><span class="art-num">Article 42:</span> Provision for just and humane conditions of work and <strong>maternity relief</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 43:</span> Living wage and decent standard of life for workers; promotion of cottage industries.</div>
+        <div class="article-block"><span class="art-num">Article 43A:</span> Participation of workers in the management of industries (Added by <strong>42nd Amendment 1976</strong>).</div>
+        <div class="article-block"><span class="art-num">Article 43B:</span> Promotion of voluntary formation and autonomous functioning of <strong>Co-operative Societies</strong> (Added by <strong>97th Amendment 2011</strong>).</div>
+        <div class="article-block"><span class="art-num">Article 44:</span> <strong>Uniform Civil Code (UCC)</strong> for all citizens throughout India. <span class="badge badge-news">📰 Highly Active News Subject (Uttarakhand UCC implementation)</span></div>
+        <div class="article-block"><span class="art-num">Article 45:</span> Provision for early childhood care and education to children below the age of six years (Amended by 86th Amdt 2002).</div>
+        <div class="article-block"><span class="art-num">Article 46:</span> Promotion of educational and economic interests of Scheduled Castes, Scheduled Tribes, and other weaker sections.</div>
+        <div class="article-block"><span class="art-num">Article 47:</span> Duty of the State to raise the level of nutrition and the standard of living and to improve public health (prohibition of intoxicating drinks & drugs).</div>
+        <div class="article-block"><span class="art-num">Article 48:</span> Organisation of agriculture and animal husbandry (prohibiting slaughter of cows, calves, and milch cattle).</div>
+        <div class="article-block"><span class="art-num">Article 48A:</span> Protection and improvement of environment and safeguarding of forests and wildlife (Added by <strong>42nd Amendment 1976</strong>).</div>
+        <div class="article-block"><span class="art-num">Article 49:</span> Protection of monuments, places, and objects of national importance.</div>
+        <div class="article-block"><span class="art-num">Article 50:</span> <strong>Separation of Judiciary from the Executive</strong> in public services.</div>
+        <div class="article-block"><span class="art-num">Article 51:</span> Promotion of international peace and security.</div>
+
+        <div class="sub-heading">Part IV-A: Fundamental Duties (Article 51A)</div>
+        <p>Recommended by <strong>Swaran Singh Committee (1976)</strong>; borrowed from the <strong>USSR</strong>. Added 10 duties via 42nd Amendment 1976. 11th duty added by 86th Amendment 2002.</p>
+        <ol>
+            <li>Abide by the Constitution and respect its ideals and institutions, the National Flag, and the National Anthem.</li>
+            <li>Cherish and follow the noble ideals which inspired our national struggle for freedom.</li>
+            <li>Uphold and protect the sovereignty, unity, and integrity of India.</li>
+            <li>Defend the country and render national service when called upon to do so.</li>
+            <li>Promote harmony and the spirit of common brotherhood amongst all people, transcending religious, linguistic, and regional diversities; renounce practices derogatory to the dignity of women.</li>
+            <li>Value and preserve the rich heritage of our composite culture.</li>
+            <li>Protect and improve the natural environment including forests, lakes, rivers, and wildlife, and have compassion for living creatures.</li>
+            <li>Develop the <strong>scientific temper, humanism, and the spirit of inquiry and reform</strong>.</li>
+            <li>Safeguard public property and abjure violence.</li>
+            <li>Strive towards excellence in all spheres of individual and collective activity.</li>
+            <li><strong>(k) added by 86th Amdt (2002):</strong> Duty of parent/guardian to provide opportunities for education to child between <strong>6 and 14 years</strong>.</li>
+        </ol>
+    </section>
+
+    <!-- PART V: THE UNION -->
+    <section class="section-card" id="part5">
+        <div class="section-title">
+            <span>Part V: The Union (Articles 52–151)</span>
+            <span class="badge badge-hot">Executive, Parliament & Judiciary</span>
+        </div>
+
+        <div class="sub-heading">Chapter 1: The Union Executive (President, VP, PM, Council of Ministers, AG)</div>
+        <div class="article-block"><span class="art-num">Article 52:</span> There shall be a President of India.</div>
+        <div class="article-block"><span class="art-num">Article 53:</span> Executive power of the Union vested in the President.</div>
+        <div class="article-block"><span class="art-num">Article 54:</span> <strong>Election of the President:</strong> Electoral College consists of:
+            <ul>
+                <li>Elected members of both Houses of Parliament (MPs).</li>
+                <li>Elected members of Legislative Assemblies of States (MLAs).</li>
+                <li>Elected members of Assemblies of Delhi and Puducherry (70th Amdt 1992) and J&K UT.</li>
+                <li><em>Nominated members and State Legislative Councils (MLCs) do not participate.</em></li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 55:</span> Manner of election of President (System of proportional representation by means of single transferable vote & secret ballot).</div>
+        <div class="article-block"><span class="art-num">Article 56:</span> Term of office of President (5 years from entering office).</div>
+        <div class="article-block"><span class="art-num">Article 57:</span> Eligibility for re-election (No term limits in India).</div>
+        <div class="article-block"><span class="art-num">Article 58:</span> Qualifications for election as President: Citizen of India, minimum <strong>35 years</strong> of age, qualified for election as Lok Sabha member, no office of profit.</div>
+        <div class="article-block"><span class="art-num">Article 59:</span> Conditions of President's office.</div>
+        <div class="article-block"><span class="art-num">Article 60:</span> Oath or affirmation by the President (Administered by the Chief Justice of India).</div>
+        <div class="article-block"><span class="art-num">Article 61:</span> <strong>Procedure for Impeachment of the President:</strong>
+            <ul>
+                <li>Sole ground: <em>"Violation of the Constitution"</em>.</li>
+                <li>Can initiate in either House of Parliament. Requires 14 days' written notice signed by at least 1/4th members of that House.</li>
+                <li>Passed by a special majority of <strong>not less than 2/3rd of the total membership</strong> of each House.</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 62:</span> Time of holding election to fill vacancy in the office of President.</div>
+
+        <div class="sub-heading">Vice-President of India</div>
+        <div class="article-block"><span class="art-num">Article 63:</span> The Vice-President of India.</div>
+        <div class="article-block"><span class="art-num">Article 64:</span> Vice-President is <strong>ex-officio Chairman of the Council of States (Rajya Sabha)</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 65:</span> VP to act as President or discharge functions during vacancies.</div>
+        <div class="article-block"><span class="art-num">Article 66:</span> <strong>Election of Vice-President:</strong> Electoral College consists of members of both Houses of Parliament (both elected and nominated; state MLAs do not vote). Min age: 35 years; qualified for Rajya Sabha.</div>
+        <div class="article-block"><span class="art-num">Article 67:</span> Term of office of Vice-President (5 years).</div>
+        <div class="article-block"><span class="art-num">Article 68:</span> Election to fill vacancy.</div>
+        <div class="article-block"><span class="art-num">Article 69:</span> Oath or affirmation by Vice-President (administered by President).</div>
+        <div class="article-block"><span class="art-num">Article 70:</span> Discharge of President's functions in contingencies.</div>
+        <div class="article-block"><span class="art-num">Article 71:</span> <strong>All doubts and disputes arising out of election of President or Vice-President are inquired into and decided exclusively by the Supreme Court of India</strong>, whose decision is final.</div>
+
+        <div class="sub-heading">Pardoning Powers & Council of Ministers</div>
+        <div class="article-block"><span class="art-num">Article 72:</span> <strong>Pardoning Powers of the President:</strong>
+            <ol>
+                <li><strong>Pardon:</strong> Completely removes both the sentence and conviction (clean slate).</li>
+                <li><strong>Reprieve:</strong> Temporary stay/suspension on execution of a sentence (especially death penalty) to allow time to seek pardon.</li>
+                <li><strong>Respite:</strong> Awarding a lesser sentence in place of one originally penalised due to special facts (e.g., pregnancy, disability).</li>
+                <li><strong>Remission:</strong> Reducing the amount/period of sentence without altering its character (e.g., 10 yrs rigorous to 5 yrs rigorous).</li>
+                <li><strong>Commutation:</strong> Substituting one form of punishment with a lighter form (e.g., death penalty to life imprisonment).</li>
+            </ol>
+        </div>
+        <div class="article-block"><span class="art-num">Article 73:</span> Extent of executive power of the Union.</div>
+        <div class="article-block"><span class="art-num">Article 74:</span> Council of Ministers to aid and advise President.
+            <ul>
+                <li>42nd Amdt made advice binding; 44th Amdt gave President power to send advice back <em>once for reconsideration</em>, but must accept reconsidered advice.</li>
+                <li><strong>74(2):</strong> Nature of advice tendered by Ministers to the President cannot be inquired into by any court.</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 75:</span> Other provisions as to Ministers:
+            <ul>
+                <li><strong>75(1):</strong> PM appointed by President; other ministers appointed by President on PM's advice.</li>
+                <li><strong>75(1A):</strong> Total number of ministers including PM shall not exceed <strong>15% of the total strength of Lok Sabha</strong> (Added by <strong>91st Amendment Act 2003</strong>).</li>
+                <li><strong>75(2):</strong> Ministers hold office during the <strong>pleasure of the President</strong> (Individual responsibility).</li>
+                <li><strong>75(3):</strong> The Council of Ministers is <strong>collectively responsible to the Lok Sabha</strong> (House of the People). <span class="badge badge-hot">🔥 Repeated PSSSB Question</span></li>
+                <li><strong>75(4):</strong> Oath of office and secrecy administered by President.</li>
+                <li><strong>75(5):</strong> A Minister who is not a member of either House for <strong>6 consecutive months</strong> ceases to be a Minister.</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 76:</span> <strong>Attorney-General for India:</strong> Appointed by President; must be qualified to be a Judge of the Supreme Court. Holds office during pleasure of President. Chief legal advisor to Union Government.</div>
+        <div class="article-block"><span class="art-num">Article 77:</span> Conduct of business of the Government of India (All executive action in President's name).</div>
+        <div class="article-block"><span class="art-num">Article 78:</span> Duties of Prime Minister in furnishing information to the President.</div>
+
+        <div class="sub-heading">Chapter 2: Parliament of India (Articles 79–122)</div>
+        <div class="article-block"><span class="art-num">Article 79:</span> Constitution of Parliament: Consists of the <strong>President, Council of States (Rajya Sabha), and House of the People (Lok Sabha)</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 80:</span> <strong>Rajya Sabha (Council of States):</strong> Max strength 250 (238 elected from States/UTs + 12 nominated by President from Literature, Science, Art, Social Service).</div>
+        <div class="article-block"><span class="art-num">Article 81:</span> <strong>Lok Sabha (House of the People):</strong> Max statutory strength 550 (after Anglo-Indian abolition).</div>
+        <div class="article-block"><span class="art-num">Article 82:</span> Readjustment after each census (Delimitation Commission). Frozen till first census post-2026.</div>
+        <div class="article-block"><span class="art-num">Article 83:</span> Duration of Houses:
+            <ul>
+                <li><strong>83(1):</strong> Rajya Sabha is a permanent body not subject to dissolution; members have 6-year terms; <strong>one-third members retire every second year</strong>.</li>
+                <li><strong>83(2):</strong> Lok Sabha has a 5-year duration from date appointed for first meeting, unless dissolved earlier.</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 84:</span> Qualifications for membership: Citizen of India; Min age <strong>30 years for Rajya Sabha</strong>, Min age <strong>25 years for Lok Sabha</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 85:</span> Sessions of Parliament, Prorogation, and Dissolution. Max gap between two sessions cannot exceed <strong>6 months</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 86 & 87:</span> President's address. 87: Special Address at the commencement of first session after each general election and first session of each year.</div>
+        <div class="article-block"><span class="art-num">Article 88:</span> Rights of Ministers and Attorney-General to speak and take part in proceedings of either House or joint sitting, but AG has <strong>no right to vote</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 89–92:</span> Chairman (VP) and Deputy Chairman of Rajya Sabha.</div>
+        <div class="article-block"><span class="art-num">Article 93–97:</span> Speaker and Deputy Speaker of Lok Sabha. Pro-tem speaker appointed under Art 95.</div>
+        <div class="article-block"><span class="art-num">Article 98:</span> Secretariat of Parliament.</div>
+        <div class="article-block"><span class="art-num">Article 99:</span> Oath/affirmation of MPs before President or authorized person.</div>
+        <div class="article-block"><span class="art-num">Article 100:</span> <strong>Voting and Quorum:</strong>
+            <ul>
+                <li>Quorum to constitute a meeting is <strong>1/10th (10%)</strong> of the total membership of the House.</li>
+                <li><strong>100(1):</strong> Presiding officer does not vote in first instance; exercises a <strong>Casting Vote</strong> in case of equality of votes (tie).</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 101 & 102:</span> Vacation of seats and Disqualifications (office of profit, unsound mind, undischarged insolvent, loss of citizenship, statutory disqualification).</div>
+        <div class="article-block"><span class="art-num">Article 103:</span> Decision on questions as to disqualifications of members (Decided by President after obtaining opinion of Election Commission). <em>[Note: Defection under 10th Schedule is decided by Speaker/Chairman]</em>.</div>
+        <div class="article-block"><span class="art-num">Article 105:</span> Powers, privileges, and immunities of Parliament and its members (Freedom of speech in Parliament, immunity from court proceedings for speech/vote).</div>
+        <div class="article-block"><span class="art-num">Article 108:</span> <strong>Joint Sitting of Both Houses:</strong>
+            <ul>
+                <li>Summoned by the <strong>President</strong> in case of deadlock on an Ordinary Bill or Financial Bill.</li>
+                <li>Presided over by the <strong>Speaker of Lok Sabha</strong> (in absence: Deputy Speaker; if absent: Deputy Chairman RS. Chairman RS never presides).</li>
+                <li><em>No joint sitting allowed for Money Bills or Constitutional Amendment Bills.</em></li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 109 & 110:</span> <strong>Money Bills:</strong>
+            <ul>
+                <li><strong>Article 110:</strong> Defines Money Bill (imposition/abolition/alteration of tax, borrowing, custody of Consolidated/Contingency Fund).</li>
+                <li>Speaker's decision certifying a Bill as Money Bill is final.</li>
+                <li>Introduced <strong>only in Lok Sabha</strong> with prior recommendation of President.</li>
+                <li>Rajya Sabha has restricted powers: must return bill within <strong>14 days</strong> with recommendations; Lok Sabha can accept or reject. If not returned in 14 days, deemed passed.</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 111:</span> <strong>Assent to Bills & Presidential Veto Powers:</strong>
+            <ol>
+                <li><strong>Absolute Veto:</strong> President withholds assent; bill dies. (Generally used for Private Members' Bills or when Cabinet resigns).</li>
+                <li><strong>Suspensive Veto:</strong> President returns bill for reconsideration. If passed again by simple majority, President <em>must give assent</em>. Cannot be used for Money Bills.</li>
+                <li><strong>Pocket Veto:</strong> President neither assents nor returns bill; keeps it pending indefinitely. (No constitutional time limit in India, unlike USA's 10-day limit).
+                    <br><em>Historical Precedent:</em> <strong>1986</strong> by President <strong>Giani Zail Singh</strong> on the <strong>Indian Post Office (Amendment) Bill, 1986</strong> regarding postal surveillance.
+                </li>
+            </ol>
+        </div>
+        <div class="article-block"><span class="art-num">Article 112:</span> <strong>Annual Financial Statement (Union Budget):</strong> The term "Budget" is not mentioned in the Constitution; officially termed Annual Financial Statement.</div>
+        <div class="article-block"><span class="art-num">Article 114:</span> Appropriation Bills (No money can be withdrawn from Consolidated Fund without this Act).</div>
+        <div class="article-block"><span class="art-num">Article 115 & 116:</span> Supplementary grants and <strong>Vote on Account</strong> (interim financial provision).</div>
+        <div class="article-block"><span class="art-num">Article 117:</span> Special provisions as to Financial Bills.</div>
+        <div class="article-block"><span class="art-num">Article 120:</span> Language used in Parliament (Hindi or English; Mother tongue permitted with permission of Speaker/Chairman).</div>
+        <div class="article-block"><span class="art-num">Article 121 & 122:</span> 121: Conduct of SC/HC judges cannot be discussed in Parliament (except during impeachment). 122: Courts cannot inquire into validity of Parliamentary proceedings.</div>
+        <div class="article-block"><span class="art-num">Article 123:</span> <strong>Power of President to Promulgate Ordinances:</strong> Can issue ordinances when either House is not in session. Has same force as an Act. Must be approved by Parliament within <strong>6 weeks from reassembly</strong>. Max lifespan = 6 months + 6 weeks.</div>
+
+        <div class="sub-heading">Chapter 3: The Union Judiciary – Supreme Court (Articles 124–147)</div>
+        <div class="article-block"><span class="art-num">Article 124:</span> Establishment and constitution of Supreme Court (Inaugurated on <strong>28 January 1950</strong>).
+            <ul>
+                <li><strong>124(3) Qualifications:</strong> Citizen of India; Judge of High Court for at least 5 years, OR Advocate of High Court for at least 10 years, OR distinguished jurist in President's opinion.</li>
+                <li><strong>124(4) Removal/Impeachment:</strong> By order of President after address supported by special majority of each House on grounds of <em>proved misbehaviour or incapacity</em>.</li>
+                <li>Retirement age: <strong>65 years</strong>.</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 125:</span> Salaries and allowances of judges (Charged upon the Consolidated Fund of India).</div>
+        <div class="article-block"><span class="art-num">Article 126 & 127:</span> 126: Appointment of Acting Chief Justice. 127: Ad-hoc Judges (appointed by CJI with previous consent of President).</div>
+        <div class="article-block"><span class="art-num">Article 128:</span> Attendance of retired judges at Supreme Court sittings.</div>
+        <div class="article-block"><span class="art-num">Article 129:</span> <strong>Court of Record:</strong> Supreme Court is a court of record and possesses power to punish for its contempt.</div>
+        <div class="article-block"><span class="art-num">Article 130:</span> Seat of Supreme Court: Delhi (CJI has power to sit elsewhere with President's approval).</div>
+        <div class="article-block"><span class="art-num">Article 131:</span> <strong>Original Jurisdiction:</strong> Exclusive jurisdiction to decide federal disputes (Centre vs State, Centre + States vs States, State vs State).</div>
+        <div class="article-block"><span class="art-num">Article 132–134:</span> Appellate jurisdiction (Constitutional, Civil, Criminal matters).</div>
+        <div class="article-block"><span class="art-num">Article 136:</span> <strong>Special Leave Petition (SLP):</strong> Discretionary power of SC to grant leave to appeal against any judgment/order from any court or tribunal in India (except military tribunals).</div>
+        <div class="article-block"><span class="art-num">Article 137:</span> <strong>Review Jurisdiction:</strong> SC has power to review any judgment pronounced or order made by it.</div>
+        <div class="article-block"><span class="art-num">Article 141:</span> <strong>Law declared by Supreme Court to be binding on all courts within India.</strong></div>
+        <div class="article-block"><span class="art-num">Article 142:</span> <strong>Enforcement of decrees and orders for "Complete Justice":</strong> SC can pass any order necessary for doing complete justice in any cause or matter. <span class="badge badge-news">📰 Prominently invoked in Chandigarh Mayor Election Verdict 2024</span></div>
+        <div class="article-block"><span class="art-num">Article 143:</span> <strong>Advisory Jurisdiction:</strong> President can refer any question of law or fact of public importance to SC for advisory opinion. (SC not bound to give opinion on pre-constitutional treaties; opinion is not binding on President).</div>
+        <div class="article-block"><span class="art-num">Article 148–151:</span> <strong>Comptroller and Auditor-General of India (CAG):</strong>
+            <ul>
+                <li><strong>Art 148:</strong> CAG appointed by President. Tenure: <strong>6 years or 65 years of age</strong>. Removal procedure identical to SC Judge. Guardian of public purse.</li>
+                <li><strong>Art 149:</strong> Duties and powers of CAG.</li>
+                <li><strong>Art 150:</strong> Prescribes form of accounts of Union and States.</li>
+                <li><strong>Art 151:</strong> CAG submits audit reports to President/Governor, who causes them to be laid before Parliament/State Legislature (Examined by Public Accounts Committee - PAC).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- PART VI: THE STATES -->
+    <section class="section-card" id="part6">
+        <div class="section-title">
+            <span>Part VI: The States (Articles 152–237)</span>
+            <div>
+                <span class="badge badge-punjab">State Govt Focus</span>
+                <span class="badge badge-news">📰 Art 200 Governor Assent Rulings</span>
+            </div>
+        </div>
+
+        <div class="sub-heading">State Executive (Governor, CM, Advocate General)</div>
+        <div class="article-block"><span class="art-num">Article 153:</span> Governor for each State (7th Amdt 1956 permitted same person as Governor for two or more states).</div>
+        <div class="article-block"><span class="art-num">Article 154:</span> Executive power of State vested in Governor.</div>
+        <div class="article-block"><span class="art-num">Article 155:</span> Governor appointed by <strong>warrant under hand and seal of the President</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 156:</span> Term of office: Holds office during the <strong>pleasure of the President</strong> (Normal tenure: 5 years).</div>
+        <div class="article-block"><span class="art-num">Article 157 & 158:</span> Qualifications: Citizen of India, minimum <strong>35 years</strong> of age.</div>
+        <div class="article-block"><span class="art-num">Article 159:</span> Oath of Governor (Administered by Chief Justice of the respective High Court).</div>
+        <div class="article-block"><span class="art-num">Article 161:</span> <strong>Pardoning power of Governor:</strong> Can pardon, reprieve, respite, or remit punishments under State laws. <em>(Governor cannot pardon a death sentence — only President under Art 72; Governor cannot pardon court-martial sentences)</em>.</div>
+        <div class="article-block"><span class="art-num">Article 163:</span> Council of Ministers to aid and advise Governor. (Governor possesses wider constitutional discretion than President; validity of discretionary acts cannot be questioned).</div>
+        <div class="article-block"><span class="art-num">Article 164:</span> CM appointed by Governor; other ministers on CM's advice. Total ministers cannot exceed 15% of Assembly strength (Min: 12 ministers). Ministers hold office during Governor's pleasure. Assembly responsibility is collective.</div>
+        <div class="article-block"><span class="art-num">Article 165:</span> <strong>Advocate-General for the State:</strong> Highest law officer of the State. Appointed by Governor; qualified to be High Court Judge. Pleasure of Governor.</div>
+        <div class="article-block"><span class="art-num">Article 167:</span> Duties of Chief Minister in furnishing information to Governor.</div>
+
+        <div class="sub-heading">State Legislature</div>
+        <div class="article-block"><span class="art-num">Article 168:</span> Constitution of Legislatures in States (Unicameral or Bicameral).</div>
+        <div class="article-block"><span class="art-num">Article 169:</span> <strong>Abolition or Creation of Legislative Councils (Vidhan Parishad):</strong> Parliament can abolish or create by simple law IF State Legislative Assembly passes a resolution by <strong>special majority</strong> (2/3rd present & voting + absolute majority).</div>
+        <div class="article-block"><span class="art-num">Article 170:</span> Legislative Assembly (Vidhan Sabha): Strength 60 to 500.</div>
+        <div class="article-block"><span class="art-num">Article 171:</span> <strong>Composition of Legislative Council (Vidhan Parishad):</strong>
+            <ul>
+                <li>Total strength cannot exceed 1/3rd of Assembly, and not less than 40.</li>
+                <li><strong>1/3rd</strong> elected by local bodies (Panchayats, Municipalities).</li>
+                <li><strong>1/3rd</strong> elected by MLAs.</li>
+                <li><strong>1/12th</strong> elected by graduates of 3 years' standing.</li>
+                <li><strong>1/12th</strong> elected by teachers of 3 years' standing (secondary or above).</li>
+                <li><strong>1/6th</strong> nominated by Governor from: <strong>Literature, Science, Art, Co-operative Movement, and Social Service</strong>.</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 174:</span> Sessions, prorogation, and dissolution of State Legislature by Governor.</div>
+        <div class="article-block"><span class="art-num">Article 178:</span> Speaker and Deputy Speaker of Legislative Assembly.</div>
+        <div class="article-block"><span class="art-num">Article 191 & 192:</span> Disqualifications of MLAs/MLCs. Disqualification under 10th Schedule decided by Speaker/Chairman.</div>
+        <div class="article-block"><span class="art-num">Article 200:</span> <strong>Assent to Bills by Governor:</strong>
+            <div class="news-context-box">
+                <strong>📰 Landmark SC Ruling (State of Punjab v. Governor, 2023-2024):</strong>
+                The Supreme Court settled that the Governor cannot sit indefinitely on bills passed by the legislature. If a Governor withholds assent, he <em>must return the bill to the Assembly as soon as possible</em> with a message. If the House passes it again, the Governor has no option but to grant assent. Governor cannot declare a validly summoned legislative session illegal.
+            </div>
+            Options for Governor: (1) Assent, (2) Withhold assent, (3) Return for reconsideration (if not Money Bill), (4) Reserve bill for President's consideration.
+        </div>
+        <div class="article-block"><span class="art-num">Article 201:</span> Bills reserved for consideration of the President.</div>
+        <div class="article-block"><span class="art-num">Article 202:</span> State Annual Financial Statement (State Budget).</div>
+        <div class="article-block"><span class="art-num">Article 213:</span> <strong>Power of Governor to promulgate Ordinances:</strong> During recess of State Legislature. Must be approved within 6 weeks of reassembly.</div>
+
+        <div class="sub-heading">State Judiciary: High Courts & Subordinate Courts (Articles 214–237)</div>
+        <div class="article-block"><span class="art-num">Article 214:</span> High Court for each State.</div>
+        <div class="article-block"><span class="art-num">Article 215:</span> High Courts to be <strong>Courts of Record</strong> with contempt powers.</div>
+        <div class="article-block"><span class="art-num">Article 217:</span> Appointment and conditions of office of High Court Judge: Appointed by President (after consultation with CJI, Governor, and HC CJ). Retirement age: <strong>62 years</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 222:</span> Transfer of a Judge from one High Court to another by President.</div>
+        <div class="article-block"><span class="art-num">Article 226:</span> <strong>Writ jurisdiction of High Courts:</strong> Wider than Article 32 because HCs can issue writs for Fundamental Rights and ordinary legal rights.</div>
+        <div class="article-block"><span class="art-num">Article 227:</span> Power of superintendence over all subordinate courts and tribunals throughout its territory.</div>
+        <div class="article-block"><span class="art-num">Article 231:</span> <strong>Common High Court for two or more States:</strong> (e.g., Punjab and Haryana High Court at Chandigarh).</div>
+        <div class="article-block"><span class="art-num">Article 233:</span> <strong>Appointment of District Judges:</strong> Appointed by the Governor of the State in consultation with the High Court.</div>
+        <div class="article-block"><span class="art-num">Article 235:</span> Control over subordinate courts vested in the High Court.</div>
+    </section>
+
+    <!-- PARTS VIII, IX, IX-A, IX-B: LOCAL GOVERNANCE -->
+    <section class="section-card" id="part8-9">
+        <div class="section-title">
+            <span>Parts VIII, IX, IX-A, IX-B: Local Self-Government</span>
+            <div>
+                <span class="badge badge-hot">🔥 100% PSSSB Exam Target</span>
+                <span class="badge badge-punjab">Panchayat Focus</span>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <strong>Historical Milestones in Local Self-Government:</strong>
+            <ul>
+                <li>Ancient roots: <strong>Chola dynasty</strong> (Uttaramerur inscriptions on village administration).</li>
+                <li><strong>Lord Ripon's Resolution (1882):</strong> Known as the <em>"Father of Local Self-Government in India"</em>.</li>
+                <li><strong>Balwant Rai Mehta:</strong> Regarded as the <em>"Father of Panchayati Raj System in India"</em>.</li>
+                <li><strong>First Implementation:</strong> Inaugurated at <strong>Nagaur, Rajasthan on 2 October 1959</strong> by Jawaharlal Nehru. Second state: Andhra Pradesh.</li>
+                <li><strong>First State after 73rd Amendment:</strong> <strong>Karnataka</strong> was the first to adopt Panchayati Raj under constitutional status.</li>
+                <li><strong>National Panchayati Raj Day:</strong> Celebrated on <strong>24th April</strong> (73rd Amendment Act 1992 came into effect on 24 April 1993).</li>
+                <li><strong>Structural facts:</strong> Standard 3-tier system. West Bengal has 4 tiers. Goa has 2 tiers. States having population below 20 lakhs need not constitute intermediate level (Panchayat Samiti).</li>
+                <li><strong>PESA Act 1996:</strong> Provisions of Panchayats (Extension to Scheduled Areas) Act for tribal areas.</li>
+                <li>Meetings: Panchayat meetings must be held at least once in 2 months. Sarpanch submits resignation to District Panchayat Officer (DPO).</li>
+            </ul>
+        </div>
+
+        <div class="sub-heading">Part IX: Panchayats (Articles 243 to 243O) – 73rd Amendment 1992</div>
+        <div class="article-block"><span class="art-num">Article 243:</span> Definitions: (a) District, (b) Gram Sabha, (c) Intermediate level, (d) Panchayat, (e) Panchayat area, (f) Population, (g) Village.</div>
+        <div class="article-block"><span class="art-num">Article 243A:</span> <strong>Gram Sabha:</strong> Body consisting of persons registered in electoral rolls of a village within the Panchayat area.</div>
+        <div class="article-block"><span class="art-num">Article 243B:</span> Constitution of Panchayats (3-tier: Village, Intermediate/Block, District). If population &lt; 20 Lakhs, no intermediate level required.</div>
+        <div class="article-block"><span class="art-num">Article 243C:</span> Composition of Panchayats.</div>
+        <div class="article-block"><span class="art-num">Article 243D:</span> <strong>Reservation of Seats:</strong>
+            <ul>
+                <li>SC and ST reservations in proportion to population.</li>
+                <li><strong>Not less than 1/3rd (33%)</strong> of total seats and offices of Chairpersons reserved for <strong>women</strong>. (Many states including Punjab have raised this to 50%).</li>
+                <li><strong>Article 243M(3A):</strong> No reservation for Scheduled Castes in Arunachal Pradesh (83rd Amdt 2000).</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 243E:</span> <strong>Duration of Panchayats:</strong> 5 years. Fresh election must be completed before expiry, or within <strong>6 months</strong> of dissolution.</div>
+        <div class="article-block"><span class="art-num">Article 243F:</span> Disqualifications for membership (Minimum age to contest is <strong>21 years</strong>).</div>
+        <div class="article-block"><span class="art-num">Article 243G:</span> Powers, authority, and responsibilities: <strong>Eleventh Schedule contains 29 Functional Subjects</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 243H:</span> Powers to impose taxes and funds of Panchayats.</div>
+        <div class="article-block"><span class="art-num">Article 243-I:</span> <strong>State Finance Commission:</strong> Constituted by Governor every <strong>5 years</strong> to review financial position.</div>
+        <div class="article-block"><span class="art-num">Article 243J:</span> Audit of accounts.</div>
+        <div class="article-block"><span class="art-num">Article 243K:</span> <strong>State Election Commission:</strong> Superintendence, direction, and control of electoral rolls & conduct of elections. State Election Commissioner appointed by Governor (removed like HC Judge).</div>
+        <div class="article-block"><span class="art-num">Article 243M:</span> Non-applicability: Does not apply to Nagaland, Meghalaya, Mizoram, tribal areas of Assam, Meghalaya, Tripura, Mizoram, hill areas of Manipur, and UT of Delhi.</div>
+        <div class="article-block"><span class="art-num">Article 243O:</span> Bar to interference by courts in electoral matters.</div>
+
+        <div class="sub-heading">Eleventh Schedule: The 29 Subjects of Panchayats</div>
+        <div class="mini-card" style="font-size: 0.88rem; line-height: 1.5;">
+            1. Agriculture & extension | 2. Land improvement & soil conservation | 3. Minor irrigation & watershed development | 4. Animal husbandry, dairying, poultry | 5. Fisheries | 6. Social & farm forestry | 7. Minor forest produce | 8. Small scale industries (including food processing) | 9. Khadi, village & cottage industries | 10. Rural housing | 11. Drinking water | 12. Fuel & fodder | 13. Roads, culverts, bridges, waterways | 14. Rural electrification & distribution | 15. Non-conventional energy | 16. Poverty alleviation | 17. Education (primary & secondary) | 18. Technical training & vocational education | 19. Adult & non-formal education | 20. Libraries | 21. Cultural activities | 22. Markets & fairs | 23. Health & sanitation (hospitals, PHCs) | 24. Family welfare | 25. Women & child development | 26. Social welfare (differently abled) | 27. Welfare of weaker sections (SC/ST) | 28. Public Distribution System (PDS) | 29. Maintenance of community assets.
+        </div>
+
+        <div class="sub-heading">Committees on Panchayati Raj (Chronology & Key Recommendations)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Committee & Year</th>
+                    <th>Key Chairman / Context</th>
+                    <th>Crucial Recommendation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Balwant Rai Mehta (1957)</strong></td><td>Former Gujarat CM</td><td>Recommended 3-tier model (Gram Panchayat, Panchayat Samiti, Zila Parishad). Approved by NDC in 1958.</td></tr>
+                <tr><td><strong>K. Santhanam Committee (1963, 1965)</strong></td><td>Study team</td><td>Studied Panchayati Raj finances (1963) and Panchayat elections (1965).</td></tr>
+                <tr><td><strong>Ashok Mehta Committee (1977)</strong></td><td>Appointed by Janata Govt</td><td>Recommended <strong>2-tier system</strong> (Mandal Panchayat [15k-20k pop] & Zila Parishad). 132 recommendations; recommended political party participation and Nyaya Panchayats.</td></tr>
+                <tr><td><strong>G.V.K. Rao Committee (1985)</strong></td><td>Appointed by Planning Commission</td><td>Observed PRIs were becoming <em>"grass without roots"</em>. Recommended making Zila Parishad the principal planning body.</td></tr>
+                <tr><td><strong>L.M. Singhvi Committee (1986)</strong></td><td>Rajiv Gandhi Govt</td><td><strong>Emphasized giving constitutional recognition to Panchayati Raj institutions</strong> and providing them more financial resources.</td></tr>
+                <tr><td><strong>Gadgil Committee (1988)</strong></td><td>V.N. Gadgil</td><td>Recommended 3-tier system, direct elections, reservation for SC/ST/women, State Finance & Election Commissions.</td></tr>
+                <tr><td><strong>P.K. Thungon Committee (1988)</strong></td><td>Parliamentary Committee</td><td>Recommended 3-tier system, fixed 5-year tenure, constitutional status, Collector as CEO of Zila Parishad.</td></tr>
+            </tbody>
+        </table>
+
+        <div class="sub-heading">Part IX-A: Municipalities (Articles 243P to 243ZG) – 74th Amendment 1992</div>
+        <ul>
+            <li>Enacted in 1992, enforced on <strong>1 June 1993</strong>. First Municipal Corporation in India was set up at <strong>Madras in 1687-88</strong>.</li>
+            <li><strong>8 Types of Urban Local Bodies:</strong> Municipal Corporation, Municipality, Notified Area Committee, Town Area Committee, Cantonment Board (central control), Township, Port Trust, Special Purpose Agency.</li>
+            <li><strong>Article 243Q - Three Tiers of Municipalities:</strong>
+                <ul>
+                    <li><strong>Nagar Panchayat:</strong> For transitional areas (rural to urban, population &lt; 1 Lakh).</li>
+                    <li><strong>Municipal Council:</strong> For smaller urban areas.</li>
+                    <li><strong>Municipal Corporation:</strong> For larger urban areas (Headed by Mayor).</li>
+                </ul>
+            </li>
+            <li><strong>Article 243S:</strong> Wards Committees (population &gt; 3 Lakhs).</li>
+            <li><strong>Article 243W:</strong> <strong>Twelfth Schedule containing 18 Functional Subjects</strong>.</li>
+            <li><strong>Article 243ZD:</strong> <strong>District Planning Committee (DPC):</strong> 4/5th (80%) members elected by elected members of District Panchayat & Municipalities.</li>
+            <li><strong>Article 243ZE:</strong> Metropolitan Planning Committee (MPC) for areas with 10 Lakhs+ population.</li>
+        </ul>
+
+        <div class="sub-heading">Part IX-B: Co-operative Societies (Articles 243ZH to 243ZT)</div>
+        <ul>
+            <li>Added by <strong>97th Constitutional Amendment Act, 2011</strong>.</li>
+            <li><strong>Article 243ZJ:</strong> Maximum number of directors in a cooperative society cannot exceed <strong>21</strong>. Requires reservation of 1 seat for SC/ST and 2 seats for women on the board.</li>
+        </ul>
+    </section>
+
+    <!-- PART X & XI: TRIBAL & CENTRE-STATE RELATIONS -->
+    <section class="section-card" id="part11">
+        <div class="section-title">
+            <span>Parts X & XI: Scheduled Areas & Centre-State Relations</span>
+            <span class="badge badge-punjab">🦁 Federalism & SYL Focus</span>
+        </div>
+
+        <div class="sub-heading">Part X: Scheduled and Tribal Areas (Articles 244 & 244A)</div>
+        <div class="article-block"><span class="art-num">Article 244:</span> Administration of Scheduled Areas and Tribal Areas. Provisions of 5th Schedule apply to scheduled areas in states other than Assam, Meghalaya, Tripura, Mizoram; 6th Schedule applies exclusively to AMTM states.</div>
+        <div class="article-block"><span class="art-num">Article 244A:</span> Formation of an autonomous State comprising certain tribal areas in Assam (Added by 22nd Amendment 1969). Scheduled Areas are declared by the <strong>President</strong>; Tribal Areas/Councils altered by <strong>Governor</strong>.</div>
+
+        <div class="sub-heading">Part XI: Legislative & Administrative Relations (Articles 245–263)</div>
+        <div class="article-block"><span class="art-num">Article 245:</span> Extent of laws made by Parliament and State Legislatures.</div>
+        <div class="article-block"><span class="art-num">Article 246:</span> Subject-matter of laws (Union, State, Concurrent lists in Seventh Schedule).
+            <div class="highlight-box">
+                <strong>Five Subjects shifted from State List to Concurrent List by 42nd Amendment 1976:</strong><br>
+                1. Education | 2. Forests | 3. Protection of Wild Animals and Birds | 4. Administration of Justice (constitution/organization of all courts except SC & HC) | 5. Weights and Measures.
+            </div>
+        </div>
+        <div class="article-block"><span class="art-num">Article 246A:</span> Special provision with respect to <strong>Goods and Services Tax (GST)</strong> (Added by 101st Amendment 2016). Grants simultaneous power to Parliament and State Legislatures to make GST laws.</div>
+        <div class="article-block"><span class="art-num">Article 248:</span> <strong>Residuary Powers of Legislation:</strong> Vested exclusively in <strong>Parliament</strong> (unlike USA where residuary powers belong to States).</div>
+        <div class="article-block"><span class="art-num">Article 249:</span> Power of Parliament to legislate on a State subject in the <strong>national interest</strong> if Rajya Sabha passes a resolution supported by <strong>2/3rd majority</strong> of members present and voting.</div>
+        <div class="article-block"><span class="art-num">Article 250:</span> Power of Parliament to legislate on State subjects during a Proclamation of Emergency.</div>
+        <div class="article-block"><span class="art-num">Article 252:</span> Power of Parliament to legislate for two or more States by consent (States must pass resolutions; other states can adopt).</div>
+        <div class="article-block"><span class="art-num">Article 253:</span> Power of Parliament to enact legislation for giving effect to <strong>international treaties and agreements</strong> on any subject (even State List).</div>
+        <div class="article-block"><span class="art-num">Article 254:</span> Inconsistency between Central laws and State laws on Concurrent List (Central law prevails; State law prevails only if reserved for and assented by President).</div>
+        <div class="article-block"><span class="art-num">Article 262:</span> <strong>Adjudication of disputes relating to waters of inter-State rivers or river valleys:</strong> Parliament may by law exclude jurisdiction of Supreme Court or any court. (Crucial for <strong>SYL – Sutlej-Yamuna Link Canal dispute</strong>).</div>
+        <div class="article-block"><span class="art-num">Article 263:</span> <strong>Inter-State Council:</strong> Constitutional non-permanent body established by Presidential Order in <strong>1990</strong> on recommendation of Sarkaria Commission. Chairman: <strong>Prime Minister</strong>; Members: CMs of all states, UT administrators, and 6 Union Cabinet ministers.</div>
+
+        <div class="sub-heading">Committees on Centre-State Relations</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Commission / Committee</th>
+                    <th>Year & Chairman</th>
+                    <th>Key Highlights & Recommendations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Rajamannar Committee</strong></td><td>1969 (Report 1971) - Dr. P.V. Rajamannar (Tamil Nadu Govt)</td><td>Advocated maximum state autonomy. Recommended immediate abolition of Article 356 & 365, deletion of Governor's office, and transfer of residuary powers to States.</td></tr>
+                <tr><td><strong>Anandpur Sahib Resolution</strong></td><td>1973 (Shiromani Akali Dal, Punjab)</td><td>Demanded real federal setup, Centre's jurisdiction restricted to Defence, Foreign Affairs, Currency, and Communications; all other powers to States.</td></tr>
+                <tr><td><strong>West Bengal Memorandum</strong></td><td>1977 (Left Front Govt)</td><td>Demanded replacement of the word 'Union' with 'Federation', 75% central tax revenue to States, abolition of Art 356/357.</td></tr>
+                <tr><td><strong>Sarkaria Commission</strong></td><td>1983 (Report 1988) - Justice R.S. Sarkaria</td><td>247 recommendations (180 implemented). Recommended strict restraint on Art 356, activation of Inter-State Council under Art 263, consultation with states before legislating on Concurrent subjects, non-political Governors.</td></tr>
+                <tr><td><strong>Punchhi Commission</strong></td><td>2007 (Report 2010) - Justice M.M. Punchhi</td><td>312 recommendations. Recommended constitutional amendment to Art 355/356, localized emergency mechanism, fixed 5-year tenure for Governors and formal impeachment by State Assembly.</td></tr>
+                <tr><td><strong>TN State Committee</strong></td><td>April 2025 setup</td><td>Formed to examine re-balancing of legislative and financial powers between Union and States.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- PART XII, XIII, XIV, XIV-A: FINANCE, TRADE, SERVICES & TRIBUNALS -->
+    <section class="section-card" id="part12-14">
+        <div class="section-title">
+            <span>Parts XII, XIII, XIV & XIV-A: Finance, Services & Tribunals</span>
+            <span class="badge badge-hot">High Scoring Facts</span>
+        </div>
+
+        <div class="sub-heading">Part XII: Finance, Property, Contracts and Suits (Articles 264–300A)</div>
+        <div class="article-block"><span class="art-num">Article 265:</span> No tax shall be levied or collected except by <strong>authority of law</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 266:</span> <strong>Consolidated Fund of India & States</strong> (all revenues, loans, recoveries; withdrawals require Appropriation Act). Also covers <strong>Public Account</strong> (PF, judicial deposits, savings).</div>
+        <div class="article-block"><span class="art-num">Article 267:</span> <strong>Contingency Fund of India:</strong> Imprest amount placed at disposal of President/Governor to meet unforeseen expenditures pending parliamentary authorization.</div>
+        <div class="article-block"><span class="art-num">Article 275:</span> Statutory grants-in-aid to states from Union revenues.</div>
+        <div class="article-block"><span class="art-num">Article 279A:</span> <strong>GST Council:</strong> Constitutional body headed by Union Finance Minister. Decisions taken by 3/4th weighted majority (Centre has 1/3rd voting weight; States have 2/3rd).</div>
+        <div class="article-block"><span class="art-num">Article 280:</span> <strong>Finance Commission:</strong> Constituted by the President every 5th year or earlier. Consists of a Chairman and 4 other members. Recommends distribution of net tax proceeds between Centre and States.</div>
+        <div class="article-block"><span class="art-num">Article 300A:</span> <strong>Right to Property:</strong> <em>"No person shall be deprived of his property save by authority of law."</em> Shifted from Part III to Part XII by <strong>44th Amendment Act 1978</strong>. It is now a <strong>Legal/Constitutional Right</strong>, not a Fundamental Right.</div>
+
+        <div class="sub-heading">Part XIV: Services Under the Union & States (Articles 308–323)</div>
+        <div class="article-block"><span class="art-num">Article 310:</span> <strong>Doctrine of Pleasure:</strong> Civil servants hold office during the pleasure of the President or Governor.</div>
+        <div class="article-block"><span class="art-num">Article 311:</span> Constitutional protection to civil servants: No dismissal or reduction in rank by an authority subordinate to that by which appointed; reasonable opportunity of being heard.</div>
+        <div class="article-block"><span class="art-num">Article 312:</span> <strong>All-India Services (AIS):</strong> Parliament can create a new All-India Service (like IAS, IPS, IFoS) ONLY if <strong>Rajya Sabha passes a resolution supported by 2/3rd members present and voting</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 315:</span> <strong>Public Service Commissions (UPSC & SPSC):</strong>
+            <ul>
+                <li>UPSC originally established on <strong>1 October 1926</strong> (Lee Commission recommendations).</li>
+                <li><strong>Appointment:</strong> UPSC Chairman/Members appointed by <strong>President</strong>. SPSC Chairman/Members appointed by <strong>Governor</strong>.</li>
+                <li><strong>Tenure:</strong> UPSC: <strong>6 years or 65 years</strong> of age. SPSC: <strong>6 years or 62 years</strong> of age (age raised from 60 to 62 by <strong>41st Amendment 1976</strong>).</li>
+                <li><strong>Removal:</strong> SPSC members are appointed by Governor, but <strong>can be removed ONLY by the President</strong> (on grounds of misbehaviour after SC inquiry under Art 317).</li>
+                <li><strong>Resignation:</strong> UPSC submits to President; SPSC submits to Governor.</li>
+                <li><strong>Joint State Public Service Commission (JSPSC):</strong> Created by an Act of Parliament on request of concerned State legislatures (Statutory body, not constitutional). Chairman/members appointed and removed by <strong>President</strong>; tenure 6 years or 62 years.</li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 323:</span> Reports of Public Service Commissions.</div>
+
+        <div class="sub-heading">Part XIV-A: Tribunals (Articles 323A and 323B) – Added by 42nd Amendment 1976</div>
+        <ul>
+            <li><strong>Article 323A:</strong> Administrative Tribunals (Central Administrative Tribunal - CAT, and SAT for public service recruitment/disputes). Can be established only by Parliament.</li>
+            <li><strong>Article 323B:</strong> Tribunals for other matters (Taxation, foreign exchange, industrial disputes, land reforms, foodstuffs). Can be established by both Parliament and State legislatures.</li>
+        </ul>
+    </section>
+
+    <!-- PARTS XV, XVI, XVII: ELECTIONS, SPECIAL PROVISIONS & LANGUAGES -->
+    <section class="section-card" id="part15-17">
+        <div class="section-title">
+            <span>Parts XV, XVI & XVII: Elections, Special Classes & Languages</span>
+            <div>
+                <span class="badge badge-hot">High Yield</span>
+                <span class="badge badge-news">📰 Oct 2024 Classical Languages Update</span>
+            </div>
+        </div>
+
+        <div class="sub-heading">Part XV: Elections (Articles 324–329)</div>
+        <div class="article-block"><span class="art-num">Article 324:</span> Superintendence, direction, and control of elections vested in the <strong>Election Commission of India (ECI)</strong>. (Responsible for elections to Parliament, State Legislatures, President, and VP. Local body elections are handled by State Election Commissions).</div>
+        <div class="article-block"><span class="art-num">Article 325:</span> No person to be ineligible for inclusion in, or claim to be included in a special electoral roll on grounds only of religion, race, caste, or sex. Single electoral roll for every territorial constituency.</div>
+        <div class="article-block"><span class="art-num">Article 326:</span> <strong>Universal Adult Suffrage:</strong> Elections to Lok Sabha and State Legislative Assemblies on the basis of adult suffrage. Voting age reduced from <strong>21 to 18 years</strong> by <strong>61st Constitutional Amendment Act, 1989</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 329:</span> Bar to interference by courts in electoral matters (delimitation, allotment of seats).</div>
+
+        <div class="sub-heading">Part XVI: Special Provisions for Certain Classes (Articles 330–342A)</div>
+        <div class="article-block"><span class="art-num">Article 330:</span> Reservation of seats for SCs and STs in Lok Sabha.</div>
+        <div class="article-block"><span class="art-num">Article 331:</span> <em>Nomination of Anglo-Indians to Lok Sabha (Abrogated by 104th Amendment Act 2019)</em>.</div>
+        <div class="article-block"><span class="art-num">Article 332:</span> Reservation of seats for SCs and STs in State Legislative Assemblies.</div>
+        <div class="article-block"><span class="art-num">Article 333:</span> <em>Nomination of 1 Anglo-Indian to State Assemblies (Abrogated by 104th Amendment Act 2019)</em>.</div>
+        <div class="article-block"><span class="art-num">Article 334:</span> Reservation of SC/ST seats extended till <strong>25 January 2030</strong> by the 104th Amendment Act 2019.</div>
+        <div class="article-block"><span class="art-num">Article 335:</span> Claims of SCs and STs to services and posts consistent with the maintenance of efficiency of administration.</div>
+        <div class="article-block"><span class="art-num">Article 338:</span> <strong>National Commission for Scheduled Castes (NCSC)</strong>.</div>
+        <div class="article-block"><span class="art-num">Article 338A:</span> <strong>National Commission for Scheduled Tribes (NCST)</strong> (Bifurcated by <strong>89th Amendment Act 2003</strong>).</div>
+        <div class="article-block"><span class="art-num">Article 338B:</span> <strong>National Commission for Backward Classes (NCBC)</strong> (Given constitutional status by <strong>102nd Amendment Act 2018</strong>).</div>
+        <div class="article-block"><span class="art-num">Article 340:</span> Power of President to appoint a Commission to investigate the conditions of backward classes (Kaka Kalelkar 1953, Mandal Commission 1979).</div>
+        <div class="article-block"><span class="art-num">Article 341 & 342:</span> President notifies list of Scheduled Castes and Scheduled Tribes.
+            <div class="news-context-box">
+                <strong>📰 Landmark SC 7-Judge Bench Ruling (State of Punjab v. Davinder Singh, August 2024):</strong>
+                The Supreme Court upheld the power of State governments to create <strong>sub-classifications within SCs and STs</strong> for allocating reserved seats to more backward/deprived groups (such as Valmikis and Mazhabi Sikhs in Punjab), provided there is empirical data and creamy layer principles are observed.
+            </div>
+        </div>
+        <div class="article-block"><span class="art-num">Article 342A:</span> Socially and Educationally Backward Classes (SEBC) list (Amended by 105th Amendment 2021 restoring States' rights to maintain state OBC lists).</div>
+
+        <div class="sub-heading">Part XVII: Official Language (Articles 343–351)</div>
+        <div class="article-block"><span class="art-num">Article 343:</span> Official language of the Union shall be <strong>Hindi in Devanagari script</strong>. Numerals: International form of Indian numerals.</div>
+        <div class="article-block"><span class="art-num">Article 344:</span> Commission and Committee of Parliament on Official Language (Appointed by President; 30 members: 20 Lok Sabha, 10 Rajya Sabha).</div>
+        <div class="article-block"><span class="art-num">Article 348:</span> Language to be used in the Supreme Court and High Courts is <strong>English</strong> until Parliament by law otherwise provides.</div>
+        <div class="article-block"><span class="art-num">Article 350A:</span> Facilities for instruction in mother-tongue at the primary stage of education.</div>
+        <div class="article-block"><span class="art-num">Article 350B:</span> Special Officer for Linguistic Minorities (appointed by President).</div>
+        <div class="article-block"><span class="art-num">Article 351:</span> Directive for development and spread of the Hindi language.</div>
+
+        <div class="highlight-box">
+            <strong>Classical Languages of India (Updated to 11 Languages):</strong>
+            <p>Mnemonic anchor: <strong>T-S-T-K-M-O-M-B-A-P-P</strong></p>
+            <ol>
+                <li><strong>Tamil</strong> (declared in 2004 - 1st to receive status)</li>
+                <li><strong>Sanskrit</strong> (declared in 2005)</li>
+                <li><strong>Telugu</strong> (declared in 2008)</li>
+                <li><strong>Kannada</strong> (declared in 2008)</li>
+                <li><strong>Malayalam</strong> (declared in 2013)</li>
+                <li><strong>Odia</strong> (declared in 2014)</li>
+                <li><strong>Marathi</strong> (declared in <strong>October 2024</strong>) <span class="badge badge-news">New</span></li>
+                <li><strong>Bengali</strong> (declared in <strong>October 2024</strong>) <span class="badge badge-news">New</span></li>
+                <li><strong>Assamese</strong> (declared in <strong>October 2024</strong>) <span class="badge badge-news">New</span></li>
+                <li><strong>Pali</strong> (declared in <strong>October 2024</strong>) <span class="badge badge-news">New</span></li>
+                <li><strong>Prakrit</strong> (declared in <strong>October 2024</strong>) <span class="badge badge-news">New</span></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- PARTS XVIII, XIX, XX, XXI: EMERGENCY, AMENDMENT & SPECIAL PROVISIONS -->
+    <section class="section-card" id="part18-22">
+        <div class="section-title">
+            <span>Parts XVIII, XIX, XX, XXI: Emergency, Amendments & Special States</span>
+            <span class="badge badge-hot">Critical Exam Rules</span>
+        </div>
+
+        <div class="sub-heading">Part XVIII: Emergency Provisions (Articles 352–360)</div>
+        <p>Provisions borrowed from <strong>Government of India Act 1935</strong>; suspension of Fundamental Rights borrowed from <strong>Weimar Constitution of Germany</strong>.</p>
+        <div class="article-block"><span class="art-num">Article 352:</span> <strong>National Emergency:</strong>
+            <ul>
+                <li>Grounds: <strong>War, External Aggression, or Armed Rebellion</strong>. (The phrase <em>"Armed Rebellion"</em> replaced <em>"Internal Disturbance"</em> via 44th Amdt 1978).</li>
+                <li>Can be proclaimed only on the <strong>written recommendation of the Union Cabinet</strong> (PM + Cabinet ministers).</li>
+                <li>Must be approved by Parliament within <strong>1 month</strong> by a <strong>special majority</strong> (reduced from 2 months by 44th Amdt). Once approved, operates for 6 months (extended indefinitely in 6-month blocks).</li>
+                <li><strong>Imposed 3 times in India:</strong>
+                    <ol>
+                        <li><strong>October 1962:</strong> Indo-China War (revoked Jan 1968).</li>
+                        <li><strong>December 1971:</strong> Indo-Pakistan War (Bangladesh Liberation).</li>
+                        <li><strong>June 1975:</strong> Declared on grounds of "Internal Disturbance" by Indira Gandhi Govt (revoked March 1977).</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 353 & 354:</span> Effects of Emergency: Centre acquires power to give executive directions to states; Parliament can legislate on State List.</div>
+        <div class="article-block"><span class="art-num">Article 355:</span> Duty of Union to protect every State against external aggression and internal disturbance, and ensure governance is carried on in accordance with Constitution.</div>
+        <div class="article-block"><span class="art-num">Article 356:</span> <strong>President's Rule (State Emergency / Constitutional Machinery Failure):</strong>
+            <ul>
+                <li>Imposed by President on receipt of report from Governor or otherwise, if State governance cannot run according to Constitution.</li>
+                <li>Must be approved by Parliament within <strong>2 months</strong> by simple majority. Valid for 6 months; max limit is <strong>3 years</strong> (subject to EC certification post 1 year).</li>
+                <li><em>First imposed in Punjab in 1951.</em></li>
+            </ul>
+        </div>
+        <div class="article-block"><span class="art-num">Article 358:</span> Automatic suspension of freedoms guaranteed under <strong>Article 19</strong> during National Emergency (Only when proclaimed on grounds of War or External Aggression, NOT Armed Rebellion).</div>
+        <div class="article-block"><span class="art-num">Article 359:</span> Suspension of the right to move courts for enforcement of FRs during emergency by Presidential order. <strong>Articles 20 and 21 can NEVER be suspended under any circumstance</strong> (44th Amendment 1978).</div>
+        <div class="article-block"><span class="art-num">Article 360:</span> <strong>Financial Emergency:</strong> Proclaimed if financial stability or credit of India is threatened. Approved within 2 months by simple majority. <strong>Has NEVER been declared in India so far.</strong></div>
+
+        <div class="sub-heading">Part XIX: Miscellaneous (Articles 361–367)</div>
+        <div class="article-block"><span class="art-num">Article 361:</span> Protection/Immunity to President and Governors: Not answerable to any court for exercise of duties; no criminal proceedings can be instituted during term of office.</div>
+        <div class="article-block"><span class="art-num">Article 365:</span> Effect of failure to comply with, or to give effect to, directions given by the Union: Lawful to hold that a situation has arisen where state governance cannot be carried on (triggers Art 356).</div>
+
+        <div class="sub-heading">Part XX: Amendment of the Constitution (Article 368)</div>
+        <ul>
+            <li>Borrowed from <strong>South Africa</strong>. Can be initiated <strong>only in Parliament</strong> (not in state assemblies).</li>
+            <li>No provision for a joint sitting in case of disagreement over a Constitutional Amendment Bill.</li>
+            <li><strong>24th Amendment Act 1971:</strong> Made it <strong>mandatory for the President to give assent</strong> to a Constitutional Amendment Bill (no veto allowed).</li>
+            <li><strong>Three Types of Amendments:</strong>
+                <ol>
+                    <li><strong>Simple Majority:</strong> (Outside Art 368) e.g., creation of new states, citizenship, quorum, official language, 5th/6th Schedule.</li>
+                    <li><strong>Special Majority of Parliament:</strong> (Under Art 368) Majority of total membership + 2/3rd of members present and voting (e.g., Fundamental Rights, DPSP).</li>
+                    <li><strong>Special Majority + Ratification by 1/2 of State Legislatures:</strong> For federal structures (e.g., election of President, representation of states in Parliament, 7th Schedule lists, SC/HC powers, Art 368 itself).</li>
+                </ol>
+            </li>
+        </ul>
+
+        <div class="sub-heading">Part XXI: Temporary, Transitional & Special Provisions (Articles 369–392)</div>
+        <div class="article-block"><span class="art-num">Article 370:</span> Temporary provisions with respect to the State of Jammu and Kashmir (Inoperative/Abrogated on <strong>5–6 August 2019</strong>).</div>
+        <div class="article-block"><span class="art-num">Articles 371 to 371-J:</span> Special provisions for 11 States:
+            <div class="grid-2">
+                <div class="mini-card">
+                    <strong>371:</strong> Maharashtra & Gujarat (Vidarbha, Marathwada, Saurashtra, Kutch)<br>
+                    <strong>371A:</strong> Nagaland (Naga customary law)<br>
+                    <strong>371B:</strong> Assam (Tribal areas committee)<br>
+                    <strong>371C:</strong> Manipur (Hill areas committee)<br>
+                    <strong>371D & 371E:</strong> Andhra Pradesh & Telangana (Central University 371E)<br>
+                    <strong>371F:</strong> Sikkim (36th Amendment 1975)
+                </div>
+                <div class="mini-card">
+                    <strong>371G:</strong> Mizoram (Mizo customary law)<br>
+                    <strong>371H:</strong> Arunachal Pradesh (Law and order responsibility to Governor)<br>
+                    <strong>371-I:</strong> Goa (Minimum 30 assembly members)<br>
+                    <strong>371-J:</strong> Karnataka (Hyderabad-Karnataka region, added by 98th Amdt 2012)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MASTER TABLE OF AMENDMENTS -->
+    <section class="section-card" id="amendments">
+        <div class="section-title">
+            <span>Essential Constitutional Amendments Masterfile (1st to 106th)</span>
+            <span class="badge badge-hot">Direct Questions Guaranteed</span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Amendment & Year</th>
+                    <th>Core Constitutional Changes & Exam Relevance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>1st Amendment (1951)</strong></td><td>Added <strong>Ninth Schedule</strong> to protect agrarian land reforms from judicial review. Inserted Articles 31A and 31B. Added reasonable restrictions on freedom of speech.</td></tr>
+                <tr><td><strong>4th Amendment (1955)</strong></td><td>Curtailed Right to Property; authorized state to nationalize any trade/business.</td></tr>
+                <tr><td><strong>7th Amendment (1956)</strong></td><td>Implemented <strong>States Reorganisation Act 1956</strong> on linguistic lines; abolished Part A, B, C, D states classification; allowed common High Courts & one Governor for 2+ states.</td></tr>
+                <tr><td><strong>10th Amendment (1961)</strong></td><td>Incorporated Dadra and Nagar Haveli into Indian Union as a UT.</td></tr>
+                <tr><td><strong>11th Amendment (1961)</strong></td><td>Changed procedure for election of Vice-President (joint meeting of Parliament replaced by electoral college).</td></tr>
+                <tr><td><strong>12th Amendment (1961)</strong></td><td>Incorporated Goa, Daman, and Diu into the Indian Union.</td></tr>
+                <tr><td><strong>13th Amendment (1962)</strong></td><td>Formed Nagaland with special status under Article 371A.</td></tr>
+                <tr><td><strong>14th Amendment (1962)</strong></td><td>Incorporated Puducherry into Indian Union; provided legislatures for UTs.</td></tr>
+                <tr><td><strong>18th Amendment (1966)</strong></td><td>Clarified meaning of "state" in Article 3 to include UTs (facilitated Punjab-Haryana reorganisation).</td></tr>
+                <tr><td><strong>21st Amendment (1967)</strong></td><td>Added <strong>Sindhi</strong> as 15th language in Eighth Schedule.</td></tr>
+                <tr><td><strong>24th Amendment (1971)</strong></td><td>Affirmed Parliament's power to amend any part of the Constitution including FRs; made President's assent to amendment bills mandatory.</td></tr>
+                <tr><td><strong>35th Amendment (1974)</strong></td><td>Terminated protectorate status of Sikkim; conferred status of "Associate State" (10th Schedule added).</td></tr>
+                <tr><td><strong>36th Amendment (1975)</strong></td><td>Admitted <strong>Sikkim as the 22nd full-fledged State</strong> of the Indian Union.</td></tr>
+                <tr><td><strong>42nd Amendment (1976)</strong><br><span class="badge badge-hot">"Mini-Constitution"</span></td><td>
+                    <ul>
+                        <li>Added words <strong>"Socialist, Secular, Integrity"</strong> to the Preamble.</li>
+                        <li>Added Part IV-A (Fundamental Duties - Art 51A).</li>
+                        <li>Added DPSPs: Art 39A (Free legal aid), 43A (Workers' participation), 48A (Environment).</li>
+                        <li>Shifted 5 subjects from State List to Concurrent List.</li>
+                        <li>Made President bound by Cabinet advice.</li>
+                        <li>Reduced emergency approval time to 1 month. Added Part XIV-A (Tribunals).</li>
+                    </ul>
+                </td></tr>
+                <tr><td><strong>44th Amendment (1978)</strong><br><span class="badge badge-hot">Restorative Act</span></td><td>
+                    <ul>
+                        <li>Removed <strong>Right to Property</strong> from Part III; made it legal right under <strong>Article 300A</strong>.</li>
+                        <li>Replaced "Internal Disturbance" with <strong>"Armed Rebellion"</strong> for Art 352.</li>
+                        <li>Provided that <strong>Articles 20 and 21 cannot be suspended</strong> during National Emergency.</li>
+                        <li>President can return advice once to Cabinet for reconsideration.</li>
+                    </ul>
+                </td></tr>
+                <tr><td><strong>52nd Amendment (1985)</strong></td><td>Introduced <strong>Anti-Defection Law</strong>; added <strong>Tenth Schedule</strong>.</td></tr>
+                <tr><td><strong>58th Amendment (1987)</strong></td><td>Provided authoritative text of the Constitution in Hindi (Article 394A).</td></tr>
+                <tr><td><strong>61st Amendment (1989)</strong></td><td>Reduced voting age from <strong>21 years to 18 years</strong> for Lok Sabha and Assembly elections (Article 326).</td></tr>
+                <tr><td><strong>69th Amendment (1991)</strong></td><td>Accorded special status to Union Territory of Delhi as <strong>National Capital Territory (NCT) of Delhi</strong> (Article 239AA).</td></tr>
+                <tr><td><strong>70th Amendment (1992)</strong></td><td>Included elected members of Delhi and Puducherry Legislative Assemblies in the Electoral College for Presidential Election.</td></tr>
+                <tr><td><strong>71st Amendment (1992)</strong></td><td>Added <strong>Konkani, Manipuri, and Nepali</strong> to the Eighth Schedule (Mnemonic: KMN). Total languages became 18.</td></tr>
+                <tr><td><strong>73rd Amendment (1992)</strong></td><td>Constitutional status to <strong>Panchayati Raj Institutions</strong>; added Part IX and <strong>Eleventh Schedule</strong> (29 subjects).</td></tr>
+                <tr><td><strong>74th Amendment (1992)</strong></td><td>Constitutional status to <strong>Urban Local Bodies (Municipalities)</strong>; added Part IX-A and <strong>Twelfth Schedule</strong> (18 subjects).</td></tr>
+                <tr><td><strong>86th Amendment (2002)</strong></td><td>Made Elementary Education a Fundamental Right under <strong>Article 21A</strong> (ages 6–14); added Article 51A(k); modified Article 45.</td></tr>
+                <tr><td><strong>89th Amendment (2003)</strong></td><td>Bifurcated National Commission for SC & ST into two: <strong>NCSC (Art 338)</strong> and <strong>NCST (Art 338A)</strong>.</td></tr>
+                <tr><td><strong>91st Amendment (2003)</strong></td><td>
+                    <ul>
+                        <li>Capped size of Council of Ministers to <strong>15%</strong> of Lok Sabha / Legislative Assembly strength (Min 12 for States).</li>
+                        <li>Disqualified defectors from holding remunerative political posts; removed exemption for 1/3rd split in party.</li>
+                    </ul>
+                </td></tr>
+                <tr><td><strong>92nd Amendment (2003)</strong></td><td>Added 4 languages to Eighth Schedule: <strong>Bodo, Dogri, Maithili, Santhali</strong> (Mnemonic: BDMS). Total became 22 languages.</td></tr>
+                <tr><td><strong>97th Amendment (2011)</strong></td><td>Constitutional status to <strong>Co-operative Societies</strong>; added Art 19(1)(c), Art 43B, and Part IX-B.</td></tr>
+                <tr><td><strong>99th Amendment (2014)</strong></td><td>Established National Judicial Appointments Commission (NJAC). <strong>Struck down as unconstitutional by Supreme Court in 2015 (Fourth Judges Case)</strong>.</td></tr>
+                <tr><td><strong>100th Amendment (2015)</strong></td><td>Operationalized 1974 <strong>Land Boundary Agreement (LBA) with Bangladesh</strong>; exchanged enclaves between India and Bangladesh.</td></tr>
+                <tr><td><strong>101st Amendment (2016)</strong></td><td>Introduced <strong>Goods and Services Tax (GST)</strong>; inserted Art 246A, 269A, 279A (GST Council).</td></tr>
+                <tr><td><strong>102nd Amendment (2018)</strong></td><td>Constitutional status to <strong>National Commission for Backward Classes (NCBC)</strong> under Article 338B; inserted Art 342A.</td></tr>
+                <tr><td><strong>103rd Amendment (2019)</strong></td><td>Provided <strong>10% Reservation for Economically Weaker Sections (EWS)</strong>; inserted Articles 15(6) and 16(6).</td></tr>
+                <tr><td><strong>104th Amendment (2020)</strong></td><td>Extended SC/ST reservation in Lok Sabha and Assemblies for 10 years (till <strong>2030</strong>); <strong>discontinued reservation of seats for Anglo-Indians</strong>.</td></tr>
+                <tr><td><strong>105th Amendment (2021)</strong></td><td>Restored the power of State Governments and UTs to identify and maintain their own State OBC lists.</td></tr>
+                <tr><td><strong>106th Amendment (2023)</strong><br><span class="badge badge-news">Nari Shakti Vandan</span></td><td><strong>Women's Reservation Act:</strong> Provides <strong>33% (1/3rd) reservation for women</strong> in Lok Sabha, State Legislative Assemblies, and NCT of Delhi (Articles 330A, 332A, 239AA). To take effect after delimitation following the next census.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- LANDMARK JUDGMENTS -->
+    <section class="section-card" id="judgments">
+        <div class="section-title">
+            <span>Landmark Supreme Court Judgments (Polity Benchmarks)</span>
+            <span class="badge badge-hot">Direct Case Law MCQs</span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Case Law & Year</th>
+                    <th>Judicial Principle Established & Exam Takeaways</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>A.K. Gopalan v. State of Madras (1950)</strong></td><td>Narrow interpretation of Article 21; ruled that "procedure established by law" does not require natural justice / due process. (Later overruled).</td></tr>
+                <tr><td><strong>Champakam Dorairajan v. State of Madras (1951)</strong></td><td>Held that Fundamental Rights prevail over Directive Principles in case of conflict. Prompted the First Constitutional Amendment (Article 15(4)).</td></tr>
+                <tr><td><strong>Golaknath v. State of Punjab (1967)</strong></td><td>Supreme Court ruled that Parliament <strong>cannot amend Fundamental Rights</strong> or abridge them under Article 368.</td></tr>
+                <tr><td><strong>Kesavananda Bharati v. State of Kerala (1973)</strong><br><span class="badge badge-hot">13-Judge Bench</span></td><td>Propounded the <strong>"Basic Structure Doctrine"</strong>. Parliament can amend any part of the Constitution (including FRs), but <strong>cannot alter or destroy the basic structure</strong> of the Constitution.</td></tr>
+                <tr><td><strong>Indira Nehru Gandhi v. Raj Narain (1975)</strong></td><td>Applied Basic Structure Doctrine; struck down Article 329A(4) (which took PM's election beyond judicial review); held Judicial Review & Free/Fair Elections are basic structure.</td></tr>
+                <tr><td><strong>ADM Jabalpur v. Shivkant Shukla (1976)</strong><br><em>(Habeas Corpus Case)</em></td><td>Held that right to life (Art 21) could be suspended during emergency. Infamous ruling, later formally overruled in the <em>Puttaswamy (2017)</em> judgment.</td></tr>
+                <tr><td><strong>Maneka Gandhi v. Union of India (1978)</strong></td><td>Expanded Article 21. "Procedure established by law" must be <strong>just, fair, and reasonable</strong> (read American concept of <em>"Due Process of Law"</em> into Art 21). Overruled Gopalan case.</td></tr>
+                <tr><td><strong>Minerva Mills v. Union of India (1980)</strong></td><td>Reinforced Basic Structure. Ruled that Indian Constitution is founded on the <strong>bedrock of balance between Fundamental Rights and Directive Principles</strong>. Struck down clauses in Art 368 excluding judicial review.</td></tr>
+                <tr><td><strong>Shah Bano Begum Case (1985)</strong></td><td>Upheld divorced Muslim woman's right to maintenance under Section 125 of CrPC; emphasized need for Uniform Civil Code (Article 44).</td></tr>
+                <tr><td><strong>S.R. Bommai v. Union of India (1994)</strong></td><td>Established rigorous checks against arbitrary misuse of <strong>Article 356 (President's Rule)</strong>. Held secularism and federalism as basic structure; proclamation is subject to judicial review.</td></tr>
+                <tr><td><strong>Vishaka v. State of Rajasthan (1997)</strong></td><td>Laid down binding guidelines to protect women from sexual harassment at workplaces (precursor to POSH Act, 2013).</td></tr>
+                <tr><td><strong>I.R. Coelho v. State of Tamil Nadu (2007)</strong></td><td>Ruled that laws placed in the <strong>Ninth Schedule after 24 April 1973</strong> (date of Kesavananda Bharati verdict) are open to judicial review if they violate basic structure.</td></tr>
+                <tr><td><strong>Justice K.S. Puttaswamy v. Union of India (2017)</strong></td><td>Unanimously declared that the <strong>Right to Privacy is an intrinsic Fundamental Right</strong> under Article 21 and Part III of the Constitution.</td></tr>
+                <tr><td><strong>Navtej Singh Johar v. Union of India (2018)</strong></td><td>Decriminalized consensual same-sex relations by reading down Section 377 of IPC; upheld equality and non-discrimination under Art 14, 15, and 21.</td></tr>
+                <tr><td><strong>Indian Young Lawyers Association (Sabarimala, 2018)</strong></td><td>Allowed entry of women of all age groups into Sabarimala Temple, upholding right to worship and gender equality under Articles 25 and 14.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+</div>
+
+</body>
+</html>
