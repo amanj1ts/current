@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Active & Passive Voice Exam Mastery Guide</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#312e81',
+            },
+            activeAccent: '#2563eb',
+            passiveAccent: '#7c3aed',
+            gold: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #334155;
+    }
+    /* Smooth tab transition */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.25s ease-in-out forwards;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .badge-active {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+    .badge-passive {
+      background: #f5f3ff;
+      color: #6d28d9;
+      border: 1px solid #ddd6fe;
+    }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .tab-content { display: block !important; page-break-after: always; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col font-sans transition-colors duration-200">
+
+  <!-- Top Banner / Header -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Brand Title -->
+        <div class="flex items-center space-x-3">
+          <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h1 class="text-lg font-bold tracking-tight text-slate-900 flex items-center gap-2">
+              VoiceMaster <span class="text-xs px-2 py-0.5 font-semibold bg-brand-100 text-brand-700 rounded-full uppercase tracking-wider">Exam Pro</span>
+            </h1>
+            <p class="text-xs text-slate-500 hidden sm:block">Active & Passive Voice Complete Revision & Trap Buster</p>
+          </div>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button onclick="window.print()" class="no-print inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-100 transition shadow-sm">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Print / Save PDF</span>
+          </button>
+          <a href="#quiz-zone" onclick="switchTab('practice')" class="no-print inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-brand-600 text-white hover:bg-brand-700 shadow-sm transition">
+            <i data-lucide="help-circle" class="w-4 h-4"></i>
+            <span>Test Yourself</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-100">
+      <nav class="flex space-x-2 sm:space-x-6 overflow-x-auto py-2.5 scrollbar-none" id="main-nav-tabs">
+        <button onclick="switchTab('fundamentals')" data-tab="fundamentals" class="tab-btn px-3 py-1.5 rounded-lg text-sm font-semibold transition whitespace-nowrap bg-brand-50 text-brand-700 flex items-center gap-2">
+          <i data-lucide="layers" class="w-4 h-4"></i> 1. Golden 5 Rules
+        </button>
+        <button onclick="switchTab('tense-matrix')" data-tab="tense-matrix" class="tab-btn px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition whitespace-nowrap flex items-center gap-2">
+          <i data-lucide="table" class="w-4 h-4"></i> 2. Tense Matrix
+        </button>
+        <button onclick="switchTab('exam-traps')" data-tab="exam-traps" class="tab-btn px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition whitespace-nowrap flex items-center gap-2">
+          <i data-lucide="shield-alert" class="w-4 h-4"></i> 3. Exam Traps & Special Cases
+        </button>
+        <button onclick="switchTab('cheat-sheet')" data-tab="cheat-sheet" class="tab-btn px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition whitespace-nowrap flex items-center gap-2">
+          <i data-lucide="zap" class="w-4 h-4"></i> 4. Quick Formula Flashcard
+        </button>
+        <button onclick="switchTab('practice')" data-tab="practice" class="tab-btn px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition whitespace-nowrap flex items-center gap-2">
+          <i data-lucide="check-circle-2" class="w-4 h-4"></i> 5. Practice & Quiz Arena
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- Fast Exam Tip Hero Banner -->
+    <div class="mb-6 rounded-2xl bg-gradient-to-r from-brand-900 via-indigo-900 to-slate-900 p-5 sm:p-7 text-white shadow-xl relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-semibold tracking-wide uppercase mb-2 border border-white/10">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i> Exam Revision Blueprint
+          </div>
+          <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight">Active & Passive Voice Complete Master Guide</h2>
+          <p class="text-slate-300 text-sm mt-1 max-w-2xl">
+            Never lose marks on Voice questions in SSC, UPSC, Bank PO, IELTS, SAT, or School Board Exams. Master the <span class="text-amber-300 font-semibold">"Be + V3"</span> mechanism and bypass tricky trap patterns.
+          </p>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <div class="px-4 py-3 rounded-xl bg-white/10 backdrop-blur border border-white/10 text-center">
+            <span class="block text-2xl font-black text-amber-300">12</span>
+            <span class="text-[11px] text-slate-300 uppercase tracking-wider font-semibold">Tenses Tested</span>
+          </div>
+          <div class="px-4 py-3 rounded-xl bg-white/10 backdrop-blur border border-white/10 text-center">
+            <span class="block text-2xl font-black text-emerald-400">4</span>
+            <span class="text-[11px] text-slate-300 uppercase tracking-wider font-semibold">No Passive</span>
+          </div>
+          <div class="px-4 py-3 rounded-xl bg-white/10 backdrop-blur border border-white/10 text-center">
+            <span class="block text-2xl font-black text-indigo-300">100%</span>
+            <span class="text-[11px] text-slate-300 uppercase tracking-wider font-semibold">V3 (Past Participle)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 1: FUNDAMENTALS -->
+    <section id="tab-fundamentals" class="tab-content active space-y-8">
+      
+      <!-- Core Concept Overview Card -->
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4 mb-6">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-brand-100 text-brand-700 text-sm font-black">1</span>
+              What Actually is "Voice"?
+            </h3>
+            <p class="text-xs text-slate-500">The grammatical relationship between the action and the doer/receiver.</p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-100 text-slate-700 w-fit">Foundation Rule</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Active Card -->
+          <div class="p-5 rounded-xl border-2 border-blue-100 bg-blue-50/40 relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-blue-700 px-2 py-0.5 rounded bg-blue-100">Active Voice</span>
+              <span class="text-xs text-blue-600 font-medium font-mono">Subject does action</span>
+            </div>
+            <p class="text-sm text-slate-700 mb-3">Focus is on the <strong class="text-slate-900">DOER</strong> of the action.</p>
+            <div class="p-3 bg-white rounded-lg border border-blue-200 text-sm font-mono shadow-sm">
+              <span class="text-blue-600 font-bold">[Subject]</span> + 
+              <span class="text-slate-700 font-semibold">[Verb]</span> + 
+              <span class="text-purple-600 font-bold">[Object]</span>
+              <div class="mt-2 text-xs text-slate-600 font-sans">
+                👉 <em>"Alexander <strong class="text-blue-700 font-semibold">defeated</strong> Porus."</em>
+              </div>
+            </div>
+          </div>
+
+          <!-- Passive Card -->
+          <div class="p-5 rounded-xl border-2 border-purple-100 bg-purple-50/40 relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-purple-700 px-2 py-0.5 rounded bg-purple-100">Passive Voice</span>
+              <span class="text-xs text-purple-600 font-medium font-mono">Object receives action</span>
+            </div>
+            <p class="text-sm text-slate-700 mb-3">Focus is on the <strong class="text-slate-900">RECEIVER</strong> or the action itself.</p>
+            <div class="p-3 bg-white rounded-lg border border-purple-200 text-sm font-mono shadow-sm">
+              <span class="text-purple-600 font-bold">[Object becomes Subject]</span> + 
+              <span class="text-amber-600 font-bold">[Be-Verb + V3]</span> + 
+              <span class="text-slate-500 font-semibold">by</span> + 
+              <span class="text-blue-600 font-bold">[Agent]</span>
+              <div class="mt-2 text-xs text-slate-600 font-sans">
+                👉 <em>"Porus <strong class="text-purple-700 font-semibold">was defeated</strong> by Alexander."</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Golden 5-Step Formula -->
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+          <i data-lucide="check-circle" class="w-5 h-5 text-amber-500"></i> The Golden 5-Step Conversion Blueprint
+        </h3>
+        <p class="text-xs text-slate-500 mb-6">Memorize this exact sequential order for 100% accuracy in any conversion question.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <!-- Step 1 -->
+          <div class="flex flex-col p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition">
+            <span class="w-7 h-7 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center mb-3">Step 1</span>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Swap Positions</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Identify Subject & Object in Active sentence. The Active Object becomes the <strong class="text-slate-800">New Subject</strong>.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex flex-col p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition">
+            <span class="w-7 h-7 rounded-full bg-indigo-600 text-white font-bold text-xs flex items-center justify-center mb-3">Step 2</span>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Identify Tense</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Determine the exact tense. Never change the tense; only change the voice. (Present stays Present!).
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex flex-col p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition">
+            <span class="w-7 h-7 rounded-full bg-purple-600 text-white font-bold text-xs flex items-center justify-center mb-3">Step 3</span>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Insert 'Be' Verb</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Add the suitable form of <em>be</em> (<code class="text-brand-600 font-bold">is/am/are, was/were, being, been</code>) matching the <strong>new subject</strong>.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex flex-col p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition">
+            <span class="w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center mb-3">Step 4</span>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Always Use V3</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Transform the main verb into its <strong class="text-emerald-700">Past Participle (V3)</strong>. In passive voice, the main verb is ALWAYS V3.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="flex flex-col p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition">
+            <span class="w-7 h-7 rounded-full bg-amber-600 text-white font-bold text-xs flex items-center justify-center mb-3">Step 5</span>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Add 'by' + Agent</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Attach <code class="text-amber-700 font-mono font-bold">by + object form</code> of original subject (or specific preposition if non-'by' verb).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pronoun Transformation Table & Forms of BE -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Pronoun Shift Table -->
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <i data-lucide="arrow-left-right" class="w-4 h-4 text-brand-600"></i> Subjective ⇄ Objective Pronoun Shift
+              </h3>
+              <span class="text-[11px] bg-red-100 text-red-700 px-2 py-0.5 rounded font-semibold">Exam Trap Area</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-4">
+              When a pronoun shifts from Subject to Object position (or vice versa), its grammatical case changes:
+            </p>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs text-left border-collapse">
+                <thead>
+                  <tr class="bg-slate-100 text-slate-700 border-b border-slate-200 uppercase font-semibold">
+                    <th class="py-2.5 px-3">Subject Case (Active)</th>
+                    <th class="py-2.5 px-3">Direction</th>
+                    <th class="py-2.5 px-3">Object Case (Passive)</th>
+                    <th class="py-2.5 px-3">Quick Note</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-mono">
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-2 px-3 font-bold text-blue-600">I</td>
+                    <td class="py-2 px-3 text-slate-400">➔</td>
+                    <td class="py-2 px-3 font-bold text-purple-600">me</td>
+                    <td class="py-2 px-3 text-slate-500 font-sans">by me</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-2 px-3 font-bold text-blue-600">We</td>
+                    <td class="py-2 px-3 text-slate-400">➔</td>
+                    <td class="py-2 px-3 font-bold text-purple-600">us</td>
+                    <td class="py-2 px-3 text-slate-500 font-sans">by us</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-2 px-3 font-bold text-blue-600">You</td>
+                    <td class="py-2 px-3 text-slate-400">➔</td>
+                    <td class="py-2 px-3 font-bold text-purple-600">you</td>
+                    <td class="py-2 px-3 text-slate-500 font-sans"><span class="text-emerald-600 font-semibold">No change!</span></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-2 px-3 font-bold text-blue-600">He</td>
+                    <td class="py-2 px-3 text-slate-400">➔</td>
+                    <td class="py-2 px-3 font-bold text-purple-600">him</td>
+                    <td class="py-2 px-3 text-slate-500 font-sans">by him</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-2 px-3 font-bold text-blue-600">She</td>
+                    <td class="py-2 px-3 text-slate-400">➔</td>
+                    <td class="py-2 px-3 font-bold text-purple-600">her</td>
+                    <td class="py-2 px-3 text-slate-500 font-sans">by her</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-2 px-3 font-bold text-blue-600">It</td>
+                    <td class="py-2 px-3 text-slate-400">➔</td>
+                    <td class="py-2 px-3 font-bold text-purple-600">it</td>
+                    <td class="py-2 px-3 text-slate-500 font-sans"><span class="text-emerald-600 font-semibold">No change!</span></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-2 px-3 font-bold text-blue-600">They</td>
+                    <td class="py-2 px-3 text-slate-400">➔</td>
+                    <td class="py-2 px-3 font-bold text-purple-600">them</td>
+                    <td class="py-2 px-3 text-slate-500 font-sans">by them</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-2 px-3 font-bold text-blue-600">Who</td>
+                    <td class="py-2 px-3 text-slate-400">➔</td>
+                    <td class="py-2 px-3 font-bold text-purple-600">By whom</td>
+                    <td class="py-2 px-3 text-slate-500 font-sans"><span class="text-amber-600 font-semibold">Crucial Exam Question</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-200 text-xs text-amber-800">
+            <strong>⚠️ Watch out:</strong> Proper nouns (like <em>Rahul, London, Apple</em>) do not change their spelling: <em>"Rahul taught me" ➔ "I was taught by Rahul."</em>
+          </div>
+        </div>
+
+        <!-- The 'BE' Conjugation Matrix -->
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <i data-lucide="key" class="w-4 h-4 text-emerald-600"></i> The "BE" Verb Family Table
+              </h3>
+              <span class="text-[11px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded font-semibold">The Engine of Passive</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-4">
+              Passive voice is mathematically: <code class="font-bold text-indigo-700 bg-indigo-50 px-1 py-0.5 rounded">[Appropriate form of BE] + V3</code>.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <span class="font-bold text-slate-700 uppercase tracking-wider text-[10px] block mb-1">Base / Infinitive</span>
+                <span class="font-mono text-sm font-semibold text-brand-600">be / to be</span>
+                <p class="text-slate-500 mt-1">Used with modals (can be, will be, must be)</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <span class="font-bold text-slate-700 uppercase tracking-wider text-[10px] block mb-1">Present (V1)</span>
+                <span class="font-mono text-sm font-semibold text-brand-600">is / am / are</span>
+                <p class="text-slate-500 mt-1">Used for Simple Present passive transformations</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <span class="font-bold text-slate-700 uppercase tracking-wider text-[10px] block mb-1">Past (V2)</span>
+                <span class="font-mono text-sm font-semibold text-brand-600">was / were</span>
+                <p class="text-slate-500 mt-1">Used for Simple Past passive transformations</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <span class="font-bold text-slate-700 uppercase tracking-wider text-[10px] block mb-1">Continuous / -ing</span>
+                <span class="font-mono text-sm font-semibold text-amber-600">being</span>
+                <p class="text-slate-500 mt-1">Preserves continuous action (is being, was being)</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 sm:col-span-2">
+                <span class="font-bold text-slate-700 uppercase tracking-wider text-[10px] block mb-1">Perfect / Participle (V3)</span>
+                <span class="font-mono text-sm font-semibold text-purple-600">been</span>
+                <p class="text-slate-500 mt-1">Used for all Perfect tenses (has been, have been, had been, will have been)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 p-3 bg-indigo-50 rounded-lg border border-indigo-200 text-xs text-indigo-900">
+            <strong>Golden Rule of Agreement:</strong> The <em>be-verb</em> agrees with the <strong class="underline">new subject</strong>, NOT the original subject:
+            <br>
+            <span class="text-slate-600">Active: "He eats <span class="font-bold text-blue-700">apples</span>." (Plural object)</span>
+            <br>
+            <span class="text-slate-600">Passive: "Apples <span class="font-bold text-purple-700">ARE eaten</span> by him." (Verb changed to 'are')</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Critical Rule: Transitive vs Intransitive Verbs -->
+      <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl border border-red-200 p-6 shadow-sm">
+        <div class="flex items-start gap-4">
+          <div class="p-3 rounded-xl bg-red-100 text-red-700 shrink-0">
+            <i data-lucide="alert-octagon" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-red-900">Absolute Condition: Only Transitive Verbs Can Form Passive Voice!</h3>
+            <p class="text-xs text-red-700 mt-1 leading-relaxed">
+              In exams, examiners frequently give sentences with <strong>Intransitive Verbs</strong> (verbs with NO object) to trick students into creating illogical passive forms.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div class="p-3.5 bg-white rounded-xl border border-red-200 text-xs">
+                <span class="text-red-700 font-bold block mb-1">❌ No Passive Possible (Intransitive Verbs)</span>
+                <p class="text-slate-600 mb-2">Verbs of motion, state, or existence that answer <em>"where?", "when?", "how?"</em> but NEVER <em>"what?" or "whom?"</em>:</p>
+                <div class="font-mono text-slate-800 bg-red-50/60 p-2 rounded">
+                  • go, come, arrive, sleep, die, laugh, cry, sneeze, fall, run (when without direct object)
+                </div>
+                <div class="mt-2 text-slate-500 italic">
+                  Example: "He went to school." (Here 'to school' is a prepositional phrase of place, NOT an object. <strong>Passive cannot be made!</strong>)
+                </div>
+              </div>
+
+              <div class="p-3.5 bg-white rounded-xl border border-emerald-200 text-xs">
+                <span class="text-emerald-700 font-bold block mb-1">✅ Passive Possible (Transitive Verbs)</span>
+                <p class="text-slate-600 mb-2">Verbs that transfer action directly to a direct object (answers <em>"what?" or "whom?"</em>):</p>
+                <div class="font-mono text-slate-800 bg-emerald-50/60 p-2 rounded">
+                  • write (a letter), buy (a car), defeat (an enemy), inform (him)
+                </div>
+                <div class="mt-2 text-slate-500 italic">
+                  Example: "He wrote a letter." ➔ "A letter was written by him." (Letter answers <em>what</em> he wrote).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: TENSE MATRIX -->
+    <section id="tab-tense-matrix" class="tab-content space-y-6">
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4 mb-4">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="table" class="w-5 h-5 text-brand-600"></i> The Master 12-Tense Transformation Matrix
+            </h3>
+            <p class="text-xs text-slate-500">Every single tense formula with instant comparative active and passive structures.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 font-medium">8 Convertible Tenses</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-rose-100 text-rose-800 font-medium">4 Non-Convertible Tenses</span>
+          </div>
+        </div>
+
+        <!-- 4 Tenses with NO Passive Notice -->
+        <div class="mb-6 p-4 rounded-xl bg-amber-50 border border-amber-200 flex items-start gap-3">
+          <i data-lucide="info" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
+          <div class="text-xs text-amber-900">
+            <strong class="font-bold">Exam Alert - 4 Tenses with NO Conventional Passive Voice:</strong>
+            <p class="mt-0.5">Standard English grammar exams do not allow passive voice for:</p>
+            <div class="flex flex-wrap gap-2 mt-2 font-mono text-[11px]">
+              <span class="px-2 py-1 bg-white rounded border border-amber-300 font-bold text-amber-800">1. Present Perfect Continuous</span>
+              <span class="px-2 py-1 bg-white rounded border border-amber-300 font-bold text-amber-800">2. Past Perfect Continuous</span>
+              <span class="px-2 py-1 bg-white rounded border border-amber-300 font-bold text-amber-800">3. Future Continuous</span>
+              <span class="px-2 py-1 bg-white rounded border border-amber-300 font-bold text-amber-800">4. Future Perfect Continuous</span>
+            </div>
+            <p class="mt-1.5 text-amber-700 italic">If asked in multiple-choice exams: Select "Cannot be converted" or "No passive form".</p>
+          </div>
+        </div>
+
+        <!-- Matrix Table -->
+        <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-slate-900 text-white font-semibold">
+                <th class="py-3 px-4 w-36">Tense Category</th>
+                <th class="py-3 px-4">Active Structure & Example</th>
+                <th class="py-3 px-4">Passive Formula</th>
+                <th class="py-3 px-4">Passive Converted Example</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              
+              <!-- 1. Simple Present -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-bold text-slate-800 bg-slate-50/50">
+                  Simple Present
+                </td>
+                <td class="py-3.5 px-4 font-mono">
+                  <div class="text-blue-700 font-semibold">S + V1 (s/es) + O</div>
+                  <div class="text-slate-600 mt-1 font-sans">"She <span class="font-semibold text-blue-600">writes</span> a novel."</div>
+                </td>
+                <td class="py-3.5 px-4 font-mono font-semibold text-purple-700 bg-purple-50/30">
+                  is / am / are + V3
+                </td>
+                <td class="py-3.5 px-4 font-sans text-slate-800">
+                  "A novel <span class="font-bold text-purple-700">is written</span> by her."
+                </td>
+              </tr>
+
+              <!-- 2. Present Continuous -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-bold text-slate-800 bg-slate-50/50">
+                  Present Continuous
+                </td>
+                <td class="py-3.5 px-4 font-mono">
+                  <div class="text-blue-700 font-semibold">S + is/am/are + V1-ing + O</div>
+                  <div class="text-slate-600 mt-1 font-sans">"They <span class="font-semibold text-blue-600">are repairing</span> the bridge."</div>
+                </td>
+                <td class="py-3.5 px-4 font-mono font-semibold text-purple-700 bg-purple-50/30">
+                  is / am / are + <span class="text-amber-600 font-bold">being</span> + V3
+                </td>
+                <td class="py-3.5 px-4 font-sans text-slate-800">
+                  "The bridge <span class="font-bold text-purple-700">is being repaired</span> by them."
+                </td>
+              </tr>
+
+              <!-- 3. Present Perfect -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-bold text-slate-800 bg-slate-50/50">
+                  Present Perfect
+                </td>
+                <td class="py-3.5 px-4 font-mono">
+                  <div class="text-blue-700 font-semibold">S + has/have + V3 + O</div>
+                  <div class="text-slate-600 mt-1 font-sans">"The committee <span class="font-semibold text-blue-600">has approved</span> the plan."</div>
+                </td>
+                <td class="py-3.5 px-4 font-mono font-semibold text-purple-700 bg-purple-50/30">
+                  has / have + <span class="text-amber-600 font-bold">been</span> + V3
+                </td>
+                <td class="py-3.5 px-4 font-sans text-slate-800">
+                  "The plan <span class="font-bold text-purple-700">has been approved</span> by the committee."
+                </td>
+              </tr>
+
+              <!-- Present Perfect Continuous (NO PASSIVE) -->
+              <tr class="bg-rose-50/40 text-slate-400">
+                <td class="py-2.5 px-4 font-medium italic">Present Perfect Cont.</td>
+                <td class="py-2.5 px-4 font-mono">S + has/have been + V-ing + O</td>
+                <td class="py-2.5 px-4 font-mono text-rose-600 font-bold" colspan="2">❌ NO PASSIVE FORM in Standard Grammar</td>
+              </tr>
+
+              <!-- 4. Simple Past -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-bold text-slate-800 bg-slate-50/50">
+                  Simple Past
+                </td>
+                <td class="py-3.5 px-4 font-mono">
+                  <div class="text-blue-700 font-semibold">S + V2 + O</div>
+                  <div class="text-slate-600 mt-1 font-sans">"The hunter <span class="font-semibold text-blue-600">shot</span> the tiger."</div>
+                </td>
+                <td class="py-3.5 px-4 font-mono font-semibold text-purple-700 bg-purple-50/30">
+                  was / were + V3
+                </td>
+                <td class="py-3.5 px-4 font-sans text-slate-800">
+                  "The tiger <span class="font-bold text-purple-700">was shot</span> by the hunter."
+                </td>
+              </tr>
+
+              <!-- 5. Past Continuous -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-bold text-slate-800 bg-slate-50/50">
+                  Past Continuous
+                </td>
+                <td class="py-3.5 px-4 font-mono">
+                  <div class="text-blue-700 font-semibold">S + was/were + V1-ing + O</div>
+                  <div class="text-slate-600 mt-1 font-sans">"The chef <span class="font-semibold text-blue-600">was cooking</span> the meals."</div>
+                </td>
+                <td class="py-3.5 px-4 font-mono font-semibold text-purple-700 bg-purple-50/30">
+                  was / were + <span class="text-amber-600 font-bold">being</span> + V3
+                </td>
+                <td class="py-3.5 px-4 font-sans text-slate-800">
+                  "The meals <span class="font-bold text-purple-700">were being cooked</span> by the chef."
+                </td>
+              </tr>
+
+              <!-- 6. Past Perfect -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-bold text-slate-800 bg-slate-50/50">
+                  Past Perfect
+                </td>
+                <td class="py-3.5 px-4 font-mono">
+                  <div class="text-blue-700 font-semibold">S + had + V3 + O</div>
+                  <div class="text-slate-600 mt-1 font-sans">"He <span class="font-semibold text-blue-600">had finished</span> his homework."</div>
+                </td>
+                <td class="py-3.5 px-4 font-mono font-semibold text-purple-700 bg-purple-50/30">
+                  had + <span class="text-amber-600 font-bold">been</span> + V3
+                </td>
+                <td class="py-3.5 px-4 font-sans text-slate-800">
+                  "His homework <span class="font-bold text-purple-700">had been finished</span> by him."
+                </td>
+              </tr>
+
+              <!-- Past Perfect Continuous (NO PASSIVE) -->
+              <tr class="bg-rose-50/40 text-slate-400">
+                <td class="py-2.5 px-4 font-medium italic">Past Perfect Cont.</td>
+                <td class="py-2.5 px-4 font-mono">S + had been + V-ing + O</td>
+                <td class="py-2.5 px-4 font-mono text-rose-600 font-bold" colspan="2">❌ NO PASSIVE FORM in Standard Grammar</td>
+              </tr>
+
+              <!-- 7. Simple Future -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-bold text-slate-800 bg-slate-50/50">
+                  Simple Future
+                </td>
+                <td class="py-3.5 px-4 font-mono">
+                  <div class="text-blue-700 font-semibold">S + will/shall + V1 + O</div>
+                  <div class="text-slate-600 mt-1 font-sans">"NASA <span class="font-semibold text-blue-600">will launch</span> a satellite."</div>
+                </td>
+                <td class="py-3.5 px-4 font-mono font-semibold text-purple-700 bg-purple-50/30">
+                  will / shall + <span class="text-amber-600 font-bold">be</span> + V3
+                </td>
+                <td class="py-3.5 px-4 font-sans text-slate-800">
+                  "A satellite <span class="font-bold text-purple-700">will be launched</span> by NASA."
+                </td>
+              </tr>
+
+              <!-- Future Continuous (NO PASSIVE) -->
+              <tr class="bg-rose-50/40 text-slate-400">
+                <td class="py-2.5 px-4 font-medium italic">Future Continuous</td>
+                <td class="py-2.5 px-4 font-mono">S + will be + V-ing + O</td>
+                <td class="py-2.5 px-4 font-mono text-rose-600 font-bold" colspan="2">❌ NO PASSIVE FORM in Standard Grammar</td>
+              </tr>
+
+              <!-- 8. Future Perfect -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-bold text-slate-800 bg-slate-50/50">
+                  Future Perfect
+                </td>
+                <td class="py-3.5 px-4 font-mono">
+                  <div class="text-blue-700 font-semibold">S + will have + V3 + O</div>
+                  <div class="text-slate-600 mt-1 font-sans">"They <span class="font-semibold text-blue-600">will have completed</span> the project."</div>
+                </td>
+                <td class="py-3.5 px-4 font-mono font-semibold text-purple-700 bg-purple-50/30">
+                  will have + <span class="text-amber-600 font-bold">been</span> + V3
+                </td>
+                <td class="py-3.5 px-4 font-sans text-slate-800">
+                  "The project <span class="font-bold text-purple-700">will have been completed</span> by them."
+                </td>
+              </tr>
+
+              <!-- Future Perfect Continuous (NO PASSIVE) -->
+              <tr class="bg-rose-50/40 text-slate-400">
+                <td class="py-2.5 px-4 font-medium italic">Future Perfect Cont.</td>
+                <td class="py-2.5 px-4 font-mono">S + will have been + V-ing + O</td>
+                <td class="py-2.5 px-4 font-mono text-rose-600 font-bold" colspan="2">❌ NO PASSIVE FORM in Standard Grammar</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: EXAM TRAPS & SPECIAL CASES -->
+    <section id="tab-exam-traps" class="tab-content space-y-6">
+      
+      <!-- Top banner for traps -->
+      <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-300 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="p-2 bg-amber-500 text-white rounded-lg">
+            <i data-lucide="flame" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-amber-950 text-sm">Where 90% of Students Make Errors</h4>
+            <p class="text-xs text-amber-800">Competitions love these 7 advanced structures. Master each pattern thoroughly.</p>
+          </div>
+        </div>
+        <span class="text-xs bg-amber-200 text-amber-900 font-bold px-2 py-1 rounded">High Exam Yield</span>
+      </div>
+
+      <!-- Trap Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Trap 1: Imperative Sentences -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Trap 1 • Imperatives</span>
+            <span class="text-xs text-slate-400 font-mono">Orders / Requests / Advice</span>
+          </div>
+          <h4 class="text-base font-bold text-slate-900 mb-2">Orders, Requests & Suggestions</h4>
+          <p class="text-xs text-slate-600 mb-4">Imperatives lack a visible subject (implied 'you'). Three conversion models exist:</p>
+
+          <div class="space-y-3 text-xs">
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+              <strong class="text-slate-800 block text-xs">A. Command / Order with Object:</strong>
+              <code class="text-indigo-600 font-bold block my-1">Let + Object + be + V3</code>
+              <p class="text-slate-600">Active: <em>"Shut the door."</em></p>
+              <p class="text-purple-700 font-semibold">Passive: <em>"Let the door be shut."</em></p>
+            </div>
+
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+              <strong class="text-slate-800 block text-xs">B. Moral Suggestion / Advice:</strong>
+              <code class="text-indigo-600 font-bold block my-1">Object + should be + V3</code>
+              <p class="text-slate-600">Active: <em>"Help the poor."</em></p>
+              <p class="text-purple-700 font-semibold">Passive: <em>"The poor should be helped."</em></p>
+            </div>
+
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+              <strong class="text-slate-800 block text-xs">C. Intransitive or Polite ('Please'):</strong>
+              <code class="text-indigo-600 font-bold block my-1">You are requested/ordered/advised to + V1</code>
+              <p class="text-slate-600">Active: <em>"Please sit down."</em></p>
+              <p class="text-purple-700 font-semibold">Passive: <em>"You are requested to sit down."</em></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trap 2: Interrogatives & 'Who' -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Trap 2 • Interrogatives</span>
+            <span class="text-xs text-slate-400 font-mono">Who ⇄ By whom</span>
+          </div>
+          <h4 class="text-base font-bold text-slate-900 mb-2">Question Forms (Wh- & Did/Do)</h4>
+          <p class="text-xs text-slate-600 mb-4">Interrogative structure must stay interrogative (Auxiliary before subject):</p>
+
+          <div class="space-y-3 text-xs">
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+              <strong class="text-slate-800 block text-xs">A. 'Who' shifts to 'By whom':</strong>
+              <p class="text-slate-600 mt-1">Active: <em>"Who wrote the Mahabharata?"</em></p>
+              <p class="text-purple-700 font-semibold">Passive: <em>"By whom was the Mahabharata written?"</em></p>
+              <p class="text-slate-500 text-[11px] mt-0.5">(Modern form: <em>"Who was the Mahabharata written by?"</em>)</p>
+            </div>
+
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+              <strong class="text-slate-800 block text-xs">B. 'Whom' shifts to 'Who':</strong>
+              <p class="text-slate-600 mt-1">Active: <em>"Whom did you invite?"</em></p>
+              <p class="text-purple-700 font-semibold">Passive: <em>"Who was invited by you?"</em></p>
+            </div>
+
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+              <strong class="text-slate-800 block text-xs">C. Do/Does/Did questions:</strong>
+              <p class="text-slate-600 mt-1">Active: <em>"Did he break the glass?"</em> (Did = Past)</p>
+              <p class="text-purple-700 font-semibold">Passive: <em>"Was the glass broken by him?"</em> (Was + V3)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trap 3: Prepositions other than 'by' -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Trap 3 • Fixed Prepositions</span>
+            <span class="text-xs text-slate-400 font-mono">Never use 'by' here</span>
+          </div>
+          <h4 class="text-base font-bold text-slate-900 mb-2">Verbs Requiring Specific Prepositions</h4>
+          <p class="text-xs text-slate-600 mb-3">Many verbs refuse the preposition <em>'by'</em> in passive voice. Examiners test this relentlessly!</p>
+
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono">
+            <div class="p-2 bg-indigo-50/60 rounded border border-indigo-100">
+              <span class="font-bold text-indigo-800">known TO</span>
+              <p class="text-slate-500 font-sans text-[11px]">not 'known by'</p>
+            </div>
+            <div class="p-2 bg-indigo-50/60 rounded border border-indigo-100">
+              <span class="font-bold text-indigo-800">married TO</span>
+              <p class="text-slate-500 font-sans text-[11px]">not 'married with'</p>
+            </div>
+            <div class="p-2 bg-indigo-50/60 rounded border border-indigo-100">
+              <span class="font-bold text-indigo-800">surprised AT</span>
+              <p class="text-slate-500 font-sans text-[11px]">at behaviour/news</p>
+            </div>
+            <div class="p-2 bg-indigo-50/60 rounded border border-indigo-100">
+              <span class="font-bold text-indigo-800">astonished AT</span>
+              <p class="text-slate-500 font-sans text-[11px]">at something</p>
+            </div>
+            <div class="p-2 bg-indigo-50/60 rounded border border-indigo-100">
+              <span class="font-bold text-indigo-800">pleased WITH</span>
+              <p class="text-slate-500 font-sans text-[11px]">with a person</p>
+            </div>
+            <div class="p-2 bg-indigo-50/60 rounded border border-indigo-100">
+              <span class="font-bold text-indigo-800">satisfied WITH</span>
+              <p class="text-slate-500 font-sans text-[11px]">with your work</p>
+            </div>
+            <div class="p-2 bg-indigo-50/60 rounded border border-indigo-100">
+              <span class="font-bold text-indigo-800">contained IN</span>
+              <p class="text-slate-500 font-sans text-[11px]">in the box/bottle</p>
+            </div>
+            <div class="p-2 bg-indigo-50/60 rounded border border-indigo-100">
+              <span class="font-bold text-indigo-800">lined WITH</span>
+              <p class="text-slate-500 font-sans text-[11px]">trees lined with</p>
+            </div>
+          </div>
+
+          <div class="mt-3 p-2.5 bg-slate-50 rounded-lg text-xs border border-slate-200">
+            <span class="text-slate-600 block">Active: <em>"I know Mr. Sharma."</em></span>
+            <span class="text-emerald-700 font-bold block">Passive: <em>"Mr. Sharma is known TO me."</em> (NOT 'by me')</span>
+          </div>
+        </div>
+
+        <!-- Trap 4: Verbs with Two Objects (Direct vs Indirect) -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Trap 4 • Ditransitive Verbs</span>
+            <span class="text-xs text-slate-400 font-mono">Two Valid Passives</span>
+          </div>
+          <h4 class="text-base font-bold text-slate-900 mb-2">Two Objects: Indirect (Person) vs Direct (Thing)</h4>
+          <p class="text-xs text-slate-600 mb-3">Verbs like <em>give, teach, send, offer, tell</em> take two objects. Both can become subjects:</p>
+
+          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs mb-3">
+            <p class="font-bold text-slate-800 mb-1">Active sentence:</p>
+            <p class="font-mono text-blue-700">"The teacher gave <span class="bg-amber-100 px-1 rounded text-amber-900 font-bold">me</span> (Indirect) <span class="bg-purple-100 px-1 rounded text-purple-900 font-bold">a prize</span> (Direct)."</p>
+          </div>
+
+          <div class="space-y-2 text-xs">
+            <div class="p-2.5 bg-purple-50/50 rounded-lg border border-purple-200">
+              <span class="font-bold text-purple-800">Option A (Indirect as Subject - More Natural & Preferred):</span>
+              <p class="text-slate-800 font-semibold mt-0.5">➔ <em>"I was given a prize by the teacher."</em></p>
+            </div>
+            <div class="p-2.5 bg-purple-50/50 rounded-lg border border-purple-200">
+              <span class="font-bold text-purple-800">Option B (Direct as Subject - Requires 'to'):</span>
+              <p class="text-slate-800 font-semibold mt-0.5">➔ <em>"A prize was given <strong class="underline">to me</strong> by the teacher."</em></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trap 5: Modals and Modal Perfects -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Trap 5 • Modals</span>
+            <span class="text-xs text-slate-400 font-mono">can, must, should have</span>
+          </div>
+          <h4 class="text-base font-bold text-slate-900 mb-2">Modal Verbs & Modal Perfects</h4>
+          <p class="text-xs text-slate-600 mb-3">Simple modals take <code>modal + be + V3</code>; modal perfects take <code>modal + have been + V3</code>.</p>
+
+          <div class="space-y-2.5 text-xs">
+            <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
+              <strong class="text-indigo-700">Simple Modal: [Modal + be + V3]</strong>
+              <p class="text-slate-600 mt-1">Active: <em>"You must obey the rules."</em></p>
+              <p class="text-purple-700 font-semibold">Passive: <em>"The rules must be obeyed by you."</em></p>
+            </div>
+
+            <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
+              <strong class="text-indigo-700">Modal Perfect: [Modal + have been + V3]</strong>
+              <p class="text-slate-600 mt-1">Active: <em>"They should have sent the email."</em></p>
+              <p class="text-purple-700 font-semibold">Passive: <em>"The email should have been sent by them."</em></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trap 6: Quasi-Passive / Middle Voice -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Trap 6 • Quasi-Passive</span>
+            <span class="text-xs text-slate-400 font-mono">Active Form, Passive Sense</span>
+          </div>
+          <h4 class="text-base font-bold text-slate-900 mb-2">Quasi-Passive Verbs (Verbs with Adjectives)</h4>
+          <p class="text-xs text-slate-600 mb-3">Sentences that look active in structure but convey passive meaning (taste, smell, feel):</p>
+
+          <div class="p-3 bg-amber-50 rounded-lg border border-amber-200 text-xs mb-2">
+            <strong class="text-amber-900 font-mono">Formula: Subject + is/was + Adjective + when it is/was + V3</strong>
+          </div>
+
+          <div class="space-y-2 text-xs">
+            <div class="p-2 bg-slate-50 rounded border border-slate-200">
+              <span class="text-slate-500">Active:</span> <em>"Quinine tastes bitter."</em>
+              <br>
+              <span class="text-purple-700 font-semibold">Passive:</span> <em>"Quinine is bitter when it is tasted."</em>
+            </div>
+            <div class="p-2 bg-slate-50 rounded border border-slate-200">
+              <span class="text-slate-500">Active:</span> <em>"The rose smells sweet."</em>
+              <br>
+              <span class="text-purple-700 font-semibold">Passive:</span> <em>"The rose is sweet when it is smelt."</em>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trap 7: Omission of Agent / Complex Clauses -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition md:col-span-2">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Trap 7 • Agent Omission & 'People say that'</span>
+            <span class="text-xs text-slate-400 font-mono">Dummy It & Dropped Agents</span>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="text-base font-bold text-slate-900 mb-1">A. Dropping Vague or Obvious Agents</h4>
+              <p class="text-xs text-slate-600 mb-2">Do NOT add <code class="text-red-600 font-bold">'by someone / by people / by police'</code> if the agent is vague, unknown, or inherently understood.</p>
+              <div class="p-2.5 bg-slate-50 rounded text-xs space-y-1">
+                <div>Active: <em>"Someone stole my watch."</em></div>
+                <div class="text-purple-700 font-semibold">Passive: <em>"My watch was stolen."</em> <span class="text-slate-400 font-normal">(NOT 'by someone')</span></div>
+                <div class="pt-1">Active: <em>"The police arrested the thief."</em></div>
+                <div class="text-purple-700 font-semibold">Passive: <em>"The thief was arrested."</em> <span class="text-slate-400 font-normal">(Arrest is obviously done by police)</span></div>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-base font-bold text-slate-900 mb-1">B. "People say that..." Sentences</h4>
+              <p class="text-xs text-slate-600 mb-2">When reporting general beliefs: use <code class="text-indigo-600 font-bold">"It is said that..."</code> or infinitive passive.</p>
+              <div class="p-2.5 bg-slate-50 rounded text-xs space-y-1">
+                <div>Active: <em>"People say that honesty is the best policy."</em></div>
+                <div class="text-purple-700 font-semibold">Passive: <em>"It is said that honesty is the best policy."</em></div>
+                <div class="pt-1">Active: <em>"People believe that he is a genius."</em></div>
+                <div class="text-purple-700 font-semibold">Passive: <em>"He is believed to be a genius."</em></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 4: QUICK CHEAT SHEET -->
+    <section id="tab-cheat-sheet" class="tab-content space-y-6">
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-100 gap-3">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="zap" class="w-5 h-5 text-amber-500"></i> 60-Second Exam Hall Memory Matrix
+            </h3>
+            <p class="text-xs text-slate-500">Scan this table 10 minutes before entering your exam hall.</p>
+          </div>
+          <!-- Filter Search -->
+          <div class="relative w-full sm:w-64">
+            <input type="text" id="cheatSearch" onkeyup="filterCheatSheet()" placeholder="Search (e.g. continuous, modal, who)..." class="w-full text-xs pl-8 pr-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5"></i>
+          </div>
+        </div>
+
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="cheatSheetGrid">
+
+          <!-- Card 1 -->
+          <div class="cheat-card p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-300 transition">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded">Present Simple</span>
+            <div class="mt-2 text-xs font-mono font-bold text-slate-800">Active: V1 / V1+s/es</div>
+            <div class="mt-1 text-xs font-mono font-bold text-purple-700">Passive: is/am/are + V3</div>
+            <p class="mt-2 text-[11px] text-slate-600"><em>"She cleans it" ➔ "It is cleaned by her"</em></p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="cheat-card p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-300 transition">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded">Past Simple</span>
+            <div class="mt-2 text-xs font-mono font-bold text-slate-800">Active: V2 (e.g. broke, saw)</div>
+            <div class="mt-1 text-xs font-mono font-bold text-purple-700">Passive: was/were + V3</div>
+            <p class="mt-2 text-[11px] text-slate-600"><em>"He wrote it" ➔ "It was written by him"</em></p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="cheat-card p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-300 transition">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded">Future Simple</span>
+            <div class="mt-2 text-xs font-mono font-bold text-slate-800">Active: will + V1</div>
+            <div class="mt-1 text-xs font-mono font-bold text-purple-700">Passive: will be + V3</div>
+            <p class="mt-2 text-[11px] text-slate-600"><em>"I will call you" ➔ "You will be called by me"</em></p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="cheat-card p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-300 transition">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2 py-0.5 rounded">All Continuous (Pres/Past)</span>
+            <div class="mt-2 text-xs font-mono font-bold text-slate-800">Active: be-verb + V1-ing</div>
+            <div class="mt-1 text-xs font-mono font-bold text-purple-700">Passive: be-verb + BEING + V3</div>
+            <p class="mt-2 text-[11px] text-slate-600"><em>"Was baking" ➔ "Was being baked"</em></p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="cheat-card p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-300 transition">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-0.5 rounded">All Perfect Tenses</span>
+            <div class="mt-2 text-xs font-mono font-bold text-slate-800">Active: have/has/had + V3</div>
+            <div class="mt-1 text-xs font-mono font-bold text-purple-700">Passive: have/has/had + BEEN + V3</div>
+            <p class="mt-2 text-[11px] text-slate-600"><em>"Had completed" ➔ "Had been completed"</em></p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="cheat-card p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-300 transition">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Modals</span>
+            <div class="mt-2 text-xs font-mono font-bold text-slate-800">Active: can/may/must + V1</div>
+            <div class="mt-1 text-xs font-mono font-bold text-purple-700">Passive: can/may/must + be + V3</div>
+            <p class="mt-2 text-[11px] text-slate-600"><em>"Can solve it" ➔ "Can be solved"</em></p>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="cheat-card p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-300 transition">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2 py-0.5 rounded">Imperative (Order)</span>
+            <div class="mt-2 text-xs font-mono font-bold text-slate-800">Active: V1 + Object</div>
+            <div class="mt-1 text-xs font-mono font-bold text-purple-700">Passive: Let + Obj + be + V3</div>
+            <p class="mt-2 text-[11px] text-slate-600"><em>"Open the box" ➔ "Let the box be opened"</em></p>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="cheat-card p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-300 transition">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2 py-0.5 rounded">Who Questions</span>
+            <div class="mt-2 text-xs font-mono font-bold text-slate-800">Active: Who + Verb + Obj?</div>
+            <div class="mt-1 text-xs font-mono font-bold text-purple-700">Passive: By whom + aux + Obj + V3?</div>
+            <p class="mt-2 text-[11px] text-slate-600"><em>"Who made this?" ➔ "By whom was this made?"</em></p>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="cheat-card p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-300 transition">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Infinitive (to + V1)</span>
+            <div class="mt-2 text-xs font-mono font-bold text-slate-800">Active: to + V1</div>
+            <div class="mt-1 text-xs font-mono font-bold text-purple-700">Passive: to + be + V3</div>
+            <p class="mt-2 text-[11px] text-slate-600"><em>"I have work to do" ➔ "work to be done"</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: PRACTICE & QUIZ ZONE -->
+    <section id="tab-practice" class="tab-content space-y-6">
+      
+      <!-- Quiz Header / Score Bar -->
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="award" class="w-5 h-5 text-brand-600"></i> Real Exam Challenge & Instant Trap Checker
+            </h3>
+            <p class="text-xs text-slate-500">Curated high-frequency questions directly from actual competitive exams.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">
+              Score: <span id="quiz-score" class="text-brand-600 font-bold text-sm">0</span> / <span id="quiz-total">6</span>
+            </div>
+            <button onclick="resetQuiz()" class="px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-200 hover:bg-slate-50 text-slate-600 transition flex items-center gap-1.5">
+              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div class="mt-6 space-y-6" id="quiz-questions-wrapper">
+          <!-- Injected via JavaScript for cleanliness and interactivity -->
+        </div>
+      </div>
+
+      <!-- Quick Interactive Sentence Analyzer / Step-by-Step interactive transformer demo -->
+      <div class="bg-gradient-to-br from-indigo-900 to-brand-900 text-white rounded-2xl p-6 shadow-lg">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <i data-lucide="cpu" class="w-5 h-5 text-amber-400"></i>
+            <h4 class="font-bold text-base">Step-by-Step Mental Transformation Visualizer</h4>
+          </div>
+          <span class="text-xs bg-white/20 px-2 py-0.5 rounded text-amber-200">Interactive Walkthrough</span>
+        </div>
+        <p class="text-xs text-slate-300 mb-4">Click through sample sentences to see how examiners expect you to think through the transformation:</p>
+
+        <div class="flex flex-wrap gap-2 mb-4" id="sentence-selector-btns">
+          <!-- buttons will be initialized via JS -->
+        </div>
+
+        <div id="interactive-demo-display" class="bg-black/30 rounded-xl p-4 border border-white/10 space-y-3 font-mono text-xs">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="mt-12 bg-white border-t border-slate-200/80 py-6 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-700">VoiceMaster Exam Suite</span>
+        <span>•</span>
+        <span>Built for competitive and board examination prep</span>
+      </div>
+      <div class="text-slate-400">
+        Tip: Always verify the <span class="text-brand-600 font-semibold font-mono">be-verb</span> matches the <span class="underline">new subject's number</span>!
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab switching function
+    function switchTab(tabId) {
+      // Hide all tabs
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      
+      // Remove active button styles
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-brand-50', 'text-brand-700', 'font-semibold');
+        btn.classList.add('text-slate-600', 'font-medium');
+      });
+
+      // Show selected tab
+      const target = document.getElementById(`tab-${tabId}`);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      // Highlight active button
+      const activeBtn = document.querySelector(`[data-tab="${tabId}"]`);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-slate-600', 'font-medium');
+        activeBtn.classList.add('bg-brand-50', 'text-brand-700', 'font-semibold');
+      }
+
+      // Re-trigger lucide icons
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    // Cheat Sheet Filter
+    function filterCheatSheet() {
+      const query = document.getElementById('cheatSearch').value.toLowerCase();
+      const cards = document.querySelectorAll('.cheat-card');
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Quiz Questions Data (High Exam Frequency Traps)
+    const quizData = [
+      {
+        id: 1,
+        question: 'Convert into Passive: "Who composed this beautiful song?"',
+        options: [
+          'Who was composed this beautiful song?',
+          'By whom this beautiful song was composed?',
+          'By whom was this beautiful song composed?',
+          'This beautiful song had been composed by who?'
+        ],
+        answer: 2,
+        explanation: 'Trap Alert: For interrogatives, the auxiliary verb ("was") MUST come before the subject ("this beautiful song"). Option 2 has inverted word order which is an error in formal grammar.'
+      },
+      {
+        id: 2,
+        question: 'Convert into Passive: "His strange behavior surprised everyone."',
+        options: [
+          'Everyone was surprised by his strange behavior.',
+          'Everyone was surprised at his strange behavior.',
+          'Everyone had been surprised with his strange behavior.',
+          'Everyone is surprised at his strange behavior.'
+        ],
+        answer: 1,
+        explanation: 'Fixed Preposition Rule: "Surprised", "astonished", "shocked" take the preposition "AT" when referring to conduct, actions or things, NOT "by". Also, tense is Simple Past, so "was surprised at" is correct.'
+      },
+      {
+        id: 3,
+        question: 'Convert into Passive: "Do not insult the poor."',
+        options: [
+          'Let the poor not be insulted.',
+          'The poor not be insulted.',
+          'You are told to not insult the poor.',
+          'Let not the poor insult.'
+        ],
+        answer: 0,
+        explanation: 'Negative Imperative Rule: "Do not + V1 + Object" transforms into "Let + Object + not + be + V3". Therefore, "Let the poor not be insulted."'
+      },
+      {
+        id: 4,
+        question: 'Identify the correct passive voice: "They will have built the highway by December."',
+        options: [
+          'The highway will be built by December.',
+          'The highway will have been built by December.',
+          'The highway would have been built by December.',
+          'The highway will been built by December.'
+        ],
+        answer: 1,
+        explanation: 'Future Perfect Passive Rule: "will have + V3" transforms into "will have been + V3". Option 3 erroneously changes "will" to "would" (that only happens in Indirect Speech, not Voice!).'
+      },
+      {
+        id: 5,
+        question: 'Convert into Passive: "Someone has stolen my pen."',
+        options: [
+          'My pen has been stolen by someone.',
+          'My pen was stolen by someone.',
+          'My pen has been stolen.',
+          'My pen had been stolen.'
+        ],
+        answer: 2,
+        explanation: 'Agent Omission Rule: Indefinite pronouns like "someone", "somebody", "nobody" are dropped in the passive voice. Adding "by someone" is considered redundant in exam rubrics.'
+      },
+      {
+        id: 6,
+        question: 'Convert into Passive: "Quinine tastes bitter."',
+        options: [
+          'Quinine is tasted bitter.',
+          'Quinine was bitter when tasted.',
+          'Quinine is bitter when it is tasted.',
+          'Bitter is tasted by quinine.'
+        ],
+        answer: 2,
+        explanation: 'Quasi-Passive Rule: Verbs expressing sensory perception with adjectives (taste, smell, feel) convert via the formula: "Subject + is/are + Adjective + when it is + V3".'
+      }
+    ];
+
+    let userAnswers = {};
+
+    function renderQuiz() {
+      const container = document.getElementById('quiz-questions-wrapper');
+      container.innerHTML = '';
+
+      quizData.forEach((q, index) => {
+        const qCard = document.createElement('div');
+        qCard.className = 'p-5 rounded-xl border border-slate-200 bg-white shadow-sm';
+        qCard.id = `q-card-${index}`;
+
+        let optionsHtml = '';
+        q.options.forEach((opt, optIndex) => {
+          optionsHtml += `
+            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-xs font-medium transition text-slate-700 option-label-${index}" id="opt-${index}-${optIndex}">
+              <input type="radio" name="question-${index}" value="${optIndex}" onchange="checkAnswer(${index}, ${optIndex})" class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+              <span>${opt}</span>
+            </label>
+          `;
+        });
+
+        qCard.innerHTML = `
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-brand-700 bg-brand-50 px-2 py-0.5 rounded">Question ${index + 1} of ${quizData.length}</span>
+            <span class="text-xs text-slate-400 font-mono">Exam Mock</span>
+          </div>
+          <h4 class="text-sm font-bold text-slate-900 mb-3">${q.question}</h4>
+          <div class="space-y-2 mb-3">
+            ${optionsHtml}
+          </div>
+          <div id="feedback-${index}" class="hidden p-3 rounded-lg text-xs mt-3"></div>
+        `;
+
+        container.appendChild(qCard);
+      });
+
+      document.getElementById('quiz-total').textContent = quizData.length;
+    }
+
+    function checkAnswer(qIndex, selectedOptIndex) {
+      userAnswers[qIndex] = selectedOptIndex;
+      const q = quizData[qIndex];
+      const feedbackEl = document.getElementById(`feedback-${qIndex}`);
+      const isCorrect = (selectedOptIndex === q.answer);
+
+      // Disable inputs in this question
+      const radios = document.getElementsByName(`question-${qIndex}`);
+      radios.forEach(r => r.disabled = true);
+
+      // Highlight selected and correct
+      q.options.forEach((_, idx) => {
+        const label = document.getElementById(`opt-${qIndex}-${idx}`);
+        if (idx === q.answer) {
+          label.classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-900', 'font-bold');
+        } else if (idx === selectedOptIndex && !isCorrect) {
+          label.classList.add('border-rose-500', 'bg-rose-50', 'text-rose-900');
+        }
+      });
+
+      // Show Feedback
+      feedbackEl.classList.remove('hidden');
+      if (isCorrect) {
+        feedbackEl.className = 'p-3 rounded-lg text-xs mt-3 bg-emerald-50 text-emerald-900 border border-emerald-200';
+        feedbackEl.innerHTML = `<strong>✅ Correct!</strong> ${q.explanation}`;
+      } else {
+        feedbackEl.className = 'p-3 rounded-lg text-xs mt-3 bg-rose-50 text-rose-900 border border-rose-200';
+        feedbackEl.innerHTML = `<strong>❌ Incorrect.</strong> Correct answer is: <em>"${q.options[q.answer]}"</em>.<br><span class="mt-1 block text-slate-700">${q.explanation}</span>`;
+      }
+
+      // Update Score
+      let score = 0;
+      Object.keys(userAnswers).forEach(key => {
+        if (userAnswers[key] === quizData[key].answer) {
+          score++;
+        }
+      });
+      document.getElementById('quiz-score').textContent = score;
+    }
+
+    function resetQuiz() {
+      userAnswers = {};
+      document.getElementById('quiz-score').textContent = '0';
+      renderQuiz();
+    }
+
+    // Interactive Demo Visualizer Logic
+    const demoSentences = [
+      {
+        title: "Simple Past",
+        active: "Columbus discovered America.",
+        steps: [
+          "1. Identify Components: [Subject: Columbus] | [Verb: discovered (V2 - Simple Past)] | [Object: America]",
+          "2. Bring Object forward: 'America' becomes the new Subject.",
+          "3. Select Be-verb for Simple Past: 'was' (singular).",
+          "4. Transform verb to V3: discovered ➔ discovered.",
+          "5. Conclude with agent: America was discovered by Columbus."
+        ],
+        passive: "America was discovered by Columbus."
+      },
+      {
+        title: "Continuous with 'Being'",
+        active: "The chef is baking delicious cakes.",
+        steps: [
+          "1. Identify Components: [Subject: The chef] | [Verb: is baking (Present Continuous)] | [Object: delicious cakes]",
+          "2. Bring Object forward: 'Delicious cakes' (Plural!).",
+          "3. Be-verb agreement check: Plural present takes 'ARE'. Continuous requires 'BEING'.",
+          "4. Transform verb to V3: bake ➔ baked.",
+          "5. Combine: Delicious cakes are being baked by the chef."
+        ],
+        passive: "Delicious cakes are being baked by the chef."
+      },
+      {
+        title: "Modal Transformation",
+        active: "We must protect endangered wildlife.",
+        steps: [
+          "1. Components: [Subject: We] | [Modal: must protect] | [Object: endangered wildlife]",
+          "2. Bring Object forward: 'Endangered wildlife'",
+          "3. Apply Modal Formula: modal + be + V3",
+          "4. Protected is V3: must be protected",
+          "5. General agent 'by us' can often be minimized: Endangered wildlife must be protected (by us)."
+        ],
+        passive: "Endangered wildlife must be protected."
+      }
+    ];
+
+    function selectDemo(index) {
+      const demo = demoSentences[index];
+      const display = document.getElementById('interactive-demo-display');
+      
+      // Update buttons style
+      document.querySelectorAll('.demo-btn').forEach((b, i) => {
+        if (i === index) {
+          b.className = 'demo-btn px-3 py-1 rounded-lg text-xs font-bold bg-white text-brand-900 shadow';
+        } else {
+          b.className = 'demo-btn px-3 py-1 rounded-lg text-xs font-medium bg-white/10 hover:bg-white/20 text-white';
+        }
+      });
+
+      let stepsHtml = demo.steps.map(s => `<div class="p-2 bg-white/5 rounded border border-white/5 text-slate-300">👉 ${s}</div>`).join('');
+
+      display.innerHTML = `
+        <div class="text-amber-300 font-bold mb-1">Active: <span class="text-white">${demo.active}</span></div>
+        <div class="space-y-1.5 my-2">
+          ${stepsHtml}
+        </div>
+        <div class="text-emerald-400 font-bold mt-2 pt-2 border-t border-white/10">Final Passive: <span class="text-white underline">${demo.passive}</span></div>
+      `;
+    }
+
+    function initInteractiveDemo() {
+      const btnWrapper = document.getElementById('sentence-selector-btns');
+      btnWrapper.innerHTML = '';
+      demoSentences.forEach((demo, idx) => {
+        const btn = document.createElement('button');
+        btn.textContent = demo.title;
+        btn.onclick = () => selectDemo(idx);
+        btn.className = idx === 0 
+          ? 'demo-btn px-3 py-1 rounded-lg text-xs font-bold bg-white text-brand-900 shadow'
+          : 'demo-btn px-3 py-1 rounded-lg text-xs font-medium bg-white/10 hover:bg-white/20 text-white';
+        btnWrapper.appendChild(btn);
+      });
+      selectDemo(0);
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+      renderQuiz();
+      initInteractiveDemo();
+    });
+  </script>
+</body>
+</html>

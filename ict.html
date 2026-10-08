@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSSSB ICT High-Yield Concept Revision Guide</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #eff6ff;
+            --accent: #b91c1c;
+            --accent-bg: #fef2f2;
+            --border: #cbd5e1;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --tag-bg: #e2e8f0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            background-color: #f8fafc;
+            line-height: 1.5;
+            padding: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+        h1 { color: var(--primary); font-size: 26px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .meta-subtitle { color: var(--text-muted); font-size: 14px; margin-top: 4px; font-weight: 600; }
+        
+        h2 {
+            color: #ffffff;
+            background: var(--primary);
+            padding: 8px 14px;
+            font-size: 18px;
+            border-radius: 4px;
+            margin-top: 28px;
+            margin-bottom: 14px;
+        }
+        h3 {
+            color: var(--primary);
+            font-size: 15px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 4px;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        p, li { font-size: 13.5px; color: var(--text-main); }
+        ul { padding-left: 20px; margin-bottom: 10px; }
+        li { margin-bottom: 4px; }
+        strong { color: #000000; }
+        
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0 16px 0;
+            font-size: 13px;
+        }
+        th, td {
+            border: 1px solid var(--border);
+            padding: 7px 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background: #f1f5f9; color: var(--primary); font-weight: 700; }
+        tr:nth-child(even) td { background-color: #f8fafc; }
+        
+        /* High Yield Badges and Callouts */
+        .callout {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 10px 14px;
+            margin: 10px 0;
+            font-size: 13px;
+            border-radius: 0 4px 4px 0;
+        }
+        .trap-box {
+            background-color: var(--accent-bg);
+            border-left: 4px solid var(--accent);
+            padding: 10px 14px;
+            margin: 10px 0;
+            font-size: 13px;
+            border-radius: 0 4px 4px 0;
+        }
+        .code-tag {
+            font-family: Consolas, Monaco, monospace;
+            background: var(--tag-bg);
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 12.5px;
+            font-weight: 600;
+        }
+        .shortcut-badge {
+            background: #0f172a;
+            color: #ffffff;
+            font-family: Consolas, monospace;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .container { padding: 14px; }
+        }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 0; width: 100%; }
+            h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>PSSSB ICT & Computer Concepts — One-Stop Master Guide</h1>
+        <div class="meta-subtitle">Based Strictly on Punjab PYQ Trends (PSSSB Clerk, Senior Assistant, Excise, Patwari, PSPCL LDC) & Official Syllabus</div>
+    </header>
+
+    <!-- SECTION 1: BASICS OF COMPUTERS -->
+    <h2>1. Basics of Computers & Hardware Architecture</h2>
+    
+    <div class="grid-2">
+        <div>
+            <h3>Fundamental Concepts & Pioneers</h3>
+            <ul>
+                <li><strong>Four Major Functions (IPOS Cycle):</strong> Input &rarr; Process &rarr; Output &rarr; Storage.</li>
+                <li><strong>Charles Babbage:</strong> Father of Computers; designed the <em>Analytical Engine</em> (mechanical computer) and Difference Engine.</li>
+                <li><strong>John von Neumann:</strong> Developed the <strong>Stored Program Architecture</strong> (Basic Computer Architecture), unifying program and data memory.</li>
+                <li><strong>Edward Robert:</strong> Known as the father of the modern <em>Personal Computer (PC)</em>.</li>
+                <li><strong>Ken Thompson & Dennis Ritchie:</strong> Co-creators of the <strong>UNIX</strong> operating system at Bell Labs.</li>
+                <li><strong>First Indian Supercomputer:</strong> <strong>PARAM 8000</strong>, developed by <strong>C-DAC</strong> (1991). Performance is measured in <strong>FLOPS</strong> (Floating-Point Operations Per Second), not MIPS.</li>
+                <li><strong>Key Characteristics:</strong> High Speed, Accuracy, Diligence (free from tiredness/monotony/lack of focus), Versatility, Automation, <strong>NO IQ, NO Feelings</strong>.</li>
+                <li><strong>GIGO:</strong> <em>Garbage In, Garbage Out</em> (system accuracy reflects input accuracy).</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Computer Generations & Core Logic</h3>
+            <table>
+                <tr><th>Gen</th><th>Switching Hardware / Core Tech</th><th>Memory / Characteristics</th></tr>
+                <tr><td><strong>1st</strong></td><td><strong>Vacuum Tubes</strong></td><td>Magnetic Drums, Machine Language</td></tr>
+                <tr><td><strong>2nd</strong></td><td><strong>Transistors</strong></td><td>Magnetic Core, Assembly Language</td></tr>
+                <tr><td><strong>3rd</strong></td><td><strong>Integrated Circuits (ICs)</strong></td><td>SSI/MSI, High-level languages</td></tr>
+                <tr><td><strong>4th</strong></td><td><strong>VLSI Microprocessors</strong></td><td>Semiconductor memory, Personal Computers</td></tr>
+                <tr><td><strong>5th</strong></td><td><strong>ULSI / Microprocessors</strong></td><td>AI, Parallel processing, Quantum computing</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="grid-2">
+        <div>
+            <h3>CPU Architecture & Registers</h3>
+            <ul>
+                <li><strong>CPU Components:</strong> ALU (Arithmetic Logic Unit — executes arithmetic & logic), CU (Control Unit — "central nervous system" that directs signal flow), and internal registers.</li>
+                <li><strong>System Buses:</strong> <em>Data Bus</em> (bidirectional), <em>Address Bus</em> (unidirectional), <em>Control Bus</em>.</li>
+                <li><strong>Machine Cycle Sequence:</strong> <span class="code-tag">Fetch &rarr; Decode &rarr; Execute &rarr; Store</span>. CPU fetches instructions one by one from <strong>Main Memory (RAM)</strong>.</li>
+                <li><strong>Key CPU Registers:</strong>
+                    <ul>
+                        <li><strong>PC (Program Counter):</strong> Holds address of the <em>next</em> instruction to be executed.</li>
+                        <li><strong>MAR (Memory Address Register):</strong> Holds address of the <em>active memory location</em> being accessed.</li>
+                        <li><strong>MBR / MDR:</strong> Holds the data/contents read from or written to memory.</li>
+                        <li><strong>Accumulator (AC):</strong> Holds intermediate ALU calculation results.</li>
+                    </ul>
+                </li>
+                <li><strong>Processor Metrics:</strong> Clock speed measured in <strong>MHz / GHz</strong> ($1\text{ MHz} = 10^6\text{ cycles/sec}$). Instruction execution speed measured in <strong>MIPS</strong>.</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Data Hierarchy & Units of Memory</h3>
+            <div class="callout">
+                <strong>Ascending Logical Hierarchy:</strong><br>
+                <strong>Bit &rarr; Nibble &rarr; Byte &rarr; Field &rarr; Record &rarr; File &rarr; Database</strong>
+            </div>
+            <table>
+                <tr><th>Unit</th><th>Equivalent Value</th></tr>
+                <tr><td><strong>1 Nibble</strong></td><td>4 Bits</td></tr>
+                <tr><td><strong>1 Byte (1 Character)</strong></td><td>8 Bits</td></tr>
+                <tr><td><strong>1 KB (Kilobyte)</strong></td><td>$1024\text{ Bytes} = 2^{10}\text{ Bytes}$ ($8\text{ KB} = 8192\text{ bytes} \times 8 = 65,536\text{ bits}$)</td></tr>
+                <tr><td><strong>1 MB (Megabyte)</strong></td><td>$1024\text{ KB} = 2^{20}\text{ Bytes}$ ($3072\text{ MB} = 3\text{ GB}$)</td></tr>
+                <tr><td><strong>1 GB (Gigabyte)</strong></td><td>$1024\text{ MB} = 2^{30}\text{ Bytes}$</td></tr>
+                <tr><td><strong>1 TB (Terabyte)</strong></td><td>$1024\text{ GB} = 2^{40}\text{ Bytes}$</td></tr>
+                <tr><td><strong>1 PB (Petabyte)</strong></td><td>$1024\text{ TB} = 2^{50}\text{ Bytes} = 2^{53}\text{ bits}$</td></tr>
+            </table>
+            <p><em>Calculation Trick:</em> Total characters in $32\text{ MB} = 32 \times 1024 \times 1024 = \mathbf{33,554,432}\text{ chars}$. Total characters in $16\text{ MB} = 16 \times 1024 \times 1024 = \mathbf{16,777,216}\text{ chars}$.</p>
+        </div>
+    </div>
+
+    <h3>Memory Hierarchy & Storage Devices</h3>
+    <div class="grid-2">
+        <div>
+            <div class="callout">
+                <strong>Memory Pyramid (Top to Bottom):</strong><br>
+                Registers &rarr; Cache (L1, L2, L3) &rarr; Main Memory (RAM) &rarr; Flash / SSD &rarr; Magnetic Disk (HDD) &rarr; Optical &rarr; Magnetic Tape.<br>
+                <em>Going UP:</em> Speed increases, Cost/bit increases, Capacity decreases, Access time decreases.
+            </div>
+            <ul>
+                <li><strong>Registers:</strong> Fastest internal memory inside CPU.</li>
+                <li><strong>Cache Memory:</strong> High-speed SRAM situated <em>between CPU and RAM</em> to reduce access time for frequently used data/instructions.</li>
+                <li><strong>RAM (Primary/Volatile):</strong> Loses data on power off. <strong>SRAM</strong> uses flip-flops/latches (faster, no refresh). <strong>DRAM</strong> uses capacitors and transistors (requires dynamic refresh).</li>
+                <li><strong>ROM (Non-Volatile):</strong> Retains firmware/bootloader. Types: PROM, EPROM (erased by UV light), EEPROM (erased electrically). <em>Flash memory is a block-level EEPROM.</em></li>
+                <li><strong>CMOS Memory:</strong> Battery-backed (CR2032) motherboard memory that stores system date, time, and <strong>BIOS setup parameters</strong>.</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><strong>Secondary / Auxiliary Storage (Persistent):</strong>
+                    <ul>
+                        <li><strong>Magnetic Disks:</strong> Hard Disk Drive (Winchester disk), Disk Packs, Floppy Disk, Zip disk.</li>
+                        <li><strong>Magnetic Tape:</strong> Sequential access storage media (used for archiving/backups).</li>
+                        <li><strong>Optical Disks:</strong> CD-ROM (~700 MB), DVD (~4.7 GB to 8.5 GB), Blu-ray Disc (~25 to 50 GB). "Burning" is the process of writing data to an optical disk.</li>
+                        <li><strong>Solid State:</strong> SSD, Pen Drive/USB flash drive, Memory Cards.</li>
+                    </ul>
+                </li>
+                <li><strong>Booting Sequence:</strong> Power supply signal &rarr; <strong>BIOS POST</strong> (Power-On Self-Test) &rarr; Read CMOS settings &rarr; Bootstrap loader loads <strong>OS Kernel</strong> from secondary storage into RAM.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Input / Output Devices & Display Tech</h3>
+    <div class="grid-2">
+        <div>
+            <ul>
+                <li><strong>Input Devices:</strong>
+                    <ul>
+                        <li><em>Keyboard:</em> Standard 101/104 keys; function keys <strong>F1 to F12</strong>.</li>
+                        <li><em>Pointing Devices:</em> Mouse, Trackball, Joystick, Light Pen (optical sensitive input device).</li>
+                        <li><em>Direct Data Entry / Scanning:</em> <strong>OMR</strong> (Optical Mark Reader — pencil/pen mark detection), <strong>OCR</strong> (converts printed/scanned text to editable digital text), <strong>MICR</strong> (Magnetic Ink Character Recognition — used to process bank cheques quickly; reads E-13B font), Barcode Reader, Digitizer/Graphics Tablet, Touchscreen (both input & output).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><strong>Output Devices:</strong>
+                    <ul>
+                        <li><em>Monitors (VDU - Visual Display Unit):</em> Resolution measured in <strong>pixels</strong> (smallest addressable visual element on screen). <strong>LCD</strong> = Liquid Crystal Display; <strong>VGA</strong> = Video Graphics Array.</li>
+                        <li><em>Printers:</em>
+                            <ul>
+                                <li><strong>Impact Printers:</strong> Physical contact with ribbon/paper. Can produce carbon copies. Examples: <strong>Drum Printer, Chain Printer, Band Printer, Dot Matrix Printer</strong>.</li>
+                                <li><strong>Non-Impact Printers:</strong> No physical striking. Laser Printer (Page Printer — uses toner and drum), Inkjet Printer (Line/Serial), Thermal Printer.</li>
+                            </ul>
+                        </li>
+                        <li><em>Plotter:</em> Vector output device for CAD drawings/architectural maps.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 2: SYSTEM & APPLICATION SOFTWARE, OS, CYBER SECURITY -->
+    <h2>2. Software Types, Operating Systems & Cyber Security</h2>
+    
+    <div class="grid-2">
+        <div>
+            <h3>Software Classifications & Translators</h3>
+            <ul>
+                <li><strong>System Software:</strong> Close to hardware, fast, difficult to design. Includes:
+                    <ul>
+                        <li><strong>Operating System (OS):</strong> Intermediary bridge between user/application and hardware. Manages CPU, memory, processes, I/O devices, files. Examples: Windows, Linux, UNIX, macOS, Android, MS-DOS. (<em>Oracle is a DBMS, Spotify is an App</em>).</li>
+                        <li><strong>Device Drivers:</strong> Translates high-level OS commands into device-specific hardware actions.</li>
+                        <li><strong>Language Translators:</strong>
+                            <ul>
+                                <li><strong>Assembler:</strong> Converts Assembly language to machine code.</li>
+                                <li><strong>Compiler:</strong> Translates the <em>entire</em> high-level program into machine code in one go.</li>
+                                <li><strong>Interpreter:</strong> Translates and executes high-level code <em>line-by-line</em>.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Utility Software:</strong> Maintenance tools. Disk Defragmenter (rearranges fragmented files/contiguous storage to optimize speed), Antivirus, File Compression (ZIP), Disk Clean-up.</li>
+                <li><strong>Firmware:</strong> Software permanently flashed onto a hardware ROM/EEPROM chip (e.g., BIOS).</li>
+                <li><strong>Middleware:</strong> Enables network communication between distinct applications/services.</li>
+            </ul>
+        </div>
+        <div>
+            <h3>OS Core Mechanisms</h3>
+            <ul>
+                <li><strong>Process:</strong> A program currently in a state of <strong>execution</strong>.</li>
+                <li><strong>Kernel:</strong> Core foundational module of an OS handling CPU scheduling, memory management, and file systems.</li>
+                <li><strong>Context Switching:</strong> Mechanism of saving the state of the currently executing process and loading the state of a new process into the CPU.</li>
+                <li><strong>Throughput:</strong> Total volume of work/processes executed per unit of time.</li>
+                <li><strong>Turnaround Time:</strong> Total interval from process submission to completion.</li>
+                <li><strong>Virtual Memory:</strong> Technique using secondary storage (hard disk swap space/page file) as an extension of main memory, allowing programs larger than physical RAM to execute.</li>
+                <li><strong>Spooling:</strong> <em>Simultaneous Peripheral Operations On-Line</em> (e.g., print spooler queue).</li>
+                <li><strong>Real-Time OS (RTOS):</strong> Predictable, rigid time constraints and extremely low latency (used in avionics, robotics, industrial control).</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Cyber Security, Threats & IT Act 2000 High-Yields</h3>
+    <div class="grid-2">
+        <div>
+            <ul>
+                <li><strong>Malware Types:</strong>
+                    <ul>
+                        <li><strong>Virus:</strong> Self-replicating code that attaches to host files/executables. <em>Boot Sector Virus</em> infects Master Boot Record (MBR). <em>Macro Virus</em> infects MS Office templates (e.g., Melissa Virus).</li>
+                        <li><strong>Worm:</strong> Standalone malware that self-replicates across networks without needing a host file.</li>
+                        <li><strong>Trojan Horse:</strong> Disguised as legitimate software to provide backdoor access; does not self-replicate.</li>
+                        <li><strong>Spyware / Adware:</strong> Covertly monitors user actions and keystrokes (keyloggers).</li>
+                        <li><strong>Botnets:</strong> Networks of infected computers ("zombies") leveraged to launch <strong>DDoS</strong> (Distributed Denial of Service) attacks.</li>
+                    </ul>
+                </li>
+                <li><strong>Attack Vectors:</strong>
+                    <ul>
+                        <li><strong>Phishing:</strong> Fraudulent communication impersonating trustworthy institutions to steal credentials/PINs.</li>
+                        <li><strong>Email Spoofing:</strong> Forging sender headers to make emails appear from authentic entities.</li>
+                        <li><strong>Spam:</strong> Unsolicited commercial bulk email.</li>
+                        <li><strong>Bluejacking:</strong> Sending unwanted, anonymous messages to Bluetooth devices within proximity.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><strong>Security Fundamentals:</strong>
+                    <ul>
+                        <li><strong>Firewall:</strong> Hardware/software boundary barrier filtering packet traffic based on security rules.</li>
+                        <li><strong>Digital Signatures:</strong> Built on <strong>PKI (Public Key Infrastructure)</strong> using asymmetric cryptography. Guarantees: <strong>Authentication, Data Integrity, and Non-Repudiation</strong> (sender cannot deny transmission).</li>
+                        <li><strong>Digital Signature Standard (DSS):</strong> Formulated by NIST in <strong>1991</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Information Technology (IT) Act, 2000 Provisions:</strong>
+                    <ul>
+                        <li>Enacted: <strong>9 June 2000</strong>; Effective: <strong>17 October 2000</strong>. Legal foundation for e-Commerce/e-Governance.</li>
+                        <li><strong>Section 17:</strong> Appointment of Controller and other certifying officers.</li>
+                        <li><strong>Section 27:</strong> Display of Certifying Authority license.</li>
+                        <li><strong>Section 65:</strong> Tampering with computer source documents.</li>
+                        <li><strong>Section 66:</strong> Computer-related offenses (Hacking / unauthorized access).</li>
+                        <li><strong>Section 66E:</strong> Violation of bodily privacy.</li>
+                        <li><strong>Section 66F:</strong> Cyber terrorism.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 3: NETWORKS & THE INTERNET -->
+    <h2>3. Networks, Data Communications & The Internet</h2>
+    
+    <div class="grid-2">
+        <div>
+            <h3>Network Architecture & Topologies</h3>
+            <ul>
+                <li><strong>Coverage Scale:</strong>
+                    <ul>
+                        <li><strong>PAN:</strong> Personal Area Network (Bluetooth, up to ~10 meters). Multiple PAN piconets form a <strong>Scatternet</strong>.</li>
+                        <li><strong>LAN:</strong> Local Area Network (within a building/room). Uses Ethernet / Wi-Fi.</li>
+                        <li><strong>MAN:</strong> Metropolitan Area Network (cable TV across a city).</li>
+                        <li><strong>WAN:</strong> Wide Area Network (spans continents/globe, e.g., the Internet).</li>
+                        <li><strong>VPN:</strong> Virtual Private Network (extends private tunnel across public network).</li>
+                    </ul>
+                </li>
+                <li><strong>Network Topologies (Arrangement of Nodes):</strong>
+                    <ul>
+                        <li><strong>Star Topology:</strong> All nodes connect to a central <strong>Hub or Switch</strong>. Single cable failure does not break the entire network.</li>
+                        <li><strong>Bus:</strong> Single backbone backbone cable with terminators at ends.</li>
+                        <li><strong>Ring:</strong> Token-passing circular loop.</li>
+                        <li><strong>Mesh:</strong> Dedicated point-to-point links between all nodes; most redundant and robust.</li>
+                    </ul>
+                </li>
+                <li><strong>Transmission Modes:</strong>
+                    <ul>
+                        <li><strong>Simplex:</strong> Unidirectional only (Keyboard to CPU, Monitor, TV broadcast).</li>
+                        <li><strong>Half-Duplex:</strong> Bidirectional, but only one party at a time (Walkie-talkie).</li>
+                        <li><strong>Full-Duplex:</strong> Simultaneous bidirectional (Telephone line, Modern Ethernet).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3>Internet Protocols, Addressing & Hardware</h3>
+            <ul>
+                <li><strong>Transmission Media:</strong> Optical Fiber uses total internal reflection to carry <strong>light pulses</strong> at highest bandwidth.</li>
+                <li><strong>Network Hardware:</strong>
+                    <ul>
+                        <li><strong>NIC:</strong> Network Interface Card (has hardware MAC address).</li>
+                        <li><strong>Switch:</strong> Intelligent data-link layer device routing frames to target MAC.</li>
+                        <li><strong>Router:</strong> Layer 3 device routing packets between different networks.</li>
+                        <li><strong>SMPS:</strong> Switched-Mode Power Supply (converts AC mains to DC computer voltage).</li>
+                    </ul>
+                </li>
+                <li><strong>Addressing Architecture:</strong>
+                    <ul>
+                        <li><strong>MAC Address:</strong> 48-bit physical/hardware address (Hexadecimal: 6 pairs, e.g., <span class="code-tag">00:1A:2B:3C:4D:5E</span>).</li>
+                        <li><strong>IPv4:</strong> 32-bit logical address (Dotted decimal: 4 octets, e.g., <span class="code-tag">192.168.1.1</span>).</li>
+                        <li><strong>IPv6:</strong> 128-bit logical address (Hexadecimal: 8 blocks separated by colons).</li>
+                        <li><strong>DHCP:</strong> Automatically assigns dynamic IP addresses to clients on network connection.</li>
+                    </ul>
+                </li>
+                <li><strong>Key Protocols:</strong>
+                    <ul>
+                        <li><strong>HTTP (Port 80) / HTTPS (Port 443):</strong> Secure web transmission via SSL/TLS.</li>
+                        <li><strong>FTP (Port 20/21):</strong> File Transfer Protocol (runs over <strong>TCP</strong>).</li>
+                        <li><strong>SMTP (Port 25):</strong> Simple Mail Transfer Protocol (sends/pushes outgoing mail).</li>
+                        <li><strong>POP3 (Port 110):</strong> Post Office Protocol (downloads/fetches email from server).</li>
+                        <li><strong>IMAP (Port 143):</strong> Internet Message Access Protocol (syncs mail on server across devices).</li>
+                        <li><strong>MIME:</strong> Multipurpose Internet Mail Extensions (allows non-ASCII text, audio, video attachments in emails).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid-2">
+        <div>
+            <h3>Wireless Technologies & Web Concepts</h3>
+            <ul>
+                <li><strong>ARPANET:</strong> First operational packet-switching network (DoD USA, 1969).</li>
+                <li><strong>Father of Email:</strong> <strong>Ray Tomlinson</strong> (1971; introduced the <span class="code-tag">@</span> symbol).</li>
+                <li><strong>Wi-Fi:</strong> Wireless Fidelity (IEEE 802.11 standards). <strong>802.11a</strong> supports up to <strong>54 Mbps</strong> data rate.</li>
+                <li><strong>WiMAX:</strong> Worldwide Interoperability for Microwave Access (IEEE 802.16 standard for broadband wireless).</li>
+                <li><strong>VoLTE:</strong> Voice over Long-Term Evolution.</li>
+                <li><strong>GPS (Global Positioning System):</strong> Uses <strong>Trilateration</strong> principle. Needs at least 3 satellites for a 2D surface fix, and <strong>4 satellites for a 3D fix (latitude, longitude, altitude)</strong>. NAVSTAR was the initial US GPS system.</li>
+                <li><strong>Cookies:</strong> Small text files placed by websites on client disk to store sessions and preferences.</li>
+                <li><strong>Ping Utility:</strong> Uses ICMP packets to test device connectivity and latency on IP network.</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Email Structure & Messaging Terms</h3>
+            <ul>
+                <li><strong>Email Fields:</strong>
+                    <ul>
+                        <li><strong>To:</strong> Primary intended recipients.</li>
+                        <li><strong>CC (Carbon Copy):</strong> Secondary recipients; addresses are visible to everyone.</li>
+                        <li><strong>BCC (Blind Carbon Copy):</strong> Addresses entered here are <strong>hidden/concealed</strong> from all other recipients in To, CC, and BCC.</li>
+                    </ul>
+                </li>
+                <li><strong>Email System Folders:</strong>
+                    <ul>
+                        <li><em>Drafts:</em> Stores composed but unsent messages.</li>
+                        <li><em>Spam/Junk:</em> Filters unsolicited commercial messages.</li>
+                        <li><em>Trash/Bin:</em> Temporarily houses deleted emails before permanent purge.</li>
+                    </ul>
+                </li>
+                <li><strong>Communication Types:</strong>
+                    <ul>
+                        <li><strong>Synchronous:</strong> Real-time simultaneous communication (Instant Messaging, Video Conferencing, VoIP).</li>
+                        <li><strong>Asynchronous:</strong> Time-lagged communication (Email, Discussion Forums, Blogs).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 4: MS WORD -->
+    <h2>4. Office Productivity Tool: Microsoft Word</h2>
+    
+    <div class="grid-2">
+        <div>
+            <h3>Interface, Layout & Formatting Fundamentals</h3>
+            <ul>
+                <li><strong>Executable Name:</strong> <span class="code-tag">winword.exe</span> (run command to launch Word).</li>
+                <li><strong>File Extensions:</strong> <span class="code-tag">.doc</span> (pre-2007 binary), <span class="code-tag">.docx</span> (2007+ XML format), <span class="code-tag">.docm</span> (macro-enabled document), <span class="code-tag">.dotx</span> (template).</li>
+                <li><strong>Page Orientation:</strong> <strong>Portrait</strong> (vertical, default) and <strong>Landscape</strong> (horizontal). Located under <em>Layout / Page Setup</em> tab.</li>
+                <li><strong>Margins & Indents:</strong>
+                    <ul>
+                        <li><strong>Margin:</strong> Space between text and edge of physical paper.</li>
+                        <li><strong>Gutter Margin:</strong> Extra space added to the inside/binding edge of document pages.</li>
+                        <li><strong>Indentation:</strong> Distance between paragraph boundary and text margin (Left, Right, First-line, Hanging). Managed via <strong>Ruler</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Paragraph Breaks:</strong> Pressing <span class="shortcut-badge">Enter</span> inserts a new paragraph. Pressing <span class="shortcut-badge">Shift + Enter</span> inserts a soft line break.</li>
+                <li><strong>Font Style vs Effect:</strong>
+                    <ul>
+                        <li><em>Font Styles:</em> Regular, Bold, Italic, Bold Italic.</li>
+                        <li><em>Font Effects:</em> Strikethrough, Superscript, Subscript, Shadow, Small Caps.</li>
+                    </ul>
+                </li>
+                <li><strong>Thesaurus (<span class="shortcut-badge">Shift + F7</span>):</strong> Tool providing synonyms and antonyms for selected words.</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Mail Merge & Advanced Word Features</h3>
+            <ul>
+                <li><strong>Mail Merge:</strong> Feature used to prepare batch personalized letters, envelopes, or mailing labels to multiple recipients.
+                    <ul>
+                        <li>Requires: <strong>Main Document</strong> (contains fixed boilerplate text) + <strong>Data Source</strong> (contains recipient fields/records).</li>
+                        <li><strong>Merge Fields:</strong> Enclosed in chevrons like <span class="code-tag">&laquo;Field_Name&raquo;</span> (e.g., <span class="code-tag">&laquo;name&raquo;</span>).</li>
+                        <li>Mail Merge Preview shortcut: <span class="shortcut-badge">Alt + Shift + K</span>.</li>
+                    </ul>
+                </li>
+                <li><strong>Clipboard & Paste Options:</strong>
+                    <ul>
+                        <li>Standard copy/cut places content on the Windows/Office <strong>Clipboard</strong>.</li>
+                        <li><strong>Paste Special:</strong> Inserts copied clipboard text as unformatted unicode text, picture, or link.</li>
+                        <li><strong>Format Painter (<span class="shortcut-badge">Ctrl + Shift + C</span> / <span class="shortcut-badge">Ctrl + Shift + V</span>):</strong> Copies only text formatting and applies it to other selections.</li>
+                    </ul>
+                </li>
+                <li><strong>Navigation & Referencing:</strong>
+                    <ul>
+                        <li><strong>Bookmark:</strong> Names a specific spot/word in a document for direct navigation.</li>
+                        <li><strong>Cross-reference:</strong> Links directly to headings, footnotes, figures, tables.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Must-Know MS Word Shortcut Keys</h3>
+    <table>
+        <tr><th>Shortcut</th><th>Function / Action</th><th>Shortcut</th><th>Function / Action</th></tr>
+        <tr><td><span class="shortcut-badge">Ctrl + E</span></td><td>Align Selected Paragraph <strong>Center</strong></td><td><span class="shortcut-badge">Ctrl + L</span></td><td>Align Selected Paragraph <strong>Left</strong></td></tr>
+        <tr><td><span class="shortcut-badge">Ctrl + R</span></td><td>Align Selected Paragraph <strong>Right</strong></td><td><span class="shortcut-badge">Ctrl + J</span></td><td><strong>Justify</strong> Paragraph Alignment</td></tr>
+        <tr><td><span class="shortcut-badge">Ctrl + H</span></td><td>Open <strong>Find and Replace</strong> dialog box</td><td><span class="shortcut-badge">Ctrl + F</span></td><td>Open Find Navigation / Search Pane</td></tr>
+        <tr><td><span class="shortcut-badge">Ctrl + K</span></td><td>Insert <strong>Hyperlink</strong></td><td><span class="shortcut-badge">F7</span></td><td>Trigger <strong>Spelling & Grammar</strong> check</td></tr>
+        <tr><td><span class="shortcut-badge">Ctrl + [</span></td><td>Decrease font size by exactly <strong>1 point</strong></td><td><span class="shortcut-badge">Ctrl + ]</span></td><td>Increase font size by exactly <strong>1 point</strong></td></tr>
+        <tr><td><span class="shortcut-badge">Ctrl + =</span></td><td>Apply <strong>Subscript</strong> (e.g., H<sub>2</sub>O)</td><td><span class="shortcut-badge">Ctrl + Shift + +</span></td><td>Apply <strong>Superscript</strong> (e.g., X<sup>2</sup>)</td></tr>
+        <tr><td><span class="shortcut-badge">Shift + F3</span></td><td>Toggle Case (Sentence, UPPERCASE, lowercase)</td><td><span class="shortcut-badge">Ctrl + Shift + D</span></td><td><strong>Double underline</strong> selected text</td></tr>
+        <tr><td><span class="shortcut-badge">Ctrl + 1 / 2 / 5</span></td><td>Single (1.0), Double (2.0), 1.5 Line Spacing</td><td><span class="shortcut-badge">Alt + Shift + D</span></td><td>Insert current live System <strong>Date</strong></td></tr>
+        <tr><td><span class="shortcut-badge">Ctrl + Right Arrow</span></td><td>Move cursor one word to the right</td><td><span class="shortcut-badge">F8 (Pressed 3x)</span></td><td>Selects the current entire <strong>sentence</strong></td></tr>
+        <tr><td><span class="shortcut-badge">Ctrl + Alt + S</span></td><td>Split or remove document window split</td><td><span class="shortcut-badge">F12</span></td><td>Open <strong>Save As</strong> dialog window</td></tr>
+    </table>
+
+    <!-- SECTION 5: MS EXCEL -->
+    <h2>5. Office Productivity Tool: Microsoft Excel</h2>
+    
+    <div class="grid-2">
+        <div>
+            <h3>Spreadsheet Structure & Cell Basics</h3>
+            <ul>
+                <li><strong>Workbook vs Worksheet:</strong> A workbook is the Excel file; a worksheet is an individual grid page.</li>
+                <li><strong>Grid Limits (Excel 2007 to 2019/365):</strong>
+                    <ul>
+                        <li><strong>Rows:</strong> Exactly <strong>1,048,576</strong> rows (numbered 1, 2, 3...).</li>
+                        <li><strong>Columns:</strong> Exactly <strong>16,384</strong> columns (letters A to XFD).</li>
+                    </ul>
+                </li>
+                <li><strong>Active Cell & Pointers:</strong>
+                    <ul>
+                        <li>Intersection of a row and column forms a <strong>Cell</strong>.</li>
+                        <li><strong>Name Box:</strong> Displays address of active selected cell (e.g., <span class="code-tag">D5</span>).</li>
+                        <li><strong>Formula Bar:</strong> Allows viewing and editing entered values and formulas.</li>
+                    </ul>
+                </li>
+                <li><strong>Cell Addressing Modes:</strong>
+                    <ul>
+                        <li><strong>Relative Reference:</strong> Changes during copying (e.g., <span class="code-tag">=A1+B1</span>). Copied down, row adjusts; copied right, column adjusts.</li>
+                        <li><strong>Absolute Reference:</strong> Locked using dollar (<span class="code-tag">$</span>) signs (e.g., <span class="code-tag">=$A$1</span> or R1C1 notation <span class="code-tag">R2C2</span>). Does NOT change when copied.</li>
+                        <li><strong>Mixed Reference:</strong> One dimension locked (e.g., <span class="code-tag">=$A1</span> locks column, <span class="code-tag">=A$1</span> locks row).</li>
+                    </ul>
+                </li>
+                <li><strong>Range Syntax:</strong> Contiguous rectangular block denoted with colon (e.g., <span class="code-tag">A1:C9</span> or <span class="code-tag">B1:E5</span>).</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Essential Excel Formulas & Math Logic</h3>
+            <div class="trap-box">
+                <strong>Rule:</strong> All Excel formulas and functions must begin with an equal sign (<span class="code-tag">=</span>).
+            </div>
+            <table>
+                <tr><th>Function</th><th>Syntax / PYQ Example</th><th>Calculated Output</th></tr>
+                <tr><td><span class="code-tag">CEILING</span></td><td><span class="code-tag">=CEILING(-2.5, -2)</span></td><td><strong>-4</strong> <em>(rounds away from 0 to nearest multiple)</em></td></tr>
+                <tr><td><span class="code-tag">CEILING</span></td><td><span class="code-tag">=CEILING(19283.123, 2)</span></td><td><strong>19284</strong> <em>(nearest even multiple &ge; input)</em></td></tr>
+                <tr><td><span class="code-tag">FLOOR</span></td><td><span class="code-tag">=FLOOR(2.7, 2)</span></td><td><strong>2</strong> <em>(rounds down towards 0 to multiple of 2)</em></td></tr>
+                <tr><td><span class="code-tag">ROUND</span></td><td><span class="code-tag">=ROUND(1273.45, 1)</span></td><td><strong>1273.5</strong> <em>(rounds to 1 decimal place)</em></td></tr>
+                <tr><td><span class="code-tag">MOD</span></td><td><span class="code-tag">=MOD(10, 3)</span></td><td><strong>1</strong> <em>(returns remainder of division)</em></td></tr>
+                <tr><td><span class="code-tag">SUMSQ</span></td><td><span class="code-tag">=SUMSQ(4, 5, 10)</span></td><td>$4^2 + 5^2 + 10^2 = 16 + 25 + 100 =$ <strong>141</strong></td></tr>
+                <tr><td><span class="code-tag">SQRT</span></td><td><span class="code-tag">=SQRT(64)</span></td><td><strong>8</strong> <em>(calculates positive square root)</em></td></tr>
+                <tr><td><span class="code-tag">TRIM</span></td><td><span class="code-tag">=TRIM("  PSSSB  ")</span></td><td><span class="code-tag">"PSSSB"</span> <em>(strips extra spaces)</em></td></tr>
+                <tr><td><span class="code-tag">EXACT</span></td><td><span class="code-tag">=EXACT(text1, text2)</span></td><td>Checks if two strings are identical (case-sensitive)</td></tr>
+            </table>
+            <ul>
+                <li><strong>Counting Functions:</strong>
+                    <ul>
+                        <li><span class="code-tag">COUNT()</span>: Counts only numeric entries in range.</li>
+                        <li><span class="code-tag">COUNTA()</span>: Counts all non-empty cells (numbers, text, logicals).</li>
+                        <li><span class="code-tag">COUNTBLANK()</span>: Counts empty cells.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid-2">
+        <div>
+            <h3>Advanced Data Tools & Lookups</h3>
+            <ul>
+                <li><strong>Freeze Panes:</strong> Keeps header row/column visible while scrolling through large sheets vertically or horizontally.</li>
+                <li><strong>Transpose:</strong> Switches data rows to columns and columns to rows.</li>
+                <li><strong>AutoFit:</strong> Automatically adjusts column width or row height to fit text contents perfectly.</li>
+                <li><strong>AutoSum Dropdown:</strong> Default quick metrics: Sum, Average, Count Numbers, Max, Min (<em>Product is not on default status bar Quick AutoSum</em>).</li>
+                <li><strong>VLOOKUP Syntax:</strong> <span class="code-tag">=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])</span>. Searches the <em>first column</em> of a range and retrieves matching values horizontally.</li>
+                <li><strong>Conditional Aggregates:</strong>
+                    <ul>
+                        <li><span class="code-tag">SUMIF(range, criteria, [sum_range])</span>: Single condition sum.</li>
+                        <li><span class="code-tag">SUMIFS(sum_range, criteria_range1, criteria1, ...)</span>: Multi-condition sum.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3>Excel Shortcut Key Reference</h3>
+            <table>
+                <tr><th>Shortcut</th><th>Action</th></tr>
+                <tr><td><span class="shortcut-badge">F2</span></td><td>Edit the selected cell content</td></tr>
+                <tr><td><span class="shortcut-badge">F4</span></td><td>Toggle Absolute/Relative reference ($A$1)</td></tr>
+                <tr><td><span class="shortcut-badge">F5</span></td><td>Open <strong>Go To</strong> dialog (jump to specific cell)</td></tr>
+                <tr><td><span class="shortcut-badge">Alt + F8</span></td><td>Open <strong>Macros</strong> dialog box</td></tr>
+                <tr><td><span class="shortcut-badge">Ctrl + ;</span></td><td>Insert current live static <strong>Date</strong></td></tr>
+                <tr><td><span class="shortcut-badge">Ctrl + Shift + :</span></td><td>Insert current live static <strong>Time</strong></td></tr>
+                <tr><td><span class="shortcut-badge">Ctrl + W</span></td><td>Close current active workbook window</td></tr>
+                <tr><td><span class="shortcut-badge">Ctrl + N</span></td><td>Open brand new blank workbook</td></tr>
+                <tr><td><span class="shortcut-badge">Ctrl + Shift + #</span></td><td>Apply Date number formatting</td></tr>
+                <tr><td><span class="shortcut-badge">Ctrl + Shift + ^</span></td><td>Apply Scientific (exponential) formatting</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- SECTION 6: MS POWERPOINT -->
+    <h2>6. Office Productivity Tool: Microsoft PowerPoint</h2>
+    
+    <div class="grid-2">
+        <div>
+            <h3>Presentations, Views & Master Slides</h3>
+            <ul>
+                <li><strong>Executable Name:</strong> <span class="code-tag">powerpnt.exe</span>.</li>
+                <li><strong>Extensions:</strong> <span class="code-tag">.ppt</span> (pre-2007), <span class="code-tag">.pptx</span> (2007+ XML format), <span class="code-tag">.ppsx</span> (direct presentation slide show file).</li>
+                <li><strong>Presentation Viewing Modes:</strong>
+                    <ul>
+                        <li><strong>Normal View:</strong> Default tri-pane editing workspace.</li>
+                        <li><strong>Slide Sorter View:</strong> Displays miniature <strong>thumbnails</strong> of all slides on screen; best view for reordering slides and applying global transitions.</li>
+                        <li><strong>Reading View:</strong> Fits presentation to current window with playback controls.</li>
+                        <li><strong>Slide Show View:</strong> Full-screen presentation mode as delivered to the audience.</li>
+                        <li><strong>Grayscale View:</strong> Previews presentation in black, white, and gray tones without color.</li>
+                        <li><em>Trap:</em> <strong>Print Layout View</strong> exists in Word, NOT in PowerPoint.</li>
+                    </ul>
+                </li>
+                <li><strong>Slide Master:</strong> Top-level master template that globally controls themes, backgrounds, fonts, and positions across all dependent slides. <em>Handout Master</em> formats printed audience notes.</li>
+                <li><strong>Transitions vs Animations:</strong>
+                    <ul>
+                        <li><strong>Transition:</strong> Visual motion effect applied to the <em>entire slide</em> when transitioning to the next.</li>
+                        <li><strong>Animation Scheme:</strong> Motion effects applied to <em>individual elements/objects</em> (text, images, shapes) inside a single slide.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3>PowerPoint Shortcuts & Multimedia</h3>
+            <ul>
+                <li><strong>Supported Embedded Audio Formats:</strong> <span class="code-tag">.wav</span> and <span class="code-tag">.mid</span> files.</li>
+                <li><strong>New Slide Insertion:</strong> Select <em>Home &rarr; New Slide</em> or use the standard key combo.</li>
+            </ul>
+            <table>
+                <tr><th>Shortcut</th><th>Action in PowerPoint</th></tr>
+                <tr><td><span class="shortcut-badge">F5</span></td><td>Start Slide Show from the <strong>very beginning (Slide 1)</strong></td></tr>
+                <tr><td><span class="shortcut-badge">Shift + F5</span></td><td>Start Slide Show from the <strong>current active slide</strong></td></tr>
+                <tr><td><span class="shortcut-badge">Esc</span></td><td><strong>Exit / Terminate</strong> active Slide Show view</td></tr>
+                <tr><td><span class="shortcut-badge">Ctrl + M</span></td><td>Insert a <strong>New Slide</strong> into current presentation</td></tr>
+                <tr><td><span class="shortcut-badge">Ctrl + N</span></td><td>Create a brand new blank presentation file</td></tr>
+                <tr><td><span class="shortcut-badge">Ctrl + E</span></td><td>Center align text inside a selected text frame</td></tr>
+                <tr><td><span class="shortcut-badge">Alt + S</span></td><td>Navigate directly to the Slide Show Ribbon Tab</td></tr>
+                <tr><td><span class="shortcut-badge">Ctrl + Home</span></td><td>Jump directly to the first slide in presentation</td></tr>
+                <tr><td><span class="shortcut-badge">Ctrl + End</span></td><td>Jump directly to the last slide in presentation</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- SECTION 7: NATIONAL ICT & E-GOVERNANCE -->
+    <h2>7. National ICT Initiatives & E-Governance Schemes</h2>
+    <div class="grid-3">
+        <div>
+            <h3>DigiLocker & National Archives</h3>
+            <ul>
+                <li>Flagship digital locker initiative under the Digital India campaign.</li>
+                <li>Provides cloud-based electronic storage for Indian citizens to access verified government certificates (Aadhaar, driving licenses, academic marksheets).</li>
+                <li>Issued documents carry equal legal status to physical originals under the IT Act 2000.</li>
+                <li><strong>NDLI:</strong> <em>National Digital Library of India</em> (IIT Kharagpur/Ministry of Education initiative).</li>
+            </ul>
+        </div>
+        <div>
+            <h3>UMANG & NeGP</h3>
+            <ul>
+                <li><strong>NeGP:</strong> <em>National e-Governance Plan</em>, formally approved in <strong>2006</strong>.</li>
+                <li><strong>UMANG:</strong> <em>Unified Mobile Application for New-Age Governance</em>.
+                    <ul>
+                        <li>Launched by MeitY (Ministry of Electronics and Information Technology) and NeGD.</li>
+                        <li>Serves as a single unified portal/app accessing central and state services (EPFO, Passport, Gas Cylinder booking, PAN).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3>E-Commerce & Digital Governance</h3>
+            <ul>
+                <li><strong>E-Commerce Models:</strong> <strong>B2C</strong> (Business to Consumer, e.g., Amazon, Flipkart), <strong>B2B</strong> (Business to Business), <strong>C2C</strong> (Consumer to Consumer, e.g., OLX).</li>
+                <li><strong>NPCI Services:</strong> Unified Payments Interface (UPI), RuPay, IMPS, National Financial Switch (NFS). (<em>NPS is governed by PFRDA, not NPCI</em>).</li>
+                <li><strong>UIDAI:</strong> Established in <strong>2016</strong> as a statutory authority under the Aadhaar Act (originally set up in 2009).</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
