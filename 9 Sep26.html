@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>September 2026 Current Affairs - Ultra-Compact Print Edition (PSSSB Special)</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 6mm 6mm 6mm 6mm;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 8pt;
+    line-height: 1.2;
+    color: #111827;
+    background: #fff;
+    padding: 6px;
+  }
+  .print-btn-bar {
+    text-align: right;
+    margin-bottom: 6px;
+  }
+  .btn-print {
+    background: #0f172a;
+    color: #fff;
+    border: none;
+    padding: 4px 10px;
+    font-size: 7.5pt;
+    font-weight: 700;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .btn-print:hover { background: #1e293b; }
+
+  /* Compact Header */
+  .doc-header {
+    border: 1.5px solid #0f172a;
+    border-radius: 3px;
+    padding: 3px 6px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+  }
+  .doc-header h1 {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .doc-header .meta {
+    font-size: 7pt;
+    font-weight: 600;
+    color: #475569;
+  }
+
+  /* Multi-column layout */
+  .columns {
+    column-count: 2;
+    column-gap: 5mm;
+  }
+
+  /* Section Title */
+  .sec-heading {
+    break-after: avoid;
+    column-span: all;
+    background: #0f172a;
+    color: #fff;
+    font-size: 8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 2px 5px;
+    border-radius: 2px;
+    margin: 5px 0 3px 0;
+    letter-spacing: 0.3px;
+  }
+  .sec-heading:first-of-type {
+    margin-top: 0;
+  }
+
+  /* Compact Cards */
+  .entry {
+    break-inside: avoid;
+    border-left: 2.5px solid #2563eb;
+    background: #fcfcfd;
+    padding: 2.5px 4px;
+    margin-bottom: 3.5px;
+    border-radius: 0 2px 2px 0;
+    border-top: 0.5px solid #e2e8f0;
+    border-right: 0.5px solid #e2e8f0;
+    border-bottom: 0.5px solid #e2e8f0;
+  }
+  .entry.alt-color { border-left-color: #059669; }
+  .entry.accent { border-left-color: #d97706; }
+  .entry.purple { border-left-color: #7c3aed; }
+  .entry.psssb-fav {
+    border-left: 3px solid #b91c1c;
+    background: #fffdfa;
+  }
+
+  .q-title {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 7.7pt;
+  }
+  .q-num {
+    color: #1e3a8a;
+    font-weight: 800;
+    margin-right: 2px;
+  }
+  .ans-line {
+    margin-top: 1px;
+    font-weight: 800;
+    color: #047857;
+    font-size: 7.7pt;
+    display: block;
+  }
+  .badge-tag {
+    float: right;
+    font-size: 6pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #e2e8f0;
+    color: #334155;
+    padding: 0.5px 3px;
+    border-radius: 2px;
+    margin-left: 3px;
+  }
+  .badge-psssb {
+    float: right;
+    font-size: 5.8pt;
+    font-weight: 800;
+    background: #fee2e2;
+    color: #991b1b;
+    border: 0.5px solid #f87171;
+    padding: 0.5px 3px;
+    border-radius: 2px;
+    margin-left: 3px;
+    letter-spacing: 0.2px;
+  }
+  .facts {
+    margin-top: 1.5px;
+    padding-left: 10px;
+    font-size: 7.2pt;
+    color: #1e293b;
+  }
+  .facts li {
+    margin-bottom: 1px;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 6.8pt;
+    margin: 2px 0 3px 0;
+    break-inside: avoid;
+  }
+  th, td {
+    border: 0.5px solid #cbd5e1;
+    padding: 1.5px 3px;
+    text-align: left;
+  }
+  th {
+    background: #f1f5f9;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  tr:nth-child(even) td { background: #fafafa; }
+
+  /* Highlights & Style Classes */
+  mark {
+    background-color: #fef08a;
+    color: #000;
+    font-weight: 700;
+    padding: 0 1.5px;
+    border-radius: 1px;
+  }
+  mark.hl-stat {
+    background-color: #e0e7ff;
+    color: #1e1b4b;
+    font-weight: 700;
+  }
+  mark.hl-key {
+    background-color: #dcfce7;
+    color: #064e3b;
+    font-weight: 700;
+  }
+  mark.hl-date {
+    background-color: #ffedd5;
+    color: #7c2d12;
+    font-weight: 700;
+  }
+  .imp-fact {
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .sub-note {
+    font-style: italic;
+    color: #475569;
+  }
+
+  /* One-liner dense list */
+  .oneliners-list {
+    list-style: none;
+    font-size: 7.2pt;
+    padding: 0;
+  }
+  .oneliners-list li {
+    padding: 1.5px 3px;
+    margin-bottom: 2px;
+    border-left: 2px solid #64748b;
+    background: #f8fafc;
+    break-inside: avoid;
+    border-top: 0.5px solid #e2e8f0;
+    border-right: 0.5px solid #e2e8f0;
+    border-bottom: 0.5px solid #e2e8f0;
+  }
+  .oneliners-list li.psssb-hit {
+    border-left: 2.5px solid #b91c1c;
+    background: #fffcf8;
+  }
+
+  @media print {
+    .print-btn-bar { display: none; }
+    body { padding: 0; font-size: 7.6pt; line-height: 1.15; }
+    .columns { column-gap: 4mm; }
+    .entry { padding: 1.5px 3px; margin-bottom: 2.5px; }
+    .facts { font-size: 6.9pt; }
+  }
+</style>
+</head>
+<body>
+
+<div class="print-btn-bar">
+  <button class="btn-print" onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<header class="doc-header">
+  <div>
+    <h1>Current Affairs &bull; September 2026</h1>
+    <div class="meta">Target: <b>PSSSB (Clerk / Senior Assistant / Excise / VDO)</b> | SSC | Bank | State PSC</div>
+  </div>
+  <div style="text-align: right; font-size: 6.8pt; font-weight: 700; color: #0f172a;">
+    <div>ULTRA-COMPACT PRINT EDITION</div>
+    <div>⭐ Marked for PSSSB High-Frequency Questions &bull; Font-Highlighted Fact Base</div>
+  </div>
+</header>
+
+<div class="columns">
+
+  <!-- Q1 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Award</span>
+    <div class="q-title"><span class="q-num">Q1.</span>Who Received The National Lata Mangeshkar Award 2026?</div>
+    <div class="ans-line">Ans: <mark>Shantanu Moitra</mark> (Music Director)</div>
+    <ul class="facts">
+      <li>Conferred by: <b>Madhya Pradesh Government</b> | Ceremony at: <b>Indore, MP</b></li>
+      <li>Cash Prize: <mark class="hl-stat">₹5 Lakh</mark></li>
+      <li><b>Lata Deenanath Mangeshkar Award 2026:</b> &rarr; <mark class="hl-key">Kailash Satyarthi</mark></li>
+    </ul>
+  </div>
+
+  <!-- Q2 -->
+  <div class="entry">
+    <span class="badge-tag">Award</span>
+    <div class="q-title"><span class="q-num">Q2.</span>Selected Among FAO's 100 Women Heroes In Agrifood Systems From Mizoram?</div>
+    <div class="ans-line">Ans: <mark>ZT Lalrithangi</mark> (Pi Mari-i)</div>
+    <ul class="facts">
+      <li>Strawberry farmer from <b>Sangau Village, Mizoram</b></li>
+      <li>FAO Details: Founded: <mark class="hl-date">1945</mark> | Headquarters: <b>Rome, Italy</b></li>
+    </ul>
+  </div>
+
+  <!-- Q3 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Days Theme</span>
+    <div class="q-title"><span class="q-num">Q3.</span>When Is World Lung Day Observed?</div>
+    <div class="ans-line">Ans: <mark>25 September</mark></div>
+    <ul class="facts">
+      <li>Theme 2026: <mark class="hl-key">"A Lifetime Of Lung Health"</mark></li>
+    </ul>
+  </div>
+
+  <!-- Q4 -->
+  <div class="entry purple psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">State Scheme</span>
+    <div class="q-title"><span class="q-num">Q4.</span>Which State/UT Govt Approved The DURGA Scheme For Women &amp; Transgender?</div>
+    <div class="ans-line">Ans: <mark>Delhi</mark></div>
+    <ul class="facts">
+      <li>Under 1st Phase: <mark class="hl-stat">1,300 Pink Electric Autos</mark> will be provided</li>
+      <li>Breakup: <b>1,170 E-Autos</b> for Women | <b>130 E-Autos</b> for Transgender persons</li>
+    </ul>
+  </div>
+
+  <!-- Q5 -->
+  <div class="entry purple psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Central Scheme</span>
+    <div class="q-title"><span class="q-num">Q5.</span>What Is The Annual Health Cover Under Ayushman Bharat - PM-JAY?</div>
+    <div class="ans-line">Ans: <mark>₹5 Lakh</mark> Per Family Per Year</div>
+    <ul class="facts">
+      <li>Milestone: Recently <b>Completed 8 Years</b> | Total Beneficiaries: <mark class="hl-stat">60 Crore</mark></li>
+      <li>Healthcare expenditure: <mark class="hl-stat">₹2 Lakh Crore</mark> | Launched: <mark class="hl-date">23 Sept 2018</mark></li>
+      <li>Nodal Ministry: <b>M/o Health &amp; Family Welfare</b> | Implemented by: <b>NHA</b></li>
+    </ul>
+  </div>
+
+  <!-- Q6 -->
+  <div class="entry">
+    <span class="badge-tag">MoU International</span>
+    <div class="q-title"><span class="q-num">Q6.</span>Which Three Parties Signed The Arctic Security Agreement?</div>
+    <div class="ans-line">Ans: <mark>US, Denmark &amp; Greenland</mark></div>
+    <ul class="facts">
+      <li>Objective: Strengthen defence &amp; security in Arctic &amp; North Atlantic region</li>
+      <li>Modernises US military activities at <b>Pituffik Space Base</b> (Greenland)</li>
+    </ul>
+  </div>
+
+  <!-- Q7 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Environment</span>
+    <div class="q-title"><span class="q-num">Q7.</span>Which Country Named Cyclone "Arnab"?</div>
+    <div class="ans-line">Ans: <mark>Bangladesh</mark></div>
+    <ul class="facts">
+      <li>Formed at: <b>Bay of Bengal</b> | Affected areas: <b>Andhra Pradesh, Odisha</b></li>
+    </ul>
+  </div>
+
+  <!-- Q8 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Banking</span>
+    <div class="q-title"><span class="q-num">Q8.</span>Which Institution Launched India's First Blue Bond Issue?</div>
+    <div class="ans-line">Ans: <mark>Sagarmala Finance Corporation Limited (SMFCL)</mark></div>
+    <ul class="facts">
+      <li>Debt instrument to finance <b>sustainable ocean, marine &amp; water projects</b></li>
+    </ul>
+  </div>
+
+  <!-- Q9 -->
+  <div class="entry accent psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Exercise</span>
+    <div class="q-title"><span class="q-num">Q9.</span>Where Is Exercise Tarang Shakti 2026 Being Hosted?</div>
+    <div class="ans-line">Ans: <mark>Jodhpur, Rajasthan</mark> (2nd Edition)</div>
+    <ul class="facts">
+      <li>Theme: <i>"Power in Partnership"</i> | Multinational Air Exercise</li>
+      <li><b>7 Foreign Nations:</b> Australia, USA, UAE, France, Germany, Sri Lanka, Bangladesh</li>
+      <li>Key Aircraft: US F-35, French Rafale, UAE F-16, IAF Su-30MKI, Rafale &amp; Tejas</li>
+    </ul>
+  </div>
+
+  <!-- Q10 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q10.</span>Who Became Highest Run-Scorer In Women's T20I Cricket?</div>
+    <div class="ans-line">Ans: <mark>Smriti Mandhana</mark> (<mark class="hl-stat">4,788 Runs</mark>)</div>
+    <ul class="facts">
+      <li>Surpassed: <b>Suzie Bates</b> (New Zealand - 4,758 Career Runs)</li>
+    </ul>
+  </div>
+
+  <!-- Q11 -->
+  <div class="entry">
+    <span class="badge-tag">Film Award</span>
+    <div class="q-title"><span class="q-num">Q11.</span>Which Film Won Platform Prize At Toronto Int'l Film Festival (TIFF) 2026?</div>
+    <div class="ans-line">Ans: <mark>Angh</mark> (Nagaland Film)</div>
+    <ul class="facts">
+      <li>Directed by: <b>Theja Rio</b></li>
+    </ul>
+  </div>
+
+  <!-- Q12 -->
+  <div class="entry accent">
+    <span class="badge-tag">Space Sci Tech</span>
+    <div class="q-title"><span class="q-num">Q12.</span>Which Is The Youngest Known Planet Ever Detected?</div>
+    <div class="ans-line">Ans: <mark>Elias 2-24 b</mark></div>
+    <ul class="facts">
+      <li>Discovered by: <b>NASA</b> | Age: <mark class="hl-stat">&lt; 1 Million Years</mark> | Distance: <b>~450 Light-Years</b></li>
+    </ul>
+  </div>
+
+  <!-- Q13 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q13.</span>India's Flag-Bearers At Opening Ceremony Of 2026 Asian Games?</div>
+    <div class="ans-line">Ans: <mark>Manu Bhaker &amp; Pawan Sehrawat</mark></div>
+    <ul class="facts">
+      <li>Venue: <b>Aichi-Nagoya, Japan</b></li>
+      <li>Manu Bhaker (Shooter, Double Olympic Medalist) &amp; Pawan Sehrawat (Kabaddi)</li>
+    </ul>
+  </div>
+
+  <!-- Q14 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q14.</span>Silver In Women's 49kg Weightlifting At Asian Games 2026?</div>
+    <div class="ans-line">Ans: <mark>Mirabai Chanu</mark> (Total Lift: <mark class="hl-stat">198 Kg</mark>)</div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q15.</span>Gold In 10m Air Pistol Mixed Team At Asian Games 2026?</div>
+    <div class="ans-line">Ans: <mark>Suruchi Singh &amp; Kamaljeet</mark></div>
+    <ul class="facts">
+      <li>India's <b>first-ever Asian Games Gold</b> in 10m Air Pistol Mixed Team (Beat South Korea)</li>
+    </ul>
+  </div>
+
+  <!-- Q16 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q16.</span>Which Country Won Women's Cricket Gold At 2026 Asian Games?</div>
+    <div class="ans-line">Ans: <mark>India</mark></div>
+    <ul class="facts">
+      <li>Defeated <b>Sri Lanka by 147 Runs</b> | Captain: <b>Harmanpreet Kaur</b></li>
+    </ul>
+  </div>
+
+  <!-- Q17 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q17.</span>Official Mascot Of The 20th Asian Games 2026 (Aichi-Nagoya)?</div>
+    <div class="ans-line">Ans: <mark>HONOHON</mark></div>
+  </div>
+
+  <!-- Q18 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Art Culture Polity</span>
+    <div class="q-title"><span class="q-num">Q18.</span>Language Recognised As Karnataka's 2nd Additional Administrative Language?</div>
+    <div class="ans-line">Ans: <mark>Tulu</mark></div>
+    <ul class="facts">
+      <li>Applicable Districts: <b>Dakshina Kannada &amp; Udupi</b> | Ancient Dravidian language</li>
+      <li>Polity Static: <mark class="hl-key">Article 345</mark> empowers a State to adopt official languages</li>
+    </ul>
+  </div>
+
+  <!-- Q19 -->
+  <div class="entry">
+    <span class="badge-tag">Summit</span>
+    <div class="q-title"><span class="q-num">Q19.</span>Who Inaugurated The NGT International Environment Conference 2026?</div>
+    <div class="ans-line">Ans: <mark>Narendra Modi</mark></div>
+    <ul class="facts">
+      <li>Held at: <b>New Delhi</b> | Theme: <i>"The Future of Environment and Climate Dynamics"</i></li>
+    </ul>
+  </div>
+
+  <!-- Q20 -->
+  <div class="entry">
+    <span class="badge-tag">Appointment</span>
+    <div class="q-title"><span class="q-num">Q20.</span>Who Has Been Appointed As The Chief Of World Food Programme (WFP)?</div>
+    <div class="ans-line">Ans: <mark>Luke J. Lindberg</mark> (USA)</div>
+    <ul class="facts">
+      <li>WFP Details: Formed <mark class="hl-date">19 Dec 1961</mark> | HQ: <b>Rome, Italy</b></li>
+    </ul>
+  </div>
+
+  <!-- Q21 -->
+  <div class="entry">
+    <span class="badge-tag">MoU</span>
+    <div class="q-title"><span class="q-num">Q21.</span>India Signed MoU With Which Country For Gujarat's Kalpasar Project?</div>
+    <div class="ans-line">Ans: <mark>Netherlands</mark></div>
+    <ul class="facts">
+      <li>Water management &amp; infra cooperation based on Dutch <b>Afsluitdijk</b> model</li>
+    </ul>
+  </div>
+
+  <!-- Q22 -->
+  <div class="entry">
+    <span class="badge-tag">Summit</span>
+    <div class="q-title"><span class="q-num">Q22.</span>Where Was The International Space Summit 2026 Held?</div>
+    <div class="ans-line">Ans: <mark>Paris, France</mark></div>
+    <ul class="facts">
+      <li>India represented by ISRO Chairman <b>Dr. V. Narayanan</b></li>
+    </ul>
+  </div>
+
+  <!-- Q23 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Environment First</span>
+    <div class="q-title"><span class="q-num">Q23.</span>World's Highest-Altitude Twin Flower Fields Inaugurated Where?</div>
+    <div class="ans-line">Ans: <mark>Leh, Ladakh</mark> (Choglamsar &amp; Stakna)</div>
+    <ul class="facts">
+      <li>Inaugurated by Ladakh LG <b>V. K. Saxena</b></li>
+    </ul>
+  </div>
+
+  <!-- Q24 -->
+  <div class="entry">
+    <span class="badge-tag">Appointment</span>
+    <div class="q-title"><span class="q-num">Q24.</span>Who Has Been Appointed As ICC Deputy Chairperson?</div>
+    <div class="ans-line">Ans: <mark>Tavengwa Mukuhlani</mark></div>
+    <ul class="facts">
+      <li>ICC: Founded: <mark class="hl-date">1909</mark> | HQ: <b>Dubai</b> | Chairman: <b>Jay Shah</b></li>
+    </ul>
+  </div>
+
+  <!-- Q25 -->
+  <div class="entry psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Appointment</span>
+    <div class="q-title"><span class="q-num">Q25.</span>Appointed As World Bank Group Chief Economist?</div>
+    <div class="ans-line">Ans: <mark>Michael Kremer</mark></div>
+    <ul class="facts">
+      <li>World Bank Static: Founded: <mark class="hl-date">1944</mark> | HQ: <b>Washington D.C.</b> | President: <b>Ajay Banga</b></li>
+    </ul>
+  </div>
+
+  <!-- Q26 -->
+  <div class="entry">
+    <span class="badge-tag">Award</span>
+    <div class="q-title"><span class="q-num">Q26.</span>Received Guru Dr Saroja Vaidyanathan Excellence Award 2026?</div>
+    <div class="ans-line">Ans: <mark>Dr Vasundhara Doraswamy</mark></div>
+    <ul class="facts">
+      <li>Honoured for Bharatanatyam classical dance (Tamil Nadu)</li>
+    </ul>
+  </div>
+
+  <!-- Q27 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Banking</span>
+    <div class="q-title"><span class="q-num">Q27.</span>MDR Introduced By NPCI On Specified Merchant UPI Above ₹2,000?</div>
+    <div class="ans-line">Ans: <mark>0.4% MDR</mark> (Effective 15 October 2026)</div>
+    <ul class="facts">
+      <li>Transactions up to ₹2,000: <b>Zero MDR</b> | P2P transfers: <b>Zero</b></li>
+      <li>Transactions &gt; ₹75,000: <mark class="hl-stat">₹300 Fixed</mark> per transaction</li>
+    </ul>
+  </div>
+
+  <!-- Q28 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Index Banking</span>
+    <div class="q-title"><span class="q-num">Q28.</span>Indian Bank Ranked 3rd In Forbes' World's Top Performing Banks 2026?</div>
+    <div class="ans-line">Ans: <mark>HDFC Bank</mark></div>
+    <ul class="facts">
+      <li>Rank 1: <b>OCBC, Singapore</b> | Rank 2: <b>DBS Bank, Singapore</b></li>
+    </ul>
+  </div>
+
+  <!-- Q29 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q29.</span>Which Team Won The Global Chess League 2026?</div>
+    <div class="ans-line">Ans: <mark>Ganges Grandmasters</mark> (Host: Bengaluru)</div>
+    <ul class="facts">
+      <li>Runners-up: <i>Alpine APL Pipers</i></li>
+    </ul>
+  </div>
+
+  <!-- Q30 -->
+  <div class="entry psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Award</span>
+    <div class="q-title"><span class="q-num">Q30.</span>1st Prize Under Rajbhasha Kirti Awards 2025-26 Won By:</div>
+    <div class="ans-line">Ans: <mark>Department of Financial Services (DFS)</mark></div>
+    <ul class="facts">
+      <li>Ministry of Finance; presented by Ministry of Home Affairs for official Hindi use</li>
+    </ul>
+  </div>
+
+  <!-- Q31 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q31.</span>1st Indian Man To Win Archery World Cup Final In 2026?</div>
+    <div class="ans-line">Ans: <mark>Dhiraj Bommadevara</mark> (Gold in Mexico)</div>
+    <ul class="facts">
+      <li>Defeated Junya Nakanishi (Japan) | Women's Recurve: <i>Marie Horáčková</i></li>
+      <li>Static: 1st Indian Overall was <b>Dola Banerjee</b></li>
+    </ul>
+  </div>
+
+  <!-- Q32 -->
+  <div class="entry">
+    <span class="badge-tag">Film Award</span>
+    <div class="q-title"><span class="q-num">Q32.</span>Won Outstanding Drama Series At 78th Emmy Awards 2026?</div>
+    <div class="ans-line">Ans: <mark>The Pitt</mark></div>
+    <ul class="facts">
+      <li>Comedy: <i>Widow's Bay</i> | Lead Actor: <b>Noah Wyle</b> (The Pitt) | Lead Actress: <b>Rhea Seehorn</b></li>
+    </ul>
+  </div>
+
+  <!-- Q33 -->
+  <div class="entry purple psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Central Scheme</span>
+    <div class="q-title"><span class="q-num">Q33.</span>Which Institution Announced "Jan Soochna Seva" Initiative?</div>
+    <div class="ans-line">Ans: <mark>Supreme Court Of India</mark></div>
+    <ul class="facts">
+      <li>Launched on <b>Hindi Diwas (14 Sept 2026)</b> to provide simplified Hindi judgments</li>
+    </ul>
+  </div>
+
+  <!-- Q34 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q34.</span>Who Won Women's Junior Asia Cup Hockey Title 2026?</div>
+    <div class="ans-line">Ans: <mark>India</mark> (<span class="imp-fact">3rd Title</span>; Host: China)</div>
+    <ul class="facts">
+      <li>Runner-up: China | Best GK: <b>Nidhi (India)</b> | Top Scorer: <b>Sanika Mane (7 goals)</b></li>
+    </ul>
+  </div>
+
+  <!-- Q35 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q35.</span>Who Won Men's Junior Asia Cup Hockey Title 2026?</div>
+    <div class="ans-line">Ans: <mark>India</mark> (<span class="imp-fact">6th Title</span>; Host: China)</div>
+    <ul class="facts">
+      <li>Runner-up: South Korea | Top Scorer: <b>Anmol Ekka (17 goals)</b> | Best GK: <b>Vivek Lakra</b></li>
+    </ul>
+  </div>
+
+  <!-- Q36 -->
+  <div class="entry">
+    <span class="badge-tag">Summit</span>
+    <div class="q-title"><span class="q-num">Q36.</span>Which City Hosted World Circular Economy Forum (WCEF) 2026?</div>
+    <div class="ans-line">Ans: <mark>Gandhinagar, Gujarat</mark></div>
+    <ul class="facts">
+      <li>1st WCEF hosted in South Asia | Theme: <i>"Circular Economy: Transition For People And Prosperity"</i></li>
+    </ul>
+  </div>
+
+  <!-- Q37 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q37.</span>Who Won Men's Singles Title At 2026 US Open?</div>
+    <div class="ans-line">Ans: <mark>Alexander Zverev</mark> (Germany)</div>
+    <ul class="facts">
+      <li>Defeated: <i>Ben Shelton (USA)</i> | Men's Doubles: Christian Harrison &amp; Neal Skupski</li>
+    </ul>
+  </div>
+
+  <!-- Q38 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q38.</span>Who Won Women's Singles Title At 2026 US Open?</div>
+    <div class="ans-line">Ans: <mark>Elena Rybakina</mark> (Kazakhstan)</div>
+    <ul class="facts">
+      <li>Defeated: <i>Aryna Sabalenka (Belarus)</i> | Doubles: Kateřina Siniaková &amp; Taylor Townsend</li>
+    </ul>
+  </div>
+
+  <!-- Q39 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Banking Bill</span>
+    <div class="q-title"><span class="q-num">Q39.</span>When Did Bankers' Books Evidence Act, 2026 Come Into Force?</div>
+    <div class="ans-line">Ans: <mark>1 October 2026</mark></div>
+    <ul class="facts">
+      <li>Replaced: <mark class="hl-date">1891 Act</mark> | Recognises electronic, digital &amp; cloud banking records as legal evidence</li>
+    </ul>
+  </div>
+
+  <!-- Q40 -->
+  <div class="entry purple psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Polity Constitution</span>
+    <div class="q-title"><span class="q-num">Q40.</span>Proposed Article 371(K) Is Related To Which State/UT?</div>
+    <div class="ans-line">Ans: <mark>Ladakh</mark></div>
+    <ul class="facts">
+      <li>Proposed by MHA to provide constitutional safeguards &amp; governance autonomy</li>
+      <li>Part XXI: <b>Articles 371 &amp; 371A-J</b> provide special provisions to 12 States</li>
+      <li><b>6th Schedule Static:</b> Covers Assam, Meghalaya, Tripura, Mizoram via <b>Article 244(2) ADCs</b></li>
+    </ul>
+  </div>
+
+  <!-- Q41 -->
+  <div class="entry accent psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">First Defence</span>
+    <div class="q-title"><span class="q-num">Q41.</span>First Woman Army Officer From Kargil District?</div>
+    <div class="ans-line">Ans: <mark>Stanzin Tsangyang</mark></div>
+    <ul class="facts">
+      <li>Hometown: <b>Zanskar Valley, Ladakh</b> | Commissioned from: <b>OTA Chennai</b></li>
+    </ul>
+  </div>
+
+  <!-- Q42 -->
+  <div class="entry accent psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Exercise</span>
+    <div class="q-title"><span class="q-num">Q42.</span>Exercise Yudh Abhyas 2026 Conducted Between India And:</div>
+    <div class="ans-line">Ans: <mark>United States</mark> (22nd Edition)</div>
+    <ul class="facts">
+      <li>Venues: <b>Auli (Uttarakhand)</b> &amp; <b>Mahajan Field Firing Range (Rajasthan)</b></li>
+      <li>Other IND-US drills: <i>Vajra Prahar, Tiger Triumph, Malabar (Quad), Tarkash</i></li>
+    </ul>
+  </div>
+
+  <!-- Q43 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q43.</span>Which Team Won The Duleep Trophy 2026-27?</div>
+    <div class="ans-line">Ans: <mark>East Zone</mark> (3rd Title)</div>
+    <ul class="facts">
+      <li>Runner Up: <i>South Zone</i> | Player of Series: <b>Tilak Varma</b> | Top Scorer: <b>Ishan Kishan (409 Runs)</b></li>
+    </ul>
+  </div>
+
+  <!-- Q44 -->
+  <div class="entry accent psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Defence Sci</span>
+    <div class="q-title"><span class="q-num">Q44.</span>Where Was Ocean Research Vessel 'Sagar Manthan' Launched?</div>
+    <div class="ans-line">Ans: <mark>Kolkata</mark></div>
+    <ul class="facts">
+      <li>Built by: <b>GRSE</b> under India's <b>Deep Ocean Mission</b> for seafloor mineral mapping</li>
+    </ul>
+  </div>
+
+  <!-- Q45 -->
+  <div class="entry accent">
+    <span class="badge-tag">Space Sci Tech</span>
+    <div class="q-title"><span class="q-num">Q45.</span>TRISHNA Mission Is Joint Project Of Which Space Agencies?</div>
+    <div class="ans-line">Ans: <mark>ISRO &amp; CNES</mark> (France)</div>
+    <ul class="facts">
+      <li>Thermal Infra-Red satellite for natural resources &amp; water stress; launch in <mark class="hl-date">2027</mark></li>
+    </ul>
+  </div>
+
+  <!-- Q46 -->
+  <div class="entry accent psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Days Theme</span>
+    <div class="q-title"><span class="q-num">Q46.</span>Theme Of 9th Rashtriya Poshan Maah 2026?</div>
+    <div class="ans-line">Ans: <mark>"Hamari Anganwadi, Hamari Jimmedari"</mark></div>
+    <ul class="facts">
+      <li>Launched at: <b>Varanasi, UP</b> by Ministry of WCD | Poshan Abhiyaan launched: <mark class="hl-date">March 2018</mark></li>
+    </ul>
+  </div>
+
+  <!-- Q47 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q47.</span>How Many Medals Did India Win At 4th Pickleball World Cup 2026?</div>
+    <div class="ans-line">Ans: <mark>41 Medals</mark> (Rank: 4th; Host: Vietnam)</div>
+    <ul class="facts">
+      <li>Medals: <b>7 Gold, 17 Silver, 17 Bronze</b> | Gold: Purvansh Patel, Bhushan Akut</li>
+    </ul>
+  </div>
+
+  <!-- Q48 -->
+  <div class="entry psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Award Polity</span>
+    <div class="q-title"><span class="q-num">Q48.</span>Who Received Dr. APJ Abdul Kalam Jan Seva Puraskar 2026?</div>
+    <div class="ans-line">Ans: <mark>Kishor Makwana</mark></div>
+    <ul class="facts">
+      <li>Chairman of <b>NCSC (National Commission for Scheduled Castes - Article 338)</b></li>
+    </ul>
+  </div>
+
+  <!-- Q49 -->
+  <div class="entry">
+    <span class="badge-tag">Summit</span>
+    <div class="q-title"><span class="q-num">Q49.</span>Where Was The 27th World Knowledge Forum 2026 Held?</div>
+    <div class="ans-line">Ans: <mark>Seoul, South Korea</mark></div>
+    <ul class="facts">
+      <li>Theme: <i>"The Promethean Moment: Architecting The Co-Intelligence Order"</i></li>
+    </ul>
+  </div>
+
+  <!-- Q50 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Art Culture</span>
+    <div class="q-title"><span class="q-num">Q50.</span>Shekhawati Havelis Added To UNESCO Tentative List From:</div>
+    <div class="ans-line">Ans: <mark>Rajasthan</mark></div>
+    <ul class="facts">
+      <li>Across 3 districts: <b>Jhunjhunu, Sikar &amp; Churu</b> (Marwari Merchant hub)</li>
+      <li>India Status: <mark class="hl-stat">45 World Heritage Sites</mark> + <b>78 Tentative List Sites</b></li>
+    </ul>
+  </div>
+
+  <!-- Q51 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Environment Award</span>
+    <div class="q-title"><span class="q-num">Q51.</span>City Ranked 1st In 5th Swachh Vayu Sarvekshan 2026 (&gt;10 Lakh Population)?</div>
+    <div class="ans-line">Ans: <mark>Lucknow</mark></div>
+    <ul class="facts">
+      <li>Cat 1 (&gt;10 Lakh): 1. <b>Lucknow</b> &rarr; 2. <b>Indore</b> &rarr; 3. <b>Jabalpur</b></li>
+      <li>Cat 2 (3-10 Lakh): <b>Rourkela (Odisha)</b> | Cat 3 (&lt;3 Lakh): <b>Kalinganagar (Odisha)</b></li>
+    </ul>
+  </div>
+
+  <!-- Q52 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Days Theme</span>
+    <div class="q-title"><span class="q-num">Q52.</span>International Day Of Clean Air For Blue Skies Observed On:</div>
+    <div class="ans-line">Ans: <mark>7 September</mark></div>
+  </div>
+
+  <!-- Q53 -->
+  <div class="entry accent psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Exercise</span>
+    <div class="q-title"><span class="q-num">Q53.</span>India Conducted 'Veer Guardian 2026' Air Exercise With:</div>
+    <div class="ans-line">Ans: <mark>Japan</mark> (2nd Edition, Jodhpur)</div>
+    <ul class="facts">
+      <li>Other IND-Japan Exercises: <i>Malabar (Quad), Dharma Guardian (Army), JIMEX</i></li>
+    </ul>
+  </div>
+
+  <!-- Q54 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Summit</span>
+    <div class="q-title"><span class="q-num">Q54.</span>Host Country Of 18th BRICS Summit 2026?</div>
+    <div class="ans-line">Ans: <mark>India</mark> (Bharat Mandapam, New Delhi)</div>
+    <ul class="facts">
+      <li>Theme: <i>"Building Resilience, Innovation, Cooperation And Sustainability"</i></li>
+      <li>India hosted <b>4th time</b> | Proposed: <b>BRICS Risk Lab at GIFT City</b> &amp; <b>BRICS CONNECT</b></li>
+      <li>BRICS 11 members account for <mark class="hl-stat">49.5% Global Population &amp; 40% GDP</mark></li>
+      <li>India's BRICS Sherpa: <mark class="hl-key">Sudhakar Dalela</mark></li>
+    </ul>
+  </div>
+
+  <!-- Q55 -->
+  <div class="entry">
+    <span class="badge-tag">Summit</span>
+    <div class="q-title"><span class="q-num">Q55.</span>Heads Of National Statistical Offices Of BRICS Met In:</div>
+    <div class="ans-line">Ans: <mark>Lucknow</mark></div>
+  </div>
+
+  <!-- Q56 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Sport</span>
+    <div class="q-title"><span class="q-num">Q56.</span>Won Men's Doubles Title At China Masters 2026?</div>
+    <div class="ans-line">Ans: <mark>Satwiksairaj Rankireddy &amp; Chirag Shetty</mark></div>
+  </div>
+
+  <!-- Q57 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Geography</span>
+    <div class="q-title"><span class="q-num">Q57.</span>Mount Anak Krakatau Active Volcano Located In Which Country?</div>
+    <div class="ans-line">Ans: <mark>Indonesia</mark> (Sunda Strait, between Sumatra &amp; Java)</div>
+  </div>
+
+  <!-- Q58 -->
+  <div class="entry psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Appointment</span>
+    <div class="q-title"><span class="q-num">Q58.</span>Appointed 14th LG Of Andaman &amp; Nicobar Islands In Sep 2026?</div>
+    <div class="ans-line">Ans: <mark>Dinesh Sharma</mark></div>
+    <ul class="facts">
+      <li>Capital: <b>Sri Vijaya Puram (Port Blair)</b> | Separated by: <mark class="hl-key">10 Degree Channel</mark></li>
+    </ul>
+  </div>
+
+  <!-- Q59 -->
+  <div class="entry psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Award</span>
+    <div class="q-title"><span class="q-num">Q59.</span>How Many Educators Conferred National Teachers Awards 2026?</div>
+    <div class="ans-line">Ans: <mark>82 Awardees</mark> (By President Murmu)</div>
+    <ul class="facts">
+      <li>Breakup: <b>48 School Teachers</b> + <b>21 Higher Ed/Polytechnic</b> + <b>13 Skill Trainers</b></li>
+    </ul>
+  </div>
+
+  <!-- Q60 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Summit</span>
+    <div class="q-title"><span class="q-num">Q60.</span>Which Country Hosted 26th SCO Summit 2026?</div>
+    <div class="ans-line">Ans: <mark>Kyrgyzstan</mark> (Bishkek)</div>
+    <ul class="facts">
+      <li>Adopted <b>Bishkek Declaration</b> | Handed over 2026-27 SCO Presidency to: <b>Pakistan</b></li>
+      <li>SCO HQ: <b>Beijing</b> | Total: <b>10 Members</b> (Belarus 10th member)</li>
+      <li>SCO Tourism &amp; Cultural Capital 2026-27: <mark class="hl-key">Lahore, Pakistan</mark> (1st was Varanasi)</li>
+    </ul>
+  </div>
+
+  <!-- Q61 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Art Culture</span>
+    <div class="q-title"><span class="q-num">Q61.</span>Gollala Gudi Temple Declared Monument Of National Importance Located In:</div>
+    <div class="ans-line">Ans: <mark>Telangana</mark> (Palampet, Mulugu District)</div>
+    <ul class="facts">
+      <li>Declared by ASI; Kakatiya architectural style near Ramappa Temple</li>
+    </ul>
+  </div>
+
+  <!-- Q62 -->
+  <div class="entry">
+    <span class="badge-tag">Award</span>
+    <div class="q-title"><span class="q-num">Q62.</span>Tenzing Norgay Adventure Award 2024 For Lifetime Achievement?</div>
+    <div class="ans-line">Ans: <mark>Shiv Prasad Chamoli</mark></div>
+    <ul class="facts">
+      <li>Prize: <mark class="hl-stat">₹15 Lakh</mark> | Land: <i>Baljeet Kaur, Skalzang Rigzin</i> | Water: <i>Rimo Saha</i></li>
+    </ul>
+  </div>
+
+  <!-- Q63 -->
+  <div class="entry">
+    <span class="badge-tag">Appointment</span>
+    <div class="q-title"><span class="q-num">Q63.</span>First CEO Of Shri Ram Janmabhoomi Teerth Kshetra Trust?</div>
+    <div class="ans-line">Ans: <mark>Retd Air Marshal Jeetendra Mishra</mark></div>
+  </div>
+
+  <!-- Q64 -->
+  <div class="entry accent psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Defence Appointment</span>
+    <div class="q-title"><span class="q-num">Q64.</span>First Non-Medical Woman Two-Star Officer In Indian Defence Forces?</div>
+    <div class="ans-line">Ans: <mark>AVM Shakti Sharma</mark></div>
+    <ul class="facts">
+      <li>Air Vice Marshal assumed charge as Assistant Chief of Air Staff (Education Branch)</li>
+    </ul>
+  </div>
+
+  <!-- Q65 -->
+  <div class="entry accent">
+    <span class="badge-tag">Space</span>
+    <div class="q-title"><span class="q-num">Q65.</span>Which Country Became 71st Signatory Of NASA's Artemis Accords?</div>
+    <div class="ans-line">Ans: <mark>Türkiye</mark></div>
+  </div>
+
+  <!-- Q66 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Banking</span>
+    <div class="q-title"><span class="q-num">Q66.</span>NPCI Partnered With Which Country For UPI Payments Via UZQR?</div>
+    <div class="ans-line">Ans: <mark>Uzbekistan</mark></div>
+    <ul class="facts">
+      <li>UPI is now accepted across <b>10+ nations</b> | 1st to adopt full UPI: <b>Nepal</b></li>
+    </ul>
+  </div>
+
+  <!-- Q67 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Environment</span>
+    <div class="q-title"><span class="q-num">Q67.</span>Veligonda Irrigation Project Gets Water From Which River?</div>
+    <div class="ans-line">Ans: <mark>Krishna River</mark> (Andhra Pradesh)</div>
+  </div>
+
+  <!-- Q68 -->
+  <div class="entry accent psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Space Sci Tech</span>
+    <div class="q-title"><span class="q-num">Q68.</span>Launch Vehicle Used By ISRO For EOS-05 Earth Observation Satellite?</div>
+    <div class="ans-line">Ans: <mark>GSLV-F17</mark></div>
+    <ul class="facts">
+      <li>India's 1st dedicated Geosynchronous Earth Observation Satellite at <b>35,786 km orbit</b></li>
+    </ul>
+  </div>
+
+  <!-- Q69 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Environment</span>
+    <div class="q-title"><span class="q-num">Q69.</span>Sone River Water Sharing Agreement Signed Between Which States?</div>
+    <div class="ans-line">Ans: <mark>Bihar &amp; Jharkhand</mark></div>
+    <ul class="facts">
+      <li>Share: <b>Bihar: 5.75 MAF</b> | <b>Jharkhand: 2 MAF</b></li>
+      <li>Sone Origin: <b>Amarkantak Hills</b> | Merges with Ganga at: <b>Maner, Patna</b></li>
+    </ul>
+  </div>
+
+  <!-- Q70 -->
+  <div class="entry psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Award</span>
+    <div class="q-title"><span class="q-num">Q70.</span>68th Ramon Magsaysay Award 2026 Winners:</div>
+    <div class="ans-line">Ans: <mark>Tommy Koh, Runa Khan &amp; Bo Kyi</mark></div>
+    <ul class="facts">
+      <li>Known as <i>Nobel Peace Prize of Asia</i> (1st awarded in 1958)</li>
+      <li>Tommy Koh (Singapore), Runa Khan (Bangladesh), Bo Kyi (Myanmar)</li>
+    </ul>
+  </div>
+
+  <!-- Q71 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Environment First</span>
+    <div class="q-title"><span class="q-num">Q71.</span>India's Largest Solar Cell Manufacturing Facility Commissioned By:</div>
+    <div class="ans-line">Ans: <mark>Premier Energies Limited</mark></div>
+    <ul class="facts">
+      <li>At <b>Naidupeta, Andhra Pradesh</b> | Capacity: <mark class="hl-stat">10.6 GW</mark> (88,000 cells/hr)</li>
+    </ul>
+  </div>
+
+  <!-- Q72 -->
+  <div class="entry accent">
+    <span class="badge-tag">First Sci</span>
+    <div class="q-title"><span class="q-num">Q72.</span>First NIT In India To Establish Dedicated Campus Observatory?</div>
+    <div class="ans-line">Ans: <mark>NIT Srinagar</mark> (NSOAA)</div>
+  </div>
+
+  <!-- Q73 -->
+  <div class="entry purple psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Polity Constitution</span>
+    <div class="q-title"><span class="q-num">Q73.</span>Under Which Law Are Governors Invited To Inter-State Council?</div>
+    <div class="ans-line">Ans: <mark>Article 356 (President's Rule)</mark></div>
+    <ul class="facts">
+      <li><b>Inter-State Council (Amendment) Order 2026:</b> Under <b>Article 263</b></li>
+      <li>Delhi LG: <b>Article 239AB</b> | Puducherry LG: <b>Sec 51 of UT Act 1963</b> | J&amp;K: <b>Sec 73 of Reorganisation Act 2019</b></li>
+    </ul>
+  </div>
+
+  <!-- Q74 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Environment First</span>
+    <div class="q-title"><span class="q-num">Q74.</span>India's 51st Doppler Weather Radar Installed At:</div>
+    <div class="ans-line">Ans: <mark>Sambalpur, Odisha</mark></div>
+    <ul class="facts">
+      <li>Installed under <b>Mission Mausam</b> by Ministry of Earth Sciences</li>
+    </ul>
+  </div>
+
+  <!-- Q75 -->
+  <div class="entry accent psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Exercise</span>
+    <div class="q-title"><span class="q-num">Q75.</span>Ex 'Nomadic Elephant 2026' Conducted Between India And:</div>
+    <div class="ans-line">Ans: <mark>Mongolia</mark> (18th Edition)</div>
+    <ul class="facts">
+      <li>Held at: <b>Pithoragarh, Uttarakhand</b></li>
+    </ul>
+  </div>
+
+  <!-- Q76 -->
+  <div class="entry purple psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Central Scheme</span>
+    <div class="q-title"><span class="q-num">Q76.</span>When Was PM Khanij Kshetra Kalyan Yojana (PMKKKY) Launched?</div>
+    <div class="ans-line">Ans: <mark>17 September 2015</mark> (Completed 11 Years)</div>
+    <ul class="facts">
+      <li>Sanctioned: 4.70 Lakh projects worth <mark class="hl-stat">₹1 Lakh Crore</mark> via District Mineral Foundations (DMFs)</li>
+    </ul>
+  </div>
+
+  <!-- Q77 -->
+  <div class="entry">
+    <span class="badge-tag">Summit</span>
+    <div class="q-title"><span class="q-num">Q77.</span>Theme Of 5th Edition Of SEMICON India 2026?</div>
+    <div class="ans-line">Ans: <mark>"Silicon To Systems: Building The Ecosystem"</mark></div>
+    <ul class="facts">
+      <li>Inaugurated by PM Modi at <b>Yashobhoomi, New Delhi</b></li>
+    </ul>
+  </div>
+
+  <!-- Q78 -->
+  <div class="entry purple psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">State Scheme</span>
+    <div class="q-title"><span class="q-num">Q78.</span>First State To Provide Free Registration Of Rural Properties?</div>
+    <div class="ans-line">Ans: <mark>Madhya Pradesh</mark></div>
+    <ul class="facts">
+      <li>Scheme: <i>Swamitva Adhikar Abhilekh Nispadan Evam Panjiyan Yojana</i> (~50 Lakh properties)</li>
+    </ul>
+  </div>
+
+  <!-- Q79 -->
+  <div class="entry accent psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Defence Sci</span>
+    <div class="q-title"><span class="q-num">Q79.</span>India's 1st Indigenous Long-Range One-Way Attack Drone?</div>
+    <div class="ans-line">Ans: <mark>KAL</mark> (Range: <mark class="hl-stat">Up to 1,000 Km</mark>)</div>
+    <ul class="facts">
+      <li>Tested at <b>Pokhran, Rajasthan</b>; developed by <b>IG Defence (Noida)</b></li>
+    </ul>
+  </div>
+
+  <!-- Q80 -->
+  <div class="entry psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Film Award</span>
+    <div class="q-title"><span class="q-num">Q80.</span>India's Official Entry For Oscars 2027 In Best Int'l Feature Film?</div>
+    <div class="ans-line">Ans: <mark>Gondhal</mark> (Marathi Film)</div>
+    <ul class="facts">
+      <li>Directed by: <b>Santosh Davakhar</b></li>
+    </ul>
+  </div>
+
+  <!-- Q81 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Agriculture Economic</span>
+    <div class="q-title"><span class="q-num">Q81.</span>India's First Soil Carbon Payments Given To Farmers Of Which States?</div>
+    <div class="ans-line">Ans: <mark>Punjab &amp; Haryana</mark></div>
+    <ul class="facts">
+      <li>Under <b>'Aadi' Farmer Carbon Programme</b> for sequestering soil carbon</li>
+    </ul>
+  </div>
+
+  <!-- Q82 -->
+  <div class="entry accent psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Exercise</span>
+    <div class="q-title"><span class="q-num">Q82.</span>SLINEX-26 Bilateral Naval Exercise Conducted With:</div>
+    <div class="ans-line">Ans: <mark>Sri Lanka</mark> (13th Edition, Visakhapatnam)</div>
+    <ul class="facts">
+      <li>Indian Navy represented by <b>INS Kavaratti</b> &amp; <b>INS Jyoti</b></li>
+    </ul>
+  </div>
+
+  <!-- Q83 -->
+  <div class="entry">
+    <span class="badge-tag">Award</span>
+    <div class="q-title"><span class="q-num">Q83.</span>First Indian-American To Receive Arthur M. Bueche Award 2026?</div>
+    <div class="ans-line">Ans: <mark>Sethuraman Panchanathan</mark></div>
+    <ul class="facts">
+      <li>Conferred by National Academy of Engineering (NAE)</li>
+    </ul>
+  </div>
+
+  <!-- Q84 -->
+  <div class="entry">
+    <span class="badge-tag">Index</span>
+    <div class="q-title"><span class="q-num">Q84.</span>Global Rank Of GIFT City In GFCI 40 (Global Financial Centres Index)?</div>
+    <div class="ans-line">Ans: <mark>37th Rank</mark> (Topped by New York &amp; London)</div>
+  </div>
+
+  <!-- Q85 -->
+  <div class="entry purple psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Central Campaign</span>
+    <div class="q-title"><span class="q-num">Q85.</span>Theme Of Swachhata Hi Seva 2026 Campaign (17 Sep - 2 Oct)?</div>
+    <div class="ans-line">Ans: <mark>"Swachhata Mein Sahbhag; Swachh Bharat, Viksit Bharat"</mark></div>
+  </div>
+
+  <!-- Q86 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Banking Labour</span>
+    <div class="q-title"><span class="q-num">Q86.</span>EPFO Wage Ceiling Increased From ₹15,000 To:</div>
+    <div class="ans-line">Ans: <mark>₹25,000</mark> Per Month</div>
+  </div>
+
+  <!-- Q87 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Index</span>
+    <div class="q-title"><span class="q-num">Q87.</span>Topped India Electric Mobility Index (IEMI) 2025 By NITI Aayog?</div>
+    <div class="ans-line">Ans: <mark>Delhi</mark> (84 Points)</div>
+    <ul class="facts">
+      <li>Top 4: 1. <b>Delhi</b> | 2. <b>Maharashtra</b> | 3. <b>Karnataka (1st in infra)</b> | 4. <b>Chandigarh</b></li>
+    </ul>
+  </div>
+
+  <!-- Q88 -->
+  <div class="entry alt-color">
+    <span class="badge-tag">Heritage</span>
+    <div class="q-title"><span class="q-num">Q88.</span>Declared Ladakh's First Heritage Village?</div>
+    <div class="ans-line">Ans: <mark>Kumik Village</mark> (Zanskar, Ladakh)</div>
+    <ul class="facts">
+      <li>Known for ancient Kanjur manuscripts &amp; Tibetan Buddhist texts</li>
+    </ul>
+  </div>
+
+  <!-- Q89 -->
+  <div class="entry accent psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Appointment Defence</span>
+    <div class="q-title"><span class="q-num">Q89.</span>First Woman IG Of CRPF's COBRA Unit?</div>
+    <div class="ans-line">Ans: <mark>Sanjukta Parashar</mark></div>
+    <ul class="facts">
+      <li>Commando Battalion for Resolute Action: CRPF jungle warfare unit</li>
+    </ul>
+  </div>
+
+  <!-- Q90 -->
+  <div class="entry psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Cinema Award</span>
+    <div class="q-title"><span class="q-num">Q90.</span>Who Has Been Honoured With Dadasaheb Phalke Award 2026?</div>
+    <div class="ans-line">Ans: <mark>Anant Nag</mark> (Veteran Kannada Actor - for 2024)</div>
+    <ul class="facts">
+      <li>Conferred at: <b>72nd National Film Awards (Kevadia, Gujarat)</b></li>
+      <li>India's highest cinema award | 1st Recipient: <mark class="hl-date">Devika Rani (1969)</mark></li>
+      <li>For 2023: <i>Mohanlal</i> (awarded in 2025)</li>
+    </ul>
+  </div>
+
+  <!-- Q91 -->
+  <div class="entry psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Index</span>
+    <div class="q-title"><span class="q-num">Q91.</span>What Is India's Rank In Global Gender Gap Index 2026?</div>
+    <div class="ans-line">Ans: <mark>131st Rank</mark> (Score: 64.5%)</div>
+    <ul class="facts">
+      <li>Released by: <b>World Economic Forum (WEF)</b></li>
+      <li>Top 3: 1. <b>Iceland</b> &rarr; 2. <b>Finland</b> &rarr; 3. <b>Norway</b> | Last: <b>Chad (145th)</b></li>
+    </ul>
+  </div>
+
+  <!-- Q92 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Environment Project</span>
+    <div class="q-title"><span class="q-num">Q92.</span>Kishau Multipurpose Project Is Being Developed On Which River?</div>
+    <div class="ans-line">Ans: <mark>Tons River</mark> (Largest Tributary of Yamuna)</div>
+    <ul class="facts">
+      <li>232.6-metre concrete gravity dam signed by <b>6 States/UT</b> (HP, UK, UP, HR, RJ, DL)</li>
+      <li>Declared National Project with <mark class="hl-stat">90% Central Funding</mark></li>
+    </ul>
+  </div>
+
+  <!-- Q93 -->
+  <div class="entry purple psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Central Scheme</span>
+    <div class="q-title"><span class="q-num">Q93.</span>How Many Artisans Registered Under PM Vishwakarma?</div>
+    <div class="ans-line">Ans: <mark>30 Lakh Artisans</mark> (Completed 3 Years)</div>
+    <ul class="facts">
+      <li>Launched: <mark class="hl-date">17 Sept 2023</mark> by PM Modi under Ministry of MSME</li>
+      <li><b>24.50 Lakh artisans</b> completed basic skill training</li>
+    </ul>
+  </div>
+
+  <!-- Q94 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Days Theme</span>
+    <div class="q-title"><span class="q-num">Q94.</span>When Is World Rhino Day Celebrated?</div>
+    <div class="ans-line">Ans: <mark>22 September</mark></div>
+    <ul class="facts">
+      <li>5 species globally | <b>Kaziranga National Park (Assam)</b> famed for Greater One-Horned Rhinos</li>
+    </ul>
+  </div>
+
+  <!-- Q95 -->
+  <div class="entry psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Days Polity</span>
+    <div class="q-title"><span class="q-num">Q95.</span>When Is Hindi Diwas Celebrated In India?</div>
+    <div class="ans-line">Ans: <mark>14 September</mark></div>
+    <ul class="facts">
+      <li>Marks adoption of Hindi in Devanagari script on <mark class="hl-date">14 Sept 1949</mark></li>
+      <li>Constitution: <b>Part XVII</b> &bull; <mark class="hl-key">Article 343(1)</mark> specifies official language of Union</li>
+    </ul>
+  </div>
+
+  <!-- Q96 -->
+  <div class="entry">
+    <span class="badge-tag">Days Theme</span>
+    <div class="q-title"><span class="q-num">Q96.</span>When Is World Rabies Day Celebrated Every Year?</div>
+    <div class="ans-line">Ans: <mark>28 September</mark></div>
+    <ul class="facts">
+      <li>Theme 2026: <i>"Stronger Together"</i> | First Rabies-free State: <mark class="hl-key">Goa</mark></li>
+    </ul>
+  </div>
+
+  <!-- Q97 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Days Theme</span>
+    <div class="q-title"><span class="q-num">Q97.</span>When Is National Engineer's Day Celebrated?</div>
+    <div class="ans-line">Ans: <mark>15 September</mark></div>
+    <ul class="facts">
+      <li>Birth anniversary of <b>Sir M. Visvesvaraya</b> (Father of Modern Mysore, Bharat Ratna 1955)</li>
+      <li>Theme 2026: <i>"Smart engineering for a sustainable future through innovation and digitalisation"</i></li>
+    </ul>
+  </div>
+
+  <!-- Q98 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Days Theme</span>
+    <div class="q-title"><span class="q-num">Q98.</span>When Is National Teachers' Day Celebrated?</div>
+    <div class="ans-line">Ans: <mark>5 September</mark></div>
+    <ul class="facts">
+      <li>138th birth anniversary of <b>Dr. Sarvepalli Radhakrishnan</b> (1st VP &amp; 2nd President)</li>
+    </ul>
+  </div>
+
+  <!-- Q99 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">🎯 PSSSB HIGH-YIELD</span>
+    <span class="badge-tag">Days Environment</span>
+    <div class="q-title"><span class="q-num">Q99.</span>When Is World Ozone Day Celebrated?</div>
+    <div class="ans-line">Ans: <mark>16 September</mark></div>
+    <ul class="facts">
+      <li>Theme 2026: <mark class="hl-key">"Global Action For A Cooler Planet"</mark></li>
+      <li>Static: Ozone in <b>Stratosphere</b>; protected under <mark class="hl-date">Montreal Protocol (1987)</mark></li>
+    </ul>
+  </div>
+
+  <!-- Q100 -->
+  <div class="entry alt-color psssb-fav">
+    <span class="badge-psssb">⭐ PSSSB IMP</span>
+    <span class="badge-tag">Days Theme</span>
+    <div class="q-title"><span class="q-num">Q100.</span>When Is Ayurveda Day 2026 Observed?</div>
+    <div class="ans-line">Ans: <mark>23 September</mark> (11th Edition)</div>
+    <ul class="facts">
+      <li>Ministry of Ayush fixed 23 Sep annually | Theme: <i>"Ayurveda for a Healthier Tomorrow"</i></li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- MASTER TABLES & COMPACT SUMMARY SECTIONS -->
+
+<div class="sec-heading">September Important Days &amp; Themes Master Table (PSSSB Must-Revise)</div>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 14%;">Date</th>
+      <th style="width: 36%;">Observance / Event Name</th>
+      <th>Key Facts &amp; Themes 2026</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background: #fff8f8;">
+      <td><b>5 September 🎯</b></td>
+      <td><b>National Teachers' Day</b></td>
+      <td>138th Birth Anniv. of <b>Dr. Sarvepalli Radhakrishnan</b></td>
+    </tr>
+    <tr>
+      <td><b>7 September</b></td>
+      <td>Int'l Day of Clean Air for Blue Skies</td>
+      <td>Designated by UNGA in 2019</td>
+    </tr>
+    <tr style="background: #fff8f8;">
+      <td><b>8 September ⭐</b></td>
+      <td><b>International Literacy Day</b></td>
+      <td>Theme: <i>"Literacy For People, The Planet And Prosperity"</i></td>
+    </tr>
+    <tr style="background: #fff8f8;">
+      <td><b>14 September 🎯</b></td>
+      <td><b>Hindi Diwas</b></td>
+      <td>Marks 1949 adoption; <b>Article 343(1)</b> Devanagari script</td>
+    </tr>
+    <tr style="background: #fff8f8;">
+      <td><b>15 September 🎯</b></td>
+      <td><b>National Engineer's Day<br>Int'l Day of Democracy</b></td>
+      <td>Birth Anniv. of <b>Sir M. Visvesvaraya</b> (Father of Modern Mysore)</td>
+    </tr>
+    <tr style="background: #fff8f8;">
+      <td><b>16 September 🎯</b></td>
+      <td><b>World Ozone Day</b></td>
+      <td>Theme: <mark class="hl-key">"Global Action For A Cooler Planet"</mark> (Montreal Protocol)</td>
+    </tr>
+    <tr style="background: #fff8f8;">
+      <td><b>17 September ⭐</b></td>
+      <td><b>Hyderabad Liberation Day</b></td>
+      <td>Marks <b>Operation Polo (17 Sept 1948)</b> integration of Hyderabad</td>
+    </tr>
+    <tr>
+      <td><b>21 September</b></td>
+      <td>Int'l Day of Peace<br>World Alzheimer's Day</td>
+      <td>Peace: <i>"Invest in Peace - For Everyone, Everywhere, Every Day"</i></td>
+    </tr>
+    <tr style="background: #fff8f8;">
+      <td><b>22 September ⭐</b></td>
+      <td><b>World Rhino Day</b></td>
+      <td>Kaziranga NP (Assam) famous for Greater One-Horned Rhino</td>
+    </tr>
+    <tr>
+      <td><b>23 September</b></td>
+      <td>Ayurveda Day (11th Edition)</td>
+      <td>Theme: <i>"Ayurveda for a Healthier Tomorrow"</i></td>
+    </tr>
+    <tr>
+      <td><b>25 September</b></td>
+      <td>World Lung Day</td>
+      <td>Theme: <i>"A Lifetime Of Lung Health"</i></td>
+    </tr>
+    <tr style="background: #fff8f8;">
+      <td><b>27 September ⭐</b></td>
+      <td><b>World Tourism Day</b></td>
+      <td>Theme: <i>"Digital Agenda And AI To Redesign Tourism"</i></td>
+    </tr>
+    <tr>
+      <td><b>28 September</b></td>
+      <td>World Rabies Day</td>
+      <td>Theme: <i>"Stronger Together"</i> | Goa: 1st Rabies-free State</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="sec-heading">Obituaries (September 2026)</div>
+<div class="columns">
+  <div class="entry">
+    <ul class="facts" style="padding-left: 5px; list-style: none;">
+      <li><b>Dr. G. Vijayaraghavan:</b> Eminent Cardiologist from Kerala, <b>Padma Shri (2009)</b> recipient.</li>
+    </ul>
+  </div>
+  <div class="entry alt-color">
+    <ul class="facts" style="padding-left: 5px; list-style: none;">
+      <li><b>Flt. Lt. Alfred Tyrone Cooke:</b> Celebrated Hero of 1965 Indo-Pak War, <b>Vir Chakra (1965)</b> recipient.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sec-heading">All One-Liner Current Affairs Rapid Roundup</div>
+<ul class="oneliners-list columns">
+  <li class="psssb-hit"><span class="q-num">1.</span>CISF Signed Cybersecurity &amp; Anti-Drone MoUs With: &rarr; <b>IIT Kanpur</b> ⭐</li>
+  <li><span class="q-num">2.</span>Reappointed SEBI Whole-Time Member Till 2029: &rarr; <b>Kamlesh Chandra Varshney</b></li>
+  <li class="psssb-hit"><span class="q-num">3.</span>Host Country of 11th Asian Senior Wushu Championships 2028: &rarr; <b>India</b> ⭐</li>
+  <li class="psssb-hit"><span class="q-num">4.</span>Additional Charge As Chairperson of IBBI: &rarr; <b>Jayanti Prasad</b> ⭐</li>
+  <li class="psssb-hit"><span class="q-num">5.</span>Rank in Global Business Climate Survey 2026: &rarr; <b>1st Rank</b> ⭐</li>
+  <li><span class="q-num">6.</span>New CEO of Apple Succeeding Tim Cook: &rarr; <b>John Ternus</b></li>
+  <li class="psssb-hit"><span class="q-num">7.</span>Executive Director of RBI (w.e.f. Sep 1, 2026): &rarr; <b>Suman Ray</b> ⭐</li>
+  <li class="psssb-hit"><span class="q-num">8.</span>Host of Inaugural ICC Women's Champions Trophy 2027: &rarr; <b>India</b> 🎯</li>
+  <li><span class="q-num">9.</span>New CEO of Adobe: &rarr; <b>Anil Chakravarthy</b></li>
+  <li><span class="q-num">10.</span>Venue of 28th Western Zonal Council Meeting: &rarr; <b>Panaji, Goa</b></li>
+  <li class="psssb-hit"><span class="q-num">11.</span>State Allowed 'Er.' Prefix for Engineers: &rarr; <b>Karnataka</b> ⭐</li>
+  <li class="psssb-hit"><span class="q-num">12.</span>Leading Run-Scorer In Women's Cricket: &rarr; <b>Smriti Mandhana</b> 🎯</li>
+  <li class="psssb-hit"><span class="q-num">13.</span>Location of SST-1 Tokamak (India's Artificial Sun): &rarr; <b>Gandhinagar, Gujarat</b> ⭐</li>
+  <li><span class="q-num">14.</span>Longest ODI Career Surpassing Tendulkar: &rarr; <b>Brendan Taylor</b> (Zimbabwe)</li>
+  <li><span class="q-num">15.</span>Reappointed Chairman of Tata Sons: &rarr; <b>N. Chandrasekaran</b></li>
+  <li class="psssb-hit"><span class="q-num">16.</span>Fastest T20I Century for India (30 Balls): &rarr; <b>Abhishek Sharma</b> ⭐</li>
+  <li><span class="q-num">17.</span>Gold in Men's Trap at ISSF Jr World Cup 2026: &rarr; <b>Yugan Sakthivel Muthukumaar</b></li>
+  <li><span class="q-num">18.</span>Delhi Heritage Building Becoming Global Centre: &rarr; <b>Chandni Chowk Town Hall</b></li>
+  <li><span class="q-num">19.</span>Bangladesh High Commissioner to India: &rarr; <b>Asad Alam Siam</b></li>
+  <li class="psssb-hit"><span class="q-num">20.</span>India's Most-Capped Women's Hockey Player: &rarr; <b>Savita Punia</b> ⭐</li>
+  <li class="psssb-hit"><span class="q-num">21.</span>Target Year to Eliminate Hepatitis B &amp; C: &rarr; <mark class="hl-stat">2030</mark> ⭐</li>
+  <li><span class="q-num">22.</span>Re-elected President of NBDA for 2026-27: &rarr; <b>Rajat Sharma</b></li>
+  <li><span class="q-num">23.</span>Elected At-Large Director on ICA Global Board: &rarr; <b>Dileep Sanghani</b> (IFFCO)</li>
+  <li><span class="q-num">24.</span>Collaboration for HALE UAV Turboprop Engines: &rarr; <b>Bharat Forge &amp; Pratt &amp; Whitney Canada</b></li>
+</ul>
+
+</body>
+</html>

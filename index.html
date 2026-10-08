@@ -68,10 +68,10 @@
         <i class="fa-solid fa-bolt w-5"></i>1-Liners(<span id="sidebar-ol-count">0</span>)
       </button>
 	  <button onclick="switchTab('indologous')" id="nav-indologous" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>Indologous (<span id="sidebar-indologous-count">7</span>)
+        <i class="fa-solid fa-book-bookmark w-5"></i>Indologous (<span id="sidebar-indologous-count">9</span>)
       </button>
 	  <button onclick="switchTab('parcham')" id="nav-parcham" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>Parcham (<span id="sidebar-parcham-count">4</span>)
+        <i class="fa-solid fa-book-bookmark w-5"></i>Parcham (<span id="sidebar-parcham-count">5</span>)
       </button>
 	  <button onclick="switchTab('english')" id="nav-english" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i>English Vocab (<span id="sidebar-english-count">350</span>)
@@ -92,7 +92,7 @@
         <i class="fa-solid fa-book-bookmark w-5"></i>PB History Timeline 
       </button>
 	  <button onclick="switchTab('polity')" id="nav-polity" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>Polity All Articles 
+        <i class="fa-solid fa-book-bookmark w-5"></i>Polity Articles 
       </button>
 	  <button onclick="switchTab('math')" id="nav-math" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
         <i class="fa-solid fa-book-bookmark w-5"></i>Math Concepts 
@@ -313,12 +313,13 @@
 		  <button onclick="loadIndoMonth('6 June26.html', this, 'indologous')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Jun 26</button>
 		  <button onclick="loadIndoMonth('7 July26.html', this, 'indologous')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Jul 26</button>
 		  <button onclick="loadIndoMonth('8 Aug26.html', this, 'indologous')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Aug 26</button>
+		  <button onclick="loadIndoMonth('9 Sep26.html', this, 'indologous')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Sep 26</button>
 		</div>
 	  </div>
 
 	  <!-- Dynamic Content Viewer (Direct File Pull) -->
 	  <div class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-[86vh]">
-		<iframe id="indologous-frame" src="8 Aug26.html" class="w-full h-full border-0" style="zoom: 125%;"></iframe>
+		<iframe id="indologous-frame" src="9 Sep26.html" class="w-full h-full border-0" style="zoom: 125%;"></iframe>
 	  </div>
 	</section>
 
@@ -339,14 +340,15 @@
 		  <button onclick="loadIndoMonth('Par_Jun26.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Jun 26</button>
 		  <button onclick="loadIndoMonth('Par_July26.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Jul 26</button>
 		  <button onclick="loadIndoMonth('Par_Aug26.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Aug 26</button>
-		  <button onclick="loadIndoMonth('Par_Sep26.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Sep 26</button>
+		  <button onclick="loadIndoMonth('Par Sep26.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Sep 26</button>
+		  <button onclick="loadIndoMonth('Par_Sep26.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Sep 26 weekly</button>
 		  <button onclick="loadIndoMonth('Polity Current Affairs.html', this, 'parcham')" class="indo-pill-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Polity till Jun</button>
 		</div>
 	  </div>
 
 	  <!-- Dynamic Content Viewer (Direct File Pull) -->
 	  <div class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm h-[86vh]" >
-		<iframe id="parcham-frame" src="Par_Aug26.html" class="w-full h-full border-0"></iframe>
+		<iframe id="parcham-frame" src="Par Sep26.html" class="w-full h-full border-0"></iframe>
 	  </div>
 	</section>
 
