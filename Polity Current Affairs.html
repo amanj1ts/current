@@ -1,872 +1,710 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PSSSB / NITTTR 2026 — Constitution & Polity Current Affairs Revision Digest</title>
-  <style>
-    :root {
-      --primary: #1e3a8a;
-      --primary-dark: #0f172a;
-      --primary-light: #eff6ff;
-      --accent: #0284c7;
-      --accent-subtle: #e0f2fe;
-      --success: #059669;
-      --warning: #d97706;
-      --danger: #dc2626;
-      --text-main: #0f172a;
-      --text-muted: #475569;
-      --bg-page: #f8fafc;
-      --bg-card: #ffffff;
-      --border: #cbd5e1;
-      --border-subtle: #e2e8f0;
-      --badge-bg: #e2e8f0;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      background-color: var(--bg-page);
-      color: var(--text-main);
-      line-height: 1.55;
-      font-size: 13.5px;
-      padding: 24px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-      padding: 32px 40px;
-    }
-
-    /* Header & Badges */
-    .header-block {
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 20px;
-      margin-bottom: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .title-group h1 {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--primary-dark);
-      letter-spacing: -0.02em;
-      margin-bottom: 6px;
-    }
-
-    .title-group p {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .meta-badges {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .badge-primary { background: var(--primary-light); color: var(--primary); border: 1px solid #bfdbfe; }
-    .badge-accent { background: var(--accent-subtle); color: var(--accent); border: 1px solid #bae6fd; }
-    .badge-alert { background: #fee2e2; color: var(--danger); border: 1px solid #fecaca; }
-
-    /* Interactive Filter / Quick Jump */
-    .search-filter-bar {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 24px;
-      background: #f1f5f9;
-      padding: 12px;
-      border-radius: 8px;
-    }
-
-    .search-filter-bar input {
-      flex: 1;
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 13px;
-      outline: none;
-      background: #ffffff;
-    }
-
-    .search-filter-bar input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
-    }
-
-    /* Section Headings */
-    .section-title {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--primary);
-      background: var(--primary-light);
-      padding: 8px 14px;
-      border-left: 5px solid var(--primary);
-      border-radius: 0 6px 6px 0;
-      margin: 28px 0 16px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    /* Cards Layout */
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .polity-card {
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: 16px 18px;
-      background: #ffffff;
-      transition: border-color 0.2s;
-      position: relative;
-    }
-
-    .polity-card:hover {
-      border-color: var(--accent);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 8px;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .article-tag {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--primary-dark);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .article-tag::before {
-      content: "";
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background: var(--accent);
-      border-radius: 50%;
-    }
-
-    .part-tag {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-muted);
-      background: #f1f5f9;
-      padding: 2px 8px;
-      border-radius: 4px;
-    }
-
-    .news-link {
-      font-size: 13px;
-      font-weight: 700;
-      color: #0369a1;
-      margin-bottom: 8px;
-      display: block;
-      background: #f0f9ff;
-      padding: 6px 10px;
-      border-radius: 6px;
-      border-left: 3px solid #0284c7;
-    }
-
-    .explainer-text {
-      color: #334155;
-      font-size: 13px;
-      line-height: 1.55;
-    }
-
-    .explainer-text ul {
-      margin-left: 18px;
-      margin-top: 6px;
-    }
-
-    .explainer-text li {
-      margin-bottom: 4px;
-    }
-
-    .highlight {
-      font-weight: 700;
-      color: var(--primary-dark);
-    }
-
-    .citation {
-      font-size: 10px;
-      font-weight: 700;
-      color: #64748b;
-      margin-left: 2px;
-      vertical-align: super;
-    }
-
-    /* Table Styling */
-    .table-container {
-      overflow-x: auto;
-      margin-top: 16px;
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12.5px;
-      text-align: left;
-    }
-
-    thead th {
-      background: #f1f5f9;
-      color: var(--primary-dark);
-      padding: 10px 12px;
-      font-weight: 700;
-      border-bottom: 2px solid var(--border);
-    }
-
-    tbody td {
-      padding: 9px 12px;
-      border-bottom: 1px solid var(--border-subtle);
-      color: var(--text-main);
-    }
-
-    tbody tr:nth-child(even) {
-      background: #f8fafc;
-    }
-
-    tbody tr:hover {
-      background: #f0fdf4;
-    }
-
-    /* Print Formatting (Strict PDF Export Optimization) */
-    @media print {
-      body {
-        padding: 0;
-        background: #ffffff;
-        font-size: 11pt;
-      }
-
-      .container {
-        border: none;
-        box-shadow: none;
-        padding: 0;
-        max-width: 100%;
-      }
-
-      .search-filter-bar {
-        display: none;
-      }
-
-      .section-title {
-        page-break-after: avoid;
-        margin-top: 20px;
-        font-size: 12pt;
-      }
-
-      .polity-card {
-        break-inside: avoid;
-        page-break-inside: avoid;
-        border: 1px solid #94a3b8;
-        margin-bottom: 10px;
-        padding: 10px 12px;
-      }
-
-      .table-container {
-        break-inside: avoid;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polity & Constitutional Current Affairs Compendium (Jan - Oct 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-light: #eff6ff;
+    --dark: #0f172a;
+    --text: #334155;
+    --border: #cbd5e1;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background-color: #f1f5f9;
+    line-height: 1.5;
+  }
+  .highlight {
+    background-color: #fef08a;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .article-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #bae6fd;
+    display: inline-flex;
+    align-items: center;
+  }
+  .chrono-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .chrono-oct { background: #fae8ff; color: #86198f; border: 1px solid #f5d0fe; }
+  .chrono-sep { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+  .chrono-aug-jul { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+  .chrono-jun-apr { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+  .chrono-mar-jan { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+  @media print {
+    body { background: white; padding: 0; font-size: 11px; }
+    .no-print { display: none !important; }
+    .container { max-width: 100% !important; padding: 0 !important; box-shadow: none !important; border: none !important; }
+    .card { page-break-inside: avoid; }
+  }
+</style>
 </head>
-<body>
+<body class="p-3 sm:p-6 text-[13.5px]">
 
-<div class="container">
-  <!-- Header -->
-  <header class="header-block">
-    <div class="title-group">
-      <h1>Constitution & Indian Polity Current Affairs Compendium</h1>
-      <p>Targeted High-Yielding Revision Guide for PSSSB (Excise, Patwari, Clerk) & NITTTR Examination Pattern</p>
+<div class="container max-w-[1240px] mx-auto bg-white p-5 sm:p-10 rounded-xl shadow-md border border-slate-200">
+
+  <!-- Document Header -->
+  <header class="border-b-4 border-double border-blue-900 pb-5 mb-5">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-blue-950 uppercase tracking-tight">
+          Polity & Constitutional Law Compendium (2026)
+        </h1>
+        <p class="text-slate-600 font-medium text-sm mt-1">
+          Complete Reverse Chronological Dossier: <span class="font-bold text-red-700">October 2026 → January 2026</span> | Articles, Enactments, Judicial Doctrines & Governance
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2 no-print">
+        <button onclick="window.print()" class="px-4 py-2 bg-blue-900 text-white rounded-lg text-xs font-bold hover:bg-blue-800 transition flex items-center gap-1.5 shadow">
+          <span>🖨️</span> Print / Save PDF
+        </button>
+      </div>
     </div>
-    <div class="meta-badges">
-      <span class="badge badge-primary">2026 Core Digest</span>
-      <span class="badge badge-accent">Jan &ndash; Jun Coverage</span>
-      <span class="badge badge-alert">Constitutional Linkages</span>
+    
+    <div class="flex flex-wrap gap-2 mt-4 items-center">
+      <span class="bg-red-100 text-red-800 text-xs font-bold px-2.5 py-1 rounded border border-red-300">Constitutional Articles & Judgments</span>
+      <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded border border-blue-300">Statutory Bills & Amendments</span>
+      <span class="bg-amber-50 text-amber-900 text-xs font-semibold px-2.5 py-1 rounded border border-amber-200">Chronology: Latest at Top</span>
+    </div>
+
+    <!-- Filter Search Box -->
+    <div class="mt-4 no-print">
+      <input type="text" id="quickFilter" onkeyup="filterContent()" placeholder="🔍 Type to filter terms (e.g. '371K', 'Delimitation', 'Article 21', 'UCC', 'EVM')..." 
+        class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-600" />
     </div>
   </header>
 
-  <!-- Quick Search Bar -->
-  <div class="search-filter-bar">
-    <input type="text" id="searchInput" placeholder="Filter by Article number, keyword, or constitutional theme (e.g., Article 21, Speaker, PESA, Governor)..." onkeyup="filterCards()">
-  </div>
+  <!-- Sticky Nav Bar -->
+  <nav class="sticky top-2 z-50 bg-slate-900/95 backdrop-blur text-white p-2.5 rounded-lg mb-6 flex flex-wrap gap-1.5 text-[11px] font-semibold shadow-lg no-print">
+    <a href="#oct2026" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">1. October 2026</a>
+    <a href="#sep2026" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">2. September 2026</a>
+    <a href="#augjul2026" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">3. July – August 2026</a>
+    <a href="#junapr2026" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">4. April – June 2026</a>
+    <a href="#marjan2026" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">5. January – March 2026</a>
+    <a href="#summary-matrix" class="hover:bg-blue-700 px-2 py-1 rounded bg-slate-800">6. Quick Revision Table</a>
+  </nav>
 
-  <div id="contentList">
-
-    <!-- Section 1 -->
-    <div class="section-title">
-      <span>1. Union & Its Territory (Part I)</span>
-      <span class="badge badge-primary">Statehood & Nomenclature</span>
-    </div>
-    <div class="card-grid">
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Article 3</span>
-          <span class="part-tag">Part I: Articles 1–4</span>
-        </div>
-        <div class="news-link">State Renaming: Formal Transition of "Kerala" to "Keralam" <span class="citation">[cite: 2]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Executive Action:</strong> The Union Cabinet approved the proposal to alter the name of Kerala to <strong>"Keralam"</strong>, and the President referred the <em>Kerala (Alteration of Name) Bill, 2026</em> to the State Legislature <span class="citation">[cite: 2]</span>.</li>
-            <li><strong>Constitutional Mechanism:</strong> Under the <strong>proviso to Article 3</strong>, any bill altering state names, areas, or boundaries can only be introduced in Parliament with the <strong>prior recommendation of the President</strong> <span class="citation">[cite: 2]</span>.</li>
-            <li><strong>Non-Binding State Views:</strong> The President must refer the bill to the concerned State Legislature to ascertain its opinion within a stipulated time <span class="citation">[cite: 2]</span>. However, the views expressed by the State Assembly are <strong>purely consultative and not binding</strong> upon Parliament.</li>
-            <li><strong>Majority Requirement:</strong> Under Article 4, such legislation is enacted by Parliament using a <strong>Simple Majority</strong> and is not classified as an amendment under Article 368.</li>
-          </ul>
-        </div>
-      </div>
+  <!-- ========================================================================= -->
+  <!-- 1. OCTOBER 2026 -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="oct2026">
+    <div class="bg-purple-50 border-l-4 border-purple-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-purple-950 flex items-center gap-1.5">
+        <span>⭐</span> 1. October 2026: Constitutional & Polity Developments
+      </h2>
+      <span class="chrono-badge chrono-oct">October Week 1, 2026</span>
     </div>
 
-    <!-- Section 2 -->
-    <div class="section-title">
-      <span>2. Fundamental Rights (Part III)</span>
-      <span class="badge badge-primary">Judicial Expansion & Equality</span>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3 shadow-sm">
+      <ul class="space-y-3">
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">People's Plan Campaign 2026–27 & GPDP Formulation</span>
+            <span class="article-badge">Article 243G / 11th Schedule</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Launched nationwide on October 2 under the campaign theme <em>“Sabki Yojana, Sabka Vikas”</em>. It mandates Gram Panchayats across India to formulate annual Gram Panchayat Development Plans (GPDPs) for FY 2027–28 by exercising decentralized local planning powers devolved under Article 243G and the Eleventh Schedule of the Constitution.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Assam Muslim Marriage Registration (Compulsory) Rules, 2026</span>
+            <span class="article-badge">Article 44 / Concurrent List Entry 5</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Assam Cabinet notified the statutory compulsory registration rules under the Assam Repealing Act 2024, officially ending the colonial-era Assam Moslem Marriages and Divorces Registration Act of 1935. All marriages and divorces are now brought under mandatory government registration machinery to curtail child marriages and align with personal law reforms.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Union Public Service Commission (UPSC) Centenary ‘Manthan’</span>
+            <span class="article-badge">Articles 315–323 (Part XIV)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The UPSC celebrated 100 years of establishment (set up on October 1, 1926 as the Public Service Commission on recommendations of the 1924 Lee Commission). Commemorated with a national conference titled <em>‘Manthan’</em> at Bharat Mandapam, examining the constitutional role of the independent central recruiting agency under Articles 315 to 323.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Statutory Mega Port Notification for Paradip Port</span>
+            <span class="article-badge">Indian Ports Act, 2025 (Section 73) / Union List Entry 27</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Paradip Port was formally designated as a statutory “Mega Port” under Section 73 of the newly enacted Indian Ports Act, 2025, vesting it with specialized administrative jurisdiction and fast-tracked statutory clearances for deep-water berths.</p>
+        </li>
+      </ul>
     </div>
-    <div class="card-grid">
-      <!-- Article 14-16 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Articles 14, 15 &amp; 16</span>
-          <span class="part-tag">Right to Equality</span>
-        </div>
-        <div class="news-link">Open Competition Quota, OBC Creamy Layer, and Judicial Eligibility Criteria <span class="citation">[cite: 1, 3, 5]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Merit on Unreserved Seats:</strong> The Supreme Court ruled that unreserved seats are open to all meritorious candidates and <strong>cannot be treated as a quota for the General Category alone</strong> <span class="citation">[cite: 1]</span>. Reserved category candidates (SC/ST/OBC) qualifying purely on merit without concessions must be adjusted against unreserved positions <span class="citation">[cite: 1]</span>.</li>
-            <li><strong>Creamy Layer Determination:</strong> The Supreme Court established that <strong>parental income alone cannot determine "creamy layer" exclusion</strong> for OBC applicants in civil services recruitment <span class="citation">[cite: 3]</span>.</li>
-            <li><strong>Judicial Recruitment Bar Experience:</strong> The Supreme Court reinstated the mandatory eligibility norm of <strong>at least three years of active legal practice at the bar</strong> for candidates appearing for Civil Judge (Junior Division) examinations <span class="citation">[cite: 5]</span>.</li>
-          </ul>
-        </div>
-      </div>
+  </section>
 
-      <!-- Article 21 Expansions -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Article 21 &bull; Expanded Jurisprudence</span>
-          <span class="part-tag">Right to Life &amp; Personal Liberty</span>
-        </div>
-        <div class="news-link">Landmark Orders Expanding Personal Liberty, Health, Mobility, and Bodily Autonomy <span class="citation">[cite: 1, 3, 4, 5, 6]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Right to Menstrual Health:</strong> In <em>Dr. Jaya Thakur v. Union of India</em>, the Supreme Court declared access to menstrual hygiene an essential facet of the <strong>Right to Life with Dignity under Article 21</strong>, directing all government and private schools to supply free sanitary napkins and separate functional toilets <span class="citation">[cite: 1]</span>.</li>
-            <li><strong>Bodily Integrity &amp; Reproductive Autonomy:</strong> Overriding the gestational cap of the MTP Act, the Supreme Court allowed a 15-year-old minor to terminate a 31-week pregnancy, ruling that <strong>reproductive decision-making is protected under Article 21</strong> ("No individual, especially a minor, can be forced to sustain an unwanted pregnancy") <span class="citation">[cite: 4]</span>.</li>
-            <li><strong>Commuter Safety &amp; Highway Protection:</strong> The Supreme Court declared that protection against avoidable highway accidents and the <strong>right to safe travel on public roads</strong> fall within the purview of the Fundamental Right to Life <span class="citation">[cite: 4]</span>.</li>
-            <li><strong>Pedestrian Primacy:</strong> The Supreme Court ruled that the freedom of citizens to walk on unobstructed, maintained footpaths is an actionable fundamental right that takes priority over vehicular convenience <span class="citation">[cite: 6]</span>.</li>
-            <li><strong>Right to Digital Access:</strong> Expanding Article 21, the Supreme Court mandated user-friendly accessibility modifications in digital KYC frameworks, affirming that digital empowerment is essential for persons with disabilities <span class="citation">[cite: 5]</span>.</li>
-            <li><strong>Right to Die with Dignity:</strong> In the <em>Harish Rana case</em>, the Supreme Court allowed passive euthanasia through the withdrawal of artificial life support, reaffirming that the <strong>right to die with dignity</strong> is an integral facet of Article 21 <span class="citation">[cite: 3]</span>.</li>
-            <li><strong>Gender Self-Determination:</strong> Under the Transgender Persons (Protection of Rights) Amendment framework, Parliament strengthened identity protections stemming from the landmark <em>NALSA (2014)</em> doctrine rooted in Article 21 <span class="citation">[cite: 3]</span>.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Statutory Privacy vs Art 21 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Statutory Privacy vs. Article 21</span>
-          <span class="part-tag">RTI Act &amp; Privacy Limits</span>
-        </div>
-        <div class="news-link">Delhi High Court Pronouncement on PM CARES Fund <span class="citation">[cite: 1]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Ruling:</strong> The Delhi High Court observed that while the PM CARES Fund operates with public elements, it cannot be stripped of privacy protections regarding third-party donor disclosures under the RTI Act <span class="citation">[cite: 1]</span>.</li>
-            <li><strong>Legal Principle:</strong> The court clarified that such confidentiality is a <strong>statutory right provided under the RTI framework</strong>, distinct from the fundamental right to privacy recognized under Article 21 in <em>K.S. Puttaswamy (2017)</em> <span class="citation">[cite: 1]</span>.</li>
-          </ul>
-        </div>
-      </div>
+  <!-- ========================================================================= -->
+  <!-- 2. SEPTEMBER 2026 -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="sep2026">
+    <div class="bg-red-50 border-l-4 border-red-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-red-950 flex items-center gap-1.5">
+        <span>⭐</span> 2. September 2026: Constitutional & Polity Developments
+      </h2>
+      <span class="chrono-badge chrono-sep">September 2026</span>
     </div>
 
-    <!-- Section 3 -->
-    <div class="section-title">
-      <span>3. Directive Principles of State Policy (Part IV)</span>
-      <span class="badge badge-primary">Governance Directives</span>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3 shadow-sm">
+      <ul class="space-y-3">
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Proposed Article 371(K) for Union Territory of Ladakh</span>
+            <span class="article-badge">Part XXI / Article 371(K)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Ministry of Home Affairs tabled a constitutional proposal to insert Article 371(K) into Part XXI of the Constitution. It seeks to grant Ladakh a directly elected legislature with exclusive legislative competence over local land rights, transfer of agricultural properties, cultural heritage, and environmental safeguards—modelled on special provisions in Article 371A (Nagaland) and Article 371G (Mizoram).</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Supreme Court Directives on EVM Totaliser Machines</span>
+            <span class="article-badge">Article 324 / Conduct of Elections Rules, 1961</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> A three-judge Supreme Court bench presided over by Chief Justice Surya Kant directed the Union Government and the Election Commission of India (ECI) to articulate a definitive timeline regarding the introduction of 'Totaliser' machines. Totalisers aggregate votes across ~14 EVMs simultaneously prior to declaration, preventing booth-wise disclosure of voting trends and protecting voter anonymity.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">ECI Special Intensive Revision (SIR) Electoral Purge</span>
+            <span class="article-badge">Article 326 / Representation of the People Act, 1950</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Election Commission conducted a pan-India Special Intensive Revision (SIR) purging over 13 crore duplicate, expired, and unverified entries from draft voter rolls across 30 States and Union Territories to enforce the universal adult suffrage mandate and clean voter lists.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">En-Masse High Court Chief Justices Appointments</span>
+            <span class="article-badge">Article 217</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The President appointed Chief Justices across multiple High Courts under Article 217 on recommendation of the SC Collegium: Justice Sanjay Kumar Agrawal (Rajasthan HC), Justice V. Kameswar Rao (Patna HC), Justice Ravindra V. Ghuge (Calcutta HC), Justice Pushpendra Singh Bhati (J&K and Ladakh HC), Justice Ashwani Kumar Mishra (Punjab and Haryana HC), and Justice Mahesh Chandra Tripathi (Bombay HC).</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Legal Metrology (Indian Standard Time) Rules, 2026</span>
+            <span class="article-badge">Legal Metrology Act, 2009 / Union List Entry 51</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Ministry of Consumer Affairs notified the rules establishing Indian Standard Time (IST, UTC+5:30) as the sole legal and verifiable standard of time for all judicial, telecom, administrative, and financial transaction platforms across the country, synchronized through CSIR-NPL and NavIC.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Central Board of Film Certification (CBFC) Reconstitution</span>
+            <span class="article-badge">Cinematograph Act, 1952 / Article 19(2)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Union Government reconstituted the statutory CBFC board for a three-year term under the Cinematograph Act, 1952 (incorporating recent Cinematograph Amendment provisions for age-based classification U/A 7+, U/A 13+, U/A 16+, and anti-piracy mechanisms within reasonable restrictions under Article 19(2)).</p>
+        </li>
+      </ul>
     </div>
-    <div class="card-grid">
-      <!-- Article 39A -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Article 39A</span>
-          <span class="part-tag">Part IV: Articles 36–51</span>
-        </div>
-        <div class="news-link">Equal Justice, Free Legal Aid &amp; Institutional Expansion <span class="citation">[cite: 4, 5]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Institutional Leadership:</strong> Supreme Court Judge <strong>Justice Surya Kant</strong> was appointed Executive Chairman of the National Legal Services Authority (NALSA) <span class="citation">[cite: 5]</span>.</li>
-            <li><strong>Digital Legal Aid:</strong> Launch of the voice-first multimodal AI assistant <em>Nyaya Setu</em> (mascot: <strong>Dishika</strong>) under the DISHA scheme <span class="citation">[cite: 4]</span>.</li>
-            <li><strong>Constitutional Mandate:</strong> Inserted by the <strong>42nd Constitutional Amendment Act, 1976</strong>, Article 39A obligates the State to secure justice across society by offering free legal services so opportunities are not denied due to economic or physical constraints.</li>
-          </ul>
-        </div>
-      </div>
+  </section>
 
-      <!-- Article 44 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Article 44</span>
-          <span class="part-tag">Directive Principles</span>
-        </div>
-        <div class="news-link">Uniform Civil Code: State Legislative Rollouts &amp; Drafting Panels <span class="citation">[cite: 3, 4, 6]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Legislative Milestone:</strong> <strong>Gujarat</strong> enacted the <em>Uniform Civil Code Bill, 2026</em>, becoming the <strong>second state</strong> in India after Uttarakhand to legislate a state-level UCC <span class="citation">[cite: 3]</span>.</li>
-            <li><strong>Drafting Committees:</strong> Madhya Pradesh, Chhattisgarh, and Rajasthan constituted state panels headed by retired Supreme Court Judge <strong>Justice Ranjana Prakash Desai</strong> to formulate draft UCC frameworks <span class="citation">[cite: 4, 6]</span>.</li>
-            <li><strong>Constitutional Scope:</strong> Article 44 provides that the State shall endeavour to secure for all citizens a <strong>Uniform Civil Code</strong> across India, unifying diverse personal laws on marriage, divorce, adoption, maintenance, and inheritance <span class="citation">[cite: 3]</span>.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section 4 -->
-    <div class="section-title">
-      <span>4. The Union Executive, Parliament &amp; Judiciary (Part V)</span>
-      <span class="badge badge-primary">Institutional Checks &amp; Procedures</span>
-    </div>
-    <div class="card-grid">
-      <!-- Article 87 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Article 87</span>
-          <span class="part-tag">Parliamentary Procedures</span>
-        </div>
-        <div class="news-link">Presidential Address and the Motion of Thanks Debate <span class="citation">[cite: 2]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Procedure:</strong> Parliament commenced its session with a Motion of Thanks debate following President Droupadi Murmu's joint address <span class="citation">[cite: 2]</span>.</li>
-            <li><strong>Constitutional Provision:</strong> Under Article 87(1), the President must address both Houses assembled together at the beginning of the <strong>first session after a general election</strong> and at the <strong>first session of each calendar year</strong> (the Budget Session).</li>
-            <li><strong>Significance:</strong> The Motion of Thanks must be passed by the Lok Sabha; its rejection is equivalent to a vote of no-confidence against the ruling government.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Articles 93, 94(c), 96 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Articles 93, 94(c) &amp; 96</span>
-          <span class="part-tag">Presiding Officers</span>
-        </div>
-        <div class="news-link">Notice for the Removal / No-Confidence Motion against the Speaker <span class="citation">[cite: 2]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Context:</strong> Opposition parties submitted a formal removal notice against Lok Sabha Speaker Om Birla <span class="citation">[cite: 2]</span>.</li>
-            <li><strong>Removal Mechanism:</strong> Under <strong>Article 94(c)</strong>, the Speaker can be removed by a resolution passed by an <strong>Effective Majority</strong> (a majority of all the <em>then</em> members of the House, taking total seats minus vacancies) <span class="citation">[cite: 2]</span>.</li>
-            <li><strong>Mandatory Conditions:</strong> Requires at least <strong>14 days' advance notice</strong>. Under <strong>Article 96</strong>, while a removal resolution is under consideration, the Speaker <strong>cannot preside</strong> over the House, though they retain the right to speak, participate, and cast an initial vote (but no casting vote in a tie).</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Articles 105 & 194 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Articles 105 &amp; 194</span>
-          <span class="part-tag">Legislative Powers</span>
-        </div>
-        <div class="news-link">Privilege Notice against the Leader of Opposition (LoP) <span class="citation">[cite: 2]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Parliamentary Action:</strong> A formal notice for breach of privilege was initiated against the Leader of the Opposition in the Lok Sabha <span class="citation">[cite: 2]</span>.</li>
-            <li><strong>Privileges Defined:</strong> Article 105 (for Parliament) and Article 194 (for State Assemblies) confer collective and individual immunities—such as freedom of speech in the House and exemption from judicial proceedings for parliamentary statements/votes—to enable legislators to discharge their duties without outside pressure <span class="citation">[cite: 2]</span>.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Anti Defection & Tenth Schedule -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Article 102(2) &bull; Tenth Schedule</span>
-          <span class="part-tag">Anti-Defection Law</span>
-        </div>
-        <div class="news-link">Two-Thirds Merger Rule and Political Defections in the Upper House <span class="citation">[cite: 4]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Current Development:</strong> Seven Aam Aadmi Party (AAP) Rajya Sabha MPs defected to the BJP, avoiding disqualification under party merger exemptions <span class="citation">[cite: 4]</span>.</li>
-            <li><strong>Merger Exemption:</strong> Inserted via the <strong>52nd Amendment Act, 1985</strong> and amended by the <strong>91st Amendment Act, 2003</strong>, the Tenth Schedule protects members from disqualification if <strong>not less than two-thirds</strong> of the party's elected legislators agree to a merger with another party <span class="citation">[cite: 4]</span>.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Article 114 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Article 114</span>
-          <span class="part-tag">Financial Legislation</span>
-        </div>
-        <div class="news-link">Passage of the Appropriation Bill, 2026 <span class="citation">[cite: 3]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Legislative Mandate:</strong> Parliament passed the <em>Appropriation Bill, 2026</em> following the completion of demands for grants <span class="citation">[cite: 3]</span>.</li>
-            <li><strong>Constitutional Bar:</strong> Under Article 114, <strong>no money can be withdrawn from the Consolidated Fund of India (Article 266)</strong> except under an appropriation law enacted by Parliament <span class="citation">[cite: 3]</span>.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Article 124 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Articles 124–128</span>
-          <span class="part-tag">Union Judiciary</span>
-        </div>
-        <div class="news-link">Appointment of Justice B.R. Gavai as the 52nd Chief Justice of India <span class="citation">[cite: 5]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Historic Milestone:</strong> Justice Bhushan Ramkrishna Gavai was sworn in by the President as the <strong>52nd Chief Justice of India</strong>, becoming the <strong>first Buddhist CJI</strong> in Indian history <span class="citation">[cite: 5]</span>.</li>
-            <li><strong>Appointment &amp; Tenure:</strong> CJI appointments are made by the President under Article 124(2) following the Memorandum of Procedure (MoP). Supreme Court judges serve until reaching the age of <strong>65 years</strong>.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Article 143 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Article 143</span>
-          <span class="part-tag">Supreme Court Jurisdiction</span>
-        </div>
-        <div class="news-link">Presidential Reference on Governor Timelines for State Bills <span class="citation">[cite: 5]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Constitutional Reference:</strong> President Droupadi Murmu invoked Article 143 to seek the advisory opinion of the Supreme Court regarding judicial attempts to set rigid timelines for Governors and the President to clear State Bills <span class="citation">[cite: 5]</span>.</li>
-            <li><strong>Advisory Nature:</strong> Under Article 143(1), the President may refer questions of law or fact of public importance to the Supreme Court <span class="citation">[cite: 5]</span>. The Supreme Court's opinion is <strong>advisory and not binding</strong> upon the President.</li>
-          </ul>
-        </div>
-      </div>
+  <!-- ========================================================================= -->
+  <!-- 3. JULY – AUGUST 2026 -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="augjul2026">
+    <div class="bg-amber-50 border-l-4 border-amber-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-amber-950 flex items-center gap-1.5">
+        <span>⭐</span> 3. July – August 2026: Constitutional & Polity Developments
+      </h2>
+      <span class="chrono-badge chrono-aug-jul">July – August 2026</span>
     </div>
 
-    <!-- Section 5 -->
-    <div class="section-title">
-      <span>5. State Executives &amp; High Courts (Part VI)</span>
-      <span class="badge badge-primary">Governors, Assent &amp; Judicial Administration</span>
-    </div>
-    <div class="card-grid">
-      <!-- Article 200 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Articles 200 &amp; 201</span>
-          <span class="part-tag">State Legislative Powers</span>
-        </div>
-        <div class="news-link">Gubernatorial Assent to the Punjab Sacrilege Satkar Amendment Bill <span class="citation">[cite: 4]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Punjab Development:</strong> Punjab Governor Gulab Chand Kataria granted assent to the <em>Jaagat Jot Sri Guru Granth Sahib Satkar (Amendment) Bill, 2026</em>, providing for enhanced penalties up to life imprisonment and ₹5–25 lakh fines for sacrilege <span class="citation">[cite: 4]</span>.</li>
-            <li><strong>Constitutional Alternatives:</strong> Under Article 200, when a Bill passed by the State Legislature is presented to the Governor, the Governor can: (1) Assent, (2) Withhold assent, (3) Return the Bill for reconsideration (non-money bills), or (4) Reserve the Bill for the President's consideration under Article 201.</li>
-          </ul>
-        </div>
-      </div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3 shadow-sm">
+      <ul class="space-y-3">
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Supreme Court (Number of Judges) Amendment Bill, 2026</span>
+            <span class="article-badge">Article 124(1)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Introduced in Parliament under Article 124(1) to increase the statutory sanctioned judge strength of the Supreme Court of India from 33 to 37 judges (excluding the Chief Justice of India, taking total sanctioned strength to 38) to address mounting constitutional bench pendency.</p>
+        </li>
 
-      <!-- Articles 217 & 222 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Articles 214–217 &amp; 222</span>
-          <span class="part-tag">High Court Benches</span>
-        </div>
-        <div class="news-link">High Court Chief Justice Inductions, Firsts, and Judicial Transfers <span class="citation">[cite: 1, 4, 5, 6]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Historic Firsts:</strong> Justice <strong>Lisa Gill</strong> was appointed as the <strong>first woman Chief Justice of the Andhra Pradesh High Court</strong> <span class="citation">[cite: 4]</span>, and Justice <strong>Revati Mohite Dere</strong> was sworn in as the <strong>first woman Chief Justice of the Meghalaya High Court</strong> <span class="citation">[cite: 1]</span>. Justice <strong>Meenakshi Madan Rai</strong> became Chief Justice of the Patna High Court <span class="citation">[cite: 6]</span>.</li>
-            <li><strong>Judicial Transfers:</strong> The Supreme Court Collegium recommended transfers of Chief Justices across Rajasthan, Tripura, Jharkhand, and Madras High Courts under <strong>Article 222</strong>, which empowers the President to transfer a judge from one High Court to another after consulting the CJI <span class="citation">[cite: 5]</span>.</li>
-            <li><strong>Judge Pensions:</strong> The Supreme Court upheld "One Rank One Pension" for all retired High Court judges under a bench led by CJI B.R. Gavai <span class="citation">[cite: 5]</span>.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Parliament Monsoon Session & Rajya Sabha Rule 267 Invocation</span>
+            <span class="article-badge">Article 85(1) / RS Rules of Procedure Rule 267</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Monsoon Session convened fulfilling the constitutional mandate under Article 85(1) that six months shall not intervene between the last sitting in one session and the date appointed for the first sitting in the next session. The opposition invoked Rule 267 seeking total suspension of listed parliamentary business to debate national paper leak crises.</p>
+        </li>
 
-    <!-- Section 6 -->
-    <div class="section-title">
-      <span>6. Local Governance (Part IX &amp; IX-A)</span>
-      <span class="badge badge-primary">Tribal Self-Rule &amp; Local Body Reforms</span>
-    </div>
-    <div class="card-grid">
-      <!-- Article 243M & PESA -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Article 243M &bull; PESA Act, 1996</span>
-          <span class="part-tag">Tribal Self-Governance</span>
-        </div>
-        <div class="news-link">Jharkhand Notifies PESA Rules 25 Years Post-Statehood <span class="citation">[cite: 1]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>State Implementation:</strong> Jharkhand formally notified its PESA Rules, extending statutory local governance to its Fifth Schedule tribal regions <span class="citation">[cite: 1]</span>.</li>
-            <li><strong>Legal Mechanism:</strong> Part IX of the Constitution does not apply automatically to Fifth Schedule areas (Article 243M). Parliament enacted the <em>Panchayats (Extension to the Scheduled Areas) Act, 1996</em> (PESA) based on the <strong>Bhuria Committee recommendations</strong>, recognizing the Gram Sabha as the competent authority over local resources, customary dispute resolution, minor minerals, and tribal land transfers <span class="citation">[cite: 1]</span>.</li>
-          </ul>
-        </div>
-      </div>
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Public Examinations (Prevention of Unfair Means) Amendment Bill, 2026</span>
+            <span class="article-badge">Concurrent List Entry 25</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Enacted to enhance statutory penalties for paper leaks and organized cheating syndicates. Hikes maximum imprisonment terms from 5 to 10 years, institutes mandatory Special Fast Track Courts, and implements high-tech auditing protocols designed by a task force chaired by Nandan Nilekani.</p>
+        </li>
 
-      <!-- Articles 243F & 243V -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Articles 243F &amp; 243V</span>
-          <span class="part-tag">Panchayat &amp; Urban Elections</span>
-        </div>
-        <div class="news-link">Repeal of the "Two-Child Disqualification" for Local Body Polls <span class="citation">[cite: 1, 3, 6]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>State Reforms:</strong> Telangana repealed its 1994 statutory disqualification barring persons with more than two children from contesting local body elections via the <em>Telangana Panchayat Raj (Amendment) Bill, 2026</em> <span class="citation">[cite: 1]</span>. Rajasthan similarly removed the two-child restriction for Urban Local Body (ULB) polls and repealed leprosy disqualifications <span class="citation">[cite: 3]</span>. Madhya Pradesh also ended the two-child restriction for state government recruitment <span class="citation">[cite: 6]</span>.</li>
-            <li><strong>Constitutional Basis:</strong> Articles 243F (Panchayats) and 243V (Municipalities) grant State Legislatures full authority to define qualifications and disqualifications for local elected offices.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Mines and Minerals (Development and Regulation) Amendment Bill, 2026</span>
+            <span class="article-badge">Entry 54 List I vs Entry 50 List II / Federal Taxation</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Passed by Parliament to resolve jurisdictional ambiguity arising from Supreme Court rulings on state mineral taxation. The statutory amendment expressly curtails state governments from imposing unilateral parallel cess and royalties on mineral rights and mineral-bearing lands.</p>
+        </li>
 
-    <!-- Section 7 -->
-    <div class="section-title">
-      <span>7. Constitutional Commissions &amp; Special Categories (Part XVI)</span>
-      <span class="badge badge-primary">Safeguards &amp; Classification</span>
-    </div>
-    <div class="card-grid">
-      <!-- Articles 338, 338A, 338B -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Articles 338, 338A &amp; 338B</span>
-          <span class="part-tag">Constitutional Commissions</span>
-        </div>
-        <div class="news-link">Appointments and Milestones Across NCSC, NCST, and NCBC <span class="citation">[cite: 2, 3, 5]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>National Commission for Scheduled Castes (Article 338):</strong> Dr. Partha Biswas took charge as Member <span class="citation">[cite: 3]</span>.</li>
-            <li><strong>National Commission for Scheduled Tribes (Article 338A):</strong> Celebrated its 23rd Foundation Day on 19 February 2026 <span class="citation">[cite: 2]</span>; established via the <strong>89th Constitutional Amendment Act, 2003</strong> (operationalized in 2004) <span class="citation">[cite: 2]</span>.</li>
-            <li><strong>National Commission for Backward Classes (Article 338B):</strong> Sadhvi Niranjan Jyoti assumed office as Chairperson <span class="citation">[cite: 3]</span>, presenting annual reports for 2022–2024 to the President <span class="citation">[cite: 5]</span>; granted constitutional standing through the <strong>102nd Constitutional Amendment Act, 2018</strong>.</li>
-            <li><strong>Powers:</strong> All three commissions hold the investigatory powers of a <strong>Civil Court</strong> under the Code of Civil Procedure (CPC) when examining complaints.</li>
-          </ul>
-        </div>
-      </div>
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">The Bankers' Books Evidence Bill, 2026</span>
+            <span class="article-badge">BSA, 2023 / Indian Evidence Framework</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Repealed the archaic colonial Bankers' Books Evidence Act of 1891. Establishes legal admissibility standards for encrypted electronic financial ledgers, cloud banking architectures, and digital transaction logs as primary legal evidence in courts of law.</p>
+        </li>
 
-      <!-- Articles 341 & 342 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Articles 341 &amp; 342</span>
-          <span class="part-tag">Special Provisions</span>
-        </div>
-        <div class="news-link">Religious Criteria for SC Status and Tribal Quota Adjudication <span class="citation">[cite: 1, 3]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Scheduled Castes Religious Criteria (Article 341):</strong> The Supreme Court affirmed that under the <em>Constitution (Scheduled Castes) Order, 1950</em>, individuals professing religions other than <strong>Hinduism, Sikhism, or Buddhism</strong> cannot be classified as Scheduled Castes <span class="citation">[cite: 3]</span>.</li>
-            <li><strong>Scheduled Tribes Notification (Article 342):</strong> The Supreme Court was moved regarding the ST status of the Lambadi / Sugali community in Telangana <span class="citation">[cite: 1]</span>. Under Article 342, modifying the Scheduled Tribes list requires an <strong>Act of Parliament</strong>.</li>
-          </ul>
-        </div>
-      </div>
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Tribunals Reforms Bill, 2026 & National Tribunals Commission (NTC)</span>
+            <span class="article-badge">Articles 323A & 323B / Judicial Independence</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Replaces the 2021 enactment following Supreme Court scrutiny. Creates an overarching statutory authority—the National Tribunals Commission (NTC)—to superintend appointments, service conditions, infrastructure, and performance monitoring across all central tribunals, insulating them from executive influence.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">BNSS Section 356: Trials in Absentia</span>
+            <span class="article-badge">Bharatiya Nagarik Suraksha Sanhita (Sec 356) / Article 21</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Special National Investigation Agency (NIA) Courts invoked Section 356 of the BNSS to commence criminal trials against proclaimed absconding offenders and designated foreign-based terrorists (e.g., Hafiz Saeed) <em>in absentia</em>, creating a novel criminal jurisprudence precedent.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Supreme Court Re-articulates Doctrine of Per Incuriam</span>
+            <span class="article-badge">Article 141 (Law declared by Supreme Court)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Supreme Court reaffirmed that judicial orders or judgments rendered in ignorance or forgetfulness of express statutory provisions or binding decisions of coordinate/larger benches are <em>per incuriam</em> and do not hold binding precedential value under Article 141.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Foreign Contribution (Regulation) Amendment Bill, 2026 & FCRA 2.0</span>
+            <span class="article-badge">Article 19(1)(c) / Union List Entry 10</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Ministry of Home Affairs introduced legislation establishing a structured receiver and asset-disposal mechanism for property, premises, and foreign contributions belonging to non-governmental organisations whose FCRA licenses have been cancelled for statutory non-compliance.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Legal Personhood Accorded to River Tamirabharani</span>
+            <span class="article-badge">Articles 21, 48A & 51A(g) / Environmental Jurisprudence</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Madras High Court (Madurai Bench) invoked the doctrine of <em>parens patriae</em> to confer the status of a 'Living Entity / Legal Person' with all corresponding fundamental rights and duties upon Tamil Nadu's perennial River Tamirabharani (Porunai) to halt unchecked industrial effluents.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Madhya Pradesh Uniform Civil Code (UCC) Bill, 2026</span>
+            <span class="article-badge">Article 44 (Directive Principles of State Policy)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Madhya Pradesh Legislative Assembly passed the state Uniform Civil Code Bill, making MP the 4th Indian state (after Uttarakhand, Gujarat, and Assam) to adopt a uniform legal framework governing civil registration, inheritance, divorce, and live-in relationships while exempting Scheduled Tribes.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">VB-G RAM G Act, 2025 Enters into Force</span>
+            <span class="article-badge">Articles 39(a), 41 & 43 / Welfare Legislation</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Rollout of the <em>Viksit Bharat–Guarantee for Rozgar and Aajeevika Mission (Gramin)</em> Act, 2025 across all states, formally repealing the MGNREGA 2005. Increases statutory guarantee of wage employment to 125 days per household, resets the cost-sharing ratio between Centre and States to 60:40 (90:10 in Special Category States), and disbursed a mother sanction of ₹25,863 crore.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. APRIL – JUNE 2026 -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="junapr2026">
+    <div class="bg-blue-50 border-l-4 border-blue-900 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-blue-950 flex items-center gap-1.5">
+        <span>⭐</span> 4. April – June 2026: Constitutional & Polity Developments
+      </h2>
+      <span class="chrono-badge chrono-jun-apr">April – June 2026</span>
     </div>
 
-    <!-- Section 8 -->
-    <div class="section-title">
-      <span>8. Finance, Elections &amp; Emergency Frameworks</span>
-      <span class="badge badge-primary">Institutional Pillars</span>
-    </div>
-    <div class="card-grid">
-      <!-- Article 280 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Article 280</span>
-          <span class="part-tag">Finance Commission</span>
-        </div>
-        <div class="news-link">Submission of the 16th Finance Commission Final Report (2026–2031) <span class="citation">[cite: 3]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Award Period:</strong> The <strong>16th Finance Commission</strong>, chaired by <strong>Dr. Arvind Panagariya</strong>, submitted its final report governing fiscal devolutions for the 2026–2031 cycle <span class="citation">[cite: 3]</span>.</li>
-            <li><strong>Constitutional Function:</strong> Constituted by the President under Article 280 every 5 years, the Commission recommends: (1) Vertical tax distribution between Union and States, (2) Horizontal allocation among states, and (3) Grants-in-aid principles under <strong>Article 275</strong>.</li>
-          </ul>
-        </div>
-      </div>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3 shadow-sm">
+      <ul class="space-y-3">
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Historic Defeat of Constitution (131st Amendment) Bill in Lok Sabha</span>
+            <span class="article-badge">Articles 82, 334A & 368(2)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Constitution (131st Amendment) Bill failed to secure the mandatory two-thirds special majority of members present and voting in Lok Sabha (298 in favor, 200 against; short of 2/3rd majority). The Bill attempted to decouple the 33% Women's Reservation (enacted under the 106th CAA) from post-2026 delimitation by amending Articles 82 and 334A to operationalize quotas using 2011 census demographics. This was the first defeat of a Constitutional Amendment Bill on the floor of the House in 12 years.</p>
+        </li>
 
-      <!-- Article 324 -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Article 324(5) &bull; CEC Removal</span>
-          <span class="part-tag">Elections (Part XV)</span>
-        </div>
-        <div class="news-link">Removal Protections for the Chief Election Commissioner (CEC) <span class="citation">[cite: 3]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>Parliamentary Action:</strong> Opposition parties initiated moves regarding an impeachment motion against CEC Gyanesh Kumar <span class="citation">[cite: 3]</span>.</li>
-            <li><strong>Removal Safeguard:</strong> Under the <strong>proviso to Article 324(5)</strong>, the Chief Election Commissioner can only be removed from office in like manner and on like grounds as a <strong>Supreme Court Judge</strong> (i.e., through an address passed by both Houses of Parliament with a Special Majority on grounds of proved misbehaviour or incapacity) <span class="citation">[cite: 3]</span>. Other Election Commissioners can be removed by the President upon the recommendation of the CEC.</li>
-          </ul>
-        </div>
-      </div>
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Delimitation Bill, 2026 Tabled in Parliament</span>
+            <span class="article-badge">Articles 81, 82, 170 & 327</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Proposed repealing the Delimitation Act, 2002 to initiate post-freeze electoral boundary reallocation. It proposes expanding the total strength of the Lok Sabha to 850 members (815 representing States and 35 representing Union Territories). Reaffirmed that once orders of the Delimitation Commission are published under Article 327, they acquire the force of law and cannot be questioned in any court.</p>
+        </li>
 
-      <!-- Articles 352, 356 & Emergency -->
-      <div class="polity-card">
-        <div class="card-header">
-          <span class="article-tag">Articles 352 &amp; 356</span>
-          <span class="part-tag">Emergency Provisions (Part XVIII)</span>
-        </div>
-        <div class="news-link">President's Rule in Manipur and Emergency Retrospectives <span class="citation">[cite: 2, 6]</span></div>
-        <div class="explainer-text">
-          <ul>
-            <li><strong>President's Rule (Article 356):</strong> Imposed in Manipur following the Chief Minister's resignation, with the State Assembly placed under <strong>suspended animation</strong> (not dissolved) and later revoked by President Droupadi Murmu <span class="citation">[cite: 2]</span>. Under <em>S.R. Bommai (1994)</em> guidelines, the legislative assembly cannot be dissolved until Parliament formally approves the proclamation within two months.</li>
-            <li><strong>National Emergency (Article 352):</strong> June 25 was observed as <strong>Samvidhaan Hatya Diwas</strong>, and NCERT introduced chapters examining the 1975 Emergency <span class="citation">[cite: 6]</span>. The <strong>44th Amendment Act, 1978</strong> restricted internal emergency declarations strictly to cases of "armed rebellion" and prohibited the suspension of <strong>Articles 20 and 21</strong> under Article 359 during any emergency proclamation.</li>
-          </ul>
-        </div>
-      </div>
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Assent to Jaagat Jot Sri Guru Granth Sahib Satkar (Amendment) Bill</span>
+            <span class="article-badge">Article 200 (Governor's Assent) / IPC/BNS State Amendment</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Punjab Governor Gulab Chand Kataria granted assent under Article 200. The Act prescribes a minimum 7 years (up to 20 years) rigorous imprisonment for acts of sacrilege against Sri Guru Granth Sahib, and 10 years to Life Imprisonment if committed under criminal conspiracy to disrupt communal harmony. It introduced the statutory definition of <em>"Custodian"</em> and made offences cognizable, non-bailable, and triable by Court of Session.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Supreme Court Landmark Article 21 Enforcements</span>
+            <span class="article-badge">Article 21 (Right to Life & Personal Liberty)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong>
+            <br>• <em>Right to Walk on Footpaths:</em> The Supreme Court recognized pedestrians' right to walk safely on encroached footpaths as an enforceable Fundamental Right under Article 21, taking precedence over motorized carriage space.
+            <br>• <em>Safe Highway Transit:</em> Ruled that the State owes a positive constitutional duty to guarantee hazard-free transit on national highways, directing immediate removal of unlicensed commercial establishments from highway rights-of-way.
+            <br>• <em>Reproductive Autonomy:</em> Affirmed a minor's constitutional right to reproductive choices by permitting the medical termination of a 31-week pregnancy on mental health grounds, reading Article 21 over statutory caps under the MTP Act.
+          </p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Tenth Schedule & Anti-Defection Jurisprudence</span>
+            <span class="article-badge">10th Schedule / Articles 102(2) & 191(2)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Apex court revisited the 2/3rd merger exemption under paragraph 4 of the Tenth Schedule (fortified via 91st CAA 2003 which deleted the 1/3rd split rule). Re-emphasized that the Chairman/Speaker functions as a constitutional tribunal whose decisions are subject to judicial review only post-adjudication (<em>Kihoto Hollohan doctrine</em>).</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Parliamentary & Legislative Assembly Privileges Re-examined</span>
+            <span class="article-badge">Articles 105 & 194</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Detailed rulings on parliamentary immunity clarified that protection from civil arrest extends 40 days before, during, and 40 days after sessions, but does not extend to criminal proceedings or preventive detention. Confirmed the exclusive institutional privilege of houses to regulate internal proceedings and discipline strangers.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Constitutional Sequence in Hung Legislative Assemblies</span>
+            <span class="article-badge">Articles 163, 164 & 174</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> In the wake of regional assembly elections, the judiciary affirmed the discretionary guidelines established by the Sarkaria and Punchhi Commissions for Governors appointing a Chief Minister in a fractured mandate: (1) Pre-poll alliance, (2) Single largest party staking claim, (3) Post-poll coalition, requiring a mandatory floor test within 30 days.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Statutory Protection Extended to National Song "Vande Mataram"</span>
+            <span class="article-badge">Prevention of Insults to National Honour Act, 1971 / Article 51A(a)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Parliament introduced an amendment bill incorporating the National Song "Vande Mataram" directly into Section 3 of the 1971 Act alongside the National Flag and National Anthem, prescribing penal sanctions of up to 3 years imprisonment for deliberate disruption or insult.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Jan Vishwas (Amendment of Provisions) Bill, 2026</span>
+            <span class="article-badge">Ease of Doing Business / Decriminalization</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Decriminalized 717 statutory provisions across 79 Central Acts, converting minor procedural and administrative defaults from criminal misdemeanors punishable by imprisonment into civil monetary penalties adjudicated by designated administrative officers.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Viksit Bharat Shiksha Adhishthan (VBSA) Bill</span>
+            <span class="article-badge">Union List Entry 66 / Article 246</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Introduced to repeal and replace fragmented regulators (University Grants Commission, AICTE, and NCTE) with a single overarching statutory regulatory body—the Viksit Bharat Shiksha Adhishthan—implementing the Higher Education Commission of India (HECI) mandate under NEP 2020.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Insolvency and Bankruptcy Code (IBC) Amendment Bill, 2026</span>
+            <span class="article-badge">Concurrent List Entry 9 / Commercial Jurisprudence</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Overhauled the 2016 Code by introducing Creditor-Initiated Insolvency Resolution Processes (CIIRP), formal cross-border insolvency provisions based on UNCITRAL model law, group insolvency frameworks, and strict 14-day statutory limits for NCLT admission benches.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. JANUARY – MARCH 2026 -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-8" id="marjan2026">
+    <div class="bg-emerald-50 border-l-4 border-emerald-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-emerald-950 flex items-center gap-1.5">
+        <span>⭐</span> 5. January – March 2026: Constitutional & Polity Developments
+      </h2>
+      <span class="chrono-badge chrono-mar-jan">January – March 2026</span>
     </div>
 
-    <!-- Section 9: Quick Revision Table -->
-    <div class="section-title">
-      <span>9. Articles-at-a-Glance Revision Table</span>
-      <span class="badge badge-accent">Rapid Recall</span>
+    <div class="card bg-white border border-slate-200 rounded-lg p-3.5 mb-3 shadow-sm">
+      <ul class="space-y-3">
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">State Name Alteration: Kerala to ‘Keralam’</span>
+            <span class="article-badge">Article 3 (Proviso) & Article 4</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Union Cabinet cleared the referral of the <em>Kerala (Alteration of Name) Bill, 2026</em> to the State Legislature of Kerala pursuant to the proviso to Article 3. Under the constitutional mechanism, following state assembly recommendations, Parliament may rename the state in the First Schedule by a simple majority vote under Article 4.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Menstrual Hygiene Declared a Fundamental Right</span>
+            <span class="article-badge">Articles 21 & 21A (Dr. Jaya Thakur vs Union of India)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Supreme Court delivered a historic judgment ruling that access to menstrual health management facilities, sanitary pads, and clean separate toilets in educational institutions constitutes an intrinsic component of the Right to Dignified Life (Article 21) and the Right to Education (Article 21A). Mandated free sanitary napkins for all adolescent girls in government and aided schools across classes 6 to 12.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Withdrawal of Life Support & Passive Euthanasia Protocols</span>
+            <span class="article-badge">Article 21 (Harish Rana Case)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> In the <em>Harish Rana case</em>, the Supreme Court simplified the implementation guidelines laid down in <em>Aruna Shanbaug (2011)</em> and <em>Common Cause (2018)</em>. Reaffirmed that the right to die with dignity is an inseparable dimension of Article 21, approving hospital-level primary and secondary medical board protocols for withdrawing Clinically Assisted Nutrition and Hydration (CANH) in permanently vegetative patients.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Resolution for Removal of the Speaker of the Lok Sabha</span>
+            <span class="article-badge">Articles 94(c), 96 & Rule 200</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> A constitutional motion was submitted seeking the removal of Lok Sabha Speaker Om Birla under Article 94(c). The procedural prerequisites mandate 14 days prior notice, support of at least 50 MPs on the floor of the House for leave to admit, and passage by an absolute majority (majority of all the then members of the House) with the Speaker prohibited from presiding under Article 96.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Inter-State Water Dispute: Pennaiyar River Tribunal</span>
+            <span class="article-badge">Article 262 / Inter-State River Water Disputes Act, 1956</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The Supreme Court issued a writ directing the Union Government to formally constitute an Inter-State Water Dispute Tribunal under Article 262 to adjudicate the long-pending water sharing and diversion dispute over the Pennaiyar River between Tamil Nadu and Karnataka, barring high court and supreme court jurisdiction under Section 11 of the 1956 Act.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Removal Safeguards for Chief Election Commissioner (CEC)</span>
+            <span class="article-badge">Article 324(5) & Article 124(4)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> Judicial proceedings affirmed that under the constitutional guarantee of Article 324(5), the Chief Election Commissioner cannot be removed from office except in like manner and on like grounds as a Judge of the Supreme Court (requiring an address supported by a 2/3rd special majority in each House of Parliament on proven misbehaviour or incapacity under Article 124(4)).</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Presidential Address & Union Budget Presentation</span>
+            <span class="article-badge">Articles 87, 112 & 114</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> President Droupadi Murmu addressed the special joint sitting of both Houses of Parliament under Article 87 at the commencement of the Budget Session. Finance Minister Nirmala Sitharaman presented the Annual Financial Statement under Article 112, culminating in the statutory enactment of the Appropriation Act under Article 114 to authorize withdrawals from the Consolidated Fund of India.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">16th Finance Commission Devolution Architecture</span>
+            <span class="article-badge">Article 280 (Finance Commission)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The 16th Finance Commission, chaired by Dr. Arvind Panagariya, retained the vertical tax devolution share to states at 41%. It introduced an updated horizontal devolution formula incorporating a 10% weightage for Gross State Domestic Product (GSDP) fiscal contributions, while reforming Article 275 post-devolution revenue deficit grants.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Reservation & Creamy Layer Jurisprudence</span>
+            <span class="article-badge">Articles 15(4), 16(4) & 341</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong>
+            <br>• <em>Constitution (Scheduled Castes) Order, 1950:</em> The Supreme Court reaffirmed that Scheduled Caste status is constitutionally restricted to professing Hindu, Sikh, or Buddhist faiths; individuals converting to Christianity or Islam cannot claim protection under the SC/ST (Prevention of Atrocities) Act.
+            <br>• <em>Creamy Layer Determinants:</em> Ruled that parental agricultural income and basic government salary cannot be made the exclusive or rigid criteria to classify candidates within the OBC creamy layer without assessing broader socio-economic prosperity.
+            <br>• <em>Unreserved Merit Quota:</em> Held that unreserved open seats in public employment must remain completely open to all categories purely based on merit, prohibiting the segregation of reserved category candidates scoring qualifying marks from open seats.
+          </p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">Repeal of the Two-Child Disqualification Norm in Local Bodies</span>
+            <span class="article-badge">Part IX & IX-A (Panchayats & Municipalities)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The State Legislatures of Telangana and Rajasthan repealed the statutory two-child disqualification norm for contesting Panchayat and Urban Local Body elections, removing barriers preventing parents with more than two children from exercising local democratic franchise.</p>
+        </li>
+
+        <li class="polity-item">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="highlight">National Commission for Scheduled Tribes (NCST) Foundation</span>
+            <span class="article-badge">Article 338A (89th CAA, 2003)</span>
+          </div>
+          <p class="text-slate-700"><strong>Summary:</strong> The statutory and constitutional watchdog body commemorated its 23rd Foundation Day, reviewing its civil court powers under Clause (8) of Article 338A to inquire into specific complaints regarding the deprivation of rights and safeguards guaranteed to Scheduled Tribes.</p>
+        </li>
+      </ul>
     </div>
-    <div class="table-container">
-      <table>
-        <thead>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. QUICK REFERENCE CONSTITUTIONAL MATRIX -->
+  <!-- ========================================================================= -->
+  <section class="section-block mb-4" id="summary-matrix">
+    <div class="bg-slate-100 border-l-4 border-slate-700 p-3 rounded-r-lg mb-4 flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-1.5">
+        <span>⭐</span> 6. Master Quick Reference Matrix (Articles vs News Items)
+      </h2>
+      <span class="chrono-badge chrono-oct">Quick Revision</span>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border border-slate-300 text-xs">
+        <thead class="bg-slate-100 text-slate-800 font-bold">
           <tr>
-            <th style="width: 14%;">Article / Provision</th>
-            <th style="width: 38%;">Constitutional Subject</th>
-            <th style="width: 48%;">Current Affairs Linkage (Jan–Jun 2026)</th>
+            <th class="p-2.5 border">Article / Statutory Law</th>
+            <th class="p-2.5 border">Key Subject / Action</th>
+            <th class="p-2.5 border">Constitutional Significance</th>
+            <th class="p-2.5 border">Timeframe</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td><strong>Article 3</strong></td>
-            <td>State Renaming / Boundary Alteration</td>
-            <td>Kerala (Alteration of Name) Bill introduced to rename State as "Keralam" <span class="citation">[cite: 2]</span></td>
+        <tbody class="divide-y divide-slate-200">
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 243G & 11th Sch</td>
+            <td class="p-2 border">People's Plan Campaign 2026–27</td>
+            <td class="p-2 border">Decentralized planning mandate for Gram Panchayats.</td>
+            <td class="p-2 border">Oct 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 14–16</strong></td>
-            <td>Equality &amp; Reservation Norms</td>
-            <td>Unreserved seats merit ruling <span class="citation">[cite: 1]</span>; Parental income exclusion for OBC creamy layer <span class="citation">[cite: 3]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Articles 315–323</td>
+            <td class="p-2 border">UPSC Centenary Celebrations</td>
+            <td class="p-2 border">100-year milestone of independent public service recruitment.</td>
+            <td class="p-2 border">Oct 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 21</strong></td>
-            <td>Right to Life &amp; Dignity (Expanded)</td>
-            <td>Right to Menstrual Health <span class="citation">[cite: 1]</span>, Safe Highways <span class="citation">[cite: 4]</span>, Pedestrian Footpath rights <span class="citation">[cite: 6]</span>, Passive Euthanasia <span class="citation">[cite: 3]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 371(K)</td>
+            <td class="p-2 border">Proposed Special Status for Ladakh</td>
+            <td class="p-2 border">Legislative assembly with land, cultural, & forest autonomy.</td>
+            <td class="p-2 border">Sep 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 39A</strong></td>
-            <td>Free Legal Aid &amp; Equal Access to Justice</td>
-            <td>Justice Surya Kant named NALSA Executive Chair <span class="citation">[cite: 5]</span>; Launch of Nyaya Setu AI <span class="citation">[cite: 4]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 324 & Rules</td>
+            <td class="p-2 border">EVM Totaliser Machines Directive</td>
+            <td class="p-2 border">Protects secrecy of voter turnout across polling booths.</td>
+            <td class="p-2 border">Sep 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 44</strong></td>
-            <td>Uniform Civil Code (UCC)</td>
-            <td>Gujarat passes UCC Bill (2nd state) <span class="citation">[cite: 3]</span>; Drafting panels set up in MP, CG, Rajasthan <span class="citation">[cite: 4, 6]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 217</td>
+            <td class="p-2 border">High Court Chief Justices Appointments</td>
+            <td class="p-2 border">Presidential appointment of 6 Chief Justices on Collegium advice.</td>
+            <td class="p-2 border">Sep 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 87</strong></td>
-            <td>President's Special Joint Address</td>
-            <td>Budget Session Motion of Thanks address by President Droupadi Murmu <span class="citation">[cite: 2]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 124(1)</td>
+            <td class="p-2 border">SC Number of Judges Bill 2026</td>
+            <td class="p-2 border">Sanctioned strength raised from 33 to 37 (total 38).</td>
+            <td class="p-2 border">Jul–Aug 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 94(c)</strong></td>
-            <td>Removal of Lok Sabha Speaker</td>
-            <td>Opposition removal notice against Speaker Om Birla (Effective Majority) <span class="citation">[cite: 2]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 85(1) & RS R.267</td>
+            <td class="p-2 border">Monsoon Session & Business Suspension</td>
+            <td class="p-2 border">Max 6-month recess cap; extraordinary business suspension rule.</td>
+            <td class="p-2 border">Jul–Aug 2026</td>
           </tr>
-          <tr>
-            <td><strong>Tenth Schedule</strong></td>
-            <td>Anti-Defection Law (2/3rd Merger Rule)</td>
-            <td>Seven AAP Rajya Sabha MPs defecting to BJP qualifying under merger exemption <span class="citation">[cite: 4]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">BNSS Section 356</td>
+            <td class="p-2 border">Trials in Absentia for Terrorists</td>
+            <td class="p-2 border">First criminal trials conducted against proclaimed fugitives.</td>
+            <td class="p-2 border">Jul–Aug 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 114</strong></td>
-            <td>Appropriation Bill</td>
-            <td>Parliament passes Appropriation Bill, 2026 to authorize Consolidated Fund withdrawals <span class="citation">[cite: 3]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Articles 323A & 323B</td>
+            <td class="p-2 border">Tribunals Reforms Bill & NTC</td>
+            <td class="p-2 border">Statutory National Tribunals Commission established.</td>
+            <td class="p-2 border">Jul–Aug 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 124</strong></td>
-            <td>Supreme Court &amp; Chief Justice Appointment</td>
-            <td>Justice B.R. Gavai sworn in as 52nd CJI (First Buddhist CJI) <span class="citation">[cite: 5]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Articles 82 & 334A</td>
+            <td class="p-2 border">Defeat of 131st Amendment Bill</td>
+            <td class="p-2 border">Failed 2/3rd vote to decouple 33% quota from census delimitation.</td>
+            <td class="p-2 border">Apr–Jun 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 143</strong></td>
-            <td>Presidential Advisory Reference</td>
-            <td>Presidential reference on judicial directions fixing Governor assent timelines <span class="citation">[cite: 5]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 81 & 327</td>
+            <td class="p-2 border">Delimitation Bill, 2026 Tabled</td>
+            <td class="p-2 border">Proposed 850 Lok Sabha MPs; gazetted orders hold judicial immunity.</td>
+            <td class="p-2 border">Apr–Jun 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 200</strong></td>
-            <td>Gubernatorial Assent to State Bills</td>
-            <td>Punjab Governor assents to Jaagat Jot Sri Guru Granth Sahib Satkar Amendment Bill <span class="citation">[cite: 4]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 200</td>
+            <td class="p-2 border">Punjab Sacrilege Amendment Act</td>
+            <td class="p-2 border">Assent given; Life imprisonment for conspiracy sacrilege.</td>
+            <td class="p-2 border">Apr–Jun 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 222</strong></td>
-            <td>Transfer of High Court Judges</td>
-            <td>Mass Collegium recommendations transferring Chief Justices across 4 High Courts <span class="citation">[cite: 5]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 44</td>
+            <td class="p-2 border">Uniform Civil Code (Assam, MP, UK, Guj)</td>
+            <td class="p-2 border">State UCC enactments under Directive Principles.</td>
+            <td class="p-2 border">Jan–Sep 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 243M / PESA</strong></td>
-            <td>Panchayats in Scheduled Areas</td>
-            <td>Jharkhand notifies PESA Rules 25 years after achieving statehood <span class="citation">[cite: 1]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 3</td>
+            <td class="p-2 border">Renaming Kerala to 'Keralam'</td>
+            <td class="p-2 border">Cabinet approval & state referral under Article 3 proviso.</td>
+            <td class="p-2 border">Jan–Mar 2026</td>
           </tr>
-          <tr>
-            <td><strong>Articles 243F &amp; 243V</strong></td>
-            <td>Disqualifications for Local Bodies</td>
-            <td>Telangana &amp; Rajasthan repeal two-child disqualification for panchayat/ULB polls <span class="citation">[cite: 1, 3]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Articles 21 & 21A</td>
+            <td class="p-2 border">Menstrual Health Fundamental Right</td>
+            <td class="p-2 border">Free sanitary hygiene items mandated for classes 6–12.</td>
+            <td class="p-2 border">Jan–Mar 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 280</strong></td>
-            <td>Finance Commission Mandate</td>
-            <td>16th Finance Commission Final Report (2026–31) submitted by Dr. Arvind Panagariya <span class="citation">[cite: 3]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 21</td>
+            <td class="p-2 border">Passive Euthanasia in Harish Rana Case</td>
+            <td class="p-2 border">CANH life-support withdrawal permitted with dignity.</td>
+            <td class="p-2 border">Jan–Mar 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 324(5)</strong></td>
-            <td>Removal Safeguards of the CEC</td>
-            <td>Impeachment notice against CEC Gyanesh Kumar (Supreme Court judge removal procedure) <span class="citation">[cite: 3]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Articles 94(c) & 96</td>
+            <td class="p-2 border">Removal Notice against Lok Sabha Speaker</td>
+            <td class="p-2 border">Requires 14-day notice, 50 MPs leave, absolute majority.</td>
+            <td class="p-2 border">Jan–Mar 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 338B</strong></td>
-            <td>National Commission for Backward Classes</td>
-            <td>Sadhvi Niranjan Jyoti assumes charge as Chairperson (102nd CAA 2018) <span class="citation">[cite: 3]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 262</td>
+            <td class="p-2 border">Pennaiyar River Dispute Tribunal</td>
+            <td class="p-2 border">SC mandate to Centre to constitute river dispute tribunal.</td>
+            <td class="p-2 border">Jan–Mar 2026</td>
           </tr>
-          <tr>
-            <td><strong>Article 341</strong></td>
-            <td>Scheduled Castes Presidential Order, 1950</td>
-            <td>Supreme Court rules SC status is legally restricted to Hindu, Sikh, and Buddhist faiths <span class="citation">[cite: 3]</span></td>
-          </tr>
-          <tr>
-            <td><strong>Article 356</strong></td>
-            <td>President's Rule (Suspended Animation)</td>
-            <td>Manipur Assembly kept in suspended animation and subsequently revoked <span class="citation">[cite: 2]</span></td>
+          <tr class="hover:bg-slate-50">
+            <td class="p-2 border font-bold text-blue-900">Article 280</td>
+            <td class="p-2 border">16th Finance Commission Architecture</td>
+            <td class="p-2 border">41% vertical devolution retained; 10% weightage for GSDP.</td>
+            <td class="p-2 border">Jan–Mar 2026</td>
           </tr>
         </tbody>
       </table>
     </div>
+  </section>
 
-  </div>
+  <!-- Document Footer -->
+  <footer class="mt-8 pt-4 border-t border-slate-300 text-center text-xs text-slate-500">
+    <p class="font-bold text-slate-700">Master Polity & Constitutional Revision Compendium (October 2026 → January 2026)</p>
+    <p class="mt-1">All constitutional articles, central bills, statutory notifications, and landmark Supreme Court rulings arranged in reverse chronological order.</p>
+  </footer>
+
 </div>
 
+<!-- Client-side filter script -->
 <script>
-  function filterCards() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
-    const cards = document.getElementsByClassName('polity-card');
-    const sections = document.getElementsByClassName('section-title');
+function filterContent() {
+  const query = document.getElementById('quickFilter').value.toLowerCase().trim();
+  const items = document.querySelectorAll('.polity-item');
+  const rows = document.querySelectorAll('tbody tr');
 
-    for (let i = 0; i < cards.length; i++) {
-      const text = cards[i].innerText.toLowerCase();
-      if (text.includes(input)) {
-        cards[i].style.display = "";
-      } else {
-        cards[i].style.display = "none";
-      }
-    }
-  }
+  items.forEach(el => {
+    el.style.display = el.innerText.toLowerCase().includes(query) ? '' : 'none';
+  });
+
+  rows.forEach(tr => {
+    tr.style.display = tr.innerText.toLowerCase().includes(query) ? '' : 'none';
+  });
+}
 </script>
 
 </body>
