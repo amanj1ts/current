@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current Affairs MCQ Practice Portal</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --correct-bg: #dcfce7;
+      --correct-border: #16a34a;
+      --correct-text: #14532d;
+      --incorrect-bg: #fee2e2;
+      --incorrect-border: #dc2626;
+      --incorrect-text: #7f1d1d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 14px 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+
+    .header-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .title-area h1 {
+      font-size: 1.35rem;
+      color: var(--primary);
+    }
+
+    .controls-area {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    select, button {
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    select {
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    .btn-toggle {
+      background-color: var(--primary);
+      color: white;
+      font-weight: 500;
+      border: none;
+    }
+
+    .btn-toggle:hover {
+      background-color: var(--primary-light);
+    }
+
+    .btn-reset {
+      background-color: #ef4444;
+      color: white;
+      border: none;
+    }
+
+    .btn-reset:hover {
+      background-color: #dc2626;
+    }
+
+    .score-badge {
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      background: #e0f2fe;
+      color: #0369a1;
+      border-radius: 999px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    .set-heading {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 32px 0 16px 0;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--primary-light);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .question-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      white-space: pre-line;
+      color: #1e293b;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+      user-select: none;
+    }
+
+    .option-item:hover:not(.locked) {
+      background-color: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    .opt-letter {
+      font-weight: 700;
+      min-width: 22px;
+    }
+
+    /* Interactive / Answer states */
+    .option-item.correct-ans {
+      background-color: var(--correct-bg) !important;
+      border-color: var(--correct-border) !important;
+      color: var(--correct-text) !important;
+      font-weight: 600;
+    }
+
+    .option-item.wrong-ans {
+      background-color: var(--incorrect-bg) !important;
+      border-color: var(--incorrect-border) !important;
+      color: var(--incorrect-text) !important;
+    }
+
+    .status-box {
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .status-box.show {
+      display: block;
+    }
+
+    .status-box.correct {
+      background: #f0fdf4;
+      border: 1px solid var(--correct-border);
+      color: var(--correct-text);
+    }
+
+    .status-box.incorrect {
+      background: #fef2f2;
+      border: 1px solid var(--incorrect-border);
+      color: var(--incorrect-text);
+    }
+
+    .status-box.info {
+      background: #f0f9ff;
+      border: 1px solid var(--primary-light);
+      color: #075985;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="title-area">
+        <h1>Current Affairs MCQ Mock Test</h1>
+      </div>
+      <div class="controls-area">
+        <select id="filterSet" onchange="renderQuestions()">
+          <option value="all">All Sets (1–5)</option>
+          <option value="1">Set 1 (Q1 - Q40)</option>
+          <option value="2">Set 2 (Q1 - Q42)</option>
+          <option value="3">Set 3 (Q1 - Q41)</option>
+          <option value="4">Set 4 (Q1 - Q40)</option>
+		  <option value="5">Set 5 (Q1 - Q56)</option>
+        </select>
+        <button id="toggleModeBtn" class="btn-toggle" onclick="toggleMode()">Show All Answers</button>
+        <button class="btn-reset" onclick="resetAll()">Reset Attempt</button>
+        <div class="score-badge" id="scoreDisplay">Score: 0 / 0</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="quizContainer"></main>
+
+  <script>
+    const quizData = [
+      /* ========================================================
+         SET 1
+      ======================================================== */
+      {
+        set: 1, id: "s1q1",
+        q: "Q1. General Dhiraj Seth is the ______ Chief of the Army Staff (COAS) of the Indian Army.",
+        options: ["29th", "30th", "31st", "32nd"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q2",
+        q: "Q2. 'Saksham Skill Census', India's first AI-powered skill census, was launched in which city?",
+        options: ["Bengaluru", "Hyderabad", "Mumbai", "New Delhi"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q3",
+        q: "Q3. Balendra Shah was sworn in as the Prime Minister of which country?",
+        options: ["Bhutan", "Nepal", "Sri Lanka", "Bangladesh"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q4",
+        q: "Q4. Consider the following statements regarding the ASMITA League:\n\nStatement 1: ASMITA stands for Achieving Sports Milestone by Inspiring Women Through Action.\nStatement 2: The ASMITA League was launched in 2021 to promote women's participation in sports.",
+        options: ["Only Statement 1 is correct", "Only Statement 2 is correct", "Both Statement 1 and Statement 2 are correct", "Neither Statement 1 nor Statement 2 is correct"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q5",
+        q: "Q5. Which film won the highest number of awards at the 98th Academy Awards (Oscars 2026)?",
+        options: ["Sinners", "Hamnet", "One Battle After Another", "Dune: Part Two"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q6",
+        q: "Q6. Which country topped the medal standings at the World Para Athletics Grand Prix (WPAGP) 2026 – New Delhi leg?",
+        options: ["Russia", "India", "Bosnia & Herzegovina", "China"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q7",
+        q: "Q7. The World Para Athletics Grand Prix 2026 served as a qualifying event for which of the following?",
+        options: ["2027 Asian Para Games only", "2028 Brisbane Olympics only", "2026 World Para Athletics Championships and 2028 Los Angeles Paralympics", "2026 Commonwealth Games only"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q8",
+        q: "Q8. Consider the following statements regarding Exercise LAMITIYE-2026:\n\nStatement 1: LAMITIYE-2026 marked the first tri-service participation of the Indian Armed Forces.\nStatement 2: The exercise was conducted between India and Sri Lanka.",
+        options: ["Only Statement 1 is correct", "Only Statement 2 is correct", "Both Statement 1 and Statement 2 are correct", "Neither Statement 1 nor Statement 2 is correct"],
+        ans: "A"
+      },
+      {
+        set: 1, id: "s1q9",
+        q: "Q9. Consider the following statements regarding National Science Day (NSD):\n\nStatement 1: National Science Day is observed every year on 28 February to commemorate the discovery of the Raman Effect.\nStatement 2: C. V. Raman won the Nobel Prize in Chemistry.",
+        options: ["Only Statement 1 is correct", "Only Statement 2 is correct", "Both Statement 1 and Statement 2 are correct", "Neither Statement 1 nor Statement 2 is correct"],
+        ans: "A"
+      },
+      {
+        set: 1, id: "s1q10",
+        q: "Q10. India's first Integrated Ocean Thermal Energy Conversion (OTEC) plant is being developed at which place?",
+        options: ["Port Blair, Andaman & Nicobar Islands", "Kavaratti, Lakshadweep", "Kochi, Kerala", "Visakhapatnam, Andhra Pradesh"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q11",
+        q: "Q11. The National Statistical Office (NSO) announced that India's first-ever National Household Income Survey (NHIS) and Annual Survey of Incorporated Service Sector Enterprises (ASISSE) will be conducted from which year?",
+        options: ["2025", "2026", "2027", "2028"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q12",
+        q: "Q12. Wings India 2026, Asia's largest civil aviation event, was inaugurated at which airport?",
+        options: ["Rajiv Gandhi International Airport, Hyderabad", "Kempegowda International Airport, Bengaluru", "Begumpet Airport, Hyderabad", "Indira Gandhi International Airport, New Delhi"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q13",
+        q: "Q13. Which organization received the 'Best Contributor to Atmanirbhar Bharat' award at Wings India 2026?",
+        options: ["Airports Authority of India (AAI)", "Bharat Electronics Limited (BEL)", "Hindustan Aeronautics Limited (HAL)", "Delhi International Airport Limited (DIAL)"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q14",
+        q: "Q14. Which district became India's first to achieve 100% insurance coverage under the 'Insurance for All by 2047' initiative?",
+        options: ["Jaipur (Rajasthan)", "Alwar (Rajasthan)", "Udaipur (Rajasthan)", "Hisar (Haryana)"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q15",
+        q: "Q15. Which country was declared Ebola-free on July 29, 2026?",
+        options: ["Kenya", "Uganda", "Nigeria", "Ghana"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q16",
+        q: "Q16. Which bank was honored as the 'World's Best Consumer Bank 2026'?",
+        options: ["HDFC Bank", "Bank of Baroda", "State Bank of India", "ICICI Bank"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q17",
+        q: "Q17. Which of the following statements regarding BRICS is/are correct?\n\n1. The acronym “BRIC” was coined by Jim O'Neill, Chief Economist at Goldman Sachs, in 2001.\n2. The New Development Bank (NDB) was established through a treaty signed during the 6th BRICS Summit in Fortaleza, Brazil.\n3. India assumed the BRICS Chair for the fourth time on January 1, 2026, with the theme “Building for Resilience, Innovation, Cooperation, and Sustainability.”",
+        options: ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "1, 2 and 3"],
+        ans: "D"
+      },
+      {
+        set: 1, id: "s1q18",
+        q: "Q18. Who became the first woman from Assam to successfully scale Mount Everest?",
+        options: ["Anshu Jamsenpa", "Rupamoni Gor", "Bachendri Pal", "Dicky Dolma"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q19",
+        q: "Q19. The 57th International Film Festival of India (IFFI) 2026 will be organized in which state?",
+        options: ["Kerala", "Maharashtra", "Goa", "Karnataka"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q20",
+        q: "Q20. Which two countries announced their withdrawal from the International Criminal Court on 30 July 2026?",
+        options: ["Chad and Venezuela", "Chad and Sudan", "Venezuela and Cuba", "Sudan and Venezuela"],
+        ans: "A"
+      },
+      {
+        set: 1, id: "s1q21",
+        q: "Q21. In which state was the 'Mukhyamantri Machhuara Samman Nidhi Yojana' launched on 1 August 2026?",
+        options: ["Uttarakhand", "Himachal Pradesh", "Haryana", "Punjab"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q22",
+        q: "Q22. Which of the following statements regarding the Shanghai Cooperation Organisation (SCO) is incorrect?\n\n1. The 25th SCO Summit begins in Bishkek, the capital of Kyrgyzstan.\n2. The theme of the 26th SCO Summit is “25 Years of the SCO: Together Towards Sustainable Peace, Development and Prosperity.”\n3. The SCO has 10 member countries, including India, China and Russia.",
+        options: ["Only 1", "Only 2", "Only 3", "None of the above"],
+        ans: "A"
+      },
+      {
+        set: 1, id: "s1q23",
+        q: "Q23. Which country was handed over the 2030 Commonwealth Games torch?",
+        options: ["Australia", "India", "Canada", "England"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q24",
+        q: "Q24. When is the birth anniversary of Pingali Venkayya, who designed the Indian national flag, celebrated?",
+        options: ["1 August", "2 August", "3 August", "15 August"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q25",
+        q: "Q25. Where will the BRICS Education Ministers' meeting be organized?",
+        options: ["New Delhi", "Bhubaneswar", "Mumbai", "Kolkata"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q26",
+        q: "Q26. Who won the Durand Cup 2026 title?",
+        options: ["Mohun Bagan SG", "East Bengal FC", "Bengaluru FC", "FC Goa"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q27",
+        q: "Q27. What is the name of India's first indigenous assault rifle successfully tested on 25 August 2026?",
+        options: ["INSAS", "AK-203 (Sher)", "Excalibur", "Zittara"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q28",
+        q: "Q28. Who won the Miss Universe India 2026 title?",
+        options: ["Keziah Liz Mejo", "Nandini Gupta", "Shweta Sharda", "Rhea Singha"],
+        ans: "A"
+      },
+      {
+        set: 1, id: "s1q29",
+        q: "Q29. Who became the highest wicket-taker in the ICC World Test Championship?",
+        options: ["Pat Cummins", "Nathan Lyon", "Mitchell Starc", "Jasprit Bumrah"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q30",
+        q: "Q30. Which state government is raising a new disaster response force named 'Arjun Vahini'?",
+        options: ["Bihar", "West Bengal", "Odisha", "Assam"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q31",
+        q: "Q31. Where did Prime Minister Narendra Modi inaugurate the Alluri Sitarama Raju International Airport on 2 August 2026?",
+        options: ["Telangana", "Odisha", "Andhra Pradesh", "Tamil Nadu"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q32",
+        q: "Q32. Which state government launched India's first women-led renewable energy policy scheme 'DWEEPTI'?",
+        options: ["Odisha", "Chhattisgarh", "Jharkhand", "Rajasthan"],
+        ans: "B"
+      },
+      {
+        set: 1, id: "s1q33",
+        q: "Q33. Real-time digital money transfer through Favara-UPI has started between India and which country?",
+        options: ["Sri Lanka", "Nepal", "Maldives", "Bhutan"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q34",
+        q: "Q34. Match List-I with List-II and select the correct answer using the code given below:\n\nList-I (State/UT):\n1. West Bengal\n2. Tamil Nadu\n3. Kerala\n4. Assam\n5. Puducherry\n\nList-II (Chief Minister):\na. Himanta Biswa Sarma\nb. N. Rangaswamy\nc. C. Joseph Vijay\nd. Suvendu Adhikari\ne. V. D. Satheesan",
+        options: ["1-d, 2-c, 3-e, 4-a, 5-b", "1-c, 2-d, 3-a, 4-e, 5-b", "1-e, 2-c, 3-d, 4-a, 5-b", "1-d, 2-e, 3-c, 4-b, 5-a"],
+        ans: "A"
+      },
+      {
+        set: 1, id: "s1q35",
+        q: "Q35. Match List-I with List-II and select the correct answer using the code given below:\n\nList-I (Date):\n1. 8 September\n2. 11 September\n3. 15 September\n4. 23 September\n5. 27 September\n\nList-II (Day):\na. World Tourism Day\nb. International Literacy Day\nc. National Ayurveda Day\nd. Digvijay Diwas\ne. International Day of Democracy",
+        options: ["1-b, 2-d, 3-e, 4-c, 5-a", "1-d, 2-b, 3-e, 4-a, 5-c", "1-b, 2-e, 3-d, 4-c, 5-a", "1-e, 2-d, 3-b, 4-c, 5-a"],
+        ans: "A"
+      },
+      {
+        set: 1, id: "s1q36",
+        q: "Q36. Match List-I with List-II and select the correct answer using the code given below:\n\nList-I (Person):\n1. Mojtaba Khamenei\n2. Taranjit Singh Sandhu\n3. Menaka Guruswamy\n4. Sadhvi Niranjan\n5. Dinesh Sharma\n\nList-II (Position/Description):\na. Chairperson, National Commission for Backward Classes (NCBC)\nb. Lieutenant Governor of Delhi\nc. Supreme Leader of Iran\nd. First member from the LGBTQ community to be elected as a Member of Parliament – Rajya Sabha\ne. Lieutenant Governor of Andaman and Nicobar Islands",
+        options: ["1-c, 2-b, 3-d, 4-a, 5-e", "1-b, 2-c, 3-d, 4-e, 5-a", "1-c, 2-e, 3-b, 4-a, 5-d", "1-e, 2-b, 3-a, 4-d, 5-c"],
+        ans: "C"
+      },
+      {
+        set: 1, id: "s1q37",
+        q: "Q37. Match List-I with List-II and select the correct answer using the code given below:\n\nList-I (Military Exercise):\n1. Yudh Abhyas 2026\n2. Rudra Raptors\n3. Nomadic Elephant 2026\n4. KAZIND-2026\n\nList-II (Host/Location):\na. Oskemen, Kazakhstan\nb. Jaisalmer, Rajasthan\nc. Pithoragarh, Uttarakhand\nd. India–US joint military exercise",
+        options: ["1-d, 2-b, 3-c, 4-a", "1-b, 2-c, 3-d, 4-a", "1-d, 2-c, 3-a, 4-b", "1-c, 2-b, 3-a, 4-d"],
+        ans: "A"
+      },
+      {
+        set: 1, id: "s1q38",
+        q: "Q38. Which of the following statements regarding the National Film Awards 2026 are correct?\n\n1. Article 370 won the Best Feature Film award, with Jio Studios and B62 Studios as producers and Aditya Suhas Jambhale as director.\n2. Rajkumar Periasamy won the Best Direction award for Amaran.\n3. Mammootty and Kartik Aaryan jointly won the Best Actor in a Leading Role award.",
+        options: ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "1, 2 and 3"],
+        ans: "D"
+      },
+      {
+        set: 1, id: "s1q39",
+        q: "Q39. Which of the following statements regarding the President’s Colour presented to Goa Police are correct?\n\n1. The President’s Colour was presented to Goa Police on 7 September 2026 at Dr. Shyama Prasad Mukherjee Indoor Stadium, Taleigao, Goa.\n2. Union Home Minister Amit Shah presented the honour, making Goa the fifth state police force in India to receive the President’s Police Colour.\n3. The President’s Colour is also known as Rashtrapati Ka Nishan and is awarded to police forces for distinguished service.",
+        options: ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "1, 2 and 3"],
+        ans: "D"
+      },
+      {
+        set: 1, id: "s1q40",
+        q: "Q40. Consider the following statements regarding Operation Black Hawk and Operation Economic Outcast:\n\n1. The Central Bureau of Narcotics launched ‘Operation Black Hawk’ against drug trafficking in Madhya Pradesh and Uttar Pradesh.\n2. The USA launched ‘Operation Economic Outcast’ against Russia on 27 August 2026.",
+        options: ["Only 1", "Only 2", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "A"
+      },
+
+      /* ========================================================
+         SET 2
+      ======================================================== */
+      {
+        set: 2, id: "s2q1",
+        q: "Q1. Consider the following statements regarding the FIFA World Cup 2026:\n\n1. Spain won the FIFA World Cup 2026 title after defeating Argentina 1–0 in extra time.\n2. The FIFA World Cup 2026 was co-hosted by Canada, Mexico and the United States.\n3. The tournament was hosted across 18 cities in the three North American nations.\n\nWhich of the statements given above is/are correct?",
+        options: ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+        ans: "C"
+      },
+      {
+        set: 2, id: "s2q2",
+        q: "Q2. Who won the Asian Junior Rapid Chess Championship 2026 held in Mumbai?",
+        options: ["Vivan Shah", "Ramesh Kumar", "Arjun Erigaisi", "Praggnanandhaa"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q3",
+        q: "Q3. Which of the following statements regarding UNCCD COP17 are correct?\n\n1. The 18th session of the Conference of the Parties (UNCCD COP18) took place in Ulaanbaatar, Mongolia.\n2. The theme of UNCCD COP17 was “Restoring Land. Restoring Hope.”\n3. UNCCD COP17 was the first major gathering in the 2026 “Triple COP” year for the Rio Conventions.",
+        options: ["Only 1", "Only 2", "Only 1 and 2", "Only 2 and 3"],
+        ans: "D"
+      },
+      {
+        set: 2, id: "s2q4",
+        q: "Q4. Where was the 4th Joint Working Group meeting on border management between India and Nepal held?",
+        options: ["Lucknow", "Dehradun", "Kathmandu", "New Delhi"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q5",
+        q: "Q5. Under whose leadership did the Supreme Court constitute a committee to investigate student movement violence across the country?",
+        options: ["R. Subhash Reddy", "Justice D. Y. Chandrachud", "Justice Sanjay Karol", "Justice Surya Kant"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q6",
+        q: "Q6. Which of the following statements regarding BRICS is incorrect?\n\n1. BRICS strongly condemned terrorism in all its forms and manifestations.\n2. BRICS specifically condemned the April 2025 Pahalgam terrorist attack, in which 26 people were killed.\n3. BRICS supported India’s bid for a permanent seat in the UN Security Council (UNSC) but did not reach consensus on broader global governance reforms.",
+        options: ["Only 1", "Only 2", "Only 3", "1, 2 and 3"],
+        ans: "C"
+      },
+      {
+        set: 2, id: "s2q7",
+        q: "Q7. At the World Humanoid Robot Games in Beijing, a humanoid robot completed the 100-metre sprint in:",
+        options: ["9.39 seconds", "9.58 seconds", "9.69 seconds", "10.39 seconds"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q8",
+        q: "Q8. In which city was India's first soil texture map developed?",
+        options: ["Pune", "Nagpur", "Bhopal", "Hyderabad"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q9",
+        q: "Q9. Consider the following statements regarding recent cricket records:\n\n1. Rishabh Pant became the first Indian and the fourth player overall to hit 100 sixes in Test cricket.\n2. Vaibhav Sooryavanshi became the youngest player to score a half-century in Duleep Trophy history at the age of 15 years and 157 days.\n\nWhich of the statements given above is/are correct?",
+        options: ["Only 1", "Only 2", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "C"
+      },
+      {
+        set: 2, id: "s2q10",
+        q: "Q10. Match List-I with List-II regarding the naval ships commissioned by Prime Minister Narendra Modi on 21 June 2026:\n\nList-I (Naval Ships):\n1. INS Dunagiri\n2. INS Sanshodhak\n3. INS Agray\n\nList-II (Features):\na. Survey Vessel Large for hydrographic and oceanographic surveys\nb. Arnala-class anti-submarine warfare (ASW) shallow water craft\nc. Project 17A stealth guided-missile frigate",
+        options: ["1-c, 2-a, 3-b", "1-a, 2-b, 3-c", "1-b, 2-c, 3-a", "1-c, 2-b, 3-a"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q11",
+        q: "Q11. Which city is widely recognized as the “Yoga Capital of India and the World”?",
+        options: ["Haridwar", "Rishikesh", "Varanasi", "Mysuru"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q12",
+        q: "Q12. What is the full form of UNCCD?",
+        options: ["United Nations Convention to Combat Desertification", "United Nations Council for Climate and Desert Development", "United Nations Convention for Climate and Drought", "United Nations Committee on Climate and Desertification"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q13",
+        q: "Q13. The 'Pithora painting' of which state was officially given the GI Tag on 3 August 2026?",
+        options: ["Madhya Pradesh", "Gujarat", "Rajasthan", "Maharashtra"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q14",
+        q: "Q14. Khalingduar Forest Reserve, which was in the news regarding weed management and a biochar project, is located in which state?",
+        options: ["Meghalaya", "Assam", "Arunachal Pradesh", "Nagaland"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q15",
+        q: "Q15. IntelliSeat smart driver seat, designed to detect fatigue and drowsiness in drivers, was developed by researchers of which IIT?",
+        options: ["IIT Delhi", "IIT Bombay", "IIT Madras", "IIT Kanpur"],
+        ans: "C"
+      },
+      {
+        set: 2, id: "s2q16",
+        q: "Q16. From which city did Indian Railways start its first double-stack long-haul container train?",
+        options: ["Delhi", "Mumbai", "Ahmedabad", "Jaipur"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q17",
+        q: "Q17. Who set the record for taking the most catches in Test cricket history on 24 August 2026?",
+        options: ["Joe Root", "Ben Stokes", "Steve Smith", "Virat Kohli"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q18",
+        q: "Q18. Who launched the open-source multilingual speech-recognition model 'SraVaani'?",
+        options: ["IIT Madras", "IISc Bengaluru", "ISRO", "DRDO"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q19",
+        q: "Q19. Whose autobiography is titled 'Belonging: A Journey of Love'?",
+        options: ["Sonia Gandhi", "Priyanka Gandhi Vadra", "Sushma Swaraj", "Maneka Gandhi"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q20",
+        q: "Q20. Sophie Adenot became the first woman from which country to walk in space?",
+        options: ["Germany", "France", "Italy", "Spain"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q21",
+        q: "Q21. Which state became the fifth state to ban the sale of 'analogue paneer' on 24 August 2026?",
+        options: ["Uttarakhand", "Himachal Pradesh", "Punjab", "Haryana"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q22",
+        q: "Q22. Consider the following statements regarding major sports events in August 2026:\n\n1. Magnus Carlsen won the Esports World Cup title for the second consecutive time on 17 August 2026.\n2. The BWF World Championship is being hosted by New Delhi.\n\nWhich of the statements given above is/are correct?",
+        options: ["Only 1", "Only 2", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "C"
+      },
+      {
+        set: 2, id: "s2q23",
+        q: "Q23. Consider the following statements regarding BRICS meetings held in India in 2026:\n\n1. The BRICS Youth Summit and BRICS Youth Council meeting were held in Gandhinagar.\n2. The 12th BRICS Environment Ministers' Conference was held in Mumbai.\n\nWhich of the statements given above is/are correct?",
+        options: ["Only 1", "Only 2", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q24",
+        q: "Q24. India has set a target of achieving 100 GW nuclear power capacity by which year?",
+        options: ["2035", "2040", "2047", "2050"],
+        ans: "C"
+      },
+      {
+        set: 2, id: "s2q25",
+        q: "Q25. Joint exercise 'Sahayog-Hoptac' between the Coast Guards of India and which country was held in Chennai on 29 August 2026?",
+        options: ["Indonesia", "Vietnam", "Thailand", "Malaysia"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q26",
+        q: "Q26. Which Indian Grandmaster won the Kanizsa Open Chess Tournament in Hungary?",
+        options: ["GM R. Praggnanandhaa", "GM M. Pranesh", "GM Arjun Erigaisi", "GM Vidit Gujrathi"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q27",
+        q: "Q27. Which disease was announced as a national priority by Union Minister Dr. Jitendra Singh?",
+        options: ["Cancer", "Diabetes", "Tuberculosis", "Malaria"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q28",
+        q: "Q28. Where did Prime Minister Modi inaugurate the \"Vivek Smarak\"?",
+        options: ["Mysore", "Bengaluru", "Chennai", "Kochi"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q29",
+        q: "Q29. Which is the only Indian city included in the 'Work From Anywhere Index 2026'?",
+        options: ["Bengaluru", "Mumbai", "Delhi", "Hyderabad"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q30",
+        q: "Q30. Match List-I with List-II regarding important days observed in May:\n\nList-I (Dates):\n1. 1 May\n2. 2 May\n3. 3 May\n4. 8 May\n5. 11 May\n\nList-II (Important Days):\na. World Tuna Day\nb. National Technology Day\nc. International Labour Day\nd. World Red Cross and Red Crescent Day\ne. World Press Freedom Day",
+        options: ["1-c, 2-a, 3-e, 4-d, 5-b", "1-a, 2-c, 3-d, 4-e, 5-b", "1-c, 2-b, 3-e, 4-a, 5-d", "1-e, 2-a, 3-c, 4-d, 5-b"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q31",
+        q: "Q31. When is World Health Day observed, and what is its 2026 theme?",
+        options: ["7 April – Together for Health. Stand with Science", "11 May – Together for Health. Stand with Science", "7 April – Health for All", "2 May – Together for Health. Stand with Science"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q32",
+        q: "Q32. The Chief Minister of which state announced the implementation of the 'Beti Bachao, Beti Padhao' scheme in August 2026?",
+        options: ["Odisha", "West Bengal", "Bihar", "Jharkhand"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q33",
+        q: "Q33. Match List-I with List-II regarding the naval ships commissioned by Prime Minister Narendra Modi on 21 June 2026:\n\nList-I (Naval Ships):\n1. INS Dunagiri\n2. INS Sanshodhak\n3. INS Agray\n\nList-II (Features):\na. Survey Vessel Large for hydrographic and oceanographic surveys\nb. Arnala-class anti-submarine warfare (ASW) shallow water craft\nc. Project 17A stealth guided-missile frigate",
+        options: ["1-c, 2-a, 3-b", "1-a, 2-b, 3-c", "1-b, 2-c, 3-a", "1-c, 2-b, 3-a"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q34",
+        q: "Q34. Consider the following statements regarding the Nilgiri-class frigates (Project 17A):\n\n1. The Nilgiri-class frigates are a series of seven advanced multi-mission stealth guided-missile warships built for the Indian Navy.\n2. These frigates are being built by Mazagon Dock Shipbuilders in Mumbai and Garden Reach Shipbuilders & Engineers in Kolkata.\n3. INS Mahendragiri was commissioned on 11 July 2026 at Visakhapatnam.\n4. Vindhyagiri has already been commissioned into the Indian Navy.\n\nWhich of the statements given above is incorrect?",
+        options: ["1", "2", "3", "4"],
+        ans: "D"
+      },
+      {
+        set: 2, id: "s2q35",
+        q: "Q35. The Supreme Court banned construction or development activities within 100 metres of the Jojari River, located in which state?",
+        options: ["Gujarat", "Rajasthan", "Haryana", "Madhya Pradesh"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q36",
+        q: "Q36. Where was the Mission Samriddhi Gram Yojana launched?",
+        options: ["Lucknow", "New Delhi", "Jaipur", "Gandhinagar"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q37",
+        q: "Q37. Where was the 25th India-China border talk held?",
+        options: ["New Delhi", "Shanghai", "Beijing", "Lhasa"],
+        ans: "C"
+      },
+      {
+        set: 2, id: "s2q38",
+        q: "Q38. Which state government announced AI education for students from Class 6 onwards?",
+        options: ["Maharashtra", "Karnataka", "Tamil Nadu", "Telangana"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q39",
+        q: "Q39. Zorawar Light Tank was jointly developed by DRDO along with which company as the lead integrator?",
+        options: ["Tata Advanced Systems", "Larsen & Toubro (L&T)", "Bharat Dynamics Limited", "Hindustan Aeronautics Limited"],
+        ans: "B"
+      },
+      {
+        set: 2, id: "s2q40",
+        q: "Q40. Consider the following statements regarding India’s first coal-to-ammonium nitrate project and semiconductor facilities:\n\n1. The foundation stone for India’s first commercial-scale coal-to-ammonium nitrate project was laid at Lakhanpur, Jharsuguda, Odisha.\n2. India’s first SME-led semiconductor ATMP/OSAT facility is located in Bhiwadi, Rajasthan and was established by Sahasra Semiconductors Pvt. Ltd.\n3. India’s first commercial semiconductor assembly and test facility is located in Sanand, Gujarat, developed by Micron Technology.\n\nWhich of the statements given above is/are correct?",
+        options: ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+        ans: "D"
+      },
+      {
+        set: 2, id: "s2q41",
+        q: "Q41. Which organisation launched a symbolic “Khalsa Tax” collection drive on Himachal-registered vehicles entering Punjab near Kiratpur Sahib?",
+        options: ["Tarna Dal", "Nihang Singh Dal", "Damdami Taksal", "Budha Dal"],
+        ans: "A"
+      },
+      {
+        set: 2, id: "s2q42",
+        q: "Q42. Under the Vibrant Village Programme, Chumur would be developed as Ladakh’s first what?",
+        options: ["Smart City", "Model Border Village", "Tourism Hub", "Industrial Village"],
+        ans: "B"
+      },
+
+      /* ========================================================
+         SET 3
+      ======================================================== */
+      {
+        set: 3, id: "s3q1",
+        q: "Q1. Where was India's first virtual zoo started?",
+        options: ["Bhopal", "Indore", "Jaipur", "Lucknow"],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q2",
+        q: "Q2. The Thamirabarani River of which state was granted the status of a legal person on 20 August 2026?",
+        options: ["Kerala", "Karnataka", "Tamil Nadu", "Andhra Pradesh"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q3",
+        q: "Q3. Who won the Japan Open 2026 Women’s Singles title?",
+        options: ["Akane Yamaguchi", "PV Sindhu", "Carolina Marín", "Tai Tzu-ying"],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q4",
+        q: "Q4. Who became the world's youngest Chartered Accountant?",
+        options: ["Lakshman Meyyappan", "Kartikeyan Lanka", "Suraj Kumar Chand", "Ashish Yadav"],
+        ans: "A"
+      },
+      {
+        set: 3, id: "s3q5",
+        q: "Q5. Indian Army Chief General Dheeraj Seth was awarded the honorary rank of General of which country's army?",
+        options: ["Bhutan", "Nepal", "Sri Lanka", "Myanmar"],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q6",
+        q: "Q6. Consider the following statements regarding recent defence and maritime developments:\n\n1. India’s Rafale fighter aircraft and C-17 transport aircraft have arrived in Indonesia for Exercise Pitch Black 2026.\n2. Operation Southern Readiness 26-2 is a multinational maritime training exercise hosted by the Indian Navy at Southern Naval Command, Kochi.\n3. Indonesia has signed an MoU with BrahMos Aerospace for the phased procurement of two coastal missile batteries estimated at $200 million.\n\nWhich of the statements given above is/are correct?",
+        options: ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q7",
+        q: "Q7. Consider the following statements regarding the Pinaka Long Range Guided Rocket (LRGR) test:\n\n1. DRDO successfully conducted the flight-test of the Pinaka Long Range Guided Rocket (LRGR) at the Integrated Test Range (ITR), Chandipur, on 8 July 2026.\n2. The rocket was tested for a user-defined minimum range of 40 km.\n\nWhich of the statements given above is/are correct?",
+        options: ["Only 1", "Only 2", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "A"
+      },
+      {
+        set: 3, id: "s3q8",
+        q: "Q8. Where is ‘Parichha Dam’ located, which was declared a World Heritage Irrigation Structure by ICID on 15th August 2026?",
+        options: ["Jhansi", "Agra", "Gwalior", "Kanpur"],
+        ans: "A"
+      },
+      {
+        set: 3, id: "s3q9",
+        q: "Q9. Which state government placed a complete ban on the manufacture, storage and sale of tobacco and nicotine-containing products?",
+        options: ["Kerala", "Karnataka", "Tamil Nadu", "Andhra Pradesh"],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q10",
+        q: "Q10. Consider the following statements regarding recent developments:\n\n1. Military Exercise ‘Udar Shakti 2026’ was conducted between India and Malaysia on 14 August 2026.\n2. Asia’s first desert-themed drive-through night safari will be started in Gujarat.\n\nWhich of the statements given above is/are correct?",
+        options: ["Only 1", "Only 2", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q11",
+        q: "Q11. Which country became the first in the Middle East and Arab region to legally abolish the death penalty on 13th August 2026?",
+        options: ["Jordan", "Lebanon", "UAE", "Qatar"],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q12",
+        q: "Q12. According to the released report, which state has the highest number of installed Electric Vehicle (EV) charging stations?",
+        options: ["Maharashtra", "Gujarat", "Karnataka", "Tamil Nadu"],
+        ans: "A"
+      },
+      {
+        set: 3, id: "s3q13",
+        q: "Q13. Consider the following statements regarding recent defence-related developments:\n\n1. ‘Samudra Pradakshina’ was the first-ever Tri-service all-women circumnavigation sailing expedition, bringing together officers from the Army, Navy and Air Force.\n2. Army Chief General Dhiraj Seth unveiled the “VIJAY” roadmap aimed at making the Indian Army a technology-enabled, future-ready, multi-domain force.\n\nWhich of the statements given above is/are correct?",
+        options: ["Only 1", "Only 2", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q14",
+        q: "Q14. Which state government made singing the state anthem mandatory before programs in educational and government institutions?",
+        options: ["Kerala", "Karnataka", "Tamil Nadu", "Andhra Pradesh"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q15",
+        q: "Q15. In which country is the ‘Halaniyat Islands’ group located, which was in the news due to a crude oil spill?",
+        options: ["Oman", "Yemen", "Saudi Arabia", "Bahrain"],
+        ans: "A"
+      },
+      {
+        set: 3, id: "s3q16",
+        q: "Q16. Consider the following statements regarding recent initiatives and events:\n\n1. The Karnataka Government launched the ‘Tathyakosh’ platform to make public data easily searchable.\n2. Amit Shah launched the ‘Gramin Gyan Setu’ app.\n3. The Commonwealth Peace Mediation Conference 2026 was organized in New Delhi on 4 August 2026.\n\nWhich of the above statements is incorrect?",
+        options: ["1 only", "2 only", "3 only", "1 and 3"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q17",
+        q: "Q17. Who became the first Indian to win the FISU World University Squash title?",
+        options: ["Suraj Kumar Chand", "Saurav Ghosal", "Abhay Singh", "Mahesh Mangaonkar"],
+        ans: "A"
+      },
+      {
+        set: 3, id: "s3q18",
+        q: "Q18. Who became the first female officer to be appointed as 'Aide-de-Camp' (ADC) to the Army Chief on 7th August 2026?",
+        options: ["Shivani Sehrawat", "Harshita Jakhar", "Aabha Nayar Patel", "Bhawana Kanth"],
+        ans: "A"
+      },
+      {
+        set: 3, id: "s3q19",
+        q: "Q19. Consider the following statements regarding recent developments:\n\n1. Deendayal Port was awarded India's Best Non-Container Port 2026.\n2. South India's first semiconductor chip unit was inaugurated in Andhra Pradesh.\n\nWhich of the above statements is/are correct?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q20",
+        q: "Q20. Match List-I with List-II regarding important international days observed in March:\n\nList-I (Date):\n1. 3rd March\n2. 4th March\n3. 14th March\n4. 15th March\n5. 21st March\n\nList-II (Day):\na. World Consumer Rights Day\nb. World Wildlife Day\nc. World Day for Glaciers\nd. International Day of Action for Rivers\ne. World Obesity Day",
+        options: ["1-b, 2-e, 3-d, 4-a, 5-c", "1-e, 2-b, 3-d, 4-c, 5-a", "1-b, 2-d, 3-e, 4-a, 5-c", "1-b, 2-e, 3-a, 4-d, 5-c"],
+        ans: "A"
+      },
+      {
+        set: 3, id: "s3q21",
+        q: "Q21. Match List-I with List-II regarding major military exercises:\n\nList-I (Exercise):\n1. Rudra Shakti\n2. Agni Pariksha\n3. Vayushakti\n\nList-II (Details):\na. Indian Army–ITBP joint exercise in Arunachal Pradesh\nb. Indian Air Force exercise at Pokhran Field Firing Range, Rajasthan\nc. High-intensity all-arms exercise involving Rudra Brigade and Apache helicopters at Pokhran",
+        options: ["1-c, 2-a, 3-a", "1-a, 2-b, 3-c", "1-b, 2-c, 3-a", "1-c, 2-a, 3-b"],
+        ans: "D"
+      },
+      {
+        set: 3, id: "s3q22",
+        q: "Q22. Which Northeast state launched 'Mission Clouded Leopard' for the conservation of its state animal on 7th August 2026?",
+        options: ["Sikkim", "Meghalaya", "Nagaland", "Assam"],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q23",
+        q: "Q23. On June 19, 2026, where was India's leading international exhibition 'Bharat Buildcon 2026' organized?",
+        options: ["Mumbai", "New Delhi", "Bengaluru", "Hyderabad"],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q24",
+        q: "Q24. Who became the first cricketer in the world to play 200 T20 International matches?",
+        options: ["Smriti Mandhana", "Harmanpreet Kaur", "Mithali Raj", "Ellyse Perry"],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q25",
+        q: "Q25. Consider the following statements regarding education-related developments:\n\n1. Punjab topped NITI Aayog’s School Education Index.\n2. Jammu & Kashmir achieved the status of a fully literate region under the ULLAS scheme with a 99.09% success rate.\n\nWhich of the above statements is/are correct?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q26",
+        q: "Q26. What is India’s first comprehensive counter-terrorism policy based on a zero-tolerance approach?",
+        options: ["National Security Act", "Unlawful Activities (Prevention) Act", "National Investigation Agency Act", "National Counter-Terrorism Policy and Strategy (NCTPS)"],
+        ans: "D"
+      },
+      {
+        set: 3, id: "s3q27",
+        q: "Q27. On June 21, 2026, which Indian was appointed as a judge in the International Tribunal for the Law of the Sea?",
+        options: ["Saibal Chattopadhyay", "Vimal N. Patel", "Jainendra Jain", "Sundarraj P."],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q28",
+        q: "Q28. Where will India’s first nuclear engineering design centre of excellence be established?",
+        options: ["IIT Bombay", "IIT Madras", "IIT Hyderabad", "IIT Delhi"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q29",
+        q: "Q29. Which institute was declared the top educational institution of India in the QS World University Rankings 2027?",
+        options: ["IISc Bengaluru", "IIT Madras", "IIT Bombay", "IIT Delhi"],
+        ans: "D"
+      },
+      {
+        set: 3, id: "s3q30",
+        q: "Q30. Which country enforced restrictions on social media use for children under 15 years of age?",
+        options: ["Indonesia", "Singapore", "Malaysia", "UAE"],
+        ans: "D"
+      },
+      {
+        set: 3, id: "s3q31",
+        q: "Q31. Which six states/UTs signed an MoU on June 19, 2026, for the proposed Kishau Dam Project?",
+        options: ["Himachal Pradesh, Punjab, Haryana, Delhi, Uttarakhand and Rajasthan", "Uttarakhand, Himachal Pradesh, Punjab, Haryana, Rajasthan and Gujarat", "Punjab, Haryana, Delhi, Rajasthan, Gujarat and Uttar Pradesh", "Himachal Pradesh, Uttarakhand, Delhi, Uttar Pradesh, Haryana and Rajasthan"],
+        ans: "D"
+      },
+      {
+        set: 3, id: "s3q32",
+        q: "Q32. Consider the following statements regarding recent global developments:\n\n1. Physicists from Europe and China built the world's first working nuclear clocks using the Thorium-229 nucleus.\n2. Uzbekistan became the first Central Asian country to join the New Development Bank (NDB) on 19 June 2026.\n3. Jaipur secured the 18th position in the list of the 'World's Best Cities for Art and Culture'.\n\nWhich of the above statements is incorrect?",
+        options: ["3 only", "1 only", "None of the above", "2 only"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q33",
+        q: "Q33. Consider the following statements regarding the International Big Cat Alliance (IBCA):\n\n1. The International Big Cat Alliance (IBCA) was officially launched in April 2023 during the 50th anniversary of India's Project Tiger.\n2. IBCA became a full-fledged inter-governmental organization on 23 January 2025.\n3. The headquarters of IBCA is located in New Delhi, India.\n4. Bangladesh became the 26th member of IBCA on 27 June 2026.\n\nWhich of the above statements is incorrect?",
+        options: ["2 only", "3 only", "1 only", "4 only"],
+        ans: "D"
+      },
+      {
+        set: 3, id: "s3q34",
+        q: "Q34. Which country became the UNESCO World Heritage capital with 61 protected sites as of June 29, 2026?",
+        options: ["Spain", "Greece", "Italy", "France"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q35",
+        q: "Q35. Match List-I with List-II regarding recent appointments, mining and port-related developments:\n\nList-I (Development):\n1. New Director of Intelligence Bureau\n2. India's first private gold mine\n3. Mongla Port\n\nList-II (Details):\na. Bangladesh\nb. Mahesh Dixit\nc. Kurnool, Andhra Pradesh",
+        options: ["1-c, 2-a, 3-b", "1-b, 2-c, 3-a", "1-a, 2-b, 3-c", "1-b, 2-a, 3-c"],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q36",
+        q: "Q36. Match List-I with List-II regarding important United Nations organisations and their headquarters:\n\nList-I (UN Organisation):\n1. World Health Organization (WHO)\n2. United Nations Educational, Scientific and Cultural Organization (UNESCO)\n3. International Labour Organization (ILO)\n4. Food and Agriculture Organization (FAO)\n5. United Nations Environment Programme (UNEP)\n\nList-II (Headquarters):\na. Rome, Italy\nb. Geneva, Switzerland\nc. Paris, France\nd. Nairobi, Kenya",
+        options: ["1-b, 2-c, 3-a, 4-d, 5-b", "1-d, 2-c, 3-b, 4-a, 5-c", "1-b, 2-c, 3-b, 4-a, 5-d", "1-b, 2-c, 3-a, 4-a, 5-d"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q37",
+        q: "Q37. In which state will India's first 3D-printed artificial reef module be installed?",
+        options: ["Kerala", "Tamil Nadu", "Odisha", "Andhra Pradesh"],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q38",
+        q: "Q38. On June 25, 2026, which country declared a state of emergency due to a devastating earthquake?",
+        options: ["Ecuador", "Chile", "Venezuela", "Colombia"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q39",
+        q: "Q39. FIFA suspended the football association of which country?",
+        options: ["Pakistan", "Bangladesh", "Nepal", "Sri Lanka"],
+        ans: "C"
+      },
+      {
+        set: 3, id: "s3q40",
+        q: "Q40. Which Union Territory banned single-use plastics and littering?",
+        options: ["Chandigarh", "Ladakh", "Jammu and Kashmir", "Puducherry"],
+        ans: "B"
+      },
+      {
+        set: 3, id: "s3q41",
+        q: "Q41. On June 28, 2026, which became the first major port in India to use Enterprise AI?",
+        options: ["Mumbai Port", "Chennai Port", "Deendayal Port", "V. O. Chidambaranar Port"],
+        ans: "D"
+      },
+
+      /* ========================================================
+         SET 4
+      ======================================================== */
+      {
+        set: 4, id: "s4q1",
+        q: "Q1. Who became the first woman officer from the Zanskar region of Ladakh to be commissioned into the Indian Army?",
+        options: ["Shivani Sehrawat", "Stanzin Tsangyang", "Harshita Jakhar", "Aabha Nayar Patel"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q2",
+        q: "Q2. Consider the following statements regarding the implementation of the Uniform Civil Code (UCC) in Indian states:\n\n1. Uttarakhand became the first state to put its UCC framework into active operation on 27 January 2025.\n2. Gujarat and Assam received Presidential approval for their UCC frameworks in late September 2026.\n3. Madhya Pradesh passed its UCC Bill in the state Assembly in July 2026.\n4. Chhattisgarh has already passed its UCC Bill in the state Assembly and implemented it in 2026.\n\nWhich of the above statements is incorrect?",
+        options: ["3 only", "1 only", "4 only", "2 only"],
+        ans: "C"
+      },
+      {
+        set: 4, id: "s4q3",
+        q: "Q3. Who has been named as the next Chief Economist of the World Bank?",
+        options: ["Esther Duflo", "Abhijit Banerjee", "Michael Kremer", "Indermit Gill"],
+        ans: "C"
+      },
+      {
+        set: 4, id: "s4q4",
+        q: "Q4. Match List-I with List-II regarding recent appointments and developments:\n\nList-I (Person):\n1. Dinesh Sharma\n2. Justice Ashwani Kumar Mishra\n3. Former Justice R. C. Chavan\n\nList-II (Position/Development):\na. Resigned from Maharashtra’s seven-member Uniform Civil Code Committee\nb. Chief Justice, Punjab and Haryana High Court\nc. Lieutenant Governor of Andaman and Nicobar Islands",
+        options: ["1-a, 2-b, 3-c", "1-c, 2-b, 3-a", "1-b, 2-c, 3-a", "1-c, 2-a, 3-b"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q5",
+        q: "Q5. Consider the following statements regarding the Rudra Raptors Exercise:\n\n1. The exercise was conducted by the Konark Corps of the Indian Army in Uttarakhand.\n2. The exercise Theme: “One team, one purpose, absolute battlefield dominance”\n\nWhich of the above statements is/are correct?",
+        options: ["Both 1 and 2", "Neither 1 nor 2", "1 only", "2 only"],
+        ans: "D"
+      },
+      {
+        set: 4, id: "s4q6",
+        q: "Q6. Match List-I with List-II regarding the following military exercises:\n\nList-I (Exercise):\n1. Super Garuda Shield\n2. Nomadic Elephant 2026\n3. Veer Guardian 2026\n\nList-II (Country/Location):\na. Indonesia\nb. Pithoragarh, Uttarakhand\nc. With Japan in Jodhpur, Rajasthan",
+        options: ["1-b, 2-c, 3-a", "1-a, 2-c, 3-b", "1-c, 2-a, 3-b", "1-a, 2-b, 3-c"],
+        ans: "D"
+      },
+      {
+        set: 4, id: "s4q7",
+        q: "Q7. Who won the FIH Nations Cup 2026 title?",
+        options: ["India", "Australia", "Germany", "Argentina"],
+        ans: "A"
+      },
+      {
+        set: 4, id: "s4q8",
+        q: "Q8. Chennai Petroleum Corporation Limited (CPCL) became which number of Navratna company of India?",
+        options: ["26th", "27th", "28th", "29th"],
+        ans: "C"
+      },
+      {
+        set: 4, id: "s4q9",
+        q: "Q9. Consider the following statements:\n\n1. Poonch was honored with the prestigious SKOCH Award for excellence in healthcare delivery in New Delhi on 22 June 2026.\n2. India has become the world's 2nd largest ship recycling nation.\n\nWhich of the above statements is/are incorrect?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q10",
+        q: "Q10. Consider the following statements:\n\n1. Harsh Vardhan was honored with the 'Global Prestige Award' in the UK Parliament on 26 June 2026.\n2. Prabhjeet Singh was appointed as the new Managing Director for India by OpenAI.\n\nWhich of the above statements is/are correct?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "C"
+      },
+      {
+        set: 4, id: "s4q11",
+        q: "Q11. Under which operation did India assist the victims of the devastating earthquake in Venezuela on June 26, 2026, by sending 'Bhishm Cube' (Aarogya Maitri portal hospital) units?",
+        options: ["Operation Maitri", "Operation Amistad", "Operation Sahayata", "Operation Karuna"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q12",
+        q: "Q12. Consider the following statements:\n\n1. The Kheer Bhawani Mela was organized in Jammu and Kashmir.\n2. Kaushal Mahotsav 2026 (Skill Festival 2026) was organized in Srinagar by the Ministry of Skill Development & Entrepreneurship on 30 June 2026.\n\nWhich of the above statements is/are correct?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "A"
+      },
+      {
+        set: 4, id: "s4q13",
+        q: "Q13. The 'Sikhna Jajvalavo National Park', which was in discussion due to golden langurs, is located in which state?",
+        options: ["Assam", "Meghalaya", "Tripura", "West Bengal"],
+        ans: "A"
+      },
+      {
+        set: 4, id: "s4q14",
+        q: "Q14. Match List-I with List-II regarding the following women achievers:\n\nList-I (Person):\n1. Sonali Mishra\n2. Uma Kanjilal\n3. Aastha Poonia\n4. Yashsavi Solanki\n\nList-II (Achievement/Position):\na. First woman ADC to the President of India\nb. First female Vice-Chancellor of IGNOU\nc. First female DG of the Railway Protection Force\nd. First woman fighter pilot, Indian Navy",
+        options: ["1-c, 2-b, 3-d, 4-a", "1-b, 2-c, 3-a, 4-d", "1-d, 2-a, 3-c, 4-b", "1-a, 2-d, 3-b, 4-c"],
+        ans: "A"
+      },
+      {
+        set: 4, id: "s4q15",
+        q: "Q15. Who will be awarded the Lokmanya Tilak National Award?",
+        options: ["Ajit Doval", "S. Jaishankar", "Rajnath Singh", "Narendra Modi"],
+        ans: "A"
+      },
+      {
+        set: 4, id: "s4q16",
+        q: "Q16. Consider the following statements regarding defence equipment:\n\n1. HELINA is an anti-tank missile developed in India.\n2. Barak-8 is a Surface-to-Air Missile jointly developed by DRDO and Israel.\n3. INS Kalvari is an indigenously built Scorpene-class submarine.\n\nWhich of the above statements is/are correct?",
+        options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+        ans: "D"
+      },
+      {
+        set: 4, id: "s4q17",
+        q: "Q17. Where was the 'Prakriti Cafe' inaugurated to promote healthy eating habits?",
+        options: ["Chandigarh", "New Delhi", "Mumbai", "Bengaluru"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q18",
+        q: "Q18. Who became the flag-bearer for the Indian contingent at the opening ceremony of the Glasgow Commonwealth Games?",
+        options: ["Manu Bhaker", "Mirabai Chanu", "Lovlina Borgohain", "Nikhat Zareen"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q19",
+        q: "Q19. Match List-I with List-II regarding defence equipment:\n\nList-I (Equipment):\n1. INS Vela\n2. Rafale\n3. S-400\n4. Chinook\n\nList-II (Country/Company & Type):\na. France – Dassault Aviation – Fighter Aircraft\nb. Russia – Air Defense System\nc. France – Scorpene Submarine\nd. USA – Boeing – Helicopter",
+        options: ["1-c, 2-a, 3-b, 4-d", "1-c, 2-a, 3-d, 4-b", "1-b, 2-d, 3-a, 4-c", "1-d, 2-b, 3-c, 4-a"],
+        ans: "A"
+      },
+      {
+        set: 4, id: "s4q20",
+        q: "Q20. Consider the following statements:\n\n1. Sargam Koushal won the title of 'Mrs. India 2026'.\n2. Gujarat was honored with the 'Agriculture Leadership Award' for outstanding work in horticulture.\n\nWhich of the above statements is/are correct?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q21",
+        q: "Q21. Consider the following statements:\n\n1. Operation Vidhi Palak was launched in Jharkhand to educate people about cyber fraud and laws regarding women's safety.\n2. The Indian Army launched Operation Jal Rahat in Assam for flood relief operations.\n\nWhich of the above statements is/are correct?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q22",
+        q: "Q22. Odessa Port, which was in the news due to a missile attack, is a major port of which country?",
+        options: ["Russia", "Ukraine", "Romania", "Georgia"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q23",
+        q: "Q23. Where did DRDO conduct the first successful test of the surface-to-air missile 'Kusha'?",
+        options: ["Rajasthan", "Odisha", "Andhra Pradesh", "Gujarat"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q24",
+        q: "Q24. Consider the following statements:\n\n1. 'Mission Golden Spice' has been launched in Sikkim.\n2. India's first AI-powered bird sanctuary will be established in Gujarat.\n\nWhich of the above statements is/are correct?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "D"
+      },
+      {
+        set: 4, id: "s4q25",
+        q: "Q25. Consider the following statements:\n\n1. 'Peacko', the official mascot of the 2026 Badminton World Championships, was launched in Mumbai.\n2. The 14th South Asian Games will be organized in Pakistan.\n\nWhich of the above statements is/are correct?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q26",
+        q: "Q26. Match List-I with List-II regarding the 2026 Women's Singles Grand Slam Championships:\n\nList-I (Championship):\n1. Australian Open\n2. French Open\n3. Wimbledon\n4. US Open\n\nList-II (Champion):\na. Linda Nosková\nb. Elena Rybakina\nc. Mirra Andreeva",
+        options: ["1-b, 2-c, 3-a, 4-b", "1-c, 2-b, 3-a, 4-c", "1-b, 2-a, 3-c, 4-b", "1-a, 2-c, 3-b, 4-a"],
+        ans: "A"
+      },
+      {
+        set: 4, id: "s4q27",
+        q: "Q27. In which state is Raimona National Park, which has been in the news for a census of butterfly species, located?",
+        options: ["Meghalaya", "Assam", "Arunachal Pradesh", "West Bengal"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q28",
+        q: "Q28. Where did the operation of India's first and deepest geothermal well begin on July 18, 2026?",
+        options: ["Ladakh", "Sikkim", "Himachal Pradesh", "Jammu & Kashmir"],
+        ans: "A"
+      },
+      {
+        set: 4, id: "s4q29",
+        q: "Q29. Match List-I with List-II regarding the 2026 Men's Singles Grand Slam Championships:\n\nList-I (Championship):\n1. Australian Open\n2. French Open\n3. Wimbledon\n4. US Open\n\nList-II (Champion):\na. Jannik Sinner\nb. Alexander Zverev\nc. Carlos Alcaraz",
+        options: ["1-c, 2-a, 3-b, 4-c", "1-b, 2-c, 3-a, 4-b", "1-c, 2-b, 3-a, 4-b", "1-a, 2-b, 3-c, 4-b"],
+        ans: "C"
+      },
+      {
+        set: 4, id: "s4q30",
+        q: "Q30. Consider the following statements:\n\n1. Yastika Bhatia became the first woman in the world to score a Test century at Lord's Cricket Ground on July 16, 2026.\n2. Mauritius was inducted as the 111th member of the International Cricket Council.\n3. The Women's Hockey World Cup 2026 will be held in Belgium and the Netherlands.\n\nWhich of the above statements is/are correct?",
+        options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+        ans: "D"
+      },
+      {
+        set: 4, id: "s4q31",
+        q: "Q31. The DCGI approved the dengue vaccine from Takeda, a company based in which country?",
+        options: ["China", "Japan", "South Korea", "Singapore"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q32",
+        q: "Q32. Consider the following statements:\n\n1. The 'My Bharat National Youth Volunteer Conference' was held in Haryana on 17 July 2026.\n2. Uttarakhand's first GI Product Gallery was opened in Dehradun.\n\nWhich of the above statements is/are correct?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "D"
+      },
+      {
+        set: 4, id: "s4q33",
+        q: "Q33. Which country's parliament passed a historic bill granting the legal right to euthanasia for critically ill adults?",
+        options: ["France", "Spain", "Portugal", "Belgium"],
+        ans: "A"
+      },
+      {
+        set: 4, id: "s4q34",
+        q: "Q34. Consider the following statements:\n\n1. The Supreme Court approved India's first night safari in the Kukrail Reserve Forest of Uttar Pradesh.\n2. Successful breeding of the Indian Grey Hornbill has been recorded in Gujarat.\n\nWhich of the above statements is/are correct?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "C"
+      },
+      {
+        set: 4, id: "s4q35",
+        q: "Q35. Consider the following statements regarding the Global Terrorism Index 2026:\n\n1. Pakistan topped the Global Terrorism Index 2026.\n2. India was ranked 14th in the Global Terrorism Index 2026.\n\nWhich of the above statements is/are correct?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "A"
+      },
+      {
+        set: 4, id: "s4q36",
+        q: "Q36. With which country did India's Comprehensive Economic Trade Agreement (CETA) and Double Contribution Convention (DCC) come into effect?",
+        options: ["France", "Germany", "Britain", "Australia"],
+        ans: "C"
+      },
+      {
+        set: 4, id: "s4q37",
+        q: "Q37. Consider the following statements:\n\n1. SpaceX launched the world's first nuclear-powered satellite named 'Bohr' on 15 July 2026.\n2. Britain announced plans to impose a midnight curfew on social media usage for 16- and 17-year-olds.\n\nWhich of the above statements is/are correct?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "C"
+      },
+      {
+        set: 4, id: "s4q38",
+        q: "Q38. Consider the following statements:\n\n1. The 12th BRICS Labour and Employment Ministers' Meeting under India's presidency was held in Hyderabad.\n2. The 16th BIMSTEC National Security Advisors' Meeting was held in Kathmandu.\n3. The BRICS Employment Working Group meeting was held in Hyderabad on 14 July 2026.\n\nWhich of the above statements is/are incorrect?",
+        options: ["1 only", "2 only", "3 only", "1 and 2 only"],
+        ans: "B"
+      },
+      {
+        set: 4, id: "s4q39",
+        q: "Q39. Consider the following statements:\n\n1. Karnataka announced the establishment of India's first AI university.\n2. Chief Justice Surya Kant inaugurated the 'Tower of Justice' in Noida.\n\nWhich of the above statements is/are incorrect?",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "C"
+      },
+      {
+        set: 4, id: "s4q40",
+        q: "Q40. Consider the following statements regarding India’s performance at the 2026 Commonwealth Games in Glasgow:\n\n1. India finished 4th in the overall medal tally with 39 medals, including 13 Gold, 17 Silver and 9 Bronze medals.\n2. India officially took over as the host nation for the 2030 Commonwealth Games during the opening ceremony in Glasgow.\n3. Jaismine Lamboria, who won the women’s 57kg boxing gold, served as India’s flag bearer during the closing ceremony.\n4. India finished behind Australia, England and South Africa in the medal tally.\n\nWhich of the statements given above are correct?",
+        options: ["Only 1 and 2", "Only 2 and 4", "Only 1 and 3", "Only 3 and 4"],
+        ans: "B"
+      },
+	  /* ========================================================
+         SET 5
+      ======================================================== */
+      {
+        set: 5, id: "s5q1",
+        q: "Q1. In which state is India's first Green Methanol Plant being established?",
+        options: ["Gujarat", "Maharashtra", "Tamil Nadu", "Odisha"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q2",
+        q: "Q2. Which city has become India's first pearl farming cluster?",
+        options: ["Hazaribagh", "Ranchi", "Bhubaneswar", "Guwahati"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q3",
+        q: "Q3. Consider the following statements regarding PRAHAAR, India's national counter-terrorism policy:\n\n1. PRAHAAR is India's first comprehensive national counter-terrorism policy, providing a unified framework to combat modern hybrid threats.\n2. The policy addresses threats such as cross-border terrorism, cyber-attacks and dark web/cryptocurrency-enabled financing, and PRAHAAR stands for Prevention, Responses, Aggregating internal capacities, Human rights, Attenuating radicalisation, Aligning international efforts and Recovery.",
+        options: ["Only 1 is correct", "Only 2 is correct", "Both 1 and 2 are correct", "Neither 1 nor 2 is correct"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q4",
+        q: "Q4. What is the name of the official water mascot unveiled by the Delhi Government under the 'Catch the Rain 2026' campaign?",
+        options: ["Jal", "Neera", "Varsha", "Boond"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q5",
+        q: "Q5. Which of the following is NOT one of the three official International Years designated by the United Nations for 2026?",
+        options: ["International Year of the Woman Farmer", "International Year of Rangelands and Pastoralists", "International Year of Volunteers for Sustainable Development", "International Year of Millets"],
+        ans: "D"
+      },
+      {
+        set: 5, id: "s5q6",
+        q: "Q6. Delhi's Indira Gandhi International Airport (IGIA) improved its ranking from 39th in 2025 to which position in 2026 among the world's most-connected internal airports?",
+        options: ["25th", "28th", "31st", "39th"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q7",
+        q: "Q7. Consider the following statements regarding recent space missions:\n\n1. GalaxEye launched 'Mission Drishti' using a Falcon 9 rocket on 4 May 2026.\n2. ISRO commenced site evaluation in Russia for the joint Chandrayaan-5 (LUPEX) mission.",
+        options: ["Only 1 is correct", "Only 2 is correct", "Both 1 and 2 are correct", "Neither 1 nor 2 is correct"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q8",
+        q: "Q8. Which country won the ‘Uber Cup 2026' title?",
+        options: ["China", "Japan", "South Korea", "Indonesia"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q9",
+        q: "Q9. Where is India's first integrated Basmati and Organic Training Centre being established?",
+        options: ["Amritsar", "Karnal", "New Delhi", "Chandigarh"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q10",
+        q: "Q10. Which state secured first position in the 'Panchayat Unnati Index 2.0', released on May 2, 2026?",
+        options: ["Sikkim", "Tripura", "Kerala", "Gujarat"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q11",
+        q: "Q11. Who became India's first transgender cricket umpire on April 30, 2026?",
+        options: ["Rithika Sri", "Anaya Bangar", "Mithali Raj", "Shree Gauri Sawant"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q12",
+        q: "Q12. Which state's cabinet approved the AI Policy 2026?",
+        options: ["Karnataka", "Telangana", "Maharashtra", "Gujarat"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q13",
+        q: "Q13. Which country became the 33rd nation in the world to generate electricity using nuclear energy?",
+        options: ["Vietnam", "Bangladesh", "Indonesia", "Thailand"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q14",
+        q: "Q14. Match List-I (Important Days) with List-II (Dates):\n\nList-I (Important Days):\n1. World Diabetes Day\n2. Birsa Munda Jayanti / Janjatiya Gaurav Divas\n3. National Press Day\n4. World Fisheries Day\n5. National Milk Day\n\nList-II (Dates):\na. 21 November\nb. 26 November\nc. 14 November\nd. 15 November\ne. 16 November",
+        options: ["1-c, 2-d, 3-e, 4-a, 5-b", "1-d, 2-c, 3-a, 4-e, 5-b", "1-c, 2-e, 3-d, 4-b, 5-a", "1-a, 2-b, 3-c, 4-d, 5-e"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q15",
+        q: "Q15. Consider the following statements regarding the 2026 awards and recognitions:\n\n1. Suparna Sharma and R.K. Anand received the 2026 Pulitzer Prize in the Illustrated Reporting and Commentary category.\n2. Mary Kom was selected by the FAO for the '100 Women Heroes in Agrifood Systems and Rural Development' recognition in 2026.",
+        options: ["Only 1 is correct", "Only 2 is correct", "Both 1 and 2 are correct", "Neither 1 nor 2 is correct"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q16",
+        q: "Q16. Where will the Geneva AI Summit 2027 be held on 21-22 June 2027?",
+        options: ["Paris, France", "Geneva, Switzerland", "Vienna, Austria", "Rome, Italy"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q17",
+        q: "Q17. Which state/UT retained the top position in NITI Aayog's India Electric Mobility Index (IEMI) 2025 with an overall score of 84?",
+        options: ["Maharashtra", "Delhi", "Karnataka", "Chandigarh"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q18",
+        q: "Q18. Consider the following statements regarding the Asian Games:\n\n1. Doha, Qatar, will host the 2030 Asian Games.\n2. The 20th Asian Games in 2026 are being held in Tokyo and Osaka, Japan.",
+        options: ["Only 1 is correct", "Only 2 is correct", "Both 1 and 2 are correct", "Neither 1 nor 2 is correct"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q19",
+        q: "Q19. What was the tagline used by Punjab Finance Minister Harpal Singh Cheema for the Punjab Budget 2026-27?",
+        options: ["Vikas Wala Budget", "Saari Guarantiyan Puri Karan Wala", "Rozgar Wala Budget", "Atmanirbhar Punjab Budget"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q20",
+        q: "Q20. In collaboration with which institution are new laboratories being established in Punjab for research and training in technologies such as AI and IoT?",
+        options: ["IIT Delhi", "IIT Bombay", "IIT Ropar", "IISc Bengaluru"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q21",
+        q: "Q21. At which place is a modern trauma centre and Mother-and-Child Care Hospital being built to commemorate the 350th martyrdom anniversary of Sri Guru Tegh Bahadur Ji?",
+        options: ["Amritsar", "Sri Anandpur Sahib", "Patiala", "Bathinda"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q22",
+        q: "Q22. What financial assistance will be provided per acre to farmers adopting Direct Seeded Rice (DSR) in Punjab?",
+        options: ["₹1,000 per acre", "₹1,500 per acre", "₹2,000 per acre", "₹2,500 per acre"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q23",
+        q: "Q23. Consider the following statements regarding the JICA Project in Punjab:\n\n1. The project has a budget of ₹1,300 crore and a duration of 10 years.\n2. By 2035, the target is to increase the area under horticulture from 4.59 lakh hectares to 17.34 lakh hectares.",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q24",
+        q: "Q24. Consider the following statements regarding the multinational air exercise Tarang Shakti 2026 and naval exercise VARUNA:\n\n1. The Indian Air Force commenced the 2nd edition of Tarang Shakti 2026 at Air Force Station Jodhpur, Rajasthan.\n2. Eight friendly foreign countries are participating in Tarang Shakti 2026 with air assets, while 32 countries are attending as observers.\n3. The bilateral maritime exercise VARUNA between the Indian Navy and Russian Navy began in 1993 and was named VARUNA in 2001.\n\nWhich of the statements given above is/are correct?",
+        options: ["Only 1 and 2 are correct", "Only 2 and 3 are correct", "Only 1 and 3 are correct", "All 1, 2 and 3 are correct"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q25",
+        q: "Q25. Punjab improved from which position to which position in the FDI ranking due to increased investor confidence?",
+        options: ["15th to 11th", "14th to 10th", "16th to 12th", "12th to 8th"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q26",
+        q: "Q26. Which GIS-based portal has been launched by the Punjab government to enable real-time monitoring of 163 Urban Local Bodies (ULBs)?",
+        options: ["Punjab Digital Map", "One Map Punjab", "Smart Punjab Portal", "Punjab Urban Connect"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q27",
+        q: "Q27. Consider the following statements about the role of a Nal Jal Mitra under the Nal Jal Mitra Campaign:\n\n1. The Nal Jal Mitra will be responsible for maintaining and repairing village-level water supply facilities.\n2. The campaign aims to appoint a Nal Jal Mitra in every Urban Local Body (ULB) instead of every Gram Panchayat.",
+        options: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q28",
+        q: "Q28. Consider the following statements regarding the Swachhata Hi Seva (SHS) Campaign 2026:\n\n1. The nationwide campaign was jointly launched by the Ministry of Housing and Urban Affairs and the Department of Drinking Water and Sanitation under the Ministry of Jal Shakti.\n2. The campaign will be observed from 17 September to 2 October 2026, with the theme 'Swachhata Mein Sahbhag; Swachh Bharat, Viksit Bharat'.",
+        options: ["Only 1 is correct", "Only 2 is correct", "Both 1 and 2 are correct", "Neither 1 nor 2 is correct"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q29",
+        q: "Q29. Which Marathi-language film was selected as India's official entry for the Best International Feature Film category at the 99th Academy Awards (Oscars 2027)?",
+        options: ["Shwaas", "Court", "Gondhal", "Harishchandrachi Factory"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q30",
+        q: "Q30. Who was crowned Miss World 2026 at the 73rd edition of the pageant held in Nha Trang, Vietnam?",
+        options: ["Elisabeth Reynes Alabern", "Joheirry Mola", "Taanusiya Chetty", "Nikita Porwal"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q31",
+        q: "Q31. Santosh Davakhar won the Silver Peacock for Best Director at which edition of the International Film Festival of India (IFFI) in 2025?",
+        options: ["54th", "55th", "56th", "57th"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q32",
+        q: "Q32. Consider the following statements regarding the Artemis Accords:\n\n1. Türkiye became the 71st signatory of the Artemis Accords on 31 August 2026.\n2. Djibouti became the 72nd signatory of the Artemis Accords on 14 September 2026.",
+        options: ["Only 1 is correct", "Only 2 is correct", "Both 1 and 2 are correct", "Neither 1 nor 2 is correct"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q33",
+        q: "Q33. Gollala Gudi, recently declared a 'Monument of National Importance', is located in which state?",
+        options: ["Karnataka", "Tamil Nadu", "Telangana", "Andhra Pradesh"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q34",
+        q: "Q34. What is the name of the Indian Navy's first indigenous Multi-Purpose Vessel (MPV)?",
+        options: ["Nipun", "Samarthak", "Utkarsh", "Nistar"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q35",
+        q: "Q35. Who became the first woman officer to lead the CRPF COBRA unit?",
+        options: ["Sanjukta Parashar", "Kiran Bedi", "Smriti Mandhana", "Preity Zinta"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q36",
+        q: "Q36. Who became the first Indian to win the Grand Chess Tour Finals in 2026?",
+        options: ["D. Gukesh", "Arjun Erigaisi", "R. Praggnanandhaa", "Viswanathan Anand"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q37",
+        q: "Q37. India and Vietnam agreed to observe 2027 as which year?",
+        options: ["Year of Cultural Cooperation", "Year of India-Vietnam Friendship", "Year of Strategic Partnership", "Year of Economic Development"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q38",
+        q: "Q38. Consider the following statements regarding India's first farm-level soil carbon payments:\n\n1. India initiated its first farm-level soil carbon payments at Punjab Agricultural University (PAU), Ludhiana, with 2,550 smallholder farmers from Punjab and Haryana set to receive over ₹2.9 crore.\n2. The 'Aadi' farmer carbon programme was launched by Grow Indigo in 2022 with technical guidance from ICAR.",
+        options: ["Only 1 is correct", "Only 2 is correct", "Both 1 and 2 are correct", "Neither 1 nor 2 is correct"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q39",
+        q: "Q39. Which state secured the first position under the third phase of Jal Sanchay Jan Bhagidari (JSJB 3.0)?",
+        options: ["Rajasthan", "Gujarat", "Chhattisgarh", "Madhya Pradesh"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q40",
+        q: "Q40. Which satellite was launched by ISRO as India's first imaging satellite from geosynchronous orbit?",
+        options: ["EOS-04", "EOS-05", "EOS-06", "RISAT-2"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q41",
+        q: "Q41. Consider the following statements regarding Indian sports achievements in 2026:\n\n1. Dhiraj Bommadevara became the first Indian male recurve archer to win the individual title at the Archery World Cup Final 2026.\n2. India defeated Bangladesh in the final to win the 2026 Women's T20 Asia Cup.",
+        options: ["Only 1 is correct", "Only 2 is correct", "Both 1 and 2 are correct", "Neither 1 nor 2 is correct"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q42",
+        q: "Q42. What is the theme of International Literacy Day 2026?",
+        options: ["Literacy for All", "Literacy for People, the Planet and Prosperity", "Reading for a Better Future", "Education and Sustainable Development"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q43",
+        q: "Q43. Which Indian pair became the first Indians to win the China Masters men's doubles title?",
+        options: ["Lakshya Sen & HS Prannoy", "Satwiksairaj Rankireddy & Chirag Shetty", "Rohan Bopanna & Yuki Bhambri", "Arjun Madathil & Dhruv Kapila"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q44",
+        q: "Q44. Which city in Punjab hosted the ninth PM Vishwakarma branding and marketing drive in September 2026?",
+        options: ["Amritsar", "Ludhiana", "Patiala", "Bathinda"],
+        ans: "D"
+      },
+      {
+        set: 5, id: "s5q45",
+        q: "Q45. Consider the following statements regarding the Pradhan Mantri Kisan Samman Nidhi (PM-KISAN) scheme:\n\n1. The Union Cabinet approved the continuation of PM-KISAN from 2026-27 to 2030-31 for a period of five financial years.\n2. Under the scheme, every eligible landholding farmer family receives ₹6,000 per month in three equal instalments through Direct Benefit Transfer (DBT).",
+        options: ["Only 1 is correct", "Only 2 is correct", "Both 1 and 2 are correct", "Neither 1 nor 2 is correct"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q46",
+        q: "Q46. In October 2026, the RBI increased the repo rate by 25 basis points. What is the new repo rate?",
+        options: ["5.00%", "5.25%", "5.50%", "5.75%"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q47",
+        q: "Q47. Who officially introduced and launched OmegaBall in India?",
+        options: ["Indian Institute of Technology Madras (IIT Madras)", "Indian Institute of Technology Delhi (IIT Delhi)", "Sports Authority of India (SAI)", "University Grants Commission (UGC)"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q48",
+        q: "Q48. Consider the following statements regarding the regional clusters and themes:\n\n1. For this edition, the Ministry shifted from national themes to ten regional clusters.\n2. Punjab is part of the National Capital Region (Niti Nagar) cluster along with Delhi, Haryana and Chandigarh, with the theme 'Future Governance, Urban Transformation and Citizen Services.'",
+        options: ["Only 1 is correct", "Only 2 is correct", "Both 1 and 2 are correct", "Neither 1 nor 2 is correct"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q49",
+        q: "Q49. The Government of India has set a target of how many youth registrations on the MY Bharat portal by March 2027?",
+        options: ["1 crore", "2 crore", "5 crore", "10 crore"],
+        ans: "C"
+      },
+      {
+        set: 5, id: "s5q50",
+        q: "Q50. Which university became the first and only State Agricultural University in India to join the BRICS Network of Universities?",
+        options: ["Punjab Agricultural University (PAU), Ludhiana", "Haryana Agricultural University", "Tamil Nadu Agricultural University", "Chaudhary Charan Singh Haryana Agricultural University"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q51",
+        q: "Q51. Which butterfly has been officially declared the state butterfly of Chandigarh by the State Board of Wildlife (SBWL)?",
+        options: ["Striped Tiger Butterfly", "Monarch Butterfly", "Blue Mormon Butterfly", "Common Jezebel Butterfly"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q52",
+        q: "Q52. Who was conferred the Pradhan Mantri Rashtriya Bal Puraskar by President Droupadi Murmu for providing water, milk and lassi to Indian soldiers during Operation Sindoor?",
+        options: ["Shravan Singh", "Arjun Singh", "Harjot Singh", "Gurkirat Singh"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q53",
+        q: "Q53. Which Municipal Corporation in Punjab has started installing QR codes outside houses to ensure 100% door-to-door garbage collection?",
+        options: ["Ludhiana Municipal Corporation", "Amritsar Municipal Corporation", "Jalandhar Municipal Corporation", "Patiala Municipal Corporation"],
+        ans: "B"
+      },
+      {
+        set: 5, id: "s5q54",
+        q: "Q54. What is the new name of the Jhajjar-Bacholi Wildlife Sanctuary in Anandpur Sahib, Rupnagar, renamed to honour religious and historical heritage?",
+        options: ["Sri Guru Tegh Bahadur Wildlife Sanctuary", "Sri Guru Gobind Singh Wildlife Sanctuary", "Sri Guru Nanak Dev Wildlife Sanctuary", "Sri Guru Arjan Dev Wildlife Sanctuary"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q55",
+        q: "Q55. Consider the following statements about Project Hifazat:\n\n1. Project Hifazat was launched on 8 March (International Women's Day) by Dr. Baljit Kaur in Chandigarh.\n2. Under Project Hifazat, helpline number 181 is dedicated to children's assistance, while 1098 is for women facing violence.\n\nWhich of the statements given above is/are correct?",
+        options: ["Only 1 is correct", "Only 2 is correct", "Both 1 and 2 are correct", "Neither 1 nor 2 is correct"],
+        ans: "A"
+      },
+      {
+        set: 5, id: "s5q56",
+        q: "Q56. Which state was recognized as the 'Top Performer' for the second consecutive time in the 'States' Startup Ecosystem Rankings - 5th Edition' released by the Ministry of Commerce and Industry?",
+        options: ["Rajasthan", "Haryana", "Gujarat", "Punjab"],
+        ans: "D"
+      }
+    ];
+
+    let userSelections = {};
+    let isShowAllAnswersMode = false;
+
+    function renderQuestions() {
+      const container = document.getElementById("quizContainer");
+      const selectedSet = document.getElementById("filterSet").value;
+      container.innerHTML = "";
+
+      const filteredData = selectedSet === "all" 
+        ? quizData 
+        : quizData.filter(item => item.set.toString() === selectedSet);
+
+      let currentSet = null;
+
+      filteredData.forEach((item) => {
+        if (selectedSet === "all" && item.set !== currentSet) {
+          currentSet = item.set;
+          const heading = document.createElement("div");
+          heading.className = "set-heading";
+          heading.innerText = `SET ${currentSet}`;
+          container.appendChild(heading);
+        }
+
+        const card = document.createElement("div");
+        card.className = "card";
+        card.id = `card-${item.id}`;
+
+        const qTitle = document.createElement("div");
+        qTitle.className = "question-title";
+        qTitle.innerText = item.q;
+        card.appendChild(qTitle);
+
+        const optsGrid = document.createElement("div");
+        optsGrid.className = "options-grid";
+
+        const optPrefixes = ["A", "B", "C", "D"];
+        item.options.forEach((optText, index) => {
+          const letter = optPrefixes[index];
+          const optDiv = document.createElement("div");
+          optDiv.className = "option-item";
+          optDiv.id = `opt-${item.id}-${letter}`;
+
+          optDiv.innerHTML = `<span class="opt-letter">${letter})</span> <span>${optText}</span>`;
+
+          if (isShowAllAnswersMode) {
+            optDiv.classList.add("locked");
+            if (letter === item.ans) {
+              optDiv.classList.add("correct-ans");
+            }
+          } else {
+            const userChoice = userSelections[item.id];
+            if (userChoice) {
+              optDiv.classList.add("locked");
+              if (letter === item.ans) {
+                optDiv.classList.add("correct-ans");
+              } else if (letter === userChoice) {
+                optDiv.classList.add("wrong-ans");
+              }
+            } else {
+              optDiv.onclick = () => selectOption(item.id, letter);
+            }
+          }
+
+          optsGrid.appendChild(optDiv);
+        });
+
+        card.appendChild(optsGrid);
+
+        const statusBox = document.createElement("div");
+        statusBox.className = "status-box";
+        statusBox.id = `status-${item.id}`;
+
+        if (isShowAllAnswersMode) {
+          statusBox.className = "status-box show info";
+          statusBox.innerHTML = `<strong>Answer Key:</strong> Option ${item.ans}`;
+        } else if (userSelections[item.id]) {
+          const isCorrect = userSelections[item.id] === item.ans;
+          statusBox.className = `status-box show ${isCorrect ? 'correct' : 'incorrect'}`;
+          statusBox.innerHTML = isCorrect 
+            ? `<strong>Correct!</strong> Choice matches the answer key.` 
+            : `<strong>Incorrect.</strong> Correct answer is Option <strong>${item.ans}</strong>`;
+        }
+
+        card.appendChild(statusBox);
+        container.appendChild(card);
+      });
+
+      updateScore();
+    }
+
+    function selectOption(qid, chosenLetter) {
+      if (isShowAllAnswersMode || userSelections[qid]) return;
+
+      userSelections[qid] = chosenLetter;
+      const qObj = quizData.find(q => q.id === qid);
+
+      const card = document.getElementById(`card-${qid}`);
+      const optElements = card.querySelectorAll(".option-item");
+      optElements.forEach(el => el.classList.add("locked"));
+
+      const chosenEl = document.getElementById(`opt-${qid}-${chosenLetter}`);
+      const correctEl = document.getElementById(`opt-${qid}-${qObj.ans}`);
+
+      if (chosenLetter === qObj.ans) {
+        chosenEl.classList.add("correct-ans");
+      } else {
+        chosenEl.classList.add("wrong-ans");
+        if (correctEl) correctEl.classList.add("correct-ans");
+      }
+
+      const statusBox = document.getElementById(`status-${qid}`);
+      statusBox.className = `status-box show ${chosenLetter === qObj.ans ? 'correct' : 'incorrect'}`;
+      statusBox.innerHTML = chosenLetter === qObj.ans 
+        ? `<strong>Correct!</strong> Choice matches the answer key.` 
+        : `<strong>Incorrect.</strong> Correct answer is Option <strong>${qObj.ans}</strong>`;
+
+      updateScore();
+    }
+
+    function toggleMode() {
+      isShowAllAnswersMode = !isShowAllAnswersMode;
+      const btn = document.getElementById("toggleModeBtn");
+      btn.innerText = isShowAllAnswersMode ? "Switch to Attempt Mode" : "Show All Answers";
+      btn.style.backgroundColor = isShowAllAnswersMode ? "#059669" : "var(--primary)";
+      renderQuestions();
+    }
+
+    function resetAll() {
+      userSelections = {};
+      isShowAllAnswersMode = false;
+      document.getElementById("toggleModeBtn").innerText = "Show All Answers";
+      document.getElementById("toggleModeBtn").style.backgroundColor = "var(--primary)";
+      renderQuestions();
+    }
+
+    function updateScore() {
+      const totalAttempted = Object.keys(userSelections).length;
+      let correctCount = 0;
+      for (const [qid, choice] of Object.entries(userSelections)) {
+        const item = quizData.find(q => q.id === qid);
+        if (item && item.ans === choice) correctCount++;
+      }
+      document.getElementById("scoreDisplay").innerText = `Score: ${correctCount} / ${totalAttempted}`;
+    }
+
+    window.onload = renderQuestions;
+  </script>
+</body>
+</html>
