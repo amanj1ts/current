@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punjab History &amp; GK 1-Hour Master Revision Cheat Sheet</title>
+  <style>
+    /* ----------------------------------------------------
+       THEME VARIABLES
+    ---------------------------------------------------- */
+    :root[data-theme="dark"] {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-alt: #162032;
+      --border: #1f293d;
+      --text: #f3f4f6;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --danger: #ef4444;
+      --purple: #a855f7;
+      --highlight: #fde047;
+      --highlight-bg: #422006;
+      --header-bg: rgba(11, 15, 25, 0.96);
+      --table-header: #1e293b;
+      --table-row-alt: rgba(255, 255, 255, 0.02);
+      --nav-pill-bg: #1e293b;
+      --timer-bg: #1e1b4b;
+      --timer-border: #4338ca;
+      --timer-text: #a5b4fc;
+      --mnemonic-bg: #2e1065;
+      --mnemonic-text: #d8b4fe;
+      --mnemonic-border: #a855f7;
+    }
+
+    :root[data-theme="light"] {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-alt: #f1f5f9;
+      --border: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --primary: #0284c7;
+      --accent: #b45309;
+      --success: #047857;
+      --danger: #b91c1c;
+      --purple: #7e22ce;
+      --highlight: #854d0e;
+      --highlight-bg: #fef08a;
+      --header-bg: rgba(255, 255, 255, 0.96);
+      --table-header: #e2e8f0;
+      --table-row-alt: #f8fafc;
+      --nav-pill-bg: #e2e8f0;
+      --timer-bg: #e0e7ff;
+      --timer-border: #818cf8;
+      --timer-text: #3730a3;
+      --mnemonic-bg: #f3e8ff;
+      --mnemonic-text: #6b21a8;
+      --mnemonic-border: #c084fc;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+      font-size: 13px;
+      padding-bottom: 50px;
+    }
+
+    /* ----------------------------------------------------
+       STICKY HEADER & NAV
+    ---------------------------------------------------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 16px;
+    }
+    .header-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .logo-area { display: flex; align-items: center; gap: 8px; }
+    .logo-icon {
+      background: var(--accent);
+      color: #000;
+      font-weight: 900;
+      font-size: 16px;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-title h1 { font-size: 15px; font-weight: 800; color: var(--text); }
+    .logo-title p { font-size: 10.5px; color: var(--text-muted); }
+    
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .timer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--timer-bg);
+      border: 1px solid var(--timer-border);
+      color: var(--timer-text);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 12px;
+      font-family: monospace;
+    }
+    .ctrl-btn {
+      background: var(--nav-pill-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 4px 9px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .ctrl-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 220px;
+      max-width: 380px;
+    }
+    .search-box input {
+      width: 100%;
+      background: var(--card-alt);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      outline: none;
+    }
+    .search-box input:focus { border-color: var(--primary); }
+
+    /* Nav Bar */
+    .nav-bar {
+      max-width: 1400px;
+      margin: 6px auto 0;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .nav-bar::-webkit-scrollbar { display: none; }
+    .nav-pill {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--nav-pill-bg);
+      white-space: nowrap;
+      border: 1px solid transparent;
+    }
+    .nav-pill:hover {
+      color: #fff;
+      background: var(--primary);
+    }
+
+    /* ----------------------------------------------------
+       LAYOUT & CARDS
+    ---------------------------------------------------- */
+    .container {
+      max-width: 1400px;
+      margin: 14px auto;
+      padding: 0 12px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 14px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .card-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .badge {
+      font-size: 9.5px;
+      padding: 1.5px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      border: 1px solid currentColor;
+    }
+    .badge-amber { color: var(--accent); }
+    .badge-sky { color: var(--primary); }
+    .badge-green { color: var(--success); }
+    .badge-rose { color: var(--danger); }
+    .badge-purple { color: var(--purple); }
+
+    .dense-box {
+      background: var(--card-alt);
+      border-left: 3px solid var(--primary);
+      padding: 7px 10px;
+      border-radius: 0 5px 5px 0;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    .dense-box.accent { border-left-color: var(--accent); }
+    .dense-box.green { border-left-color: var(--success); }
+    .dense-box.rose { border-left-color: var(--danger); }
+    .dense-box.purple { border-left-color: var(--purple); }
+
+    .dense-box h4 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    ul.dense-list { list-style: none; }
+    ul.dense-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 3.5px;
+      color: var(--text);
+      font-size: 11.5px;
+    }
+    ul.dense-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    .highlight {
+      background: var(--highlight-bg);
+      color: var(--highlight);
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+    .mnemonic {
+      background: var(--mnemonic-bg);
+      color: var(--mnemonic-text);
+      border: 1px dashed var(--mnemonic-border);
+      padding: 3px 7px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-family: monospace;
+      font-size: 11px;
+      display: inline-block;
+      margin: 3px 0;
+    }
+
+    /* Tables */
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+      margin-top: 6px;
+    }
+    table.data-table th, table.data-table td {
+      border: 1px solid var(--border);
+      padding: 5px 7px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.data-table th {
+      background: var(--table-header);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 11px;
+    }
+    table.data-table tr:nth-child(even) { background: var(--table-row-alt); }
+    .pyq-tag {
+      font-size: 9px;
+      background: var(--highlight-bg);
+      color: var(--highlight);
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-weight: 800;
+      margin-right: 4px;
+      border: 1px solid var(--border);
+    }
+    .hidden { display: none !important; }
+
+    /* ----------------------------------------------------
+       PRINT / PDF OPTIMISED CSS
+       Designed for Chrome/Edge -> Print -> Save as PDF
+    ---------------------------------------------------- */
+    @page { size: A4 portrait; margin: 8mm 8mm 9mm 8mm; }
+
+    @media print {
+      * { transition: none !important; }
+      html, body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      body {
+        font-size: 8.7pt !important;
+        line-height: 1.22 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      header, .nav-bar, .search-box, .header-actions, .timer-badge, .ctrl-btn {
+        display: none !important;
+      }
+
+      .container {
+        display: block !important;
+        max-width: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      /* Do NOT force every card onto its own page. Let the browser pack content. */
+      .card {
+        background: #fff !important;
+        border: 0.55pt solid #555 !important;
+        border-radius: 2pt !important;
+        box-shadow: none !important;
+        padding: 4.5pt 5.5pt !important;
+        margin: 0 0 5pt 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+
+      .card-title {
+        color: #000 !important;
+        font-size: 10pt !important;
+        line-height: 1.12 !important;
+        border-bottom: 0.7pt solid #000 !important;
+        padding-bottom: 2.5pt !important;
+        margin-bottom: 4pt !important;
+        break-after: avoid;
+      }
+
+      /* Preserve the useful two-column layout inside sections. */
+      .grid-2 {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 4pt !important;
+        align-items: start !important;
+      }
+      .grid-3 {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 4pt !important;
+      }
+
+      .dense-box {
+        background: #fafafa !important;
+        border-left: 1.5pt solid #444 !important;
+        border-top: 0.35pt solid #bbb !important;
+        border-right: 0.35pt solid #bbb !important;
+        border-bottom: 0.35pt solid #bbb !important;
+        border-radius: 0 2pt 2pt 0 !important;
+        padding: 3pt 4pt !important;
+        margin: 0 0 3pt 0 !important;
+        font-size: 8.2pt !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .dense-box h4 {
+        color: #000 !important;
+        font-size: 8.8pt !important;
+        line-height: 1.12 !important;
+        margin-bottom: 2pt !important;
+      }
+      ul.dense-list li {
+        color: #111 !important;
+        font-size: 7.8pt !important;
+        line-height: 1.18 !important;
+        margin-bottom: 1.3pt !important;
+        padding-left: 9pt !important;
+      }
+      ul.dense-list li::before { color: #000 !important; }
+
+      .highlight {
+        background: none !important;
+        color: #000 !important;
+        font-weight: 800 !important;
+        text-decoration: underline !important;
+        padding: 0 !important;
+      }
+      .mnemonic {
+        background: #fff !important;
+        color: #000 !important;
+        border: 0.6pt solid #000 !important;
+        padding: 1pt 3pt !important;
+        margin: 1pt 0 !important;
+        font-size: 7.5pt !important;
+      }
+      .badge {
+        font-size: 6.8pt !important;
+        padding: 0.5pt 3pt !important;
+        border: 0.5pt solid #000 !important;
+        color: #000 !important;
+      }
+
+      table.data-table {
+        width: 100% !important;
+        font-size: 7.6pt !important;
+        margin-top: 3pt !important;
+        border: 0.6pt solid #333 !important;
+      }
+      table.data-table th, table.data-table td {
+        border: 0.35pt solid #555 !important;
+        padding: 2pt 3pt !important;
+        color: #000 !important;
+        line-height: 1.16 !important;
+      }
+      table.data-table th {
+        background: #e9e9e9 !important;
+        font-size: 7.5pt !important;
+      }
+      table.data-table tr:nth-child(even) { background: #f8f8f8 !important; }
+      table.data-table tr { break-inside: avoid; page-break-inside: avoid; }
+      thead { display: table-header-group; }
+
+      .pyq-tag {
+        font-size: 6.5pt !important;
+        background: #eee !important;
+        color: #000 !important;
+        padding: 0.5pt 2pt !important;
+        border: 0.35pt solid #555 !important;
+      }
+
+      /* Avoid awkward orphaned headings, while allowing long sections to flow. */
+      h4 { break-after: avoid; page-break-after: avoid; }
+      .card-title, h4 { break-inside: avoid; page-break-inside: avoid; }
+      p, li { orphans: 2; widows: 2; }
+
+      /* Repeat section heading naturally if a page break occurs. */
+      section { break-before: auto; page-break-before: auto; }
+    }
+
+    @media (max-width: 768px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .header-wrap { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-wrap">
+    <div class="logo-area">
+      <div class="logo-icon">ੴ</div>
+      <div class="logo-title">
+        <h1>Punjab History &amp; GK: 1-Hour Crash Cheat Sheet</h1>
+        <p>Exhaustive PSSSB/PPSC Master Syllabus: Ancient to Modern Reorganisation</p>
+      </div>
+    </div>
+    
+    <div class="header-actions">
+      <!-- Revision Timer -->
+      <div class="timer-badge" id="examTimer">
+        ⏱️ <span id="timeDisplay">60:00</span>
+        <button onclick="toggleTimer()" style="background:none; border:none; color:inherit; cursor:pointer; font-weight:bold; margin-left:2px;" title="Pause/Resume">⏯</button>
+        <button onclick="resetTimer()" style="background:none; border:none; color:inherit; cursor:pointer; font-weight:bold;" title="Reset 60m">↺</button>
+      </div>
+
+      <!-- Theme Switcher -->
+      <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" title="Toggle Light/Dark Theme">
+        <span id="themeIcon">☀️</span> <span id="themeText">Light</span>
+      </button>
+
+      <!-- Print Button -->
+      <button class="ctrl-btn" onclick="window.print()" title="Print / Export to PDF">
+        🖨️ Print
+      </button>
+    </div>
+
+    <!-- Live Search -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Instant Search (e.g. Sabraon, Mian Mir, Chappar Chiri, PEPSU, Lavan)..." onkeyup="liveSearch()">
+    </div>
+  </div>
+
+  <nav class="nav-bar">
+    <a href="#sec-ancient" class="nav-pill">1. Ancient &amp; Rivers</a>
+    <a href="#sec-gurus" class="nav-pill">2. Ten Gurus (1469–1708)</a>
+    <a href="#sec-battles-gurus" class="nav-pill">3. Battles of Guru Period</a>
+    <a href="#sec-sggs" class="nav-pill">4. Adi Granth &amp; Writers</a>
+    <a href="#sec-banda-misls" class="nav-pill">5. Banda Bahadur &amp; 12 Misls</a>
+    <a href="#sec-ranjit-singh" class="nav-pill">6. Maharaja Ranjit Singh</a>
+    <a href="#sec-anglo-sikh" class="nav-pill">7. Anglo-Sikh Wars (Mnemonics)</a>
+    <a href="#sec-freedom" class="nav-pill">8. Freedom &amp; Reform Movements</a>
+    <a href="#sec-pepsu-mod" class="nav-pill">9. PEPSU &amp; 1966 Reorg</a>
+    <a href="#sec-sufi-bhakti" class="nav-pill">10. Sufi &amp; Bhakti Orders</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <!-- 1. ANCIENT PUNJAB & RIVERS -->
+  <section class="card searchable" id="sec-ancient">
+    <div class="card-title">
+      <span>1. Ancient Names of Punjab, Rivers &amp; Archaeological Sites</span>
+      <span class="badge badge-sky">Ancient &amp; Pre-Historic</span>
+    </div>
+    <div class="grid-2">
+      <div class="dense-box">
+        <h4>Nomenclature of Punjab</h4>
+        <ul class="dense-list">
+          <li><strong>Etymology:</strong> Persian <em>Panj</em> (5) + <em>Aab</em> (Waters/Rivers).</li>
+          <li><strong>Rigveda:</strong> <span class="highlight">Sapta Sindhu</span> (Land of 7 Rivers; Cradle of Indian Civilization).</li>
+          <li><strong>Epics (Mahabharata/Ramayana):</strong> <em>Panchanada</em> (also called <em>Aratta / Vahika</em> by Panini).</li>
+          <li><strong>Greek Historians (Herodotus/Arrian):</strong> <span class="highlight">Pentapotamia</span>.</li>
+          <li><strong>Manusmriti:</strong> <em>Brahmavarta</em> (area between Saraswati &amp; Drishadvati rivers).</li>
+          <li><strong>Chinese Pilgrim Hiuen Tsang (635 AD):</strong> Termed Punjab <em>Sekia</em>; visited Jalandhar (Trigarta) under King Udito.</li>
+          <li><strong>Earliest Written Book:</strong> Ibn Battuta’s <em>Rehla</em> (14th c.); Abbas Khan Sarwani’s <em>Tariq-e-Sher Shah Suri</em> (1580); Abul Fazl’s <em>Ain-e-Akbari</em> (divided Subas into Lahore &amp; Multan).</li>
+        </ul>
+      </div>
+
+      <div class="dense-box accent">
+        <h4>Key Harappan (IVC) Excavation Sites in Punjab</h4>
+        <ul class="dense-list">
+          <li><strong>Ropar (Rupnagar):</strong> Sutlej left bank. Excavated by <span class="highlight">Y.D. Sharma (1953–55)</span>. <em>First IVC site excavated in Independent India</em>. Finds: Steatite seals, bronze celt, human buried with dog.</li>
+          <li><strong>Sanghol (Uccha Pind, Fatehgarh Sahib):</strong> Excavated by S.S. Talwar &amp; R.S. Bisht (1968). Yielded Kushan stupa (SGL 5) &amp; 117 carved railing pillars.</li>
+          <li><strong>Sunet (Ludhiana):</strong> Excavated 1983–84. Coin moulds of <span class="highlight">Yaudheya tribe</span>; continuous stratigraphy (IVC to Gupta period).</li>
+          <li><strong>Rohira (Malerkotla):</strong> Mud bricks in 1:2:4 ratio, terracotta bangles.</li>
+          <li><strong>Dadheri (Fatehgarh Sahib):</strong> Overlap site between Late Harappan and Painted Grey Ware (PGW / Iron Age).</li>
+          <li><strong>Kotla Nihang Khan (Rupnagar):</strong> Excavated by M.S. Vats (1929). Pure Mature Harappan pottery.</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Modern River</th>
+          <th>Rigvedic (Vedic) Name</th>
+          <th>Greek Classical Name</th>
+          <th>Key Historical Exam Point</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Indus</strong></td><td>Sindhu</td><td>Indos</td><td>Main spine of Sapta Sindhu; Meluhha of Mesopotamian tablets.</td></tr>
+        <tr><td><strong>Jhelum</strong></td><td>Vitasta / Vet</td><td>Hydaspes</td><td>Battle of Hydaspes (326 BC): Alexander vs. King Porus (Paurava).</td></tr>
+        <tr><td><strong>Chenab</strong></td><td>Asikni</td><td>Acesines</td><td>Rechna Doab (between Ravi &amp; Chenab); highest rail bridge (359m).</td></tr>
+        <tr><td><strong>Ravi</strong></td><td>Parushni / Iravati</td><td>Hydraotes</td><td><span class="pyq-tag">PYQ</span> Battle of 10 Kings (Dasrajan Yudh; Sudas won); Kartarpur on banks.</td></tr>
+        <tr><td><strong>Beas</strong></td><td>Vipasa / Arjikiya</td><td>Hyphasis</td><td>Mutiny of Alexander's soldiers; origin: Beas Kund (Rohtang Pass).</td></tr>
+        <tr><td><strong>Sutlej</strong></td><td>Shatadru / Satudari</td><td>Hesidros / Zaradros</td><td>1809 Treaty of Amritsar fixed boundary; Bhakra-Nangal Dam.</td></tr>
+        <tr><td><strong>Ghaggar-Hakra</strong></td><td>Saraswati</td><td>—</td><td>Drishadvati-Saraswati doab: Vedic Brahmavarta.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 2. THE TEN SIKH GURUS -->
+  <section class="card searchable" id="sec-gurus">
+    <div class="card-title">
+      <span>2. The Ten Sikh Gurus (1469 – 1708 CE): Chronology &amp; High-Yield Facts</span>
+      <span class="badge badge-amber">Guru Kal Master</span>
+    </div>
+
+    <div class="grid-2">
+      <!-- Guru 1 to 5 -->
+      <div class="dense-box">
+        <h4>1. Sri Guru Nanak Dev Ji (1469 – 1539)</h4>
+        <ul class="dense-list">
+          <li><strong>Birth:</strong> 15 April 1469 (Katak Puranmashi) at Rai Bhoi di Talwandi (Nankana Sahib). Bedi Khatri clan.</li>
+          <li><strong>Parents:</strong> Mehta Kalu &amp; Mata Tripta Ji. Sister: Bebe Nanaki. Wife: Bibi Sulakhani. Sons: Baba Sri Chand (founded Udasi sect) &amp; Baba Lakhmi Das.</li>
+          <li><strong>Enlightenment (1499):</strong> Sultanpur Lodhi after 3 days in Kali Bein river (<em>"Na koi Hindu, na koi Musalman"</em>). Modi Khana of Daulat Khan Lodhi.</li>
+          <li><strong>4 Udasis:</strong> 1st (East: Puri, Kamrup), 2nd (South: Sri Lanka), 3rd (North: Sumer, Leh-Pathar Sahib), 4th (West: Mecca, Medina, Baghdad with Bhai Mardana).</li>
+          <li><strong>Kartarpur (Ravi):</strong> Founded 1521; institutionalized Langar, Sangat, Pangat. Composed <strong>976 Shabads in 19 Ragas</strong> (Japji Sahib, Asa di Var, Sidh Gosht, Babarvani).</li>
+        </ul>
+
+        <h4>2. Sri Guru Angad Dev Ji (1504 – 1552)</h4>
+        <ul class="dense-list">
+          <li><strong>Original Name:</strong> Bhai Lehna Ji; born at Matte-di Sarai (Muktsar). Wife: <span class="highlight">Mata Khivi Ji</span> (managed Kheer langar; name recorded in SGGS).</li>
+          <li><strong>Key Works:</strong> Standardized <strong>Gurmukhi script</strong>; authored <em>Balbodh</em>; compiled Bhai Bala Janamsakhi at Tapiana Sahib.</li>
+          <li><strong>Institutions:</strong> Introduced <strong>Mal Akhara</strong> (physical fitness &amp; wrestling) at Khadur Sahib. Visited by Mughal Emperor Humayun (1540/1546). Composed 62 Shaloks.</li>
+        </ul>
+
+        <h4>3. Sri Guru Amar Das Ji (1479 – 1574)</h4>
+        <ul class="dense-list">
+          <li><strong>Accession:</strong> Became Guru at age 73 at Goindwal Sahib.</li>
+          <li><strong>Social Reforms:</strong> Abolished Caste, Untouchability, <span class="highlight">Sati Pratha</span>, and Parda system. Enforced <em>"Pehlan Pangat, Phir Sangat"</em>.</li>
+          <li><strong>Institutions:</strong> Constructed <strong>Goindwal Baoli (84 steps)</strong> in 1559. Established <strong>22 Manjis</strong> (preaching dioceses; women heads: Bibi Matho, Sachan Sach). Composed <strong>907 Shabads in 17 Ragas</strong> (Anand Sahib). Akbar visited in 1567, remitted pilgrimage taxes.</li>
+        </ul>
+
+        <h4>4. Sri Guru Ram Das Ji (1534 – 1581)</h4>
+        <ul class="dense-list">
+          <li><strong>Original Name:</strong> Bhai Jetha Ji; born at Chuna Mandi, Lahore. Wife: Bibi Bhani Ji.</li>
+          <li><strong>Foundation of Amritsar:</strong> Founded in <strong>1574/1577</strong> (named Chak Ramdas / Guru Ka Chak / Ramdaspur). Purchased 500 bighas from Tung zamindars. Excavated Amritsar &amp; Santokhsar sarovars.</li>
+          <li><strong>Institutions:</strong> Initiated the <strong>Masand System</strong>. Composed <strong>679 Shabads in 30 Ragas</strong>, including <span class="highlight">4 Lavan hymns</span> (Suhi Raag) for Anand Karaj.</li>
+        </ul>
+
+        <h4>5. Sri Guru Arjan Dev Ji (1563 – 1606)</h4>
+        <ul class="dense-list">
+          <li><strong>Sri Harmandir Sahib:</strong> Foundation stone laid in <strong>1588</strong> by Sufi saint <span class="highlight">Hazrat Mian Mir</span> of Lahore (Qadiri silsila). Completed 1601 with 4 open doors.</li>
+          <li><strong>Adi Granth:</strong> Compiled 1604 at Ramsar; scribed by <strong>Bhai Gurdas Ji</strong>. Installed 1 Sept 1604; 1st Head Granthi: <strong>Baba Buddha Ji</strong>.</li>
+          <li><strong>Towns Founded:</strong> Tarn Taran (1590; largest sarovar, leprosy home), Kartarpur (Jalandhar, 1593; Gangasar), Sri Hargobindpur (1595).</li>
+          <li><strong>Economic Innovations:</strong> Formalized <strong>Daswandh</strong> (1/10th income); trans-Indus horse trading. Invented string instrument <strong>Saranda</strong>.</li>
+          <li><strong>Martyrdom:</strong> Martyred <strong>30 May 1606</strong> on River Ravi by Jahangir (Tuzuk-i-Jahangiri) &amp; Chandu Shah. Revered as <em>"Shaheedan de Sartaj"</em>. Composed <strong>2216 Shabads</strong> (Sukhmani Sahib, Bavan Akhri).</li>
+        </ul>
+      </div>
+
+      <!-- Guru 6 to 10 -->
+      <div class="dense-box accent">
+        <h4>6. Sri Guru Hargobind Ji (1595 – 1644/45)</h4>
+        <ul class="dense-list">
+          <li><strong>Miri &amp; Piri:</strong> Donned two swords: <em>Miri</em> (temporal) &amp; <em>Piri</em> (spiritual). First Saint-Soldier; took title <em>Sache Patshah</em>. 52 bodyguards.</li>
+          <li><strong>Akal Takht:</strong> Built 12-ft high <strong>Sri Akal Takht Sahib</strong> in 1606–1609 facing Harmandir Sahib. Built <strong>Lohgarh Fort</strong>.</li>
+          <li><strong>Martial Inventions:</strong> Invented peacock-shaped <strong>Taus</strong>; instituted Dhadi Jathas (Bhai Abdullah &amp; Bhai Natha) reciting heroic Vaars.</li>
+          <li><strong>Forts &amp; Towns:</strong> Founded <strong>Kiratpur Sahib</strong> (1635). Imprisoned in Gwalior Fort by Jahangir; secured release of 52 hill Rajas (<span class="highlight">Bandi Chhor</span>).</li>
+          <li><strong>Battles Fought:</strong> 4 major battles against Shah Jahan: Amritsar (1634, hawk incident), Lehra/Mehraj (1631/34, horses Dilbagh &amp; Gulbagh retrieved by Bidhi Chand), Kartarpur (1635, Painde Khan killed), Phagwara (1635).</li>
+        </ul>
+
+        <h4>7. Sri Guru Har Rai Ji (1630 – 1661)</h4>
+        <ul class="dense-list">
+          <li><strong>Lifeline:</strong> Born and merged into eternity at Kiratpur Sahib (<span class="highlight">only Guru with identical birth and demise place</span>). Maintained 2,200 horsemen.</li>
+          <li><strong>Herbal Clinic:</strong> Ran an Ayurvedic research hospital at Kiratpur; provided rare herbs to cure Mughal Prince <strong>Dara Shikoh</strong>.</li>
+          <li><strong>Excommunication:</strong> Disowned elder son <strong>Ram Rai</strong> for altering Guru Nanak's hymn before Aurangzeb (changed <em>Mitti Musalman ki</em> to <em>Mitti Beiman ki</em>). Ram Rai founded Dehradun.</li>
+        </ul>
+
+        <h4>8. Sri Guru Har Krishan Ji (1656 – 1664)</h4>
+        <ul class="dense-list">
+          <li><strong>The Bal Guru:</strong> Youngest Guru; acceded at age 5.</li>
+          <li><strong>Delhi Visit:</strong> Summoned by Aurangzeb; stayed at Raja Jai Singh’s palace (now <span class="highlight">Gurdwara Bangla Sahib</span>). Identified Queen in disguise.</li>
+          <li><strong>Passing:</strong> Selflessly treated smallpox victims; afflicted by smallpox, uttered <em>"Baba Bakale"</em> (pointing to Guru Tegh Bahadur) before passing away at age 8.</li>
+        </ul>
+
+        <h4>9. Sri Guru Tegh Bahadur Ji (1621 – 1675)</h4>
+        <ul class="dense-list">
+          <li><strong>Discovery:</strong> Discovered at Baba Bakala by trader <strong>Makhan Shah Lubana</strong> (shouted <em>"Guru Ladho Re"</em>).</li>
+          <li><strong>Chakk Nanaki:</strong> Founded <strong>Chakk Nanaki (Anandpur Sahib)</strong> on 19 June 1665 on land bought from Raja of Bilaspur.</li>
+          <li><strong>Martyrdom:</strong> Kashmiri Pandits (led by Pt. Kripa Ram) sought help against Governor Iftikhar Khan. Martyred on <strong>11 Nov 1675</strong> at Chandni Chowk, Delhi (<span class="highlight">Gurdwara Sis Ganj</span>). Companions executed: Bhai Mati Das (sawn alive), Bhai Sati Das (burned in cotton), Bhai Dayala (boiled alive).</li>
+          <li><strong>Cremation:</strong> Body cremated by <strong>Lakhi Shah Vanjara</strong> (Gurdwara Rakab Ganj); severed head carried by <strong>Bhai Jaita Ji</strong> to Anandpur (Guru Gobind Singh honored: <em>"Rangreta Guru ka Beta"</em>). Shrines built by Baba Baghel Singh in 1783. Composed <strong>116 hymns(59 Shabads/57 Saloks)</strong> (sole contributor to <em>Jaijawanti Raag</em>).</li>
+        </ul>
+
+        <h4>10. Sri Guru Gobind Singh Ji (1666 – 1708)</h4>
+        <ul class="dense-list">
+          <li><strong>Birth:</strong> 22 Dec 1666 at Patna Sahib (only Guru born outside Punjab). Parents: Guru Tegh Bahadur &amp; Mata Gujri Ji. Childhood: Gobind Rai.</li>
+          <li><strong>Creation of Khalsa (Baisakhi 1699):</strong> Takht Keshgarh Sahib, Anandpur. Initiated <strong>Panj Pyare</strong> with Khande Di Pahul: Daya Singh (Lahore), Dharam Singh (Delhi), Himmat Singh (Jagannath Puri), Mohkam Singh (Dwarka), Sahib Singh (Bidar). Bestowed <strong>5 Ks</strong>.</li>
+          <li><strong>Literary &amp; Martial:</strong> Ranjit Nagara drum (1684); invented <strong>Dilruba</strong> instrument. Founded <strong>Nirmala</strong> order (sent 5 Sikhs to Varanasi). Composed: <em>Jaap Sahib, Akal Ustat, Bachitra Natak, Chandi di Var, Chaupai Sahib, Zafarnama</em>.</li>
+          <li><strong>Damdama Sahib:</strong> Prepared final Bir with <strong>Bhai Mani Singh</strong>. Installed SGGS as perpetual Guru on <strong>20 Oct 1708</strong> at Nanded (Hazur Sahib).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. BATTLES OF GURU GOBIND SINGH JI -->
+  <section class="card searchable" id="sec-battles-gurus">
+    <div class="card-title">
+      <span>3. Battles of Guru Gobind Singh Ji (Chronological Matrix)</span>
+      <span class="badge badge-rose">Military Engagements</span>
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Battle &amp; Year</th>
+          <th>Phase</th>
+          <th>Adversaries</th>
+          <th>High-Yield Exam Focus &amp; Outcomes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Bhangani (1688)</strong></td>
+          <td>Pre-Khalsa</td>
+          <td>Raja Bhim Chand &amp; Raja Fateh Shah</td>
+          <td><span class="pyq-tag">PYQ</span> First battle; near Paonta Sahib on Giri River. Pir Budhu Shah assisted with sons. Sango Shah martyred. Described in <em>Bachitra Natak</em>.</td>
+        </tr>
+        <tr>
+          <td><strong>Nadaun (1690)</strong></td>
+          <td>Pre-Khalsa</td>
+          <td>Mughal Gen. Alif Khan</td>
+          <td>Aided Raja Bhim Chand of Kahlur; Alif Khan defeated on Beas river.</td>
+        </tr>
+        <tr>
+          <td><strong>Guler (1696)</strong></td>
+          <td>Pre-Khalsa</td>
+          <td>Hussain Khan (Rustam Khan)</td>
+          <td>Hussain Khan killed; assisted Raja Gopal of Guler.</td>
+        </tr>
+        <tr>
+          <td><strong>1st Anandpur (1701)</strong></td>
+          <td>Post-Khalsa</td>
+          <td>Hill Rajas (Bhim Chand)</td>
+          <td>Hill Rajas routed; tactical relocation to Nirmohgarh.</td>
+        </tr>
+        <tr>
+          <td><strong>Nirmohgarh &amp; Basoli (1702)</strong></td>
+          <td>Post-Khalsa</td>
+          <td>Wazir Khan &amp; Hill Chiefs</td>
+          <td>Two-front attack repulsed; Raja Dharampal of Basoli assisted.</td>
+        </tr>
+        <tr>
+          <td><strong>2nd Anandpur (1704)</strong></td>
+          <td>Post-Khalsa</td>
+          <td>Wazir Khan, Zabardast Khan + Hill Army</td>
+          <td>7-month siege. Evacuated on false Mughal oaths. Family separated at <strong>River Sarsa</strong> (Pariwar Vichhoda). Younger Sahibzadas bricked alive on 26 Dec (Veer Bal Diwas).</td>
+        </tr>
+        <tr>
+          <td><strong>Chamkaur (1704/05)</strong></td>
+          <td>Post-Khalsa</td>
+          <td>Vast Mughal army (Nahar Khan)</td>
+          <td>Elder Sahibzadas (Ajit Singh 18, Jujhar Singh 14) martyred. Bhai Sangat Singh donned Kalgi. Guruji escaped via Machhiwara with Ghani &amp; Nabi Khan.</td>
+        </tr>
+        <tr>
+          <td><strong>Khidrana / Muktsar (Dec 1705)</strong></td>
+          <td>Post-Khalsa</td>
+          <td>Wazir Khan's Sirhind army</td>
+          <td><span class="pyq-tag">PYQ</span> <strong>40 Muktas</strong> led by <strong>Mai Bhago</strong> fought to death. Bhai Maha Singh requested tearing of <em>Bedawa</em> (disclaimer). Khidrana renamed Muktsar.</td>
+        </tr>
+        <tr>
+          <td><strong>Jajau (1707)</strong></td>
+          <td>Post-Khalsa</td>
+          <td>Prince Azam Shah</td>
+          <td>Aided Prince Muazzam (Bahadur Shah I) in Mughal succession war.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 4. ADI GRANTH & SGGS COMPENDIUM -->
+  <section class="card searchable" id="sec-sggs">
+    <div class="card-title">
+      <span>4. Sri Guru Granth Sahib: Scriptural Statistics, Authors &amp; Recensions</span>
+      <span class="badge badge-purple">Scriptural Repository</span>
+    </div>
+    <div class="grid-2">
+      <div class="dense-box purple">
+        <h4>Scriptural Metrics &amp; Structure</h4>
+        <ul class="dense-list">
+          <li><strong>Total Angs (Pages):</strong> <span class="highlight">1,430 Angs</span>. Total Shabads: <strong>5,894</strong>. Total lines: 26,852.</li>
+          <li><strong>Total Contributors:</strong> <strong>35/36</strong> (6 Sikh Gurus, 15 Bhagats, 11 Bhatts, 3 Gursikhs/Bards: Mardana, Satta, Balwand).</li>
+          <li><strong>Punctuation:</strong> <em>Zero punctuation marks used</em> (no comma, semicolon, bindi, adhak).</li>
+          <li><strong>Most Repeated Word:</strong> <span class="highlight">"Har" (ਹਰਿ)</span> repeated <strong>9,288 times</strong>.</li>
+          <li><strong>Ragas:</strong> 31 single Ragas (total 60 including mixed). 1st Raga: <strong>Sri Raga</strong>; Last Raga: <strong>Jaijawanti</strong>. Highest compositions: <strong>Raag Gauri</strong>.</li>
+          <li><strong>22 Vaars:</strong> Guru Ram Das (8), Guru Arjan Dev (6), Guru Amar Das (4), Guru Nanak (3), Satta &amp; Balwand (1).</li>
+          <li><strong>Three Birs:</strong> (1) <em>Kartarpuri Bir</em> (1604 original by Bhai Gurdas); (2) <em>Bhai Banno Bir</em> (Khare Vali); (3) <em>Damdami Bir</em> (1706 by Bhai Mani Singh, added 9th Guru's hymns).</li>
+        </ul>
+      </div>
+
+      <div class="dense-box">
+        <h4>All Contributors Breakdown in SGGS</h4>
+        <table class="data-table">
+          <thead>
+            <tr><th>Category</th><th>Contributor</th><th>Hymns / Shaloks</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="6"><strong>6 Sikh Gurus</strong></td><td>Guru Arjan Dev Ji</td><td><strong>2,216</strong> (Highest overall)</td></tr>
+            <tr><td>Guru Nanak Dev Ji</td><td><strong>976</strong> (in 19 Ragas)</td></tr>
+            <tr><td>Guru Amar Das Ji</td><td><strong>907</strong> (in 17 Ragas)</td></tr>
+            <tr><td>Guru Ram Das Ji</td><td><strong>679</strong> (in 30 Ragas)</td></tr>
+            <tr><td>Guru Tegh Bahadur Ji</td><td><strong>116</strong> (sole contributor to Jaijawanti)</td></tr>
+            <tr><td>Guru Angad Dev Ji</td><td><strong>62 Shaloks</strong> only</td></tr>
+            <tr><td rowspan="4"><strong>Top Bhagats</strong></td><td>Bhagat Kabir Ji</td><td><strong>541</strong> (Highest among Bhagats, 17 Ragas)</td></tr>
+            <tr><td>Baba Sheikh Farid Ji</td><td><strong>112</strong> (Lehndi/Multani Punjabi)</td></tr>
+            <tr><td>Bhagat Namdev Ji</td><td><strong>61</strong> (Abhangas; shrine at Ghuman, Gurdaspur)</td></tr>
+            <tr><td>Bhagat Ravidas Ji</td><td><strong>41</strong> (in 16 Ragas; Begampura concept)</td></tr>
+            <tr><td><strong>Other Bhagats</strong></td><td colspan="2">Trilochan (4), Beni (3), Dhanna (3), Jaidev (2), Bhikhan (2), Ramanand (1), Pipa (1), Sain (1), Sadhana (1), Parmanand (1), Surdas (1 line).</td></tr>
+            <tr><td><strong>Gursikhs (3)</strong></td><td colspan="2">Bhai Satta (3), Bhai Balwand (5), Bhai Mardana (3).</td></tr>
+            <tr><td><strong>11 Bhatts</strong></td><td colspan="2">Kalshar (54), Nalh (16), Mathura (14), Gayand (13), Kirat (8), Balh (5), Jalap (5), Salh (3), Bhika (2), Harbans (2), Bhalh (1).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. BANDA SINGH BAHADUR & 12 SIKH MISLS -->
+  <section class="card searchable" id="sec-banda-misls">
+    <div class="card-title">
+      <span>5. Baba Banda Singh Bahadur &amp; The 12 Sikh Misls (1708 – 1799)</span>
+      <span class="badge badge-green">Khalsa Sovereignty</span>
+    </div>
+    <div class="grid-2">
+      <div class="dense-box green">
+        <h4>Baba Banda Singh Bahadur (1670 – 1716)</h4>
+        <ul class="dense-list">
+          <li><strong>Names:</strong> Born Lachhman Dev (Rajouri, J&amp;K); ascetic name Madho Das Bairagi; commissioned by Guru Gobind Singh at Nanded (1708) with 5 arrows.</li>
+          <li><strong>Battle of Chappar Chiri (12 May 1710):</strong> Defeated Mughal army; Wazir Khan killed by Fateh Singh. Captured Sirhind. Commemorated by <strong>Fateh Burj</strong> (100m, Mohali).</li>
+          <li><strong>First Sikh State:</strong> Capital at <strong>Lohgarh (Mukhlispur)</strong>. Minted coins in names of Guru Nanak &amp; Guru Gobind Singh. <span class="highlight">Abolished feudal Zamindari system</span>, giving land rights to cultivators.</li>
+          <li><strong>Siege &amp; Martyrdom:</strong> Besieged at Gurdas Nangal (Haveli of Duni Chand) for 8 months by Abdus Samad Khan. Martyred at Mehrauli, Delhi on <strong>9 June 1716</strong> under Farrukhsiyar. Son Ajay Singh martyred.</li>
+        </ul>
+
+        <h4>Dal Khalsa &amp; Holocausts (Ghallugharas)</h4>
+        <ul class="dense-list">
+          <li><strong>Budha Dal &amp; Taruna Dal (1734):</strong> Reorganized by <strong>Nawab Kapur Singh</strong> (Budha Dal: veterans &gt;40; Taruna Dal: youth warriors).</li>
+          <li><strong>Formation of Dal Khalsa (29 March 1748):</strong> Amritsar on Baisakhi. Nawab Kapur Singh unified 65 Jathas into 12 Misls under supreme commander <span class="highlight">Sardar Jassa Singh Ahluwalia</span> (Sultan-ul-Qaum).</li>
+          <li><strong>Chhota Ghallughara (1746):</strong> Kahnuwan marshes (Gurdaspur). Diwan Lakhpat Rai &amp; Yahiya Khan martyred ~7,000 Sikhs.</li>
+          <li><strong>Vadda Ghallughara (5 Feb 1762):</strong> Kup-Rahira near Malerkotla. Ahmad Shah Abdali launched surprise attack killing 20,000–35,000 Sikhs.</li>
+          <li><strong>Capture of Delhi (11 March 1783):</strong> <span class="highlight">Baba Baghel Singh</span> (Karorsinghia) &amp; Jassa Singh Ahluwalia hoisted Nishan Sahib on Red Fort. Built 7 Delhi Gurdwaras (Sis Ganj, Bangla Sahib, Rakab Ganj). Tis Hazari named after his 30,000 horsemen.</li>
+        </ul>
+      </div>
+
+      <div class="dense-box">
+        <h4>The 12 Sikh Misls (Confederacies) &amp; Founders</h4>
+        <table class="data-table">
+          <thead>
+            <tr><th>Misl Name</th><th>Founder / Prominent Chief</th><th>Headquarters / Key Area</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>1. Ahluwalia</strong></td><td>Sardar Jassa Singh Ahluwalia</td><td>Kapurthala (Supreme Dal Commander)</td></tr>
+            <tr><td><strong>2. Sukerchakia</strong></td><td>Charat Singh / Maha Singh / Ranjit Singh</td><td>Gujranwala</td></tr>
+            <tr><td><strong>3. Bhangi</strong></td><td>Chhajja Singh / Hari Singh Bhangi</td><td>Amritsar, Lahore (Held Zamzama Gun)</td></tr>
+            <tr><td><strong>4. Faizullapuria (Singhpura)</strong></td><td>Nawab Kapur Singh</td><td>Faizullapur (1st organized misl)</td></tr>
+            <tr><td><strong>5. Kanhaiya</strong></td><td>Jai Singh Kanhaiya / Rani Sada Kaur</td><td>Batala</td></tr>
+            <tr><td><strong>6. Ramgarhia</strong></td><td>Khushal Singh / Jassa Singh Ramgarhia</td><td>Sri Hargobindpur (Built Ramgarh Fort)</td></tr>
+            <tr><td><strong>7. Phulkian</strong></td><td>Chaudhary Phul / Baba Ala Singh</td><td>Patiala, Nabha, Jind (Outside Dal Khalsa)</td></tr>
+            <tr><td><strong>8. Dallewalia</strong></td><td>Gulab Singh Dallewalia / Tara Singh Ghaiba</td><td>Dallewal (Rahon)</td></tr>
+            <tr><td><strong>9. Shaheedan (Nihang)</strong></td><td>Baba Deep Singh Ji</td><td>Talwandi Sabo (Damdama Sahib)</td></tr>
+            <tr><td><strong>10. Karorsinghia</strong></td><td>Karora Singh / Baba Baghel Singh</td><td>Hoshiarpur / Delhi conquest</td></tr>
+            <tr><td><strong>11. Nakkai</strong></td><td>Hira Singh Sandhu</td><td>Nakka tract (south of Lahore)</td></tr>
+            <tr><td><strong>12. Nishanwalia</strong></td><td>Dasaundha Singh / Sangat Singh</td><td>Ambala (Standard bearers of Dal)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. MAHARAJA RANJIT SINGH & SIKH EMPIRE -->
+  <section class="card searchable" id="sec-ranjit-singh">
+    <div class="card-title">
+      <span>6. Maharaja Ranjit Singh &amp; Sarkar-e-Khalsa (1780 – 1839)</span>
+      <span class="badge badge-amber">Sikh Empire</span>
+    </div>
+    <div class="grid-2">
+      <div class="dense-box accent">
+        <h4>Lifeline, Coronation &amp; Governance</h4>
+        <ul class="dense-list">
+          <li><strong>Birth:</strong> 13 Nov 1780 at Gujranwala to Sardar Maha Singh &amp; Raj Kaur (Mai Malwain). Childhood name: <em>Buddh Singh</em>. Lost left eye to smallpox.</li>
+          <li><strong>Regency (1792–97):</strong> Administered by Mother Raj Kaur, Diwan Lakhpat Rai, and mother-in-law <strong>Rani Sada Kaur</strong> (Kanhaiya Misl).</li>
+          <li><strong>Conquest of Lahore (1799):</strong> Captured on 7 July 1799 from Bhangi Sardars (Chet, Sahib, Mohar Singh). Became political capital.</li>
+          <li><strong>Coronation (12 April 1801):</strong> Tilak applied by Baba Sahib Singh Bedi on Baisakhi. Government named <strong>Sarkar-i-Khalsa</strong>; coins named <strong>Nanakshahi Rupee</strong>.</li>
+          <li><strong>Conquest of Amritsar (1805):</strong> Captured from Mai Sukhan (Bhangi widow); acquired <span class="highlight">Zamzama Cannon</span> (Bhangianwali Tope) &amp; Gobindgarh Fort.</li>
+          <li><strong>Treaty of Amritsar (25 April 1809):</strong> Signed between Ranjit Singh &amp; Charles Metcalfe (Gov-Gen Lord Minto I). <strong>Sutlej River</strong> fixed as strict boundary. Surrendered Cis-Sutlej states (Patiala, Nabha, Jind).</li>
+          <li><strong>4 Provinces (Subas):</strong> Suba-i-Lahore, Suba-i-Multan (Dar-ul-Aman), Suba-i-Kashmir (Jannat-Nishan), Suba-i-Peshawar. Headed by <em>Nazim</em>.</li>
+          <li><strong>Land Revenue:</strong> Replaced Batai with <strong>Kankut System</strong> (appraisal of standing crop). Non-hereditary, transferable jagirs.</li>
+        </ul>
+      </div>
+
+      <div class="dense-box">
+        <h4>Major Military Conquests &amp; Modern Army</h4>
+        <ul class="dense-list">
+          <li><strong>Kangra (1809):</strong> Repelled Gurkha general Amar Singh Thapa on appeal of Raja Sansar Chand Katoch.</li>
+          <li><strong>Attock (1813):</strong> Defeated Afghan Wazir Fateh Khan at Battle of Hazro/Chhachh (1st Sikh victory across Indus). Acquired <strong>Koh-i-Noor</strong> from Shah Shuja.</li>
+          <li><strong>Multan (1818):</strong> Conquered in 7th campaign under Misr Diwan Chand &amp; Prince Kharak Singh. Nawab Muzaffar Khan killed. Diwan Chand titled <em>Zafar Jang</em>.</li>
+          <li><strong>Kashmir (1819):</strong> Battle of Shopian; defeated Jabbar Khan. Ended 500 years of Afghan rule. 1st Governor: Diwan Moti Ram.</li>
+          <li><strong>Nowshera (1823):</strong> Defeated Azim Khan’s Pashtun lashkars. <span class="highlight">Akali Phula Singh</span> martyred heroically.</li>
+          <li><strong>Peshawar (1834):</strong> Annexed by Hari Singh Nalwa &amp; Prince Nau Nihal Singh.</li>
+          <li><strong>Jamrud (30 April 1837):</strong> <span class="highlight">General Hari Singh Nalwa</span> martyred defending Jamrud Fort choking Khyber Pass against Dost Mohammad.</li>
+          <li><strong>Modernized Army (Fauj-i-Khas):</strong> Organized by European generals: <strong>Jean-Baptiste Ventura</strong> (Infantry), <strong>Jean-François Allard</strong> (Cavalry), Paolo Avitabile, Claude Court. Artillery: <em>Topkhana-i-Jinsi</em> (heavy), <em>Topkhana-i-Aspi</em> (horse), <em>Zamburak</em> (camel swivels).</li>
+          <li><strong>Demise:</strong> Died 27 June 1839. Succeeded by Kharak Singh &rarr; Nau Nihal Singh &rarr; Sher Singh &rarr; Duleep Singh (1843, youngest son).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. ANGLO-SIKH WARS WITH MNEMONICS -->
+  <section class="card searchable" id="sec-anglo-sikh">
+    <div class="card-title">
+      <span>7. Anglo-Sikh Wars (1845–46 &amp; 1848–49) &amp; British Annexation</span>
+      <span class="badge badge-rose">Colonial Subjugation</span>
+    </div>
+
+    <div class="grid-2">
+      <!-- 1st War -->
+      <div class="dense-box rose">
+        <h4>1st Anglo-Sikh War (1845 – 1846)</h4>
+        <div class="mnemonic">MNEMONIC: MF BAS</div>
+        <p style="font-size:11px; margin-bottom:6px;"><strong>M</strong>udki &rarr; <strong>F</strong>erozeshah &rarr; <strong>B</strong>adowal &rarr; <strong>A</strong>liwal &rarr; <strong>S</strong>abraon</p>
+        <ul class="dense-list">
+          <li><strong>1. Mudki (18 Dec 1845):</strong> British Sir Hugh Gough defeated Sikhs; Lal Singh deserted after ordering fire.</li>
+          <li><strong>2. Ferozeshah (21 Dec 1845):</strong> Gov-Gen Lord Hardinge called it <em>"Night of Terrors"</em>. British on brink of surrender; saved by Tej Singh's treachery.</li>
+          <li><strong>3. Badowal (21 Jan 1846):</strong> Sardar Ranjodh Singh Majithia outmaneuvered Sir Harry Smith and captured British baggage trains.</li>
+          <li><strong>4. Aliwal (28 Jan 1846):</strong> Harry Smith defeated Ranjodh Singh Majithia on Sutlej banks.</li>
+          <li><strong>5. Sabraon (10 Feb 1846):</strong> <span class="highlight">"Waterloo of Punjab"</span>. Tej Singh destroyed boat-bridge. <strong>Sardar Sham Singh Atariwala</strong> took heroic martyrdom.</li>
+          <li><strong>Treaty of Lahore (9 Mar 1846):</strong> Jalandhar Doab ceded to British; 1.5 crore indemnity.</li>
+          <li><strong>Sale of Kashmir (16 Mar 1846):</strong> Kashmir sold to Gulab Singh Dogra for 75 lakh rupees (Treaty of Amritsar 1846).</li>
+          <li><strong>Treaty of Bhairowal (16 Dec 1846):</strong> Created 8-Sardar Council of Regency headed by British Resident Sir Henry Lawrence; Rani Jindan exiled to Sheikhupura.</li>
+        </ul>
+      </div>
+
+      <!-- 2nd War -->
+      <div class="dense-box">
+        <h4>2nd Anglo-Sikh War (1848 – 1849)</h4>
+        <div class="mnemonic">MNEMONIC: R-C-M-G</div>
+        <p style="font-size:11px; margin-bottom:6px;"><strong>R</strong>amnagar &rarr; <strong>C</strong>hillianwala &rarr; <strong>M</strong>ultan &rarr; <strong>G</strong>ujarat</p>
+        <ul class="dense-list">
+          <li><strong>Cause:</strong> Revolt of Diwan Mulraj (Governor of Multan) and Chattar Singh Attariwala (Hazara).</li>
+          <li><strong>1. Ramnagar (22 Nov 1848):</strong> Sher Singh Attariwala vs. Hugh Gough on River Chenab. British Gen. Cureton killed.</li>
+          <li><strong>2. Chillianwala (13 Jan 1849):</strong> Fought on River Jhelum. Severe British disaster; heavy British casualties led to Lord Gough being recalled.</li>
+          <li><strong>3. Multan (22 Jan 1849):</strong> Gen. Whish captured fort; Diwan Mulraj surrendered.</li>
+          <li><strong>4. Gujarat (21 Feb 1849):</strong> <span class="highlight">"Battle of the Guns"</span>. Decisive British artillery superiority broke Sikh forces. Surrender on 14 March 1849 at Rawalpindi (<em>"Aaj Ranjit Singh mar gaya"</em>).</li>
+          <li><strong>Annexation (29 March 1849):</strong> <span class="highlight">Lord Dalhousie</span> officially annexed Punjab. Duleep Singh pensioned to England. Koh-i-Noor surrendered to Queen Victoria.</li>
+          <li><strong>Board of Administration (1849–53):</strong> Sir Henry Lawrence (President), John Lawrence, and Charles Mansel (later Robert Montgomery). Replaced 1853 by Chief Commissioner (John Lawrence).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. SOCIO-RELIGIOUS & FREEDOM STRUGGLE -->
+  <section class="card searchable" id="sec-freedom">
+    <div class="card-title">
+      <span>8. Socio-Religious Reforms, Freedom Agitations &amp; Gurdwara Morchas</span>
+      <span class="badge badge-sky">National Movement</span>
+    </div>
+    <div class="grid-2">
+      <div class="dense-box">
+        <h4>Socio-Religious Movements in Punjab</h4>
+        <ul class="dense-list">
+          <li><strong>Nirankari Movement (1851):</strong> Founded by <span class="highlight">Baba Dayal Das</span> at Rawalpindi; preached formless God (Nirankar), opposed rituals.</li>
+          <li><strong>Namdhari / Kuka Movement (1857):</strong> Founded by Baba Balak Singh (Hazro); led by <span class="highlight">Satguru Ram Singh</span> (HQ: Bhaini Sahib, Ludhiana). Boycotted British post, rails, cloth. 1872: 66 Kukas blown from cannons at Malerkotla. Cow protection.</li>
+          <li><strong>Radha Soami (1861/1891):</strong> Founded by Shiv Dayal Singh (Agra); Dera Baba Jaimal Singh established on Beas in 1891.</li>
+          <li><strong>Singh Sabha Movement (1873):</strong> Formed at Manji Sahib Amritsar (1st Pres: Thakur Singh Sandhawalia; Sec: Giani Gian Singh). Countered Christian/Arya conversions. Lahore Singh Sabha (1879) by Prof. Gurmukh Singh. Founded <strong>Khalsa College Amritsar (1892)</strong>.</li>
+        </ul>
+
+        <h4>Peasant &amp; Revolutionary Movements</h4>
+        <ul class="dense-list">
+          <li><strong>Pagri Sambhal Jatta (1907):</strong> Against Colonization Bill 1906 &amp; Bari Doab water tax. Founded <em>Bharat Mata Society</em> by <strong>Sardar Ajit Singh</strong> &amp; Sufi Amba Prasad. Anthem by <span class="highlight">Banke Dayal</span> (Editor <em>Jhang Syal</em>). Lala Lajpat Rai deported to Mandalay.</li>
+          <li><strong>Ghadar Party (1913):</strong> Formed in San Francisco (Yugantar Ashram). 1st President: <span class="highlight">Sohan Singh Bhakna</span>; Gen. Sec: Lala Har Dayal. Weekly paper: <em>Ghadar</em> (inaugural issue in <strong>Urdu</strong>, 1 Nov 1913). Key martyr: <strong>Kartar Singh Sarabha</strong> (hanged 1915, aged 19).</li>
+          <li><strong>Komagata Maru (1914):</strong> Japanese ship chartered by <span class="highlight">Baba Gurdit Singh</span> with 376 passengers to Vancouver; turned back; firing at <strong>Budge Budge Ghat (Kolkata)</strong> on 29 Sept 1914 killed 20.</li>
+          <li><strong>Jallianwala Bagh (13 April 1919):</strong> Protest against Rowlatt Act &amp; arrest of Dr. Saifuddin Kitchlew &amp; Dr. Satyapal. Firing ordered by <strong>Reginald Dyer</strong>. Lt. Gov <strong>Michael O'Dwyer</strong> assassinated in London on 13 March 1940 by <span class="highlight">Shaheed Udham Singh</span> (pseudonym: <em>Ram Mohammad Singh Azad</em>).</li>
+          <li><strong>HSRA &amp; Bhagat Singh:</strong> Saunders killed (17 Dec 1928) to avenge Lajpat Rai; Central Assembly bomb (8 April 1929) with Batukeshwar Dutt. Bhagat Singh, Rajguru, and Sukhdev hanged on <span class="highlight">23 March 1931</span> at Lahore. Jatin Das died after 63-day hunger strike.</li>
+        </ul>
+      </div>
+
+      <div class="dense-box accent">
+        <h4>The Akali Movement &amp; Gurdwara Morchas (1920–1925)</h4>
+        <ul class="dense-list">
+          <li><strong>Formation of SGPC &amp; Akali Dal (1920):</strong> SGPC formed 15 Nov 1920 (1st Pres: Sunder Singh Majithia). Shiromani Akali Dal formed 14 Dec 1920 (1st Pres: Sarmukh Singh Chubbal).</li>
+          <li><strong>Saka Nankana Sahib (20 Feb 1921):</strong> Mahant Narain Das killed 130+ Sikhs including Bhai Lachhman Singh Dharowali &amp; Bhai Dalip Singh.</li>
+          <li><strong>Chabian Da Morcha (Nov 1921):</strong> British confiscated Golden Temple keys; Sikhs launched agitation; British forced to return keys. Gandhi telegrammed: <em>"First decisive battle for India's freedom won"</em>.</li>
+          <li><strong>Guru Ka Bagh Morcha (Aug 1922):</strong> Non-violent agitation over firewood from Gurdwara land; C.F. Andrews reported British police brutality.</li>
+          <li><strong>Jaito Da Morcha (1923–25):</strong> Over abdication of Maharaja Ripudaman Singh of Nabha (exiled to Kodaikanal) &amp; interrupted Akhand Path at Gangsar Jaito. <strong>Jawaharlal Nehru</strong> arrested.</li>
+          <li><strong>Sikh Gurdwaras Act, 1925:</strong> Passed 28 July 1925; democratized shrine control under elected SGPC.</li>
+          <li><strong>Babbar Akali Movement (1921–25):</strong> Militant breakaway faction led by Kishan Singh Gargajj &amp; Master Mota Singh. Published <em>Babbar Akali Doaba</em>.</li>
+          <li><strong>Punjab Riyasati Praja Mandal (July 1928):</strong> Founded at Mansa against princely autocracy (Patiala, Jind, Nabha). 1st President: <span class="highlight">Sardar Seva Singh Thikriwala</span> (died in Patiala jail 1935); Sec: Bhagwan Singh Longowalia.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. POST-1947 PEPSU & 1966 REORGANISATION -->
+  <section class="card searchable" id="sec-pepsu-mod">
+    <div class="card-title">
+      <span>9. Post-1947 Era: PEPSU, Punjabi Suba &amp; 1966 Reorganisation</span>
+      <span class="badge badge-green">Post-Independence</span>
+    </div>
+    <div class="grid-2">
+      <div class="dense-box green">
+        <h4>PEPSU (Patiala &amp; East Punjab States Union)</h4>
+        <ul class="dense-list">
+          <li><strong>Inauguration:</strong> Formed on <span class="highlight">15 July 1948</span> by Sardar Vallabhbhai Patel, uniting <strong>8 Princely States</strong>: Patiala, Nabha, Jind, Faridkot, Kapurthala, Malerkotla, Kalsia, and Nalagarh.</li>
+          <li><strong>Capital:</strong> Patiala. Total area: ~26,208 sq km.</li>
+          <li><strong>Rajpramukh:</strong> Maharaja Yadavindra Singh of Patiala (Up-Rajpramukh: Jagatjit Singh of Kapurthala).</li>
+          <li><strong>First Chief Minister (Premier):</strong> <span class="highlight">Gian Singh Rarewala</span> (1st non-Congress CM in India).</li>
+          <li><strong>Merger:</strong> Merged into Punjab on <span class="highlight">1 November 1956</span> on recommendation of States Reorganisation Commission (Fazal Ali Commission).</li>
+        </ul>
+      </div>
+
+      <div class="dense-box">
+        <h4>Punjabi Suba &amp; Punjab Reorganisation Act, 1966</h4>
+        <ul class="dense-list">
+          <li><strong>Punjabi Suba Movement:</strong> Spearheaded by <strong>Master Tara Singh</strong> &amp; <strong>Sant Fateh Singh</strong> for a linguistic state. Interim attempts: <em>Sachar Formula (1949)</em> &amp; <em>Regional Formula (1956)</em>.</li>
+          <li><strong>Shah Commission (1966):</strong> Chaired by Justice J.C. Shah (members: S. Dutt, M.M. Philip). Recommended dividing bilingual Punjab.</li>
+          <li><strong>Trifurcation (1 Nov 1966):</strong> Modern Punjab formed: Punjabi-speaking areas &rarr; Punjab; Hindi-speaking areas &rarr; Haryana; Hilly areas (Kangra, Shimla, Kullu) transferred to Himachal Pradesh. Chandigarh made Union Territory &amp; joint capital.</li>
+          <li><strong>1st Post-1966 CM:</strong> <span class="highlight">Giani Gurmukh Singh Musafir</span>; 1st Governor: <strong>Dharm Vira</strong>. (Note: 1st CM of East Punjab in 1947 was Dr. Gopi Chand Bhargava).</li>
+          <li><strong>Anandpur Sahib Resolution (Oct 1973):</strong> Adopted by Shiromani Akali Dal demanding true federalism, state autonomy, transfer of Chandigarh and Punjabi-speaking enclaves, and river water rights.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. SUFI & BHAKTI MOVEMENTS IN PUNJAB -->
+  <section class="card searchable" id="sec-sufi-bhakti">
+    <div class="card-title">
+      <span>10. Sufi &amp; Bhakti Movements in Punjab: Silsilas, Mystics &amp; Literature</span>
+      <span class="badge badge-amber">Spiritual Traditions</span>
+    </div>
+    <div class="grid-3">
+      <div class="dense-box">
+        <h4>Chishti Silsila in Punjab</h4>
+        <ul class="dense-list">
+          <li><strong>Founder in India:</strong> Khwaja Moinuddin Chishti (Ajmer, 1192). Followed by Qutbuddin Bakhtiar Kaki (Delhi; Qutub Minar built in his honor).</li>
+          <li><strong>Baba Sheikh Farid (1173–1265):</strong> Born near Multan; disciple of Kaki. Established Khanqah at <strong>Ajodhan (Pakpattan)</strong>. Revered as <em>"Father of Punjabi Poetry"</em>. <strong>112 hymns in SGGS</strong> in Lehndi Punjabi. <em>Zawiya Al-Hindiya</em> in Jerusalem.</li>
+          <li><strong>Nizamuddin Auliya &amp; Amir Khusrau:</strong> Disciple of Baba Farid. Amir Khusrau invented <strong>Sitar</strong>, father of Qawwali, wrote <em>Khaliq-e-bari</em> dictionary.</li>
+        </ul>
+      </div>
+
+      <div class="dense-box accent">
+        <h4>Qadiri &amp; Suhrawardi Orders</h4>
+        <ul class="dense-list">
+          <li><strong>Qadiriyya &amp; Sai Mian Mir (Lahore):</strong> Resided in Dharampura, Lahore. Direct descendant of Caliph Umar. Laid foundation stone of <strong>Sri Harmandir Sahib (1588)</strong> at request of Guru Arjan Dev. Spiritual guide to Prince <strong>Dara Shikoh</strong> (authored Mian Mir’s biography <em>Sakinat al-Aulia</em>).</li>
+          <li><strong>Suhrawardi Order (Multan):</strong> Founded by Bahauddin Zakariya (1222). Multan nicknamed <em>"Baghdad of the East"</em>. Unlike Chishtis, Suhrawardis accepted state patronages and jagirs.</li>
+          <li><strong>Naqshbandi (Sirhind):</strong> Sheikh Ahmad Sirhindi (<em>Mujaddid Alf-i-Sani</em>; shrine at Rauza Sharif, Sirhind). Fiercely orthodox; opposed Akbar's syncretism; pressured Jahangir against Guru Arjan Dev Ji.</li>
+        </ul>
+      </div>
+
+      <div class="dense-box green">
+        <h4>Bhakti Movement Exponents</h4>
+        <ul class="dense-list">
+          <li><strong>Bhagat Kabir Ji (1398–1518):</strong> Julaha (weaver) from Varanasi; disciple of Ramanand; passed away at Maghar. Highest Bhagat hymns in SGGS: <strong>541 hymns in 17 Ragas</strong>.</li>
+          <li><strong>Bhagat Ravidas Ji (b. 1399):</strong> Chamar community from Kashi; concept of egalitarian city <strong>Begampura</strong>. <strong>41 hymns in 16 Ragas</strong> in SGGS. Historical center: <em>Khuralgarh Sahib</em> (Hoshiarpur, 151-ft Minar-e-Begampura). Disciple: Meera Bai.</li>
+          <li><strong>Bhagat Namdev Ji (1270–1350):</strong> Tailor from Maharashtra; settled at <strong>Ghuman (Gurdaspur)</strong>. <strong>61 hymns in SGGS</strong>. Rebuilt by Jassa Singh Ramgarhia.</li>
+          <li><strong>Bhatt Bhikha:</strong> Saraswat Brahmin minstrel from Sultanpur Lodhi; disciple of Guru Amar Das; 2 hymns in SGGS.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // ----------------------------------------------------
+  // THEME MANAGEMENT (Light / Dark with LocalStorage)
+  // ----------------------------------------------------
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('punjab_history_theme', theme);
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+    if (themeIcon && themeText) {
+      if (theme === 'light') {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Dark';
+      } else {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Light';
+      }
+    }
+  }
+
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+  }
+
+  // ----------------------------------------------------
+  // 60-MINUTE COUNTDOWN TIMER
+  // ----------------------------------------------------
+  let totalSeconds = 3600;
+  let timerInterval = null;
+  let isRunning = false;
+
+  function updateTimerDisplay() {
+    const mins = Math.floor(totalSeconds / 60);
+    const secs = totalSeconds % 60;
+    document.getElementById('timeDisplay').textContent = 
+      `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  }
+
+  function toggleTimer() {
+    if (isRunning) {
+      clearInterval(timerInterval);
+      isRunning = false;
+    } else {
+      timerInterval = setInterval(() => {
+        if (totalSeconds > 0) {
+          totalSeconds--;
+          updateTimerDisplay();
+        } else {
+          clearInterval(timerInterval);
+          alert('1-Hour Revision Cycle Complete! Best of luck with your Punjab GK Exam!');
+        }
+      }, 1000);
+      isRunning = true;
+    }
+  }
+
+  function resetTimer() {
+    clearInterval(timerInterval);
+    isRunning = false;
+    totalSeconds = 3600;
+    updateTimerDisplay();
+  }
+
+  // ----------------------------------------------------
+  // INSTANT LIVE SEARCH
+  // ----------------------------------------------------
+  function liveSearch() {
+    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    const searchableSections = document.querySelectorAll('.searchable');
+
+    searchableSections.forEach(sec => {
+      const text = sec.innerText.toLowerCase();
+      if (text.includes(query)) {
+        sec.classList.remove('hidden');
+      } else {
+        sec.classList.add('hidden');
+      }
+    });
+  }
+
+  // ----------------------------------------------------
+  // INITIALIZATION
+  // ----------------------------------------------------
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('punjab_history_theme') || 'dark';
+    setTheme(savedTheme);
+    updateTimerDisplay();
+    toggleTimer(); // Auto-start countdown
+  });
+</script>
+
+</body>
+</html>
