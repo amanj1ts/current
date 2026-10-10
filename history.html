@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Indian History & Historic Wars 1-Hour Master Revision Cheat Sheet</title>
+  <style>
+    /* ----------------------------------------------------
+       THEME VARIABLES (Derived exactly from File 1 Styleguide)
+    ---------------------------------------------------- */
+    :root[data-theme="dark"] {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-alt: #162032;
+      --border: #1f293d;
+      --text: #f3f4f6;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --danger: #ef4444;
+      --purple: #a855f7;
+      --highlight: #fde047;
+      --highlight-bg: #422006;
+      --header-bg: rgba(11, 15, 25, 0.96);
+      --table-header: #1e293b;
+      --table-row-alt: rgba(255, 255, 255, 0.02);
+      --nav-pill-bg: #1e293b;
+      --timer-bg: #1e1b4b;
+      --timer-border: #4338ca;
+      --timer-text: #a5b4fc;
+      --mnemonic-bg: #2e1065;
+      --mnemonic-text: #d8b4fe;
+      --mnemonic-border: #a855f7;
+    }
+
+    :root[data-theme="light"] {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-alt: #f1f5f9;
+      --border: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --primary: #0284c7;
+      --accent: #38bdf8;
+      --success: #047857;
+      --danger: #b91c1c;
+      --purple: #7e22ce;
+      --highlight: #854d0e;
+      --highlight-bg: #fef08a;
+      --header-bg: rgba(255, 255, 255, 0.96);
+      --table-header: #e2e8f0;
+      --table-row-alt: #f8fafc;
+      --nav-pill-bg: #e2e8f0;
+      --timer-bg: #e0e7ff;
+      --timer-border: #818cf8;
+      --timer-text: #3730a3;
+      --mnemonic-bg: #f3e8ff;
+      --mnemonic-text: #6b21a8;
+      --mnemonic-border: #c084fc;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+      font-size: 13px;
+      padding-bottom: 50px;
+    }
+
+    /* ----------------------------------------------------
+       STICKY HEADER & NAV
+    ---------------------------------------------------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 16px;
+    }
+    .header-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .logo-area { display: flex; align-items: center; gap: 8px; }
+    .logo-icon {
+      background: var(--accent);
+      color: #000;
+      font-weight: 900;
+      font-size: 16px;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-title h1 { font-size: 15px; font-weight: 800; color: var(--text); }
+    .logo-title p { font-size: 10.5px; color: var(--text-muted); }
+    
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .timer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--timer-bg);
+      border: 1px solid var(--timer-border);
+      color: var(--timer-text);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 12px;
+      font-family: monospace;
+    }
+    .ctrl-btn {
+      background: var(--nav-pill-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 4px 9px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .ctrl-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 220px;
+      max-width: 380px;
+    }
+    .search-box input {
+      width: 100%;
+      background: var(--card-alt);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      outline: none;
+    }
+    .search-box input:focus { border-color: var(--primary); }
+
+    /* Nav Bar */
+    .nav-bar {
+      max-width: 1400px;
+      margin: 6px auto 0;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .nav-bar::-webkit-scrollbar { display: none; }
+    .nav-pill {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--nav-pill-bg);
+      white-space: nowrap;
+      border: 1px solid transparent;
+    }
+    .nav-pill:hover {
+      color: #fff;
+      background: var(--primary);
+    }
+
+    /* ----------------------------------------------------
+       LAYOUT & CARDS
+    ---------------------------------------------------- */
+    .container {
+      max-width: 1400px;
+      margin: 14px auto;
+      padding: 0 12px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 14px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .card-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .badge {
+      font-size: 9.5px;
+      padding: 1.5px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      border: 1px solid currentColor;
+    }
+    .badge-amber { color: var(--accent); }
+    .badge-sky { color: var(--primary); }
+    .badge-green { color: var(--success); }
+    .badge-rose { color: var(--danger); }
+    .badge-purple { color: var(--purple); }
+
+    .dense-box {
+      background: var(--card-alt);
+      border-left: 3px solid var(--primary);
+      padding: 7px 10px;
+      border-radius: 0 5px 5px 0;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    .dense-box.accent { border-left-color: var(--accent); }
+    .dense-box.green { border-left-color: var(--success); }
+    .dense-box.rose { border-left-color: var(--danger); }
+    .dense-box.purple { border-left-color: var(--purple); }
+
+    .dense-box h4 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    ul.dense-list { list-style: none; }
+    ul.dense-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 3.5px;
+      color: var(--text);
+      font-size: 11.5px;
+    }
+    ul.dense-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Date Prominence Badge */
+    .date-badge {
+      background: var(--accent);
+      color: #000;
+      padding: 1.5px 6px;
+      border-radius: 4px;
+      font-weight: 900;
+      font-family: monospace;
+      font-size: 11px;
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    .highlight {
+      background: var(--highlight-bg);
+      color: var(--highlight);
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+    .mnemonic {
+      background: var(--mnemonic-bg);
+      color: var(--mnemonic-text);
+      border: 1px dashed var(--mnemonic-border);
+      padding: 3px 7px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-family: monospace;
+      font-size: 11px;
+      display: inline-block;
+      margin: 3px 0;
+    }
+
+    /* Tables */
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+      margin-top: 6px;
+    }
+    table.data-table th, table.data-table td {
+      border: 1px solid var(--border);
+      padding: 5px 7px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.data-table th {
+      background: var(--table-header);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 11px;
+    }
+    table.data-table tr:nth-child(even) { background: var(--table-row-alt); }
+    .pyq-tag {
+      font-size: 9px;
+      background: var(--highlight-bg);
+      color: var(--highlight);
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-weight: 800;
+      margin-right: 4px;
+      border: 1px solid var(--border);
+    }
+    .trap-tag {
+      font-size: 9px;
+      background: rgba(239, 68, 68, 0.2);
+      color: var(--danger);
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-weight: 800;
+      margin-right: 4px;
+      border: 1px solid var(--danger);
+    }
+    .hidden { display: none !important; }
+
+    /* ----------------------------------------------------
+       PRINT / PDF OPTIMISED CSS (A4 Optimized from File 1)
+    ---------------------------------------------------- */
+    @page { size: A4 portrait; margin: 8mm 8mm 9mm 8mm; }
+
+    @media print {
+      * { transition: none !important; }
+      html, body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      body {
+        font-size: 8.7pt !important;
+        line-height: 1.22 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      header, .nav-bar, .search-box, .header-actions, .timer-badge, .ctrl-btn {
+        display: none !important;
+      }
+
+      .container {
+        display: block !important;
+        max-width: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .card {
+        background: #fff !important;
+        border: 0.55pt solid #555 !important;
+        border-radius: 2pt !important;
+        box-shadow: none !important;
+        padding: 4.5pt 5.5pt !important;
+        margin: 0 0 5pt 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+
+      .card-title {
+        color: #000 !important;
+        font-size: 10pt !important;
+        line-height: 1.12 !important;
+        border-bottom: 0.7pt solid #000 !important;
+        padding-bottom: 2.5pt !important;
+        margin-bottom: 4pt !important;
+        break-after: avoid;
+      }
+
+      .grid-2 {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 4pt !important;
+        align-items: start !important;
+      }
+      .grid-3 {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 4pt !important;
+      }
+
+      .dense-box {
+        background: #fafafa !important;
+        border-left: 1.5pt solid #444 !important;
+        border-top: 0.35pt solid #bbb !important;
+        border-right: 0.35pt solid #bbb !important;
+        border-bottom: 0.35pt solid #bbb !important;
+        border-radius: 0 2pt 2pt 0 !important;
+        padding: 3pt 4pt !important;
+        margin: 0 0 3pt 0 !important;
+        font-size: 8.2pt !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .dense-box h4 {
+        color: #000 !important;
+        font-size: 8.8pt !important;
+        line-height: 1.12 !important;
+        margin-bottom: 2pt !important;
+      }
+      ul.dense-list li {
+        color: #111 !important;
+        font-size: 7.8pt !important;
+        line-height: 1.18 !important;
+        margin-bottom: 1.3pt !important;
+        padding-left: 9pt !important;
+      }
+      ul.dense-list li::before { color: #000 !important; }
+
+      .date-badge {
+        background: #000 !important;
+        color: #fff !important;
+        border: 0.5pt solid #000 !important;
+        padding: 0.5pt 2.5pt !important;
+        font-size: 7.4pt !important;
+      }
+      .highlight {
+        background: none !important;
+        color: #000 !important;
+        font-weight: 800 !important;
+        text-decoration: underline !important;
+        padding: 0 !important;
+      }
+      .mnemonic {
+        background: #fff !important;
+        color: #000 !important;
+        border: 0.6pt solid #000 !important;
+        padding: 1pt 3pt !important;
+        margin: 1pt 0 !important;
+        font-size: 7.5pt !important;
+      }
+      .badge {
+        font-size: 6.8pt !important;
+        padding: 0.5pt 3pt !important;
+        border: 0.5pt solid #000 !important;
+        color: #000 !important;
+      }
+
+      table.data-table {
+        width: 100% !important;
+        font-size: 7.6pt !important;
+        margin-top: 3pt !important;
+        border: 0.6pt solid #333 !important;
+      }
+      table.data-table th, table.data-table td {
+        border: 0.35pt solid #555 !important;
+        padding: 2pt 3pt !important;
+        color: #000 !important;
+        line-height: 1.16 !important;
+      }
+      table.data-table th {
+        background: #e9e9e9 !important;
+        font-size: 7.5pt !important;
+      }
+      table.data-table tr:nth-child(even) { background: #f8f8f8 !important; }
+      table.data-table tr { break-inside: avoid; page-break-inside: avoid; }
+      thead { display: table-header-group; }
+
+      .pyq-tag, .trap-tag {
+        font-size: 6.5pt !important;
+        background: #eee !important;
+        color: #000 !important;
+        padding: 0.5pt 2pt !important;
+        border: 0.35pt solid #555 !important;
+      }
+
+      h4 { break-after: avoid; page-break-after: avoid; }
+      .card-title, h4 { break-inside: avoid; page-break-inside: avoid; }
+      p, li { orphans: 2; widows: 2; }
+      section { break-before: auto; page-break-before: auto; }
+    }
+
+    @media (max-width: 768px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .header-wrap { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-wrap">
+    <div class="logo-area">
+      <div class="logo-icon">⚔️</div>
+      <div class="logo-title">
+        <h1>Modern History &amp; Historic Battles: 1-Hour Crash Cheat Sheet</h1>
+        <p>Comprehensive PSSSB / PPSC Syllabus: Chronology (1800–1947), Punjab Links &amp; All-Era Battle Matrix</p>
+      </div>
+    </div>
+    
+    <div class="header-actions">
+      <!-- 60m Countdown Timer -->
+      <div class="timer-badge" id="examTimer">
+        ⏱️ <span id="timeDisplay">60:00</span>
+        <button onclick="toggleTimer()" style="background:none; border:none; color:inherit; cursor:pointer; font-weight:bold; margin-left:2px;" title="Pause/Resume">⏯</button>
+        <button onclick="resetTimer()" style="background:none; border:none; color:inherit; cursor:pointer; font-weight:bold;" title="Reset 60m">↺</button>
+      </div>
+
+      <!-- Theme Switcher -->
+      <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" title="Toggle Light/Dark Theme">
+        <span id="themeIcon">☀️</span> <span id="themeText">Light</span>
+      </button>
+
+      <!-- Print Button -->
+      <button class="ctrl-btn" onclick="window.print()" title="Print / Export to PDF">
+        🖨️ Print
+      </button>
+    </div>
+
+    <!-- Live Search -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Instant Search (e.g. 1919, Dalhousie, Hydaspes, Tarain, Ghadar)..." onkeyup="liveSearch()">
+    </div>
+  </div>
+
+  <nav class="nav-bar">
+    <a href="#sec-wars-master" class="nav-pill">⚔️ Comprehensive Battle Matrix (Vedic to 1999)</a>
+    <a href="#sec-era1" class="nav-pill">1. 1800–1856: Company &amp; Punjab</a>
+    <a href="#sec-era2" class="nav-pill">2. 1857–1884: Revolt &amp; Crown Rule</a>
+    <a href="#sec-era3" class="nav-pill">3. 1885–1905: Rise of INC &amp; Acts</a>
+    <a href="#sec-era4" class="nav-pill">4. 1905–1918: Swadeshi &amp; Ghadar</a>
+    <a href="#sec-era5" class="nav-pill">5. 1919–1934: Gandhian &amp; Akali Era</a>
+    <a href="#sec-era6" class="nav-pill">6. 1935–1947: Independence &amp; Partition</a>
+    <a href="#sec-tables" class="nav-pill">7. Quick-Reference Tables &amp; Traps</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <!-- ====================================================
+       NEW COMPREHENSIVE SECTION: ALL IMPORTANT WARS IN INDIAN HISTORY
+       ==================================================== -->
+  <section class="card searchable" id="sec-wars-master">
+    <div class="card-title">
+      <span>Master Chronology of Landmark Battles in Indian History (Vedic Age to Modern India)</span>
+      <span class="badge badge-rose">All-Era Military Matrix</span>
+    </div>
+
+    <div class="dense-box rose">
+      <h4>High-Yield Exam Focus: Strategic Engagements, Dates &amp; Belligerents</h4>
+      <p style="font-size:11.5px; margin-bottom: 4px;">
+        Exhaustive chronological inventory of decisive military engagements from the Rigvedic era to post-independence wars, specifically curated for competitive examinations.
+      </p>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th style="width: 140px;">War / Battle</th>
+          <th style="width: 120px;">Date / Period</th>
+          <th style="width: 240px;">Opponents (Belligerents)</th>
+          <th>Decisive Outcome, Treaty &amp; Exam Signposts</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Ancient Era -->
+        <tr>
+          <td><strong>Battle of the Ten Kings</strong> (Dasrajan Yudh)</td>
+          <td><span class="date-badge">c. 14th c. BCE</span></td>
+          <td>King Sudas (Bharata Trtsu Tribe) vs. Confederation of 10 Aryan/Non-Aryan tribes</td>
+          <td><span class="pyq-tag">Rigveda</span> Fought on banks of River <strong>Parushni (Ravi)</strong>. Sudas won under sage Vashistha's guidance, establishing Bharata supremacy.[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of the Hydaspes</strong></td>
+          <td><span class="date-badge">326 BCE</span></td>
+          <td>Alexander the Great (Macedon) vs. King Porus (Paurava Kingdom)</td>
+          <td>Fought on River <strong>Jhelum (Vitasta/Hydaspes)</strong>[cite: 1]. Alexander won with tactical crossing; impressed by Porus's bravery, restored his kingdom. Soldiers mutinied at River Beas (Hyphasis)[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>Kalinga War</strong></td>
+          <td><span class="date-badge">261 BCE</span></td>
+          <td>Emperor Ashoka (Maurya Empire) vs. State of Kalinga (modern Odisha)</td>
+          <td>Massive slaughter recorded in <strong>Rock Edict XIII</strong>. Prompted Ashoka's transition from <em>Bherighosha</em> (war drum) to <em>Dhammaghosha</em> (moral law) and adoption of Buddhism.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Koppam</strong></td>
+          <td><span class="date-badge">1054 CE</span></td>
+          <td>Rajendra Chola II vs. Someshvara I (Western Chalukyas)</td>
+          <td>Rajadhiraja Chola was killed on elephant back; brother Rajendra Chola II crowned on battlefield and decisively routed Chalukyas.</td>
+        </tr>
+        
+        <!-- Medieval Era & Sultanate -->
+        <tr>
+          <td><strong>First Battle of Tarain</strong></td>
+          <td><span class="date-badge">1191 CE</span></td>
+          <td>Prithviraj Chauhan (Chahamana) vs. Muhammad Ghori (Ghurid)</td>
+          <td>Prithviraj Chauhan decisively defeated and injured Muhammad Ghori at Tarain (near Karnal/Thanesar).</td>
+        </tr>
+        <tr>
+          <td><strong>Second Battle of Tarain</strong></td>
+          <td><span class="date-badge">1192 CE</span></td>
+          <td>Muhammad Ghori vs. Prithviraj Chauhan</td>
+          <td><span class="pyq-tag">Turning Point</span> Ghori employed mobile horse archers; Chauhan captured and killed. Established Muslim rule in North India; Qutb-ud-din Aibak became governor.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Chandwar</strong></td>
+          <td><span class="date-badge">1194 CE</span></td>
+          <td>Muhammad Ghori vs. Jaichand (Gahadavala King of Kannauj)</td>
+          <td>Ghori defeated Jaichand; extended Turkish suzerainty over Benaras and the Gangetic plain.</td>
+        </tr>
+
+        <!-- Mughal Battles & Panipat Series -->
+        <tr>
+          <td><strong>First Battle of Panipat</strong></td>
+          <td><span class="date-badge">21 April 1526</span></td>
+          <td>Babur (Mughal/Timurid) vs. Ibrahim Lodhi (Delhi Sultanate)</td>
+          <td><span class="highlight">Foundation of Mughal Empire</span>. Babur utilized gunpowder, cannons, and <em>Tulghuma</em> (flanking) strategy. Ibrahim Lodhi died on battlefield.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Khanwa</strong></td>
+          <td><span class="date-badge">16 March 1527</span></td>
+          <td>Babur vs. Rana Sanga of Mewar</td>
+          <td>Babur declared <em>Jihad</em>, assumed title <em>Ghazi</em>, and secured supremacy in northern India.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Chausa</strong></td>
+          <td><span class="date-badge">26 June 1539</span></td>
+          <td>Sher Shah Suri vs. Humayun</td>
+          <td>Humayun defeated and escaped by jumping into Ganges (saved by Nizam water-carrier). Sher Shah took imperial title.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Kannauj (Bilgram)</strong></td>
+          <td><span class="date-badge">17 May 1540</span></td>
+          <td>Sher Shah Suri vs. Humayun</td>
+          <td>Humayun routed; driven into exile to Persia for 15 years. Established Second Afghan Empire (Sur Empire).</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Sirhind</strong></td>
+          <td><span class="date-badge">22 June 1555</span></td>
+          <td>Humayun &amp; Bairam Khan vs. Sikandar Shah Suri</td>
+          <td>Mughals won; Humayun recovered Delhi and Agra thrones.</td>
+        </tr>
+        <tr>
+          <td><strong>Second Battle of Panipat</strong></td>
+          <td><span class="date-badge">5 Nov 1556</span></td>
+          <td>Bairam Khan / Young Akbar vs. Hemu (Hemchandra Vikramaditya)</td>
+          <td>Hemu struck in eye by stray arrow while winning; Mughals captured and executed him, re-establishing Mughal supremacy.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Talikota (Rakshasi-Tangadi)</strong></td>
+          <td><span class="date-badge">23 Jan 1565</span></td>
+          <td>Vijayanagara Empire (Aliya Rama Raya) vs. Deccan Sultanates coalition</td>
+          <td>Deccan Sultanates (Bijapur, Golconda, Ahmadnagar, Bidar) sacked and ruined the capital city of Vijayanagara (Hampi).</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Haldighati</strong></td>
+          <td><span class="date-badge">18 June 1576</span></td>
+          <td>Man Singh I &amp; Asaf Khan (Mughals) vs. Maharana Pratap (Mewar)</td>
+          <td>Fierce clash in Aravallis; Maharana's horse Chetak martyred. Mewar maintained fierce guerrilla resistance.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Samugarh</strong></td>
+          <td><span class="date-badge">29 May 1658</span></td>
+          <td>Aurangzeb &amp; Murad Baksh vs. Dara Shikoh</td>
+          <td>Decisive Mughal war of succession. Dara Shikoh defeated; Aurangzeb imprisoned Shah Jahan at Agra Fort and seized throne.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Saraighat</strong></td>
+          <td><span class="date-badge">1671 CE</span></td>
+          <td>Lachit Borphukan (Ahom Kingdom) vs. Ram Singh I (Mughals)</td>
+          <td>River battle fought on Brahmaputra. Ahom forces successfully repulsed massive Mughal imperial expansion into Assam.</td>
+        </tr>
+
+        <!-- Sikh Early Battles & Karnal -->
+        <tr>
+          <td><strong>Battle of Chappar Chiri</strong></td>
+          <td><span class="date-badge">12 May 1710</span></td>
+          <td>Baba Banda Singh Bahadur vs. Wazir Khan (Subahdar of Sirhind)</td>
+          <td>Wazir Khan killed by Fateh Singh[cite: 1]; Sikhs captured Sirhind, establishing 1st sovereign Sikh state with capital at Lohgarh[cite: 1].</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Karnal</strong></td>
+          <td><span class="date-badge">24 Feb 1739</span></td>
+          <td>Nadir Shah (Afsharid Persia) vs. Muhammad Shah 'Rangeela' (Mughal)</td>
+          <td>Nadir Shah defeated imperial Mughal forces in 3 hours; ransacked Delhi, looted Peacock Throne and Koh-i-Noor.</td>
+        </tr>
+        <tr>
+          <td><strong>Third Battle of Panipat</strong></td>
+          <td><span class="date-badge">14 Jan 1761</span></td>
+          <td>Ahmad Shah Abdali (Durrani) vs. Sadashivrao Bhau &amp; Vishwasrao (Marathas)</td>
+          <td>Catastrophic Maratha defeat; halted Maratha imperial advance to the north, clearing space for British East India Company.</td>
+        </tr>
+
+        <!-- British Expansion: Plassey, Buxar, Carnatic, Mysore, Maratha -->
+        <tr>
+          <td><strong>Battle of Plassey</strong></td>
+          <td><span class="date-badge">23 June 1757</span></td>
+          <td>Robert Clive (EIC) vs. Siraj-ud-Daulah (Nawab of Bengal)</td>
+          <td><span class="highlight">Start of British Political Rule</span>. Mir Jafar betrayed the Nawab. British gained revenue control over 24 Parganas.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Wandiwash</strong></td>
+          <td><span class="date-badge">22 Jan 1760</span></td>
+          <td>Sir Eyre Coote (British) vs. Comte de Lally (French)</td>
+          <td>3rd Carnatic War climax. Crushed French territorial ambitions in India; ended with Treaty of Paris (1763).</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Buxar</strong></td>
+          <td><span class="date-badge">22 Oct 1764</span></td>
+          <td>Major Hector Munro (EIC) vs. Mir Qasim, Shuja-ud-Daula, Shah Alam II</td>
+          <td><span class="pyq-tag">Crucial Milestone</span> Defeated combined tripartite alliance. Resulted in <strong>Treaty of Allahabad (1765)</strong> granting <em>Diwani rights</em> of Bengal, Bihar, and Orissa to British.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Porto Novo</strong></td>
+          <td><span class="date-badge">1 July 1781</span></td>
+          <td>Sir Eyre Coote (EIC) vs. Hyder Ali (Kingdom of Mysore)</td>
+          <td>2nd Anglo-Mysore War; Coote checked Mysore's advance. Hyder Ali died in 1782; succeeded by Tipu Sultan.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Seringapatam</strong></td>
+          <td><span class="date-badge">4 May 1799</span></td>
+          <td>Lord Wellesley &amp; Gen. Harris vs. Tipu Sultan (Tiger of Mysore)</td>
+          <td>4th Anglo-Mysore War; Tipu Sultan died defending the breached fort. Mysore placed under Wodeyar dynasty via Subsidiary Alliance.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Assaye</strong></td>
+          <td><span class="date-badge">23 Sept 1803</span></td>
+          <td>Arthur Wellesley (later Duke of Wellington) vs. Maratha Empire (Scindia &amp; Bhonsle)</td>
+          <td>2nd Anglo-Maratha War; bloody British victory breaking Maratha northern army. Led to Treaty of Deogaon and Surji-Anjangaon.</td>
+        </tr>
+        <tr>
+          <td><strong>Battle of Khadki (Kirkee)</strong></td>
+          <td><span class="date-badge">5 Nov 1817</span></td>
+          <td>British EIC vs. Peshwa Baji Rao II</td>
+          <td>3rd Anglo-Maratha War. Peshwaship abolished; Baji Rao II pensioned off to Bithoor (Kanpur). Maratha empire extinguished.</td>
+        </tr>
+
+        <!-- Anglo-Sikh Wars (1845–46 & 1848–49) -->
+        <tr>
+          <td><strong>First Anglo-Sikh War</strong> (5 Battles)</td>
+          <td><span class="date-badge">Dec 1845 – Feb 1846</span></td>
+          <td>British EIC (Sir Hugh Gough, Hardinge) vs. Sikh Empire (Sarkar-i-Khalsa)</td>
+          <td>Battles: <strong>Mudki, Ferozeshah, Baddowal, Aliwal, Sobraon</strong>[cite: 1, 2]. Betrayal of commanders Tej Singh &amp; Lal Singh[cite: 1, 2]. Ended with <strong>Treaty of Lahore (9 Mar 1846)</strong>[cite: 1, 2]. Kashmir sold to Gulab Singh via Treaty of Amritsar (16 Mar 1846)[cite: 1, 2].</td>
+        </tr>
+        <tr>
+          <td><strong>Second Anglo-Sikh War</strong> (4 Battles)</td>
+          <td><span class="date-badge">1848 – 1849</span></td>
+          <td>British EIC (Lord Gough, Dalhousie) vs. Sikh Empire (Diwan Mulraj, Sher Singh)</td>
+          <td>Battles: <strong>Ramnagar, Chillianwala, Multan, Gujrat</strong>[cite: 1, 2]. Decisive artillery duel at Gujrat ("Battle of the Guns")[cite: 1, 2]. Formal annexation of Punjab on <span class="highlight">29 March 1849</span>[cite: 1, 2].</td>
+        </tr>
+
+        <!-- Post-1947 Wars -->
+        <tr>
+          <td><strong>First Indo-Pakistani War</strong></td>
+          <td><span class="date-badge">1947 – 1948</span></td>
+          <td>Dominion of India vs. Dominion of Pakistan (Tribal Lashkars)</td>
+          <td>Followed Maharaja Hari Singh's signing of Instrument of Accession (26 Oct 1947). Ceasefire on 1 Jan 1949 created Line of Control (LoC).</td>
+        </tr>
+        <tr>
+          <td><strong>Sino-Indian War</strong></td>
+          <td><span class="date-badge">Oct – Nov 1962</span></td>
+          <td>Republic of India vs. People's Republic of China</td>
+          <td>Clashes along Aksai Chin and NEFA (Arunachal Pradesh). Unilateral Chinese ceasefire 21 Nov 1962.</td>
+        </tr>
+        <tr>
+          <td><strong>Second Indo-Pakistani War</strong></td>
+          <td><span class="date-badge">Aug – Sept 1965</span></td>
+          <td>Republic of India vs. Islamic Republic of Pakistan</td>
+          <td>Operation Gibraltar repulsed; tank battles at Asal Uttar (Punjab). Mediated via <strong>Tashkent Declaration (10 Jan 1966)</strong> by Lal Bahadur Shastri &amp; Ayub Khan.</td>
+        </tr>
+        <tr>
+          <td><strong>Third Indo-Pakistani War</strong></td>
+          <td><span class="date-badge">3–16 Dec 1971</span></td>
+          <td>India &amp; Mukti Bahini vs. Pakistan Armed Forces</td>
+          <td>Historic surrender of 93,000 Pakistani soldiers under Lt. Gen. Niazi to Lt. Gen. J.S. Aurora. <strong>Liberation of Bangladesh</strong>. Signed <strong>Shimla Agreement (1972)</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Kargil Conflict (Operation Vijay)</strong></td>
+          <td><span class="date-badge">May – July 1999</span></td>
+          <td>Republic of India vs. Pakistan Army Infiltrators</td>
+          <td>High-altitude combat in Dras, Batalik, and Tiger Hill sectors. Complete recapture celebrated as <em>Kargil Vijay Diwas</em> (26 July).</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ====================================================
+       ERA 1: 1800 - 1856 (COMPANY & PUNJAB ANNEXATION)
+       ==================================================== -->
+  <section class="card searchable" id="sec-era1">
+    <div class="card-title">
+      <span>1. Early 19th Century &amp; Punjab Annexation (1800 – 1856)</span>
+      <span class="badge badge-sky">Company Hegemony</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="dense-box">
+        <h4><span class="date-badge">25 April 1809</span> Treaty of Amritsar (Ranjit Singh &amp; Metcalfe)</h4>
+        <ul class="dense-list">
+          <li><strong>Signatories:</strong> Maharaja Ranjit Singh &amp; Charles T. Metcalfe (on behalf of Gov-Gen Lord Minto I)[cite: 1, 2].</li>
+          <li><strong>Strategic Frontier:</strong> Fixed <span class="highlight">Sutlej River</span> as the strict boundary between Sikh Empire and British territories[cite: 1, 2]. British placed Cis-Sutlej states (Patiala, Nabha, Jind) under protection[cite: 1, 2].</li>
+          <li><strong>Exam Signpost:</strong> Ranjit Singh reoriented conquests westward: Multan (1818), Kashmir (1819), and Peshawar (1834)[cite: 1, 2].</li>
+        </ul>
+        <div class="mnemonic">MNEMONIC: Metcalfe Met Maharaja at Amritsar[cite: 2]</div>
+        <p style="font-size:11px; margin-top:2px;"><span class="trap-tag">TRAP</span> Do not confuse with Treaty of Amritsar (1846) where British sold Kashmir to Gulab Singh Dogra for 75 lakh rupees[cite: 1, 2].</p>
+      </div>
+
+      <div class="dense-box accent">
+        <h4><span class="date-badge">1813 &amp; 1833</span> Charter Acts &amp; Administrative Consolidation</h4>
+        <ul class="dense-list">
+          <li><strong>Charter Act 1813:</strong> Terminated EIC commercial trade monopoly (retained only <strong>tea</strong> and <strong>China trade</strong>)[cite: 2]. Sanctioned ₹1 Lakh annually for Indian education[cite: 2]; allowed Christian missionaries[cite: 2].</li>
+          <li><strong>Charter Act 1833:</strong> Completely abolished commercial operations[cite: 2]. Designated Governor-General of Bengal as <span class="highlight">Governor-General of India</span> (Lord William Bentinck was first)[cite: 2]. Macaulay appointed 1st Law Member[cite: 2].</li>
+        </ul>
+        <p style="font-size:11px;"><span class="trap-tag">TRAP</span> 1st GG of Bengal = Warren Hastings (1773); 1st GG of India = William Bentinck (1833)[cite: 2].</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="dense-box green">
+        <h4><span class="date-badge">1828 – 1829</span> Social Reforms &amp; Bengal Regulation XVII</h4>
+        <ul class="dense-list">
+          <li><strong>Brahmo Sabha (20 Aug 1828):</strong> Founded by Raja Ram Mohan Roy in Calcutta[cite: 2]; title 'Raja' bestowed by Mughal Emperor Akbar II[cite: 2]. Opposed polytheism, idolatry, and caste abuses[cite: 2].</li>
+          <li><strong>Abolition of Sati (4 Dec 1829):</strong> Lord William Bentinck promulgated <span class="highlight">Regulation XVII</span> declaring Sati culpable homicide[cite: 2]. Extended to Madras &amp; Bombay in 1830[cite: 2].</li>
+        </ul>
+      </div>
+
+      <div class="dense-box purple">
+        <h4><span class="date-badge">27 June 1839</span> Demise of Maharaja Ranjit Singh &amp; Court Instability</h4>
+        <ul class="dense-list">
+          <li><strong>Rule:</strong> Sher-e-Punjab ruled 1799–1839; crowned on Baisakhi 1801 by Baba Sahib Singh Bedi[cite: 1, 2].</li>
+          <li><strong>Destabilisation:</strong> Demise triggered palace factionalism between Sandhawalias and Dogra brothers[cite: 2]; rapid succession: Kharak Singh &rarr; Nau Nihal Singh &rarr; Sher Singh &rarr; minor Duleep Singh (1843)[cite: 1, 2].</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="dense-box rose">
+        <h4><span class="date-badge">Dec 1845 – Feb 1846</span> 1st Anglo-Sikh War (Gov-Gen Lord Hardinge)</h4>
+        <div class="mnemonic">BATTLE ORDER: M-F-B-A-S (Mudki &rarr; Ferozeshah &rarr; Baddowal &rarr; Aliwal &rarr; Sobraon)[cite: 1, 2]</div>
+        <ul class="dense-list">
+          <li><strong>Mudki (18 Dec 1845):</strong> Lal Singh ordered fire and abandoned Sikh ranks[cite: 1].</li>
+          <li><strong>Ferozeshah (21 Dec 1845):</strong> Lord Hardinge's "Night of Terrors"; British saved by Tej Singh's treachery[cite: 1].</li>
+          <li><strong>Baddowal (21 Jan 1846):</strong> Ranjodh Singh Majithia captured British baggage trains[cite: 1].</li>
+          <li><strong>Aliwal (28 Jan 1846):</strong> Sir Harry Smith defeated Ranjodh Singh Majithia[cite: 1, 2].</li>
+          <li><strong>Sobraon (10 Feb 1846):</strong> <span class="highlight">"Waterloo of Punjab"</span>. Sardar Sham Singh Atariwala attained martyrdom[cite: 1].</li>
+          <li><strong>Treaty of Lahore (9 Mar 1846):</strong> Jalandhar Doab ceded; Henry Lawrence stationed as Resident[cite: 1, 2].</li>
+        </ul>
+      </div>
+
+      <div class="dense-box">
+        <h4><span class="date-badge">1848 – 1849</span> 2nd Anglo-Sikh War &amp; Annexation (Lord Dalhousie)</h4>
+        <div class="mnemonic">BATTLE ORDER: R-C-M-G (Ramnagar &rarr; Chillianwala &rarr; Multan &rarr; Gujrat)[cite: 1, 2]</div>
+        <ul class="dense-list">
+          <li><strong>Origins:</strong> Revolts of Diwan Mulraj (Multan) &amp; Chattar Singh Attariwala (Hazara)[cite: 1, 2].</li>
+          <li><strong>Chillianwala (13 Jan 1849):</strong> High British casualties on River Jhelum; Lord Gough criticized[cite: 1, 2].</li>
+          <li><strong>Gujrat (21 Feb 1849):</strong> <span class="highlight">"Battle of the Guns"</span>. Overwhelming British artillery triumphed[cite: 1, 2].</li>
+          <li><strong>Annexation (29 March 1849):</strong> Proclaimed by Lord Dalhousie[cite: 1, 2]. Governed by 3-member <strong>Board of Administration (1849–53)</strong>: Henry Lawrence (Pres.), John Lawrence, Charles Mansel[cite: 1, 2]. Replaced in 1853 by Chief Commissioner John Lawrence[cite: 1, 2].</li>
+          <li><strong>Wood's Despatch (July 1854):</strong> "Magna Carta of Indian Education" recommending vernacluar primaries, Anglo-vernacular schools, and collegiate universities[cite: 2].</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       ERA 2: 1857 - 1884 (REVOLT & CROWN RULE)
+       ==================================================== -->
+  <section class="card searchable" id="sec-era2">
+    <div class="card-title">
+      <span>2. Revolt of 1857 &amp; Crown Rule Transition (1857 – 1884)</span>
+      <span class="badge badge-amber">Revolt to Early Crown</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="dense-box rose">
+        <h4><span class="date-badge">10 May 1857</span> The Great Revolt of 1857 (Lord Canning)</h4>
+        <ul class="dense-list">
+          <li><strong>Outbreak:</strong> Sparked at Meerut following Mangal Pandey's defiance at Barrackpore (29 March 1857, 34th BNI) over Enfield P-53 greased cartridges[cite: 2].</li>
+          <li><strong>Key Centres &amp; Leaders:</strong> Delhi (Bahadur Shah II / Bakht Khan), Kanpur (Nana Saheb / Tantia Tope), Lucknow (Begum Hazrat Mahal), Jhansi (Rani Lakshmibai), Arrah (Kunwar Singh)[cite: 2].</li>
+          <li><strong>Punjab Link:</strong> Cis-Sutlej rulers (Patiala, Jind, Nabha, Kapurthala) aided British logistic lines[cite: 2]. Regiments mutinied at Ferozepur, Jalandhar, and Ludhiana[cite: 2]. John Lawrence mobilized the "Punjab Movable Column" to recapture Delhi[cite: 2].</li>
+          <li><strong>Act of 1858 (1 Nov 1858):</strong> EIC abolished[cite: 2]; Crown direct rule instituted[cite: 2]. Secretary of State for India established (15-member council)[cite: 2]. Canning proclaimed Queen Victoria's charter at <span class="highlight">Allahabad Durbar</span>[cite: 2].</li>
+        </ul>
+      </div>
+
+      <div class="dense-box accent">
+        <h4><span class="date-badge">1872 &amp; 1873</span> Socio-Religious Mobilization in Punjab</h4>
+        <ul class="dense-list">
+          <li><strong>Kuka / Namdhari Outbreak (17–18 Jan 1872):</strong> Deputy Comm. L. Cowan blew 66 Kukas from mouths of cannons without trial at Malerkotla[cite: 1, 2]. Baba Ram Singh deported to Rangoon (died 1885)[cite: 2]. <span class="pyq-tag">PYQ</span> Pioneered non-cooperation and boycott decades before Gandhi[cite: 2].</li>
+          <li><strong>Singh Sabha Movement (1 Oct 1873):</strong> Founded at Manji Sahib, Amritsar under Thakur Singh Sandhawalia (Pres.) and Giani Gian Singh (Sec.)[cite: 1, 2]. Countered missionary conversion waves[cite: 1, 2]. Lahore Singh Sabha established 1879 by Prof. Gurmukh Singh and Ditt Singh[cite: 1, 2]. Led to foundation of <strong>Khalsa College Amritsar (1892)</strong>[cite: 1, 2].</li>
+          <li><strong>Arya Samaj (10 April 1875):</strong> Founded by Swami Dayanand Saraswati in Bombay (slogan: <em>"Go Back to the Vedas"</em>)[cite: 2]. Strong mass footing in Punjab after 1877 Lahore visit[cite: 2]. Split 1893: College Party (DAV Lahore 1886: Lala Hansraj, Lala Lajpat Rai) vs. Gurukul Party (Swami Shraddhanand)[cite: 2].</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="dense-box">
+        <h4><span class="date-badge">March 1878</span> Vernacular Press Act &amp; Arms Act (Lord Lytton)</h4>
+        <ul class="dense-list">
+          <li><strong>Gagging Act:</strong> Empowered magistrates to confiscate press equipment of vernacular newspapers publishing seditious contents without right of appeal[cite: 2].</li>
+          <li><strong>Evasion:</strong> <em>Amrita Bazar Patrika</em> turned into an English-language weekly overnight to circumvent the statute[cite: 2].</li>
+          <li><strong>Repeal:</strong> Repealed in 1882 by the liberal successor Lord Ripon[cite: 2].</li>
+        </ul>
+        <div class="mnemonic">MNEMONIC: Lytton Gagged (1878); Ripon Repealed (1882)[cite: 2]</div>
+      </div>
+
+      <div class="dense-box green">
+        <h4><span class="date-badge">1881 &amp; 1882</span> Local Self-Government &amp; Census Reforms</h4>
+        <ul class="dense-list">
+          <li><strong>Lord Ripon's Resolution (1882):</strong> Established elected local bodies and district rural boards[cite: 2]. Lord Ripon venerated as the <span class="highlight">"Father of Local Self-Government in India"</span>[cite: 2].</li>
+          <li><strong>Census of India (1881):</strong> First synchronized synchronous decennial census conducted under Lord Ripon[cite: 2]. (Note: 1st non-synchronous census was held under Lord Mayo in 1872)[cite: 2].</li>
+          <li><strong>Ilbert Bill Controversy (1883):</strong> Sought to authorize Indian magistrates to try Europeans; sparked ferocious Anglo-Indian backlash, proving necessity of national political association[cite: 2].</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       ERA 3: 1885 - 1905 (RISE OF INC & ACTS)
+       ==================================================== -->
+  <section class="card searchable" id="sec-era3">
+    <div class="card-title">
+      <span>3. Early Phase &amp; Rise of Indian National Congress (1885 – 1905)</span>
+      <span class="badge badge-sky">Constitutional Agitation</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="dense-box">
+        <h4><span class="date-badge">28–31 Dec 1885</span> Foundation of Indian National Congress (Lord Dufferin)</h4>
+        <ul class="dense-list">
+          <li><strong>Inaugural Venue:</strong> Gokuldas Tejpal Sanskrit College, Bombay[cite: 2]. (Shifted from Poona due to cholera outbreak)[cite: 2].</li>
+          <li><strong>Key Architect:</strong> Allan Octavian Hume (A.O. Hume, retired civil servant)[cite: 2]. First President: <strong>Womesh Chandra Bonnerjee (W.C. Bonnerjee)</strong>[cite: 2].</li>
+          <li><strong>Attendance:</strong> <strong>72 delegates</strong>[cite: 2]. Punjab representatives included Lala Muralidhar of Ambala ("Grand Old Man of Punjab") and Jaishi Ram[cite: 2].</li>
+        </ul>
+      </div>
+
+      <div class="dense-box accent">
+        <h4><span class="date-badge">1893 &amp; 1900</span> Punjab Engagements &amp; Agrarian Legislation</h4>
+        <ul class="dense-list">
+          <li><strong>9th INC Session at Lahore (27–30 Dec 1893):</strong> First INC session held in Punjab[cite: 2]. Presided by <strong>Dadabhai Naoroji</strong> (recently elected 1st Indian MP to British House of Commons from Finsbury)[cite: 2]. Demanded simultaneous civil service exams[cite: 2].</li>
+          <li><strong>Punjab Alienation of Land Act (1900):</strong> Passed by Lord Curzon[cite: 2]. Barred sale/mortgage of agrarian land to "non-agriculturist" moneylender classes without DC sanction[cite: 2]. Divided Punjabi society into statutory agricultural tribes and trading classes[cite: 2].</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       ERA 4: 1905 - 1918 (SWADESHI, GHADAR & EXTREMISM)
+       ==================================================== -->
+  <section class="card searchable" id="sec-era4">
+    <div class="card-title">
+      <span>4. Swadeshi Movement, Revolutionary Agitation &amp; Ghadar Phase (1905 – 1918)</span>
+      <span class="badge badge-rose">Revolutionary Vanguard</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="dense-box rose">
+        <h4><span class="date-badge">16 Oct 1905</span> Partition of Bengal &amp; The Swadeshi Movement</h4>
+        <ul class="dense-list">
+          <li><strong>Curzon's Scheme:</strong> Bifurcated Bengal into Western Bengal and Eastern Bengal &amp; Assam under pretext of administrative convenience[cite: 2].</li>
+          <li><strong>Reaction:</strong> Swadeshi resolution passed at Calcutta Town Hall (7 Aug 1905)[cite: 2]. Effective date (16 Oct 1905) marked as Day of Mourning and Raksha Bandhan[cite: 2]. Emergence of extremist trio <strong>Lal-Bal-Pal</strong> (Lala Lajpat Rai, Bal Gangadhar Tilak, Bipin Chandra Pal)[cite: 2].</li>
+          <li><strong>Morley-Minto Reforms (1909):</strong> Indian Councils Act 1909 granted <span class="highlight">separate electorates for Muslims</span>[cite: 2]. Lord Minto dubbed "Father of Communal Electorate"[cite: 2].</li>
+        </ul>
+      </div>
+
+      <div class="dense-box accent">
+        <h4><span class="date-badge">March–May 1907</span> Pagri Sambhal Jatta Agitation (Punjab Agrarian Crisis)</h4>
+        <ul class="dense-list">
+          <li><strong>Root Cause:</strong> Peasant uprising against Punjab Colonisation Bill 1906 and Bari Doab canal water rate hikes[cite: 1, 2].</li>
+          <li><strong>Leaders:</strong> <strong>Sardar Ajit Singh</strong> (founded <em>Bharat Mata Society / Anjuman-i-Muhibban-i-Watan</em>) and Sufi Amba Prasad[cite: 1, 2].</li>
+          <li><strong>Anthem:</strong> Famous poem <em>"Pagri Sambhal Jatta"</em> penned by <strong>Banke Dayal</strong> (Editor, <em>Jhang Syal</em>)[cite: 1, 2].</li>
+          <li><strong>Deportation:</strong> Sardar Ajit Singh and Lala Lajpat Rai were deported without trial to Mandalay Jail (Burma) under Regulation III of 1818[cite: 1, 2].</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="dense-box">
+        <h4><span class="date-badge">1 Nov 1913</span> The Ghadar Party &amp; 1915 Armed Uprising</h4>
+        <ul class="dense-list">
+          <li><strong>Foundation:</strong> Set up in San Francisco as <em>Pacific Coast Hindustan Association</em>[cite: 2]. HQ: <strong>Yugantar Ashram</strong>[cite: 1, 2].</li>
+          <li><strong>Leadership:</strong> 1st President: <span class="highlight">Baba Sohan Singh Bhakna</span>; General Secretary: <strong>Lala Har Dayal</strong>[cite: 1, 2].</li>
+          <li><strong>Newspaper:</strong> Weekly paper <em>Ghadar</em>; maiden issue printed on 1 Nov 1913 in <strong>Urdu</strong>, followed by Gurmukhi[cite: 1, 2].</li>
+          <li><strong>Martyrdom:</strong> Planned pan-India mutiny for 21 Feb 1915; betrayed by Kirpal Singh[cite: 2]. 19-year-old <strong>Kartar Singh Sarabha</strong> executed at Lahore Central Jail on <span class="date-badge">16 Nov 1915</span> (Bhagat Singh's supreme role model)[cite: 1, 2].</li>
+        </ul>
+        <p style="font-size:11px;"><span class="trap-tag">TRAP</span> Founder/Gen Sec was Lala Har Dayal, but the 1st President was Baba Sohan Singh Bhakna[cite: 1, 2]!</p>
+      </div>
+
+      <div class="dense-box green">
+        <h4><span class="date-badge">1914 &amp; 1916</span> Komagata Maru Incident &amp; Lucknow Accord</h4>
+        <ul class="dense-list">
+          <li><strong>Komagata Maru (1914):</strong> Japanese vessel chartered by <span class="highlight">Baba Gurdit Singh</span> with 376 passengers to challenge racist Canadian exclusion laws[cite: 1, 2]. Repulsed at Vancouver; docked at Budge Budge (Calcutta) on 29 Sept 1914; British police opened fire, killing 20[cite: 1, 2].</li>
+          <li><strong>Lucknow Pact (Dec 1916):</strong> Joint INC-Muslim League session (Tilak &amp; Jinnah)[cite: 2]. Moderates and Extremists reunited[cite: 2]. Congress conceded separate electorates for Muslims in provincial legislatures[cite: 2].</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       ERA 5: 1919 - 1934 (GANDHIAN MASS MOVEMENTS & AKALI REFORMS)
+       ==================================================== -->
+  <section class="card searchable" id="sec-era5">
+    <div class="card-title">
+      <span>5. Gandhian Mass Movements &amp; Punjab Awakening (1919 – 1934)</span>
+      <span class="badge badge-amber">Mass Satyagraha &amp; Martyrdom</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="dense-box rose">
+        <h4><span class="date-badge">13 April 1919</span> Rowlatt Satyagraha &amp; Jallianwala Bagh Massacre</h4>
+        <ul class="dense-list">
+          <li><strong>Rowlatt Act (March 1919):</strong> Anarchical and Revolutionary Crimes Act; authorized 2-year imprisonment without judicial trial (<em>"No Dalil, No Vakil, No Appeal"</em>)[cite: 2]. Arrest of Dr. Saifuddin Kitchlew &amp; Dr. Satyapal in Amritsar[cite: 1, 2].</li>
+          <li><strong>Massacre:</strong> Baisakhi gathering at Jallianwala Bagh fired upon by <strong>Brigadier-General Reginald Dyer</strong> (1,650 rounds fired)[cite: 1, 2]. Lt. Governor of Punjab was <strong>Sir Michael O'Dwyer</strong>[cite: 1, 2].</li>
+          <li><strong>Protest:</strong> Rabindranath Tagore renounced Knighthood; Mahatma Gandhi relinquished Kaisar-i-Hind medal[cite: 2]. Hunter Commission appointed[cite: 2].</li>
+          <li><strong>Montford Reforms (GOI Act 1919):</strong> Enacted Dyarchy in provincial councils[cite: 2]. Extended separate communal electorates to <strong>Sikhs</strong>[cite: 2].</li>
+        </ul>
+        <p style="font-size:11px;"><span class="trap-tag">TRAP</span> Udham Singh assassinated Lt. Gov. Sir Michael O'Dwyer in London (1940), NOT Brigadier Reginald Dyer[cite: 1, 2]!</p>
+      </div>
+
+      <div class="dense-box accent">
+        <h4><span class="date-badge">1920 – 1925</span> The Akali Movement &amp; Gurdwara Reform Morchas</h4>
+        <ul class="dense-list">
+          <li><strong>Formations (1920):</strong> SGPC constituted 15 Nov 1920 (1st Pres: Sundar Singh Majithia)[cite: 1, 2]; Shiromani Akali Dal formed 14 Dec 1920 (1st Pres: Sarmukh Singh Chubbal)[cite: 1, 2].</li>
+          <li><strong>Nankana Sahib Saka (20 Feb 1921):</strong> Mahant Narain Das massacred 130+ Sikhs under Bhai Lachhman Singh Dharowali[cite: 1, 2].</li>
+          <li><strong>Guru Ka Bagh Morcha (Aug–Nov 1922):</strong> Non-violent resistance over langar wood[cite: 1, 2]; Rev. C.F. Andrews lauded the triumph of moral fortitude[cite: 1, 2].</li>
+          <li><strong>Jaito Da Morcha (1923–25):</strong> Protesting abdication of Maharaja Ripudaman Singh of Nabha[cite: 1, 2]. Jawaharlal Nehru arrested at Jaito in Sept 1923[cite: 1, 2].</li>
+          <li><strong>Sikh Gurdwaras Act (28 July 1925):</strong> Vested control of all historic Sikh shrines in the elected SGPC body[cite: 1, 2].</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="dense-box">
+        <h4><span class="date-badge">1920 – 1927</span> Non-Cooperation Movement &amp; Kakori Action</h4>
+        <ul class="dense-list">
+          <li><strong>Non-Cooperation Movement (1 Aug 1920):</strong> Launched on day of Tilak's demise[cite: 2]. Lala Lajpat Rai presided over Calcutta Special Session (Sept 1920)[cite: 2]. Suspended after Chauri Chaura violence (4 Feb 1922)[cite: 2].</li>
+          <li><strong>Kakori Train Action (9 Aug 1925):</strong> HRA revolutionaries looted British government treasury from 8-Down train near Lucknow[cite: 2]. Ram Prasad Bismil, Ashfaqulla Khan, Roshan Singh, and Rajendra Lahiri hanged in Dec 1927[cite: 2].</li>
+          <li><strong>Naujawan Bharat Sabha (March 1926):</strong> Founded at Lahore by <span class="highlight">Sardar Bhagat Singh</span>, Chhabil Das, and Yashpal to spread socialist ideals[cite: 2].</li>
+        </ul>
+      </div>
+
+      <div class="dense-box purple">
+        <h4><span class="date-badge">1928 – 1931</span> HSRA, Simon Boycott &amp; Lahore Conspiracies</h4>
+        <ul class="dense-list">
+          <li><strong>Simon Commission Boycott (30 Oct 1928):</strong> Lala Lajpat Rai assaulted by SP Scott / ASP Saunders during protest at Lahore Railway Station[cite: 2]. Succumbed on 17 Nov 1928 (<em>"Every blow struck on my head..."</em>)[cite: 2].</li>
+          <li><strong>Saunders Assassination (17 Dec 1928):</strong> Bhagat Singh, Rajguru, and Sukhdev eliminated ASP John P. Saunders in Lahore to avenge Lalaji[cite: 1, 2].</li>
+          <li><strong>Central Assembly Bombing (8 April 1929):</strong> Bhagat Singh &amp; Batukeshwar Dutt threw smoke canisters against Public Safety &amp; Trade Disputes bills[cite: 1, 2].</li>
+          <li><strong>Lahore Session &amp; Purna Swaraj (Dec 1929):</strong> Jawaharlal Nehru presided on banks of River Ravi; unfurled Tricolour on midnight of 31 Dec 1929; pledged 26 Jan 1930 as Independence Day[cite: 1, 2].</li>
+          <li><strong>Shaheedi Diwas (23 March 1931):</strong> Bhagat Singh, Rajguru, and Sukhdev hanged at 7:33 PM in Lahore Central Jail[cite: 1, 2]; cremated at Hussainiwala on Sutlej banks[cite: 1, 2].</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       ERA 6: 1935 - 1947 (ROAD TO INDEPENDENCE & PARTITION)
+       ==================================================== -->
+  <section class="card searchable" id="sec-era6">
+    <div class="card-title">
+      <span>6. Final Push Towards Independence &amp; Partition of India (1935 – 1947)</span>
+      <span class="badge badge-green">Independence &amp; Division</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="dense-box green">
+        <h4><span class="date-badge">1935 &amp; 1937</span> GOI Act 1935 &amp; Unionist Party in Punjab</h4>
+        <ul class="dense-list">
+          <li><strong>GOI Act 1935:</strong> Longest imperial enactment; abolished provincial dyarchy and instituted <strong>Provincial Autonomy</strong>[cite: 2]. Established Federal Court (1937) and RBI (1935)[cite: 2].</li>
+          <li><strong>1937 Elections &amp; Unionist Rule:</strong> In Punjab, the secular cross-communal Unionist Party (founded by Sir Fazl-i-Hussain, Sir Chhotu Ram, Sikandar Hayat Khan) won 95 of 175 seats[cite: 2]. <strong>Sir Sikandar Hayat Khan</strong> became Premier of Punjab (followed by Khizr Hayat Tiwana in 1942)[cite: 2].</li>
+        </ul>
+      </div>
+
+      <div class="dense-box rose">
+        <h4><span class="date-badge">March 1940</span> Lahore Resolution &amp; Udham Singh's Vengeance</h4>
+        <ul class="dense-list">
+          <li><strong>Udham Singh at Caxton Hall (13 March 1940):</strong> Shot dead former Lt. Gov. <strong>Sir Michael O'Dwyer</strong> in London[cite: 1, 2]. Used court pseudonym <span class="highlight">"Ram Mohammad Singh Azad"</span>; executed at Pentonville Prison on 31 July 1940[cite: 1, 2].</li>
+          <li><strong>Lahore / Pakistan Resolution (23 March 1940):</strong> Muslim League session at Minto Park, Lahore drafted by Sikandar Hayat Khan, moved by Fazlul Huq demanding sovereign Muslim states[cite: 2]. Master Tara Singh strongly protested[cite: 2].</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="dense-box accent">
+        <h4><span class="date-badge">1942 – 1945</span> Cripps Mission, Quit India &amp; Simla Conference</h4>
+        <ul class="dense-list">
+          <li><strong>Cripps Mission (March 1942):</strong> Stafford Cripps offered post-war Dominion status and provincial secession option[cite: 2]. Gandhi called it a <em>"Post-dated cheque on a crashing bank"</em>[cite: 2].</li>
+          <li><strong>Quit India Movement (8 Aug 1942):</strong> Passed at Gowalia Tank, Bombay (call: <em>"Do or Die"</em>)[cite: 2]. Top leaders arrested in Operation Zero Hour[cite: 2]. Aruna Asaf Ali hoisted flag[cite: 2]. Boycotted by Unionist Party, Muslim League, and Hindu Mahasabha[cite: 2].</li>
+          <li><strong>Simla Conference (June–July 1945):</strong> Lord Wavell convened talks to reconstitute council; broke down as Jinnah claimed sole right to nominate Muslims[cite: 2].</li>
+        </ul>
+      </div>
+
+      <div class="dense-box">
+        <h4><span class="date-badge">1946 – 1947</span> Cabinet Mission, Radcliffe Award &amp; Freedom</h4>
+        <ul class="dense-list">
+          <li><strong>Cabinet Mission Plan (March–May 1946):</strong> Pethick-Lawrence, Stafford Cripps, A.V. Alexander[cite: 2]. Rejected outright Pakistan; created 3-tier grouping (Section B included Punjab)[cite: 2]. Constituent Assembly formed on this framework[cite: 2].</li>
+          <li><strong>Mountbatten Plan (3 June 1947):</strong> Partition of British India into India and Pakistan; advanced date to 15 August 1947[cite: 2]. Sir Cyril Radcliffe chaired Punjab &amp; Bengal Boundary Commission[cite: 2].</li>
+          <li><strong>15 August 1947:</strong> India achieved Independence[cite: 2]. Punjab partitioned into East Punjab (India) and West Punjab (Pakistan)[cite: 2]. 1st CM of East Punjab: <strong>Dr. Gopi Chand Bhargava</strong>; 1st Governor: <strong>Sir Chandulal Trivedi</strong>[cite: 1, 2].</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       ERA 7: QUICK-REFERENCE TABLES, VICEROYS & MNEMONICS
+       ==================================================== -->
+  <section class="card searchable" id="sec-tables">
+    <div class="card-title">
+      <span>7. High-Yield Quick-Reference Tables, Viceroys &amp; Exam Traps</span>
+      <span class="badge badge-purple">Revision Tables</span>
+    </div>
+
+    <!-- INC Sessions in Punjab Table -->
+    <div class="dense-box purple">
+      <h4>Indian National Congress Sessions Hosted in Punjab</h4>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Year &amp; Venue</th>
+            <th>President</th>
+            <th>PSSSB / PPSC Landmark Significance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1893 (Lahore)</strong>[cite: 2]</td>
+            <td>Dadabhai Naoroji[cite: 2]</td>
+            <td>1st INC session on Punjab soil. Demanded simultaneous ICS exams in India &amp; England.[cite: 2]</td>
+          </tr>
+          <tr>
+            <td><strong>1900 (Lahore)</strong>[cite: 2]</td>
+            <td>N.G. Chandavarkar[cite: 2]</td>
+            <td>Debated agrarian distress and the newly introduced Punjab Alienation of Land Act.[cite: 2]</td>
+          </tr>
+          <tr>
+            <td><strong>1909 (Lahore)</strong>[cite: 2]</td>
+            <td>Madan Mohan Malaviya[cite: 2]</td>
+            <td>Condemned communal separate electorates instituted by Morley-Minto reforms.[cite: 2]</td>
+          </tr>
+          <tr>
+            <td><strong>1919 (Amritsar)</strong>[cite: 2]</td>
+            <td>Motilal Nehru[cite: 2]</td>
+            <td>Solidarity post-Jallianwala Bagh massacre; condemned martial law excesses. Tilak's last session.[cite: 2]</td>
+          </tr>
+          <tr>
+            <td><strong>1929 (Lahore)</strong>[cite: 2]</td>
+            <td>Jawaharlal Nehru[cite: 2]</td>
+            <td><span class="pyq-tag">HIGHEST FREQUENCY</span> Passed <strong>Purna Swaraj</strong> resolution; Tricolour unfurled on River Ravi (31 Dec 1929); declared 26 Jan 1930 as Independence Day.[cite: 2]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Governor-Generals & Viceroys High-Yield Chart -->
+    <div class="grid-2" style="margin-top: 10px;">
+      <div class="dense-box">
+        <h4>Key Governor-Generals &amp; Viceroys for Punjab Exams</h4>
+        <ul class="dense-list">
+          <li><strong>Lord Dalhousie (1848–1856):</strong> Annexed Punjab (29 March 1849)[cite: 1, 2]; Doctrine of Lapse[cite: 2]; 1st Railway Line (Bombay-Thane 1853)[cite: 2]; Wood's Despatch (1854)[cite: 2].</li>
+          <li><strong>Lord Canning (1856–1862):</strong> 1857 Revolt[cite: 2]; Queen's Proclamation at Allahabad (1 Nov 1858)[cite: 2]; Indian Penal Code (1860)[cite: 2].</li>
+          <li><strong>Lord Curzon (1899–1905):</strong> Punjab Land Alienation Act (1900)[cite: 2]; Partition of Bengal (1905)[cite: 2]; Archaeological Survey restoration[cite: 2].</li>
+          <li><strong>Lord Chelmsford (1916–1921):</strong> Montford Reforms (1919)[cite: 2]; Rowlatt Act[cite: 2]; Jallianwala Bagh firing[cite: 2]; Non-Cooperation start[cite: 2].</li>
+          <li><strong>Lord Irwin (1926–1931):</strong> Simon Commission[cite: 2]; Martyrdom of Bhagat Singh (1931)[cite: 2]; Dandi Salt March (1930)[cite: 2]; Gandhi-Irwin Pact (1931)[cite: 2].</li>
+          <li><strong>Lord Mountbatten (1947):</strong> June 3rd Partition Plan[cite: 2]; Radcliffe Boundary Commission[cite: 2]; 1st Governor-General of free India[cite: 2].</li>
+        </ul>
+      </div>
+
+      <!-- High Yield Traps & Confusions -->
+      <div class="dense-box rose">
+        <h4>Essential Exam Traps &amp; Memory Mnemonics</h4>
+        <ul class="dense-list">
+          <li><span class="trap-tag">TRAP 1</span> <strong>Dyer vs O'Dwyer:</strong> Reginald Dyer ordered firing at Jallianwala Bagh (1919)[cite: 1, 2]. Michael O'Dwyer was the Lt. Governor of Punjab assassinated by Udham Singh in London (1940)[cite: 1, 2].</li>
+          <li><span class="trap-tag">TRAP 2</span> <strong>Ghadar Leadership:</strong> Founder/Gen Sec was Lala Har Dayal, but the 1st President was Baba Sohan Singh Bhakna[cite: 1, 2].</li>
+          <li><span class="trap-tag">TRAP 3</span> <strong>Awadh Annexation:</strong> Awadh was annexed by Dalhousie in 1856 on charges of <em>misgovernance</em> (Sleeman/Outram report), NOT under Doctrine of Lapse[cite: 2]!</li>
+          <li><span class="trap-tag">TRAP 4</span> <strong>Communal Electorates:</strong> Muslims given separate electorates in 1909[cite: 2]; Sikhs, Anglo-Indians, and Christians given separate electorates in 1919[cite: 2].</li>
+        </ul>
+        <div class="mnemonic">MNEMONIC: Sequence of 1920-30s Pacts (S-N-L-C-G-P)[cite: 2]</div>
+        <p style="font-size:11px;"><strong>S</strong>imon (1927/28) &rarr; <strong>N</strong>ehru Report (1928) &rarr; <strong>L</strong>ahore Purna Swaraj (1929) &rarr; <strong>C</strong>DM/Salt March (1930) &rarr; <strong>G</strong>andhi-Irwin (1931) &rarr; <strong>P</strong>oona Pact (1932)[cite: 2].</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // ----------------------------------------------------
+  // THEME MANAGEMENT (Light / Dark with LocalStorage)
+  // ----------------------------------------------------
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('modern_history_theme', theme);
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+    if (themeIcon && themeText) {
+      if (theme === 'light') {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Dark';
+      } else {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Light';
+      }
+    }
+  }
+
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+  }
+
+  // ----------------------------------------------------
+  // 60-MINUTE COUNTDOWN REVISION TIMER
+  // ----------------------------------------------------
+  let totalSeconds = 3600;
+  let timerInterval = null;
+  let isRunning = false;
+
+  function updateTimerDisplay() {
+    const mins = Math.floor(totalSeconds / 60);
+    const secs = totalSeconds % 60;
+    document.getElementById('timeDisplay').textContent = 
+      `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  }
+
+  function toggleTimer() {
+    if (isRunning) {
+      clearInterval(timerInterval);
+      isRunning = false;
+    } else {
+      timerInterval = setInterval(() => {
+        if (totalSeconds > 0) {
+          totalSeconds--;
+          updateTimerDisplay();
+        } else {
+          clearInterval(timerInterval);
+          alert('1-Hour Revision Cycle Complete! Good luck with your Modern History & Punjab GK exam!');
+        }
+      }, 1000);
+      isRunning = true;
+    }
+  }
+
+  function resetTimer() {
+    clearInterval(timerInterval);
+    isRunning = false;
+    totalSeconds = 3600;
+    updateTimerDisplay();
+  }
+
+  // ----------------------------------------------------
+  // INSTANT LIVE FILTER & SEARCH
+  // ----------------------------------------------------
+  function liveSearch() {
+    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    const searchableSections = document.querySelectorAll('.searchable');
+
+    searchableSections.forEach(sec => {
+      const text = sec.innerText.toLowerCase();
+      if (text.includes(query)) {
+        sec.classList.remove('hidden');
+      } else {
+        sec.classList.add('hidden');
+      }
+    });
+  }
+
+  // ----------------------------------------------------
+  // INITIALIZATION ON LOAD
+  // ----------------------------------------------------
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('modern_history_theme') || 'dark';
+    setTheme(savedTheme);
+    updateTimerDisplay();
+    toggleTimer(); // Auto-start revision clock
+  });
+</script>
+
+</body>
+</html>
