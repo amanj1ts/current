@@ -56,74 +56,195 @@
       </button>
     </div>
 
-    <!-- Navigation Links -->
-    <nav class="p-3 space-y-1 text-sm font-medium flex-1 overflow-y-auto">
-      <button onclick="switchTab('dashboard')" id="nav-dashboard" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-brand-600 bg-brand-50 dark:bg-slate-800 dark:text-brand-400">
-        <i class="fa-solid fa-chart-pie w-5"></i>Dashboard
-      </button>
-      <button onclick="switchTab('mcq')" id="nav-mcq" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-list-check w-5"></i>MCQs Speedy(<span id="sidebar-mcq-count">0</span>)
-      </button>
-      <button onclick="switchTab('oneliners')" id="nav-oneliners" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-bolt w-5"></i>1-Liners(<span id="sidebar-ol-count">0</span>)
-      </button>
-	  <button onclick="switchTab('indologous')" id="nav-indologous" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>Indologous (<span id="sidebar-indologous-count">9</span>)
-      </button>
-	  <button onclick="switchTab('parcham')" id="nav-parcham" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>Parcham (<span id="sidebar-parcham-count">5</span>)
-      </button>
-	  <button onclick="switchTab('english')" id="nav-english" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>English Vocab (<span id="sidebar-english-count">350</span>)
-      </button>
-	  <button onclick="switchTab('enggram')" id="nav-enggram" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>English Grammer Rules
-      </button>
-	  <button onclick="switchTab('active')" id="nav-active" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>Active voice Guide
-      </button>
-	   <button onclick="switchTab('pbgeo')" id="nav-pbgeo" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i> Punjab Geographic 
-      </button>
-	  <button onclick="switchTab('pbgk')" id="nav-pbgk" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i> Punjab GK Timeline 
-      </button>
-	  <button onclick="switchTab('pbgkr')" id="nav-pbgkr" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i> Punjab GK Revison 
-      </button>
-	 <button onclick="switchTab('modhis')" id="nav-modhis" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>Modern History Timeline 
-      </button>
-	  <button onclick="switchTab('anchis')" id="nav-anchis" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>PB History Timeline 
-      </button>
-	  <button onclick="switchTab('polity')" id="nav-polity" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>Polity Articles 
-      </button>
-	  <button onclick="switchTab('math')" id="nav-math" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>Math Concepts 
-      </button>
-	  <button onclick="switchTab('reason')" id="nav-reason" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>Reasoning Concepts 
-      </button>
-	  <button onclick="switchTab('misc')" id="nav-misc" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>Miscellaneous Imp 
-      </button>
-	  <button onclick="switchTab('pyq')" id="nav-pyq" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>PYQ's 24-26
-      </button>
-	  <button onclick="switchTab('ict')" id="nav-ict" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i>ICT
-      </button>
-	  <button onclick="switchTab('ict')" id="nav-ict" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i><a href=" https://amanj1ts.github.io/current/TRF.html" >TRF MCQ</a>
-      </button>
-	  <button onclick="switchTab('ict')" id="nav-ict" class="nav-btn w-full flex items-center gap-3 px-3 py-1.3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-        <i class="fa-solid fa-book-bookmark w-5"></i><a href=" https://amanj1ts.github.io/current/history.html" >History Revision</a>
-      </button>
-
+	
+	<!-- Navigation Links (Categorized Dropdown Structure) -->
+	<nav class="p-3 space-y-1.5 text-sm font-medium flex-1 overflow-y-auto select-none">
 	  
-    </nav>
+	  <!-- Dashboard (Standalone Top Item) -->
+	  <button onclick="switchTab('dashboard')" id="nav-dashboard" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-brand-600 bg-brand-50 dark:bg-slate-800 dark:text-brand-400 font-semibold transition-colors">
+		<i class="fa-solid fa-chart-pie w-5 text-center"></i>
+		<span>Dashboard</span>
+	  </button>
+
+	  <!-- GROUP 1: Current Affairs (Open by default) -->
+	  <div class="space-y-1 pt-1">
+		<button onclick="toggleSubmenu('menu-ca', this)" aria-expanded="true" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 font-semibold transition-colors">
+		  <span class="flex items-center gap-3">
+			<i class="fa-solid fa-newspaper w-5 text-center text-indigo-500"></i>
+			<span>Current Affairs</span>
+		  </span>
+		  <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200 rotate-180"></i>
+		</button>
+		<div id="menu-ca" class="pl-4 ml-3.5 border-l-2 border-slate-200 dark:border-slate-800 space-y-1">
+		  <button onclick="switchTab('mcq')" id="nav-mcq" class="nav-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			<span>MCQs Speedy</span>
+			<span id="sidebar-mcq-count" class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">0</span>
+		  </button>
+		  <button onclick="switchTab('oneliners')" id="nav-oneliners" class="nav-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			<span>1-Liners</span>
+			<span id="sidebar-ol-count" class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">0</span>
+		  </button>
+		  <button onclick="switchTab('indologous')" id="nav-indologous" class="nav-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			<span>Indologous</span>
+			<span id="sidebar-indologous-count" class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">9</span>
+		  </button>
+		  <button onclick="switchTab('parcham')" id="nav-parcham" class="nav-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			<span>Parcham</span>
+			<span id="sidebar-parcham-count" class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">5</span>
+		  </button>
+		</div>
+	  </div>
+
+	  <!-- GROUP 2: Punjab Special -->
+	  <div class="space-y-1">
+		<button onclick="toggleSubmenu('menu-punjab', this)" aria-expanded="false" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 font-semibold transition-colors">
+		  <span class="flex items-center gap-3">
+			<i class="fa-solid fa-map-location-dot w-5 text-center text-amber-500"></i>
+			<span>Punjab GK & History</span>
+		  </span>
+		  <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+		</button>
+		<div id="menu-punjab" class="hidden pl-4 ml-3.5 border-l-2 border-slate-200 dark:border-slate-800 space-y-1">
+		  <button onclick="switchTab('pbgeo')" id="nav-pbgeo" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			Punjab Geographic
+		  </button>
+		  <button onclick="switchTab('pbgk')" id="nav-pbgk" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			Punjab GK Timeline
+		  </button>
+		  <button onclick="switchTab('pbgkr')" id="nav-pbgkr" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			Punjab GK Revision
+		  </button>
+		  <button onclick="switchTab('anchis')" id="nav-anchis" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			PB History Timeline
+		  </button>
+		</div>
+	  </div>
+
+	  <!-- GROUP 3: English Language -->
+	  <div class="space-y-1">
+		<button onclick="toggleSubmenu('menu-english', this)" aria-expanded="false" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 font-semibold transition-colors">
+		  <span class="flex items-center gap-3">
+			<i class="fa-solid fa-spell-check w-5 text-center text-emerald-500"></i>
+			<span>English Language</span>
+		  </span>
+		  <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+		</button>
+		<div id="menu-english" class="hidden pl-4 ml-3.5 border-l-2 border-slate-200 dark:border-slate-800 space-y-1">
+		  <button onclick="switchTab('english')" id="nav-english" class="nav-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			<span>English Vocab</span>
+			<span id="sidebar-english-count" class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">350</span>
+		  </button>
+		  <button onclick="switchTab('enggram')" id="nav-enggram" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			English Grammar Rules
+		  </button>
+		  <button onclick="switchTab('active')" id="nav-active" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			Active Voice Guide
+		  </button>
+		</div>
+	  </div>
+
+	  <!-- GROUP 4: General Studies & ICT -->
+	  <div class="space-y-1">
+		<button onclick="toggleSubmenu('menu-gs', this)" aria-expanded="false" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 font-semibold transition-colors">
+		  <span class="flex items-center gap-3">
+			<i class="fa-solid fa-landmark-dome w-5 text-center text-rose-500"></i>
+			<span>GK, GS & Computer</span>
+		  </span>
+		  <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+		</button>
+		<div id="menu-gs" class="hidden pl-4 ml-3.5 border-l-2 border-slate-200 dark:border-slate-800 space-y-1">
+		  <button onclick="switchTab('modhis')" id="nav-modhis" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			Modern History Timeline
+		  </button>
+		  <button onclick="switchTab('polity')" id="nav-polity" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			Polity Articles
+		  </button>
+		  <button onclick="switchTab('ict')" id="nav-ict" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			ICT / Computer
+		  </button>
+		  <button onclick="switchTab('misc')" id="nav-misc" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			Miscellaneous Imp
+		  </button>
+		</div>
+	  </div>
+
+	  <!-- GROUP 5: Quant & Reasoning -->
+	  <div class="space-y-1">
+		<button onclick="toggleSubmenu('menu-quant', this)" aria-expanded="false" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 font-semibold transition-colors">
+		  <span class="flex items-center gap-3">
+			<i class="fa-solid fa-square-root-variable w-5 text-center text-cyan-500"></i>
+			<span>Math & Reasoning</span>
+		  </span>
+		  <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+		</button>
+		<div id="menu-quant" class="hidden pl-4 ml-3.5 border-l-2 border-slate-200 dark:border-slate-800 space-y-1">
+		  <button onclick="switchTab('math')" id="nav-math" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			Math Concepts
+		  </button>
+		  <button onclick="switchTab('reason')" id="nav-reason" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			Reasoning Concepts
+		  </button>
+		</div>
+	  </div>
+
+	  <!-- GROUP 6: PYQs & External Links -->
+	  <div class="space-y-1">
+		<button onclick="toggleSubmenu('menu-pyq', this)" aria-expanded="false" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 font-semibold transition-colors">
+		  <span class="flex items-center gap-3">
+			<i class="fa-solid fa-file-signature w-5 text-center text-purple-500"></i>
+			<span>PYQs & Archives</span>
+		  </span>
+		  <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+		</button>
+		<div id="menu-pyq" class="hidden pl-4 ml-3.5 border-l-2 border-slate-200 dark:border-slate-800 space-y-1">
+		  <button onclick="switchTab('pyq')" id="nav-pyq" class="nav-btn w-full flex items-center px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			PYQ's 24-26
+		  </button>
+		  <a href="https://amanj1ts.github.io/current/TRF.html" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			<span>TRF MCQ</span>
+			<i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
+		  </a>
+		  <a href="https://amanj1ts.github.io/current/history.html" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			<span>History Revision</span>
+			<i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
+		  </a>
+		</div>
+	  </div>
+	  
+	  <!-- GROUP 7: Court Clerk -->
+	  <div class="space-y-1">
+		<button onclick="toggleSubmenu('menu-cl', this)" aria-expanded="false" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 font-semibold transition-colors">
+		  <span class="flex items-center gap-3">
+			<i class="fa-solid fa-landmark-dome w-5 text-center text-rose-500"></i>
+			<span>Court Clerk GK & GS </span>
+		  </span>
+		  <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+		</button>
+		<div id="menu-cl" class="hidden pl-4 ml-3.5 border-l-2 border-slate-200 dark:border-slate-800 space-y-1">
+		    <a href="https://amanj1ts.github.io/current/ancient_medivel_history.html" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			<span>Ancient & Medieval</span>
+			<i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
+		  </a>
+		  <a href="https://amanj1ts.github.io/current/modern-history.html" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			<span>Modern</span>
+			<i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
+		  </a>
+		  <a href="https://amanj1ts.github.io/current/general_science.html" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			<span>General Science</span>
+			<i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
+		  </a>
+		  <a href="https://amanj1ts.github.io/current/economy.html" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			<span>Economy</span>
+			<i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
+		  </a>
+		  <a href="https://amanj1ts.github.io/current/static.html" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs sm:text-sm">
+			<span>Static</span>
+			<i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
+		  </a>
+		</div>
+	  </div>
+
+	</nav>
 
     <!-- Dark Mode Toggle -->
     <div class="p-4 border-t border-slate-200 dark:border-slate-800">
@@ -532,24 +653,69 @@
       }
     }
 
-    function switchTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.classList.remove('text-blue-600', 'bg-blue-50', 'dark:bg-slate-800', 'dark:text-blue-400');
-        btn.classList.add('text-slate-600', 'dark:text-slate-400');
-      });
+    // Toggle Dropdown Submenus
+function toggleSubmenu(menuId, btn) {
+  const menu = document.getElementById(menuId);
+  const icon = btn.querySelector('.fa-chevron-down');
+  const isHidden = menu.classList.contains('hidden');
 
-      document.getElementById(`tab-${tabId}`).classList.remove('hidden');
-      const activeBtn = document.getElementById(`nav-${tabId}`);
-      if (activeBtn) {
-        activeBtn.classList.add('text-blue-600', 'bg-blue-50', 'dark:bg-slate-800', 'dark:text-blue-400');
-        activeBtn.classList.remove('text-slate-600', 'dark:text-slate-400');
-      }
-
-      if (window.innerWidth < 768) {
-        toggleSidebar(false);
-      }
+  // Optional: Uncomment the block below if you want "Single Accordion" mode 
+  // (where opening one menu automatically closes all others)
+  /*
+  document.querySelectorAll('nav > div > div[id^="menu-"]').forEach(el => {
+    if (el.id !== menuId) {
+      el.classList.add('hidden');
+      const otherIcon = el.previousElementSibling?.querySelector('.fa-chevron-down');
+      if (otherIcon) otherIcon.classList.remove('rotate-180');
     }
+  });
+  */
+
+  if (isHidden) {
+    menu.classList.remove('hidden');
+    if (icon) icon.classList.add('rotate-180');
+    btn.setAttribute('aria-expanded', 'true');
+  } else {
+    menu.classList.add('hidden');
+    if (icon) icon.classList.remove('rotate-180');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+}
+
+// Updated switchTab Function
+function switchTab(tabId) {
+  // 1. Hide all tab contents
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+  
+  // 2. Reset all nav buttons
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.classList.remove('text-brand-600', 'bg-brand-50', 'dark:bg-slate-800', 'dark:text-brand-400', 'font-semibold');
+    btn.classList.add('text-slate-600', 'dark:text-slate-400');
+  });
+
+  // 3. Show target tab content
+  const targetSection = document.getElementById(`tab-${tabId}`);
+  if (targetSection) targetSection.classList.remove('hidden');
+
+  // 4. Highlight active button & ensure its parent submenu is open
+  const activeBtn = document.getElementById(`nav-${tabId}`);
+  if (activeBtn) {
+    activeBtn.classList.add('text-brand-600', 'bg-brand-50', 'dark:bg-slate-800', 'dark:text-brand-400', 'font-semibold');
+    activeBtn.classList.remove('text-slate-600', 'dark:text-slate-400');
+
+    // Auto-expand parent dropdown if it is collapsed
+    const parentSubmenu = activeBtn.closest('div[id^="menu-"]');
+    if (parentSubmenu && parentSubmenu.classList.contains('hidden')) {
+      const toggleBtn = parentSubmenu.previousElementSibling;
+      if (toggleBtn) toggleSubmenu(parentSubmenu.id, toggleBtn);
+    }
+  }
+
+  // 5. Auto-close drawer on mobile screens (< 768px) when a link is selected
+  if (window.innerWidth < 768) {
+    toggleSidebar(false);
+  }
+}
 
     // Indologous Month Switcher
     function loadIndoMonth(fileName, btnElement, frameId) {
